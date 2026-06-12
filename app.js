@@ -646,343 +646,3415 @@ const QUESTION_BANK = {
 
 // --- PRACTICE MODE DATABASE ---
 const VOCABULARY_DATABASE = {
-    familie: [
-        { word: "die Mutter", translation: "Mother", example: "Meine Mutter kocht das Essen.", exampleTranslation: "My mother cooks the food.", emoji: "👩" },
-        { word: "der Vater", translation: "Father", example: "Mein Vater arbeitet im Garten.", exampleTranslation: "My father works in the garden.", emoji: "👨" },
-        { word: "die Schwester", translation: "Sister", example: "Meine Schwester lernt Deutsch.", exampleTranslation: "My sister learns German.", emoji: "👧" },
-        { word: "der Bruder", translation: "Brother", example: "Mein Bruder spielt Fußball.", exampleTranslation: "My brother plays football.", emoji: "👦" },
-        { word: "die Tochter", translation: "Daughter", example: "Ihre Tochter geht in die Schule.", exampleTranslation: "Her daughter goes to school.", emoji: "👧" },
-        { word: "der Sohn", translation: "Son", example: "Sein Sohn ist noch sehr jung.", exampleTranslation: "His son is still very young.", emoji: "👦" },
-        { word: "die Großmutter", translation: "Grandmother", example: "Meine Großmutter kocht sehr gut.", exampleTranslation: "My grandmother cooks very well.", emoji: "👵" },
-        { word: "der Großvater", translation: "Grandfather", example: "Mein Großvater liest ein Buch.", exampleTranslation: "My grandfather reads a book.", emoji: "👴" },
-        { word: "das Kind", translation: "Child", example: "Das Kind spielt im Park.", exampleTranslation: "The child plays in the park.", emoji: "👶" },
-        { word: "die Eltern", translation: "Parents", example: "Meine Eltern wohnen in Berlin.", exampleTranslation: "My parents live in Berlin.", emoji: "👨‍👩‍👧‍👦" },
-        { word: "der Onkel", translation: "Uncle", example: "Mein Onkel wohnt in Hamburg.", exampleTranslation: "My uncle lives in Hamburg.", emoji: "👨‍💼" },
-        { word: "die Tante", translation: "Aunt", example: "Meine Tante kommt heute zu Besuch.", exampleTranslation: "My aunt is coming to visit today.", emoji: "👩‍💼" }
+    "familie": [
+        {
+            "word": "die Mutter",
+            "translation": "Mother",
+            "example": "Meine Mutter kocht das Essen.",
+            "exampleTranslation": "My mother cooks the food.",
+            "emoji": "👩"
+        },
+        {
+            "word": "der Vater",
+            "translation": "Father",
+            "example": "Mein Vater arbeitet im Garten.",
+            "exampleTranslation": "Mein Vater works in the garden.",
+            "emoji": "👨"
+        },
+        {
+            "word": "die Schwester",
+            "translation": "Sister",
+            "example": "Meine Schwester lernt Deutsch.",
+            "exampleTranslation": "My sister learns German.",
+            "emoji": "👧"
+        },
+        {
+            "word": "der Bruder",
+            "translation": "Brother",
+            "example": "Mein Bruder spielt Fußball.",
+            "exampleTranslation": "My brother plays football.",
+            "emoji": "👦"
+        },
+        {
+            "word": "die Tochter",
+            "translation": "Daughter",
+            "example": "Ihre Tochter geht in die Schule.",
+            "exampleTranslation": "Her daughter goes to school.",
+            "emoji": "👧"
+        },
+        {
+            "word": "der Sohn",
+            "translation": "Son",
+            "example": "Sein Sohn ist noch sehr jung.",
+            "exampleTranslation": "His son is still very young.",
+            "emoji": "👦"
+        },
+        {
+            "word": "die Großmutter",
+            "translation": "Grandmother",
+            "example": "Meine Großmutter kocht sehr gut.",
+            "exampleTranslation": "My grandmother cooks very well.",
+            "emoji": "👵"
+        },
+        {
+            "word": "der Großvater",
+            "translation": "Grandfather",
+            "example": "Mein Großvater liest ein Buch.",
+            "exampleTranslation": "My grandfather reads a book.",
+            "emoji": "👴"
+        },
+        {
+            "word": "das Kind",
+            "translation": "Child",
+            "example": "Das Kind spielt im Park.",
+            "exampleTranslation": "The child plays in the park.",
+            "emoji": "👶"
+        },
+        {
+            "word": "die Eltern",
+            "translation": "Parents",
+            "example": "Meine Eltern wohnen in Berlin.",
+            "exampleTranslation": "My parents live in Berlin.",
+            "emoji": "👨‍👩‍👧‍👦"
+        },
+        {
+            "word": "der Onkel",
+            "translation": "Uncle",
+            "example": "Mein Onkel wohnt in Hamburg.",
+            "exampleTranslation": "My uncle lives in Hamburg.",
+            "emoji": "👨‍💼"
+        },
+        {
+            "word": "die Tante",
+            "translation": "Aunt",
+            "example": "Meine Tante kommt heute zu Besuch.",
+            "exampleTranslation": "My aunt is coming to visit today.",
+            "emoji": "👩‍💼"
+        },
+        {
+            "word": "der Neffe",
+            "translation": "Nephew",
+            "example": "Mein Neffe lernt Deutsch.",
+            "exampleTranslation": "My nephew learns German.",
+            "emoji": "👦"
+        },
+        {
+            "word": "die Nichte",
+            "translation": "Niece",
+            "example": "Ihre Nichte ist fünf Jahre alt.",
+            "exampleTranslation": "Her niece is five years old.",
+            "emoji": "👧"
+        },
+        {
+            "word": "der Cousin",
+            "translation": "Cousin (m)",
+            "example": "Mein Cousin wohnt in München.",
+            "exampleTranslation": "My cousin lives in Munich.",
+            "emoji": "👦"
+        },
+        {
+            "word": "die Cousine",
+            "translation": "Cousin (f)",
+            "example": "Meine Cousine kommt morgen.",
+            "exampleTranslation": "My cousin comes tomorrow.",
+            "emoji": "👧"
+        },
+        {
+            "word": "die Ehefrau",
+            "translation": "Wife",
+            "example": "Meine Ehefrau heißt Sarah.",
+            "exampleTranslation": "My wife is named Sarah.",
+            "emoji": "👩"
+        },
+        {
+            "word": "der Ehemann",
+            "translation": "Husband",
+            "example": "Ihr Ehemann arbeitet als Koch.",
+            "exampleTranslation": "Her husband works as a chef.",
+            "emoji": "👨"
+        },
+        {
+            "word": "der Schwager",
+            "translation": "Brother-in-law",
+            "example": "Mein Schwager spielt Tennis.",
+            "exampleTranslation": "My brother-in-law plays tennis.",
+            "emoji": "👨"
+        },
+        {
+            "word": "die Schwägerin",
+            "translation": "Sister-in-law",
+            "example": "Meine Schwägerin kommt aus Spanien.",
+            "exampleTranslation": "My sister-in-law comes from Spain.",
+            "emoji": "👩"
+        }
     ],
-    begruessung: [
-        { word: "Hallo", translation: "Hello", example: "Hallo, wie geht es dir?", exampleTranslation: "Hello, how are you?", emoji: "👋" },
-        { word: "Guten Morgen", translation: "Good morning", example: "Guten Morgen, mein Freund!", exampleTranslation: "Good morning, my friend!", emoji: "🌅" },
-        { word: "Guten Tag", translation: "Good day", example: "Guten Tag, Herr Müller.", exampleTranslation: "Good day, Mr. Müller.", emoji: "☀️" },
-        { word: "Guten Abend", translation: "Good evening", example: "Guten Abend, meine Damen und Herren.", exampleTranslation: "Good evening, ladies and gentlemen.", emoji: "🌇" },
-        { word: "Auf Wiedersehen", translation: "Goodbye", example: "Auf Wiedersehen, bis bald!", exampleTranslation: "Goodbye, see you soon!", emoji: "👋" },
-        { word: "Tschüss", translation: "Bye", example: "Tschüss, einen schönen Tag noch!", exampleTranslation: "Bye, have a nice day!", emoji: "🙋" },
-        { word: "Wie geht es dir?", translation: "How are you?", example: "Hallo Ben, wie geht es dir?", exampleTranslation: "Hello Ben, how are you?", emoji: "❓" },
-        { word: "Danke, gut", translation: "Thanks, good", example: "Wie geht es dir? - Danke, gut.", exampleTranslation: "How are you? - Thanks, good.", emoji: "👍" },
-        { word: "Freut mich", translation: "Nice to meet you", example: "Ich bin Tom. - Freut mich.", exampleTranslation: "I'm Tom. - Nice to meet you.", emoji: "🤝" },
-        { word: "Bitte", translation: "Please/You're welcome", example: "Ein Wasser, bitte. - Bitte sehr.", exampleTranslation: "A water, please. - Here you go.", emoji: "🙏" },
-        { word: "Wie heißen Sie?", translation: "What is your name?", example: "Hallo, wie heißen Sie?", exampleTranslation: "Hello, what is your name?", emoji: "❓" },
-        { word: "Ich heiße...", translation: "My name is...", example: "Ich heiße Michael.", exampleTranslation: "My name is Michael.", emoji: "👤" }
+    "begruessung": [
+        {
+            "word": "Hallo",
+            "translation": "Hello",
+            "example": "Hallo, wie geht es dir?",
+            "exampleTranslation": "Hello, how are you?",
+            "emoji": "👋"
+        },
+        {
+            "word": "Guten Morgen",
+            "translation": "Good morning",
+            "example": "Guten Morgen, mein Freund!",
+            "exampleTranslation": "Good morning, my friend!",
+            "emoji": "🌅"
+        },
+        {
+            "word": "Guten Tag",
+            "translation": "Good day",
+            "example": "Guten Tag, Herr Müller.",
+            "exampleTranslation": "Good day, Mr. Müller.",
+            "emoji": "☀️"
+        },
+        {
+            "word": "Guten Abend",
+            "translation": "Good evening",
+            "example": "Guten Abend, meine Damen und Herren.",
+            "exampleTranslation": "Good evening, ladies and gentlemen.",
+            "emoji": "🌇"
+        },
+        {
+            "word": "Auf Wiedersehen",
+            "translation": "Goodbye",
+            "example": "Auf Wiedersehen, bis bald!",
+            "exampleTranslation": "Goodbye, see you soon!",
+            "emoji": "👋"
+        },
+        {
+            "word": "Tschüss",
+            "translation": "Bye",
+            "example": "Tschüss, einen schönen Tag noch!",
+            "exampleTranslation": "Bye, have a nice day!",
+            "emoji": "🙋"
+        },
+        {
+            "word": "Wie geht es dir?",
+            "translation": "How are you?",
+            "example": "Hallo Ben, wie geht es dir?",
+            "exampleTranslation": "Hello Ben, how are you?",
+            "emoji": "❓"
+        },
+        {
+            "word": "Danke, gut",
+            "translation": "Thanks, good",
+            "example": "Wie geht es dir? - Danke, gut.",
+            "exampleTranslation": "How are you? - Thanks, good.",
+            "emoji": "👍"
+        },
+        {
+            "word": "Freut mich",
+            "translation": "Nice to meet you",
+            "example": "Ich bin Tom. - Freut mich.",
+            "exampleTranslation": "I'm Tom. - Nice to meet you.",
+            "emoji": "🤝"
+        },
+        {
+            "word": "Bitte",
+            "translation": "Please/You're welcome",
+            "example": "Ein Wasser, bitte. - Bitte sehr.",
+            "exampleTranslation": "A water, please. - Here you go.",
+            "emoji": "🙏"
+        },
+        {
+            "word": "Wie heißen Sie?",
+            "translation": "What is your name?",
+            "example": "Hallo, wie heißen Sie?",
+            "exampleTranslation": "Hello, what is your name?",
+            "emoji": "❓"
+        },
+        {
+            "word": "Ich heiße...",
+            "translation": "My name is...",
+            "example": "Ich heiße Michael.",
+            "exampleTranslation": "My name is Michael.",
+            "emoji": "👤"
+        },
+        {
+            "word": "Bis später",
+            "translation": "See you later",
+            "example": "Auf Wiedersehen, bis später!",
+            "exampleTranslation": "Goodbye, see you later!",
+            "emoji": "👋"
+        },
+        {
+            "word": "Bis bald",
+            "translation": "See you soon",
+            "example": "Tschüss, bis bald!",
+            "exampleTranslation": "Bye, see you soon!",
+            "emoji": "👋"
+        },
+        {
+            "word": "Gute Nacht",
+            "translation": "Good night",
+            "example": "Gute Nacht, schlaf gut!",
+            "exampleTranslation": "Good night, sleep well!",
+            "emoji": "🌙"
+        },
+        {
+            "word": "Wie geht es Ihnen?",
+            "translation": "How are you? (formal)",
+            "example": "Guten Tag Herr Schmidt, wie geht es Ihnen?",
+            "exampleTranslation": "Good day Mr. Schmidt, how are you?",
+            "emoji": "❓"
+        },
+        {
+            "word": "Herzlich willkommen",
+            "translation": "Welcome",
+            "example": "Herzlich willkommen in Deutschland!",
+            "exampleTranslation": "Welcome to Germany!",
+            "emoji": "🤝"
+        },
+        {
+            "word": "Einen schönen Tag noch",
+            "translation": "Have a nice day",
+            "example": "Tschüss, einen schönen Tag noch!",
+            "exampleTranslation": "Bye, have a nice day!",
+            "emoji": "☀️"
+        },
+        {
+            "word": "Auf Wiederhören",
+            "translation": "Goodbye (on phone)",
+            "example": "Auf Wiederhören, Frau Becker.",
+            "exampleTranslation": "Goodbye, Mrs. Becker.",
+            "emoji": "📞"
+        },
+        {
+            "word": "Entschuldigung",
+            "translation": "Excuse me",
+            "example": "Entschuldigung, wo ist der Bahnhof?",
+            "exampleTranslation": "Excuse me, where is the station?",
+            "emoji": "🙏"
+        }
     ],
-    personalinfo: [
-        { word: "der Name", translation: "Name", example: "Mein Name ist Thomas.", exampleTranslation: "My name is Thomas.", emoji: "📛" },
-        { word: "das Alter", translation: "Age", example: "Sein Alter ist unbekannt.", exampleTranslation: "His age is unknown.", emoji: "🎂" },
-        { word: "die Adresse", translation: "Address", example: "Wie ist Ihre Adresse?", exampleTranslation: "What is your address?", emoji: "📍" },
-        { word: "die Telefonnummer", translation: "Telephone number", example: "Geben Sie mir Ihre Telefonnummer.", exampleTranslation: "Give me your telephone number.", emoji: "📞" },
-        { word: "der Wohnort", translation: "Place of residence", example: "Mein Wohnort ist Köln.", exampleTranslation: "My place of residence is Cologne.", emoji: "🏠" },
-        { word: "verheiratet", translation: "Married", example: "Sind Sie verheiratet?", exampleTranslation: "Are you married?", emoji: "💍" },
-        { word: "ledig", translation: "Single", example: "Ich bin ledig und suche eine Arbeit.", exampleTranslation: "I am single and looking for work.", emoji: "👤" },
-        { word: "das Geburtsdatum", translation: "Date of birth", example: "Schreiben Sie Ihr Geburtsdatum auf.", exampleTranslation: "Write down your date of birth.", emoji: "📅" },
-        { word: "das Herkunftsland", translation: "Country of origin", example: "Mein Herkunftsland ist Spanien.", exampleTranslation: "My country of origin is Spain.", emoji: "🌐" },
-        { word: "das Geschlecht", translation: "Gender", example: "Bitte kreuzen Sie das Geschlecht an.", exampleTranslation: "Please check the gender box.", emoji: "⚧" },
-        { word: "die Unterschrift", translation: "Signature", example: "Ihre Unterschrift fehlt noch.", exampleTranslation: "Your signature is still missing.", emoji: "✍️" },
-        { word: "das Formular", translation: "Form", example: "Füllen Sie das Formular aus.", exampleTranslation: "Fill out the form.", emoji: "📄" }
+    "personalinfo": [
+        {
+            "word": "der Name",
+            "translation": "Name",
+            "example": "Mein Name ist Thomas.",
+            "exampleTranslation": "My name is Thomas.",
+            "emoji": "📛"
+        },
+        {
+            "word": "das Alter",
+            "translation": "Age",
+            "example": "Sein Alter ist unbekannt.",
+            "exampleTranslation": "His age is unknown.",
+            "emoji": "🎂"
+        },
+        {
+            "word": "die Adresse",
+            "translation": "Address",
+            "example": "Wie ist Ihre Adresse?",
+            "exampleTranslation": "What is your address?",
+            "emoji": "📍"
+        },
+        {
+            "word": "die Telefonnummer",
+            "translation": "Phone number",
+            "example": "Meine Telefonnummer hat sich geändert.",
+            "exampleTranslation": "My phone number has changed.",
+            "emoji": "📞"
+        },
+        {
+            "word": "der Wohnort",
+            "translation": "Place of residence",
+            "example": "Wie ist Ihr Wohnort?",
+            "exampleTranslation": "What is your place of residence?",
+            "emoji": "🏠"
+        },
+        {
+            "word": "verheiratet",
+            "translation": "married",
+            "example": "Sie ist seit zwei Jahren verheiratet.",
+            "exampleTranslation": "She has been married for two years.",
+            "emoji": "💍"
+        },
+        {
+            "word": "ledig",
+            "translation": "single",
+            "example": "Ich bin ledig und habe keine Kinder.",
+            "exampleTranslation": "I am single and have no children.",
+            "emoji": "👤"
+        },
+        {
+            "word": "das Geburtsdatum",
+            "translation": "Date of birth",
+            "example": "Schreiben Sie das Geburtsdatum auf das Formular.",
+            "exampleTranslation": "Write the date of birth on the form.",
+            "emoji": "📅"
+        },
+        {
+            "word": "das Herkunftsland",
+            "translation": "Country of origin",
+            "example": "Mein Herkunftsland ist Spanien.",
+            "exampleTranslation": "My country of origin is Spain.",
+            "emoji": "🗺️"
+        },
+        {
+            "word": "das Geschlecht",
+            "translation": "Gender",
+            "example": "Bitte kreuzen Sie das Geschlecht an.",
+            "exampleTranslation": "Please mark the gender.",
+            "emoji": "🚻"
+        },
+        {
+            "word": "die Unterschrift",
+            "translation": "Signature",
+            "example": "Hier ist Ihre Unterschrift nötig.",
+            "exampleTranslation": "Your signature is necessary here.",
+            "emoji": "✒️"
+        },
+        {
+            "word": "das Formular",
+            "translation": "Form",
+            "example": "Füllen Sie das Formular aus.",
+            "exampleTranslation": "Fill out the form.",
+            "emoji": "📄"
+        },
+        {
+            "word": "geboren",
+            "translation": "born",
+            "example": "Ich bin in Indien geboren.",
+            "exampleTranslation": "I was born in India.",
+            "emoji": "👶"
+        },
+        {
+            "word": "der Geburtsort",
+            "translation": "Place of birth",
+            "example": "Wie ist Ihr Geburtsort?",
+            "exampleTranslation": "What is your place of birth?",
+            "emoji": "📍"
+        },
+        {
+            "word": "die Staatsangehörigkeit",
+            "translation": "Nationality",
+            "example": "Meine Staatsangehörigkeit ist indisch.",
+            "exampleTranslation": "My nationality is Indian.",
+            "emoji": "🪪"
+        },
+        {
+            "word": "die Postleitzahl",
+            "translation": "Postal code",
+            "example": "Wie ist Ihre Postleitzahl?",
+            "exampleTranslation": "What is your postal code?",
+            "emoji": "📮"
+        },
+        {
+            "word": "geschieden",
+            "translation": "divorced",
+            "example": "Er ist geschieden und lebt allein.",
+            "exampleTranslation": "He is divorced and lives alone.",
+            "emoji": "👤"
+        },
+        {
+            "word": "die E-Mail-Adresse",
+            "translation": "Email address",
+            "example": "Schreiben Sie Ihre E-Mail-Adresse.",
+            "exampleTranslation": "Write your email address.",
+            "emoji": "📧"
+        },
+        {
+            "word": "die Mobilnummer",
+            "translation": "Mobile number",
+            "example": "Haben Sie eine Mobilnummer?",
+            "exampleTranslation": "Do you have a mobile number?",
+            "emoji": "📱"
+        },
+        {
+            "word": "die Hobbys",
+            "translation": "Hobbies",
+            "example": "Meine Hobbys sind Lesen und Reisen.",
+            "exampleTranslation": "My hobbies are reading and traveling.",
+            "emoji": "🎭"
+        }
     ],
-    laender: [
-        { word: "Deutschland", translation: "Germany", example: "Deutschland liegt in Europa.", exampleTranslation: "Germany is located in Europe.", emoji: "🇩🇪" },
-        { word: "Österreich", translation: "Austria", example: "Österreich ist sehr schön.", exampleTranslation: "Austria is very beautiful.", emoji: "🇦🇹" },
-        { word: "die Schweiz", translation: "Switzerland", example: "Ich reise in die Schweiz.", exampleTranslation: "I travel to Switzerland.", emoji: "🇨🇭" },
-        { word: "Deutsch", translation: "German (language)", example: "Wir lernen Deutsch.", exampleTranslation: "We learn German.", emoji: "🗣️" },
-        { word: "Englisch", translation: "English (language)", example: "Er spricht gut Englisch.", exampleTranslation: "He speaks English well.", emoji: "🗣️" },
-        { word: "Frankreich", translation: "France", example: "Frankreich ist ein Nachbarland.", exampleTranslation: "France is a neighboring country.", emoji: "🇫🇷" },
-        { word: "Französisch", translation: "French (language)", example: "Französisch ist eine Weltsprache.", exampleTranslation: "French is a global language.", emoji: "🗣️" },
-        { word: "Spanien", translation: "Spain", example: "Spanien hat warme Strände.", exampleTranslation: "Spain has warm beaches.", emoji: "🇪🇸" },
-        { word: "Spanisch", translation: "Spanish (language)", example: "Lernst du Spanisch?", exampleTranslation: "Are you learning Spanish?", emoji: "🗣️" },
-        { word: "sprechen", translation: "to speak", example: "Sie sprechen Deutsch.", exampleTranslation: "They speak German.", emoji: "🗣️" },
-        { word: "die Sprache", translation: "Language", example: "Welche Sprache sprechen Sie?", exampleTranslation: "Which language do you speak?", emoji: "🗣️" },
-        { word: "das Land", translation: "Country", example: "Aus welchem Land kommen Sie?", exampleTranslation: "Which country do you come from?", emoji: "🗺️" }
+    "laender": [
+        {
+            "word": "Deutschland",
+            "translation": "Germany",
+            "example": "Ich wohne in Deutschland.",
+            "exampleTranslation": "I live in Germany.",
+            "emoji": "🇩🇪"
+        },
+        {
+            "word": "Österreich",
+            "translation": "Austria",
+            "example": "Wien ist die Hauptstadt von Österreich.",
+            "exampleTranslation": "Vienna is the capital of Austria.",
+            "emoji": "🇦🇹"
+        },
+        {
+            "word": "die Schweiz",
+            "translation": "Switzerland",
+            "example": "Sie reist in die Schweiz.",
+            "exampleTranslation": "She travels to Switzerland.",
+            "emoji": "🇨🇭"
+        },
+        {
+            "word": "Deutsch",
+            "translation": "German (lang)",
+            "example": "Ich lerne Deutsch online.",
+            "exampleTranslation": "I learn German online.",
+            "emoji": "🗣️"
+        },
+        {
+            "word": "Englisch",
+            "translation": "English",
+            "example": "Er spricht sehr gut Englisch.",
+            "exampleTranslation": "He speaks English very well.",
+            "emoji": "🇬🇧"
+        },
+        {
+            "word": "Frankreich",
+            "translation": "France",
+            "example": "Frankreich liegt neben Deutschland.",
+            "exampleTranslation": "France lies next to Germany.",
+            "emoji": "🇫🇷"
+        },
+        {
+            "word": "Französisch",
+            "translation": "French",
+            "example": "Sie lernt Französisch in Paris.",
+            "exampleTranslation": "She learns French in Paris.",
+            "emoji": "🇫🇷"
+        },
+        {
+            "word": "Spanien",
+            "translation": "Spain",
+            "example": "Wir machen Urlaub in Spanien.",
+            "exampleTranslation": "We are vacationing in Spain.",
+            "emoji": "🇪🇸"
+        },
+        {
+            "word": "Spanisch",
+            "translation": "Spanish",
+            "example": "Sprichst du Spanisch?",
+            "exampleTranslation": "Do you speak Spanish?",
+            "emoji": "🇪🇸"
+        },
+        {
+            "word": "sprechen",
+            "translation": "to speak",
+            "example": "Wir sprechen über Deutsch.",
+            "exampleTranslation": "We speak about German.",
+            "emoji": "💬"
+        },
+        {
+            "word": "die Sprache",
+            "translation": "Language",
+            "example": "Welche Sprache lernen Sie?",
+            "exampleTranslation": "Which language are you learning?",
+            "emoji": "🗣️"
+        },
+        {
+            "word": "das Land",
+            "translation": "Country",
+            "example": "Deutschland ist ein schönes Land.",
+            "exampleTranslation": "Germany is a beautiful country.",
+            "emoji": "🗺️"
+        },
+        {
+            "word": "Italien",
+            "translation": "Italy",
+            "example": "Wir reisen im Sommer nach Italien.",
+            "exampleTranslation": "We are traveling to Italy in the summer.",
+            "emoji": "🇮🇹"
+        },
+        {
+            "word": "Italienisch",
+            "translation": "Italian",
+            "example": "Er lernt Italienisch in der Schule.",
+            "exampleTranslation": "He learns Italian at school.",
+            "emoji": "🇮🇹"
+        },
+        {
+            "word": "Indien",
+            "translation": "India",
+            "example": "Ich komme aus Indien.",
+            "exampleTranslation": "I come from India.",
+            "emoji": "🇮🇳"
+        },
+        {
+            "word": "die Heimat",
+            "translation": "Homeland",
+            "example": "Deutschland ist meine neue Heimat.",
+            "exampleTranslation": "Germany is my new homeland.",
+            "emoji": "🏡"
+        },
+        {
+            "word": "ausländisch",
+            "translation": "foreign",
+            "example": "Sie spricht drei ausländische Sprachen.",
+            "exampleTranslation": "She speaks three foreign languages.",
+            "emoji": "🌐"
+        },
+        {
+            "word": "der Ausländer",
+            "translation": "Foreigner",
+            "example": "Er ist ein Ausländer hier.",
+            "exampleTranslation": "He is a foreigner here.",
+            "emoji": "👤"
+        },
+        {
+            "word": "Europa",
+            "translation": "Europe",
+            "example": "Deutschland liegt in Europa.",
+            "exampleTranslation": "Germany lies in Europe.",
+            "emoji": "🇪🇺"
+        },
+        {
+            "word": "die Stadt",
+            "translation": "City",
+            "example": "Berlin ist eine große Stadt.",
+            "exampleTranslation": "Berlin is a big city.",
+            "emoji": "🏙️"
+        }
     ],
-    tage: [
-        { word: "der Montag", translation: "Monday", example: "Montag gehe ich arbeiten.", exampleTranslation: "Monday I go to work.", emoji: "📅" },
-        { word: "der Dienstag", translation: "Tuesday", example: "Dienstag habe ich Deutschkurs.", exampleTranslation: "Tuesday I have German course.", emoji: "📅" },
-        { word: "der Mittwoch", translation: "Wednesday", example: "Mittwoch ist die Mitte der Woche.", exampleTranslation: "Wednesday is the middle of the week.", emoji: "📅" },
-        { word: "der Donnerstag", translation: "Thursday", example: "Donnerstag kaufe ich ein.", exampleTranslation: "Thursday I go shopping.", emoji: "📅" },
-        { word: "der Freitag", translation: "Friday", example: "Am Freitagabend treffe ich Freunde.", exampleTranslation: "On Friday evening I meet friends.", emoji: "📅" },
-        { word: "der Samstag", translation: "Saturday", example: "Samstag ist das Wochenende.", exampleTranslation: "Saturday is the weekend.", emoji: "📅" },
-        { word: "der Sonntag", translation: "Sunday", example: "Sonntags schlafen wir lange.", exampleTranslation: "On Sundays we sleep late.", emoji: "📅" },
-        { word: "der Januar", translation: "January", example: "Der Januar ist oft sehr kalt.", exampleTranslation: "January is often very cold.", emoji: "❄️" },
-        { word: "der Februar", translation: "February", example: "Februar hat achtundzwanzig Tage.", exampleTranslation: "February has twenty-eight days.", emoji: "📅" },
-        { word: "der März", translation: "March", example: "Im März beginnt der Frühling.", exampleTranslation: "Spring begins in March.", emoji: "🌸" },
-        { word: "der April", translation: "April", example: "Der April macht, was er will.", exampleTranslation: "April does what it wants.", emoji: "🌧️" },
-        { word: "der Mai", translation: "May", example: "Der Mai ist ein Frühlingsmonat.", exampleTranslation: "May is a spring month.", emoji: "🌸" }
+    "tage": [
+        {
+            "word": "der Montag",
+            "translation": "Monday",
+            "example": "Am Montag arbeite ich wieder.",
+            "exampleTranslation": "On Monday I work again.",
+            "emoji": "📅"
+        },
+        {
+            "word": "der Dienstag",
+            "translation": "Tuesday",
+            "example": "Dienstag habe ich einen Termin.",
+            "exampleTranslation": "Tuesday I have an appointment.",
+            "emoji": "📅"
+        },
+        {
+            "word": "der Mittwoch",
+            "translation": "Wednesday",
+            "example": "Mittwoch ist die Mitte der Woche.",
+            "exampleTranslation": "Wednesday is the middle of the week.",
+            "emoji": "📅"
+        },
+        {
+            "word": "der Donnerstag",
+            "translation": "Thursday",
+            "example": "Donnerstag trinke ich Kaffee mit Tim.",
+            "exampleTranslation": "Thursday I drink coffee with Tim.",
+            "emoji": "📅"
+        },
+        {
+            "word": "der Freitag",
+            "translation": "Friday",
+            "example": "Freitagabend gehen wir ins Kino.",
+            "exampleTranslation": "Friday evening we go to the cinema.",
+            "emoji": "📅"
+        },
+        {
+            "word": "der Samstag",
+            "translation": "Saturday",
+            "example": "Am Samstag kaufe ich Gemüse.",
+            "exampleTranslation": "On Saturday I buy vegetables.",
+            "emoji": "📅"
+        },
+        {
+            "word": "der Sonntag",
+            "translation": "Sunday",
+            "example": "Am Sonntag ruhe ich mich aus.",
+            "exampleTranslation": "On Sunday I rest.",
+            "emoji": "📅"
+        },
+        {
+            "word": "der Januar",
+            "translation": "January",
+            "example": "Der Januar ist kalt und nass.",
+            "exampleTranslation": "January is cold and wet.",
+            "emoji": "❄️"
+        },
+        {
+            "word": "der Februar",
+            "translation": "February",
+            "example": "Der Februar hat oft Schnee.",
+            "exampleTranslation": "February often has snow.",
+            "emoji": "❄️"
+        },
+        {
+            "word": "der März",
+            "translation": "March",
+            "example": "Im März beginnt das warme Wetter.",
+            "exampleTranslation": "In March the warm weather begins.",
+            "emoji": "🌱"
+        },
+        {
+            "word": "der April",
+            "translation": "April",
+            "example": "Das Wetter im April ist wechselhaft.",
+            "exampleTranslation": "The weather in April is changeable.",
+            "emoji": "🌦️"
+        },
+        {
+            "word": "der Mai",
+            "translation": "May",
+            "example": "Im Mai blühen die Blumen.",
+            "exampleTranslation": "In May the flowers bloom.",
+            "emoji": "🌸"
+        },
+        {
+            "word": "das Jahr",
+            "translation": "Year",
+            "example": "Das Jahr hat zwölf Monate.",
+            "exampleTranslation": "The year has twelve months.",
+            "emoji": "📅"
+        },
+        {
+            "word": "der Monat",
+            "translation": "Month",
+            "example": "Welcher Monat ist jetzt?",
+            "exampleTranslation": "Which month is it now?",
+            "emoji": "📅"
+        },
+        {
+            "word": "die Woche",
+            "translation": "Week",
+            "example": "Die Woche hat sieben Tage.",
+            "exampleTranslation": "The week has seven days.",
+            "emoji": "🗓️"
+        },
+        {
+            "word": "der Tag",
+            "translation": "Day",
+            "example": "Heute ist ein schöner Tag.",
+            "exampleTranslation": "Today is a beautiful day.",
+            "emoji": "☀️"
+        },
+        {
+            "word": "das Datum",
+            "translation": "Date",
+            "example": "Wie ist das Datum heute?",
+            "exampleTranslation": "What is the date today?",
+            "emoji": "📅"
+        },
+        {
+            "word": "Juni",
+            "translation": "June",
+            "example": "Der Sommer beginnt im Juni.",
+            "exampleTranslation": "Summer begins in June.",
+            "emoji": "📅"
+        },
+        {
+            "word": "Juli",
+            "translation": "July",
+            "example": "Im Juli fahren wir in den Urlaub.",
+            "exampleTranslation": "In July we go on vacation.",
+            "emoji": "🏖️"
+        },
+        {
+            "word": "Dezember",
+            "translation": "December",
+            "example": "Weihnachten ist im Dezember.",
+            "exampleTranslation": "Christmas is in December.",
+            "emoji": "🎄"
+        }
     ],
-    zahlen: [
-        { word: "null", translation: "zero", example: "Die Nummer lautet null.", exampleTranslation: "The number is zero.", emoji: "🔢" },
-        { word: "eins", translation: "one", example: "Eins plus eins ist zwei.", exampleTranslation: "One plus one is two.", emoji: "🔢" },
-        { word: "zwei", translation: "two", example: "Wir haben zwei Katzen.", exampleTranslation: "We have two cats.", emoji: "🔢" },
-        { word: "drei", translation: "three", example: "Drei Personen kommen heute.", exampleTranslation: "Three people are coming today.", emoji: "🔢" },
-        { word: "vier", translation: "four", example: "Das Auto hat vier Räder.", exampleTranslation: "The car has four wheels.", emoji: "🔢" },
-        { word: "fünf", translation: "five", example: "Die Hand hat fünf Finger.", exampleTranslation: "The hand has five fingers.", emoji: "🔢" },
-        { word: "sechs", translation: "six", example: "Wir treffen uns um sechs Uhr.", exampleTranslation: "We meet at six o'clock.", emoji: "🔢" },
-        { word: "sieben", translation: "seven", example: "Die Woche hat sieben Tage.", exampleTranslation: "The week has seven days.", emoji: "🔢" },
-        { word: "acht", translation: "eight", example: "Acht Euro kostet das Ticket.", exampleTranslation: "The ticket costs eight Euros.", emoji: "🔢" },
-        { word: "neun", translation: "nine", example: "Es ist jetzt neun Uhr.", exampleTranslation: "It is nine o'clock now.", emoji: "🔢" },
-        { word: "zehn", translation: "ten", example: "Zehn Leute sind im Kurs.", exampleTranslation: "Ten people are in the class.", emoji: "🔢" },
-        { word: "hundert", translation: "one hundred", example: "Das Buch hat hundert Seiten.", exampleTranslation: "The book has one hundred pages.", emoji: "🔢" }
+    "zahlen": [
+        {
+            "word": "null",
+            "translation": "zero",
+            "example": "Das Zimmer hat die Nummer null.",
+            "exampleTranslation": "The room has the number zero.",
+            "emoji": "0️⃣"
+        },
+        {
+            "word": "eins",
+            "translation": "one",
+            "example": "Ein Kilo Tomaten, bitte.",
+            "exampleTranslation": "One kilo of tomatoes, please.",
+            "emoji": "1️⃣"
+        },
+        {
+            "word": "zwei",
+            "translation": "two",
+            "example": "Ich nehme zwei Bananen.",
+            "exampleTranslation": "I'll take two bananas.",
+            "emoji": "2️⃣"
+        },
+        {
+            "word": "drei",
+            "translation": "three",
+            "example": "Wir haben drei Kinder.",
+            "exampleTranslation": "We have three children.",
+            "emoji": "3️⃣"
+        },
+        {
+            "word": "vier",
+            "translation": "four",
+            "example": "Der Tisch hat vier Beine.",
+            "exampleTranslation": "The table has four legs.",
+            "emoji": "4️⃣"
+        },
+        {
+            "word": "fünf",
+            "translation": "five",
+            "example": "Er kommt in fünf Minuten.",
+            "exampleTranslation": "He comes in five minutes.",
+            "emoji": "5️⃣"
+        },
+        {
+            "word": "sechs",
+            "translation": "six",
+            "example": "Das macht genau sechs Euro.",
+            "exampleTranslation": "That makes exactly six euros.",
+            "emoji": "6️⃣"
+        },
+        {
+            "word": "sieben",
+            "translation": "seven",
+            "example": "Die Woche hat sieben Tage.",
+            "exampleTranslation": "The week has seven days.",
+            "emoji": "7️⃣"
+        },
+        {
+            "word": "acht",
+            "translation": "eight",
+            "example": "Lucas ist acht Jahre alt.",
+            "exampleTranslation": "Lucas is eight years old.",
+            "emoji": "8️⃣"
+        },
+        {
+            "word": "neun",
+            "translation": "nine",
+            "example": "Es kostet neun Euro.",
+            "exampleTranslation": "It costs nine euros.",
+            "emoji": "9️⃣"
+        },
+        {
+            "word": "zehn",
+            "translation": "ten",
+            "example": "Ich habe zehn Finger.",
+            "exampleTranslation": "I have ten fingers.",
+            "emoji": "🔟"
+        },
+        {
+            "word": "hundert",
+            "translation": "hundred",
+            "example": "Das Buch kostet hundert Euro.",
+            "exampleTranslation": "The book costs a hundred euros.",
+            "emoji": "💯"
+        },
+        {
+            "word": "elf",
+            "translation": "eleven",
+            "example": "Er hat elf Euro in der Tasche.",
+            "exampleTranslation": "He has eleven euros in his pocket.",
+            "emoji": "🔢"
+        },
+        {
+            "word": "zwölf",
+            "translation": "twelve",
+            "example": "Das Jahr hat zwölf Monate.",
+            "exampleTranslation": "The year has twelve months.",
+            "emoji": "🔢"
+        },
+        {
+            "word": "dreizehn",
+            "translation": "thirteen",
+            "example": "Mein Sohn ist dreizehn Jahre alt.",
+            "exampleTranslation": "My son is thirteen years old.",
+            "emoji": "🔢"
+        },
+        {
+            "word": "zwanzig",
+            "translation": "twenty",
+            "example": "Das Ticket kostet zwanzig Euro.",
+            "exampleTranslation": "The ticket costs twenty euros.",
+            "emoji": "🔢"
+        },
+        {
+            "word": "dreißig",
+            "translation": "thirty",
+            "example": "Der Kurs hat dreißig Schüler.",
+            "exampleTranslation": "The course has thirty students.",
+            "emoji": "🔢"
+        },
+        {
+            "word": "fünfzig",
+            "translation": "fifty",
+            "example": "Das Buch kostet fünfzig Euro.",
+            "exampleTranslation": "The book costs fifty euros.",
+            "emoji": "🔢"
+        },
+        {
+            "word": "tausend",
+            "translation": "thousand",
+            "example": "Ein Kilo hat tausend Gramm.",
+            "exampleTranslation": "One kilo has a thousand grams.",
+            "emoji": "🔢"
+        },
+        {
+            "word": "die Nummer",
+            "translation": "Number",
+            "example": "Wie ist Ihre Zimmernummer?",
+            "exampleTranslation": "What is your room number.",
+            "emoji": "🔢"
+        }
     ],
-    uhrzeit: [
-        { word: "die Uhrzeit", translation: "Time of day", example: "Wie ist die Uhrzeit?", exampleTranslation: "What is the time?", emoji: "⏰" },
-        { word: "die Stunde", translation: "Hour", example: "Eine Stunde hat sechzig Minuten.", exampleTranslation: "An hour has sixty minutes.", emoji: "⏱️" },
-        { word: "die Minute", translation: "Minute", example: "Warten Sie bitte eine Minute.", exampleTranslation: "Please wait a minute.", emoji: "⏱️" },
-        { word: "die Sekunde", translation: "Second", example: "Jede Sekunde zählt im Notfall.", exampleTranslation: "Every second counts in an emergency.", emoji: "⏱️" },
-        { word: "der Termin", translation: "Appointment", example: "Ich habe einen Termin beim Arzt.", exampleTranslation: "I have an appointment with the doctor.", emoji: "📅" },
-        { word: "spät", translation: "late", example: "Es ist schon sehr spät.", exampleTranslation: "It is already very late.", emoji: "🌙" },
-        { word: "früh", translation: "early", example: "Morgens stehe ich früh auf.", exampleTranslation: "In the morning I get up early.", emoji: "🌅" },
-        { word: "die Uhr", translation: "Clock/o'clock", example: "Die Uhr zeigt zwei Uhr.", exampleTranslation: "The clock shows two o'clock.", emoji: "🕒" },
-        { word: "heute", translation: "today", example: "Heute lerne ich Deutsch.", exampleTranslation: "Today I learn German.", emoji: "📅" },
-        { word: "morgen", translation: "tomorrow", example: "Morgen besuche ich meine Eltern.", exampleTranslation: "Tomorrow I will visit my parents.", emoji: "📅" },
-        { word: "gestern", translation: "yesterday", example: "Gestern war ich im Kino.", exampleTranslation: "Yesterday I was at the cinema.", emoji: "📅" },
-        { word: "die Freizeit", translation: "Free time", example: "In der Freizeit spiele ich Tennis.", exampleTranslation: "In my free time I play tennis.", emoji: "⚽" }
+    "uhrzeit": [
+        {
+            "word": "die Uhrzeit",
+            "translation": "Time of day",
+            "example": "Wie ist die Uhrzeit?",
+            "exampleTranslation": "What is the time of day?",
+            "emoji": "⌚"
+        },
+        {
+            "word": "die Stunde",
+            "translation": "Hour",
+            "example": "Der Flug dauert eine Stunde.",
+            "exampleTranslation": "The flight takes one hour.",
+            "emoji": "⏳"
+        },
+        {
+            "word": "die Minute",
+            "translation": "Minute",
+            "example": "Warten Sie eine Minute, bitte.",
+            "exampleTranslation": "Wait one minute, please.",
+            "emoji": "⏱️"
+        },
+        {
+            "word": "die Sekunde",
+            "translation": "Second",
+            "example": "Er läuft die Strecke in zehn Sekunden.",
+            "exampleTranslation": "He runs the distance in ten seconds.",
+            "emoji": "⏱️"
+        },
+        {
+            "word": "der Termin",
+            "translation": "Appointment",
+            "example": "Morgen habe ich einen Termin.",
+            "exampleTranslation": "Tomorrow I have an appointment.",
+            "emoji": "📅"
+        },
+        {
+            "word": "spät",
+            "translation": "late",
+            "example": "Es ist schon sehr spät.",
+            "exampleTranslation": "It is already very late.",
+            "emoji": "🌙"
+        },
+        {
+            "word": "früh",
+            "translation": "early",
+            "example": "Ich stehe früh am Morgen auf.",
+            "exampleTranslation": "I get up early in the morning.",
+            "emoji": "🌅"
+        },
+        {
+            "word": "die Uhr",
+            "translation": "Clock / O'clock",
+            "example": "Es ist zwei Uhr am Nachmittag.",
+            "exampleTranslation": "It is two o'clock in the afternoon.",
+            "emoji": "⏰"
+        },
+        {
+            "word": "heute",
+            "translation": "today",
+            "example": "Heute ist das Wetter schön.",
+            "exampleTranslation": "Today the weather is beautiful.",
+            "emoji": "📅"
+        },
+        {
+            "word": "morgen",
+            "translation": "tomorrow",
+            "example": "Morgen lerne ich Deutsch.",
+            "exampleTranslation": "Tomorrow I learn German.",
+            "emoji": "📅"
+        },
+        {
+            "word": "gestern",
+            "translation": "yesterday",
+            "example": "Gestern war ich im Kino.",
+            "exampleTranslation": "Yesterday I was at the cinema.",
+            "emoji": "📅"
+        },
+        {
+            "word": "die Freizeit",
+            "translation": "Free time",
+            "example": "Was machen Sie in Ihrer Freizeit?",
+            "exampleTranslation": "What do you do in your free time?",
+            "emoji": "🎮"
+        },
+        {
+            "word": "halb",
+            "translation": "half (time)",
+            "example": "Es ist halb drei (2:30).",
+            "exampleTranslation": "It is half past two.",
+            "emoji": "⏰"
+        },
+        {
+            "word": "das Viertel",
+            "translation": "quarter (time)",
+            "example": "Es ist Viertel nach vier (4:15).",
+            "exampleTranslation": "It is a quarter past four.",
+            "emoji": "⏰"
+        },
+        {
+            "word": "der Nachmittag",
+            "translation": "Afternoon",
+            "example": "Am Nachmittag spiele ich Fußball.",
+            "exampleTranslation": "In the afternoon I play football.",
+            "emoji": "☀️"
+        },
+        {
+            "word": "der Abend",
+            "translation": "Evening",
+            "example": "Am Abend lerne ich Deutsch.",
+            "exampleTranslation": "In the evening I learn German.",
+            "emoji": "🌙"
+        },
+        {
+            "word": "die Nacht",
+            "translation": "Night",
+            "example": "In der Nacht schlafen alle.",
+            "exampleTranslation": "In the night everyone sleeps.",
+            "emoji": "🌌"
+        },
+        {
+            "word": "pünktlich",
+            "translation": "punctual",
+            "example": "Bitte seien Sie pünktlich.",
+            "exampleTranslation": "Please be punctual.",
+            "emoji": "⏱️"
+        },
+        {
+            "word": "täglich",
+            "translation": "daily",
+            "example": "Ich lerne täglich neue Wörter.",
+            "exampleTranslation": "I learn new words daily.",
+            "emoji": "🗓️"
+        },
+        {
+            "word": "die Verspätung",
+            "translation": "Delay",
+            "example": "Der Zug hat heute eine Verspätung.",
+            "exampleTranslation": "The train has a delay today.",
+            "emoji": "⏱️"
+        }
     ],
-    wetter: [
-        { word: "das Wetter", translation: "Weather", example: "Wie ist das Wetter heute?", exampleTranslation: "How is the weather today?", emoji: "☀️" },
-        { word: "die Sonne", translation: "Sun", example: "Die Sonne scheint heute warm.", exampleTranslation: "The sun is shining warm today.", emoji: "☀️" },
-        { word: "der Regen", translation: "Rain", example: "Der Regen fällt vom Himmel.", exampleTranslation: "The rain is falling from the sky.", emoji: "🌧️" },
-        { word: "der Schnee", translation: "Snow", example: "Im Winter liegt weißer Schnee.", exampleTranslation: "In winter, white snow lies around.", emoji: "❄️" },
-        { word: "der Wind", translation: "Wind", example: "Der Wind bläst heute stark.", exampleTranslation: "The wind is blowing strongly today.", emoji: "💨" },
-        { word: "kalt", translation: "cold", example: "Mir ist heute sehr kalt.", exampleTranslation: "I am very cold today.", emoji: "🥶" },
-        { word: "warm", translation: "warm", example: "Das Wetter ist heute warm.", exampleTranslation: "The weather is warm today.", emoji: "☀️" },
-        { word: "heiß", translation: "hot", example: "Der Tee ist noch zu heiß.", exampleTranslation: "The tea is still too hot.", emoji: "🥵" },
-        { word: "die Wolke", translation: "Cloud", example: "Am Himmel steht eine Wolke.", exampleTranslation: "There is a cloud in the sky.", emoji: "☁️" },
-        { word: "der Frühling", translation: "Spring", example: "Im Frühling blühen die Blumen.", exampleTranslation: "Flowers bloom in spring.", emoji: "🌸" },
-        { word: "der Sommer", translation: "Summer", example: "Der Sommer ist die wärmste Zeit.", exampleTranslation: "Summer is the warmest time.", emoji: "🏖️" },
-        { word: "der Herbst", translation: "Autumn", example: "Die Blätter fallen im Herbst.", exampleTranslation: "The leaves fall in autumn.", emoji: "🍂" }
+    "wetter": [
+        {
+            "word": "das Wetter",
+            "translation": "Weather",
+            "example": "Das Wetter ist heute warm.",
+            "exampleTranslation": "The weather is warm today.",
+            "emoji": "🌈"
+        },
+        {
+            "word": "die Sonne",
+            "translation": "Sun",
+            "example": "Die Sonne scheint hell.",
+            "exampleTranslation": "The sun shines brightly.",
+            "emoji": "☀️"
+        },
+        {
+            "word": "der Regen",
+            "translation": "Rain",
+            "example": "Der Regen ist gut für die Natur.",
+            "exampleTranslation": "The rain is good for nature.",
+            "emoji": "🌧️"
+        },
+        {
+            "word": "der Schnee",
+            "translation": "Snow",
+            "example": "Der Schnee liegt auf der Straße.",
+            "exampleTranslation": "The snow lies on the street.",
+            "emoji": "❄️"
+        },
+        {
+            "word": "der Wind",
+            "translation": "Wind",
+            "example": "Der Wind bläst stark.",
+            "exampleTranslation": "The wind blows strongly.",
+            "emoji": "💨"
+        },
+        {
+            "word": "kalt",
+            "translation": "cold",
+            "example": "Im Winter ist es kalt.",
+            "exampleTranslation": "In winter it is cold.",
+            "emoji": "❄️"
+        },
+        {
+            "word": "warm",
+            "translation": "warm",
+            "example": "Im Frühling wird es warm.",
+            "exampleTranslation": "In spring it becomes warm.",
+            "emoji": "☀️"
+        },
+        {
+            "word": "heiß",
+            "translation": "hot",
+            "example": "Der Sommer ist oft heiß.",
+            "exampleTranslation": "The summer is often hot.",
+            "emoji": "🔥"
+        },
+        {
+            "word": "die Wolke",
+            "translation": "Cloud",
+            "example": "Am Himmel steht eine weiße Wolke.",
+            "exampleTranslation": "In the sky stands a white cloud.",
+            "emoji": "☁️"
+        },
+        {
+            "word": "der Frühling",
+            "translation": "Spring (season)",
+            "example": "Der Frühling bringt viele Blumen.",
+            "exampleTranslation": "Spring brings many flowers.",
+            "emoji": "🌱"
+        },
+        {
+            "word": "der Sommer",
+            "translation": "Summer",
+            "example": "Der Sommer ist sonnig und heiß.",
+            "exampleTranslation": "Summer is sunny and hot.",
+            "emoji": "🏖️"
+        },
+        {
+            "word": "der Herbst",
+            "translation": "Autumn",
+            "example": "Im Herbst fallen die Blätter.",
+            "exampleTranslation": "In autumn the leaves fall.",
+            "emoji": "🍁"
+        },
+        {
+            "word": "windig",
+            "translation": "windy",
+            "example": "Heute ist es sehr windig draußen.",
+            "exampleTranslation": "Today it is very windy outside.",
+            "emoji": "💨"
+        },
+        {
+            "word": "regnen",
+            "translation": "to rain",
+            "example": "Es regnet den ganzen Tag.",
+            "exampleTranslation": "It rains all day.",
+            "emoji": "🌧️"
+        },
+        {
+            "word": "die Kälte",
+            "translation": "Coldness",
+            "example": "Ich mag die Kälte nicht.",
+            "exampleTranslation": "I do not like the cold.",
+            "emoji": "❄️"
+        },
+        {
+            "word": "die Hitze",
+            "translation": "Heat",
+            "example": "Die Hitze im Sommer ist groß.",
+            "exampleTranslation": "The heat in summer is high.",
+            "emoji": "🌡️"
+        },
+        {
+            "word": "schneien",
+            "translation": "to snow",
+            "example": "Im Winter schneit es oft.",
+            "exampleTranslation": "In winter it snows often.",
+            "emoji": "❄️"
+        },
+        {
+            "word": "bewölkt",
+            "translation": "cloudy",
+            "example": "Der Himmel ist heute bewölkt.",
+            "exampleTranslation": "The sky is cloudy today.",
+            "emoji": "☁️"
+        },
+        {
+            "word": "trocken",
+            "translation": "dry",
+            "example": "Das Wetter ist warm und trocken.",
+            "exampleTranslation": "The weather is warm and dry.",
+            "emoji": "☀️"
+        },
+        {
+            "word": "nass",
+            "translation": "wet",
+            "example": "Die Straße ist nass vom Regen.",
+            "exampleTranslation": "The street is wet from the rain.",
+            "emoji": "💦"
+        }
     ],
-    wohnung: [
-        { word: "das Haus", translation: "House", example: "Wir wohnen in einem Haus.", exampleTranslation: "We live in a house.", emoji: "🏠" },
-        { word: "die Wohnung", translation: "Apartment", example: "Ich suche eine kleine Wohnung.", exampleTranslation: "I am looking for a small apartment.", emoji: "🏢" },
-        { word: "das Zimmer", translation: "Room", example: "Mein Zimmer hat einen Balkon.", exampleTranslation: "My room has a balcony.", emoji: "🚪" },
-        { word: "die Küche", translation: "Kitchen", example: "In der Küche koche ich Kaffee.", exampleTranslation: "In the kitchen I brew coffee.", emoji: "🍳" },
-        { word: "das Bad", translation: "Bathroom", example: "Das Bad ist frisch renoviert.", exampleTranslation: "The bathroom is freshly renovated.", emoji: "🚿" },
-        { word: "das Bett", translation: "Bed", example: "Das Bett ist sehr bequem.", exampleTranslation: "The bed is very comfortable.", emoji: "🛏️" },
-        { word: "der Tisch", translation: "Table", example: "Das Essen steht auf dem Tisch.", exampleTranslation: "The food is on the table.", emoji: "🪑" },
-        { word: "der Stuhl", translation: "Chair", example: "Setzen Sie sich auf den Stuhl.", exampleTranslation: "Please sit down on the chair.", emoji: "🪑" },
-        { word: "der Schrank", translation: "Wardrobe/Cabinet", example: "Die Kleider hängen im Schrank.", exampleTranslation: "The clothes hang in the wardrobe.", emoji: "🚪" },
-        { word: "die Tür", translation: "Door", example: "Bitte schließen Sie die Tür.", exampleTranslation: "Please close the door.", emoji: "🚪" },
-        { word: "das Fenster", translation: "Window", example: "Öffnen Sie bitte das Fenster.", exampleTranslation: "Please open the window.", emoji: "🪟" },
-        { word: "die Miete", translation: "Rent", example: "Die Miete ist sehr teuer.", exampleTranslation: "The rent is very expensive.", emoji: "💵" }
+    "wohnung": [
+        {
+            "word": "das Haus",
+            "translation": "House",
+            "example": "Das Haus hat zwei Etagen.",
+            "exampleTranslation": "The house has two floors.",
+            "emoji": "🏠"
+        },
+        {
+            "word": "die Wohnung",
+            "translation": "Apartment",
+            "example": "Meine Wohnung liegt im Zentrum.",
+            "exampleTranslation": "My apartment lies in the center.",
+            "emoji": "🏢"
+        },
+        {
+            "word": "das Zimmer",
+            "translation": "Room",
+            "example": "Das Zimmer ist klein und gemütlich.",
+            "exampleTranslation": "The room is small and cozy.",
+            "emoji": "🚪"
+        },
+        {
+            "word": "die Küche",
+            "translation": "Kitchen",
+            "example": "Meine Mutter kocht in der Küche.",
+            "exampleTranslation": "My mother cooks in the kitchen.",
+            "emoji": "🍳"
+        },
+        {
+            "word": "das Bad",
+            "translation": "Bathroom",
+            "example": "Ich putze mir im Bad die Zähne.",
+            "exampleTranslation": "I brush my teeth in the bathroom.",
+            "emoji": "🛁"
+        },
+        {
+            "word": "das Bett",
+            "translation": "Bed",
+            "example": "Das Bett ist weich und warm.",
+            "exampleTranslation": "The bed is soft and warm.",
+            "emoji": "🛏️"
+        },
+        {
+            "word": "der Tisch",
+            "translation": "Table",
+            "example": "Der Tisch steht in der Küche.",
+            "exampleTranslation": "The table stands in the kitchen.",
+            "emoji": "🪑"
+        },
+        {
+            "word": "der Stuhl",
+            "translation": "Chair",
+            "example": "Bitte setzen Sie sich auf den Stuhl.",
+            "exampleTranslation": "Please sit down on the chair.",
+            "emoji": "🪑"
+        },
+        {
+            "word": "der Schrank",
+            "translation": "Wardrobe / Cupboard",
+            "example": "Meine Kleidung hängt im Schrank.",
+            "exampleTranslation": "My clothes hang in the wardrobe.",
+            "emoji": "🚪"
+        },
+        {
+            "word": "die Tür",
+            "translation": "Door",
+            "example": "Schließen Sie die Tür, bitte.",
+            "exampleTranslation": "Close the door, please.",
+            "emoji": "🚪"
+        },
+        {
+            "word": "das Fenster",
+            "translation": "Window",
+            "example": "Öffnen Sie das Fenster, bitte.",
+            "exampleTranslation": "Open the window, please.",
+            "emoji": "🪟"
+        },
+        {
+            "word": "die Miete",
+            "translation": "Rent",
+            "example": "Die Miete kostet fünfhundert Euro.",
+            "exampleTranslation": "The rent costs five hundred euros.",
+            "emoji": "💳"
+        },
+        {
+            "word": "der Balkon",
+            "translation": "Balcony",
+            "example": "Die Wohnung hat einen schönen Balkon.",
+            "exampleTranslation": "The apartment has a nice balcony.",
+            "emoji": "🪵"
+        },
+        {
+            "word": "der Garten",
+            "translation": "Garden",
+            "example": "Die Kinder spielen im Garten.",
+            "exampleTranslation": "The children play in the garden.",
+            "emoji": "🏡"
+        },
+        {
+            "word": "das Sofa",
+            "translation": "Sofa",
+            "example": "Die Katze schläft auf dem Sofa.",
+            "exampleTranslation": "The cat sleeps on the sofa.",
+            "emoji": "🛋️"
+        },
+        {
+            "word": "der Flur",
+            "translation": "Hallway",
+            "example": "Der Flur ist lang und dunkel.",
+            "exampleTranslation": "The hallway is long and dark.",
+            "emoji": "🚪"
+        },
+        {
+            "word": "die Toilette",
+            "translation": "Toilet",
+            "example": "Wo ist die Toilette, bitte?",
+            "exampleTranslation": "Where is the toilet, please?",
+            "emoji": "🚽"
+        },
+        {
+            "word": "der Schlüssel",
+            "translation": "Key",
+            "example": "Ich kann meinen Schlüssel nicht finden.",
+            "exampleTranslation": "I cannot find my key.",
+            "emoji": "🔑"
+        },
+        {
+            "word": "das Gebäude",
+            "translation": "Building",
+            "example": "Das Gebäude ist sehr alt und groß.",
+            "exampleTranslation": "The building is very old and big.",
+            "emoji": "🏢"
+        },
+        {
+            "word": "der Nachbar",
+            "translation": "Neighbor",
+            "example": "Mein Nachbar ist sehr freundlich.",
+            "exampleTranslation": "My neighbor is very friendly.",
+            "emoji": "👤"
+        }
     ],
-    kleidung: [
-        { word: "das Kleid", translation: "Dress", example: "Das Kleid passt ihr perfekt.", exampleTranslation: "The dress fits her perfectly.", emoji: "👗" },
-        { word: "die Hose", translation: "Trousers/Pants", example: "Ich kaufe eine blaue Hose.", exampleTranslation: "I am buying blue pants.", emoji: "👖" },
-        { word: "das Hemd", translation: "Shirt", example: "Er trägt ein weißes Hemd.", exampleTranslation: "He is wearing a white shirt.", emoji: "👔" },
-        { word: "die Jacke", translation: "Jacket", example: "Die Jacke schützt vor Wind.", exampleTranslation: "The jacket protects from wind.", emoji: "🧥" },
-        { word: "der Schuh", translation: "Shoe", example: "Ich brauche neue Schuhe.", exampleTranslation: "I need new shoes.", emoji: "👟" },
-        { word: "der Rock", translation: "Skirt", example: "Der Rock ist schwarz.", exampleTranslation: "The skirt is black.", emoji: "👗" },
-        { word: "der Mantel", translation: "Coat", example: "Im Winter trage ich einen Mantel.", exampleTranslation: "In winter I wear a coat.", emoji: "🧥" },
-        { word: "das T-Shirt", translation: "T-shirt", example: "Das T-Shirt ist aus Baumwolle.", exampleTranslation: "The T-shirt is made of cotton.", emoji: "👕" },
-        { word: "tragen", translation: "to wear", example: "Sie trägt eine Brille.", exampleTranslation: "She wears glasses.", emoji: "👓" },
-        { word: "die Größe", translation: "Size", example: "Welche Größe haben Sie?", exampleTranslation: "What size do you wear?", emoji: "📏" },
-        { word: "anziehen", translation: "to put on", example: "Er zieht die Jacke an.", exampleTranslation: "He puts on the jacket.", emoji: "🧥" },
-        { word: "ausziehen", translation: "to take off", example: "Bitte ziehen Sie die Schuhe aus.", exampleTranslation: "Please take off your shoes.", emoji: "👟" }
+    "kleidung": [
+        {
+            "word": "das Kleid",
+            "translation": "Dress",
+            "example": "Sie trägt ein rotes Kleid.",
+            "exampleTranslation": "She wears a red dress.",
+            "emoji": "👗"
+        },
+        {
+            "word": "die Hose",
+            "translation": "Pants",
+            "example": "Die Hose ist blau und lang.",
+            "exampleTranslation": "The pants are blue and long.",
+            "emoji": "👖"
+        },
+        {
+            "word": "das Hemd",
+            "translation": "Shirt",
+            "example": "Mein Hemd ist weiß.",
+            "exampleTranslation": "My shirt is white.",
+            "emoji": "👔"
+        },
+        {
+            "word": "die Jacke",
+            "translation": "Jacket",
+            "example": "Die Jacke schützt vor Wind.",
+            "exampleTranslation": "The jacket protects against wind.",
+            "emoji": "🧥"
+        },
+        {
+            "word": "der Schuh",
+            "translation": "Shoe",
+            "example": "Ich kaufe neue Schuhe.",
+            "exampleTranslation": "I buy new shoes.",
+            "emoji": "👞"
+        },
+        {
+            "word": "der Rock",
+            "translation": "Skirt",
+            "example": "Sie trägt einen grünen Rock.",
+            "exampleTranslation": "She wears a green skirt.",
+            "emoji": "👗"
+        },
+        {
+            "word": "der Mantel",
+            "translation": "Coat",
+            "example": "Im Winter brauche ich einen Mantel.",
+            "exampleTranslation": "In winter I need a coat.",
+            "emoji": "🧥"
+        },
+        {
+            "word": "das T-Shirt",
+            "translation": "T-Shirt",
+            "example": "Er trägt ein gelbes T-Shirt.",
+            "exampleTranslation": "He wears a yellow T-shirt.",
+            "emoji": "👕"
+        },
+        {
+            "word": "tragen",
+            "translation": "to wear",
+            "example": "Ich trage eine Brille.",
+            "exampleTranslation": "I wear glasses.",
+            "emoji": "👓"
+        },
+        {
+            "word": "die Größe",
+            "translation": "Size",
+            "example": "Welche Größe haben Sie?",
+            "exampleTranslation": "What size do you have?",
+            "emoji": "📏"
+        },
+        {
+            "word": "anziehen",
+            "translation": "to put on",
+            "example": "Ich ziehe meine Schuhe an.",
+            "exampleTranslation": "I put on my shoes.",
+            "emoji": "👟"
+        },
+        {
+            "word": "ausziehen",
+            "translation": "to take off",
+            "example": "Ziehen Sie den Mantel aus.",
+            "exampleTranslation": "Take off the coat.",
+            "emoji": "🧥"
+        },
+        {
+            "word": "die Socke",
+            "translation": "Sock",
+            "example": "Ich brauche neue Socken.",
+            "exampleTranslation": "I need new socks.",
+            "emoji": "🧦"
+        },
+        {
+            "word": "die Mütze",
+            "translation": "Cap",
+            "example": "Im Winter trage ich eine Mütze.",
+            "exampleTranslation": "In winter I wear a cap.",
+            "emoji": " Cap"
+        },
+        {
+            "word": "der Hut",
+            "translation": "Hat",
+            "example": "Er trägt einen großen Hut.",
+            "exampleTranslation": "He wears a big hat.",
+            "emoji": "🎩"
+        },
+        {
+            "word": "der Pullover",
+            "translation": "Sweater",
+            "example": "Der Pullover hält mich warm.",
+            "exampleTranslation": "The sweater keeps me warm.",
+            "emoji": "🧶"
+        },
+        {
+            "word": "der Gürtel",
+            "translation": "Belt",
+            "example": "Mein Gürtel ist zu kurz.",
+            "exampleTranslation": "My belt is too short.",
+            "emoji": "ベルト"
+        },
+        {
+            "word": "die Handschuhe",
+            "translation": "Gloves",
+            "example": "Ich trage Handschuhe im Schnee.",
+            "exampleTranslation": "I wear gloves in the snow.",
+            "emoji": "🧤"
+        },
+        {
+            "word": "waschen",
+            "translation": "to wash",
+            "example": "Ich muss meine Kleidung waschen.",
+            "exampleTranslation": "I must wash my clothes.",
+            "emoji": "🧺"
+        },
+        {
+            "word": "schmutzig",
+            "translation": "dirty",
+            "example": "Meine Hose ist schmutzig.",
+            "exampleTranslation": "My pants are dirty.",
+            "emoji": "🧺"
+        }
     ],
-    essen: [
-        { word: "das Brot", translation: "Bread", example: "Er isst ein Brot mit Butter.", exampleTranslation: "He is eating bread with butter.", emoji: "🍞" },
-        { word: "das Wasser", translation: "Water", example: "Ich trinke ein Glas Wasser.", exampleTranslation: "I drink a glass of water.", emoji: "🥛" },
-        { word: "das Obst", translation: "Fruit", example: "Obst ist gut für die Gesundheit.", exampleTranslation: "Fruit is good for health.", emoji: "🍎" },
-        { word: "das Gemüse", translation: "Vegetables", example: "Wir kaufen frisches Gemüse.", exampleTranslation: "We buy fresh vegetables.", emoji: "🥦" },
-        { word: "der Apfel", translation: "Apple", example: "Der Apfel schmeckt süß.", exampleTranslation: "The apple tastes sweet.", emoji: "🍎" },
-        { word: "die Milch", translation: "Milk", example: "Kinder trinken gerne Milch.", exampleTranslation: "Children like to drink milk.", emoji: "🥛" },
-        { word: "der Käse", translation: "Cheese", example: "Der Käse kommt aus der Schweiz.", exampleTranslation: "The cheese comes from Switzerland.", emoji: "🧀" },
-        { word: "das Fleisch", translation: "Meat", example: "Ich esse kein Fleisch.", exampleTranslation: "I do not eat meat.", emoji: "🥩" },
-        { word: "der Fisch", translation: "Fish", example: "Der Fisch schwimmt im Wasser.", exampleTranslation: "The fish swims in the water.", emoji: "🐟" },
-        { word: "essen", translation: "to eat", example: "Wir essen gerne Pizza.", exampleTranslation: "We like to eat pizza.", emoji: "🍽️" },
-        { word: "trinken", translation: "to drink", example: "Ich trinke morgens Kaffee.", exampleTranslation: "I drink coffee in the morning.", emoji: "☕" },
-        { word: "das Restaurant", translation: "Restaurant", example: "Das Restaurant ist sehr gemütlich.", exampleTranslation: "The restaurant is very cozy.", emoji: "🍽️" }
+    "essen": [
+        {
+            "word": "das Brot",
+            "translation": "Bread",
+            "example": "Ich esse Brot zum Frühstück.",
+            "exampleTranslation": "I eat bread for breakfast.",
+            "emoji": "🍞"
+        },
+        {
+            "word": "das Wasser",
+            "translation": "Water",
+            "example": "Ich trinke ein Glas Wasser.",
+            "exampleTranslation": "I drink a glass of water.",
+            "emoji": "🥛"
+        },
+        {
+            "word": "das Obst",
+            "translation": "Fruit",
+            "example": "Obst ist sehr gesund.",
+            "exampleTranslation": "Fruit is very healthy.",
+            "emoji": "🍎"
+        },
+        {
+            "word": "das Gemüse",
+            "translation": "Vegetables",
+            "example": "Wir kaufen frisches Gemüse.",
+            "exampleTranslation": "We buy fresh vegetables.",
+            "emoji": "🥕"
+        },
+        {
+            "word": "der Apfel",
+            "translation": "Apple",
+            "example": "Ich esse einen roten Apfel.",
+            "exampleTranslation": "I eat a red apple.",
+            "emoji": "🍎"
+        },
+        {
+            "word": "die Milch",
+            "translation": "Milk",
+            "example": "Ich trinke Kaffee mit Milch.",
+            "exampleTranslation": "I drink coffee with milk.",
+            "emoji": "🥛"
+        },
+        {
+            "word": "der Käse",
+            "translation": "Cheese",
+            "example": "Das Brot schmeckt gut mit Käse.",
+            "exampleTranslation": "The bread tastes good with cheese.",
+            "emoji": "🧀"
+        },
+        {
+            "word": "das Fleisch",
+            "translation": "Meat",
+            "example": "Er isst kein Fleisch.",
+            "exampleTranslation": "He eats no meat.",
+            "emoji": "🥩"
+        },
+        {
+            "word": "der Fisch",
+            "translation": "Fish",
+            "example": "Der Fisch schwimmt im Wasser.",
+            "exampleTranslation": "The fish swims in the water.",
+            "emoji": "🐟"
+        },
+        {
+            "word": "essen",
+            "translation": "to eat",
+            "example": "Wir essen heute Pizza.",
+            "exampleTranslation": "We eat pizza today.",
+            "emoji": "🍕"
+        },
+        {
+            "word": "trinken",
+            "translation": "to drink",
+            "example": "Ich trinke gerne Tee.",
+            "exampleTranslation": "I like to drink tea.",
+            "emoji": "☕"
+        },
+        {
+            "word": "das Restaurant",
+            "translation": "Restaurant",
+            "example": "Das Essen im Restaurant schmeckt lecker.",
+            "exampleTranslation": "The food in the restaurant tastes delicious.",
+            "emoji": "🍴"
+        },
+        {
+            "word": "der Salat",
+            "translation": "Salad",
+            "example": "Ich esse einen frischen Salat.",
+            "exampleTranslation": "I eat a fresh salad.",
+            "emoji": "🥗"
+        },
+        {
+            "word": "die Suppe",
+            "translation": "Soup",
+            "example": "Die Suppe schmeckt sehr gut.",
+            "exampleTranslation": "The soup tastes very good.",
+            "emoji": "🥣"
+        },
+        {
+            "word": "das Hähnchen",
+            "translation": "Chicken (food)",
+            "example": "Heute gibt es Hähnchen mit Reis.",
+            "exampleTranslation": "Today there is chicken with rice.",
+            "emoji": "🍗"
+        },
+        {
+            "word": "der Reis",
+            "translation": "Rice",
+            "example": "Er isst Reis zum Mittagessen.",
+            "exampleTranslation": "He eats rice for lunch.",
+            "emoji": "🍚"
+        },
+        {
+            "word": "die Kartoffel",
+            "translation": "Potato",
+            "example": "Die Kartoffeln sind heiß.",
+            "exampleTranslation": "The potatoes are hot.",
+            "emoji": "🥔"
+        },
+        {
+            "word": "das Salz",
+            "translation": "Salt",
+            "example": "Geben Sie mir bitte das Salz.",
+            "exampleTranslation": "Please give me the salt.",
+            "emoji": "🧂"
+        },
+        {
+            "word": "der Zucker",
+            "translation": "Sugar",
+            "example": "Trinken Sie Kaffee mit Zucker?",
+            "exampleTranslation": "Do you drink coffee with sugar?",
+            "emoji": "🍬"
+        },
+        {
+            "word": "lecker",
+            "translation": "delicious",
+            "example": "Der Kuchen ist sehr lecker.",
+            "exampleTranslation": "The cake is very delicious.",
+            "emoji": "😋"
+        }
     ],
-    einkaufen: [
-        { word: "kaufen", translation: "to buy", example: "Ich kaufe ein neues Handy.", exampleTranslation: "I am buying a new phone.", emoji: "🛍️" },
-        { word: "bezahlen", translation: "to pay", example: "Wir bezahlen an der Kasse.", exampleTranslation: "We pay at the cash desk.", emoji: "💳" },
-        { word: "das Geld", translation: "Money", example: "Er hat nicht genug Geld.", exampleTranslation: "He does not have enough money.", emoji: "💰" },
-        { word: "teuer", translation: "expensive", example: "Das Buch ist sehr teuer.", exampleTranslation: "The book is very expensive.", emoji: "💵" },
-        { word: "billig", translation: "cheap", example: "Die Äpfel sind heute billig.", exampleTranslation: "The apples are cheap today.", emoji: "🏷️" },
-        { word: "das Geschäft", translation: "Shop/Store", example: "Das Geschäft schließt um acht Uhr.", exampleTranslation: "The shop closes at eight o'clock.", emoji: "🏪" },
-        { word: "der Preis", translation: "Price", example: "Der Preis ist angemessen.", exampleTranslation: "The price is reasonable.", emoji: "🪙" },
-        { word: "die Kasse", translation: "Cash desk", example: "Bitte zahlen Sie an der Kasse.", exampleTranslation: "Please pay at the cash desk.", emoji: "💰" },
-        { word: "kosten", translation: "to cost", example: "Wie viel kostet dieses Buch?", exampleTranslation: "How much does this book cost?", emoji: "💵" },
-        { word: "verkaufen", translation: "to sell", example: "Sie verkauft ihr altes Auto.", exampleTranslation: "She is selling her old car.", emoji: "🚗" },
-        { word: "die Tasche", translation: "Bag", example: "Ich trage eine Tasche.", exampleTranslation: "I am carrying a bag.", emoji: "👜" },
-        { word: "der Euro", translation: "Euro", example: "Das kostet fünf Euro.", exampleTranslation: "That costs five Euros.", emoji: "💶" }
+    "einkaufen": [
+        {
+            "word": "kaufen",
+            "translation": "to buy",
+            "example": "Ich kaufe heute ein Ticket.",
+            "exampleTranslation": "I buy a ticket today.",
+            "emoji": "🛒"
+        },
+        {
+            "word": "bezahlen",
+            "translation": "to pay",
+            "example": "Ich bezahle an der Kasse.",
+            "exampleTranslation": "I pay at the cash register.",
+            "emoji": "💳"
+        },
+        {
+            "word": "das Geld",
+            "translation": "Money",
+            "example": "Ich habe kein Geld dabei.",
+            "exampleTranslation": "I have no money with me.",
+            "emoji": "💵"
+        },
+        {
+            "word": "teuer",
+            "translation": "expensive",
+            "example": "Das Auto ist zu teuer.",
+            "exampleTranslation": "The car is too expensive.",
+            "emoji": "💰"
+        },
+        {
+            "word": "billig",
+            "translation": "cheap",
+            "example": "Die Äpfel sind billig.",
+            "exampleTranslation": "The apples are cheap.",
+            "emoji": "🏷️"
+        },
+        {
+            "word": "das Geschäft",
+            "translation": "Shop",
+            "example": "Das Geschäft schließt um acht.",
+            "exampleTranslation": "The shop closes at eight.",
+            "emoji": "🏬"
+        },
+        {
+            "word": "der Preis",
+            "translation": "Price",
+            "example": "Der Preis ist sehr gut.",
+            "exampleTranslation": "The price is very good.",
+            "emoji": "🏷️"
+        },
+        {
+            "word": "die Kasse",
+            "translation": "Cash desk / checkout",
+            "example": "Wir zahlen an der Kasse.",
+            "exampleTranslation": "We pay at the checkout.",
+            "emoji": "🏦"
+        },
+        {
+            "word": "kosten",
+            "translation": "to cost",
+            "example": "Wie viel kostet das?",
+            "exampleTranslation": "How much does that cost?",
+            "emoji": "❓"
+        },
+        {
+            "word": "verkaufen",
+            "translation": "to sell",
+            "example": "Er verkauft sein Fahrrad.",
+            "exampleTranslation": "He sells his bicycle.",
+            "emoji": "🚲"
+        },
+        {
+            "word": "die Tasche",
+            "translation": "Bag",
+            "example": "Meine Tasche ist schwer.",
+            "exampleTranslation": "My bag is heavy.",
+            "emoji": "👜"
+        },
+        {
+            "word": "der Euro",
+            "translation": "Euro",
+            "example": "Das Buch kostet zehn Euro.",
+            "exampleTranslation": "The book costs ten euros.",
+            "emoji": "💶"
+        },
+        {
+            "word": "das Sonderangebot",
+            "translation": "Special offer",
+            "example": "Die Bananen sind im Sonderangebot.",
+            "exampleTranslation": "The bananas are on special offer.",
+            "emoji": "🏷️"
+        },
+        {
+            "word": "der Prospekt",
+            "translation": "Brochure",
+            "example": "Ich lese den Prospekt vom Supermarkt.",
+            "exampleTranslation": "I read the brochure of the supermarket.",
+            "emoji": "📄"
+        },
+        {
+            "word": "die Tüte",
+            "translation": "Bag",
+            "example": "Brauchen Sie eine Tüte?",
+            "exampleTranslation": "Do you need a bag?",
+            "emoji": "🛍️"
+        },
+        {
+            "word": "die Flasche",
+            "translation": "Bottle",
+            "example": "Eine Flasche Wasser, bitte.",
+            "exampleTranslation": "A bottle of water, please.",
+            "emoji": "🍾"
+        },
+        {
+            "word": "das Kilo",
+            "translation": "Kilogram",
+            "example": "Ich nehme ein Kilo Tomaten.",
+            "exampleTranslation": "I'll take a kilo of tomatoes.",
+            "emoji": "⚖️"
+        },
+        {
+            "word": "das Gramm",
+            "translation": "Gram",
+            "example": "Geben Sie mir zweihundert Gramm Käse.",
+            "exampleTranslation": "Give me two hundred grams of cheese.",
+            "emoji": "⚖️"
+        },
+        {
+            "word": "der Markt",
+            "translation": "Market",
+            "example": "Wir kaufen frisches Gemüse auf dem Markt.",
+            "exampleTranslation": "We buy fresh vegetables at the market.",
+            "emoji": "🎪"
+        },
+        {
+            "word": "die Quittung",
+            "translation": "Receipt",
+            "example": "Geben Sie mir bitte die Quittung.",
+            "exampleTranslation": "Please give me the receipt.",
+            "emoji": "📄"
+        }
     ],
-    hobbys: [
-        { word: "spielen", translation: "to play", example: "Kinder spielen gerne draußen.", exampleTranslation: "Children like playing outside.", emoji: "🎮" },
-        { word: "das Hobby", translation: "Hobby", example: "Mein Hobby ist Fotografieren.", exampleTranslation: "My hobby is photography.", emoji: "📸" },
-        { word: "schwimmen", translation: "to swim", example: "Im Sommer schwimme ich im See.", exampleTranslation: "In summer I swim in the lake.", emoji: "🏊" },
-        { word: "laufen", translation: "to run", example: "Wir laufen im Wald.", exampleTranslation: "We run in the forest.", emoji: "🏃" },
-        { word: "Fußball", translation: "Football", example: "Er spielt am Wochenende Fußball.", exampleTranslation: "He plays football on the weekend.", emoji: "⚽" },
-        { word: "singen", translation: "to sing", example: "Sie singt ein schönes Lied.", exampleTranslation: "She sings a beautiful song.", emoji: "🎤" },
-        { word: "tanzen", translation: "to dance", example: "Wir tanzen gerne am Abend.", exampleTranslation: "We like dancing in the evening.", emoji: "💃" },
-        { word: "lesen", translation: "to read", example: "Ich lese ein spannendes Buch.", exampleTranslation: "I am reading an exciting book.", emoji: "📚" },
-        { word: "hören", translation: "to hear/listen", example: "Ich höre gerne Musik.", exampleTranslation: "I like listening to music.", emoji: "🎧" },
-        { word: "der Sport", translation: "Sport", example: "Sport hält den Körper fit.", exampleTranslation: "Sport keeps the body fit.", emoji: "⚽" },
-        { word: "das Fahrrad", translation: "Bicycle", example: "Er fährt mit dem Fahrrad.", exampleTranslation: "He rides a bicycle.", emoji: "🚴" },
-        { word: "wandern", translation: "to hike", example: "Wir wandern in den Bergen.", exampleTranslation: "We hike in the mountains.", emoji: "🥾" }
+    "hobbys": [
+        {
+            "word": "spielen",
+            "translation": "to play",
+            "example": "Die Kinder spielen im Garten.",
+            "exampleTranslation": "The children play in the garden.",
+            "emoji": "⚽"
+        },
+        {
+            "word": "das Hobby",
+            "translation": "Hobby",
+            "example": "Was ist dein Hobby?",
+            "exampleTranslation": "What is your hobby?",
+            "emoji": "🎨"
+        },
+        {
+            "word": "schwimmen",
+            "translation": "to swim",
+            "example": "Er schwimmt im See.",
+            "exampleTranslation": "He swims in the lake.",
+            "emoji": "🏊"
+        },
+        {
+            "word": "laufen",
+            "translation": "to run",
+            "example": "Er läuft jeden Morgen im Park.",
+            "exampleTranslation": "He runs every morning in the park.",
+            "emoji": "🏃"
+        },
+        {
+            "word": "Fußball",
+            "translation": "Football",
+            "example": "Mein Bruder spielt Fußball.",
+            "exampleTranslation": "My brother plays football.",
+            "emoji": "⚽"
+        },
+        {
+            "word": "singen",
+            "translation": "to sing",
+            "example": "Sie singt ein schönes Lied.",
+            "exampleTranslation": "She sings a beautiful song.",
+            "emoji": "🎤"
+        },
+        {
+            "word": "tanzen",
+            "translation": "to dance",
+            "example": "Sie tanzen auf der Party.",
+            "exampleTranslation": "They dance at the party.",
+            "emoji": "💃"
+        },
+        {
+            "word": "lesen",
+            "translation": "to read",
+            "example": "Er liest gerne Romane.",
+            "exampleTranslation": "He likes to read novels.",
+            "emoji": "📚"
+        },
+        {
+            "word": "hören",
+            "translation": "to listen/hear",
+            "example": "Ich höre gerne Musik.",
+            "exampleTranslation": "I like to listen to music.",
+            "emoji": "🎧"
+        },
+        {
+            "word": "der Sport",
+            "translation": "Sport",
+            "example": "Sport hält gesund und fit.",
+            "exampleTranslation": "Sport keeps healthy and fit.",
+            "emoji": "🏋️"
+        },
+        {
+            "word": "das Fahrrad",
+            "translation": "Bicycle",
+            "example": "Er fährt mit dem Fahrrad zur Arbeit.",
+            "exampleTranslation": "He rides to work by bicycle.",
+            "emoji": "🚲"
+        },
+        {
+            "word": "wandern",
+            "translation": "to hike",
+            "example": "Wir wandern am Wochenende in den Bergen.",
+            "exampleTranslation": "We hike in the mountains on the weekend.",
+            "emoji": "🥾"
+        },
+        {
+            "word": "die Musik",
+            "translation": "Music",
+            "example": "Sie hört gerne klassische Musik.",
+            "exampleTranslation": "She likes to listen to classical music.",
+            "emoji": "🎵"
+        },
+        {
+            "word": "das Klavier",
+            "translation": "Piano",
+            "example": "Er spielt jeden Tag Klavier.",
+            "exampleTranslation": "He plays piano every day.",
+            "emoji": "🎹"
+        },
+        {
+            "word": "die Gitarre",
+            "translation": "Guitar",
+            "example": "Sie lernt Gitarre spielen.",
+            "exampleTranslation": "She learns to play guitar.",
+            "emoji": "🎸"
+        },
+        {
+            "word": "das Kino",
+            "translation": "Cinema",
+            "example": "Wir gehen am Samstag ins Kino.",
+            "exampleTranslation": "We go to the cinema on Saturday.",
+            "emoji": "🎬"
+        },
+        {
+            "word": "fotografieren",
+            "translation": "to take photos",
+            "example": "Sie fotografiert gerne Blumen.",
+            "exampleTranslation": "She likes to take photos of flowers.",
+            "emoji": "📷"
+        },
+        {
+            "word": "kochen",
+            "translation": "to cook",
+            "example": "Kochen ist mein liebstes Hobby.",
+            "exampleTranslation": "Cooking is my favorite hobby.",
+            "emoji": "🍳"
+        },
+        {
+            "word": "der Film",
+            "translation": "Movie",
+            "example": "Der Film war sehr spannend.",
+            "exampleTranslation": "The movie was very exciting.",
+            "emoji": "🎥"
+        },
+        {
+            "word": "reisen",
+            "translation": "to travel",
+            "example": "Mein Hobby ist reisen.",
+            "exampleTranslation": "My hobby is traveling.",
+            "emoji": "✈️"
+        }
     ],
-    reisen: [
-        { word: "reisen", translation: "to travel", example: "Wir reisen gerne nach Italien.", exampleTranslation: "We like to travel to Italy.", emoji: "✈️" },
-        { word: "der Urlaub", translation: "Vacation/Holiday", example: "Im Sommer mache ich Urlaub.", exampleTranslation: "In summer I take a vacation.", emoji: "🌴" },
-        { word: "der Bahnhof", translation: "Train station", example: "Der Bahnhof ist in der Stadt.", exampleTranslation: "The train station is in the city.", emoji: "🚉" },
-        { word: "das Ticket", translation: "Ticket", example: "Kaufen Sie ein Ticket am Automaten.", exampleTranslation: "Buy a ticket at the machine.", emoji: "🎫" },
-        { word: "der Zug", translation: "Train", example: "Der Zug fährt um neun Uhr ab.", exampleTranslation: "The train departs at nine o'clock.", emoji: "🚆" },
-        { word: "der Bus", translation: "Bus", example: "Der Bus hält an der Station.", exampleTranslation: "The bus stops at the station.", emoji: "🚌" },
-        { word: "das Auto", translation: "Car", example: "Mein Auto steht auf dem Parkplatz.", exampleTranslation: "My car is in the parking lot.", emoji: "🚗" },
-        { word: "das Flugzeug", translation: "Airplane", example: "Das Flugzeug fliegt sehr hoch.", exampleTranslation: "The airplane flies very high.", emoji: "✈️" },
-        { word: "das Hotel", translation: "Hotel", example: "Wir übernachten in einem Hotel.", exampleTranslation: "We stay overnight in a hotel.", emoji: "🏨" },
-        { word: "das Gepäck", translation: "Luggage", example: "Das Gepäck wiegt zwanzig Kilo.", exampleTranslation: "The luggage weighs twenty kilos.", emoji: "🧳" },
-        { word: "abfahren", translation: "to depart", example: "Wann fährt der Zug ab?", exampleTranslation: "When does the train depart?", emoji: "🛫" },
-        { word: "ankommen", translation: "to arrive", example: "Wann kommt der Bus an?", exampleTranslation: "When does the bus arrive?", emoji: "🛬" }
+    "reisen": [
+        {
+            "word": "reisen",
+            "translation": "to travel",
+            "example": "Wir reisen oft nach Spanien.",
+            "exampleTranslation": "We travel to Spain often.",
+            "emoji": "✈️"
+        },
+        {
+            "word": "der Urlaub",
+            "translation": "Vacation",
+            "example": "Im Sommer haben wir Urlaub.",
+            "exampleTranslation": "In the summer we have vacation.",
+            "emoji": "🏖️"
+        },
+        {
+            "word": "der Bahnhof",
+            "translation": "Train station",
+            "example": "Wir treffen uns am Bahnhof.",
+            "exampleTranslation": "We meet at the train station.",
+            "emoji": "🚉"
+        },
+        {
+            "word": "das Ticket",
+            "translation": "Ticket",
+            "example": "Haben Sie Ihr Ticket gekauft?",
+            "exampleTranslation": "Have you bought your ticket?",
+            "emoji": "🎫"
+        },
+        {
+            "word": "der Zug",
+            "translation": "Train",
+            "example": "Der Zug kommt auf Gleis drei an.",
+            "exampleTranslation": "The train arrives on platform three.",
+            "emoji": "🚆"
+        },
+        {
+            "word": "der Bus",
+            "translation": "Bus",
+            "example": "Wir fahren mit dem Bus zum Park.",
+            "exampleTranslation": "We go by bus to the park.",
+            "emoji": "🚌"
+        },
+        {
+            "word": "das Auto",
+            "translation": "Car",
+            "example": "Mein Auto steht vor dem Haus.",
+            "exampleTranslation": "My car is in front of the house.",
+            "emoji": "🚗"
+        },
+        {
+            "word": "das Flugzeug",
+            "translation": "Airplane",
+            "example": "Das Flugzeug fliegt sehr hoch.",
+            "exampleTranslation": "The airplane flies very high.",
+            "emoji": "✈️"
+        },
+        {
+            "word": "das Hotel",
+            "translation": "Hotel",
+            "example": "Wir übernachten im Hotel.",
+            "exampleTranslation": "We stay overnight at the hotel.",
+            "emoji": "🏨"
+        },
+        {
+            "word": "das Gepäck",
+            "translation": "Luggage",
+            "example": "Bringen Sie Ihr Gepäck zum Hotel.",
+            "exampleTranslation": "Bring your luggage to the hotel.",
+            "emoji": "🧳"
+        },
+        {
+            "word": "abfahren",
+            "translation": "to depart",
+            "example": "Der Zug fährt um neun Uhr ab.",
+            "exampleTranslation": "The train departs at nine o'clock.",
+            "emoji": "🚂"
+        },
+        {
+            "word": "ankommen",
+            "translation": "to arrive",
+            "example": "Wir kommen morgen in Berlin an.",
+            "exampleTranslation": "We arrive in Berlin tomorrow.",
+            "emoji": "🏁"
+        },
+        {
+            "word": "die Verspätung",
+            "translation": "Delay",
+            "example": "Der Zug hat heute Verspätung.",
+            "exampleTranslation": "The train has a delay today.",
+            "emoji": "⏱️"
+        },
+        {
+            "word": "der Fahrplan",
+            "translation": "Timetable",
+            "example": "Wo kann ich den Fahrplan sehen?",
+            "exampleTranslation": "Where can I see the timetable?",
+            "emoji": "🗓️"
+        },
+        {
+            "word": "der Sitzplatz",
+            "translation": "Seat",
+            "example": "Ich habe einen Sitzplatz reserviert.",
+            "exampleTranslation": "I reserved a seat.",
+            "emoji": "💺"
+        },
+        {
+            "word": "die Auskunft",
+            "translation": "Information desk",
+            "example": "Fragen Sie an der Auskunft nach.",
+            "exampleTranslation": "Ask at the information desk.",
+            "emoji": "ℹ️"
+        },
+        {
+            "word": "die Grenze",
+            "translation": "Border",
+            "example": "Wir überqueren die Grenze.",
+            "exampleTranslation": "We cross the border.",
+            "emoji": "🚧"
+        },
+        {
+            "word": "der Koffer",
+            "translation": "Suitcase",
+            "example": "Mein Koffer ist sehr schwer.",
+            "exampleTranslation": "My suitcase is very heavy.",
+            "emoji": "🧳"
+        },
+        {
+            "word": "die Auslandsreise",
+            "translation": "Foreign trip",
+            "example": "Er plant eine Auslandsreise.",
+            "exampleTranslation": "He is planning a trip abroad.",
+            "emoji": "🌐"
+        },
+        {
+            "word": "der Reisepass",
+            "translation": "Passport",
+            "example": "Vergessen Sie Ihren Reisepass nicht.",
+            "exampleTranslation": "Do not forget your passport.",
+            "emoji": "🛂"
+        }
     ],
-    verkehr: [
-        { word: "die S-Bahn", translation: "Suburban train", example: "Ich nehme die S-Bahn zum Büro.", exampleTranslation: "I take the suburban train to the office.", emoji: "🚉" },
-        { word: "die U-Bahn", translation: "Subway", example: "Die U-Bahn fährt unter der Erde.", exampleTranslation: "The subway runs underground.", emoji: "🚇" },
-        { word: "die Haltestelle", translation: "Stop/Station", example: "Wir warten an der Haltestelle.", exampleTranslation: "We are waiting at the stop.", emoji: "🚏" },
-        { word: "die Straße", translation: "Street", example: "Die Straße ist sehr belebt.", exampleTranslation: "The street is very busy.", emoji: "🛣️" },
-        { word: "die Kreuzung", translation: "Intersection", example: "Biegen Sie an der Kreuzung links ab.", exampleTranslation: "Turn left at the intersection.", emoji: "🚦" },
-        { word: "fahren", translation: "to drive/ride", example: "Wir fahren am Wochenende aufs Land.", exampleTranslation: "We drive to the countryside on the weekend.", emoji: "🚗" },
-        { word: "das Fahrrad", translation: "Bicycle", example: "Ich fahre gerne mit dem Fahrrad.", exampleTranslation: "I like riding a bicycle.", emoji: "🚴" },
-        { word: "die Fahrkarte", translation: "Ticket", example: "Zeigen Sie mir bitte Ihre Fahrkarte.", exampleTranslation: "Please show me your ticket.", emoji: "🎫" },
-        { word: "das Gleis", translation: "Track/Platform", example: "Der Zug kommt auf Gleis vier an.", exampleTranslation: "The train arrives on platform four.", emoji: "🛤️" },
-        { word: "der Flug", translation: "Flight", example: "Der Flug dauert zwei Stunden.", exampleTranslation: "The flight takes two hours.", emoji: "✈️" },
-        { word: "die Ampel", translation: "Traffic light", example: "Halten Sie bei Rot an der Ampel.", exampleTranslation: "Stop at red at the traffic light.", emoji: "🚦" },
-        { word: "fliegen", translation: "to fly", example: "Wir fliegen nächste Woche in den Urlaub.", exampleTranslation: "We are flying on vacation next week.", emoji: "✈️" }
+    "verkehr": [
+        {
+            "word": "die S-Bahn",
+            "translation": "Suburban train",
+            "example": "Die S-Bahn fährt zum Hauptbahnhof.",
+            "exampleTranslation": "The S-Bahn goes to the central station.",
+            "emoji": "🚃"
+        },
+        {
+            "word": "die U-Bahn",
+            "translation": "Subway",
+            "example": "Die U-Bahn fährt unter der Erde.",
+            "exampleTranslation": "The subway runs underground.",
+            "emoji": "🚇"
+        },
+        {
+            "word": "die Haltestelle",
+            "translation": "Bus/tram stop",
+            "example": "Der Bus hält an der Haltestelle.",
+            "exampleTranslation": "The bus stops at the bus stop.",
+            "emoji": "🏏"
+        },
+        {
+            "word": "die Straße",
+            "translation": "Street",
+            "example": "Die Straße ist breit und sauber.",
+            "exampleTranslation": "The street is wide and clean.",
+            "emoji": "🛣️"
+        },
+        {
+            "word": "die Kreuzung",
+            "translation": "Intersection",
+            "example": "Gehen Sie an der Kreuzung links.",
+            "exampleTranslation": "Go left at the intersection.",
+            "emoji": "🚏"
+        },
+        {
+            "word": "fahren",
+            "translation": "to drive/go",
+            "example": "Wir fahren morgen nach München.",
+            "exampleTranslation": "We drive to Munich tomorrow.",
+            "emoji": "🚗"
+        },
+        {
+            "word": "das Fahrrad",
+            "translation": "Bicycle",
+            "example": "Ich fahre gerne Fahrrad.",
+            "exampleTranslation": "I like to ride a bicycle.",
+            "emoji": "🚲"
+        },
+        {
+            "word": "die Fahrkarte",
+            "translation": "Ticket",
+            "example": "Ich kaufe eine Fahrkarte für den Zug.",
+            "exampleTranslation": "I buy a ticket for the train.",
+            "emoji": "🎫"
+        },
+        {
+            "word": "das Gleis",
+            "translation": "Track / platform",
+            "example": "Der Zug fährt von Gleis vier ab.",
+            "exampleTranslation": "The train departs from platform four.",
+            "emoji": "🛤️"
+        },
+        {
+            "word": "der Flug",
+            "translation": "Flight",
+            "example": "Mein Flug geht um zehn Uhr.",
+            "exampleTranslation": "My flight departs at ten o'clock.",
+            "emoji": "✈️"
+        },
+        {
+            "word": "die Ampel",
+            "translation": "Traffic light",
+            "example": "Bleiben Sie bei Rot an der Ampel stehen.",
+            "exampleTranslation": "Stop at the red traffic light.",
+            "emoji": "🚦"
+        },
+        {
+            "word": "fliegen",
+            "translation": "to fly",
+            "example": "Wir fliegen am Wochenende nach Indien.",
+            "exampleTranslation": "We fly to India on the weekend.",
+            "emoji": "✈️"
+        },
+        {
+            "word": "das Motorrad",
+            "translation": "Motorcycle",
+            "example": "Sein Motorrad ist sehr schnell.",
+            "exampleTranslation": "His motorcycle is very fast.",
+            "emoji": "🏍️"
+        },
+        {
+            "word": "der Fahrgast",
+            "translation": "Passenger",
+            "example": "Viele Fahrgäste warten am Gleis.",
+            "exampleTranslation": "Many passengers are waiting on the platform.",
+            "emoji": "👥"
+        },
+        {
+            "word": "das Taxi",
+            "translation": "Taxi",
+            "example": "Wir nehmen ein Taxi zum Flughafen.",
+            "exampleTranslation": "We take a taxi to the airport.",
+            "emoji": "🚕"
+        },
+        {
+            "word": "die Verspätung",
+            "translation": "Delay",
+            "example": "Der Bus hat fünf Minuten Verspätung.",
+            "exampleTranslation": "The bus has a five-minute delay.",
+            "emoji": "⏱️"
+        },
+        {
+            "word": "die Fahrplanauskunft",
+            "translation": "Timetable info",
+            "example": "Ich hole eine Fahrplanauskunft.",
+            "exampleTranslation": "I am getting timetable information.",
+            "emoji": "ℹ️"
+        },
+        {
+            "word": "der Bahnhof",
+            "translation": "Train station",
+            "example": "Der Bahnhof ist in der Nähe.",
+            "exampleTranslation": "The train station is nearby.",
+            "emoji": "🚉"
+        },
+        {
+            "word": "die Autobahn",
+            "translation": "Highway",
+            "example": "Die Autobahn ist frei.",
+            "exampleTranslation": "The highway is free.",
+            "emoji": "🛣️"
+        },
+        {
+            "word": "der Verkehr",
+            "translation": "Traffic",
+            "example": "Es gibt heute viel Verkehr.",
+            "exampleTranslation": "There is a lot of traffic today.",
+            "emoji": "🚗"
+        }
     ],
-    stadt: [
-        { word: "die Stadt", translation: "City", example: "Köln ist eine alte Stadt.", exampleTranslation: "Cologne is an old city.", emoji: "🏙️" },
-        { word: "der Park", translation: "Park", example: "Wir gehen im Park spazieren.", exampleTranslation: "We go for a walk in the park.", emoji: "🌳" },
-        { word: "das Museum", translation: "Museum", example: "Das Museum zeigt moderne Kunst.", exampleTranslation: "The museum shows modern art.", emoji: "🏛️" },
-        { word: "das Cafe", translation: "Cafe", example: "Wir trinken Kaffee im Cafe.", exampleTranslation: "We drink coffee in the cafe.", emoji: "☕" },
-        { word: "die Bank", translation: "Bank", example: "Ich hole Geld von der Bank.", exampleTranslation: "I get money from the bank.", emoji: "🏦" },
-        { word: "die Post", translation: "Post office", example: "Bringen Sie den Brief zur Post.", exampleTranslation: "Take the letter to the post office.", emoji: "📯" },
-        { word: "die Bäckerei", translation: "Bakery", example: "Die Bäckerei öffnet sehr früh.", exampleTranslation: "The bakery opens very early.", emoji: "🍞" },
-        { word: "der Markt", translation: "Market", example: "Wir kaufen Obst auf dem Markt.", exampleTranslation: "We buy fruit at the market.", emoji: "🍎" },
-        { word: "die Kirche", translation: "Church", example: "Die Kirche ist im Zentrum der Stadt.", exampleTranslation: "The church is in the center of the city.", emoji: "⛪" },
-        { word: "der Supermarkt", translation: "Supermarket", example: "Ich kaufe Milch im Supermarkt.", exampleTranslation: "I buy milk in the supermarket.", emoji: "🛒" },
-        { word: "die Apotheke", translation: "Pharmacy", example: "Holen Sie die Medizin in der Apotheke.", exampleTranslation: "Get the medicine at the pharmacy.", emoji: "🏥" },
-        { word: "die Bibliothek", translation: "Library", example: "In der Bibliothek leihe ich Bücher aus.", exampleTranslation: "In the library I borrow books.", emoji: "📚" }
+    "stadt": [
+        {
+            "word": "die Stadt",
+            "translation": "City",
+            "example": "Die Stadt hat viele Sehenswürdigkeiten.",
+            "exampleTranslation": "The city has many sights.",
+            "emoji": "🏙️"
+        },
+        {
+            "word": "der Park",
+            "translation": "Park",
+            "example": "Wir gehen im Park spazieren.",
+            "exampleTranslation": "We go for a walk in the park.",
+            "emoji": "🌳"
+        },
+        {
+            "word": "das Museum",
+            "translation": "Museum",
+            "example": "Das Museum zeigt alte Bilder.",
+            "exampleTranslation": "The museum shows old pictures.",
+            "emoji": "🏛️"
+        },
+        {
+            "word": "das Cafe",
+            "translation": "Cafe",
+            "example": "Ich trinke Kaffee im Cafe.",
+            "exampleTranslation": "I drink coffee in the cafe.",
+            "emoji": "☕"
+        },
+        {
+            "word": "die Bank",
+            "translation": "Bank",
+            "example": "Ich hole Geld von der Bank.",
+            "exampleTranslation": "I fetch money from the bank.",
+            "emoji": "🏦"
+        },
+        {
+            "word": "die Post",
+            "translation": "Post office",
+            "example": "Ich bringe das Paket zur Post.",
+            "exampleTranslation": "I bring the package to the post office.",
+            "emoji": "📯"
+        },
+        {
+            "word": "die Bäckerei",
+            "translation": "Bakery",
+            "example": "Ich kaufe Brot in der Bäckerei.",
+            "exampleTranslation": "I buy bread in the bakery.",
+            "emoji": "🥖"
+        },
+        {
+            "word": "der Markt",
+            "translation": "Market",
+            "example": "Am Samstag gehe ich auf den Markt.",
+            "exampleTranslation": "On Saturday I go to the market.",
+            "emoji": "🎪"
+        },
+        {
+            "word": "die Kirche",
+            "translation": "Church",
+            "example": "Die Kirche ist sonntags geöffnet.",
+            "exampleTranslation": "The church is open on Sundays.",
+            "emoji": "⛪"
+        },
+        {
+            "word": "die Apotheke",
+            "translation": "Pharmacy",
+            "example": "Ich hole Medizin in der Apotheke.",
+            "exampleTranslation": "I fetch medicine in the pharmacy.",
+            "emoji": "🏥"
+        },
+        {
+            "word": "die Bibliothek",
+            "translation": "Library",
+            "example": "Ich lerne leise in der Bibliothek.",
+            "exampleTranslation": "I learn quietly in the library.",
+            "emoji": "📚"
+        },
+        {
+            "word": "der Supermarkt",
+            "translation": "Supermarket",
+            "example": "Ich kaufe Milch im Supermarkt.",
+            "exampleTranslation": "I buy milk in the supermarket.",
+            "emoji": "🛒"
+        },
+        {
+            "word": "das Rathaus",
+            "translation": "Town hall",
+            "example": "Das Rathaus steht im Zentrum.",
+            "exampleTranslation": "The town hall stands in the center.",
+            "emoji": "🏛️"
+        },
+        {
+            "word": "das Hotel",
+            "translation": "Hotel",
+            "example": "Wir wohnen im Hotel Hilton.",
+            "exampleTranslation": "We stay at the Hilton Hotel.",
+            "emoji": "🏨"
+        },
+        {
+            "word": "die Haltestelle",
+            "translation": "Stop / station",
+            "example": "Ich warte an der Haltestelle.",
+            "exampleTranslation": "I wait at the bus/tram stop.",
+            "emoji": "🏏"
+        },
+        {
+            "word": "das Schloss",
+            "translation": "Castle",
+            "example": "Das Schloss ist sehr schön.",
+            "exampleTranslation": "The castle is very beautiful.",
+            "emoji": "🏰"
+        },
+        {
+            "word": "der Fluss",
+            "translation": "River",
+            "example": "Der Fluss fließt durch die Stadt.",
+            "exampleTranslation": "The river flows through the city.",
+            "emoji": "🌊"
+        },
+        {
+            "word": "die Brücke",
+            "translation": "Bridge",
+            "example": "Wir gehen über die Brücke.",
+            "exampleTranslation": "We go across the bridge.",
+            "emoji": "🌉"
+        },
+        {
+            "word": "die Straße",
+            "translation": "Street / road",
+            "example": "Die Straße heißt Goethestraße.",
+            "exampleTranslation": "The street is named Goethe street.",
+            "emoji": "🛣️"
+        },
+        {
+            "word": "das Zentrum",
+            "translation": "City center",
+            "example": "Wir fahren ins Zentrum.",
+            "exampleTranslation": "We drive to the city center.",
+            "emoji": "🏙️"
+        }
     ],
-    schule: [
-        { word: "die Schule", translation: "School", example: "Die Schule beginnt im September.", exampleTranslation: "School begins in September.", emoji: "🏫" },
-        { word: "lernen", translation: "to learn", example: "Wir lernen Deutsch für den Beruf.", exampleTranslation: "We learn German for work.", emoji: "🧠" },
-        { word: "das Buch", translation: "Book", example: "Lies das Buch aufmerksam.", exampleTranslation: "Read the book carefully.", emoji: "📚" },
-        { word: "der Lehrer", translation: "Teacher", example: "Der Lehrer erklärt die Grammatik.", exampleTranslation: "The teacher explains the grammar.", emoji: "👨‍🏫" },
-        { word: "die Klasse", translation: "Class/Grade", example: "Sie geht in die fünfte Klasse.", exampleTranslation: "She goes into the fifth grade.", emoji: "🏫" },
-        { word: "der Schüler", translation: "Student", example: "Der Schüler schreibt an der Tafel.", exampleTranslation: "The student writes on the blackboard.", emoji: "🎒" },
-        { word: "schreiben", translation: "to write", example: "Schreiben Sie bitte Ihre Adresse auf.", exampleTranslation: "Please write down your address.", emoji: "✍️" },
-        { word: "lesen", translation: "to read", example: "Ich lese abends im Bett.", exampleTranslation: "I read in bed in the evenings.", emoji: "📖" },
-        { word: "die Hausaufgabe", translation: "Homework", example: "Er macht seine Hausaufgabe.", exampleTranslation: "He is doing his homework.", emoji: "📝" },
-        { word: "die Prüfung", translation: "Exam", example: "Morgen habe ich eine Deutsch-Prüfung.", exampleTranslation: "Tomorrow I have a German exam.", emoji: "📝" },
-        { word: "der Stift", translation: "Pen", example: "Geben Sie mir bitte den Stift.", exampleTranslation: "Please give me the pen.", emoji: "✏️" },
-        { word: "verstehen", translation: "to understand", example: "Ich verstehe diesen Satz nicht.", exampleTranslation: "I do not understand this sentence.", emoji: "🧠" }
+    "schule": [
+        {
+            "word": "die Schule",
+            "translation": "School",
+            "example": "Die Schule ist am Nachmittag aus.",
+            "exampleTranslation": "School is out in the afternoon.",
+            "emoji": "🏫"
+        },
+        {
+            "word": "lernen",
+            "translation": "to learn",
+            "example": "Die Schüler lernen Deutsch.",
+            "exampleTranslation": "The students learn German.",
+            "emoji": "🧠"
+        },
+        {
+            "word": "das Buch",
+            "translation": "Book",
+            "example": "Das Buch hat viele Seiten.",
+            "exampleTranslation": "The book has many pages.",
+            "emoji": "📖"
+        },
+        {
+            "word": "der Lehrer",
+            "translation": "Teacher",
+            "example": "Der Lehrer erklärt die Aufgabe.",
+            "exampleTranslation": "The teacher explains the task.",
+            "emoji": "👨‍🏫"
+        },
+        {
+            "word": "die Klasse",
+            "translation": "Class",
+            "example": "Die Klasse hat zwanzig Schüler.",
+            "exampleTranslation": "The class has twenty students.",
+            "emoji": "👥"
+        },
+        {
+            "word": "die Hausaufgabe",
+            "translation": "Homework",
+            "example": "Machst du deine Hausaufgabe?",
+            "exampleTranslation": "Are you doing your homework?",
+            "emoji": "📝"
+        },
+        {
+            "word": "die Prüfung",
+            "translation": "Exam",
+            "example": "Die Prüfung beginnt um neun Uhr.",
+            "exampleTranslation": "The exam starts at nine o'clock.",
+            "emoji": "📝"
+        },
+        {
+            "word": "der Schüler",
+            "translation": "Student",
+            "example": "Der Schüler schreibt einen Satz.",
+            "exampleTranslation": "The student writes a sentence.",
+            "emoji": "👦"
+        },
+        {
+            "word": "schreiben",
+            "translation": "to write",
+            "example": "Wir schreiben eine E-Mail.",
+            "exampleTranslation": "We write an email.",
+            "emoji": "📧"
+        },
+        {
+            "word": "verstehen",
+            "translation": "to understand",
+            "example": "Ich verstehe den Satz nicht.",
+            "exampleTranslation": "I do not understand the sentence.",
+            "emoji": "🤷"
+        },
+        {
+            "word": "der Stift",
+            "translation": "Pen",
+            "example": "Haben Sie einen Stift für mich?",
+            "exampleTranslation": "Do you have a pen for me?",
+            "emoji": "🖊️"
+        },
+        {
+            "word": "die Lektion",
+            "translation": "Lesson",
+            "example": "Wir beginnen Lektion eins.",
+            "exampleTranslation": "We start lesson one.",
+            "emoji": "📖"
+        },
+        {
+            "word": "der Bleistift",
+            "translation": "Pencil",
+            "example": "Kann ich deinen Bleistift haben?",
+            "exampleTranslation": "Can I have your pencil?",
+            "emoji": "✏️"
+        },
+        {
+            "word": "das Heft",
+            "translation": "Exercise book",
+            "example": "Schreiben Sie das ins Heft.",
+            "exampleTranslation": "Write that in the exercise book.",
+            "emoji": "📓"
+        },
+        {
+            "word": "die Tafel",
+            "translation": "Blackboard",
+            "example": "Der Lehrer schreibt an die Tafel.",
+            "exampleTranslation": "The teacher writes on the blackboard.",
+            "emoji": "🪧"
+        },
+        {
+            "word": "der Kugelschreiber",
+            "translation": "Ballpoint pen",
+            "example": "Der Kugelschreiber schreibt blau.",
+            "exampleTranslation": "The pen writes blue.",
+            "emoji": "🖊️"
+        },
+        {
+            "word": "das Klassenzimmer",
+            "translation": "Classroom",
+            "example": "Das Klassenzimmer ist groß.",
+            "exampleTranslation": "The classroom is big.",
+            "emoji": "🏫"
+        },
+        {
+            "word": "die Pause",
+            "translation": "Break",
+            "example": "In der Pause essen wir Äpfel.",
+            "exampleTranslation": "During the break we eat apples.",
+            "emoji": "🥪"
+        },
+        {
+            "word": "die Note",
+            "translation": "Grade",
+            "example": "Er hat eine gute Note bekommen.",
+            "exampleTranslation": "He got a good grade.",
+            "emoji": "📝"
+        },
+        {
+            "word": "das Zeugnis",
+            "translation": "Report card",
+            "example": "Er zeigt seinen Eltern das Zeugnis.",
+            "exampleTranslation": "He shows his parents the report card.",
+            "emoji": "📄"
+        }
     ],
-    arbeit: [
-        { word: "der Beruf", translation: "Job/Profession", example: "Was sind Sie von Beruf?", exampleTranslation: "What is your profession?", emoji: "💼" },
-        { word: "arbeiten", translation: "to work", example: "Ich arbeite bei einer Autofirma.", exampleTranslation: "I work at a car company.", emoji: "💻" },
-        { word: "das Büro", translation: "Office", example: "Unser Büro ist im dritten Stock.", exampleTranslation: "Our office is on the third floor.", emoji: "🏬" },
-        { word: "der Kollege", translation: "Colleague", example: "Mein Kollege hilft mir gerne.", exampleTranslation: "My colleague likes to help me.", emoji: "🧑‍💼" },
-        { word: "der Chef", translation: "Boss", example: "Der Chef leitet das Meeting.", exampleTranslation: "The boss leads the meeting.", emoji: "🤵" },
-        { word: "der Job", translation: "Job", example: "Ich suche einen neuen Job.", exampleTranslation: "I am looking for a new job.", emoji: "💼" },
-        { word: "die Firma", translation: "Company", example: "Die Firma produziert Software.", exampleTranslation: "The company produces software.", emoji: "🏢" },
-        { word: "die Arbeit", translation: "Work", example: "Die Arbeit macht mir viel Spaß.", exampleTranslation: "I enjoy work very much.", emoji: "💼" },
-        { word: "frei haben", translation: "to have time off", example: "Am Freitag habe ich frei.", exampleTranslation: "On Friday I have the day off.", emoji: "🏖️" },
-        { word: "suchen", translation: "to search/look for", example: "Ich suche meine Brille.", exampleTranslation: "I am looking for my glasses.", emoji: "🔍" },
-        { word: "finden", translation: "to find", example: "Endlich habe ich einen Job gefunden.", exampleTranslation: "I finally found a job.", emoji: "🪙" },
-        { word: "verdienen", translation: "to earn", example: "Er verdient gutes Geld.", exampleTranslation: "He earns good money.", emoji: "🪙" }
+    "arbeit": [
+        {
+            "word": "der Beruf",
+            "translation": "Profession",
+            "example": "Was sind Sie von Beruf?",
+            "exampleTranslation": "What is your profession?",
+            "emoji": "💼"
+        },
+        {
+            "word": "arbeiten",
+            "translation": "to work",
+            "example": "Ich arbeite bei einer Firma.",
+            "exampleTranslation": "I work at a company.",
+            "emoji": "💼"
+        },
+        {
+            "word": "das Büro",
+            "translation": "Office",
+            "example": "Das Büro liegt im ersten Stock.",
+            "exampleTranslation": "The office lies on the first floor.",
+            "emoji": "🏢"
+        },
+        {
+            "word": "der Chef",
+            "translation": "Boss",
+            "example": "Mein Chef ist freundlich.",
+            "exampleTranslation": "My boss is friendly.",
+            "emoji": "👨‍💼"
+        },
+        {
+            "word": "der Job",
+            "translation": "Job",
+            "example": "Ich suche einen neuen Job.",
+            "exampleTranslation": "I am looking for a new job.",
+            "emoji": "💼"
+        },
+        {
+            "word": "die Firma",
+            "translation": "Company / firm",
+            "example": "Die Firma stellt Software her.",
+            "exampleTranslation": "The company produces software.",
+            "emoji": "🏢"
+        },
+        {
+            "word": "die Arbeit",
+            "translation": "Work",
+            "example": "Ich fahre um acht Uhr zur Arbeit.",
+            "exampleTranslation": "I drive to work at eight o'clock.",
+            "emoji": "💼"
+        },
+        {
+            "word": "frei haben",
+            "translation": "to have free time / off",
+            "example": "Heute habe ich frei.",
+            "exampleTranslation": "Today I have off.",
+            "emoji": "🛋️"
+        },
+        {
+            "word": "suchen",
+            "translation": "to search / look for",
+            "example": "Wir suchen einen neuen Mitarbeiter.",
+            "exampleTranslation": "We are looking for a new employee.",
+            "emoji": "🔍"
+        },
+        {
+            "word": "finden",
+            "translation": "to find",
+            "example": "Ich kann meine Schlüssel nicht finden.",
+            "exampleTranslation": "I cannot find my keys.",
+            "emoji": "🔍"
+        },
+        {
+            "word": "verdienen",
+            "translation": "to earn",
+            "example": "Er verdient viel Geld.",
+            "exampleTranslation": "He earns a lot of money.",
+            "emoji": "💵"
+        },
+        {
+            "word": "die Besprechung",
+            "translation": "Meeting",
+            "example": "Die Besprechung beginnt um neun.",
+            "exampleTranslation": "The meeting starts at nine.",
+            "emoji": "💼"
+        },
+        {
+            "word": "der Kollege",
+            "translation": "Colleague",
+            "example": "Mein Kollege hilft mir immer.",
+            "exampleTranslation": "My colleague always helps me.",
+            "emoji": "👥"
+        },
+        {
+            "word": "die Arbeitszeit",
+            "translation": "Working hours",
+            "example": "Meine Arbeitszeit ist flexibel.",
+            "exampleTranslation": "My working hours are flexible.",
+            "emoji": "⏱️"
+        },
+        {
+            "word": "arbeitslos",
+            "translation": "unemployed",
+            "example": "Er ist seit drei Monaten arbeitslos.",
+            "exampleTranslation": "He has been unemployed for three months.",
+            "emoji": "👤"
+        },
+        {
+            "word": "die Stelle",
+            "translation": "Job post",
+            "example": "Ich habe eine neue Stelle gefunden.",
+            "exampleTranslation": "I found a new job post.",
+            "emoji": "💼"
+        },
+        {
+            "word": "die Bewerbung",
+            "translation": "Application",
+            "example": "Ich schreibe eine Bewerbung.",
+            "exampleTranslation": "I am writing an application.",
+            "emoji": "📄"
+        },
+        {
+            "word": "der Lebenslauf",
+            "translation": "Resume / CV",
+            "example": "Senden Sie uns Ihren Lebenslauf.",
+            "exampleTranslation": "Send us your resume.",
+            "emoji": "📄"
+        },
+        {
+            "word": "der Vertrag",
+            "translation": "Contract",
+            "example": "Ich unterschreibe den Arbeitsvertrag.",
+            "exampleTranslation": "I sign the employment contract.",
+            "emoji": "✒️"
+        },
+        {
+            "word": "die Überstunden",
+            "translation": "Overtime",
+            "example": "Er muss heute Überstunden machen.",
+            "exampleTranslation": "He must do overtime today.",
+            "emoji": "⏱️"
+        }
     ],
-    technologie: [
-        { word: "das Handy", translation: "Mobile phone", example: "Ich rufe dich auf dem Handy an.", exampleTranslation: "I will call you on the mobile phone.", emoji: "📱" },
-        { word: "der Computer", translation: "Computer", example: "Mein Computer ist sehr schnell.", exampleTranslation: "My computer is very fast.", emoji: "💻" },
-        { word: "die E-Mail", translation: "Email", example: "Schreiben Sie eine E-Mail an mich.", exampleTranslation: "Write an email to me.", emoji: "✉️" },
-        { word: "das Internet", translation: "Internet", example: "Ich surfe im Internet.", exampleTranslation: "I surf the internet.", emoji: "🌐" },
-        { word: "anrufen", translation: "to call (phone)", example: "Rufen Sie mich morgen an.", exampleTranslation: "Call me tomorrow.", emoji: "📞" },
-        { word: "die Nachricht", translation: "Message", example: "Ich schicke dir eine Nachricht.", exampleTranslation: "I am sending you a message.", emoji: "💬" },
-        { word: "das Telefon", translation: "Telephone", example: "Das Telefon klingelt laut.", exampleTranslation: "The telephone is ringing loudly.", emoji: "☎️" },
-        { word: "die Website", translation: "Website", example: "Besuchen Sie unsere Website.", exampleTranslation: "Visit our website.", emoji: "🌐" },
-        { word: "online", translation: "online", example: "Der Deutschkurs findet online statt.", exampleTranslation: "The German course takes place online.", emoji: "🌐" },
-        { word: "tippen", translation: "to type", example: "Er tippt eine E-Mail.", exampleTranslation: "He is typing an email.", emoji: "⌨️" },
-        { word: "der Link", translation: "Link", example: "Klicken Sie auf den Link.", exampleTranslation: "Click on the link.", emoji: "🔗" },
-        { word: "das Passwort", translation: "Passwort", example: "Geben Sie Ihr Passwort ein.", exampleTranslation: "Enter your password.", emoji: "🔑" }
+    "technologie": [
+        {
+            "word": "das Handy",
+            "translation": "Mobile phone",
+            "example": "Mein Handy klingelt.",
+            "exampleTranslation": "My phone is ringing.",
+            "emoji": "📱"
+        },
+        {
+            "word": "der Computer",
+            "translation": "Computer",
+            "example": "Ich arbeite am Computer.",
+            "exampleTranslation": "I work on the computer.",
+            "emoji": "💻"
+        },
+        {
+            "word": "die E-Mail",
+            "translation": "Email",
+            "example": "Schreiben Sie mir eine E-Mail.",
+            "exampleTranslation": "Write me an email.",
+            "emoji": "📧"
+        },
+        {
+            "word": "das Internet",
+            "translation": "Internet",
+            "example": "Wir surfen im Internet.",
+            "exampleTranslation": "We surf the internet.",
+            "emoji": "🌐"
+        },
+        {
+            "word": "anrufen",
+            "translation": "to call (phone)",
+            "example": "Rufen Sie mich heute Abend an.",
+            "exampleTranslation": "Call me tonight.",
+            "emoji": "📞"
+        },
+        {
+            "word": "die Nachricht",
+            "translation": "Message",
+            "example": "Ich habe eine Nachricht bekommen.",
+            "exampleTranslation": "I received a message.",
+            "emoji": "💬"
+        },
+        {
+            "word": "das Telefon",
+            "translation": "Telephone",
+            "example": "Das Telefon steht auf dem Tisch.",
+            "exampleTranslation": "The telephone is on the table.",
+            "emoji": "📞"
+        },
+        {
+            "word": "die Website",
+            "translation": "Website",
+            "example": "Die Website ist online.",
+            "exampleTranslation": "The website is online.",
+            "emoji": "🌐"
+        },
+        {
+            "word": "online",
+            "translation": "online",
+            "example": "Sind Sie gerade online?",
+            "exampleTranslation": "Are you online right now?",
+            "emoji": "💻"
+        },
+        {
+            "word": "tippen",
+            "translation": "to type",
+            "example": "Er tippt eine Nachricht.",
+            "exampleTranslation": "He types a message.",
+            "emoji": "⌨️"
+        },
+        {
+            "word": "der Link",
+            "translation": "Link",
+            "example": "Klicken Sie auf den Link.",
+            "exampleTranslation": "Click on the link.",
+            "emoji": "🔗"
+        },
+        {
+            "word": "das Passwort",
+            "translation": "Password",
+            "example": "Wie ist Ihr Passwort?",
+            "exampleTranslation": "What is your password?",
+            "emoji": "🔑"
+        },
+        {
+            "word": "der Laptop",
+            "translation": "Laptop",
+            "example": "Mein Laptop ist neu und schnell.",
+            "exampleTranslation": "My laptop is new and fast.",
+            "emoji": "💻"
+        },
+        {
+            "word": "die App",
+            "translation": "Application",
+            "example": "Ich lade eine neue App herunter.",
+            "exampleTranslation": "I am downloading a new app.",
+            "emoji": "📱"
+        },
+        {
+            "word": "die Datei",
+            "translation": "File",
+            "example": "Bitte senden Sie mir die Datei.",
+            "exampleTranslation": "Please send me the file.",
+            "emoji": "📁"
+        },
+        {
+            "word": "speichern",
+            "translation": "to save",
+            "example": "Vergessen Sie nicht zu speichern.",
+            "exampleTranslation": "Don't forget to save.",
+            "emoji": "💾"
+        },
+        {
+            "word": "drucken",
+            "translation": "to print",
+            "example": "Ich muss das Dokument drucken.",
+            "exampleTranslation": "I must print the document.",
+            "emoji": "🖨️"
+        },
+        {
+            "word": "der Drucker",
+            "translation": "Printer",
+            "example": "Der Drucker ist offline.",
+            "exampleTranslation": "The printer is offline.",
+            "emoji": "🖨️"
+        },
+        {
+            "word": "das Tablet",
+            "translation": "Tablet",
+            "example": "Er liest Zeitung auf dem Tablet.",
+            "exampleTranslation": "He reads the newspaper on the tablet.",
+            "emoji": "📱"
+        },
+        {
+            "word": "der Bildschirm",
+            "translation": "Screen",
+            "example": "Der Bildschirm ist sehr hell.",
+            "exampleTranslation": "The screen is very bright.",
+            "emoji": "🖥️"
+        }
     ],
-    tagesablauf: [
-        { word: "aufstehen", translation: "to get up", example: "Ich stehe um sechs Uhr auf.", exampleTranslation: "I get up at six o'clock.", emoji: "🌅" },
-        { word: "schlafen", translation: "to sleep", example: "Das Baby schläft ruhig.", exampleTranslation: "The baby sleeps quietly.", emoji: "💤" },
-        { word: "duschen", translation: "to shower", example: "Ich dusche jeden Morgen.", exampleTranslation: "I shower every morning.", emoji: "🚿" },
-        { word: "frühstücken", translation: "to eat breakfast", example: "Wir frühstücken um acht Uhr.", exampleTranslation: "We eat breakfast at eight o'clock.", emoji: "🍳" },
-        { word: "kochen", translation: "to cook", example: "Sie kocht Suppe zum Abendessen.", exampleTranslation: "She is cooking soup for dinner.", emoji: "🍲" },
-        { word: "aufräumen", translation: "to clean up", example: "Ich muss mein Zimmer aufräumen.", exampleTranslation: "I have to clean up my room.", emoji: "🧹" },
-        { word: "fernsehen", translation: "to watch TV", example: "Am Abend sehen wir fern.", exampleTranslation: "In the evening we watch TV.", emoji: "📺" },
-        { word: "anfangen", translation: "to start", example: "Wann fängt der Film an?", exampleTranslation: "When does the movie start?", emoji: "🎬" },
-        { word: "gehen", translation: "to go", example: "Ich gehe jetzt nach Hause.", exampleTranslation: "I am going home now.", emoji: "🚶" },
-        { word: "arbeiten", translation: "to work", example: "Ich arbeite von Montag bis Freitag.", exampleTranslation: "I work from Monday to Friday.", emoji: "💼" },
-        { word: "schlafen gehen", translation: "to go to sleep", example: "Ich gehe um elf Uhr schlafen.", exampleTranslation: "I go to sleep at eleven o'clock.", emoji: "🛌" },
-        { word: "einkaufen", translation: "to go shopping", example: "Ich kaufe im Supermarkt ein.", exampleTranslation: "I go shopping at the supermarket.", emoji: "🛒" }
+    "tagesablauf": [
+        {
+            "word": "aufstehen",
+            "translation": "to get up",
+            "example": "Ich stehe um sechs Uhr auf.",
+            "exampleTranslation": "I get up at six o'clock.",
+            "emoji": "🌅"
+        },
+        {
+            "word": "schlafen",
+            "translation": "to sleep",
+            "example": "Die Katze schläft auf dem Sofa.",
+            "exampleTranslation": "The cat sleeps on the sofa.",
+            "emoji": "🛌"
+        },
+        {
+            "word": "duschen",
+            "translation": "to shower",
+            "example": "Ich dusche am Morgen.",
+            "exampleTranslation": "I shower in the morning.",
+            "emoji": "🚿"
+        },
+        {
+            "word": "frühstücken",
+            "translation": "to eat breakfast",
+            "example": "Wir frühstücken um sieben Uhr.",
+            "exampleTranslation": "We eat breakfast at seven o'clock.",
+            "emoji": "🍳"
+        },
+        {
+            "word": "aufräumen",
+            "translation": "to clean up",
+            "example": "Er räumt sein Zimmer auf.",
+            "exampleTranslation": "He cleans up his room.",
+            "emoji": "🧹"
+        },
+        {
+            "word": "fernsehen",
+            "translation": "to watch TV",
+            "example": "Am Abend sehen wir fern.",
+            "exampleTranslation": "In the evening we watch TV.",
+            "emoji": "📺"
+        },
+        {
+            "word": "anfangen",
+            "translation": "to begin / start",
+            "example": "Der Unterricht fängt um acht an.",
+            "exampleTranslation": "The class starts at eight.",
+            "emoji": "⏱️"
+        },
+        {
+            "word": "gehen",
+            "translation": "to go",
+            "example": "Wir gehen jetzt nach Hause.",
+            "exampleTranslation": "We are going home now.",
+            "emoji": "🚶"
+        },
+        {
+            "word": "schlafen gehen",
+            "translation": "to go to bed",
+            "example": "Er geht um zehn Uhr schlafen.",
+            "exampleTranslation": "He goes to bed at ten o'clock.",
+            "emoji": "🛌"
+        },
+        {
+            "word": "arbeiten",
+            "translation": "to work",
+            "example": "Ich arbeite den ganzen Tag.",
+            "exampleTranslation": "I work all day.",
+            "emoji": "💼"
+        },
+        {
+            "word": "kochen",
+            "translation": "to cook",
+            "example": "Wir kochen Suppe zum Abendessen.",
+            "exampleTranslation": "We cook soup for dinner.",
+            "emoji": "🍳"
+        },
+        {
+            "word": "einkaufen",
+            "translation": "to shop",
+            "example": "Wir kaufen im Supermarkt ein.",
+            "exampleTranslation": "We shop at the supermarket.",
+            "emoji": "🛒"
+        },
+        {
+            "word": "wecken",
+            "translation": "to wake",
+            "example": "Der Wecker weckt mich um sechs.",
+            "exampleTranslation": "The alarm clock wakes me at six.",
+            "emoji": "⏰"
+        },
+        {
+            "word": "waschen",
+            "translation": "to wash",
+            "example": "Ich wasche mein Gesicht.",
+            "exampleTranslation": "I wash my face.",
+            "emoji": "🧼"
+        },
+        {
+            "word": "putzen",
+            "translation": "to clean",
+            "example": "Ich putze meine Zähne.",
+            "exampleTranslation": "I brush my teeth.",
+            "emoji": "🪥"
+        },
+        {
+            "word": "die Hausarbeit",
+            "translation": "Housework",
+            "example": "Ich mache die Hausarbeit am Samstag.",
+            "exampleTranslation": "I do the housework on Saturday.",
+            "emoji": "🧹"
+        },
+        {
+            "word": "ausruhen",
+            "translation": "to rest",
+            "example": "Nach der Arbeit ruhe ich mich aus.",
+            "exampleTranslation": "After work, I rest.",
+            "emoji": "🛋️"
+        },
+        {
+            "word": "essen",
+            "translation": "to eat",
+            "example": "Wann essen wir zu Mittag?",
+            "exampleTranslation": "When do we eat lunch?",
+            "emoji": "🍴"
+        },
+        {
+            "word": "trinken",
+            "translation": "to drink",
+            "example": "Ich trinke am Abend einen Tee.",
+            "exampleTranslation": "I drink a tea in the evening.",
+            "emoji": "☕"
+        },
+        {
+            "word": "spazierengehen",
+            "translation": "to go for a walk",
+            "example": "Wir gehen im Park spazieren.",
+            "exampleTranslation": "We are going for a walk in the park.",
+            "emoji": "🚶"
+        }
     ],
-    gesundheit: [
-        { word: "der Körper", translation: "Body", example: "Der Körper braucht Vitamine.", exampleTranslation: "The body needs vitamins.", emoji: "🧍" },
-        { word: "die Hand", translation: "Hand", example: "Geben Sie mir die Hand.", exampleTranslation: "Give me your hand.", emoji: "✋" },
-        { word: "der Kopf", translation: "Head", example: "Mein Kopf tut weh.", exampleTranslation: "My head hurts.", emoji: "👤" },
-        { word: "das Auge", translation: "Eye", example: "Sie hat blaue Augen.", exampleTranslation: "She has blue eyes.", emoji: "👁️" },
-        { word: "das Ohr", translation: "Ear", example: "Er hört mit dem Ohr.", exampleTranslation: "He hears with the ear.", emoji: "👂" },
-        { word: "der Fuß", translation: "Foot", example: "Ich gehe zu Fuß.", exampleTranslation: "I go by foot.", emoji: "🦶" },
-        { word: "das Bein", translation: "Leg", example: "Mein Bein tut nach dem Sport weh.", exampleTranslation: "My leg hurts after sports.", emoji: "Leg" },
-        { word: "gesund", translation: "healthy", example: "Obst essen ist gesund.", exampleTranslation: "Eating fruit is healthy.", emoji: "🍎" },
-        { word: "krank", translation: "sick/ill", example: "Ich kann nicht kommen, ich bin krank.", exampleTranslation: "I cannot come, I am sick.", emoji: "🤒" },
-        { word: "der Schmerz", translation: "Pain", example: "Ich habe starke Schmerzen im Arm.", exampleTranslation: "I have strong pain in my arm.", emoji: "💊" },
-        { word: "weh tun", translation: "to hurt", example: "Mein Zahn tut weh.", exampleTranslation: "My tooth hurts.", emoji: "🦷" },
-        { word: "das Fieber", translation: "Fever", example: "Das Kind hat hohes Fieber.", exampleTranslation: "The child has high fever.", emoji: "🌡️" }
+    "gesundheit": [
+        {
+            "word": "der Körper",
+            "translation": "Body",
+            "example": "Sport ist gut für den Körper.",
+            "exampleTranslation": "Sport is good for the body.",
+            "emoji": "🧍"
+        },
+        {
+            "word": "die Hand",
+            "translation": "Hand",
+            "example": "Geben Sie mir Ihre Hand.",
+            "exampleTranslation": "Give me your hand.",
+            "emoji": "🖐️"
+        },
+        {
+            "word": "der Kopf",
+            "translation": "Head",
+            "example": "Mein Kopf tut weh.",
+            "exampleTranslation": "My head hurts.",
+            "emoji": "👤"
+        },
+        {
+            "word": "das Auge",
+            "translation": "Eye",
+            "example": "Er hat blaue Augen.",
+            "exampleTranslation": "He has blue eyes.",
+            "emoji": "👁️"
+        },
+        {
+            "word": "das Ohr",
+            "translation": "Ear",
+            "example": "Das Ohr schmerzt.",
+            "exampleTranslation": "The ear hurts.",
+            "emoji": "👂"
+        },
+        {
+            "word": "der Fuß",
+            "translation": "Foot",
+            "example": "Der linke Fuß tut weh.",
+            "exampleTranslation": "The left foot hurts.",
+            "emoji": "🦶"
+        },
+        {
+            "word": "das Bein",
+            "translation": "Leg",
+            "example": "Sein Bein ist gebrochen.",
+            "exampleTranslation": "His leg is broken.",
+            "emoji": "🦵"
+        },
+        {
+            "word": "gesund",
+            "translation": "healthy",
+            "example": "Äpfel essen hält gesund.",
+            "exampleTranslation": "Eating apples keeps healthy.",
+            "emoji": "🍏"
+        },
+        {
+            "word": "krank",
+            "translation": "sick",
+            "example": "Er ist krank und bleibt im Bett.",
+            "exampleTranslation": "He is sick and stays in bed.",
+            "emoji": "🛌"
+        },
+        {
+            "word": "der Schmerz",
+            "translation": "Pain",
+            "example": "Ich habe Kopfschmerzen.",
+            "exampleTranslation": "I have a headache.",
+            "emoji": "🤕"
+        },
+        {
+            "word": "weh tun",
+            "translation": "to hurt",
+            "example": "Meine Augen tun weh.",
+            "exampleTranslation": "My eyes hurt.",
+            "emoji": "😭"
+        },
+        {
+            "word": "das Fieber",
+            "translation": "Fever",
+            "example": "Er hat hohes Fieber.",
+            "exampleTranslation": "He has a high fever.",
+            "emoji": "🌡️"
+        },
+        {
+            "word": "die Gesundheit",
+            "translation": "Health",
+            "example": "Gesundheit ist das Wichtigste.",
+            "exampleTranslation": "Health is the most important thing.",
+            "emoji": "🍏"
+        },
+        {
+            "word": "der Husten",
+            "translation": "Cough",
+            "example": "Er hat einen starken Husten.",
+            "exampleTranslation": "He has a strong cough.",
+            "emoji": "😷"
+        },
+        {
+            "word": "der Schnupfen",
+            "translation": "Runny nose",
+            "example": "Ich habe einen Schnupfen.",
+            "exampleTranslation": "I have a runny nose.",
+            "emoji": "🤧"
+        },
+        {
+            "word": "die Grippe",
+            "translation": "Flu",
+            "example": "Er liegt mit Grippe im Bett.",
+            "exampleTranslation": "He is in bed with the flu.",
+            "emoji": "🤒"
+        },
+        {
+            "word": "die Schmerzen",
+            "translation": "Pains",
+            "example": "Wo haben Sie Schmerzen?",
+            "exampleTranslation": "Where do you have pain?",
+            "emoji": "🤕"
+        },
+        {
+            "word": "die Besserung",
+            "translation": "Recovery",
+            "example": "Gute Besserung, mein Freund!",
+            "exampleTranslation": "Speedy recovery, my friend!",
+            "emoji": "💐"
+        },
+        {
+            "word": "der Finger",
+            "translation": "Finger",
+            "example": "Mein Finger blutet.",
+            "exampleTranslation": "My finger is bleeding.",
+            "emoji": "☝️"
+        },
+        {
+            "word": "der Zahn",
+            "translation": "Tooth",
+            "example": "Er hat starke Zahnschmerzen.",
+            "exampleTranslation": "He has strong toothache.",
+            "emoji": "🦷"
+        }
     ],
-    medizin: [
-        { word: "der Arzt", translation: "Doctor", example: "Der Arzt untersucht den Patienten.", exampleTranslation: "The doctor examines the patient.", emoji: "👨‍⚕️" },
-        { word: "das Krankenhaus", translation: "Hospital", example: "Das Krankenhaus liegt im Zentrum.", exampleTranslation: "The hospital is located in the center.", emoji: "🏥" },
-        { word: "die Medizin", translation: "Medicine", example: "Nehmen Sie die Medizin dreimal täglich.", exampleTranslation: "Take the medicine three times daily.", emoji: "💊" },
-        { word: "das Rezept", translation: "Prescription", example: "Der Arzt schreibt ein Rezept.", exampleTranslation: "The doctor writes a prescription.", emoji: "📝" },
-        { word: "die Apotheke", translation: "Pharmacy", example: "Ich kaufe Tabletten in der Apotheke.", exampleTranslation: "I buy pills at the pharmacy.", emoji: "🏥" },
-        { word: "die Tablette", translation: "Tablet/Pill", example: "Schlucken Sie diese Tablette.", exampleTranslation: "Swallow this pill.", emoji: "💊" },
-        { word: "die Praxis", translation: "Doctor's office", example: "Die Praxis bleibt am Samstag geschlossen.", exampleTranslation: "The office remains closed on Saturdays.", emoji: "🏨" },
-        { word: "der Termin", translation: "Appointment", example: "Ich brauche einen Termin für morgen.", exampleTranslation: "I need an appointment for tomorrow.", emoji: "📅" },
-        { word: "helfen", translation: "to help", example: "Der Notarzt hilft dem Verletzten.", exampleTranslation: "The emergency doctor helps the injured.", emoji: "🤝" },
-        { word: "untersuchen", translation: "to examine", example: "Der Zahnarzt untersucht meine Zähne.", exampleTranslation: "The dentist examines my teeth.", emoji: "🩺" },
-        { word: "der Krankenwagen", translation: "Ambulance", example: "Der Krankenwagen fährt schnell.", exampleTranslation: "The ambulance drives fast.", emoji: "🚑" },
-        { word: "krankmelden", translation: "to report sick", example: "Ich muss mich bei der Arbeit krankmelden.", exampleTranslation: "I have to report sick at work.", emoji: "📝" }
+    "medizin": [
+        {
+            "word": "der Arzt",
+            "translation": "Doctor",
+            "example": "Der Arzt untersucht den Patienten.",
+            "exampleTranslation": "The doctor examines the patient.",
+            "emoji": "👨‍⚕️"
+        },
+        {
+            "word": "das Krankenhaus",
+            "translation": "Hospital",
+            "example": "Er liegt im Krankenhaus.",
+            "exampleTranslation": "He is in the hospital.",
+            "emoji": "🏥"
+        },
+        {
+            "word": "die Medizin",
+            "translation": "Medicine",
+            "example": "Nehmen Sie die Medizin dreimal täglich.",
+            "exampleTranslation": "Take the medicine three times daily.",
+            "emoji": "💊"
+        },
+        {
+            "word": "das Rezept",
+            "translation": "Prescription",
+            "example": "Der Arzt gibt mir ein Rezept für Tabletten.",
+            "exampleTranslation": "The doctor gives me a prescription for tablets.",
+            "emoji": "📄"
+        },
+        {
+            "word": "die Apotheke",
+            "translation": "Pharmacy",
+            "example": "Kaufen Sie die Medikamente in der Apotheke.",
+            "exampleTranslation": "Buy the medications in the pharmacy.",
+            "emoji": "🏥"
+        },
+        {
+            "word": "die Tablette",
+            "translation": "Tablet / pill",
+            "example": "Ich nehme eine Tablette gegen Kopfschmerzen.",
+            "exampleTranslation": "I take a pill for headache.",
+            "emoji": "💊"
+        },
+        {
+            "word": "die Praxis",
+            "translation": "Doctor's practice",
+            "example": "Die Praxis ist am Wochenende geschlossen.",
+            "exampleTranslation": "The practice is closed on the weekend.",
+            "emoji": "🏥"
+        },
+        {
+            "word": "der Termin",
+            "translation": "Appointment",
+            "example": "Ich habe einen Termin beim Zahnarzt.",
+            "exampleTranslation": "I have an appointment at the dentist.",
+            "emoji": "📅"
+        },
+        {
+            "word": "helfen",
+            "translation": "to help",
+            "example": "Der Arzt hilft mir, gesund zu werden.",
+            "exampleTranslation": "The doctor helps me to get well.",
+            "emoji": "🤝"
+        },
+        {
+            "word": "untersuchen",
+            "translation": "to examine",
+            "example": "Der Arzt untersucht mein Knie.",
+            "exampleTranslation": "The doctor examines my knee.",
+            "emoji": "🩺"
+        },
+        {
+            "word": "der Krankenwagen",
+            "translation": "Ambulance",
+            "example": "Der Krankenwagen fährt schnell zum Krankenhaus.",
+            "exampleTranslation": "The ambulance drives fast to the hospital.",
+            "emoji": "🚑"
+        },
+        {
+            "word": "krankmelden",
+            "translation": "to report sick",
+            "example": "Ich muss mich heute krankmelden.",
+            "exampleTranslation": "I must report sick today.",
+            "emoji": "📞"
+        },
+        {
+            "word": "das Pflaster",
+            "translation": "Band-aid",
+            "example": "Haben Sie ein Pflaster für mich?",
+            "exampleTranslation": "Do you have a band-aid for me?",
+            "emoji": "🩹"
+        },
+        {
+            "word": "der Verband",
+            "translation": "Bandage",
+            "example": "Der Arzt legt einen Verband an.",
+            "exampleTranslation": "The doctor applies a bandage.",
+            "emoji": "🤕"
+        },
+        {
+            "word": "das Fieberthermometer",
+            "translation": "Thermometer",
+            "example": "Wo ist das Fieberthermometer?",
+            "exampleTranslation": "Where is the thermometer?",
+            "emoji": "🌡️"
+        },
+        {
+            "word": "die Krankenschwester",
+            "translation": "Nurse",
+            "example": "Die Krankenschwester hilft dem Arzt.",
+            "exampleTranslation": "The nurse helps the doctor.",
+            "emoji": "👩‍⚕️"
+        },
+        {
+            "word": "die Krankenversicherung",
+            "translation": "Health insurance",
+            "example": "Haben Sie eine Krankenversicherung?",
+            "exampleTranslation": "Do you have health insurance?",
+            "emoji": "💳"
+        },
+        {
+            "word": "die Drogerie",
+            "translation": "Drugstore",
+            "example": "Ich kaufe Duschgel in der Drogerie.",
+            "exampleTranslation": "I buy shower gel in the drugstore.",
+            "emoji": "🧴"
+        },
+        {
+            "word": "das Schmerzmittel",
+            "translation": "Painkiller",
+            "example": "Ich brauche ein starkes Schmerzmittel.",
+            "exampleTranslation": "I need a strong painkiller.",
+            "emoji": "💊"
+        },
+        {
+            "word": "gesundwerden",
+            "translation": "to recover",
+            "example": "Ich will schnell gesundwerden.",
+            "exampleTranslation": "I want to recover quickly.",
+            "emoji": "🍏"
+        }
     ],
-    notfall: [
-        { word: "die Hilfe", translation: "Help", example: "Rufen Sie Hilfe!", exampleTranslation: "Call for help!", emoji: "🆘" },
-        { word: "helfen", translation: "to help", example: "Können Sie mir helfen?", exampleTranslation: "Can you help me?", emoji: "🤝" },
-        { word: "der Unfall", translation: "Accident", example: "Es gab einen Unfall auf der Straße.", exampleTranslation: "There was an accident on the street.", emoji: "💥" },
-        { word: "die Polizei", translation: "Police", example: "Rufen Sie sofort die Polizei!", exampleTranslation: "Call the police immediately!", emoji: "🚓" },
-        { word: "der Notarzt", translation: "Emergency doctor", example: "Der Notarzt kommt in wenigen Minuten.", exampleTranslation: "The emergency doctor arrives in a few minutes.", emoji: "🚑" },
-        { word: "die Feuerwehr", translation: "Fire department", example: "Die Feuerwehr löscht das Feuer.", exampleTranslation: "The fire department extinguishes the fire.", emoji: "🚒" },
-        { word: "Achtung", translation: "Attention/Danger", example: "Achtung, rutschig!", exampleTranslation: "Attention, slippery!", emoji: "⚠️" },
-        { word: "verloren", translation: "lost", example: "Ich habe meine Schlüssel verloren.", exampleTranslation: "I lost my keys.", emoji: "🕵️" },
-        { word: "stehlen", translation: "to steal", example: "Jemand hat mein Handy gestohlen.", exampleTranslation: "Someone stole my phone.", emoji: "🕵️" },
-        { word: "anrufen", translation: "to call", example: "Rufen Sie die Feuerwehr an.", exampleTranslation: "Call the fire department.", emoji: "📞" },
-        { word: "kaputt", translation: "broken", example: "Mein Auto ist kaputt.", exampleTranslation: "My car is broken.", emoji: "💥" },
-        { word: "die Gefahr", translation: "Danger", example: "Hier besteht Lebensgefahr.", exampleTranslation: "Here exists danger to life.", emoji: "🚨" }
+    "notfall": [
+        {
+            "word": "die Hilfe",
+            "translation": "Help",
+            "example": "Ich brauche dringend Hilfe.",
+            "exampleTranslation": "I need help urgently.",
+            "emoji": "🆘"
+        },
+        {
+            "word": "helfen",
+            "translation": "to help",
+            "example": "Helfen Sie mir bitte!",
+            "exampleTranslation": "Please help me!",
+            "emoji": "🙏"
+        },
+        {
+            "word": "der Unfall",
+            "translation": "Accident",
+            "example": "Es gab einen Unfall auf der Straße.",
+            "exampleTranslation": "There was an accident on the street.",
+            "emoji": "🚗"
+        },
+        {
+            "word": "die Polizei",
+            "translation": "Police",
+            "example": "Rufen Sie sofort die Polizei!",
+            "exampleTranslation": "Call the police immediately!",
+            "emoji": "🚓"
+        },
+        {
+            "word": "der Notarzt",
+            "translation": "Emergency doctor",
+            "example": "Der Notarzt kommt in wenigen Minuten.",
+            "exampleTranslation": "The emergency doctor arrives in a few minutes.",
+            "emoji": "🚑"
+        },
+        {
+            "word": "die Feuerwehr",
+            "translation": "Fire department",
+            "example": "Die Feuerwehr löscht das Feuer.",
+            "exampleTranslation": "The fire department extinguishes the fire.",
+            "emoji": "🚒"
+        },
+        {
+            "word": "Achtung",
+            "translation": "Attention/Danger",
+            "example": "Achtung, rutschig!",
+            "exampleTranslation": "Attention, slippery!",
+            "emoji": "⚠️"
+        },
+        {
+            "word": "verloren",
+            "translation": "lost",
+            "example": "Ich habe meine Schlüssel verloren.",
+            "exampleTranslation": "I lost my keys.",
+            "emoji": "🕵️"
+        },
+        {
+            "word": "stehlen",
+            "translation": "to steal",
+            "example": "Jemand hat mein Handy gestohlen.",
+            "exampleTranslation": "Someone stole my phone.",
+            "emoji": "🕵️"
+        },
+        {
+            "word": "anrufen",
+            "translation": "to call",
+            "example": "Rufen Sie die Feuerwehr an.",
+            "exampleTranslation": "Call the fire department.",
+            "emoji": "📞"
+        },
+        {
+            "word": "kaputt",
+            "translation": "broken",
+            "example": "Mein Auto ist kaputt.",
+            "exampleTranslation": "My car is broken.",
+            "emoji": "💥"
+        },
+        {
+            "word": "die Gefahr",
+            "translation": "Danger",
+            "example": "Hier besteht Lebensgefahr.",
+            "exampleTranslation": "Here exists danger to life.",
+            "emoji": "🚨"
+        },
+        {
+            "word": "der Diebstahl",
+            "translation": "Theft",
+            "example": "Ich melde einen Diebstahl.",
+            "exampleTranslation": "I report a theft.",
+            "emoji": "🕵️"
+        },
+        {
+            "word": "brennen",
+            "translation": "to burn",
+            "example": "Das Haus brennt!",
+            "exampleTranslation": "The house is burning!",
+            "emoji": "🔥"
+        },
+        {
+            "word": "verpassen",
+            "translation": "to miss",
+            "example": "Ich habe den Zug verpasst.",
+            "exampleTranslation": "I missed the train.",
+            "emoji": "🚉"
+        },
+        {
+            "word": "der Notruf",
+            "translation": "Emergency call",
+            "example": "Wählen Sie den Notruf 112.",
+            "exampleTranslation": "Dial the emergency number 112.",
+            "emoji": "📞"
+        },
+        {
+            "word": "sicher",
+            "translation": "safe",
+            "example": "Hier sind wir sicher vor Gefahr.",
+            "exampleTranslation": "Here we are safe from danger.",
+            "emoji": "🛡️"
+        },
+        {
+            "word": "die Rettung",
+            "translation": "Rescue",
+            "example": "Die Rettung kam sehr schnell.",
+            "exampleTranslation": "The rescue team arrived very quickly.",
+            "emoji": "🚑"
+        },
+        {
+            "word": "verletzt",
+            "translation": "injured",
+            "example": "Er ist bei dem Unfall verletzt worden.",
+            "exampleTranslation": "He was injured in the accident.",
+            "emoji": "🤕"
+        },
+        {
+            "word": "der Ausweis",
+            "translation": "ID card",
+            "example": "Zeigen Sie mir Ihren Ausweis.",
+            "exampleTranslation": "Show me your ID card.",
+            "emoji": "🪪"
+        }
     ],
-    tiere: [
-        { word: "der Hund", translation: "Dog", example: "Der Hund bellt laut.", exampleTranslation: "The dog barks loudly.", emoji: "🐕" },
-        { word: "die Katze", translation: "Cat", example: "Die Katze schläft auf dem Sofa.", exampleTranslation: "The cat sleeps on the sofa.", emoji: "🐈" },
-        { word: "die Kuh", translation: "Cow", example: "Die Kuh gibt frische Milch.", exampleTranslation: "The cow gives fresh milk.", emoji: "🐄" },
-        { word: "das Pferd", translation: "Horse", example: "Er reitet auf dem Pferd.", exampleTranslation: "He rides on the horse.", emoji: "🐎" },
-        { word: "der Vogel", translation: "Bird", example: "Der Vogel singt ein schönes Lied.", exampleTranslation: "The bird sings a beautiful song.", emoji: "🐦" },
-        { word: "der Fisch", translation: "Fish", example: "Der Fisch schwimmt im Wasser.", exampleTranslation: "The fish swims in the water.", emoji: "🐟" },
-        { word: "die Maus", translation: "Mouse", example: "Die Katze fängt die kleine Maus.", exampleTranslation: "The cat catches the little mouse.", emoji: "🐭" },
-        { word: "das Schwein", translation: "Pig", example: "Das Schwein wühlt in der Erde.", exampleTranslation: "The pig digs in the dirt.", emoji: "🐖" },
-        { word: "das Schaf", translation: "Sheep", example: "Das Schaf frisst Gras auf der Wiese.", exampleTranslation: "The sheep eats grass on the meadow.", emoji: "🐑" },
-        { word: "das Huhn", translation: "Chicken", example: "Das Huhn legt jeden Morgen ein Ei.", exampleTranslation: "The chicken lays an egg every morning.", emoji: "🐔" },
-        { word: "der Löwe", translation: "Lion", example: "Der Löwe ist der König der Tiere.", exampleTranslation: "The lion is the king of animals.", emoji: "🦁" },
-        { word: "der Elefant", translation: "Elephant", example: "Der Elefant ist sehr groß und stark.", exampleTranslation: "The elephant is very big and strong.", emoji: "🐘" }
+    "tiere": [
+        {
+            "word": "der Hund",
+            "translation": "Dog",
+            "example": "Der Hund bellt laut.",
+            "exampleTranslation": "The dog barks loudly.",
+            "emoji": "🐕"
+        },
+        {
+            "word": "die Katze",
+            "translation": "Cat",
+            "example": "Die Katze schläft auf dem Sofa.",
+            "exampleTranslation": "The cat sleeps on the sofa.",
+            "emoji": "🐈"
+        },
+        {
+            "word": "die Kuh",
+            "translation": "Cow",
+            "example": "Die Kuh gibt frische Milch.",
+            "exampleTranslation": "The cow gives fresh milk.",
+            "emoji": "🐄"
+        },
+        {
+            "word": "das Pferd",
+            "translation": "Horse",
+            "example": "Er reitet auf dem Pferd.",
+            "exampleTranslation": "He rides on the horse.",
+            "emoji": "🐎"
+        },
+        {
+            "word": "der Vogel",
+            "translation": "Bird",
+            "example": "Der Vogel singt ein schönes Lied.",
+            "exampleTranslation": "The bird sings a beautiful song.",
+            "emoji": "🐦"
+        },
+        {
+            "word": "der Fisch",
+            "translation": "Fish",
+            "example": "Der Fisch schwimmt im Wasser.",
+            "exampleTranslation": "The fish swims in the water.",
+            "emoji": "🐟"
+        },
+        {
+            "word": "die Maus",
+            "translation": "Mouse",
+            "example": "Die Katze fängt die kleine Maus.",
+            "exampleTranslation": "The cat catches the little mouse.",
+            "emoji": "🐭"
+        },
+        {
+            "word": "das Schwein",
+            "translation": "Pig",
+            "example": "Das Schwein wühlt in der Erde.",
+            "exampleTranslation": "The pig digs in the dirt.",
+            "emoji": "🐖"
+        },
+        {
+            "word": "das Schaf",
+            "translation": "Sheep",
+            "example": "Das Schaf frisst Gras auf der Wiese.",
+            "exampleTranslation": "The sheep eats grass on the meadow.",
+            "emoji": "🐑"
+        },
+        {
+            "word": "das Huhn",
+            "translation": "Chicken",
+            "example": "Das Huhn legt jeden Morgen ein Ei.",
+            "exampleTranslation": "The chicken lays an egg every morning.",
+            "emoji": "🐔"
+        },
+        {
+            "word": "der Löwe",
+            "translation": "Lion",
+            "example": "Der Löwe ist der König der Tiere.",
+            "exampleTranslation": "The lion is the king of animals.",
+            "emoji": "🦁"
+        },
+        {
+            "word": "der Elefant",
+            "translation": "Elephant",
+            "example": "Der Elefant ist sehr groß und stark.",
+            "exampleTranslation": "The elephant is very big and strong.",
+            "emoji": "🐘"
+        },
+        {
+            "word": "die Ente",
+            "translation": "Duck",
+            "example": "Die Ente schwimmt auf dem See.",
+            "exampleTranslation": "The duck swims on the lake.",
+            "emoji": "🦆"
+        },
+        {
+            "word": "der Hahn",
+            "translation": "Rooster",
+            "example": "Der Hahn kräht am Morgen.",
+            "exampleTranslation": "The rooster crows in the morning.",
+            "emoji": "🐓"
+        },
+        {
+            "word": "die Gans",
+            "translation": "Goose",
+            "example": "Die Gans frisst Gras.",
+            "exampleTranslation": "The goose eats grass.",
+            "emoji": "🪿"
+        },
+        {
+            "word": "die Ziege",
+            "translation": "Goote",
+            "example": "Die Ziege klettert auf den Berg.",
+            "exampleTranslation": "The goat climbs the mountain.",
+            "emoji": "🐐"
+        },
+        {
+            "word": "der Esel",
+            "translation": "Donkey",
+            "example": "Der Esel trägt eine schwere Last.",
+            "exampleTranslation": "The donkey carries a heavy load.",
+            "emoji": "🫏"
+        },
+        {
+            "word": "der Bär",
+            "translation": "Bear",
+            "example": "Der Bär lebt im tiefen Wald.",
+            "exampleTranslation": "The bear lives in the deep forest.",
+            "emoji": "🐻"
+        },
+        {
+            "word": "der Hase",
+            "translation": "Hare / rabbit",
+            "example": "Der Hase läuft sehr schnell.",
+            "exampleTranslation": "The rabbit runs very fast.",
+            "emoji": "🐇"
+        },
+        {
+            "word": "die Spinne",
+            "translation": "Spider",
+            "example": "Die Spinne webt ein Netz.",
+            "exampleTranslation": "The spider weaves a web.",
+            "emoji": "🕷"
+        }
     ]
-};;
+};
 
 const PRACTICE_DATABASE = {
     vocab: {},
@@ -1511,7 +4583,8 @@ let portalState = {
     writingDrafts: {},
     theme: "dark",
     level: "A1",
-    vocabStats: {}
+    vocabStats: {},
+    listeningSeconds: 0
 };
 
 function savePortalStateToStorage() {
@@ -1533,13 +4606,194 @@ function loadPortalStateFromStorage() {
                 writingDrafts: parsed.writingDrafts || {},
                 theme: parsed.theme || "dark",
                 level: parsed.level || "A1",
-                vocabStats: parsed.vocabStats || {}
+                vocabStats: parsed.vocabStats || {},
+                listeningSeconds: parsed.listeningSeconds || 0
             };
+            migrateVocabProgressToSRS();
         } catch(e) {
             console.error("Error loading portal state", e);
         }
     }
 }
+
+// --- SPACED REPETITION SYSTEM (SRS) LOGIC & INSIGHTS ---
+function migrateVocabProgressToSRS() {
+    if (portalState.progress && portalState.progress.vocab) {
+        for (const wordId in portalState.progress.vocab) {
+            const val = portalState.progress.vocab[wordId];
+            if (val === true || (typeof val === "object" && val !== null && !val.status)) {
+                portalState.progress.vocab[wordId] = {
+                    status: "Review",
+                    interval: 1,
+                    nextReview: new Date().toISOString().split('T')[0],
+                    lastReviewed: new Date().toISOString().split('T')[0],
+                    streak: 1,
+                    dateLearned: new Date().toISOString().split('T')[0]
+                };
+            }
+        }
+    }
+}
+
+function updateVocabSRS(wordId, isCorrect) {
+    if (!portalState.progress.vocab) {
+        portalState.progress.vocab = {};
+    }
+    
+    if (!portalState.progress.vocab[wordId] || typeof portalState.progress.vocab[wordId] !== "object") {
+        portalState.progress.vocab[wordId] = {
+            status: "New",
+            interval: 0,
+            nextReview: new Date().toISOString().split('T')[0],
+            lastReviewed: "",
+            streak: 0
+        };
+    }
+    
+    const item = portalState.progress.vocab[wordId];
+    const today = new Date().toISOString().split('T')[0];
+    
+    if (!item.dateLearned) {
+        item.dateLearned = today;
+    }
+    
+    if (isCorrect) {
+        item.streak = (item.streak || 0) + 1;
+        item.lastReviewed = today;
+        
+        let nextInterval = 1;
+        if (item.status === "New") {
+            item.status = "Learning";
+            nextInterval = 1;
+        } else if (item.status === "Learning") {
+            item.status = "Review";
+            nextInterval = 3;
+        } else if (item.status === "Review") {
+            if (item.interval === 3) nextInterval = 7;
+            else if (item.interval === 7) nextInterval = 14;
+            else if (item.interval === 14) nextInterval = 30;
+            else if (item.interval === 30) {
+                item.status = "Mastered";
+                nextInterval = 30;
+            }
+        } else if (item.status === "Mastered") {
+            nextInterval = 30;
+        }
+        
+        item.interval = nextInterval;
+        const nextDate = new Date();
+        nextDate.setDate(nextDate.getDate() + nextInterval);
+        item.nextReview = nextDate.toISOString().split('T')[0];
+    } else {
+        item.streak = 0;
+        item.lastReviewed = today;
+        item.status = "Learning";
+        item.interval = 1;
+        const nextDate = new Date();
+        nextDate.setDate(nextDate.getDate() + 1);
+        item.nextReview = nextDate.toISOString().split('T')[0];
+    }
+    
+    savePortalStateToStorage();
+    refreshSRSWidgets();
+}
+
+function getDueReviewsCount() {
+    const today = new Date().toISOString().split('T')[0];
+    let count = 0;
+    if (portalState.progress && portalState.progress.vocab) {
+        for (const wordId in portalState.progress.vocab) {
+            const item = portalState.progress.vocab[wordId];
+            if (item && typeof item === "object") {
+                if (item.status !== "Mastered" && item.status !== "New" && item.nextReview <= today) {
+                    count++;
+                }
+            }
+        }
+    }
+    return count;
+}
+
+function getMasteredWordsCount() {
+    let count = 0;
+    if (portalState.progress && portalState.progress.vocab) {
+        for (const wordId in portalState.progress.vocab) {
+            const item = portalState.progress.vocab[wordId];
+            if (item && typeof item === "object" && item.status === "Mastered") {
+                count++;
+            }
+        }
+    }
+    return count;
+}
+
+function getWordsLearnedThisWeekCount() {
+    const today = new Date();
+    let count = 0;
+    if (portalState.progress && portalState.progress.vocab) {
+        for (const wordId in portalState.progress.vocab) {
+            const item = portalState.progress.vocab[wordId];
+            if (item && typeof item === "object" && item.dateLearned) {
+                const dl = new Date(item.dateLearned);
+                const diffTime = Math.abs(today - dl);
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                if (diffDays <= 7) {
+                    count++;
+                }
+            }
+        }
+    }
+    return count;
+}
+
+function getListeningMinutesCompleted() {
+    return Math.round((portalState.listeningSeconds || 0) / 60);
+}
+
+function refreshSRSWidgets() {
+    const dueCount = getDueReviewsCount();
+    const masteredCount = getMasteredWordsCount();
+    const learnedWeek = getWordsLearnedThisWeekCount();
+    const listeningMins = getListeningMinutesCompleted();
+    
+    // Landing dashboard elements
+    const dueEl = document.getElementById("stat-srs-due");
+    if (dueEl) dueEl.textContent = dueCount;
+    
+    const masteredEl = document.getElementById("stat-srs-mastered");
+    if (masteredEl) masteredEl.textContent = masteredCount;
+    
+    const learnedWeekEl = document.getElementById("stat-learned-this-week");
+    if (learnedWeekEl) learnedWeekEl.textContent = learnedWeek;
+    
+    const listeningMinsEl = document.getElementById("stat-listening-minutes");
+    if (listeningMinsEl) listeningMinsEl.textContent = listeningMins;
+    
+    // Streaks elements
+    const curStreakEl = document.getElementById("stat-current-streak");
+    if (curStreakEl) curStreakEl.textContent = portalState.streak.current;
+    const longStreakEl = document.getElementById("stat-longest-streak");
+    if (longStreakEl) longStreakEl.textContent = portalState.streak.longest;
+    const practiceSolvedEl = document.getElementById("stat-practice-completed");
+    if (practiceSolvedEl) practiceSolvedEl.textContent = portalState.sessionsCompleted || 0;
+    const examAttemptEl = document.getElementById("stat-exams-completed");
+    if (examAttemptEl) examAttemptEl.textContent = portalState.examsCompleted || 0;
+    
+    // Revision Center elements
+    const rcDueEl = document.getElementById("lbl-due-reviews-count");
+    if (rcDueEl) rcDueEl.textContent = `${dueCount} Due`;
+    const rcMistakesEl = document.getElementById("lbl-mistakes-archive-count");
+    if (rcMistakesEl) rcMistakesEl.textContent = `${(portalState.mistakes || []).length} Mistakes`;
+    
+    // Update dashboard mistakes counter
+    const mCountEl = document.getElementById("dashboard-mistakes-count");
+    if (mCountEl) mCountEl.textContent = (portalState.mistakes || []).length;
+}
+
+window.updateVocabSRS = updateVocabSRS;
+window.getDueReviewsCount = getDueReviewsCount;
+window.refreshSRSWidgets = refreshSRSWidgets;
+
 
 // --- SYSTEM STATE & CONTROLLER ---
 const STATE_KEY = `goethe_a1_exam_session_v1`;
@@ -3974,9 +7228,13 @@ function checkPracticeAnswer() {
         expTitle.style.color = "var(--color-success)";
         practiceState.score++;
         
-        if (practiceState.mode === "vocab") {
+        if (q.id && q.id.startsWith("pv_")) {
+            updateVocabSRS(q.id, true);
+        } else if (practiceState.mode === "vocab") {
             portalState.progress.vocab[q.id] = true;
-        } else if (practiceState.mode === "grammar") {
+        }
+        
+        if (practiceState.mode === "grammar") {
             portalState.progress.grammar[q.id] = true;
         } else if (practiceState.mode === "reading") {
             portalState.progress.reading[q.id] = true;
@@ -3995,6 +7253,10 @@ function checkPracticeAnswer() {
         expBox.style.borderColor = "var(--color-danger)";
         expTitle.textContent = "Falsch! / Incorrect!";
         expTitle.style.color = "var(--color-danger)";
+        
+        if (q.id && q.id.startsWith("pv_")) {
+            updateVocabSRS(q.id, false);
+        }
         
         if (!practiceState.incorrectQuestions.includes(q)) {
             practiceState.incorrectQuestions.push(q);

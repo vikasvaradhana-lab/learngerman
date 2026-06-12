@@ -150,6 +150,35 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Spaced Repetition (SRS) & Learning Insights Widget -->
+                        <div class="dashboard-stat-card srs-insights-widget glass-panel">
+                            <div class="widget-header">
+                                <span class="widget-icon">📊</span>
+                                <h3>Lern-Statistiken & Repetition / SRS Insights</h3>
+                            </div>
+                            <div class="streak-grid">
+                                <div class="streak-item" id="btn-srs-due-reviews" style="cursor:pointer;" title="Klicken zum Wiederholen / Click to review">
+                                    <span class="num font-indigo" id="stat-srs-due">0</span>
+                                    <span class="lbl">Wiederholungen / Due Today</span>
+                                </div>
+                                <div class="streak-item">
+                                    <span class="num font-emerald" id="stat-srs-mastered">0</span>
+                                    <span class="lbl">Meisterwörter / Mastered</span>
+                                </div>
+                                <div class="streak-item">
+                                    <span class="num font-orange" id="stat-learned-this-week">0</span>
+                                    <span class="lbl">Diese Woche gelernt / This Week</span>
+                                </div>
+                                <div class="streak-item">
+                                    <span class="num font-blue" id="stat-listening-minutes">0</span>
+                                    <span class="lbl">Hör-Minuten / Listening Mins</span>
+                                </div>
+                            </div>
+                            <div class="challenge-status-box" style="margin-top: 16px;">
+                                <button id="btn-start-due-reviews" class="btn btn-secondary btn-touch" style="width:100%;">Fällige Wiederholungen starten</button>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Core Portal Navigation Modules Grid -->
@@ -280,6 +309,13 @@
                             <div class="topic-icon">📖</div>
                             <h3>Hörgeschichten / Stories</h3>
                             <p>Listen to 1-minute stories in German, read transcripts, check translations and verify your understanding.</p>
+                        </div>
+
+                        <!-- Wiederholungszentrum / Revision Center -->
+                        <div class="practice-topic-card glass-panel revision-topic" data-topic="revision" tabindex="0">
+                            <div class="topic-icon">🎯</div>
+                            <h3>Wiederholungszentrum / Revision Center</h3>
+                            <p>Study weak vocabulary, weak grammar, due reviews, and launch custom retests.</p>
                         </div>
 
                         <!-- Mistakes Portal Card inside practice -->
@@ -1016,21 +1052,14 @@
                                 </div>
 
                                 <!-- Pronunciation assistant configurations -->
-                                <div class="form-group" style="margin-top:20px; border-top:1px dashed var(--color-border); padding-top:20px;">
-                                    <label for="settings-pronunciation-language-select">Aussprache-Hilfe / Pronunciation Helper Language</label>
+                                <div class="form-group" style="margin-top:20px; border-top:1px dashed var(--color-border); padding-top:20px; margin-bottom: 24px;">
+                                    <label for="settings-pronunciation-language-select">Aussprache-Hilfe / Pronunciation Helper</label>
                                     <select id="settings-pronunciation-language-select">
                                         <option value="ml" selected>Malayalam (മലയാളം - Default)</option>
-                                        <option value="en">English (Phonetic)</option>
-                                        <option value="ta">Tamil (தமிழ்)</option>
-                                        <option value="hi">Hindi (हिन्दी)</option>
-                                        <option value="future">Future Expansion</option>
+                                        <option value="en">English Phonetic</option>
+                                        <option value="hidden">Hidden</option>
                                     </select>
                                     <p class="help-text">Selects the pronunciation subtext displayed underneath German vocabulary words, phrases, and stories.</p>
-                                </div>
-
-                                <div class="form-group" style="display:flex; align-items:center; gap:12px; margin-top:16px; margin-bottom: 24px;">
-                                    <input type="checkbox" id="settings-pronunciation-helper-checkbox" checked style="width:20px; height:20px; cursor:pointer;">
-                                    <label for="settings-pronunciation-helper-checkbox" style="cursor:pointer; font-weight:600; margin:0; user-select:none;">Aussprache anzeigen / Show Pronunciation Guide</label>
                                 </div>
 
                                 <!-- Data management triggers -->
@@ -1061,6 +1090,85 @@
 
                             </form>
                         </div>
+                    </div>
+                </section>
+
+                <!-- ==================== REVISION CENTER VIEW ==================== -->
+                <section id="view-revision-center" class="view-panel">
+                    <div class="panel-header-nav">
+                        <button class="btn btn-secondary btn-back-home">&larr; Dashboard</button>
+                        <h2>Wiederholungszentrum / Revision Center</h2>
+                    </div>
+
+                    <div class="revision-dashboard-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:20px; margin-bottom:30px;">
+                        
+                        <!-- Weak Vocabulary Panel -->
+                        <div class="revision-card glass-panel" style="padding:20px; display:flex; flex-direction:column; justify-content:space-between;">
+                            <div>
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                                    <span style="font-size:2rem;">🎴</span>
+                                    <span class="badge" id="lbl-weak-vocab-count" style="background:rgba(239,68,68,0.15); color:var(--color-danger); font-size:0.8rem; padding:4px 8px; border-radius:6px; font-weight:700;">0 Weak Words</span>
+                                </div>
+                                <h3 style="margin:0 0 8px 0; font-family:var(--font-display);">Schwache Vokabeln / Weak Vocabulary</h3>
+                                <p style="color:var(--color-text-muted); font-size:0.9rem; margin:0 0 16px 0;">Vocabulary words you struggled with in practice quizzes or mock exams. Automatically compiled.</p>
+                                <div id="lst-weak-vocab" style="max-height:150px; overflow-y:auto; border-radius:6px; background:rgba(255,255,255,0.02); padding:8px; border:1px solid var(--color-border); display:none; margin-bottom:16px;">
+                                    <!-- List of weak words here -->
+                                </div>
+                            </div>
+                            <button id="btn-revise-vocab" class="btn btn-primary btn-touch" style="width:100%;">Vokabeln wiederholen</button>
+                        </div>
+
+                        <!-- Weak Grammar Panel -->
+                        <div class="revision-card glass-panel" style="padding:20px; display:flex; flex-direction:column; justify-content:space-between;">
+                            <div>
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                                    <span style="font-size:2rem;">🧠</span>
+                                    <span class="badge" id="lbl-weak-grammar-count" style="background:rgba(239,68,68,0.15); color:var(--color-danger); font-size:0.8rem; padding:4px 8px; border-radius:6px; font-weight:700;">0 Weak Topics</span>
+                                </div>
+                                <h3 style="margin:0 0 8px 0; font-family:var(--font-display);">Schwache Grammatik / Weak Grammar</h3>
+                                <p style="color:var(--color-text-muted); font-size:0.9rem; margin:0 0 16px 0;">Grammar categories containing wrong answers. Practice rules and lessons again.</p>
+                                <div id="lst-weak-grammar" style="max-height:150px; overflow-y:auto; border-radius:6px; background:rgba(255,255,255,0.02); padding:8px; border:1px solid var(--color-border); display:none; margin-bottom:16px;">
+                                    <!-- List of weak grammar categories -->
+                                </div>
+                            </div>
+                            <button id="btn-revise-grammar" class="btn btn-primary btn-touch" style="width:100%;">Grammatik wiederholen</button>
+                        </div>
+
+                        <!-- Due Reviews Card (SRS) -->
+                        <div class="revision-card glass-panel" style="padding:20px; display:flex; flex-direction:column; justify-content:space-between;">
+                            <div>
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                                    <span style="font-size:2rem;">📅</span>
+                                    <span class="badge" id="lbl-due-reviews-count" style="background:rgba(59,130,246,0.15); color:var(--color-primary); font-size:0.8rem; padding:4px 8px; border-radius:6px; font-weight:700;">0 Due</span>
+                                </div>
+                                <h3 style="margin:0 0 8px 0; font-family:var(--font-display);">Fällige Wiederholungen / Due Reviews</h3>
+                                <p style="color:var(--color-text-muted); font-size:0.9rem; margin:0 0 16px 0;">Words scheduled for review today based on your Spaced Repetition (SRS) schedule.</p>
+                            </div>
+                            <button id="btn-revise-srs" class="btn btn-primary btn-touch" style="width:100%;">Fällige Wiederholungen starten</button>
+                        </div>
+
+                        <!-- Mistakes Review Card -->
+                        <div class="revision-card glass-panel" style="padding:20px; display:flex; flex-direction:column; justify-content:space-between;">
+                            <div>
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                                    <span style="font-size:2rem;">🎯</span>
+                                    <span class="badge" id="lbl-mistakes-archive-count" style="background:rgba(239,68,68,0.15); color:var(--color-danger); font-size:0.8rem; padding:4px 8px; border-radius:6px; font-weight:700;">0 Mistakes</span>
+                                </div>
+                                <h3 style="margin:0 0 8px 0; font-family:var(--font-display);">Fehler-Archiv / Mistakes Archive</h3>
+                                <p style="color:var(--color-text-muted); font-size:0.9rem; margin:0 0 16px 0;">View and review all incorrect answers in detail inside your mistakes center.</p>
+                            </div>
+                            <button id="btn-revise-mistakes" class="btn btn-warning btn-touch" style="width:100%;">Fehler ansehen / View Mistakes</button>
+                        </div>
+
+                        <!-- Quick Retest Card -->
+                        <div class="revision-card glass-panel" style="padding:20px; grid-column: 1 / -1; display:flex; flex-direction:row; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;">
+                            <div style="flex:1; min-width:260px;">
+                                <h3 style="margin:0 0 8px 0; font-family:var(--font-display); color:var(--color-warning);">⚡ Schneller Retest / Quick Retest</h3>
+                                <p style="color:var(--color-text-muted); font-size:0.9rem; margin:0;">Generates a dynamic 10-question quiz blending your weakest vocabulary words and weakest grammar topics for quick assessment.</p>
+                            </div>
+                            <button id="btn-revise-quick-retest" class="btn btn-warning btn-touch" style="padding:14px 28px; font-weight:700;">Retest starten</button>
+                        </div>
+
                     </div>
                 </section>
 
