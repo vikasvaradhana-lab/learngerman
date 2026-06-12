@@ -2498,3 +2498,24 @@ body.light-mode .pronunciation-subtext {
     min-height: 24px;
 }
 
+/* Option Card styling for V2.2 quiz panels to fix text readability */
+.option-card {
+    background: var(--color-panel-solid);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    color: var(--color-text-primary) !important;
+    font-family: var(--font-body);
+    font-weight: 500;
+}
+.option-card:hover {
+    border-color: var(--color-text-muted);
+    background: var(--color-panel-hover);
+}
+.option-card.selected {
+    border-color: var(--color-accent) !important;
+    background: var(--color-accent-light) !important;
+    box-shadow: 0 0 0 1px var(--color-accent);
+}
+
