@@ -5784,7 +5784,7 @@ function buildReviewScreen() {
 }
 
 // Navigation flow switches
-function switchToView(viewId) {
+function switchToView(viewId, pushHistory = true) {
     const panels = document.querySelectorAll(".view-panel");
     panels.forEach(p => {
         p.classList.toggle("active", p.id === viewId);
@@ -5795,6 +5795,14 @@ function switchToView(viewId) {
     document.getElementById("app-footer").style.display = isExamView ? "flex" : "none";
     document.getElementById("header-stats").style.display = (viewId !== "view-start-screen") ? "flex" : "none";
     document.getElementById("progress-bar-wrapper").style.display = (viewId !== "view-start-screen") ? "block" : "none";
+
+    if (pushHistory) {
+        try {
+            window.history.pushState({ viewId: viewId }, "", "");
+        } catch (e) {
+            console.warn("History pushState failed:", e);
+        }
+    }
 }
 
 // --- DYNAMIC GRAPHICS & PERFORMANCE ANALYTICS ENGINE ---
@@ -7894,15 +7902,64 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    if (hasStoredSession && state.isStarted && !state.isSubmitted) {
-        // Restore active unfinished exam session
-        switchToView("view-exam-screen");
+    const initialView = (hasStoredSession && state.isStarted && !state.isSubmitted) ? "view-exam-screen" : "view-landing-dashboard";
+
+    // Setup SPA router state
+    try {
+        window.history.replaceState({ isBase: true }, "", "");
+        window.history.pushState({ viewId: initialView }, "", "");
+    } catch (e) {
+        console.warn("History API block/error:", e);
+    }
+
+    if (initialView === "view-exam-screen") {
+        switchToView("view-exam-screen", false);
         startGlobalExamTimer();
         loadQuestion(state.currentModuleIndex, state.currentQuestionIndex);
     } else {
-        // Normal startup opens the Landing Dashboard
-        switchToView("view-landing-dashboard");
+        switchToView("view-landing-dashboard", false);
     }
+
+    // Setup back button history popstate listener
+    window.addEventListener("popstate", (event) => {
+        if (event.state) {
+            if (event.state.isBase) {
+                // If we popped to base (which is the entry point below dashboard/launch screen)
+                const currentActivePanel = document.querySelector(".view-panel.active");
+                const currentViewId = currentActivePanel ? currentActivePanel.id : "view-landing-dashboard";
+                
+                if (currentViewId === "view-landing-dashboard" || currentViewId === "view-start-screen") {
+                    if (confirm("Möchten Sie das Lernportal wirklich schließen? / Do you really want to close the learning portal?")) {
+                        window.close();
+                        window.history.back();
+                    } else {
+                        // Push the view state back to prevent leaving
+                        window.history.pushState({ viewId: currentViewId }, "", "");
+                    }
+                } else {
+                    // If they hit base from a sub-page, go back to dashboard
+                    window.history.pushState({ viewId: "view-landing-dashboard" }, "", "");
+                    switchToView("view-landing-dashboard", false);
+                }
+            } else if (event.state.viewId) {
+                // Navigate back to the previous view panel
+                switchToView(event.state.viewId, false);
+            }
+        } else {
+            // Fallback for empty state
+            const currentActivePanel = document.querySelector(".view-panel.active");
+            const currentViewId = currentActivePanel ? currentActivePanel.id : "view-landing-dashboard";
+            if (currentViewId === "view-landing-dashboard" || currentViewId === "view-start-screen") {
+                if (confirm("Möchten Sie das Lernportal wirklich schließen? / Do you really want to close the learning portal?")) {
+                    window.close();
+                } else {
+                    window.history.pushState({ viewId: currentViewId }, "", "");
+                }
+            } else {
+                switchToView("view-landing-dashboard", false);
+            }
+        }
+    });
 
     // Settings elements triggers setup
     const themeSelect = document.getElementById("settings-theme-select");
