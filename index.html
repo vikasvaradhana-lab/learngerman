@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Goethe A1 Learning Portal & Exam Platform</title>
     <meta name="description" content="Offline German Goethe A1 Learning Portal and Exam Platform with Practice Exercises, Mistakes tracker, Speech synthesis, and Analytics.">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=2.3.3">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,6 +48,12 @@
                 <div class="stat-item module-badge" id="header-module-badge" style="display: none;">
                     <span class="badge-label">Modus:</span>
                     <span id="display-current-module" class="badge-value">Hören</span>
+                </div>
+
+                <!-- Candidate name badge shown during exam -->
+                <div class="stat-item" id="header-candidate-badge" style="display: none;">
+                    <span class="badge-label">👤</span>
+                    <span id="display-candidate-name" class="badge-value"></span>
                 </div>
 
                 <div class="stat-item timer-badge" id="exam-timer-wrapper" style="display: none;">
@@ -1780,7 +1789,7 @@
     </div>
 
     <!-- Script loading -->
-    <script src="app.js"></script>
-    <script src="v22_additions.js"></script>
+    <script src="app.js?v=2.3.2d"></script>
+    <script src="v22_additions.js?v=2.3.2d"></script>
 </body>
 </html>

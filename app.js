@@ -5023,6 +5023,13 @@ function initExamSession() {
     // Randomize helper
     const shuffleArray = arr => arr.sort(() => Math.random() - 0.5);
 
+    // Always clear existing session questions before populating
+    // (prevents question accumulation if called after a stored session is loaded)
+    state.sessionQuestions.hoeren = [];
+    state.sessionQuestions.lesen = [];
+    state.sessionQuestions.schreiben = [];
+    state.sessionQuestions.sprechen = [];
+
     // Hören:
     // Teil 1: Select 6 of available
     state.sessionQuestions.hoeren.push(...shuffleArray([...QUESTION_BANK.hoeren.teil1]));
@@ -5789,6 +5796,11 @@ function switchToView(viewId, pushHistory = true) {
     panels.forEach(p => {
         p.classList.toggle("active", p.id === viewId);
     });
+
+    // Always scroll to top on every view/page switch
+    const mainContent = document.getElementById("main-content");
+    if (mainContent) mainContent.scrollTop = 0;
+    window.scrollTo(0, 0);
 
     const isExamView = (viewId === "view-exam-screen");
     document.getElementById("app-sidebar").style.display = isExamView ? "flex" : "none";
@@ -8467,40 +8479,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Registration and Start Button click
     document.getElementById("btn-start-exam").onclick = () => {
-        const nameInput = document.getElementById("candidate-name");
-        const dateInput = document.getElementById("exam-date");
-        const errorMsg = document.getElementById("name-error");
+        try {
+            console.log("[START EXAM] Button clicked");
+            const nameInput = document.getElementById("candidate-name");
+            const dateInput = document.getElementById("exam-date");
+            const errorMsg = document.getElementById("name-error");
 
-        if (!nameInput.value.trim()) {
-            errorMsg.style.display = "block";
-            nameInput.focus();
-            return;
+            if (!nameInput.value.trim()) {
+                errorMsg.style.display = "block";
+                nameInput.focus();
+                return;
+            }
+            errorMsg.style.display = "none";
+
+            // Setup State initial values
+            state.candidateName = nameInput.value.trim();
+            state.examDate = dateInput.value;
+            const levelSelect = document.getElementById("exam-level-select");
+            state.level = levelSelect ? levelSelect.value : "A1";
+            
+            if (state.level !== "A1") {
+                alert(`Hinweis: Das Niveau ${state.level} ist in der Systemarchitektur vorbereitet, aber die Fragenpakete sind noch gesperrt. Die Prüfung wird im A1-Modus gestartet.`);
+                state.level = "A1";
+            }
+
+            state.isStarted = true;
+            state.startTime = Date.now();
+            
+            // Randomize questions for this unique session
+            console.log("[START EXAM] Calling initExamSession...");
+            initExamSession();
+            console.log("[START EXAM] sessionQuestions.hoeren.length =", state.sessionQuestions.hoeren.length);
+            console.log("[START EXAM] sessionQuestions.lesen.length  =", state.sessionQuestions.lesen.length);
+
+            // Update displays
+            const candidateDisplay = document.getElementById("display-candidate-name");
+            if (candidateDisplay) {
+                candidateDisplay.textContent = state.candidateName;
+                const badge = document.getElementById("header-candidate-badge");
+                if (badge) badge.style.display = "";
+            }
+
+            console.log("[START EXAM] Switching to exam screen...");
+            switchToView("view-exam-screen");
+            startGlobalExamTimer();
+            loadQuestion(0, 0);
+            console.log("[START EXAM] Done — exam loaded successfully.");
+        } catch (err) {
+            console.error("[START EXAM] ERROR:", err);
+            alert("Ein Fehler ist aufgetreten. Bitte öffnen Sie die Browser-Konsole (F12) für Details.\n\nError: " + err.message);
         }
-        errorMsg.style.display = "none";
-
-        // Setup State initial values
-        state.candidateName = nameInput.value.trim();
-        state.examDate = dateInput.value;
-        const levelSelect = document.getElementById("exam-level-select");
-        state.level = levelSelect ? levelSelect.value : "A1";
-        
-        if (state.level !== "A1") {
-            alert(`Hinweis: Das Niveau ${state.level} ist in der Systemarchitektur vorbereitet, aber die Fragenpakete sind noch gesperrt. Die Prüfung wird im A1-Modus gestartet.`);
-            state.level = "A1";
-        }
-
-        state.isStarted = true;
-        state.startTime = Date.now();
-        
-        // Randomize questions for this unique session
-        initExamSession();
-
-        // Update displays
-        document.getElementById("display-candidate-name").textContent = state.candidateName;
-
-        switchToView("view-exam-screen");
-        startGlobalExamTimer();
-        loadQuestion(0, 0);
     };
 
     // Global Section Navigation tabs triggers
