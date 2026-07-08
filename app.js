@@ -4409,27 +4409,972 @@ const PRACTICE_DATABASE = {
             ]
         }
     ],
-    writing: [
+    writingStudio: [
+        // ── CATEGORY: PERSONAL ────────────────────────────────────────────────────
         {
-            id: "pr_writ_1",
-            topic: "Einladung",
-            text: `<p><strong>Schreiben Sie eine E-Mail an Ihre Freundin Julia:</strong></p><ul><li>Laden Sie Julia zu Ihrer Geburtstagsparty am Samstag ein.</li><li>Sagen Sie, wann die Party anfängt (19:00 Uhr).</li><li>Fragen Sie Julia, ob sie einen Kuchen mitbringen kann.</li></ul><p><em>Schreiben Sie 30–50 Wörter. Denken Sie an die passende Anrede und einen Gruß am Ende.</em></p>`,
-            translation: "<p><strong>Write an email to your friend Julia:</strong></p><ul><li>Invite Julia to your birthday party on Saturday.</li><li>Say when the party starts (7:00 PM).</li><li>Ask Julia if she can bring a cake.</li></ul><p><em>Write 30–50 words. Remember to include a suitable greeting and sign-off.</em></p>",
-            topicLabel: "Invitation"
+            id: "ws_001",
+            category: "Personal",
+            categoryIcon: "👤",
+            title: "Introduce Yourself",
+            titleDE: "Stellen Sie sich vor",
+            prompt: "Write a short text introducing yourself. Include your name, age, country of origin, your job or what you study, and one hobby.",
+            promptDE: "Schreiben Sie einen kurzen Text und stellen Sie sich vor. Schreiben Sie über Ihren Namen, Ihr Alter, Ihr Herkunftsland, Ihren Beruf oder Ihr Studium und ein Hobby.",
+            wordTarget: 40,
+            vocab: [
+                { word: "der Name", translation: "name", ml: "ഡേർ നാമെ" },
+                { word: "das Alter", translation: "age", ml: "ദാസ് ആൽറ്റർ" },
+                { word: "der Beruf", translation: "profession", ml: "ഡേർ ബെറൂഫ്" },
+                { word: "das Hobby", translation: "hobby", ml: "ദാസ് ഹോബി" },
+                { word: "kommen aus", translation: "to come from", ml: "കോമെൻ ഔസ്" },
+                { word: "wohnen in", translation: "to live in", ml: "വോനെൻ ഇൻ" },
+                { word: "lernen", translation: "to learn/study", ml: "ലേർണെൻ" },
+                { word: "sprechen", translation: "to speak", ml: "ഷ്പ്രെഷെൻ" }
+            ],
+            expressions: [
+                { de: "Ich heiße / Mein Name ist ...", en: "My name is ..." },
+                { de: "Ich bin ... Jahre alt.", en: "I am ... years old." },
+                { de: "Ich komme aus ...", en: "I come from ..." },
+                { de: "Ich wohne in ...", en: "I live in ..." },
+                { de: "Ich bin von Beruf ...", en: "My profession is ..." },
+                { de: "In meiner Freizeit ... ich gern.", en: "In my free time I like to ..." },
+                { de: "Ich lerne Deutsch, weil ...", en: "I am learning German because ..." }
+            ],
+            tips: [
+                "Start with a greeting: Hallo! or Guten Tag!",
+                "Use the present tense for everything.",
+                "Keep each sentence short and clear.",
+                "Write one idea per sentence.",
+                "End with a polite closing: Viele Grüße."
+            ],
+            modelAnswer: "Hallo! Ich heiße Maria. Ich bin 28 Jahre alt und komme aus Indien. Ich wohne jetzt in Berlin. Ich bin Ingenieurin von Beruf. In meiner Freizeit lese ich gern und lerne Deutsch. Viele Grüße, Maria.",
+            guidedScaffold: [
+                { label: "Greeting", hint: "Start with Hallo! or Guten Tag!" },
+                { label: "Name + Age", hint: "Ich heiße ... / Ich bin ... Jahre alt." },
+                { label: "Origin + City", hint: "Ich komme aus ... / Ich wohne in ..." },
+                { label: "Job or Studies", hint: "Ich bin ... von Beruf. / Ich studiere ..." },
+                { label: "Hobby", hint: "In meiner Freizeit ... ich gern." },
+                { label: "Closing", hint: "Viele Grüße, [Your Name]" }
+            ],
+            commonMistakes: [
+                { wrong: "Ich bin von Deutschland.", correct: "Ich komme aus Deutschland.", reason: "Use 'kommen aus' for origin, not 'sein von'." },
+                { wrong: "Ich habe 28 Jahre.", correct: "Ich bin 28 Jahre alt.", reason: "In German, use 'sein' (to be) for age, not 'haben' (to have)." }
+            ],
+            checklist: ["Greeting included", "Name and age written", "Country of origin mentioned", "Job or study written", "Hobby mentioned", "Polite closing used"]
         },
         {
-            id: "pr_writ_2",
-            topic: "Termin",
-            text: `<p><strong>Schreiben Sie eine E-Mail an Ihren Arzt (Praxis Dr. Weber):</strong></p><ul><li>Erklären Sie, warum Sie den Termin am Dienstag absagen müssen (krank/Arbeit).</li><li>Fragen Sie nach einem neuen Termin am Donnerstag.</li><li>Bitten Sie um eine kurze Bestätigung.</li></ul><p><em>Schreiben Sie 30–50 Wörter. Denken Sie an die passende Anrede und einen Gruß am Ende.</em></p>`,
-            translation: "<p><strong>Write an email to your doctor (office of Dr. Weber):</strong></p><ul><li>Explain why you have to cancel the appointment on Tuesday (sick/work).</li><li>Ask for a new appointment on Thursday.</li><li>Ask for a short confirmation.</li></ul><p><em>Write 30–50 words. Remember to include a suitable greeting and sign-off.</em></p>",
-            topicLabel: "Appointment"
+            id: "ws_002",
+            category: "Personal",
+            categoryIcon: "👤",
+            title: "My Family",
+            titleDE: "Meine Familie",
+            prompt: "Write a short text about your family. Mention who is in your family, their names, ages, and what they do.",
+            promptDE: "Schreiben Sie einen kurzen Text über Ihre Familie. Schreiben Sie, wer in Ihrer Familie ist, wie die Personen heißen, wie alt sie sind und was sie machen.",
+            wordTarget: 40,
+            vocab: [
+                { word: "die Familie", translation: "family", ml: "ഡി ഫാമിലിയെ" },
+                { word: "die Mutter", translation: "mother", ml: "ഡി മുട്ടർ" },
+                { word: "der Vater", translation: "father", ml: "ഡേർ ഫാത്തർ" },
+                { word: "der Bruder", translation: "brother", ml: "ഡേർ ബ്രൂഡർ" },
+                { word: "die Schwester", translation: "sister", ml: "ഡി ഷ്വെസ്റ്റർ" },
+                { word: "verheiratet", translation: "married", ml: "ഫെർഹൈരാറ്ററ്റ്" },
+                { word: "arbeiten", translation: "to work", ml: "ആർബൈറ്റൻ" },
+                { word: "wohnen", translation: "to live", ml: "വോനെൻ" }
+            ],
+            expressions: [
+                { de: "Ich habe eine große / kleine Familie.", en: "I have a big / small family." },
+                { de: "Meine Mutter heißt ...", en: "My mother's name is ..." },
+                { de: "Mein Vater ist ... Jahre alt.", en: "My father is ... years old." },
+                { de: "Er / Sie arbeitet als ...", en: "He / She works as ..." },
+                { de: "Wir wohnen zusammen in ...", en: "We live together in ..." },
+                { de: "Ich habe einen Bruder und eine Schwester.", en: "I have a brother and a sister." }
+            ],
+            tips: [
+                "Describe each person in one or two sentences.",
+                "Use 'Er' for males and 'Sie' for females.",
+                "Use present tense throughout.",
+                "Mention at least 2-3 family members.",
+                "Include what each person does (works, studies, etc.)."
+            ],
+            modelAnswer: "Ich habe eine kleine Familie. Meine Mutter heißt Priya. Sie ist 55 Jahre alt und arbeitet als Lehrerin. Mein Vater heißt Rajan und ist Ingenieur. Ich habe auch einen Bruder. Er heißt Arun und studiert in Mumbai. Viele Grüße!",
+            guidedScaffold: [
+                { label: "Family size", hint: "Ich habe eine große / kleine Familie." },
+                { label: "Mother", hint: "Meine Mutter heißt ... / Sie ist ... Jahre alt." },
+                { label: "Father", hint: "Mein Vater heißt ... / Er arbeitet als ..." },
+                { label: "Siblings", hint: "Ich habe einen Bruder / eine Schwester namens ..." },
+                { label: "Where you live", hint: "Wir wohnen in ..." },
+                { label: "Closing", hint: "Viele Grüße!" }
+            ],
+            commonMistakes: [
+                { wrong: "Mein Mutter ist Lehrerin.", correct: "Meine Mutter ist Lehrerin.", reason: "'Mutter' is feminine, so use 'meine' not 'mein'." },
+                { wrong: "Er hat 55 Jahre.", correct: "Er ist 55 Jahre alt.", reason: "Use 'sein' (to be) for age in German." }
+            ],
+            checklist: ["Family described", "At least 2 family members mentioned", "Ages or jobs included", "Correct pronouns used (er/sie)", "Closing included"]
         },
         {
-            id: "pr_writ_3",
-            topic: "Urlaub",
-            text: `<p><strong>Schreiben Sie eine E-Mail an Ihren Kollegen Thomas:</strong></p><ul><li>Sagen Sie, dass Sie im Urlaub in Spanien sind.</li><li>Erklären Sie, wie das Wetter dort ist.</li><li>Fragen Sie Thomas, wie die Arbeit im Büro läuft.</li></ul><p><em>Schreiben Sie 30–50 Wörter. Denken Sie an die passende Anrede und einen Gruß am Ende.</em></p>`,
-            translation: "<p><strong>Write an email to your colleague Thomas:</strong></p><ul><li>Say that you are on vacation in Spain.</li><li>Explain how the weather is there.</li><li>Ask Thomas how work is going in the office.</li></ul><p><em>Write 30–50 words. Remember to include a suitable greeting and sign-off.</em></p>",
-            topicLabel: "Holiday"
+            id: "ws_003",
+            category: "Personal",
+            categoryIcon: "👤",
+            title: "My Hobby",
+            titleDE: "Mein Hobby",
+            prompt: "Write a short text about your hobby. Say what your hobby is, when and where you do it, and why you like it.",
+            promptDE: "Schreiben Sie einen kurzen Text über Ihr Hobby. Sagen Sie, was Ihr Hobby ist, wann und wo Sie es machen und warum Sie es mögen.",
+            wordTarget: 40,
+            vocab: [
+                { word: "das Hobby", translation: "hobby", ml: "ദാസ് ഹോബി" },
+                { word: "die Freizeit", translation: "free time", ml: "ഡി ഫ്രൈറ്റ്സൈറ്റ്" },
+                { word: "spielen", translation: "to play", ml: "ഷ്പീലൻ" },
+                { word: "lesen", translation: "to read", ml: "ലേസൻ" },
+                { word: "kochen", translation: "to cook", ml: "കോഖെൻ" },
+                { word: "gern / gerne", translation: "gladly / like to", ml: "ഗേൺ / ഗേണെ" },
+                { word: "oft", translation: "often", ml: "ഓഫ്റ്റ്" },
+                { word: "am Wochenende", translation: "at the weekend", ml: "അം വോഖെൻഎൻഡെ" }
+            ],
+            expressions: [
+                { de: "Mein Hobby ist ...", en: "My hobby is ..." },
+                { de: "In meiner Freizeit ... ich gern.", en: "In my free time I like to ..." },
+                { de: "Ich mache das jeden Tag / am Wochenende.", en: "I do this every day / at the weekend." },
+                { de: "Das macht mir viel Spaß.", en: "This is a lot of fun for me." },
+                { de: "Ich finde das sehr entspannend.", en: "I find that very relaxing." },
+                { de: "Meine Freunde und ich ...", en: "My friends and I ..." }
+            ],
+            tips: [
+                "Name your hobby clearly in the first sentence.",
+                "Say how often you do it (jeden Tag, am Wochenende).",
+                "Explain why you like it using 'weil' or 'Das macht Spaß'.",
+                "Use the present tense throughout.",
+                "Write 35-50 words."
+            ],
+            modelAnswer: "Mein Hobby ist Lesen. In meiner Freizeit lese ich gern Bücher auf Deutsch. Ich lese jeden Abend etwa 30 Minuten. Das macht mir viel Spaß und ich lerne dabei neue Wörter. Meine Lieblingsgenres sind Krimis und Reiseberichte. Viele Grüße!",
+            guidedScaffold: [
+                { label: "Name your hobby", hint: "Mein Hobby ist ... / Ich ... gern." },
+                { label: "When / How often", hint: "Ich mache das jeden ... / am Wochenende." },
+                { label: "Where", hint: "Ich ... zu Hause / im Park / im Verein." },
+                { label: "Why you like it", hint: "Das macht mir Spaß. / Das ist sehr entspannend." },
+                { label: "With whom", hint: "Ich mache das allein / mit Freunden." },
+                { label: "Closing", hint: "Viele Grüße!" }
+            ],
+            commonMistakes: [
+                { wrong: "Ich mag spielen Fußball.", correct: "Ich spiele gern Fußball.", reason: "In German, use 'gern' after the verb to express liking: 'Ich spiele gern'." },
+                { wrong: "Das macht zu mir Spaß.", correct: "Das macht mir Spaß.", reason: "The dative 'mir' does not take a preposition here." }
+            ],
+            checklist: ["Hobby named clearly", "Frequency mentioned", "Location mentioned", "Reason for liking given", "Present tense used throughout", "Closing included"]
+        },
+        {
+            id: "ws_004",
+            category: "Personal",
+            categoryIcon: "👤",
+            title: "My Daily Routine",
+            titleDE: "Mein Tagesablauf",
+            prompt: "Write a short text about your daily routine. Describe what you do from morning to evening.",
+            promptDE: "Schreiben Sie einen kurzen Text über Ihren Tagesablauf. Beschreiben Sie, was Sie vom Morgen bis zum Abend machen.",
+            wordTarget: 50,
+            vocab: [
+                { word: "aufstehen", translation: "to get up", ml: "ഔഫ്സ്റ്റീൻ" },
+                { word: "das Frühstück", translation: "breakfast", ml: "ദാസ് ഫ്രൂസ്റ്റുക്ക്" },
+                { word: "zur Arbeit fahren", translation: "to go to work", ml: "ത്സുർ ആർബൈറ്റ് ഫാറെൻ" },
+                { word: "zu Mittag essen", translation: "to have lunch", ml: "ത്സu മിറ്റാഗ് എസ്സെൻ" },
+                { word: "nach Hause kommen", translation: "to come home", ml: "നാഹ് ഹൗസെ കോമെൻ" },
+                { word: "schlafen gehen", translation: "to go to sleep", ml: "സ്ലാഫെൻ ഗേഹൻ" },
+                { word: "meistens", translation: "mostly / usually", ml: "മൈസ്റ്റൻസ്" },
+                { word: "danach", translation: "after that", ml: "ദാനാഹ്" }
+            ],
+            expressions: [
+                { de: "Ich stehe um ... Uhr auf.", en: "I get up at ... o'clock." },
+                { de: "Zuerst ..., dann ...", en: "First ..., then ..." },
+                { de: "Um ... Uhr esse ich Frühstück.", en: "At ... I eat breakfast." },
+                { de: "Danach fahre ich zur Arbeit.", en: "After that I go to work." },
+                { de: "Am Abend ...", en: "In the evening ..." },
+                { de: "Gegen ... Uhr gehe ich schlafen.", en: "Around ... I go to sleep." }
+            ],
+            tips: [
+                "Use time expressions: um, zuerst, dann, danach, am Abend.",
+                "List activities in chronological order.",
+                "Use present tense.",
+                "Give specific times (um 7 Uhr, um 12 Uhr).",
+                "Keep each sentence short."
+            ],
+            modelAnswer: "Ich stehe jeden Morgen um 6 Uhr auf. Zuerst dusche ich und dann frühstücke ich. Um 8 Uhr fahre ich zur Arbeit. Ich arbeite bis 17 Uhr. Danach koche ich und esse zu Abend. Am Abend lese ich oder sehe fern. Gegen 22 Uhr gehe ich schlafen. Viele Grüße!",
+            guidedScaffold: [
+                { label: "Wake up time", hint: "Ich stehe um ... Uhr auf." },
+                { label: "Morning routine", hint: "Zuerst ..., dann ..." },
+                { label: "Work / School", hint: "Um ... Uhr fahre ich zur Arbeit / Schule." },
+                { label: "Midday", hint: "Um 12 Uhr esse ich zu Mittag." },
+                { label: "Evening", hint: "Am Abend ..." },
+                { label: "Bedtime + Closing", hint: "Gegen ... Uhr gehe ich schlafen. Viele Grüße!" }
+            ],
+            commonMistakes: [
+                { wrong: "Ich gehe schlafen um 22 Uhr.", correct: "Ich gehe um 22 Uhr schlafen.", reason: "In German main clauses, the verb comes second: time expressions push the verb to position 2." },
+                { wrong: "Ich esse Frühstück am 7 Uhr.", correct: "Ich esse um 7 Uhr Frühstück.", reason: "Use 'um' for specific clock times, not 'am'." }
+            ],
+            checklist: ["Morning described", "Work/school mentioned", "Midday mentioned", "Evening described", "Bedtime mentioned", "Time expressions used", "Closing included"]
+        },
+        {
+            id: "ws_005",
+            category: "Personal",
+            categoryIcon: "👤",
+            title: "My House",
+            titleDE: "Mein Haus / Meine Wohnung",
+            prompt: "Write a short text about where you live. Describe your house or apartment — rooms, location, and what you like about it.",
+            promptDE: "Schreiben Sie einen kurzen Text darüber, wo Sie wohnen. Beschreiben Sie Ihr Haus oder Ihre Wohnung — Zimmer, Lage und was Ihnen daran gefällt.",
+            wordTarget: 45,
+            vocab: [
+                { word: "die Wohnung", translation: "apartment", ml: "ഡി വോനുംഗ്" },
+                { word: "das Zimmer", translation: "room", ml: "ദാസ് സിമ്മർ" },
+                { word: "das Schlafzimmer", translation: "bedroom", ml: "ദാസ് സ്ലാഫ്സിമ്മർ" },
+                { word: "die Küche", translation: "kitchen", ml: "ഡി കുഷെ" },
+                { word: "das Badezimmer", translation: "bathroom", ml: "ദാസ് ബാഡെസിമ്മർ" },
+                { word: "das Wohnzimmer", translation: "living room", ml: "ദാസ് വോൻസിമ്മർ" },
+                { word: "groß / klein", translation: "big / small", ml: "ഗ്രോസ് / ക്ലൈൻ" },
+                { word: "im Zentrum", translation: "in the centre", ml: "ഇം സെൻട്രം" }
+            ],
+            expressions: [
+                { de: "Ich wohne in einer Wohnung / in einem Haus.", en: "I live in an apartment / in a house." },
+                { de: "Meine Wohnung hat ... Zimmer.", en: "My apartment has ... rooms." },
+                { de: "Es gibt ein Schlafzimmer, eine Küche und ...", en: "There is a bedroom, a kitchen and ..." },
+                { de: "Die Wohnung liegt im Zentrum / in der Nähe von ...", en: "The apartment is in the centre / near ..." },
+                { de: "Ich mag meine Wohnung, weil ...", en: "I like my apartment because ..." },
+                { de: "Sie ist sehr hell und gemütlich.", en: "It is very bright and cosy." }
+            ],
+            tips: [
+                "Say what type of home you have (Haus or Wohnung).",
+                "List the rooms with 'Es gibt ...' or 'Die Wohnung hat ...'.",
+                "Describe the location.",
+                "Add a personal opinion: 'Ich mag ...  weil ...'",
+                "Use adjectives: groß, hell, ruhig, schön."
+            ],
+            modelAnswer: "Ich wohne in einer kleinen Wohnung in Berlin. Die Wohnung hat drei Zimmer: ein Schlafzimmer, ein Wohnzimmer und eine Küche. Es gibt auch ein Badezimmer. Die Wohnung liegt im Zentrum. Ich mag meine Wohnung, weil sie sehr hell und ruhig ist. Viele Grüße!",
+            guidedScaffold: [
+                { label: "Where you live", hint: "Ich wohne in einer Wohnung / einem Haus in ..." },
+                { label: "Number of rooms", hint: "Die Wohnung hat ... Zimmer." },
+                { label: "List rooms", hint: "Es gibt ein ..., eine ..., und ein ..." },
+                { label: "Location", hint: "Die Wohnung liegt im Zentrum / in der Nähe von ..." },
+                { label: "Opinion", hint: "Ich mag meine Wohnung, weil sie ... ist." },
+                { label: "Closing", hint: "Viele Grüße!" }
+            ],
+            commonMistakes: [
+                { wrong: "Ich wohne in ein Haus.", correct: "Ich wohne in einem Haus.", reason: "After 'in' (location), use the dative: 'einem' for masculine/neuter." },
+                { wrong: "Die Wohnung hat drei Zimmer groß.", correct: "Die Wohnung ist groß und hat drei Zimmer.", reason: "Adjectives after 'ist' don't need endings (predicative use)." }
+            ],
+            checklist: ["Type of home mentioned", "Number of rooms given", "Rooms listed", "Location described", "Personal opinion included", "Closing included"]
+        },
+
+        // ── CATEGORY: MESSAGES ────────────────────────────────────────────────────
+        {
+            id: "ws_006",
+            category: "Messages",
+            categoryIcon: "💬",
+            title: "Birthday Invitation",
+            titleDE: "Geburtstagseinladung",
+            prompt: "Write a short message to invite your friend Anna to your birthday party. Say when and where the party is and ask her to reply.",
+            promptDE: "Schreiben Sie eine kurze Nachricht, um Ihre Freundin Anna zu Ihrer Geburtstagsparty einzuladen. Sagen Sie, wann und wo die Party ist, und bitten Sie um eine Antwort.",
+            wordTarget: 40,
+            vocab: [
+                { word: "einladen", translation: "to invite", ml: "ഐൻലാഡെൻ" },
+                { word: "die Party", translation: "party", ml: "ഡി പാർട്ടി" },
+                { word: "der Geburtstag", translation: "birthday", ml: "ഡേർ ഗെബുർട്സ്റ്റാഗ്" },
+                { word: "am Samstag", translation: "on Saturday", ml: "അം സാംസ്റ്റാഗ്" },
+                { word: "um 19 Uhr", translation: "at 7 PM", ml: "ഉം നോയിൻസീൻ ഊർ" },
+                { word: "kommen", translation: "to come", ml: "കോമെൻ" },
+                { word: "die Antwort", translation: "reply / answer", ml: "ഡി ആൻറ്റ്വോർട്ട്" },
+                { word: "mitbringen", translation: "to bring along", ml: "മിറ്റ്ബ്രിംഗൻ" }
+            ],
+            expressions: [
+                { de: "Liebe Anna,", en: "Dear Anna," },
+                { de: "Ich lade dich zu meiner Geburtstagsparty ein.", en: "I invite you to my birthday party." },
+                { de: "Die Party ist am ... um ... Uhr.", en: "The party is on ... at ... o'clock." },
+                { de: "Sie findet bei mir zu Hause statt.", en: "It takes place at my home." },
+                { de: "Kannst du kommen?", en: "Can you come?" },
+                { de: "Bitte schreib mir bald!", en: "Please write back soon!" },
+                { de: "Viele Grüße, [Name]", en: "Best wishes, [Name]" }
+            ],
+            tips: [
+                "Always start with 'Liebe [Name],' for female friends.",
+                "Mention the date and time clearly.",
+                "Ask a question: 'Kannst du kommen?'",
+                "End with 'Viele Grüße' and your name.",
+                "Keep it friendly and warm."
+            ],
+            modelAnswer: "Liebe Anna,\n\nIch lade dich herzlich zu meiner Geburtstagsparty ein! Die Party ist am Samstag, den 15. Juli, um 19 Uhr bei mir zu Hause. Es gibt Essen, Musik und viel Spaß! Kannst du kommen? Bitte schreib mir bald.\n\nViele Grüße,\nMaria",
+            guidedScaffold: [
+                { label: "Greeting", hint: "Liebe [Name]," },
+                { label: "Invitation", hint: "Ich lade dich zu meiner Geburtstagsparty ein." },
+                { label: "Date and time", hint: "Die Party ist am ... um ... Uhr." },
+                { label: "Location", hint: "Sie findet bei mir zu Hause / in [Café/Restaurant] statt." },
+                { label: "Question", hint: "Kannst du kommen?" },
+                { label: "Closing", hint: "Bitte schreib mir bald! Viele Grüße, [Name]" }
+            ],
+            commonMistakes: [
+                { wrong: "Ich lade dich zu meiner Geburtstagsparty ein zu kommen.", correct: "Ich lade dich zu meiner Geburtstagsparty ein.", reason: "In German, 'einladen' already includes the meaning of inviting someone to come." },
+                { wrong: "Die Party ist am Samstag um die 19 Uhr.", correct: "Die Party ist am Samstag um 19 Uhr.", reason: "Use 'um' alone before the time — no article needed." }
+            ],
+            checklist: ["Greeting with name", "Invitation stated clearly", "Date and time given", "Location mentioned", "Question asked", "Closing with name"]
+        },
+        {
+            id: "ws_007",
+            category: "Messages",
+            categoryIcon: "💬",
+            title: "Accept an Invitation",
+            titleDE: "Eine Einladung annehmen",
+            prompt: "Your friend Tom has invited you to his dinner party on Friday. Write a short message accepting the invitation. Say you are happy to come and ask what you can bring.",
+            promptDE: "Ihr Freund Tom hat Sie zu seinem Abendessen am Freitag eingeladen. Schreiben Sie eine kurze Nachricht und nehmen Sie die Einladung an. Sagen Sie, dass Sie sich freuen zu kommen, und fragen Sie, was Sie mitbringen können.",
+            wordTarget: 35,
+            vocab: [
+                { word: "annehmen", translation: "to accept", ml: "അൻനേമേൻ" },
+                { word: "sich freuen", translation: "to be happy/look forward", ml: "സിഹ് ഫ്രോയൻ" },
+                { word: "natürlich", translation: "of course", ml: "നാറ്റൂർലിഹ്" },
+                { word: "gerne", translation: "gladly / with pleasure", ml: "ഗേണെ" },
+                { word: "mitbringen", translation: "to bring along", ml: "മിറ്റ്ബ്രിംഗൻ" },
+                { word: "das Abendessen", translation: "dinner", ml: "ദാസ് ആബെൻഡ്എസ്സെൻ" }
+            ],
+            expressions: [
+                { de: "Lieber Tom,", en: "Dear Tom," },
+                { de: "Danke für deine Einladung!", en: "Thank you for your invitation!" },
+                { de: "Ich komme gerne!", en: "I would love to come!" },
+                { de: "Ich freue mich sehr darauf.", en: "I am very much looking forward to it." },
+                { de: "Was soll ich mitbringen?", en: "What should I bring?" },
+                { de: "Bis Freitag! Viele Grüße,", en: "See you Friday! Best wishes," }
+            ],
+            tips: [
+                "Start by thanking for the invitation.",
+                "Confirm you are coming clearly.",
+                "Show enthusiasm: 'Ich freue mich sehr!'",
+                "Ask a follow-up question: 'Was soll ich mitbringen?'",
+                "End warmly."
+            ],
+            modelAnswer: "Lieber Tom,\n\nDanke für deine Einladung! Ich komme natürlich gerne am Freitag. Ich freue mich sehr auf das Abendessen. Was soll ich mitbringen? Vielleicht etwas zu trinken oder einen Salat?\n\nBis Freitag! Viele Grüße,\nMaria",
+            guidedScaffold: [
+                { label: "Greeting", hint: "Lieber [Name], (for males) / Liebe [Name], (for females)" },
+                { label: "Thank for invitation", hint: "Danke für deine Einladung!" },
+                { label: "Accept", hint: "Ich komme gerne! / Natürlich komme ich!" },
+                { label: "Express happiness", hint: "Ich freue mich sehr darauf." },
+                { label: "Ask a question", hint: "Was soll ich mitbringen?" },
+                { label: "Closing", hint: "Bis [day]! Viele Grüße, [Name]" }
+            ],
+            commonMistakes: [
+                { wrong: "Ich bin glücklich zu kommen.", correct: "Ich komme gerne!", reason: "In German, say 'Ich komme gerne' (I come gladly) rather than translating 'I am happy to come' literally." },
+                { wrong: "Lieber Tom,", correct: "Lieber Tom, (correct for male) / Liebe Anna, (for female)", reason: "The adjective ending changes: 'Lieber' for males, 'Liebe' for females." }
+            ],
+            checklist: ["Greeting used", "Invitation thanked", "Acceptance confirmed", "Enthusiasm shown", "Follow-up question asked", "Closing with name"]
+        },
+        {
+            id: "ws_008",
+            category: "Messages",
+            categoryIcon: "💬",
+            title: "Decline an Invitation",
+            titleDE: "Eine Einladung ablehnen",
+            prompt: "Your colleague Klaus has invited you to a lunch on Thursday. Unfortunately you cannot come. Write a message politely declining and give a reason.",
+            promptDE: "Ihr Kollege Klaus hat Sie zum Mittagessen am Donnerstag eingeladen. Leider können Sie nicht kommen. Schreiben Sie eine höfliche Nachricht und lehnen Sie ab. Geben Sie einen Grund an.",
+            wordTarget: 35,
+            vocab: [
+                { word: "leider", translation: "unfortunately", ml: "ലൈഡർ" },
+                { word: "absagen", translation: "to cancel / decline", ml: "അപ്സാഗൻ" },
+                { word: "der Grund", translation: "reason", ml: "ഡേർ ഗ്രുണ്ട്" },
+                { word: "einen Termin haben", translation: "to have an appointment", ml: "ഐനെൻ ടെർമീൻ ഹാബെൻ" },
+                { word: "krank sein", translation: "to be ill", ml: "ക്രാങ്ക് സൈൻ" },
+                { word: "das nächste Mal", translation: "next time", ml: "ദാസ് നെഹ്സ്റ്റെ മാല്" }
+            ],
+            expressions: [
+                { de: "Lieber Klaus,", en: "Dear Klaus," },
+                { de: "Vielen Dank für deine Einladung!", en: "Thank you very much for your invitation!" },
+                { de: "Leider kann ich am Donnerstag nicht kommen.", en: "Unfortunately I cannot come on Thursday." },
+                { de: "Ich habe leider schon einen anderen Termin.", en: "Unfortunately I already have another appointment." },
+                { de: "Es tut mir leid.", en: "I am sorry." },
+                { de: "Vielleicht das nächste Mal!", en: "Maybe next time!" }
+            ],
+            tips: [
+                "Always thank first before declining.",
+                "Use 'leider' (unfortunately) to soften the refusal.",
+                "Give a reason: 'Ich habe einen Termin' / 'Ich bin krank'.",
+                "Offer an alternative: 'Vielleicht das nächste Mal!'",
+                "Stay polite and warm."
+            ],
+            modelAnswer: "Lieber Klaus,\n\nVielen Dank für deine Einladung! Leider kann ich am Donnerstag nicht kommen. Ich habe schon einen Arzttermin. Es tut mir sehr leid. Vielleicht essen wir das nächste Mal zusammen?\n\nViele Grüße,\nMaria",
+            guidedScaffold: [
+                { label: "Greeting", hint: "Lieber [Name]," },
+                { label: "Thank for invitation", hint: "Vielen Dank für deine Einladung!" },
+                { label: "Decline", hint: "Leider kann ich am ... nicht kommen." },
+                { label: "Give reason", hint: "Ich habe einen Termin. / Ich bin leider krank." },
+                { label: "Apologise", hint: "Es tut mir leid." },
+                { label: "Suggest next time + Closing", hint: "Vielleicht das nächste Mal! Viele Grüße, [Name]" }
+            ],
+            commonMistakes: [
+                { wrong: "Ich kann nicht kommen leider.", correct: "Leider kann ich nicht kommen.", reason: "In German, 'leider' usually comes first in the sentence for emphasis." },
+                { wrong: "Es tut mich leid.", correct: "Es tut mir leid.", reason: "Use the dative 'mir' (me) not the accusative 'mich'." }
+            ],
+            checklist: ["Greeting used", "Thanked for invitation", "Decline stated", "Reason given", "Apology included", "Alternative suggested", "Closing with name"]
+        },
+        {
+            id: "ws_009",
+            category: "Messages",
+            categoryIcon: "💬",
+            title: "Thank You Message",
+            titleDE: "Dankesnachricht",
+            prompt: "Write a short thank you message to your neighbour Mrs Müller, who looked after your cat while you were on holiday. Thank her and invite her for coffee.",
+            promptDE: "Schreiben Sie eine kurze Dankesnachricht an Ihre Nachbarin Frau Müller, die während Ihres Urlaubs auf Ihre Katze aufgepasst hat. Bedanken Sie sich und laden Sie sie zum Kaffee ein.",
+            wordTarget: 40,
+            vocab: [
+                { word: "sich bedanken", translation: "to say thank you", ml: "സിഹ് ബെദാങ്കൻ" },
+                { word: "aufpassen auf", translation: "to look after", ml: "ഔഫ്പാസ്സെൻ ഔഫ്" },
+                { word: "die Katze", translation: "cat", ml: "ഡി കാറ്റ്സെ" },
+                { word: "der Urlaub", translation: "holiday", ml: "ഡേർ ഊർലാപ്" },
+                { word: "herzlichen Dank", translation: "heartfelt thanks", ml: "ഹെർത്സ്ലിഷെൻ ദാങ്ക്" },
+                { word: "einladen", translation: "to invite", ml: "ഐൻലാഡെൻ" },
+                { word: "der Kaffee", translation: "coffee", ml: "ഡേർ കഫേ" }
+            ],
+            expressions: [
+                { de: "Liebe Frau Müller,", en: "Dear Mrs Müller," },
+                { de: "Herzlichen Dank für Ihre Hilfe!", en: "Heartfelt thanks for your help!" },
+                { de: "Ich bin sehr dankbar, dass Sie ...", en: "I am very grateful that you ..." },
+                { de: "Das war sehr nett von Ihnen.", en: "That was very kind of you." },
+                { de: "Ich möchte Sie gern zum Kaffee einladen.", en: "I would like to invite you for coffee." },
+                { de: "Mit freundlichen Grüßen,", en: "With friendly greetings," }
+            ],
+            tips: [
+                "Use formal 'Sie' form since it's a neighbour (not a close friend).",
+                "Be specific about what you are thanking for.",
+                "Show genuine gratitude: 'Das war sehr nett von Ihnen.'",
+                "Offer something in return.",
+                "Use 'Mit freundlichen Grüßen' for formal closing."
+            ],
+            modelAnswer: "Liebe Frau Müller,\n\nHerzlichen Dank, dass Sie in meinem Urlaub auf meine Katze aufgepasst haben! Das war wirklich sehr nett von Ihnen. Ich bin sehr dankbar. Ich möchte Sie gern zum Kaffee einladen. Wann haben Sie Zeit?\n\nMit freundlichen Grüßen,\nMaria",
+            guidedScaffold: [
+                { label: "Greeting", hint: "Liebe Frau [Name], (formal/female) / Lieber Herr [Name], (formal/male)" },
+                { label: "Thank", hint: "Herzlichen Dank für ... / Herzlichen Dank, dass Sie ..." },
+                { label: "Elaborate", hint: "Das war sehr nett von Ihnen." },
+                { label: "Express feeling", hint: "Ich bin sehr dankbar / froh / glücklich." },
+                { label: "Offer", hint: "Ich möchte Sie gern zum Kaffee / Abendessen einladen." },
+                { label: "Closing", hint: "Mit freundlichen Grüßen, [Name]" }
+            ],
+            commonMistakes: [
+                { wrong: "Danke Sie für Ihre Hilfe.", correct: "Danke für Ihre Hilfe.", reason: "'Danke' does not take a direct object — just 'Danke für ...'." },
+                { wrong: "Ich bin sehr danke.", correct: "Ich bin sehr dankbar.", reason: "'Dankbar' (grateful) is the adjective form, not 'danke' which is only an exclamation." }
+            ],
+            checklist: ["Formal Sie form used", "Specific thanks given", "Appreciation expressed", "Offer/invitation made", "Formal closing used", "Name signed"]
+        },
+        {
+            id: "ws_010",
+            category: "Messages",
+            categoryIcon: "💬",
+            title: "Apology",
+            titleDE: "Entschuldigung",
+            prompt: "Write a short apology message to your friend Lena. You forgot her birthday last week. Apologise and invite her for dinner to make it up.",
+            promptDE: "Schreiben Sie eine kurze Entschuldigungsnachricht an Ihre Freundin Lena. Sie haben letzten Samstag ihren Geburtstag vergessen. Entschuldigen Sie sich und laden Sie sie zum Abendessen ein, um es wieder gutzumachen.",
+            wordTarget: 40,
+            vocab: [
+                { word: "vergessen", translation: "to forget", ml: "ഫെർഗെസ്സെൻ" },
+                { word: "der Geburtstag", translation: "birthday", ml: "ഡേർ ഗെബുർട്സ്റ്റാഗ്" },
+                { word: "sich entschuldigen", translation: "to apologise", ml: "സിഹ് എന്റെഷുൾഡിഗൻ" },
+                { word: "es tut mir leid", translation: "I am sorry", ml: "എസ് ടുട്ട് മിർ ലൈഡ്" },
+                { word: "leider", translation: "unfortunately", ml: "ലൈഡർ" },
+                { word: "wiedergutmachen", translation: "to make it up", ml: "വീഡർഗുട്ട്മാഖെൻ" },
+                { word: "einladen", translation: "to invite", ml: "ഐൻലാഡെൻ" }
+            ],
+            expressions: [
+                { de: "Liebe Lena,", en: "Dear Lena," },
+                { de: "Es tut mir sehr leid!", en: "I am so sorry!" },
+                { de: "Ich habe deinen Geburtstag vergessen.", en: "I forgot your birthday." },
+                { de: "Das tut mir wirklich leid.", en: "I am really sorry about that." },
+                { de: "Ich möchte das wiedergutmachen.", en: "I would like to make it up to you." },
+                { de: "Ich lade dich zum Abendessen ein.", en: "I invite you to dinner." }
+            ],
+            tips: [
+                "Apologise clearly and directly in the first sentence.",
+                "Acknowledge what went wrong.",
+                "Show genuine regret: 'Das tut mir wirklich leid.'",
+                "Offer to make it up.",
+                "End on a warm, positive note."
+            ],
+            modelAnswer: "Liebe Lena,\n\nEs tut mir wirklich sehr leid! Ich habe leider deinen Geburtstag vergessen. Das war nicht nett von mir. Ich möchte das unbedingt wiedergutmachen. Darf ich dich nächste Woche zum Abendessen einladen?\n\nViele Grüße und nochmals Entschuldigung,\nMaria",
+            guidedScaffold: [
+                { label: "Greeting", hint: "Liebe Lena," },
+                { label: "Apology", hint: "Es tut mir so leid!" },
+                { label: "What happened", hint: "Ich habe deinen Geburtstag vergessen." },
+                { label: "More regret", hint: "Das war nicht nett. / Das tut mir wirklich leid." },
+                { label: "Make it up", hint: "Ich möchte das wiedergutmachen." },
+                { label: "Offer + Closing", hint: "Darf ich dich zum ... einladen? Viele Grüße, [Name]" }
+            ],
+            commonMistakes: [
+                { wrong: "Ich bin sorry.", correct: "Es tut mir leid.", reason: "'Sorry' is English. In German say 'Es tut mir leid' or 'Entschuldigung'." },
+                { wrong: "Es tut mich leid.", correct: "Es tut mir leid.", reason: "Use dative 'mir' not accusative 'mich'." }
+            ],
+            checklist: ["Greeting used", "Apology stated clearly", "What happened explained", "Regret expressed", "Offer to make it up", "Closing with name"]
+        },
+
+        // ── CATEGORY: EMAILS ─────────────────────────────────────────────────────
+        {
+            id: "ws_011",
+            category: "Emails",
+            categoryIcon: "📧",
+            title: "Visiting a Friend",
+            titleDE: "Einen Freund besuchen",
+            prompt: "Write an email to your friend Ben. Say you want to visit him next weekend. Ask when he is free and what you can do together.",
+            promptDE: "Schreiben Sie eine E-Mail an Ihren Freund Ben. Sagen Sie, dass Sie ihn nächstes Wochenende besuchen möchten. Fragen Sie, wann er Zeit hat und was ihr zusammen machen könnt.",
+            wordTarget: 40,
+            vocab: [
+                { word: "besuchen", translation: "to visit", ml: "ബെസൂഖെൻ" },
+                { word: "nächstes Wochenende", translation: "next weekend", ml: "നെഹ്സ്റ്റെസ് വോഖെൻഎൻഡെ" },
+                { word: "Zeit haben", translation: "to have time", ml: "സൈറ്റ് ഹാബെൻ" },
+                { word: "zusammen", translation: "together", ml: "ത്സുസാംമെൻ" },
+                { word: "treffen", translation: "to meet", ml: "ട്രെഫെൻ" },
+                { word: "Pläne machen", translation: "to make plans", ml: "പ്ലേനെ മാഖെൻ" }
+            ],
+            expressions: [
+                { de: "Lieber Ben,", en: "Dear Ben," },
+                { de: "Wie geht es dir?", en: "How are you?" },
+                { de: "Ich möchte dich nächstes Wochenende besuchen.", en: "I would like to visit you next weekend." },
+                { de: "Wann hast du Zeit?", en: "When do you have time?" },
+                { de: "Was können wir zusammen machen?", en: "What can we do together?" },
+                { de: "Ich freue mich auf deine Antwort!", en: "I look forward to your reply!" }
+            ],
+            tips: [
+                "Start with a warm greeting and ask how they are.",
+                "State your intention clearly: 'Ich möchte dich besuchen.'",
+                "Ask specific questions.",
+                "Show enthusiasm.",
+                "End with 'Ich freue mich auf deine Antwort!'"
+            ],
+            modelAnswer: "Lieber Ben,\n\nWie geht es dir? Ich möchte dich nächstes Wochenende besuchen. Hast du am Samstag oder Sonntag Zeit? Was können wir zusammen machen? Ich würde gern in die Stadt gehen oder ins Kino. Ich freue mich auf deine Antwort!\n\nViele Grüße,\nMaria",
+            guidedScaffold: [
+                { label: "Greeting + How are you", hint: "Lieber Ben, / Wie geht es dir?" },
+                { label: "State intention", hint: "Ich möchte dich nächstes Wochenende besuchen." },
+                { label: "Ask availability", hint: "Wann hast du Zeit? / Am Samstag oder Sonntag?" },
+                { label: "Suggest activity", hint: "Was können wir zusammen machen? / Ich möchte gern ..." },
+                { label: "Excitement", hint: "Ich freue mich sehr!" },
+                { label: "Closing", hint: "Ich freue mich auf deine Antwort! Viele Grüße, [Name]" }
+            ],
+            commonMistakes: [
+                { wrong: "Ich will besuchen dich.", correct: "Ich möchte dich besuchen.", reason: "Use 'möchte' (would like) for polite intentions. Also, the infinitive 'besuchen' goes to the end." },
+                { wrong: "Wann du hast Zeit?", correct: "Wann hast du Zeit?", reason: "In questions with a question word, the verb comes second: Wann + hast + du." }
+            ],
+            checklist: ["Greeting used", "Intention to visit stated", "Specific time asked", "Activity suggested", "Enthusiasm shown", "Reply requested", "Closing used"]
+        },
+        {
+            id: "ws_012",
+            category: "Emails",
+            categoryIcon: "📧",
+            title: "Asking for Information",
+            titleDE: "Nach Informationen fragen",
+            prompt: "Write an email to the Goethe-Institut. Ask about German courses: when they start, how many hours per week, and the course fee.",
+            promptDE: "Schreiben Sie eine E-Mail an das Goethe-Institut. Fragen Sie nach Deutschkursen: wann sie beginnen, wie viele Stunden pro Woche und was der Kurs kostet.",
+            wordTarget: 45,
+            vocab: [
+                { word: "der Kurs", translation: "course", ml: "ഡേർ കുർസ്" },
+                { word: "beginnen", translation: "to begin", ml: "ബെഗിന്നെൻ" },
+                { word: "die Stunde", translation: "lesson / hour", ml: "ഡി ഷ്ടുണ്ടെ" },
+                { word: "pro Woche", translation: "per week", ml: "പ്രോ വോഖെ" },
+                { word: "die Kosten / der Preis", translation: "cost / price", ml: "ഡി കോസ്റ്റൻ / ഡേർ പ്രൈസ്" },
+                { word: "Informationen", translation: "information", ml: "ഇൻഫോർമത്സ്യോനെൻ" },
+                { word: "sich anmelden", translation: "to register", ml: "സിഹ് അൻമെൽഡെൻ" }
+            ],
+            expressions: [
+                { de: "Sehr geehrte Damen und Herren,", en: "Dear Sir or Madam," },
+                { de: "Ich interessiere mich für einen Deutschkurs.", en: "I am interested in a German course." },
+                { de: "Wann beginnt der nächste Kurs?", en: "When does the next course start?" },
+                { de: "Wie viele Stunden hat der Kurs pro Woche?", en: "How many hours per week does the course have?" },
+                { de: "Was kostet der Kurs?", en: "How much does the course cost?" },
+                { de: "Mit freundlichen Grüßen,", en: "With friendly greetings," }
+            ],
+            tips: [
+                "Use formal opening: 'Sehr geehrte Damen und Herren,'",
+                "Explain your interest first.",
+                "Ask each question in a separate sentence.",
+                "Keep it professional and polite.",
+                "Use formal closing: 'Mit freundlichen Grüßen,'"
+            ],
+            modelAnswer: "Sehr geehrte Damen und Herren,\n\nIch interessiere mich für einen Deutschkurs an Ihrem Institut. Ich habe einige Fragen: Wann beginnt der nächste Kurs? Wie viele Stunden pro Woche hat der Kurs? Und was kostet der Kurs? Ich freue mich auf Ihre Antwort.\n\nMit freundlichen Grüßen,\nMaria Nair",
+            guidedScaffold: [
+                { label: "Formal greeting", hint: "Sehr geehrte Damen und Herren," },
+                { label: "State interest", hint: "Ich interessiere mich für einen Deutschkurs." },
+                { label: "Question 1 – Start date", hint: "Wann beginnt der nächste Kurs?" },
+                { label: "Question 2 – Hours", hint: "Wie viele Stunden hat der Kurs pro Woche?" },
+                { label: "Question 3 – Price", hint: "Was kostet der Kurs?" },
+                { label: "Closing", hint: "Mit freundlichen Grüßen, [Full Name]" }
+            ],
+            commonMistakes: [
+                { wrong: "Ich interessiere mich an einem Kurs.", correct: "Ich interessiere mich für einen Kurs.", reason: "'Sich interessieren' takes 'für' + accusative, not 'an'." },
+                { wrong: "Liebe Damen und Herren,", correct: "Sehr geehrte Damen und Herren,", reason: "For formal emails to organisations, use 'Sehr geehrte' not 'Liebe'." }
+            ],
+            checklist: ["Formal greeting used", "Interest stated", "Start date asked", "Hours per week asked", "Cost asked", "Formal closing with full name"]
+        },
+        {
+            id: "ws_013",
+            category: "Emails",
+            categoryIcon: "📧",
+            title: "Booking Accommodation",
+            titleDE: "Unterkunft buchen",
+            prompt: "Write an email to Hotel Alpenblick to book a room. Say the dates (3 nights from 10 to 13 August), how many people (2), and ask if breakfast is included.",
+            promptDE: "Schreiben Sie eine E-Mail an Hotel Alpenblick, um ein Zimmer zu buchen. Geben Sie die Daten an (3 Nächte vom 10. bis 13. August), wie viele Personen (2) und fragen Sie, ob das Frühstück inklusive ist.",
+            wordTarget: 50,
+            vocab: [
+                { word: "das Zimmer", translation: "room", ml: "ദാസ് സിമ്മർ" },
+                { word: "buchen", translation: "to book", ml: "ബൂഖെൻ" },
+                { word: "vom ... bis zum ...", translation: "from ... to ...", ml: "ഫോം ... ബിസ് ത്സും ..." },
+                { word: "die Nacht", translation: "night", ml: "ഡി നാഹ്ത്" },
+                { word: "das Frühstück", translation: "breakfast", ml: "ദാസ് ഫ്രൂസ്റ്റുക്ക്" },
+                { word: "inklusive", translation: "included", ml: "ഇൻക്ലൂസീവ്" },
+                { word: "für ... Personen", translation: "for ... persons", ml: "ഫ്യൂർ ... പേർസോനെൻ" },
+                { word: "die Reservierung", translation: "reservation", ml: "ഡി റിസെർവീറുങ്" }
+            ],
+            expressions: [
+                { de: "Sehr geehrte Damen und Herren,", en: "Dear Sir or Madam," },
+                { de: "Ich möchte ein Zimmer buchen.", en: "I would like to book a room." },
+                { de: "Vom 10. bis 13. August, das sind 3 Nächte.", en: "From 10 to 13 August, that is 3 nights." },
+                { de: "Das Zimmer ist für 2 Personen.", en: "The room is for 2 people." },
+                { de: "Ist das Frühstück inklusive?", en: "Is breakfast included?" },
+                { de: "Ich freue mich auf Ihre Bestätigung.", en: "I look forward to your confirmation." }
+            ],
+            tips: [
+                "Use formal Sie form throughout.",
+                "Give specific dates in German format: 10. August.",
+                "Specify number of people and room type if known.",
+                "Ask your key question (breakfast) clearly.",
+                "Request a confirmation."
+            ],
+            modelAnswer: "Sehr geehrte Damen und Herren,\n\nIch möchte ein Doppelzimmer buchen. Ich benötige das Zimmer vom 10. bis 13. August, das sind 3 Nächte. Das Zimmer ist für 2 Personen. Ist das Frühstück im Preis inklusive? Ich freue mich auf Ihre Bestätigung.\n\nMit freundlichen Grüßen,\nMaria Nair",
+            guidedScaffold: [
+                { label: "Formal greeting", hint: "Sehr geehrte Damen und Herren," },
+                { label: "Purpose", hint: "Ich möchte ein Zimmer buchen." },
+                { label: "Dates", hint: "Vom ... bis ... (... Nächte)." },
+                { label: "Number of people", hint: "Das Zimmer ist für ... Personen." },
+                { label: "Question", hint: "Ist das Frühstück inklusive?" },
+                { label: "Closing", hint: "Mit freundlichen Grüßen, [Name]" }
+            ],
+            commonMistakes: [
+                { wrong: "Ich brauche ein Zimmer von 10. bis 13. August.", correct: "Ich benötige das Zimmer vom 10. bis 13. August.", reason: "Use 'vom' (= von + dem) before dates: vom 10. bis 13. August." },
+                { wrong: "Ich reserviere für 2 Person.", correct: "Ich reserviere für 2 Personen.", reason: "'Personen' is always plural when number > 1." }
+            ],
+            checklist: ["Formal greeting", "Room booking stated", "Dates given", "Number of people stated", "Question about breakfast", "Confirmation requested", "Formal closing"]
+        },
+        {
+            id: "ws_014",
+            category: "Emails",
+            categoryIcon: "📧",
+            title: "Missing Class",
+            titleDE: "Kursabwesenheit melden",
+            prompt: "Write an email to your German teacher Mr Braun. Explain that you cannot attend class tomorrow because you are sick. Ask for the homework.",
+            promptDE: "Schreiben Sie eine E-Mail an Ihren Deutschlehrer Herrn Braun. Erklären Sie, dass Sie morgen nicht zum Unterricht kommen können, weil Sie krank sind. Fragen Sie nach den Hausaufgaben.",
+            wordTarget: 40,
+            vocab: [
+                { word: "der Unterricht", translation: "class / lesson", ml: "ഡേർ ഉണ്ടർറിഹ്ത്" },
+                { word: "fehlen", translation: "to be absent", ml: "ഫീലൻ" },
+                { word: "krank sein", translation: "to be ill", ml: "ക്രാങ്ക് സൈൻ" },
+                { word: "die Hausaufgabe", translation: "homework", ml: "ഡി ഹൗസ്ഔഫ്ഗാബെ" },
+                { word: "morgen", translation: "tomorrow", ml: "മോർഗൻ" },
+                { word: "Entschuldigung", translation: "apology / excuse", ml: "ക്ഷമ" },
+                { word: "senden", translation: "to send", ml: "സെൻഡെൻ" }
+            ],
+            expressions: [
+                { de: "Sehr geehrter Herr Braun,", en: "Dear Mr Braun," },
+                { de: "Ich kann morgen leider nicht am Unterricht teilnehmen.", en: "Unfortunately I cannot attend class tomorrow." },
+                { de: "Ich bin krank und muss zu Hause bleiben.", en: "I am ill and have to stay at home." },
+                { de: "Können Sie mir bitte die Hausaufgaben schicken?", en: "Could you please send me the homework?" },
+                { de: "Es tut mir leid für die Unannehmlichkeiten.", en: "I am sorry for the inconvenience." },
+                { de: "Mit freundlichen Grüßen,", en: "With friendly greetings," }
+            ],
+            tips: [
+                "Address the teacher formally: 'Sehr geehrter Herr [Name],'",
+                "Explain clearly why you cannot come.",
+                "Ask for homework politely: 'Könnten Sie mir ...'",
+                "Apologise briefly.",
+                "Use formal closing."
+            ],
+            modelAnswer: "Sehr geehrter Herr Braun,\n\nLeider kann ich morgen nicht am Unterricht teilnehmen. Ich bin krank und muss zu Hause bleiben. Könnten Sie mir bitte die Hausaufgaben per E-Mail schicken? Es tut mir leid für die Unannehmlichkeiten.\n\nMit freundlichen Grüßen,\nMaria",
+            guidedScaffold: [
+                { label: "Formal greeting", hint: "Sehr geehrter Herr [Name], / Sehr geehrte Frau [Name]," },
+                { label: "Cannot attend", hint: "Ich kann morgen nicht am Unterricht teilnehmen." },
+                { label: "Reason", hint: "Ich bin krank / Ich habe einen Arzttermin." },
+                { label: "Request homework", hint: "Könnten Sie mir die Hausaufgaben schicken?" },
+                { label: "Apology", hint: "Es tut mir leid." },
+                { label: "Closing", hint: "Mit freundlichen Grüßen, [Name]" }
+            ],
+            commonMistakes: [
+                { wrong: "Sehr geehrte Herr Braun,", correct: "Sehr geehrter Herr Braun,", reason: "Male name → 'Sehr geehrter'. Female → 'Sehr geehrte'. The adjective ending changes." },
+                { wrong: "Ich kann nicht kommen zum Unterricht.", correct: "Ich kann nicht am Unterricht teilnehmen.", reason: "The formal phrase is 'am Unterricht teilnehmen' (to participate in class)." }
+            ],
+            checklist: ["Formal greeting used", "Absence explained", "Reason given", "Homework requested", "Apology included", "Formal closing used"]
+        },
+        {
+            id: "ws_015",
+            category: "Emails",
+            categoryIcon: "📧",
+            title: "Illness Notification",
+            titleDE: "Krankmeldung",
+            prompt: "Write a short email to your employer (Firma Meier GmbH). Inform them that you are ill today and cannot come to work. Say when you think you will be back.",
+            promptDE: "Schreiben Sie eine kurze E-Mail an Ihren Arbeitgeber (Firma Meier GmbH). Informieren Sie ihn, dass Sie heute krank sind und nicht zur Arbeit kommen können. Sagen Sie, wann Sie voraussichtlich zurückkommen.",
+            wordTarget: 40,
+            vocab: [
+                { word: "krank", translation: "ill / sick", ml: "ക്രാങ്ക്" },
+                { word: "die Arbeit", translation: "work", ml: "ഡി ആർബൈറ്റ്" },
+                { word: "fehlen", translation: "to be absent", ml: "ഫീലൻ" },
+                { word: "voraussichtlich", translation: "presumably / expected", ml: "ഫൊറൗസ്സിഹ്റ്റ്ലിഹ്" },
+                { word: "zurückkommen", translation: "to return / come back", ml: "ത്സുരുക്ക്കോമെൻ" },
+                { word: "der Arzt", translation: "doctor", ml: "ഡേർ ആർട്സ്ത്" },
+                { word: "das Attest", translation: "medical certificate", ml: "ദാസ് അറ്റെസ്റ്റ്" }
+            ],
+            expressions: [
+                { de: "Sehr geehrte Damen und Herren,", en: "Dear Sir or Madam," },
+                { de: "Ich muss Ihnen mitteilen, dass ich heute krank bin.", en: "I must inform you that I am ill today." },
+                { de: "Ich kann heute nicht zur Arbeit kommen.", en: "I cannot come to work today." },
+                { de: "Ich gehe heute zum Arzt.", en: "I am going to the doctor today." },
+                { de: "Voraussichtlich bin ich ab Donnerstag wieder da.", en: "I expect to be back from Thursday." },
+                { de: "Ein Arzt-Attest schicke ich Ihnen per E-Mail.", en: "I will send you a medical certificate by email." }
+            ],
+            tips: [
+                "Be formal and professional throughout.",
+                "Inform clearly that you are sick.",
+                "Give a probable return date.",
+                "Mention that you will provide a medical certificate if needed.",
+                "Keep the email concise."
+            ],
+            modelAnswer: "Sehr geehrte Damen und Herren,\n\nIch muss Ihnen mitteilen, dass ich heute leider krank bin und nicht zur Arbeit kommen kann. Ich gehe heute Morgen zum Arzt. Voraussichtlich bin ich ab Donnerstag wieder im Büro. Das Attest sende ich Ihnen per E-Mail.\n\nMit freundlichen Grüßen,\nMaria Nair",
+            guidedScaffold: [
+                { label: "Formal greeting", hint: "Sehr geehrte Damen und Herren," },
+                { label: "Inform of illness", hint: "Ich bin heute leider krank." },
+                { label: "Cannot come to work", hint: "Ich kann heute nicht zur Arbeit kommen." },
+                { label: "Doctor visit", hint: "Ich gehe heute zum Arzt." },
+                { label: "Return date", hint: "Voraussichtlich bin ich ab ... wieder da." },
+                { label: "Medical certificate + Closing", hint: "Das Attest sende ich Ihnen. Mit freundlichen Grüßen, [Name]" }
+            ],
+            commonMistakes: [
+                { wrong: "Ich bin sick.", correct: "Ich bin krank.", reason: "'Sick' is English. The German word is 'krank'." },
+                { wrong: "Ich schicke das Attest Ihnen.", correct: "Ich sende Ihnen das Attest.", reason: "With two objects, the dative (Ihnen) comes before the accusative (das Attest)." }
+            ],
+            checklist: ["Formal greeting", "Illness stated", "Cannot attend work stated", "Doctor visit mentioned", "Return date given", "Medical certificate mentioned", "Formal closing"]
+        },
+
+        // ── CATEGORY: FORMS ───────────────────────────────────────────────────────
+        {
+            id: "ws_016",
+            category: "Forms",
+            categoryIcon: "📋",
+            title: "Hotel Registration",
+            titleDE: "Hotelregistrierung",
+            prompt: "You are checking into Hotel Sonnenschein. Fill in the registration form with the following details: Name: Maria Nair, DOB: 15.03.1996, Nationality: Indian, Passport No: A1234567, Address: 12 Park Street, Berlin. Duration of stay: 3 nights (10.–13.08.).",
+            promptDE: "Sie checken in Hotel Sonnenschein ein. Füllen Sie das Anmeldeformular aus: Name: Maria Nair, Geburtsdatum: 15.03.1996, Nationalität: Indisch, Passnummer: A1234567, Adresse: Park Straße 12, Berlin. Aufenthaltsdauer: 3 Nächte (10.–13.08.).",
+            wordTarget: 30,
+            vocab: [
+                { word: "der Familienname", translation: "surname", ml: "ഡേർ ഫാമിലിയെൻനാമെ" },
+                { word: "der Vorname", translation: "first name", ml: "ഡേർ ഫോർനാമെ" },
+                { word: "das Geburtsdatum", translation: "date of birth", ml: "ദാസ് ഗെബുർട്സ്ഡാറ്റും" },
+                { word: "die Staatsangehörigkeit", translation: "nationality", ml: "ഡി ഷ്ടാറ്റ്സ്അൻგെഹോറിഗ്കീറ്റ്" },
+                { word: "die Reisepassnummer", translation: "passport number", ml: "ഡി റൈസെപാസ്സ്നുംമർ" },
+                { word: "der Aufenthalt", translation: "stay", ml: "ഡേർ ഔഫെൻഹാൾട്ട്" },
+                { word: "die Unterschrift", translation: "signature", ml: "ഡി ഉണ്ടർഷ്രിഫ്റ്റ്" }
+            ],
+            expressions: [
+                { de: "Familienname: Nair", en: "Surname: Nair" },
+                { de: "Vorname: Maria", en: "First name: Maria" },
+                { de: "Geburtsdatum: 15.03.1996", en: "Date of birth: 15/03/1996" },
+                { de: "Staatsangehörigkeit: Indisch", en: "Nationality: Indian" },
+                { de: "Ankunft / Abreise: ...", en: "Arrival / Departure: ..." },
+                { de: "Unterschrift: ...", en: "Signature: ..." }
+            ],
+            tips: [
+                "Form tasks require accurate information — no creative writing needed.",
+                "Write in the box/field clearly.",
+                "Use German date format: day.month.year (15.03.1996).",
+                "Nationality is an adjective in German: Indisch, Deutsch.",
+                "Sign at the bottom."
+            ],
+            modelAnswer: "Familienname: Nair\nVorname: Maria\nGeburtsdatum: 15.03.1996\nStaatsangehörigkeit: Indisch\nReisepassnummer: A1234567\nAdresse: Park Straße 12, Berlin\nAnkunft: 10.08. / Abreise: 13.08.\nAnzahl der Nächte: 3\nUnterschrift: Maria Nair",
+            guidedScaffold: [
+                { label: "Name", hint: "Familienname: [Surname] / Vorname: [First name]" },
+                { label: "Date of birth", hint: "Geburtsdatum: DD.MM.YYYY" },
+                { label: "Nationality", hint: "Staatsangehörigkeit: Indisch / Deutsch ..." },
+                { label: "Passport", hint: "Reisepassnummer: [Number]" },
+                { label: "Address", hint: "Adresse: [Street, City]" },
+                { label: "Dates + Signature", hint: "Ankunft: ... / Abreise: ... / Unterschrift: ..." }
+            ],
+            commonMistakes: [
+                { wrong: "Nationalität: India", correct: "Staatsangehörigkeit: Indisch", reason: "German forms use 'Staatsangehörigkeit' and the adjective form (Indisch, not India)." },
+                { wrong: "Geburtsdatum: 1996-03-15", correct: "Geburtsdatum: 15.03.1996", reason: "German date format is day.month.year with dots." }
+            ],
+            checklist: ["Surname and first name filled", "Date of birth in German format", "Nationality as adjective", "Passport number included", "Address complete", "Arrival and departure dates", "Signature"]
+        },
+        {
+            id: "ws_017",
+            category: "Forms",
+            categoryIcon: "📋",
+            title: "Language Course Registration",
+            titleDE: "Sprachkursanmeldung",
+            prompt: "Register for a German language course. Fill in: Name, Date of Birth, Address, Current German Level (A1), Course type (Intensive), Start Date, and payment method (bank transfer).",
+            promptDE: "Melden Sie sich für einen Deutschkurs an. Füllen Sie aus: Name, Geburtsdatum, Adresse, aktuelles Deutschniveau (A1), Kurstyp (Intensiv), Startdatum und Zahlungsart (Überweisung).",
+            wordTarget: 35,
+            vocab: [
+                { word: "das Sprachniveau", translation: "language level", ml: "ദാസ് ഷ്പ്രാഹ്നിവോ" },
+                { word: "der Intensivkurs", translation: "intensive course", ml: "ഡേർ ഇന്റെൻസീവ്കുർസ്" },
+                { word: "die Anmeldung", translation: "registration", ml: "ഡി അൻമെൽഡുങ്" },
+                { word: "die Überweisung", translation: "bank transfer", ml: "ഡി ഊബർവൈസുങ്" },
+                { word: "der Beginn", translation: "beginning / start", ml: "ഡേർ ബെഗിൻ" },
+                { word: "die Zahlungsart", translation: "payment method", ml: "ഡി ത്സาลুങ്സ്ആർട്ട്" }
+            ],
+            expressions: [
+                { de: "Name: Maria Nair", en: "Name: Maria Nair" },
+                { de: "Aktuelles Deutschniveau: A1", en: "Current German level: A1" },
+                { de: "Gewünschter Kurs: Intensivkurs", en: "Desired course: Intensive course" },
+                { de: "Kursbeginn: 01. September", en: "Course start: 1st September" },
+                { de: "Zahlungsart: Banküberweisung", en: "Payment method: Bank transfer" },
+                { de: "Ich habe die Datenschutzerklärung gelesen.", en: "I have read the privacy policy." }
+            ],
+            tips: [
+                "Form fields need accurate and complete information.",
+                "Use the level correctly: A1, A2, B1, etc.",
+                "Write the date in German format.",
+                "Be concise — each field requires only the key information.",
+                "Use appropriate German vocabulary for each field."
+            ],
+            modelAnswer: "Name: Maria Nair\nGeburtsdatum: 15.03.1996\nAdresse: Park Straße 12, 10115 Berlin\nE-Mail: maria@email.com\nAktuelles Deutschniveau: A1\nGewünschter Kurs: Intensivkurs (A1)\nKursbeginn: 01.09.2024\nZahlungsart: Banküberweisung\nUnterschrift: Maria Nair\nDatum: 01.07.2024",
+            guidedScaffold: [
+                { label: "Personal details", hint: "Name: ... / Geburtsdatum: ..." },
+                { label: "Address + Email", hint: "Adresse: ... / E-Mail: ..." },
+                { label: "Language level", hint: "Aktuelles Deutschniveau: A1" },
+                { label: "Course type", hint: "Gewünschter Kurs: Intensivkurs / Abendkurs / ..." },
+                { label: "Start date", hint: "Kursbeginn: DD.MM.YYYY" },
+                { label: "Payment + Signature", hint: "Zahlungsart: ... / Unterschrift: ..." }
+            ],
+            commonMistakes: [
+                { wrong: "Level: A1 beginner", correct: "Aktuelles Deutschniveau: A1", reason: "Use the German field label and the level code only." },
+                { wrong: "Payment: credit card", correct: "Zahlungsart: Kreditkarte", reason: "Use German terms on German forms." }
+            ],
+            checklist: ["Name and DOB filled", "Address complete", "Language level correct", "Course type selected", "Start date given", "Payment method stated", "Signature and date"]
+        },
+        {
+            id: "ws_018",
+            category: "Forms",
+            categoryIcon: "📋",
+            title: "Library Membership",
+            titleDE: "Bibliotheksausweis",
+            prompt: "Apply for a library membership at the Stadtbibliothek Berlin. Fill in the membership form: personal details, address, email, and agree to the library rules.",
+            promptDE: "Beantragen Sie eine Mitgliedschaft in der Stadtbibliothek Berlin. Füllen Sie das Formular aus: persönliche Daten, Adresse, E-Mail und bestätigen Sie die Bibliotheksregeln.",
+            wordTarget: 30,
+            vocab: [
+                { word: "die Bibliothek", translation: "library", ml: "ഡി ബിബ്ലിയോടേക്" },
+                { word: "der Ausweis", translation: "ID / card", ml: "ഡേർ ഔസ്‌വൈസ്" },
+                { word: "die Mitgliedschaft", translation: "membership", ml: "ഡി മിറ്റ്গ്ലീഡ്ഷാഫ്റ്റ്" },
+                { word: "die Regeln", translation: "rules", ml: "ഡി റേഗെൽൻ" },
+                { word: "bestätigen", translation: "to confirm", ml: "ബെштаೇറ്റിഗൻ" },
+                { word: "leihen", translation: "to borrow", ml: "ലൈയൻ" }
+            ],
+            expressions: [
+                { de: "Ich beantrage hiermit eine Mitgliedschaft.", en: "I hereby apply for a membership." },
+                { de: "Ich akzeptiere die Bibliotheksregeln.", en: "I accept the library rules." },
+                { de: "Bibliotheksausweis beantragen", en: "Apply for a library card" },
+                { de: "Ich möchte Bücher ausleihen.", en: "I would like to borrow books." }
+            ],
+            tips: [
+                "Fill in all required fields completely.",
+                "Use formal language in the 'notes' section if any.",
+                "Accept the rules clearly.",
+                "Use German date format.",
+                "Double check your address."
+            ],
+            modelAnswer: "Antrag auf Bibliotheksausweis\n\nVorname: Maria\nFamilienname: Nair\nGeburtsdatum: 15.03.1996\nAdresse: Park Straße 12, 10115 Berlin\nE-Mail: maria@email.com\nTelefon: 01234 567890\n\nIch akzeptiere die Bibliotheksregeln.\n\nDatum: 01.07.2024\nUnterschrift: Maria Nair",
+            guidedScaffold: [
+                { label: "Name", hint: "Vorname: ... / Familienname: ..." },
+                { label: "Date of birth", hint: "Geburtsdatum: DD.MM.YYYY" },
+                { label: "Address", hint: "Adresse: [Street, Postcode, City]" },
+                { label: "Contact", hint: "E-Mail: ... / Telefon: ..." },
+                { label: "Accept rules", hint: "Ich akzeptiere die Bibliotheksregeln." },
+                { label: "Date + Signature", hint: "Datum: ... / Unterschrift: ..." }
+            ],
+            commonMistakes: [
+                { wrong: "Ich einverstanden die Regeln.", correct: "Ich akzeptiere die Bibliotheksregeln.", reason: "Use 'akzeptieren' (to accept) or 'Ich bin mit den Regeln einverstanden' (I agree)." }
+            ],
+            checklist: ["Full name filled", "DOB filled", "Address complete", "Email/phone added", "Rules accepted", "Date and signature"]
+        },
+        {
+            id: "ws_019",
+            category: "Forms",
+            categoryIcon: "📋",
+            title: "Club Registration",
+            titleDE: "Vereinsanmeldung",
+            prompt: "You want to join a local sports club (TSV Berlin). Fill in the membership form: personal details, sport (swimming), membership type (adult), and payment (monthly direct debit).",
+            promptDE: "Sie möchten einem Sportverein beitreten (TSV Berlin). Füllen Sie das Anmeldeformular aus: persönliche Daten, Sportart (Schwimmen), Mitgliedschaftsart (Erwachsener) und Zahlungsweise (monatliche Bankeinzug).",
+            wordTarget: 35,
+            vocab: [
+                { word: "der Verein", translation: "club", ml: "ഡേർ ഫെറൈൻ" },
+                { word: "beitreten", translation: "to join", ml: "ബൈട്രേറ്റൻ" },
+                { word: "die Sportart", translation: "type of sport", ml: "ഡി ഷ്പോർട്ട്ആർട്ട്" },
+                { word: "das Schwimmen", translation: "swimming", ml: "ദാസ് ഷ്വിമ്മൻ" },
+                { word: "der Mitgliedsbeitrag", translation: "membership fee", ml: "ഡേർ മിറ്റ്ഗ്ലീഡ്സ്ബൈട്രാഗ്" },
+                { word: "das Lastschriftverfahren", translation: "direct debit", ml: "ദാസ് ലാസ്റ്റ്ശ്രിഫ്റ്റ്ഫെർഫാറെൻ" },
+                { word: "monatlich", translation: "monthly", ml: "മോനാറ്റ്ലിഹ്" }
+            ],
+            expressions: [
+                { de: "Ich möchte Mitglied werden.", en: "I would like to become a member." },
+                { de: "Gewünschte Sportart: Schwimmen", en: "Preferred sport: Swimming" },
+                { de: "Mitgliedschaftsart: Erwachsener", en: "Membership type: Adult" },
+                { de: "Zahlungsweise: monatlich per Bankeinzug", en: "Payment: monthly by direct debit" },
+                { de: "Ich erkläre mich mit der Satzung einverstanden.", en: "I agree with the club statutes." }
+            ],
+            tips: [
+                "Fill all fields accurately.",
+                "Select the correct membership category.",
+                "Choose your sport clearly.",
+                "Confirm agreement with club rules.",
+                "Sign and date the form."
+            ],
+            modelAnswer: "Beitrittsformular TSV Berlin\n\nVorname: Maria / Familienname: Nair\nGeburtsdatum: 15.03.1996\nAdresse: Park Straße 12, 10115 Berlin\nE-Mail: maria@email.com\nSportart: Schwimmen\nMitgliedschaftsart: Erwachsener\nZahlungsweise: monatlich per Bankeinzug\nMitgliedsbeitrag: 15 €/Monat\n\nIch erkläre mich mit der Vereinssatzung einverstanden.\nDatum: 01.07.2024 / Unterschrift: Maria Nair",
+            guidedScaffold: [
+                { label: "Name + DOB", hint: "Vorname/Familienname: ... / Geburtsdatum: ..." },
+                { label: "Address + Contact", hint: "Adresse: ... / E-Mail: ..." },
+                { label: "Sport", hint: "Sportart: Schwimmen / Fußball / Tennis ..." },
+                { label: "Membership type", hint: "Mitgliedschaftsart: Erwachsener / Kind / Familie" },
+                { label: "Payment", hint: "Zahlungsweise: monatlich per Bankeinzug / jährlich" },
+                { label: "Agree + Sign", hint: "Ich erkläre mich einverstanden. Datum/Unterschrift: ..." }
+            ],
+            commonMistakes: [
+                { wrong: "Ich will Mitglied sein.", correct: "Ich möchte Mitglied werden.", reason: "Use 'möchte ... werden' (would like to become) for polite applications." }
+            ],
+            checklist: ["Name and DOB", "Address complete", "Sport selected", "Membership type", "Payment method", "Rules agreed", "Date and signature"]
+        },
+        {
+            id: "ws_020",
+            category: "Forms",
+            categoryIcon: "📋",
+            title: "Doctor Appointment Form",
+            titleDE: "Arztterminformular",
+            prompt: "Fill in a patient registration form at a new doctor's practice. Include: name, DOB, health insurance provider (TK), current symptoms (Bauchschmerzen – stomach ache), and preferred appointment time (mornings).",
+            promptDE: "Füllen Sie ein Patientenformular in einer neuen Arztpraxis aus. Angaben: Name, Geburtsdatum, Krankenkasse (TK), aktuelle Beschwerden (Bauchschmerzen) und gewünschte Terminzeit (morgens).",
+            wordTarget: 35,
+            vocab: [
+                { word: "die Krankenkasse", translation: "health insurance", ml: "ഡി ക്രാങ്കൻകാസ്സെ" },
+                { word: "die Beschwerden", translation: "symptoms / complaints", ml: "ഡി ബെഷ്വേർഡൻ" },
+                { word: "der Bauchschmerz", translation: "stomach ache", ml: "ഡേർ ബൗഹ്ഷ്മെർട്സ്" },
+                { word: "der Termin", translation: "appointment", ml: "ഡേർ ടെർമീൻ" },
+                { word: "versichert", translation: "insured", ml: "ഫെർസിഷെർട്ട്" },
+                { word: "morgens", translation: "in the mornings", ml: "മോർഗൻസ്" },
+                { word: "der Patient", translation: "patient (male)", ml: "ഡേർ പാറ്റ്സ്യെന്റ്" }
+            ],
+            expressions: [
+                { de: "Patient/in: Maria Nair", en: "Patient: Maria Nair" },
+                { de: "Krankenkasse: Techniker Krankenkasse (TK)", en: "Health insurance: TK" },
+                { de: "Aktuelle Beschwerden: Bauchschmerzen", en: "Current symptoms: Stomach ache" },
+                { de: "Gewünschte Terminzeit: morgens", en: "Preferred appointment: mornings" },
+                { de: "Ich bin gesetzlich versichert.", en: "I have statutory health insurance." },
+                { de: "Ich bin Neupatientin.", en: "I am a new patient." }
+            ],
+            tips: [
+                "List symptoms clearly and briefly.",
+                "Specify insurance type: gesetzlich (statutory) or privat (private).",
+                "Give a preferred appointment time.",
+                "Be honest about your medical history if asked.",
+                "Use simple language for symptoms."
+            ],
+            modelAnswer: "Patientenanmeldung\n\nName: Maria Nair\nGeburtsdatum: 15.03.1996\nAdresse: Park Straße 12, 10115 Berlin\nKrankenkasse: Techniker Krankenkasse (TK)\nVersicherungsart: gesetzlich\nAktuelle Beschwerden: Bauchschmerzen seit 2 Tagen\nGewünschte Terminzeit: morgens (8–12 Uhr)\nNeupatientin: Ja\n\nDatum: 01.07.2024\nUnterschrift: Maria Nair",
+            guidedScaffold: [
+                { label: "Personal details", hint: "Name: ... / Geburtsdatum: ..." },
+                { label: "Address", hint: "Adresse: ..." },
+                { label: "Health insurance", hint: "Krankenkasse: ... / Versicherungsart: gesetzlich/privat" },
+                { label: "Symptoms", hint: "Aktuelle Beschwerden: ..." },
+                { label: "Preferred time", hint: "Gewünschte Terminzeit: morgens / nachmittags / ..." },
+                { label: "New patient + Signature", hint: "Neupatientin: Ja/Nein. Datum/Unterschrift: ..." }
+            ],
+            commonMistakes: [
+                { wrong: "Ich habe Bauch Schmerzen.", correct: "Ich habe Bauchschmerzen.", reason: "In German, compound nouns are written as one word: Bauchschmerzen (stomach + pains)." },
+                { wrong: "Krankenkasse: TK Insurance", correct: "Krankenkasse: Techniker Krankenkasse (TK)", reason: "Use the full official German name, or the recognised abbreviation TK." }
+            ],
+            checklist: ["Name and DOB", "Address", "Insurance provider and type", "Symptoms listed", "Preferred time given", "New patient status", "Date and signature"]
         }
     ],
     speaking: [
@@ -4898,6 +5843,8 @@ function initSpeechSynthesis() {
         saveSessionToStorage();
     });
 }
+
+window.speakText = speakText;
 
 function speakText(text, onBoundary, onEnd, onError, rateOverride) {
     window.speechSynthesis.cancel();
@@ -6725,9 +7672,7 @@ function startPracticeMode(type) {
         
     } else if (type === "writing") {
         switchToView("view-practice-workspace");
-        practiceState.questions = [...PRACTICE_DATABASE.writing].sort(() => Math.random() - 0.5);
-        practiceState.subTopic = "Email Prompts";
-        loadPracticeQuestion();
+        showWritingStudioTopics();
         
     } else if (type === "speaking") {
         switchToView("view-practice-workspace");
@@ -8076,7 +9021,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnBackPracticeMenu = document.getElementById("btn-back-practice-menu");
     if (btnBackPracticeMenu) {
         btnBackPracticeMenu.onclick = () => {
-            switchToView("view-practice-menu");
+            if (practiceState.mode === "writing" && writingStudioState.activeActivity) {
+                showWritingStudioTopics();
+            } else {
+                switchToView("view-practice-menu");
+            }
         };
     }
 
@@ -8723,3 +9672,1084 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     };
 });
+
+// ==================== WRITING STUDIO SYSTEM ====================
+const writingStudioState = {
+    activeActivity: null,
+    currentStage: 1,
+    guidedAnswers: {},
+    independentDraft: "",
+    checklistAnswers: {},
+    checkedVocab: {},
+    checkedTips: {},
+    matchedExpressions: {}
+};
+
+// 1. Show Writing Studio Topics Selection screen
+function showWritingStudioTopics() {
+    practiceState.mode = "writing";
+    writingStudioState.activeActivity = null;
+    
+    // Set Header titles
+    document.getElementById("display-current-module").textContent = "Schreiben-Übung (Writing Practice)";
+    document.getElementById("practice-workspace-title").textContent = "Schreibstudio: Themenauswahl (Writing Studio: Topic Selection)";
+    document.getElementById("practice-question-tag").textContent = "Themenauswahl (Topic Selection)";
+    document.getElementById("practice-score-current").textContent = "0";
+    document.getElementById("practice-score-total").textContent = "20";
+    
+    // Hide standard practice panels
+    document.getElementById("practice-stimulus-hoeren").style.display = "none";
+    document.getElementById("practice-stimulus-sprechen").style.display = "none";
+    document.getElementById("practice-options-list").style.display = "none";
+    document.getElementById("practice-editor-container").style.display = "none";
+    document.getElementById("practice-recorder-container").style.display = "none";
+    document.getElementById("practice-explanation-box").style.display = "none";
+    document.getElementById("btn-practice-check-answer").style.display = "none";
+    document.getElementById("btn-practice-next").style.display = "none";
+    
+    if (document.getElementById("practice-results-container")) {
+        document.getElementById("practice-results-container").style.display = "none";
+    }
+    
+    // Hide our custom writing panels just in case
+    document.getElementById("practice-stimulus-writing").style.display = "none";
+    document.getElementById("practice-qa-writing").style.display = "none";
+    
+    // Activate standard reading stimulus panel for displaying topic select list
+    document.getElementById("practice-stimulus-text").style.display = "block";
+    document.getElementById("practice-stimulus-label").textContent = "Schreibstudio-Themen (Writing Studio Topics)";
+    
+    // Group the 20 structured writing tasks by category
+    const categories = ["Personal", "Messages", "Emails", "Forms"];
+    const catTranslations = {
+        "Personal": "PERSONAL (Personal)",
+        "Messages": "MESSAGES (Messages)",
+        "Emails": "EMAILS (Emails)",
+        "Forms": "FORMS (Forms)"
+    };
+    
+    let html = `
+        <div class="writing-topics-selection" style="padding: 12px 16px;">
+            <p style="margin-top:0; font-size:1rem; font-weight:600; color:var(--color-text-primary);">Wählen Sie ein Schreibthema (Choose a Writing Topic - 20 Practice Exercises):</p>
+            <div style="display:flex; flex-direction:column; gap:16px; max-height:550px; overflow-y:auto; padding-right:6px;">
+    `;
+    
+    categories.forEach(cat => {
+        const tasks = PRACTICE_DATABASE.writingStudio.filter(t => t.category === cat);
+        let icon = "📝";
+        if (tasks.length > 0) icon = tasks[0].categoryIcon;
+        
+        html += `
+            <div class="category-block" style="border-bottom: 1px solid var(--color-border); padding-bottom:12px; margin-bottom:4px;">
+                <h4 style="margin: 0 0 10px 0; color: var(--color-accent); display:flex; align-items:center; gap:8px; font-size:1.05rem;">
+                    <span style="font-size:1.2rem;">${icon}</span> ${catTranslations[cat]}
+                </h4>
+                <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap:10px;">
+        `;
+        
+        tasks.forEach(task => {
+            const isCompleted = portalState.progress.writing && portalState.progress.writing[task.id];
+            let badgeHTML = isCompleted 
+                ? `<span class="badge status-badge" style="background:rgba(16,185,129,0.15); color:var(--color-success); font-size:0.65rem; padding:2px 4px; border-radius:4px;">Abgeschlossen (Completed)</span>` 
+                : `<span style="font-size:0.65rem; color:var(--color-text-muted);">Neu (New)</span>`;
+                
+            html += `
+                <button class="btn btn-secondary btn-touch ws-topic-btn" data-id="${task.id}" style="width:100%; text-align:left; padding:10px 12px; display:flex; flex-direction:column; gap:2px; justify-content:center; align-items: flex-start; background:var(--color-panel); border:1px solid var(--color-border);">
+                    <span style="font-weight:600; font-size:0.85rem; color:var(--color-text-primary); white-space: normal; text-align: left; line-height:1.2;">${task.titleDE}</span>
+                    <span style="font-size:0.75rem; color:var(--color-text-muted); font-style:italic; white-space: normal; text-align: left; line-height:1.2;">${task.title}</span>
+                    <div style="display:flex; margin-top:4px;">${badgeHTML}</div>
+                </button>
+            `;
+        });
+        
+        html += `
+                </div>
+            </div>
+        `;
+    });
+    
+    html += `
+            </div>
+        </div>
+    `;
+    
+    document.getElementById("practice-stimulus-body").innerHTML = html;
+    
+    // Render introductory card on the right-side panel
+    document.querySelector("#view-practice-workspace .qa-header").style.display = "block";
+    document.querySelector("#view-practice-workspace .question-body").style.display = "block";
+    document.getElementById("practice-question-text").textContent = "Schreibstudio-Lernmethode (Writing Studio Learning Method)";
+    document.getElementById("practice-question-translation").style.display = "none";
+    document.getElementById("practice-options-list").style.display = "block";
+    
+    document.getElementById("practice-options-list").innerHTML = `
+        <div class="glass-panel" style="padding: 24px; text-align: center; display:flex; flex-direction:column; align-items:center; gap:16px;">
+            <span style="font-size: 3.5rem; margin-bottom:4px;">✍️</span>
+            <h3 style="margin:0; font-family:var(--font-display); color:var(--color-text-primary);">A1 Schreibkompetenz aufbauen (Build A1 Writing Skills)</h3>
+            <p style="font-size:0.9rem; color:var(--color-text-secondary); margin:0; line-height:1.6; text-align:left;">
+                Dieses Schreibstudio führt Sie schrittweise durch jeden Aufgabentyp. Bevor Sie selbstständig schreiben, lernen Sie die wichtigsten Begriffe, typische Formulierungen, Grammatik-Tricks und analysieren Musterantworten.
+            </p>
+            <div style="width:100%; text-align:left; font-size:0.8rem; background:rgba(255,255,255,0.02); padding:12px; border-radius:var(--radius-md); border:1px solid var(--color-border); display:flex; flex-direction:column; gap:6px;">
+                <strong>Der 7-Schritte-Lernpfad (The 7-Step Learning Path):</strong>
+                <ol style="margin:0; padding-left:16px; color:var(--color-text-muted); display:flex; flex-direction:column; gap:4px;">
+                    <li>Wortschatz (Vocabulary - Phonetic & Audio)</li>
+                    <li>Nützliche Ausdrücke (Useful Expressions)</li>
+                    <li>Schreib-Tipps (Writing Tips)</li>
+                    <li>Musterantwort (Model Answer & Common Mistakes)</li>
+                    <li>Geleitetes Schreiben (Guided Writing - sentence blocks)</li>
+                    <li>Freies Schreiben (Write - Independent Writing & Checklist)</li>
+                    <li>KI-Bewertung (AI Evaluation)</li>
+                </ol>
+            </div>
+            <p style="font-size:0.85rem; color:var(--color-accent); font-style:italic; margin:0;">
+                Wählen Sie links ein Schreibthema aus, um zu beginnen! (Choose a topic on the left to begin!)
+            </p>
+        </div>
+    `;
+    
+    // Bind click events on topics
+    setTimeout(() => {
+        document.querySelectorAll(".ws-topic-btn").forEach(btn => {
+            btn.onclick = () => {
+                const id = btn.getAttribute("data-id");
+                startWritingStudioActivity(id);
+            };
+        });
+    }, 100);
+}
+
+// 2. Start a specific Writing Studio Activity
+function startWritingStudioActivity(id) {
+    const activity = PRACTICE_DATABASE.writingStudio.find(t => t.id === id);
+    if (!activity) return;
+    
+    writingStudioState.activeActivity = activity;
+    writingStudioState.currentStage = 1;
+    writingStudioState.guidedAnswers = {};
+    writingStudioState.checklistAnswers = {};
+    writingStudioState.checkedVocab = {};
+    writingStudioState.checkedTips = {};
+    writingStudioState.matchedExpressions = {};
+    
+    // Load independent draft if it already exists in global portalState
+    writingStudioState.independentDraft = portalState.writingDrafts[id] || "";
+    
+    // Hide standard elements
+    document.getElementById("practice-stimulus-text").style.display = "none";
+    document.querySelector("#view-practice-workspace .qa-header").style.display = "none";
+    document.querySelector("#view-practice-workspace .question-body").style.display = "none";
+    
+    // Show custom writing panels
+    document.getElementById("practice-stimulus-writing").style.display = "flex";
+    document.getElementById("practice-qa-writing").style.display = "flex";
+    
+    // Set Header
+    document.getElementById("writing-stimulus-label").textContent = activity.titleDE;
+    document.getElementById("writing-status-category").textContent = `${activity.categoryIcon} ${activity.category}`;
+    
+    // Bind navigation buttons
+    document.getElementById("btn-ws-prev").onclick = () => {
+        if (writingStudioState.currentStage > 1) {
+            loadWritingStudioStage(writingStudioState.currentStage - 1);
+        } else {
+            showWritingStudioTopics();
+        }
+    };
+    
+    document.getElementById("btn-ws-next").onclick = () => {
+        if (writingStudioState.currentStage < 7) {
+            // If in Stage 6, verify checklist before moving to stage 7
+            if (writingStudioState.currentStage === 6) {
+                const requiredChecks = ["greeting", "info", "grammar", "closing", "signature"];
+                const allChecked = requiredChecks.every(c => writingStudioState.checklistAnswers[c]);
+                if (!allChecked) {
+                    alert("Bitte überprüfen Sie zuerst alle Punkte in der Checkliste, bevor Sie die AI-Auswertung starten.");
+                    return;
+                }
+            }
+            loadWritingStudioStage(writingStudioState.currentStage + 1);
+        } else {
+            finishWritingStudioActivity();
+        }
+    };
+    
+    loadWritingStudioStage(1);
+}
+
+// 3. Load active step state
+function loadWritingStudioStage(stageNum) {
+    writingStudioState.currentStage = stageNum;
+    const activity = writingStudioState.activeActivity;
+    
+    // Update Stage Indicator bar
+    const stages = [
+        { num: 1, nameDE: "Vokabeln (Vocab)" },
+        { num: 2, nameDE: "Ausdrücke (Expressions)" },
+        { num: 3, nameDE: "Tipps (Tips)" },
+        { num: 4, nameDE: "Modell (Model)" },
+        { num: 5, nameDE: "Geleitet (Guided)" },
+        { num: 6, nameDE: "Schreiben (Write)" },
+        { num: 7, nameDE: "KI-Bewertung (AI Eval)" }
+    ];
+    
+    let barHTML = `<div style="display:flex; justify-content:space-between; align-items:center; width:100%; max-width:320px; margin:0 auto; gap:6px;">`;
+    stages.forEach(s => {
+        const isCurrent = s.num === stageNum;
+        const isCompleted = s.num < stageNum;
+        let style = "background:rgba(255,255,255,0.03); color:var(--color-text-muted); border:1px solid var(--color-border);";
+        if (isCurrent) {
+            style = "background:var(--color-accent); color:var(--color-panel-solid); border:1px solid var(--color-accent); font-weight:700; box-shadow:0 0 10px rgba(99,102,241,0.4);";
+        } else if (isCompleted) {
+            style = "background:rgba(16,185,129,0.15); color:var(--color-success); border:1px solid var(--color-success);";
+        }
+        
+        barHTML += `
+            <div style="width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.85rem; flex-shrink:0; transition: all 0.2s; ${style}">
+                ${s.num}
+            </div>
+        `;
+    });
+    barHTML += `</div>`;
+    
+    // Subtitle label
+    const activeStage = stages.find(s => s.num === stageNum);
+    barHTML += `
+        <div style="font-size:0.8rem; font-weight:600; color:var(--color-accent); margin-top:8px; text-align:center; text-transform:uppercase; letter-spacing:0.04em;">
+            Schritt ${stageNum}: ${activeStage.nameDE}
+        </div>
+    `;
+    document.getElementById("writing-stages-progress-bar").innerHTML = barHTML;
+    
+    // Header title
+    document.getElementById("practice-workspace-title").textContent = `Schreiben (Writing): ${activity.titleDE} (Schritt ${stageNum}/7 - Step ${stageNum}/7)`;
+    
+    // Clear panels
+    document.getElementById("writing-studio-stimulus-body").innerHTML = "";
+    document.getElementById("writing-studio-qa-body").innerHTML = "";
+    
+    // Render contents dynamically based on active stage
+    switch (stageNum) {
+        case 1:
+            renderWritingStudioVocab();
+            break;
+        case 2:
+            renderWritingStudioExpressions();
+            break;
+        case 3:
+            renderWritingStudioTips();
+            break;
+        case 4:
+            renderWritingStudioModel();
+            break;
+        case 5:
+            renderWritingStudioGuided();
+            break;
+        case 6:
+            renderWritingStudioIndependent();
+            break;
+        case 7:
+            renderWritingStudioAIEval();
+            break;
+    }
+    
+    // Scroll containers back to top
+    document.getElementById("writing-studio-stimulus-body").scrollTop = 0;
+    document.getElementById("writing-studio-qa-body").scrollTop = 0;
+    
+    // Navigation buttons config
+    document.getElementById("btn-ws-prev").textContent = stageNum === 1 ? "← Themen (Topics)" : "← Zurück (Back)";
+    document.getElementById("btn-ws-next").textContent = stageNum === 7 ? "Fertigstellen (Finish) ✓" : "Weiter (Next) →";
+}
+
+// STAGE 1: Vocabulary for the Topic
+function renderWritingStudioVocab() {
+    const activity = writingStudioState.activeActivity;
+    
+    // Left side: Vocab list
+    let leftHTML = `
+        <h3 style="margin-top:0; font-family:var(--font-display); font-size:1.15rem; color:var(--color-accent); display:flex; align-items:center; gap:8px;">
+            <span>📚</span> Schritt 1: Vokabeln (Step 1: Vocabulary)
+        </h3>
+        <p style="font-size:0.85rem; color:var(--color-text-secondary); margin-bottom:16px;">
+            Lernen Sie die wichtigsten Wörter für diese Aufgabe. Klicken Sie auf das Lautsprecher-Symbol, um die Aussprache zu hören. (Learn the most important words for this task. Click the speaker icon to hear the pronunciation.)
+        </p>
+        <div style="overflow-x:auto; width:100%;">
+            <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:left;">
+                <thead>
+                    <tr style="border-bottom:2px solid var(--color-border); color:var(--color-text-primary);">
+                        <th style="padding:8px 6px;">Deutsch (German)</th>
+                        <th style="padding:8px 6px;">Pronunciation (ML)</th>
+                        <th style="padding:8px 6px;">English</th>
+                        <th style="padding:8px 6px; text-align:center;">Audio</th>
+                    </tr>
+                </thead>
+                <tbody>
+    `;
+    
+    activity.vocab.forEach((v, index) => {
+        leftHTML += `
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05); hover:background:rgba(255,255,255,0.01);">
+                <td style="padding:10px 6px; font-weight:600; color:var(--color-text-primary);">${v.word}</td>
+                <td style="padding:10px 6px; color:var(--color-warning); font-size:0.8rem;">${v.ml || ""}</td>
+                <td style="padding:10px 6px; color:var(--color-text-secondary);">${v.translation}</td>
+                <td style="padding:10px 6px; text-align:center;">
+                    <button class="btn btn-secondary btn-touch" style="padding:4px 8px; border-radius:4px; font-size:0.75rem;" onclick="window.speakText('${v.word.replace(/'/g, "\\'")}', () => {}, () => {}, () => {})">🔊</button>
+                </td>
+            </tr>
+        `;
+    });
+    
+    leftHTML += `
+                </tbody>
+            </table>
+        </div>
+    `;
+    document.getElementById("writing-studio-stimulus-body").innerHTML = leftHTML;
+    
+    // Right side: Active review drills
+    let rightHTML = `
+        <h4 style="margin-top:0; font-family:var(--font-display); color:var(--color-text-primary); font-size:1rem;">Wortschatz-Aktivierung (Vocabulary Activation)</h4>
+        <p style="font-size:0.85rem; color:var(--color-text-secondary); margin-bottom:16px;">
+            Klicken Sie auf jede Wortkarte, um das Wort anzuhören und es in Ihrem Lernlauf zu registrieren. (Click on each word card to listen to the word and register it in your learning progress.)
+        </p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px;">
+    `;
+    
+    activity.vocab.forEach((v, index) => {
+        const checked = writingStudioState.checkedVocab[index];
+        const btnStyle = checked 
+            ? "background:rgba(16,185,129,0.1); border-color:var(--color-success); color:var(--color-success);" 
+            : "background:rgba(255,255,255,0.02); border-color:var(--color-border); color:var(--color-text-secondary);";
+        
+        const tick = checked ? " ✓" : "";
+        
+        rightHTML += `
+            <button id="vocab-card-${index}" class="btn btn-secondary btn-touch vocab-activation-card" data-idx="${index}" data-word="${v.word.replace(/'/g, "\\'")}" style="padding:12px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:4px; text-align:center; ${btnStyle}">
+                <span style="font-weight:600; font-size:0.85rem;">${v.word}</span>
+                <span style="font-size:0.7rem; opacity:0.8;">${v.translation}${tick}</span>
+            </button>
+        `;
+    });
+    
+    rightHTML += `
+        </div>
+        <div id="vocab-completion-msg" style="display:none; padding:12px; background:rgba(16,185,129,0.1); border:1px solid var(--color-success); border-radius:var(--radius-md); color:var(--color-success); font-size:0.85rem; text-align:center; font-weight:600;">
+            ✓ Alle Vokabeln gelernt! Klicken Sie auf "Weiter", um fortzufahren. (All vocabulary studied! Click Next to proceed.)
+        </div>
+    `;
+    
+    document.getElementById("writing-studio-qa-body").innerHTML = rightHTML;
+    
+    // Add activation click handlers
+    document.querySelectorAll(".vocab-activation-card").forEach(btn => {
+        btn.onclick = () => {
+            const idx = parseInt(btn.getAttribute("data-idx"));
+            const word = btn.getAttribute("data-word");
+            
+            // Speak German
+            window.speakText(word, () => {}, () => {}, () => {});
+            
+            // Mark checked
+            writingStudioState.checkedVocab[idx] = true;
+            
+            // Visual feedback
+            btn.style.background = "rgba(16,185,129,0.1)";
+            btn.style.borderColor = "var(--color-success)";
+            btn.style.color = "var(--color-success)";
+            btn.querySelector("span:nth-child(2)").textContent = activity.vocab[idx].translation + " ✓";
+            
+            // Check overall completion
+            checkVocabCompletion();
+        };
+    });
+    
+    checkVocabCompletion();
+}
+
+function checkVocabCompletion() {
+    const activity = writingStudioState.activeActivity;
+    if (!activity) return;
+    
+    const allChecked = activity.vocab.every((v, index) => writingStudioState.checkedVocab[index]);
+    const msg = document.getElementById("vocab-completion-msg");
+    if (msg) {
+        msg.style.display = allChecked ? "block" : "none";
+    }
+}
+
+// STAGE 2: Useful Expressions
+function renderWritingStudioExpressions() {
+    const activity = writingStudioState.activeActivity;
+    
+    // Left side: Useful expressions list
+    let leftHTML = `
+        <h3 style="margin-top:0; font-family:var(--font-display); font-size:1.15rem; color:var(--color-accent); display:flex; align-items:center; gap:8px;">
+            <span>💬</span> Schritt 2: Ausdrücke (Step 2: Useful Expressions)
+        </h3>
+        <p style="font-size:0.85rem; color:var(--color-text-secondary); margin-bottom:16px;">
+            Verwenden Sie diese festen Ausdrücke, um Ihren Text natürlicher zu gestalten. Hören Sie sich die Ausdrücke an: (Use these fixed expressions to make your text sound more natural. Listen to the expressions:)
+        </p>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+    `;
+    
+    activity.expressions.forEach((exp, index) => {
+        leftHTML += `
+            <div style="background:rgba(255,255,255,0.02); border:1px solid var(--color-border); border-radius:var(--radius-md); padding:10px 14px; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+                <div style="display:flex; flex-direction:column; gap:2px; flex:1;">
+                    <span style="font-weight:600; color:var(--color-text-primary); font-size:0.9rem;">${exp.de}</span>
+                    <span style="font-size:0.75rem; color:var(--color-text-muted); font-style:italic;">${exp.en}</span>
+                </div>
+                <button class="btn btn-secondary btn-touch" style="padding:6px 10px; border-radius:var(--radius-md); font-size:0.75rem;" onclick="window.speakText('${exp.de.replace(/'/g, "\\'")}', () => {}, () => {}, () => {})">🔊</button>
+            </div>
+        `;
+    });
+    
+    leftHTML += `
+        </div>
+    `;
+    document.getElementById("writing-studio-stimulus-body").innerHTML = leftHTML;
+    
+    // Right side: Active Matching Quiz
+    let rightHTML = `
+        <h4 style="margin-top:0; font-family:var(--font-display); color:var(--color-text-primary); font-size:1rem;">Bedeutungszuordnung (Translation Matching)</h4>
+        <p style="font-size:0.85rem; color:var(--color-text-secondary); margin-bottom:12px;">
+            Ordnen Sie die deutschen Ausdrücke den englischen Übersetzungen zu: (Match the German expressions with their English translations:)
+        </p>
+        <div id="expressions-matching-container" style="display:flex; flex-direction:column; gap:12px; margin-bottom:16px;">
+    `;
+    
+    // Pick first 3 expressions for matching
+    const matchCount = Math.min(3, activity.expressions.length);
+    const subExps = activity.expressions.slice(0, matchCount);
+    
+    // Generate matches state
+    subExps.forEach((exp, index) => {
+        const isMatched = writingStudioState.matchedExpressions[index];
+        const statusHTML = isMatched 
+            ? `<div style="color:var(--color-success); font-size:0.8rem; font-weight:600; display:flex; align-items:center; gap:4px; margin-top:4px;">✓ Richtig (Correct): <em>"${exp.en}"</em></div>`
+            : `
+                <select class="expression-match-select" data-idx="${index}" style="margin-top:6px; width:100%; padding:6px 8px; border-radius:var(--radius-md); border:1px solid var(--color-border); background:var(--color-panel); color:var(--color-text-secondary); font-size:0.8rem;">
+                    <option value="">Wählen Sie die Übersetzung (Choose translation)...</option>
+                    ${subExps.map((s, i) => `<option value="${i}">${s.en}</option>`).join("")}
+                </select>
+            `;
+            
+        rightHTML += `
+            <div style="background:rgba(255,255,255,0.01); border:1px solid var(--color-border); border-radius:var(--radius-md); padding:12px; display:flex; flex-direction:column; gap:2px;">
+                <span style="font-weight:600; font-size:0.85rem; color:var(--color-text-primary);">${exp.de}</span>
+                ${statusHTML}
+            </div>
+        `;
+    });
+    
+    rightHTML += `
+        </div>
+        <div id="expressions-completion-msg" style="display:none; padding:12px; background:rgba(16,185,129,0.1); border:1px solid var(--color-success); border-radius:var(--radius-md); color:var(--color-success); font-size:0.85rem; text-align:center; font-weight:600;">
+            ✓ Zuordnung abgeschlossen! (Matching completed! Perfectly solved.)
+        </div>
+    `;
+    
+    document.getElementById("writing-studio-qa-body").innerHTML = rightHTML;
+    
+    // Setup select match handlers
+    document.querySelectorAll(".expression-match-select").forEach(sel => {
+        sel.addEventListener("change", (e) => {
+            const idx = parseInt(sel.getAttribute("data-idx"));
+            const val = e.target.value;
+            if (val === "") return;
+            
+            if (parseInt(val) === idx) {
+                // Correct match!
+                writingStudioState.matchedExpressions[idx] = true;
+                // Re-render expressions view to reflect matched state
+                renderWritingStudioExpressions();
+            } else {
+                alert("Falsche Zuordnung. Bitte versuchen Sie es noch einmal!");
+                sel.value = "";
+            }
+        });
+    });
+    
+    checkExpressionsCompletion(matchCount);
+}
+
+function checkExpressionsCompletion(total) {
+    let count = 0;
+    for (let i = 0; i < total; i++) {
+        if (writingStudioState.matchedExpressions[i]) count++;
+    }
+    const allMatched = count === total;
+    const msg = document.getElementById("expressions-completion-msg");
+    if (msg) {
+        msg.style.display = allMatched ? "block" : "none";
+    }
+}
+
+// STAGE 3: Writing Tips
+function renderWritingStudioTips() {
+    const activity = writingStudioState.activeActivity;
+    
+    // Left side: Writing tips
+    let leftHTML = `
+        <h3 style="margin-top:0; font-family:var(--font-display); font-size:1.15rem; color:var(--color-accent); display:flex; align-items:center; gap:8px;">
+            <span>💡</span> Schritt 3: Tipps (Step 3: Writing Tips)
+        </h3>
+        <p style="font-size:0.85rem; color:var(--color-text-secondary); margin-bottom:16px;">
+            Befolgen Sie diese Regeln, um im Goethe-Zertifikat A1 die volle Punktzahl zu erreichen: (Follow these rules to achieve full points in the Goethe A1 exam:)
+        </p>
+        <ul style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:10px; font-size:0.85rem; color:var(--color-text-secondary); line-height:1.5;">
+    `;
+    
+    activity.tips.forEach(tip => {
+        leftHTML += `<li>${tip}</li>`;
+    });
+    
+    leftHTML += `
+        </ul>
+    `;
+    document.getElementById("writing-studio-stimulus-body").innerHTML = leftHTML;
+    
+    // Right side: Active checklist to verify understanding
+    let rightHTML = `
+        <h4 style="margin-top:0; font-family:var(--font-display); color:var(--color-text-primary); font-size:1rem;">Aufgaben-Verständnis (Task Understanding)</h4>
+        <p style="font-size:0.85rem; color:var(--color-text-secondary); margin-bottom:14px;">
+            Lesen Sie den Schreibauftrag und bestätigen Sie die Anforderungen: (Read the writing task and confirm the requirements:)
+        </p>
+        <div class="glass-panel" style="padding:12px; margin-bottom:16px; font-size:0.8rem; line-height:1.5; border-left:4px solid var(--color-accent); background:rgba(99,102,241,0.02);">
+            <strong>Schreibauftrag (Writing Prompt):</strong><br>
+            <span style="color:var(--color-text-primary); font-style:italic;">"${activity.promptDE}"</span>
+            <div style="margin-top:8px; border-top:1px dashed var(--color-border); padding-top:6px; color:var(--color-text-muted);">
+                "${activity.prompt}"
+            </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:16px;">
+    `;
+    
+    const checklistItems = [
+        { key: "short", text: "Ich schreibe kurze Sätze (I write short sentences - A1)." },
+        { key: "points", text: "Ich beantworte alle Inhaltspunkte (I answer all prompt points)." },
+        { key: "greeting", text: "Ich verwende Anrede und Grußformel (I use greeting and closing)." }
+    ];
+    
+    checklistItems.forEach(item => {
+        const checked = writingStudioState.checkedTips[item.key] ? "checked" : "";
+        rightHTML += `
+            <label style="display:flex; align-items:flex-start; gap:10px; font-size:0.8rem; color:var(--color-text-secondary); cursor:pointer;">
+                <input type="checkbox" class="tip-check-input" data-key="${item.key}" ${checked} style="margin-top:3px; cursor:pointer;">
+                <span>${item.text}</span>
+            </label>
+        `;
+    });
+    
+    rightHTML += `
+        </div>
+        <div id="tips-completion-msg" style="display:none; padding:12px; background:rgba(16,185,129,0.1); border:1px solid var(--color-success); border-radius:var(--radius-md); color:var(--color-success); font-size:0.85rem; text-align:center; font-weight:600;">
+            ✓ Bereit zum Schreiben! Klicken Sie auf "Weiter", um die Musterantwort anzusehen. (Ready to write! Click Next to see the model answer.)
+        </div>
+    `;
+    
+    document.getElementById("writing-studio-qa-body").innerHTML = rightHTML;
+    
+    // Bind checklist input clicks
+    document.querySelectorAll(".tip-check-input").forEach(chk => {
+        chk.addEventListener("change", (e) => {
+            const key = chk.getAttribute("data-key");
+            writingStudioState.checkedTips[key] = chk.checked;
+            checkTipsCompletion();
+        });
+    });
+    
+    checkTipsCompletion();
+}
+
+function checkTipsCompletion() {
+    const requiredKeys = ["short", "points", "greeting"];
+    const allChecked = requiredKeys.every(k => writingStudioState.checkedTips[k]);
+    const msg = document.getElementById("tips-completion-msg");
+    if (msg) {
+        msg.style.display = allChecked ? "block" : "none";
+    }
+}
+
+// STAGE 4: Model Answer
+function renderWritingStudioModel() {
+    const activity = writingStudioState.activeActivity;
+    const sentences = activity.modelAnswer.split(/(?<=[.!?])\s+/);
+    
+    let leftHTML = `
+        <h3 style="margin-top:0; font-family:var(--font-display); font-size:1.15rem; color:var(--color-accent); display:flex; align-items:center; gap:8px;">
+            <span>📝</span> Schritt 4: Muster (Step 4: Model Answer)
+        </h3>
+        <p style="font-size:0.85rem; color:var(--color-text-secondary); margin-bottom:12px;">
+            Lesen Sie diese Musterantwort. Tippen Sie auf einen Satz, um die Übersetzung anzuzeigen. (Read this model answer. Tap on a sentence to see its English translation.)
+        </p>
+        <div class="glass-panel" style="padding:16px 20px; border-radius:var(--radius-md); background:rgba(255,255,255,0.01); border:1px solid var(--color-border); margin-bottom:16px; line-height:1.7; font-size:0.95rem;">
+    `;
+    
+    sentences.forEach((sentence, index) => {
+        leftHTML += `
+            <span class="model-sentence-span" data-idx="${index}" style="cursor:help; border-bottom:1px dashed var(--color-border); padding:2px; margin-right:4px; display:inline-block; transition:color 0.2s;" title="Tippen für Übersetzung">
+                ${sentence}
+            </span>
+        `;
+    });
+    
+    leftHTML += `
+        </div>
+        <div id="sentence-translation-box" style="padding:10px 14px; background:rgba(99,102,241,0.05); border:1px solid rgba(99,102,241,0.2); border-radius:var(--radius-md); color:var(--color-text-muted); font-size:0.85rem; font-style:italic; min-height:40px; display:flex; align-items:center;">
+            Tippen Sie auf einen deutschen Satz oben, um die Übersetzung anzuzeigen. (Tap on a German sentence above to display its translation.)
+        </div>
+        <button class="btn btn-secondary btn-touch" style="margin-top:12px; width:100%; display:flex; align-items:center; justify-content:center; gap:8px;" onclick="window.speakText('${activity.modelAnswer.replace(/\n/g, " ").replace(/'/g, "\\'")}', () => {}, () => {}, () => {})">
+            🔊 Modellantwort komplett vorlesen (Read Aloud)
+        </button>
+    `;
+    document.getElementById("writing-studio-stimulus-body").innerHTML = leftHTML;
+    
+    // Pre-mapped sentence translations
+    const sentenceTranslations = {
+        // ws_001
+        "Hallo! Ich heiße Maria.": "Hello! My name is Maria.",
+        "Ich bin 28 Jahre alt und komme aus Indien.": "I am 28 years old and come from India.",
+        "Ich wohne jetzt in Berlin.": "I live now in Berlin.",
+        "Ich bin Ingenieurin von Beruf.": "I am an engineer by profession.",
+        "In meiner Freizeit lese ich gern und lerne Deutsch.": "In my free time I like to read and learn German.",
+        "Viele Grüße, Maria.": "Best wishes, Maria.",
+        // ws_002
+        "Ich habe eine kleine Familie.": "I have a small family.",
+        "Meine Mutter heißt Priya.": "My mother is named Priya.",
+        "Sie ist 55 Jahre alt und arbeitet als Lehrerin.": "She is 55 years old and works as a teacher.",
+        "Mein Vater heißt Rajan und ist Ingenieur.": "My father is named Rajan and is an engineer.",
+        "Ich habe auch einen Bruder.": "I also have a brother.",
+        "Er heißt Arun und studiert in Mumbai.": "His name is Arun and he studies in Mumbai.",
+        "Viele Grüße!": "Best wishes!",
+        // ws_003
+        "Mein Hobby ist Lesen.": "My hobby is reading.",
+        "In meiner Freizeit lese ich gern Bücher auf Deutsch.": "In my free time I like to read books in German.",
+        "Ich lese jeden Abend etwa 30 Minuten.": "I read about 30 minutes every evening.",
+        "Das macht mir viel Spaß und ich lerne dabei neue Wörter.": "It is a lot of fun for me and I learn new words doing it.",
+        "Meine Lieblingsgenres sind Krimis und Reiseberichte.": "My favorite genres are thrillers and travel logs.",
+        // ws_004
+        "Ich stehe jeden Morgen um 6 Uhr auf.": "I stand up every morning at 6 o'clock.",
+        "Zuerst dusche ich und dann frühstücke ich.": "First I shower and then I eat breakfast.",
+        "Um 8 Uhr fahre ich zur Arbeit.": "At 8 o'clock I drive to work.",
+        "Ich arbeite bis 17 Uhr.": "I work until 5 PM.",
+        "Danach koche ich und esse zu Abend.": "After that I cook and eat dinner.",
+        "Am Abend lese ich oder sehe fern.": "In the evening I read or watch TV.",
+        "Gegen 22 Uhr gehe ich schlafen.": "Around 10 PM I go to sleep.",
+        // ws_005
+        "Ich wohne in einer kleinen Wohnung in Berlin.": "I live in a small apartment in Berlin.",
+        "Die Wohnung hat drei Zimmer: ein Schlafzimmer, ein Wohnzimmer und eine Küche.": "The apartment has three rooms: a bedroom, a living room and a kitchen.",
+        "Es gibt auch ein Badezimmer.": "There is also a bathroom.",
+        "Die Wohnung liegt im Zentrum.": "The apartment is in the centre.",
+        "Ich mag meine Wohnung, weil sie sehr hell und ruhig ist.": "I like my apartment because it is very bright and quiet.",
+        // ws_006
+        "Liebe Anna,": "Dear Anna,",
+        "Ich lade dich herzlich zu meiner Geburtstagsparty ein!": "I invite you cordially to my birthday party!",
+        "Die Party ist am Samstag, den 15. Juli, um 19 Uhr bei mir zu Hause.": "The party is on Saturday, July 15th, at 7 PM at my house.",
+        "Es gibt Essen, Musik und viel Spaß!": "There is food, music and lots of fun!",
+        "Kannst du kommen?": "Can you come?",
+        "Bitte schreib mir bald.": "Please write back soon.",
+        "Maria": "Maria",
+        // ws_007
+        "Lieber Tom,": "Dear Tom,",
+        "Danke für deine Einladung!": "Thank you for your invitation!",
+        "Ich komme natürlich gerne am Freitag.": "Of course I'd love to come on Friday.",
+        "Ich freue mich sehr auf das Abendessen.": "I am looking forward to dinner very much.",
+        "Was soll ich mitbringen?": "What should I bring?",
+        "Vielleicht etwas zu trinken oder einen Salat?": "Maybe something to drink or a salad?",
+        // ws_008
+        "Lieber Klaus,": "Dear Klaus,",
+        "Vielen Dank für deine Einladung!": "Thank you very much for your invitation!",
+        "Leider kann ich am Donnerstag nicht kommen.": "Unfortunately I cannot come on Thursday.",
+        "Ich habe schon einen Arzttermin.": "I already have a doctor's appointment.",
+        "Es tut mir sehr leid.": "I am so sorry.",
+        "Vielleicht essen wir das nächste Mal zusammen?": "Maybe we eat together next time?",
+        // ws_009
+        "Liebe Frau Müller,": "Dear Mrs Müller,",
+        "Herzlichen Dank, dass Sie in meinem Urlaub auf meine Katze aufgepasst haben!": "Heartfelt thanks that you looked after my cat during my vacation!",
+        "Das war wirklich sehr nett von Ihnen.": "That was really very kind of you.",
+        "Ich bin sehr dankbar.": "I am very grateful.",
+        "Ich möchte Sie gern zum Kaffee einladen.": "I would like to invite you for coffee.",
+        "Wann haben Sie Zeit?": "When do you have time?",
+        "Mit freundlichen Grüßen,": "With friendly greetings,",
+        // ws_010
+        "Liebe Lena,": "Dear Lena,",
+        "Es tut mir wirklich sehr leid!": "I am really so sorry!",
+        "Ich habe leider deinen Geburtstag vergessen.": "Unfortunately I forgot your birthday.",
+        "Das war nicht nett von mir.": "That was not nice of me.",
+        "Ich möchte das unbedingt wiedergutmachen.": "I absolutely want to make it up.",
+        "Darf ich dich nächste Woche zum Abendessen einladen?": "May I invite you to dinner next week?",
+        "Viele Grüße und nochmals Entschuldigung,": "Best wishes and sorry again,"
+    };
+    
+    // Bind click events on sentences
+    setTimeout(() => {
+        document.querySelectorAll(".model-sentence-span").forEach(span => {
+            span.onclick = () => {
+                document.querySelectorAll(".model-sentence-span").forEach(s => s.style.color = "var(--color-text-secondary)");
+                span.style.color = "var(--color-accent)";
+                
+                const text = span.textContent.trim();
+                let trans = sentenceTranslations[text];
+                if (!trans) {
+                    // Try exact substring match
+                    const matchingKey = Object.keys(sentenceTranslations).find(k => text.includes(k) || k.includes(text));
+                    trans = matchingKey ? sentenceTranslations[matchingKey] : "English translation: " + text;
+                }
+                
+                document.getElementById("sentence-translation-box").innerHTML = `<strong>Übersetzung:</strong> "${trans}"`;
+                window.speakText(text, () => {}, () => {}, () => {});
+            };
+        });
+    }, 100);
+    
+    // Right side: Common mistakes
+    let rightHTML = `
+        <h4 style="margin-top:0; font-family:var(--font-display); color:var(--color-text-primary); font-size:1rem;">Fehlervermeidung (Common Mistakes)</h4>
+        <p style="font-size:0.85rem; color:var(--color-text-secondary); margin-bottom:14px;">
+            Achten Sie auf diese typischen Fehler, um Grammatikabzüge in der Prüfung zu vermeiden: (Pay attention to these typical mistakes to avoid grammar deductions in the exam:)
+        </p>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+    `;
+    
+    activity.commonMistakes.forEach(m => {
+        rightHTML += `
+            <div style="border:1px solid var(--color-border); border-radius:var(--radius-md); padding:12px; background:rgba(255,255,255,0.01);">
+                <div style="color:var(--color-error); font-weight:600; font-size:0.8rem; display:flex; align-items:center; gap:6px;">
+                    <span>❌ Falsch:</span> <span style="text-decoration:line-through; font-weight:500;">${m.wrong}</span>
+                </div>
+                <div style="color:var(--color-success); font-weight:700; font-size:0.85rem; display:flex; align-items:center; gap:6px; margin-top:4px;">
+                    <span>✅ Richtig:</span> <span>${m.correct}</span>
+                </div>
+                <div style="color:var(--color-text-muted); font-size:0.75rem; margin-top:6px; padding-top:6px; border-top:1px dashed rgba(255,255,255,0.05); line-height:1.4;">
+                    <strong>Erklärung:</strong> ${m.reason}
+                </div>
+            </div>
+        `;
+    });
+    
+    rightHTML += `
+        </div>
+    `;
+    document.getElementById("writing-studio-qa-body").innerHTML = rightHTML;
+}
+
+// STAGE 5: Guided Writing
+function renderWritingStudioGuided() {
+    const activity = writingStudioState.activeActivity;
+    
+    // Left side: Scaffold structure
+    let leftHTML = `
+        <h3 style="margin-top:0; font-family:var(--font-display); font-size:1.15rem; color:var(--color-accent); display:flex; align-items:center; gap:8px;">
+            <span>✍️</span> Schritt 5: Geleitet (Step 5: Guided Writing)
+        </h3>
+        <p style="font-size:0.85rem; color:var(--color-text-secondary); margin-bottom:12px;">
+            Bauen Sie Ihren Text strukturiert auf. Verwenden Sie die angezeigten Bausteine als Orientierung: (Build your text in a structured way. Use the shown blocks as a guide:)
+        </p>
+        <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:16px;">
+    `;
+    
+    activity.guidedScaffold.forEach((step, index) => {
+        leftHTML += `
+            <div style="background:rgba(255,255,255,0.01); border:1px solid var(--color-border); padding:10px 14px; border-radius:var(--radius-md); display:flex; flex-direction:column; gap:2px;">
+                <span style="font-weight:700; color:var(--color-text-primary); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.02em;">Teil ${index + 1}: ${step.label}</span>
+                <span style="font-size:0.8rem; color:var(--color-accent); font-style:italic;">Vorschlag: ${step.hint}</span>
+            </div>
+        `;
+    });
+    
+    leftHTML += `
+        </div>
+    `;
+    document.getElementById("writing-studio-stimulus-body").innerHTML = leftHTML;
+    
+    // Right side: Interactive Input Form
+    let rightHTML = `
+        <h4 style="margin-top:0; font-family:var(--font-display); color:var(--color-text-primary); font-size:1rem;">Satzbausteine ausfüllen (Fill in sentence blocks)</h4>
+        <p style="font-size:0.85rem; color:var(--color-text-secondary); margin-bottom:14px;">
+            Schreiben Sie für jeden Baustein Ihren eigenen Satz: (Write your own sentence for each block:)
+        </p>
+        <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:16px;">
+    `;
+    
+    activity.guidedScaffold.forEach((step, index) => {
+        const savedVal = writingStudioState.guidedAnswers[index] || "";
+        rightHTML += `
+            <div style="display:flex; flex-direction:column; gap:4px;">
+                <label style="font-size:0.8rem; font-weight:600; color:var(--color-text-secondary);">${step.label} (${step.hint})</label>
+                <input type="text" class="guided-part-input" data-idx="${index}" value="${savedVal.replace(/"/g, "&quot;")}" placeholder="Ihre Antwort..." style="width:100%; padding:8px 10px; border-radius:var(--radius-md); border:1px solid var(--color-border); background:var(--color-panel); color:var(--color-text-primary); font-size:0.85rem;">
+            </div>
+        `;
+    });
+    
+    rightHTML += `
+        </div>
+        <div class="glass-panel" style="padding:14px; background:rgba(99,102,241,0.03); border:1px solid rgba(99,102,241,0.2);">
+            <h5 style="margin:0 0 6px 0; font-family:var(--font-display); color:var(--color-accent); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.02em;">Vorschau Ihres Textes (Live Preview):</h5>
+            <div id="guided-combined-preview" style="font-size:0.9rem; color:var(--color-text-primary); line-height:1.6; min-height:40px; white-space:pre-wrap; font-style:italic;"></div>
+        </div>
+    `;
+    
+    document.getElementById("writing-studio-qa-body").innerHTML = rightHTML;
+    
+    // Attach live input updates
+    const updateGuidedPreview = () => {
+        let combined = "";
+        document.querySelectorAll(".guided-part-input").forEach(inp => {
+            const idx = parseInt(inp.getAttribute("data-idx"));
+            const val = inp.value.trim();
+            writingStudioState.guidedAnswers[idx] = val;
+            
+            if (val !== "") {
+                if (idx === 0) {
+                    combined += val + "\n\n";
+                } else if (idx === activity.guidedScaffold.length - 2) {
+                    combined += val + "\n";
+                } else if (idx === activity.guidedScaffold.length - 1) {
+                    combined += val;
+                } else {
+                    combined += val + " ";
+                }
+            }
+        });
+        
+        document.getElementById("guided-combined-preview").textContent = combined || "Füllen Sie die Felder oben aus, um eine Vorschau anzuzeigen... (Fill in the fields above to see a preview...)";
+        writingStudioState.independentDraft = combined;
+    };
+    
+    document.querySelectorAll(".guided-part-input").forEach(inp => {
+        inp.addEventListener("input", updateGuidedPreview);
+    });
+    
+    updateGuidedPreview();
+}
+
+// STAGE 6: Independent Writing
+function renderWritingStudioIndependent() {
+    const activity = writingStudioState.activeActivity;
+    
+    // Left side: Exam prompt
+    let leftHTML = `
+        <h3 style="margin-top:0; font-family:var(--font-display); font-size:1.15rem; color:var(--color-accent); display:flex; align-items:center; gap:8px;">
+            <span>✍️</span> Schritt 6: Schreiben (Step 6: Write)
+        </h3>
+        <p style="font-size:0.85rem; color:var(--color-text-secondary); margin-bottom:12px;">
+            Schreiben Sie nun Ihren fertigen Text frei im Editor rechts. Nutzen Sie Ihren Entwurf aus Schritt 5. (Now write your final text freely in the editor on the right. Use your draft from Step 5.)
+        </p>
+        <div class="glass-panel" style="padding:16px; border-left:4px solid var(--color-accent); margin-bottom:14px; background:rgba(99,102,241,0.02); font-size:0.85rem; line-height:1.5;">
+            <strong>Prüfungsauftrag (Goethe A1 Style):</strong><br>
+            <span style="color:var(--color-text-primary); font-weight:500;">"${activity.promptDE}"</span>
+        </div>
+        <div class="glass-panel" style="padding:16px; border-left:4px solid var(--color-border); background:rgba(255,255,255,0.01); font-size:0.8rem; line-height:1.5; color:var(--color-text-muted);">
+            <strong>English Translation:</strong><br>
+            "${activity.prompt}"
+        </div>
+    `;
+    document.getElementById("writing-studio-stimulus-body").innerHTML = leftHTML;
+    
+    // Right side: Free text area with word counter, char counter, autosave, and verification checklist
+    let rightHTML = `
+        <h4 style="margin-top:0; font-family:var(--font-display); color:var(--color-text-primary); font-size:1rem;">Schreib-Editor (Writing Editor)</h4>
+        <textarea id="ws-independent-textarea" class="text-editor" style="width:100%; min-height:160px; padding:12px; border-radius:var(--radius-md); border:1px solid var(--color-border); background:var(--color-panel); color:var(--color-text-primary); font-size:0.9rem; line-height:1.5; font-family:inherit; resize:vertical;" placeholder="Schreiben Sie Ihre E-Mail/Formular hier... (Write your e-mail/form here...)"></textarea>
+        
+        <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.75rem; color:var(--color-text-muted); margin-top:6px; flex-wrap:wrap; gap:6px;">
+            <div>
+                Wörter: <span id="ws-word-count" style="font-weight:700; color:var(--color-text-primary);">0</span> / ${activity.wordTarget} | 
+                Zeichen: <span id="ws-char-count" style="font-weight:700; color:var(--color-text-primary);">0</span>
+            </div>
+            <div id="ws-save-status" style="font-style:italic; color:var(--color-success);">Entwurf geladen</div>
+        </div>
+        
+        <!-- Checklist display before proceeding -->
+        <div style="margin-top:16px; border-top:1px solid var(--color-border); padding-top:14px; display:flex; flex-direction:column; gap:8px;">
+            <strong style="font-size:0.8rem; color:var(--color-text-secondary); text-transform:uppercase; letter-spacing:0.02em;">✓ Checkliste (Checklist - Required):</strong>
+            <div style="display:flex; flex-direction:column; gap:6px;">
+    `;
+    
+    const checklistItems = [
+        { key: "greeting", text: "Passende Anrede (Suitable greeting)? (e.g. Liebe/Lieber...)" },
+        { key: "info", text: "Inhaltspunkte (All prompt points answered)?" },
+        { key: "grammar", text: "Grammatik (Grammar & spelling checked)?" },
+        { key: "closing", text: "Grußformel (Suitable closing phrase)? (e.g. Viele Grüße...)" },
+        { key: "signature", text: "Unterschrift (Signature/Name added)?" }
+    ];
+    
+    checklistItems.forEach(item => {
+        const checked = writingStudioState.checklistAnswers[item.key] ? "checked" : "";
+        rightHTML += `
+            <label style="display:flex; align-items:flex-start; gap:8px; font-size:0.75rem; color:var(--color-text-secondary); cursor:pointer;">
+                <input type="checkbox" class="ws-checklist-input" data-key="${item.key}" ${checked} style="margin-top:2px; cursor:pointer;">
+                <span>${item.text}</span>
+            </label>
+        `;
+    });
+    
+    rightHTML += `
+            </div>
+        </div>
+    `;
+    document.getElementById("writing-studio-qa-body").innerHTML = rightHTML;
+    
+    // Populate textarea
+    const textarea = document.getElementById("ws-independent-textarea");
+    textarea.value = writingStudioState.independentDraft || "";
+    
+    // Bind change/input updates
+    const updateStats = () => {
+        const val = textarea.value;
+        writingStudioState.independentDraft = val;
+        
+        const words = val.trim() === "" ? 0 : val.trim().split(/\s+/).length;
+        document.getElementById("ws-word-count").textContent = words;
+        document.getElementById("ws-char-count").textContent = val.length;
+        
+        // Sync to global portalState writing drafts
+        portalState.writingDrafts[activity.id] = val;
+        savePortalStateToStorage();
+        document.getElementById("ws-save-status").textContent = "Entwurf automatisch gesichert";
+    };
+    
+    textarea.addEventListener("input", updateStats);
+    updateStats();
+    
+    // Bind checklist input clicks
+    document.querySelectorAll(".ws-checklist-input").forEach(chk => {
+        chk.addEventListener("change", (e) => {
+            const key = chk.getAttribute("data-key");
+            writingStudioState.checklistAnswers[key] = chk.checked;
+        });
+    });
+}
+
+// STAGE 7: AI Evaluation
+function renderWritingStudioAIEval() {
+    const activity = writingStudioState.activeActivity;
+    const responseText = writingStudioState.independentDraft;
+    
+    // Left side: instructions
+    let leftHTML = `
+        <h3 style="margin-top:0; font-family:var(--font-display); font-size:1.15rem; color:var(--color-accent); display:flex; align-items:center; gap:8px;">
+            <span>🤖</span> Schritt 7: KI-Bewertung (Step 7: AI Evaluation)
+        </h3>
+        <p style="font-size:0.85rem; color:var(--color-text-secondary); margin-bottom:14px; line-height:1.5;">
+            Kopieren Sie die Auswertungsvorlage auf der rechten Seite und fügen Sie sie in einen AI-Assistenten (z. B. ChatGPT, Gemini oder Claude) ein. (Copy the evaluation template on the right and paste it into an AI assistant.)
+        </p>
+        <p style="font-size:0.85rem; color:var(--color-text-secondary); margin-bottom:16px; line-height:1.5;">
+            Sie erhalten detailliertes Feedback basierend auf den offiziellen Goethe A1 Bewertungsrichtlinien. (You will receive detailed feedback based on official Goethe A1 grading guidelines.)
+        </p>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+            <button id="btn-ws-download-txt" class="btn btn-secondary btn-touch" style="width:100%; display:flex; align-items:center; justify-content:center; gap:6px;">
+                📥 Entwurf herunterladen (Download Draft) (.txt)
+            </button>
+        </div>
+    `;
+    document.getElementById("writing-studio-stimulus-body").innerHTML = leftHTML;
+    
+    // Right side: AI prompt generators
+    const chatGptPrompt = makeEnhancedWritingStudioAIPrompt(activity.promptDE, responseText, "ChatGPT", activity.titleDE);
+    const geminiPrompt = makeEnhancedWritingStudioAIPrompt(activity.promptDE, responseText, "Gemini", activity.titleDE);
+    const generalPrompt = makeEnhancedWritingStudioAIPrompt(activity.promptDE, responseText, "General AI", activity.titleDE);
+    
+    let rightHTML = `
+        <h4 style="margin-top:0; font-family:var(--font-display); color:var(--color-text-primary); font-size:1rem;">Auswertung anfordern (Request Evaluation)</h4>
+        <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:16px;">
+            <button id="btn-ws-copy-chatgpt" class="btn btn-primary btn-touch" style="background:var(--color-indigo); border-color:var(--color-indigo-light); font-size:0.85rem; width:100%; display:flex; align-items:center; justify-content:center; gap:6px;">
+                📋 Prompt für ChatGPT kopieren
+            </button>
+            <button id="btn-ws-copy-gemini" class="btn btn-primary btn-touch" style="background:var(--color-accent); border-color:var(--color-accent-light); font-size:0.85rem; width:100%; display:flex; align-items:center; justify-content:center; gap:6px;">
+                📋 Prompt für Gemini kopieren
+            </button>
+            <button id="btn-ws-copy-general" class="btn btn-warning btn-touch" style="font-size:0.85rem; width:100%; display:flex; align-items:center; justify-content:center; gap:6px;">
+                📋 Prompt für Claude/General AI kopieren
+            </button>
+        </div>
+        
+        <div style="display:flex; flex-direction:column; gap:4px;">
+            <label style="font-size:0.8rem; font-weight:600; color:var(--color-text-secondary);">Vorschau des AI-Prompts:</label>
+            <textarea readonly style="width:100%; height:120px; font-size:0.75rem; color:var(--color-text-muted); background:var(--color-panel-solid); border:1px solid var(--color-border); border-radius:var(--radius-md); padding:8px; resize:none; font-family:var(--font-mono); line-height:1.4;">${chatGptPrompt}</textarea>
+        </div>
+    `;
+    document.getElementById("writing-studio-qa-body").innerHTML = rightHTML;
+    
+    // Bind actions
+    document.getElementById("btn-ws-download-txt").onclick = () => {
+        const blob = new Blob([responseText], { type: "text/plain;charset=utf-8" });
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = `writing_studio_${activity.id}.txt`;
+        a.click();
+    };
+    
+    document.getElementById("btn-ws-copy-chatgpt").onclick = () => {
+        copyToClipboard(chatGptPrompt);
+        alert("Prompt für ChatGPT in die Zwischenablage kopiert!");
+    };
+    
+    document.getElementById("btn-ws-copy-gemini").onclick = () => {
+        copyToClipboard(geminiPrompt);
+        alert("Prompt für Gemini in die Zwischenablage kopiert!");
+    };
+    
+    document.getElementById("btn-ws-copy-general").onclick = () => {
+        copyToClipboard(generalPrompt);
+        alert("Prompt für General AI in die Zwischenablage kopiert!");
+    };
+}
+
+// 4. Enhance AI Evaluation instructions & details
+function makeEnhancedWritingStudioAIPrompt(promptText, userResponse, modelType, title) {
+    return `Goethe-Zertifikat A1: Writing Practice Evaluation (${modelType})
+Topic: ${title}
+
+--- PRÜFUNGSAUFGABE / PROMPT ---
+${promptText}
+
+--- SCHÜLERANTWORT / MY RESPONSE ---
+${userResponse || "(Keine Antwort eingegeben / No response entered)"}
+
+--- BEWERTUNGSANWEISUNG / INSTRUCTIONS ---
+Please act as an official Goethe-Zertifikat A1 Examiner. Review and grade my response under the official Goethe A1 criteria.
+
+Provide feedback structured EXACTLY as follows:
+
+1. GLOBAL GRADE: Score out of 15 points (Part A: 5 points for form-filling if applicable, Part B: 10 points for writing task). For free writing, grade:
+   - Task Completion (Aufgabenbewältigung): 0 to 5 points (Did the student answer all bullet points?)
+   - Language Quality (Formale Richtigkeit / Grammatik & Rechtschreibung): 0 to 5 points (Is vocabulary and grammar correct for A1 level?)
+   
+2. ANALYSIS BY CRITERIA:
+   - Grammar (Grammatik): List grammatical errors (word order, cases, verbs, articles) with corrections and brief explanations.
+   - Vocabulary (Wortschatz): Identify spelling mistakes or inappropriate word choices.
+   - Task Completion (Aufgabenbewältigung): Confirm if all points from the prompt were addressed.
+   - Organisation (Struktur / Textaufbau): Check greeting, closing, and formatting.
+
+3. IMPROVED VERSION (Musterantwort):
+   Provide a corrected, natural version of my response that keeps my original ideas but aligns with perfect A1 German.
+
+4. SPECIFIC RECOMMENDATIONS:
+   Give 2-3 specific suggestions on what grammar rules or vocabulary lists I should study next to improve.
+
+Please write the feedback in clear, encouraging English with German grammatical explanations where helpful. Thank you!`;
+}
+
+// 5. Finish activity and save to global progress state
+function finishWritingStudioActivity() {
+    const activity = writingStudioState.activeActivity;
+    if (!activity) return;
+    
+    // Save completion progress
+    if (!portalState.progress.writing) {
+        portalState.progress.writing = {};
+    }
+    portalState.progress.writing[activity.id] = true;
+    
+    // Stats update
+    portalState.sessionsCompleted++;
+    updateStreakOnActivity();
+    savePortalStateToStorage();
+    
+    alert(`Herzlichen Glückwunsch! Sie haben die Schreibübung "${activity.titleDE}" erfolgreich abgeschlossen!`);
+    
+    // Return to topics selection hub
+    showWritingStudioTopics();
+}
+

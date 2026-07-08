@@ -430,7 +430,22 @@
                                     </div>
                                 </div>
                             </div>
-
+                            
+                            <!-- Writing Studio Stimulus Panel -->
+                            <div id="practice-stimulus-writing" class="stimulus-content" style="display:none; flex-direction:column; gap:16px;">
+                                <div class="lesen-document-view" style="flex: 1; display: flex; flex-direction: column;">
+                                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; flex-wrap:wrap; gap:8px;">
+                                        <span class="doc-label" id="writing-stimulus-label">Schreibstudio (Writing Studio)</span>
+                                        <div id="writing-status-category" class="badge status-badge" style="background:rgba(99,102,241,0.15); color:var(--color-accent); font-size:0.75rem; padding:4px 8px; border-radius:6px; font-weight:600;">Category</div>
+                                    </div>
+                                    <div class="writing-stages-bar" id="writing-stages-progress-bar" style="display:flex; flex-direction:column; align-items:center; background:rgba(255,255,255,0.03); border:1px solid var(--color-border); padding:12px 16px; border-radius:var(--radius-md); gap:4px; margin-bottom:12px;">
+                                        <!-- Steps 1 to 7 injected here dynamically -->
+                                    </div>
+                                    <div class="lesen-document-body" id="writing-studio-stimulus-body" style="flex:1; overflow-y:auto; padding-right:4px;">
+                                        <!-- Step content (Vocab/Expressions/Tips/Model/etc) injected dynamically -->
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Right Panel: Practice Input QA -->
@@ -498,6 +513,17 @@
                                 <div class="practice-actions-row" style="margin-top:24px; display:flex; justify-content:space-between; gap:12px;">
                                     <button id="btn-practice-check-answer" class="btn btn-primary btn-touch">Antwort prüfen</button>
                                     <button id="btn-practice-next" class="btn btn-secondary btn-touch" style="display:none;">Nächste Frage &rarr;</button>
+                                </div>
+                            </div>
+
+                            <!-- Writing Studio QA Panel -->
+                            <div id="practice-qa-writing" class="stimulus-content" style="display:none; flex-direction:column; gap:16px; flex:1;">
+                                <div id="writing-studio-qa-body" style="flex:1; display:flex; flex-direction:column; gap:16px; overflow-y:auto; padding-right:4px;">
+                                    <!-- Dynamic interaction content injected here -->
+                                </div>
+                                <div class="writing-studio-nav-row" style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:16px; padding-top:12px; border-top:1px solid var(--color-border);">
+                                    <button id="btn-ws-prev" class="btn btn-secondary btn-touch" style="min-width:100px;">&larr; Zurück (Back)</button>
+                                    <button id="btn-ws-next" class="btn btn-primary btn-touch" style="min-width:100px;">Weiter (Next) &rarr;</button>
                                 </div>
                             </div>
 
@@ -1789,7 +1815,7 @@
     </div>
 
     <!-- Script loading -->
-    <script src="app.js?v=2.3.2d"></script>
-    <script src="v22_additions.js?v=2.3.2d"></script>
+    <script src="app.js?v=2.3.2e"></script>
+    <script src="v22_additions.js?v=2.3.2e"></script>
 </body>
 </html>

@@ -989,7 +989,7 @@ const LISTENING_STORIES_DATABASE = [
         "id": "st_shopping",
         "title": "Einkaufen auf dem Markt",
         "text": "Guten Tag, Herr Becker! Was möchten Sie heute kaufen? - Guten Tag, Frau Mayer. Ich brauche heute frisches Gemüse. Haben Sie Tomaten und Kartoffeln? - Ja, natürlich. Die Tomaten kosten zwei Euro das Kilo, und die Kartoffeln kosten ein Euro fünfzig. - Gut, ich nehme ein Kilo Tomaten und zwei Kilo Kartoffeln. Haben Sie auch Obst? - Ja, die Bananen sind heute im Angebot. - Wunderbar, geben Sie mir bitte auch vier Bananen. Wie viel macht das zusammen? - Das macht genau sechs Euro.",
-        "translation": "Good day, Mr. Becker! What would you like to buy today? - Good day, Mrs. Mayer. I need fresh vegetables today. Do you have tomatoes and potatoes? - Yes, of course. The tomatoes cost two euros a kilo, and the potatoes cost one euro fifty. - Good, I'll take a kilo of tomatoes and two kilos of potatoes. Do you have fruit too? - Yes, bananas are on sale today. - Wonderful, please give me four bananas too. How much does that make altogether? - That makes exactly six euros.",
+        "translation": "Good day, Mr Becker! What would you like to buy today? - Good day, Mrs Mayer. I need fresh vegetables today. Do you have tomatoes and potatoes? - Yes, of course. The tomatoes cost two euros a kilo, and the potatoes cost one euro fifty. - Good, I'll take a kilo of tomatoes and two kilos of potatoes. Do you have fruit too? - Yes, bananas are on sale today. - Wonderful, please give me four bananas too. How much does that make altogether? - That makes exactly six euros.",
         "vocab": [
             {
                 "word": "einkaufen",
@@ -1241,7 +1241,7 @@ const LISTENING_STORIES_DATABASE = [
         "id": "st_school",
         "title": "Im Deutschkurs",
         "text": "Hallo, ich bin Maria und komme aus Spanien. Ich lerne jetzt Deutsch in Berlin. Mein Kurs beginnt jeden Tag um neun Uhr morgens und endet um zwölf Uhr dreißig. Wir sind fünfzehn Schüler im Kurs aus verschiedenen Ländern wie Indien, Brasilien und China. Unser Lehrer heißt Herr Schmidt und ist sehr nett. Wir lernen Grammatik, sprechen viel und schreiben kleine E-Mails. In der Pause trinken wir Kaffee und essen Kekse. Nach dem Unterricht mache ich meine Hausaufgaben in der Bibliothek.",
-        "translation": "Hello, I am Maria and I come from Spain. I am learning German in Berlin now. My course starts every day at nine o'clock in the morning and ends at twelve-thirty. We are fifteen students in the course from different countries like India, Brazil, and China. Our teacher is named Mr. Schmidt and is very nice. We learn grammar, speak a lot, and write small emails. During the break we drink coffee and eat cookies. After class I do my homework in the library.",
+        "translation": "Hello, I am Maria and I come from Spain. I am learning German in Berlin now. My course starts every day at nine o'clock in the morning and ends at twelve-thirty. We are fifteen students in the course from different countries like India, Brazil, and China. Our teacher is named Mr Schmidt and is very nice. We learn grammar, speak a lot, and write small emails. During the break we drink coffee and eat cookies. After class I do my homework in the library.",
         "vocab": [
             {
                 "word": "der Kurs",

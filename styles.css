@@ -2809,6 +2809,46 @@ body.dark-mode .branding-academic .branding-text {
     align-items: center;
 }
 
+/* ==================== WRITING STUDIO SYSTEM STYLES ==================== */
+.writing-stages-bar {
+    scrollbar-width: none; /* Firefox */
+}
+.writing-stages-bar::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+.vocab-activation-card {
+    transition: all 0.2s ease-in-out;
+}
+.vocab-activation-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+}
+
+.model-sentence-span:hover {
+    color: var(--color-accent) !important;
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.guided-part-input:focus {
+    border-color: var(--color-accent) !important;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.ws-topic-btn:hover {
+    transform: translateY(-1px);
+    border-color: var(--color-accent) !important;
+    box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 768px) {
+    .writing-stages-bar {
+        padding: 10px 12px !important;
+    }
+}
+
+
 
 
 
