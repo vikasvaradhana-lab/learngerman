@@ -2055,6 +2055,121 @@ textarea:focus-visible,
     gap: 12px;
 }
 
+/* --- AI Prompt Modal (Speaking Section) --- */
+.ai-prompt-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(6px);
+    z-index: 10000;
+}
+.ai-prompt-modal-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--color-panel-solid);
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    max-width: 520px;
+    width: calc(100% - 32px);
+    padding: 28px 24px 22px;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.55);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-height: 90vh;
+    overflow-y: auto;
+    z-index: 10001;
+}
+.ai-prompt-modal-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.ai-prompt-modal-icon {
+    font-size: 1.6rem;
+}
+.ai-prompt-modal-header h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+.ai-prompt-modal-steps {
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 0.88rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+.ai-prompt-modal-steps p {
+    margin: 0 0 6px 0;
+    color: var(--color-text-primary);
+}
+.ai-prompt-modal-steps ol {
+    margin: 0;
+    padding-left: 20px;
+}
+.ai-prompt-modal-steps li {
+    margin-bottom: 4px;
+}
+.ai-prompt-modal-steps a {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+.ai-prompt-modal-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+.ai-prompt-modal-textarea {
+    width: 100%;
+    min-height: 160px;
+    max-height: 240px;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    color: var(--color-text-primary);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.84rem;
+    line-height: 1.55;
+    padding: 12px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+.ai-prompt-modal-textarea:focus {
+    outline: 2px solid var(--color-accent);
+}
+.ai-prompt-modal-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.ai-prompt-modal-buttons .btn {
+    flex: 1;
+    min-width: 120px;
+}
+.ai-prompt-copy-confirm {
+    font-size: 0.85rem;
+    color: #4ade80;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
 /* Animations */
 @keyframes pulse {
     0% { transform: scale(1); opacity: 1; }
