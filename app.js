@@ -8144,8 +8144,19 @@ Thema: ${q.theme}
 Word: ${q.word}
 Instruction: ${q.instruction}
 
-Please evaluate this spoken expression guidelines:
-What would be a correct verbal expression for this card? Please provide 3 examples of correct requests and appropriate answers at the A1 level. Provide feedback in German.`;
+I am an absolute beginner learning German at the A1 level. I have attached a .wav audio file with my spoken response for this card.
+
+Please evaluate my spoken German response and provide feedback in English. Include:
+1. A transcription of what I said (if audio is attached).
+2. Whether my response correctly followed the instruction above.
+3. Corrections for any grammar, vocabulary, or pronunciation mistakes — explain them in English.
+4. 3 example correct responses at the A1 level (written in German, with English translation beside each).
+5. Encouragement and a tip for improvement.
+
+Note: All explanations, corrections, and tips must be in English. German example sentences are welcome, but always follow them with an English translation.`;
+        // Open Gemini in a new tab
+        window.open('https://gemini.google.com/app', '_blank');
+        // Also copy prompt to clipboard so the user can paste it
         copyToClipboard(promptText);
     };
 }
@@ -8701,10 +8712,10 @@ Please evaluate the spoken German response capability at the A1 level. Grade the
 
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(() => {
-        alert("Prompt in die Zwischenablage kopiert! Sie können ihn jetzt in Gemini, ChatGPT oder Claude einfügen.");
+        alert("✅ Prompt copied to clipboard!\n\nGemini has been opened in a new tab. Please:\n1. Paste the prompt (Ctrl+V or long-press → Paste)\n2. Attach your downloaded .wav audio file\n3. Press Send to get your feedback!");
     }).catch(err => {
         console.error("Clipboard copy failed:", err);
-        alert("Kopieren fehlgeschlagen. Hier ist der Prompt:\n\n" + text);
+        alert("⚠️ Could not copy automatically. Here is the prompt — please copy it manually:\n\n" + text);
     });
 }
 
