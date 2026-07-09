@@ -8154,10 +8154,7 @@ Please evaluate my spoken German response and provide feedback in English. Inclu
 5. Encouragement and a tip for improvement.
 
 Note: All explanations, corrections, and tips must be in English. German example sentences are welcome, but always follow them with an English translation.`;
-        // Open Gemini in a new tab
-        window.open('https://gemini.google.com/app', '_blank');
-        // Also copy prompt to clipboard so the user can paste it
-        copyToClipboard(promptText);
+        showAIPromptModal(promptText);
     };
 }
 
@@ -8717,6 +8714,71 @@ function copyToClipboard(text) {
         console.error("Clipboard copy failed:", err);
         alert("⚠️ Could not copy automatically. Here is the prompt — please copy it manually:\n\n" + text);
     });
+}
+
+function showAIPromptModal(promptText) {
+    // Remove any existing modal
+    const existing = document.getElementById("ai-prompt-modal-overlay");
+    if (existing) existing.remove();
+
+    const overlay = document.createElement("div");
+    overlay.id = "ai-prompt-modal-overlay";
+    overlay.className = "ai-prompt-modal-overlay";
+
+    overlay.innerHTML = `
+        <div class="ai-prompt-modal-card">
+            <div class="ai-prompt-modal-header">
+                <span class="ai-prompt-modal-icon">🤖</span>
+                <h3>Evaluate with AI</h3>
+            </div>
+            <div class="ai-prompt-modal-steps">
+                <p><strong>Follow these steps:</strong></p>
+                <ol>
+                    <li>Click the <strong>Download .wav</strong> button on this page to save your recording.</li>
+                    <li>Click <strong>"Copy Prompt"</strong> below to copy the evaluation text.</li>
+                    <li>Open <a href="https://gemini.google.com/app" target="_blank" rel="noopener">Gemini</a> or <a href="https://chatgpt.com" target="_blank" rel="noopener">ChatGPT</a>.</li>
+                    <li>Paste the prompt and <strong>attach your .wav file</strong>, then press Send.</li>
+                </ol>
+            </div>
+            <label class="ai-prompt-modal-label">📋 Your AI Prompt:</label>
+            <textarea id="ai-prompt-modal-text" class="ai-prompt-modal-textarea" readonly>${promptText}</textarea>
+            <div class="ai-prompt-modal-buttons">
+                <button id="ai-prompt-copy-btn" class="btn btn-primary btn-touch">📋 Copy Prompt</button>
+                <button id="ai-prompt-close-btn" class="btn btn-secondary btn-touch">✕ Close</button>
+            </div>
+            <p id="ai-prompt-copy-confirm" class="ai-prompt-copy-confirm" style="display:none;">✅ Prompt copied! Now paste it into Gemini or ChatGPT.</p>
+        </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    // Close on overlay background click
+    overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) overlay.remove();
+    });
+
+    document.getElementById("ai-prompt-close-btn").onclick = () => overlay.remove();
+
+    document.getElementById("ai-prompt-copy-btn").onclick = () => {
+        const ta = document.getElementById("ai-prompt-modal-text");
+        ta.select();
+        ta.setSelectionRange(0, 99999); // for mobile
+        navigator.clipboard.writeText(ta.value).then(() => {
+            const confirm = document.getElementById("ai-prompt-copy-confirm");
+            confirm.style.display = "block";
+            document.getElementById("ai-prompt-copy-btn").textContent = "✅ Copied!";
+        }).catch(() => {
+            // Fallback: execCommand for older browsers / restricted contexts
+            try {
+                document.execCommand("copy");
+                const confirm = document.getElementById("ai-prompt-copy-confirm");
+                confirm.style.display = "block";
+                document.getElementById("ai-prompt-copy-btn").textContent = "✅ Copied!";
+            } catch (e2) {
+                alert("⚠️ Auto-copy blocked by your browser. Please manually select the text above and copy it.");
+            }
+        });
+    };
 }
 
 function toggleTranslation(btn) {
