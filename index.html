@@ -239,6 +239,17 @@
                             </div>
                         </div>
 
+                        <!-- 🎙️ SPRECHTRAINER CARD -->
+                        <div class="module-card glass-panel sprechtrainer-card" id="card-nav-sprechtrainer" role="link" tabindex="0" aria-label="Sprechtrainer. Guided German Fluency Builder.">
+                            <div class="module-card-icon">🎙️</div>
+                            <div class="module-card-body">
+                                <h3>SPRECHTRAINER / Fluency Builder</h3>
+                                <p>Build real speaking fluency step by step. Learn, repeat, and deliver complete German monologues with AI feedback.</p>
+                                <span class="module-card-action">Sprechen üben &rarr;</span>
+                            </div>
+                            <div class="sprechtrainer-card-badge">NEW</div>
+                        </div>
+
                     </div>
 
                     <!-- Core Mistakes Panel Quick Access -->
@@ -1801,6 +1812,41 @@
             </div>
         </footer>
     </div>
+
+    <!-- ==================== SPRECHTRAINER: TOPIC HUB ==================== -->
+    <section id="view-sprechtrainer-hub" class="view-panel">
+        <div class="panel-header-nav">
+            <button id="btn-sprechtrainer-back-home" class="btn btn-secondary btn-back-home">&larr; Dashboard</button>
+            <h2>🎙️ Sprechtrainer <span class="subtitle-en">(Fluency Builder)</span></h2>
+        </div>
+        <div class="sprechtrainer-hub-intro glass-panel">
+            <p>🏆 Build real German speaking fluency, one monologue at a time. Complete all 5 stages of a topic to earn a gold ring.</p>
+        </div>
+        <div class="sprechtrainer-topic-grid" id="sprechtrainer-topic-grid">
+            <!-- Topic cards injected by JS -->
+        </div>
+    </section>
+
+    <!-- ==================== SPRECHTRAINER: STAGE WORKSPACE ==================== -->
+    <section id="view-sprechtrainer-stage" class="view-panel">
+        <div class="panel-header-nav">
+            <button id="btn-sprechtrainer-back-hub" class="btn btn-secondary">&larr; Topics</button>
+            <h2 id="sprechtrainer-stage-title">Sprechtrainer</h2>
+        </div>
+        <!-- Stage progress indicator -->
+        <div class="sprechtrainer-stage-progress" id="sprechtrainer-stage-progress">
+            <!-- Injected by JS -->
+        </div>
+        <!-- Stage content area -->
+        <div class="sprechtrainer-stage-content glass-panel" id="sprechtrainer-stage-content">
+            <!-- Injected by JS per stage -->
+        </div>
+        <!-- Stage navigation -->
+        <div class="sprechtrainer-stage-nav" id="sprechtrainer-stage-nav">
+            <button id="btn-sprechtrainer-prev" class="btn btn-secondary btn-touch" style="display:none;">&larr; Zurück (Back)</button>
+            <button id="btn-sprechtrainer-next" class="btn btn-primary btn-touch">Weiter (Next) &rarr;</button>
+        </div>
+    </section>
 
     <!-- Modals for Warnings/Confirmation -->
     <div class="modal-overlay" id="confirm-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="modal-title">

@@ -2964,7 +2964,443 @@ body.dark-mode .branding-academic .branding-text {
 }
 
 
+/* ================================================================
+   SPRECHTRAINER (FLUENCY BUILDER) MODULE STYLES
+   ================================================================ */
 
+/* --- Dashboard Card Badge --- */
+.sprechtrainer-card {
+    position: relative;
+    border-color: rgba(139, 92, 246, 0.4) !important;
+    background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(99,102,241,0.05)) !important;
+}
+.sprechtrainer-card:hover {
+    border-color: rgba(139, 92, 246, 0.7) !important;
+    box-shadow: 0 0 24px rgba(139, 92, 246, 0.2) !important;
+}
+.sprechtrainer-card-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+/* --- Hub Intro Banner --- */
+.sprechtrainer-hub-intro {
+    padding: 16px 20px;
+    margin: 0 0 24px 0;
+    border-left: 4px solid #8b5cf6;
+    font-size: 0.92rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+.sprechtrainer-hub-intro p { margin: 0; }
+
+/* --- Topic Grid --- */
+.sprechtrainer-topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+/* --- Topic Card --- */
+.st-topic-card {
+    background: var(--color-panel);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+    position: relative;
+}
+.st-topic-card:hover {
+    border-color: #8b5cf6;
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.18);
+    transform: translateY(-2px);
+}
+.st-topic-card.completed {
+    border-color: rgba(74, 222, 128, 0.4);
+}
+
+/* --- Progress Ring SVG --- */
+.st-progress-ring-wrap {
+    flex-shrink: 0;
+    position: relative;
+    width: 56px;
+    height: 56px;
+}
+.st-progress-ring-wrap svg {
+    transform: rotate(-90deg);
+}
+.st-ring-bg {
+    fill: none;
+    stroke: var(--color-border);
+    stroke-width: 4;
+}
+.st-ring-fg {
+    fill: none;
+    stroke: #8b5cf6;
+    stroke-width: 4;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease;
+}
+.st-ring-fg.complete {
+    stroke: #4ade80;
+}
+.st-ring-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    text-align: center;
+    line-height: 1.1;
+}
+
+/* --- Topic Card Body --- */
+.st-topic-body h4 {
+    margin: 0 0 4px 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+.st-topic-body p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+}
+.st-topic-arrow {
+    margin-left: auto;
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+}
+
+/* --- Stage Progress Bar --- */
+.sprechtrainer-stage-progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 16px 0;
+    flex-wrap: wrap;
+}
+.st-stage-step {
+    display: flex;
+    align-items: center;
+}
+.st-stage-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--color-panel);
+    border: 2px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+    cursor: default;
+    transition: all 0.2s;
+}
+.st-stage-circle.active {
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    border-color: #8b5cf6;
+    color: #fff;
+    box-shadow: 0 0 12px rgba(139,92,246,0.4);
+}
+.st-stage-circle.done {
+    background: #4ade80;
+    border-color: #4ade80;
+    color: #fff;
+}
+.st-stage-line {
+    width: 24px;
+    height: 2px;
+    background: var(--color-border);
+    flex-shrink: 0;
+}
+.st-stage-line.done {
+    background: #4ade80;
+}
+.sprechtrainer-stage-subtitle {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--color-text-secondary);
+    margin: 0 0 8px 0;
+    font-weight: 600;
+}
+
+/* --- Stage Content Panel --- */
+.sprechtrainer-stage-content {
+    padding: 24px;
+    min-height: 200px;
+    margin-bottom: 16px;
+}
+.sprechtrainer-stage-nav {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    padding: 0 0 32px 0;
+}
+
+/* --- Stage 1: Bausteine (Building Blocks) --- */
+.st-stage-header {
+    margin: 0 0 20px 0;
+}
+.st-stage-header h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    color: var(--color-text-primary);
+}
+.st-stage-header p {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+.st-sentence-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.st-sentence-card {
+    background: var(--color-panel-solid);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 16px;
+    transition: border-color 0.2s;
+}
+.st-sentence-card.learned {
+    border-color: #4ade80;
+    background: rgba(74, 222, 128, 0.05);
+}
+.st-sentence-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+.st-sentence-num {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #8b5cf6;
+    background: rgba(139,92,246,0.1);
+    border-radius: 6px;
+    padding: 2px 7px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+.st-sentence-texts {
+    flex: 1;
+}
+.st-sentence-de {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0 0 4px 0;
+    line-height: 1.4;
+}
+.st-sentence-en {
+    font-size: 0.82rem;
+    color: var(--color-text-secondary);
+    margin: 0 0 4px 0;
+}
+.st-sentence-phonetic {
+    font-size: 0.8rem;
+    color: #a78bfa;
+    margin: 0;
+}
+.st-sentence-grammar {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    background: rgba(99,102,241,0.08);
+    border-radius: 6px;
+    padding: 4px 8px;
+    margin-top: 8px;
+    font-style: italic;
+}
+.st-sentence-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+.st-btn-tts {
+    background: rgba(139,92,246,0.12);
+    border: 1px solid rgba(139,92,246,0.3);
+    border-radius: 8px;
+    color: #a78bfa;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.st-btn-tts:hover { background: rgba(139,92,246,0.22); }
+.st-btn-learned {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-left: auto;
+}
+.st-btn-learned.done {
+    background: rgba(74, 222, 128, 0.12);
+    border-color: #4ade80;
+    color: #4ade80;
+}
+.st-learned-count {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    margin-top: 16px;
+}
+
+/* --- Stage 2: Listen & Repeat --- */
+.st-full-audio-panel {
+    background: rgba(139,92,246,0.07);
+    border: 1px solid rgba(139,92,246,0.2);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+.st-full-audio-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    flex: 1;
+}
+.st-repeat-item {
+    background: var(--color-panel-solid);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+}
+.st-repeat-sentence {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0 0 10px 0;
+}
+.st-repeat-controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.st-self-rating {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+.st-rating-btn {
+    flex: 1;
+    padding: 6px;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: transparent;
+    color: var(--color-text-secondary);
+    transition: all 0.2s;
+}
+.st-rating-btn.good { border-color: #4ade80; color: #4ade80; }
+.st-rating-btn.good.selected { background: rgba(74,222,128,0.15); }
+.st-rating-btn.practice { border-color: #f59e0b; color: #f59e0b; }
+.st-rating-btn.practice.selected { background: rgba(245,158,11,0.15); }
+
+/* --- Stage 4: Vanishing Cues --- */
+.st-round-indicator {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+.st-round-pip {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-border);
+    transition: background 0.3s;
+}
+.st-round-pip.active { background: #8b5cf6; }
+.st-round-pip.done { background: #4ade80; }
+
+/* --- Stage 5: Free Speech --- */
+.st-free-speech-panel {
+    text-align: center;
+    padding: 20px 0;
+}
+.st-free-timer {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    font-variant-numeric: tabular-nums;
+    margin: 12px 0;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.st-free-controls {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+.st-playback-panel {
+    margin-top: 20px;
+    padding: 16px;
+    background: var(--color-panel-solid);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+    .sprechtrainer-topic-grid {
+        grid-template-columns: 1fr;
+    }
+    .st-topic-card {
+        padding: 14px;
+        gap: 12px;
+    }
+    .st-stage-line { width: 14px; }
+    .st-stage-circle { width: 30px; height: 30px; font-size: 0.68rem; }
+    .sprechtrainer-stage-content { padding: 16px; }
+    .st-free-timer { font-size: 2.2rem; }
+    .sprechtrainer-stage-nav { justify-content: stretch; }
+    .sprechtrainer-stage-nav .btn { flex: 1; }
+}
 
 
 

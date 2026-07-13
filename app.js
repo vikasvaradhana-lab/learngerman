@@ -9075,6 +9075,29 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    // Sprechtrainer dashboard card click
+    const cardSprechtrainer = document.getElementById("card-nav-sprechtrainer");
+    if (cardSprechtrainer) {
+        cardSprechtrainer.onclick = () => {
+            showSprechtrainerHub();
+        };
+        cardSprechtrainer.onkeydown = (e) => {
+            if (e.key === " " || e.key === "Enter") {
+                e.preventDefault();
+                showSprechtrainerHub();
+            }
+        };
+    }
+
+    // Back to Sprechtrainer hub button
+    const btnBackHub = document.getElementById("btn-sprechtrainer-back-hub");
+    if (btnBackHub) {
+        btnBackHub.onclick = () => {
+            stopRecordingProcess();
+            showSprechtrainerHub();
+        };
+    }
+
     // Header Logo Home click
     const headerLogo = document.getElementById("header-logo-home");
     if (headerLogo) {
@@ -10820,9 +10843,829 @@ function finishWritingStudioActivity() {
     updateStreakOnActivity();
     savePortalStateToStorage();
     
-    alert(`Herzlichen Glückwunsch! Sie haben die Schreibübung "${activity.titleDE}" erfolgreich abgeschlossen!`);
-    
     // Return to topics selection hub
     showWritingStudioTopics();
 }
 
+// ================================================================
+// SPRECHTRAINER (FLUENCY BUILDER) MODULE - DATABASE
+// ================================================================
+
+const FLUENCY_DATABASE = [
+    {
+        id: "st_01", emoji: "👋", titleDE: "Sich vorstellen", titleEN: "Introduce Yourself",
+        descDE: "Stellen Sie sich vor", descEN: "Introduce yourself in German",
+        sentences: [
+            { de: "Hallo, mein Name ist Maria.", en: "Hello, my name is Maria.", phonetic: "ഹലോ, മൈൻ നാമെ ഇസ്റ്റ് മരിയ.", grammar: "'mein' = my (possessive). 'ist' = is (verb sein)." },
+            { de: "Ich komme aus Indien.", en: "I come from India.", phonetic: "ഇഖ് കൊമ്മെ ഔസ് ഇൻഡിയൻ.", grammar: "'kommen aus' = to come from. Always use 'aus' for countries." },
+            { de: "Ich wohne in Kerala.", en: "I live in Kerala.", phonetic: "ഇഖ് വോനെ ഇൻ കേരള.", grammar: "'wohnen in' = to live in. Use 'in' for cities and regions." },
+            { de: "Ich bin 28 Jahre alt.", en: "I am 28 years old.", phonetic: "ഇഖ് ബിൻ ആഹ്ട്‌സ്‌വാൻസ്സിഗ് യാറെ ആൾട്ട്.", grammar: "'ich bin ... Jahre alt' = I am ... years old. Fixed structure." },
+            { de: "Ich spreche ein bisschen Deutsch.", en: "I speak a little German.", phonetic: "ഇഖ് ഷ്പ്രെഖെ ഐൻ ബിസ്ഷൻ ഡോയ്ഷ്.", grammar: "'ein bisschen' = a little bit. 'sprechen' = to speak." },
+            { de: "Ich lerne seit drei Monaten Deutsch.", en: "I have been learning German for three months.", phonetic: "ഇഖ് ലേർനെ സൈറ്റ് ഡ്രൈ മോനാറ്റൻ ഡോയ്ഷ്.", grammar: "'seit' + present tense = ongoing action since a point in time." },
+            { de: "Ich mache den Goethe A1 Kurs.", en: "I am doing the Goethe A1 course.", phonetic: "ഇഖ് മാഖെ ഡൻ ഗേതെ ആ-ഐൻസ് കുർസ്.", grammar: "'machen' = to do/make. 'den' = accusative article for masculine noun." },
+            { de: "Es freut mich, Sie kennenzulernen!", en: "Nice to meet you!", phonetic: "എസ് ഫ്രോയ്ട് മിഖ്, സീ കെനൻറ്സൂലേർനൻ!", grammar: "Formal greeting. 'freuen' = to please/delight. 'kennenlernen' = to get to know." }
+        ]
+    },
+    {
+        id: "st_02", emoji: "👨‍👩‍👧", titleDE: "Meine Familie", titleEN: "My Family",
+        descDE: "Beschreiben Sie Ihre Familie", descEN: "Describe your family",
+        sentences: [
+            { de: "Ich habe eine kleine Familie.", en: "I have a small family.", phonetic: "ഇഖ് ഹാബെ ഐനെ ക്ലൈനെ ഫമിലിയ.", grammar: "'haben' = to have. 'eine' = a/an (feminine accusative)." },
+            { de: "Meine Mutter heißt Latha.", en: "My mother's name is Latha.", phonetic: "മൈനെ മൂട്ടർ ഹൈസ്റ്റ് ലതാ.", grammar: "'heißen' = to be named. 'meine' = my (feminine)." },
+            { de: "Mein Vater ist Arzt.", en: "My father is a doctor.", phonetic: "മൈൻ ഫാട്ടർ ഇസ്റ്റ് ആർറ്റ്സ്ത്.", grammar: "No article before professions: 'Er ist Arzt' NOT 'ein Arzt'." },
+            { de: "Ich habe eine Schwester.", en: "I have one sister.", phonetic: "ഇഖ് ഹാബെ ഐനെ ഷ്വെസ്റ്റർ.", grammar: "'eine Schwester' = a sister (feminine accusative)." },
+            { de: "Meine Schwester ist Lehrerin.", en: "My sister is a teacher.", phonetic: "മൈനെ ഷ്വെസ്റ്റർ ഇസ്റ്റ് ലേരെറിൻ.", grammar: "Female professions add '-in': Lehrer → Lehrerin." },
+            { de: "Meine Eltern wohnen in Kochi.", en: "My parents live in Kochi.", phonetic: "മൈനെ എൽറ്റേൺ വോനൻ ഇൻ കൊഛി.", grammar: "'Eltern' = parents (always plural). 'meine' = my (plural)." },
+            { de: "Wir sind eine glückliche Familie.", en: "We are a happy family.", phonetic: "വിർ സിൻഡ് ഐനെ ഗ്ലൂക്ലിഖെ ഫമിലിയ.", grammar: "'glücklich' = happy. 'wir sind' = we are." },
+            { de: "Familie ist mir sehr wichtig.", en: "Family is very important to me.", phonetic: "മമിലിയ ഇസ്റ്റ് മിർ സേർ വിഹ്ടിഹ്.", grammar: "'mir' = to me (dative). 'wichtig' = important." }
+        ]
+    },
+    {
+        id: "st_03", emoji: "🏠", titleDE: "Meine Wohnung", titleEN: "My Home",
+        descDE: "Beschreiben Sie Ihre Wohnung", descEN: "Describe your home",
+        sentences: [
+            { de: "Ich wohne in einem Haus.", en: "I live in a house.", phonetic: "ഇഖ് വോനെ ഇൻ ഐനം ഹൗസ്.", grammar: "'in einem' = in a (dative, neuter). 'Haus' is neuter." },
+            { de: "Meine Wohnung hat drei Zimmer.", en: "My apartment has three rooms.", phonetic: "മൈനെ വോനൂങ് ഹാട്ട് ഡ്രൈ ത്സിമ്മർ.", grammar: "'Zimmer' = room (neuter, no plural change)." },
+            { de: "Es gibt ein Wohnzimmer, eine Küche und ein Schlafzimmer.", en: "There is a living room, a kitchen and a bedroom.", phonetic: "എസ് ഗിब്ട് ഐൻ വോൻത്സിമ്മർ, ഐനെ കൂഖെ ഉൻഡ് ഐൻ ഷ്ലാഫ്ത്സിമ്മർ.", grammar: "'es gibt' = there is/are. Articles change by gender." },
+            { de: "Mein Zimmer ist nicht sehr groß.", en: "My room is not very big.", phonetic: "മൈൻ ത്സിമ്മർ ഇസ്റ്റ് നിഹ്ട് സേർ ഗ്രോസ്.", grammar: "'nicht' negates the adjective. 'groß' = big/large." },
+            { de: "Das Wohnzimmer ist hell und schön.", en: "The living room is bright and beautiful.", phonetic: "ഡാസ് വോൻത്സിമ്മർ ഇസ്റ്റ് ഹെൽ ഉൻഡ് ഷേൻ.", grammar: "'hell' = bright/light. 'schön' = beautiful/nice." },
+            { de: "Ich habe einen Balkon.", en: "I have a balcony.", phonetic: "ഇഖ് ഹാബെ ഐനൻ ബൽക്കോൻ.", grammar: "'einen' = a (masculine accusative). 'Balkon' is masculine." },
+            { de: "Die Miete ist 500 Euro pro Monat.", en: "The rent is 500 euros per month.", phonetic: "ഡീ മീറ്റെ ഇസ്റ്റ് ഫൂൻഫ്ഹൂൻഡർട്ട് ഓയ്‌റോ പ്രോ മോനാട്ട്.", grammar: "'die Miete' = the rent (feminine). 'pro Monat' = per month." },
+            { de: "Ich mag meine Wohnung sehr.", en: "I like my apartment very much.", phonetic: "ഇഖ് mag മൈനെ വോനൂങ് സേർ.", grammar: "'mögen' = to like. 'mag' is the ich-form (irregular)." }
+        ]
+    },
+    {
+        id: "st_04", emoji: "⚽", titleDE: "Meine Hobbys", titleEN: "My Hobbies",
+        descDE: "Erzählen Sie über Ihre Hobbys", descEN: "Talk about your hobbies",
+        sentences: [
+            { de: "In meiner Freizeit lese ich gern.", en: "In my free time I like to read.", phonetic: "ഇൻ മൈനർ ഫ്രൈത്സൈറ്റ് ലേസെ ഇഖ് ഗേൺ.", grammar: "'gern' + verb = to like doing something. Verb moves to position 2." },
+            { de: "Mein liebstes Hobby ist Musik hören.", en: "My favourite hobby is listening to music.", phonetic: "മൈൻ ലീബ്സ്റ്റസ് ഹോബ്ബി ഇസ്റ്റ് മൂസീക് ഹേറൻ.", grammar: "'liebst-' = favourite (superlative). Infinitive at end: 'Musik hören'." },
+            { de: "Ich spiele gern Fußball.", en: "I like to play football.", phonetic: "ഇഖ് ഷ്പീലെ ഗേൺ ഫൂസ്ബൽ.", grammar: "'spielen' = to play. 'gern' makes it express enjoyment." },
+            { de: "Ich koche auch gern.", en: "Ich auch gern kochen.", phonetic: "ഇഖ് കോഖെ ഔഖ് ഗേൺ.", grammar: "'auch' = also. Position: after the verb, before 'gern'." },
+            { de: "Am Wochenende gehe ich schwimmen.", en: "At the weekend I go swimming.", phonetic: "ആം വൊഖൻഎൻഡെ ഗേ ഇഖ് ഷ്വിമ്മൻ.", grammar: "Time phrase at start → verb before subject: 'gehe ich' (inversion)." },
+            { de: "Ich interessiere mich für Filme.", en: "I am interested in films.", phonetic: "ഇഖ് ഇൻററെസ്സീറെ മിഖ് ഫൂർ ഫിൽമെ.", grammar: "'sich interessieren für' = to be interested in. Reflexive verb." },
+            { de: "Manchmal male ich auch Bilder.", en: "Sometimes I also paint pictures.", phonetic: "മാൻഷ്മാൽ മാലെ ഇഖ് ഔഖ് ബിൽഡർ.", grammar: "'manchmal' = sometimes. Causes verb-subject inversion." },
+            { de: "Hobbys sind wichtig für die Gesundheit.", en: "Hobbies are important for health.", phonetic: "ഹോബ്ബീസ് സിൻഡ് വിഹ്ടിഹ് ഫൂർ ഡീ ഗെസൂൻഡ്ഹൈറ്റ്.", grammar: "'für' + accusative. 'die Gesundheit' = health (feminine)." }
+        ]
+    },
+    {
+        id: "st_05", emoji: "⏰", titleDE: "Mein Tagesablauf", titleEN: "My Daily Routine",
+        descDE: "Beschreiben Sie Ihren Alltag", descEN: "Describe your daily routine",
+        sentences: [
+            { de: "Ich stehe um sieben Uhr auf.", en: "I get up at seven o'clock.", phonetic: "ഇഖ് ഷ്ടേ ഉം സീബൻ ഉർ ഔഫ്.", grammar: "'aufstehen' is separable: 'auf' goes to end of sentence." },
+            { de: "Dann dusche ich und frühstücke.", en: "Then I shower and have breakfast.", phonetic: "ഡាន ഡൂഷെ ഇഖ് ഉൻഡ് ഫ്രൂഷ്ടൂക്കെ.", grammar: "'dann' = then (causes inversion). Two verbs joined with 'und'." },
+            { de: "Um acht Uhr fahre ich zur Arbeit.", en: "At eight o'clock I go to work.", phonetic: "ഉം ആഹ്ട്ട് ഉർ ഫാറെ ഇഖ് ത്സൂർ ആർബൈറ്റ്.", grammar: "'zur Arbeit fahren' = to go to work. 'zur' = zu + der." },
+            { de: "Ich arbeite von neun bis fünf Uhr.", en: "I work from nine to five.", phonetic: "ഇഖ് ആർബൈറ്റെ ഫോൻ നോയൻ ബിസ് ഫൂൻഫ് ഉർ.", grammar: "'von ... bis' = from ... to (time). Both take dative." },
+            { de: "Mittags esse ich in der Kantine.", en: "At lunchtime I eat in the canteen.", phonetic: "മിറ്റാഗ്സ് എസ്സെ ഇഖ് ഇൻ ഡേർ കൻടീനെ.", grammar: "'mittags' = at midday. 'in der' = in the (dative, feminine)." },
+            { de: "Nachmittags habe ich manchmal Sport.", en: "In the afternoon I sometimes do sport.", phonetic: "നാഖ്മിറ്റാഗ്സ് ഹാബെ ഇഖ് മാൻഷ്മാൽ ഷ്പോർട്ടു.", grammar: "'Sport haben/machen' = to do sport. Time adverb causes inversion." },
+            { de: "Abends koche ich für meine Familie.", en: "In the evenings I cook for my family.", phonetic: "ആബൻഡ്സ് കോഖെ ഇഖ് ഫൂർ മൈനെ ഫമിലിയ.", grammar: "'abends' = in the evenings (habitual). Verb comes second." },
+            { de: "Ich schlafe um elf Uhr.", en: "I sleep at eleven o'clock.", phonetic: "ഇഖ് ഷ്ലാഫെ ഉം എൽഫ് ഉർ.", grammar: "'schlafen' = to sleep. 'um' + time = at (specific time)." }
+        ]
+    },
+    {
+        id: "st_06", emoji: "💼", titleDE: "Mein Beruf", titleEN: "My Job / Studies",
+        descDE: "Sprechen Sie über Ihre Arbeit", descEN: "Talk about your job or studies",
+        sentences: [
+            { de: "Ich bin Studentin an der Universität.", en: "I am a student at the university.", phonetic: "ഇഖ് ബിൻ ഷ്ടൂഡൻടിൻ ആൻ ഡേർ ഉനിവേർസിറ്റേറ്റ്.", grammar: "Female: 'Studentin'. 'an der' = at the (dative, feminine)." },
+            { de: "Ich studiere Informatik.", en: "I am studying computer science.", phonetic: "ഇഖ് ഷ്ടൂഡീറെ ഇൻഫോർമാടീക്.", grammar: "No article with subject of study: 'studiere Informatik'." },
+            { de: "Mein Studium dauert vier Jahre.", en: "My studies last four years.", phonetic: "മൈൻ ഷ്ടൂഡിയൂം ഡൗൺആർട്ട് ഫീർ യാറെ.", grammar: "'dauern' = to last/take (duration). 'Studium' is neuter." },
+            { de: "Ich arbeite auch Teilzeit.", en: "I also work part-time.", phonetic: "ഇഖ് ആർബൈറ്റെ ഔഖ് ടൈൽറ്റ്സൈറ്റ്.", grammar: "'Teilzeit' = part-time. 'Vollzeit' = full-time." },
+            { de: "Mein Chef ist sehr nett.", en: "My boss is very nice.", phonetic: "മൈൻ ഷേഫ് ഇസ്റ്റ് സേർ നെറ്റ്.", grammar: "'Chef' = boss/manager (masculine). 'Chefin' = female boss." },
+            { de: "Das Gehalt ist nicht schlecht.", en: "The salary is not bad.", phonetic: "ഡാസ് ഗെഹൽട്ട് ഇസ്റ്റ് നിഹ്ട് ഷ്ലെഹ്ട്ട്.", grammar: "'Gehalt' = salary (neuter). 'nicht schlecht' = not bad (understatement)." },
+            { de: "Ich möchte später Ingenieurin werden.", en: "Later I would like to become an engineer.", phonetic: "ഇഖ് മേহ്ടെ ഷ്പേട്ടർ ഇൻഷെനിയൂറിൻ വേർഡൻ.", grammar: "'möchten + infinitive' = would like to. 'werden' goes to end." },
+            { de: "Arbeit macht mir Spaß.", en: "Work is fun for me.", phonetic: "ആർബൈറ്റ് മാഖ്ട്ട് മിർ ഷ്പാസ്.", grammar: "'Spaß machen' = to be fun. 'mir' = to me (dative)." }
+        ]
+    },
+    {
+        id: "st_07", emoji: "🌆", titleDE: "Meine Stadt", titleEN: "My City",
+        descDE: "Beschreiben Sie Ihre Stadt", descEN: "Describe your city",
+        sentences: [
+            { de: "Ich wohne in Kochi.", en: "I live in Kochi.", phonetic: "ഇഖ് വോനെ ഇൻ കൊഛി.", grammar: "'wohnen in' + city name (no article for cities)." },
+            { de: "Kochi ist eine große Stadt.", en: "Kochi is a big city.", phonetic: "കൊഛി ഇസ്റ്റ് ഐനെ ഗ്രോസ്സെ ഷ്ടഡ്ട്.", grammar: "'eine' + adjective + '-e' ending (feminine nominative)." },
+            { de: "Es gibt viele Sehenswürdigkeiten.", en: "There are many sights to see.", phonetic: "എസ് ഗിബ്ട്ട് ഫീലെ സേഹൻസ്വൂർഡിഹ്കൈറ്റൻ.", grammar: "'es gibt' + accusative. 'Sehenswürdigkeiten' = tourist attractions." },
+            { de: "Die Stadt hat einen schönen Hafen.", en: "The city has a beautiful harbour.", phonetic: "ഡീ ഷ്ടഡ്ട് ഹാട്ട് ഐനൻ ഷേനൻ ഹാഫൻ.", grammar: "'Hafen' = harbour (masculine → 'einen' accusative)." },
+            { de: "Der öffentliche Verkehr ist gut.", en: "Der öffentliche Verkehr ist gut.", phonetic: "ഡേർ ഓഫൻ‌ലിഖെ ഫേർകേർ ഇസ്റ്റ് ഗൂട്ടു.", grammar: "'öffentlich' = public. 'Verkehr' = traffic/transport (masculine)." },
+            { de: "Es gibt viele Restaurants und Cafés.", en: "There are many restaurants and cafés.", phonetic: "എസ് ഗിബ്ട്ട് ഫീലെ റെസ്റ്റോറൻറ്സ് ഉൻഡ് കഫേസ്.", grammar: "Both are loan words with plural -s." },
+            { de: "Ich mag die Atmosphäre hier.", en: "Ich mag die Atmosphäre hier.", phonetic: "ഇഖ് മാഗ് ഡീ ആട്ട്‌മോസ്ഫ്യേറെ ഹീർ.", grammar: "'mögen/mag' = to like. 'hier' = here." },
+            { de: "Kochi ist wirklich wunderschön.", en: "Kochi ist wirklich wunderschön.", phonetic: "കൊഛി ഇസ്റ്റ് വിർക്ലിഹ് വൂൻഡർഷേൻ.", grammar: "'wirklich' = truly/really. 'wunderschön' = wonderful/very beautiful." }
+        ]
+    },
+    {
+        id: "st_08", emoji: "🛒", titleDE: "Einkaufen", titleEN: "Shopping",
+        descDE: "Sprechen Sie über das Einkaufen", descEN: "Talk about shopping",
+        sentences: [
+            { de: "Ich gehe einmal pro Woche einkaufen.", en: "I go shopping once a week.", phonetic: "ഇഖ് ഗേ ഐൻമൽ പ്രോ വൊഖെ ഐൻകൗഫൻ.", grammar: "'einkaufen gehen' = to go shopping. Separable: 'gehe ... einkaufen'." },
+            { de: "Ich kaufe meistens im Supermarkt.", en: "I usually shop at the supermarket.", phonetic: "ഇഖ് കൗഫെ മൈസ്റ്റൻസ് ഇം സൂപർമർക്ടു.", grammar: "'meistens' = usually. 'im' = in dem (dative, masculine)." },
+            { de: "Ich brauche Brot, Milch und Obst.", en: "I need bread, milk and fruit.", phonetic: "ഇഖ് ബ്രൗഖെ ബ്രോട്ടു, മിൽഹ് ഉൻഡ് ഓബ്സ്ത്.", grammar: "'brauchen' = to need. Direct object (accusative): no article for uncountable nouns." },
+            { de: "Was kostet das Kilo Äpfel?", en: "How much does a kilo of apples cost?", phonetic: "വാസ് കോസ്റ്റേട്ട് ഡാസ് കിലോ എഫൽ?", grammar: "'Was kostet' = how much does it cost? 'Äpfel' = apples (plural)." },
+            { de: "Das ist zu teuer für mich.", en: "Das ist zu teuer für mich.", phonetic: "ഡാസ് ഇസ്റ്റ് ത്സൂ ടോയൈർ ഫൂർ മിഖ്.", grammar: "'zu' + adjective = too (adjective). 'teuer' = expensive." },
+            { de: "Haben Sie etwas Günstigeres?", en: "Haben Sie etwas Günstigeres?", phonetic: "ഹാബൻ സീ എട്‌വസ് ഗൂൻസ്റ്റിഗേറെസ്?", grammar: "Comparative: 'günstig' → 'günstiger'. 'etwas + adj + -es' = something + adj." },
+            { de: "Ich zahle mit Karte.", en: "Ich zahle mit Karte.", phonetic: "ഇഖ് ത്സാലെ മിറ്റ് കർട്ടെ.", grammar: "'zahlen' = to pay. 'mit' + dative = with/by (payment method)." },
+            { de: "Danke, auf Wiedersehen!", en: "Thank you, goodbye!", phonetic: "ഡൻക്കെ, ഔഫ് വീഡർസേൻ!", grammar: "Standard farewell. 'Tschüss!' is informal; 'Auf Wiedersehen' is polite." }
+        ]
+    },
+    {
+        id: "st_09", emoji: "🍽️", titleDE: "Im Restaurant", titleEN: "At the Restaurant",
+        descDE: "Sprechen Sie im Restaurant", descEN: "Ordering and talking at a restaurant",
+        sentences: [
+            { de: "Guten Abend! Haben Sie einen Tisch für zwei?", en: "Good evening! Do you have a table for two?", phonetic: "Guten Abend! Haben Sie einen Tisch für zwei?", grammar: "'einen Tisch' = a table (masculine accusative). 'für' + accusative." },
+            { de: "Ich möchte bitte die Speisekarte.", en: "Ich möchte bitte die Speisekarte.", phonetic: "ഇഖ് മേഹ്ടെ ബിറ്റ്റ്റെ ഡീ ഷ്പൈസ്സെകർട്ടെ.", grammar: "'möchte' = would like. 'bitte' = please (polite add-on)." },
+            { de: "Was empfehlen Sie heute?", en: "Was empfehlen Sie heute?", phonetic: "വാസ് എംഫ്ഫേലൻ സീ ഹോയ്ടെ?", grammar: "'empfehlen' = to recommend. Formal 'Sie' form." },
+            { de: "Ich nehme die Suppe und das Schnitzel.", en: "Ich nehme die Suppe und das Schnitzel.", phonetic: "ഇഖ് നേമെ ഡീ സൂപ്പെ ഉൻഡ് ഡാസ് ഷ്നിറ്റ്സൽ.", grammar: "'nehmen' = to take/have (food). 'die Suppe' (f), 'das Schnitzel' (n)." },
+            { de: "Ich bin Vegetarier. Gibt es vegetarische Gerichte?", en: "I am vegetarian. Are there vegetarian dishes?", phonetic: "ഇഖ് ബിൻ വേഗെടൻ‍റ്റ്യൂ. ഗിബ്ട്ട് എസ് വേഗെടൻ‍റ്റ്യൂ ഗെറിഹ്ടെ?", grammar: "'vegetarisch' = vegetarian (adj). 'Gerichte' = dishes (plural)." },
+            { de: "Das Essen ist sehr lecker!", en: "Das Essen ist sehr lecker!", phonetic: "ഡാസ് എസ്സൻ ഇസ്റ്റ് സേർ ലെക്കർ!", grammar: "'Essen' = food/meal (neuter). 'lecker' = tasty/delicious." },
+            { de: "Ich möchte bitte die Rechnung.", en: "Ich möchte bitte die Rechnung.", phonetic: "ഇഖ് മേഹ്ടെ ബിറ്റ്റ്റെ ഡീ റെഹ്നൂങ്.", grammar: "'die Rechnung' = the bill/invoice (feminine)." },
+            { de: "Das war ein toller Abend!", en: "Das war ein toller Abend!", phonetic: "ഡാസ് വൂർ ഐൻ ടോലർ ആബൻഡ്!", grammar: "'war' = was (past tense of 'sein'). 'toller' = great (masculine nominative)." }
+        ]
+    },
+    {
+        id: "st_10", emoji: "✈️", titleDE: "Reisen", titleEN: "Travelling",
+        descDE: "Sprechen Sie über das Reisen", descEN: "Talk about travel and holidays",
+        sentences: [
+            { de: "Ich reise sehr gern.", en: "Ich reise sehr gern.", phonetic: "ഇഖ് റൈസ്സെ സേർ ഗേൺ.", grammar: "'reisen' = to travel. 'gern' expresses enjoyment." },
+            { de: "Letzten Sommer bin ich nach Deutschland gefahren.", en: "Letzten Sommer bin ich nach Deutschland gefahren.", phonetic: "ലേറ്റ്സ്ടൻ സൂമ്മർ ബിൻ ഇഖ് നാഹ് ഡോയ്ഷ്‍ലൻഡ് ഗെഫാറൻ.", grammar: "Past tense (Perfekt): 'bin + gefahren'. 'nach' + country name = to." },
+            { de: "Ich habe eine Woche in Berlin verbracht.", en: "Ich habe eine Woche in Berlin verbracht.", phonetic: "ഇഖ് ഹാബെ ഐനെ വൊഖെ ഇൻ ബേർലിൻ ഫേർബ്രൂഹ്ട്ട്.", grammar: "'verbringen' = to spend (time). Past: 'habe verbracht'." },
+            { de: "Berlin ist eine faszinierende Stadt.", en: "Berlin ist eine faszinierende Stadt.", phonetic: "ബേർലിൻ ഇസ്റ്റ് ഐനെ ഫസ്സീനീറൻഡെ ഷ്ടഡ്ട്.", grammar: "'faszinierend' = fascinating. '-e' ending (feminine nominative after 'eine')." },
+            { de: "Ich habe viele Museen besucht.", en: "Ich habe viele Museen besucht.", phonetic: "ഇഖ് ഹാബെ ഫീലെ മൂസേൻ ബെസൂഹ്ട്ട്.", grammar: "'besuchen' = to visit. 'Museen' = museums (plural of 'Museum')." },
+            { de: "Das Essen war wirklich fantastisch.", en: "Das Essen war wirklich fantastisch.", phonetic: "ഡാസ് എസ്സൻ വൂർ വിർക്ലിഹ് ഫൻടൻ‍റ്റ്യൂ.", grammar: "'war' = was (simple past of 'sein'). Used for descriptions in narrative." },
+            { de: "Nächstes Jahr möchte ich nach Wien fahren.", en: "Nächstes Jahr möchte ich nach Wien fahren.", phonetic: "നേഹ്സ്ടസ് യൂർ മേഹ്ടെ ഇഖ് നാഹ് വീൻ ഫാറൻ.", grammar: "'nächstes Jahr' = next year. 'möchte + infinitive' = would like to." },
+            { de: "Reisen macht mich glücklich.", en: "Reisen macht mich glücklich.", phonetic: "റൈസ്സൻ മാഖ്ട്ട് മിഖ് ഗ്ലൂക്ലിഹ്.", grammar: "'machen' = to make. 'mich' = me (accusative). Infinitive as subject." }
+        ]
+    }
+];
+
+// --- SPRECHTRAINER STATE & LOCALSTORAGE ACCESSORS ---
+let sprechtrainerState = {
+    currentTopicId: null,
+    currentStage: 1,
+    learnedSentences: {}, // { topicId: Set of indices }
+    selfRatings: {}       // { topicId_sIdx: 'good'|'practice' }
+};
+
+function getSTProgress() {
+    const raw = localStorage.getItem("st_progress");
+    return raw ? JSON.parse(raw) : {};
+}
+
+function saveSTProgress(topicId, stageNum) {
+    const prog = getSTProgress();
+    prog[topicId] = Math.max(prog[topicId] || 0, stageNum);
+    localStorage.setItem("st_progress", JSON.stringify(prog));
+}
+function showSprechtrainerHub() {
+    switchToView("view-sprechtrainer-hub");
+    const grid = document.getElementById("sprechtrainer-topic-grid");
+    if (!grid) return;
+
+    grid.innerHTML = "";
+    const progress = getSTProgress();
+
+    FLUENCY_DATABASE.forEach(topic => {
+        // Stage progress (0 to 5 completed)
+        const currentProgress = progress[topic.id] || 0;
+        const percent = Math.min(100, Math.round((currentProgress / 5) * 100));
+
+        // SVG circle dimensions (R=24, Circumference=151)
+        const circ = 151;
+        const strokeOffset = circ - (circ * percent) / 100;
+        const isComplete = currentProgress >= 5;
+
+        const card = document.createElement("div");
+        card.className = `st-topic-card ${isComplete ? 'completed' : ''}`;
+        card.setAttribute("role", "link");
+        card.setAttribute("tabindex", "0");
+        card.onclick = () => loadSprechtrainerTopic(topic.id);
+        card.onkeydown = (e) => {
+            if (e.key === " " || e.key === "Enter") {
+                e.preventDefault();
+                loadSprechtrainerTopic(topic.id);
+            }
+        };
+
+        card.innerHTML = `
+            <div class="st-progress-ring-wrap">
+                <svg width="56" height="56">
+                    <circle class="st-ring-bg" cx="28" cy="28" r="24" />
+                    <circle class="st-ring-fg ${isComplete ? 'complete' : ''}" cx="28" cy="28" r="24"
+                            stroke-dasharray="${circ}" stroke-dashoffset="${strokeOffset}" />
+                </svg>
+                <div class="st-ring-label">${percent}%</div>
+            </div>
+            <div class="st-topic-body">
+                <h4>${topic.emoji} ${topic.titleDE}</h4>
+                <p>${topic.titleEN}</p>
+            </div>
+            <div class="st-topic-arrow">&rarr;</div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
+function loadSprechtrainerTopic(topicId) {
+    const topic = FLUENCY_DATABASE.find(t => t.id === topicId);
+    if (!topic) return;
+
+    sprechtrainerState.currentTopicId = topicId;
+    
+    // Determine last saved stage or default to Stage 1
+    const progress = getSTProgress();
+    const completedStage = progress[topicId] || 0;
+    
+    // If completed all or stage is 0, start at stage 1
+    sprechtrainerState.currentStage = (completedStage >= 5) ? 1 : (completedStage + 1);
+
+    switchToView("view-sprechtrainer-stage");
+    renderSprechtrainerStage();
+}
+function renderSprechtrainerStage() {
+    const topic = FLUENCY_DATABASE.find(t => t.id === sprechtrainerState.currentTopicId);
+    if (!topic) return;
+
+    // 1. Title
+    document.getElementById("sprechtrainer-stage-title").innerHTML = `
+        ${topic.emoji} ${topic.titleDE} <span class="subtitle-en">(${topic.titleEN})</span>
+    `;
+
+    // 2. Stage Progress Circles
+    const progressEl = document.getElementById("sprechtrainer-stage-progress");
+    const current = sprechtrainerState.currentStage;
+    
+    const stageTitles = [
+        "Bausteine (Vocabulary Blocks)",
+        "Hören & Nachsagen (Listen & Repeat)",
+        "Lückentext (Gap Fill)",
+        "Aufbau-Rede (Vanishing Cues)",
+        "Freies Sprechen (Free Monologue)"
+    ];
+
+    let html = '<div style="display:flex; flex-direction:column; align-items:center; width:100%;">';
+    html += '<div style="display:flex; align-items:center; justify-content:center; gap:0;">';
+    for (let i = 1; i <= 5; i++) {
+        const isActive = i === current;
+        const isDone = i < current;
+        html += `
+            <div class="st-stage-step">
+                <div class="st-stage-circle ${isActive ? 'active' : ''} ${isDone ? 'done' : ''}">${i}</div>
+                ${i < 5 ? `<div class="st-stage-line ${isDone ? 'done' : ''}"></div>` : ''}
+            </div>
+        `;
+    }
+    html += '</div>';
+    html += `<p class="sprechtrainer-stage-subtitle" style="margin-top:12px;">Schritt ${current}: ${stageTitles[current-1]}</p>`;
+    html += '</div>';
+    progressEl.innerHTML = html;
+
+    // 3. Setup Next/Prev button bindings and default visibilities
+    const prevBtn = document.getElementById("btn-sprechtrainer-prev");
+    const nextBtn = document.getElementById("btn-sprechtrainer-next");
+
+    prevBtn.style.display = current > 1 ? "block" : "none";
+    nextBtn.disabled = true; // Disabled until stage requirements met
+    nextBtn.textContent = current === 5 ? "Fertig (Finish) ✓" : "Weiter (Next) \u2192";
+
+    prevBtn.onclick = () => {
+        stopRecordingProcess();
+        sprechtrainerState.currentStage--;
+        renderSprechtrainerStage();
+    };
+
+    nextBtn.onclick = () => {
+        stopRecordingProcess();
+        if (sprechtrainerState.currentStage < 5) {
+            // Save stage completion progress
+            saveSTProgress(topic.id, sprechtrainerState.currentStage);
+            sprechtrainerState.currentStage++;
+            renderSprechtrainerStage();
+        } else {
+            // Finish topic monologues!
+            saveSTProgress(topic.id, 5);
+            portalState.sessionsCompleted++;
+            updateStreakOnActivity();
+            savePortalStateToStorage();
+            alert(`🎉 Herzlichen Glückwunsch! Sie haben den Sprechtrainer für "${topic.titleDE}" abgeschlossen!`);
+            showSprechtrainerHub();
+        }
+    };
+
+    // 4. Load Stage Workspace Content
+    switch (current) {
+        case 1: renderST_Stage1(topic); break;
+        case 2: renderST_Stage2(topic); break;
+        case 3: renderST_Stage3(topic); break;
+        case 4: renderST_Stage4(topic); break;
+        case 5: renderST_Stage5(topic); break;
+    }
+}
+function renderST_Stage1(topic) {
+    const content = document.getElementById("sprechtrainer-stage-content");
+    if (!sprechtrainerState.learnedSentences[topic.id]) {
+        sprechtrainerState.learnedSentences[topic.id] = new Set();
+    }
+    const learnedSet = sprechtrainerState.learnedSentences[topic.id];
+
+    let html = `
+        <div class="st-stage-header">
+            <h3>Schritt 1: Bausteine (Sentence Bricks)</h3>
+            <p>Listen, read, and understand each individual sentence before putting them together. Mark all sentences as learned to proceed.</p>
+        </div>
+        <div class="st-sentence-list">
+    `;
+
+    topic.sentences.forEach((s, idx) => {
+        const isLearned = learnedSet.has(idx);
+        html += `
+            <div class="st-sentence-card ${isLearned ? 'learned' : ''}" id="st-card-${idx}">
+                <div class="st-sentence-top">
+                    <span class="st-sentence-num">${idx + 1}</span>
+                    <div class="st-sentence-texts">
+                        <p class="st-sentence-de">${s.de}</p>
+                        <p class="st-sentence-en">${s.en}</p>
+                        <p class="st-sentence-phonetic">🔊 ML Pronunciation: ${s.phonetic}</p>
+                        <p class="st-sentence-grammar">💡 Grammatik (Tip): ${s.grammar}</p>
+                    </div>
+                </div>
+                <div class="st-sentence-actions">
+                    <button class="st-btn-tts" onclick="playSpeech('${s.de.replace(/'/g, "\\'")}', 0.85)">🔊 Anhören (Slow TTS)</button>
+                    <button class="st-btn-learned ${isLearned ? 'done' : ''}" id="st-btn-learned-${idx}">
+                        ${isLearned ? '✓ Gelernt (Learned)' : 'Mark as Learned'}
+                    </button>
+                </div>
+            </div>
+        `;
+    });
+
+    html += `
+        </div>
+        <p class="st-learned-count" id="st-learned-status">0 / ${topic.sentences.length} sentences learned</p>
+    `;
+    content.innerHTML = html;
+
+    // Helper to update Next button and counter
+    const updateProgress = () => {
+        const count = learnedSet.size;
+        document.getElementById("st-learned-status").textContent = `${count} / ${topic.sentences.length} sentences learned`;
+        document.getElementById("btn-sprechtrainer-next").disabled = (count < topic.sentences.length);
+    };
+
+    // Bind mark learned buttons
+    topic.sentences.forEach((s, idx) => {
+        const card = document.getElementById(`st-card-${idx}`);
+        const btn = document.getElementById(`st-btn-learned-${idx}`);
+        btn.onclick = () => {
+            if (learnedSet.has(idx)) {
+                learnedSet.delete(idx);
+                btn.className = "st-btn-learned";
+                btn.textContent = "Mark as Learned";
+                card.classList.remove("learned");
+            } else {
+                learnedSet.add(idx);
+                btn.className = "st-btn-learned done";
+                btn.textContent = "✓ Gelernt (Learned)";
+                card.classList.add("learned");
+            }
+            updateProgress();
+        };
+    });
+
+    updateProgress();
+}
+
+function renderST_Stage2(topic) {
+    const content = document.getElementById("sprechtrainer-stage-content");
+    
+    // Check existing ratings
+    const ratings = sprechtrainerState.selfRatings;
+    
+    let html = `
+        <div class="st-stage-header">
+            <h3>Schritt 2: Hören & Nachsagen (Listen & Repeat)</h3>
+            <p>First listen to the complete native monologue. Then record and repeat each sentence. Self-rate your speech to proceed.</p>
+        </div>
+        <div class="st-full-audio-panel">
+            <span class="st-full-audio-label">🎵 Complete Native Monologue:</span>
+            <button class="btn btn-primary btn-touch" onclick="playSpeech('${topic.sentences.map(s => s.de.replace(/'/g, "\\'")).join('. ')}', 0.9)">🔊 Play Full Monologue</button>
+        </div>
+        <div class="st-sentence-list">
+    `;
+
+    topic.sentences.forEach((s, idx) => {
+        const ratingKey = `${topic.id}_${idx}`;
+        const currentRating = ratings[ratingKey]; // 'good' or 'practice'
+        
+        html += `
+            <div class="st-repeat-item">
+                <p class="st-repeat-sentence">${idx + 1}. ${s.de}</p>
+                <div class="st-repeat-controls">
+                    <button class="st-btn-tts" onclick="playSpeech('${s.de.replace(/'/g, "\\'")}', 0.9)">🔊 Listen</button>
+                    <button class="btn btn-touch" id="st-mic-btn-${idx}" style="background:#dc2626; color:#fff; border:none; border-radius:8px; padding:6px 12px; font-size:0.8rem; font-weight:600; cursor:pointer;">🎙️ Record</button>
+                    <button class="btn btn-secondary btn-touch" id="st-playback-btn-${idx}" style="display:none; padding:6px 12px; font-size:0.8rem;">🎧 Hear Self</button>
+                    <span id="st-status-${idx}" style="font-size:0.8rem; color:var(--color-text-muted);">Not recorded</span>
+                </div>
+                <div class="st-self-rating" id="st-rating-panel-${idx}" style="display:${currentRating ? 'flex' : 'none'};">
+                    <button class="st-rating-btn good ${currentRating === 'good' ? 'selected' : ''}" id="st-rate-good-${idx}">⭐ I sounded good</button>
+                    <button class="st-rating-btn practice ${currentRating === 'practice' ? 'selected' : ''}" id="st-rate-practice-${idx}">⚠️ Needs practice</button>
+                </div>
+            </div>
+        `;
+    });
+
+    html += `</div>`;
+    content.innerHTML = html;
+
+    const checkNextUnification = () => {
+        let allRated = true;
+        topic.sentences.forEach((s, idx) => {
+            const key = `${topic.id}_${idx}`;
+            if (!ratings[key]) allRated = false;
+        });
+        document.getElementById("btn-sprechtrainer-next").disabled = !allRated;
+    };
+
+    // Bind recording buttons
+    topic.sentences.forEach((s, idx) => {
+        const micBtn = document.getElementById(`st-mic-btn-${idx}`);
+        const playBtn = document.getElementById(`st-playback-btn-${idx}`);
+        const statusLbl = document.getElementById(`st-status-${idx}`);
+        const ratingPanel = document.getElementById(`st-rating-panel-${idx}`);
+        const qId = `${topic.id}_stage2_${idx}`;
+
+        // Keep local ref for checking if URL exists
+        if (speakingRecordings[qId]) {
+            playBtn.style.display = "block";
+            statusLbl.textContent = "Recorded";
+            ratingPanel.style.display = "flex";
+        }
+
+        let isRecording = false;
+
+        micBtn.onclick = () => {
+            if (!isRecording) {
+                isRecording = true;
+                micBtn.textContent = "⏹ Stop";
+                micBtn.style.background = "var(--color-text-primary)";
+                statusLbl.textContent = "Recording...";
+                playBtn.style.display = "none";
+                
+                startRecording(qId, 
+                    (dur) => statusLbl.textContent = `Recording... (${dur})`,
+                    (url) => {
+                        isRecording = false;
+                        micBtn.textContent = "🎙️ Re-Record";
+                        micBtn.style.background = "#dc2626";
+                        statusLbl.textContent = "Recorded";
+                        playBtn.style.display = "block";
+                        ratingPanel.style.display = "flex";
+                        playBtn.onclick = () => {
+                            const aud = new Audio(url);
+                            aud.play();
+                        };
+                    }
+                );
+            } else {
+                stopRecordingProcess();
+            }
+        };
+
+        if (speakingRecordings[qId]) {
+            playBtn.onclick = () => {
+                const aud = new Audio(speakingRecordings[qId].url);
+                aud.play();
+            };
+        }
+
+        // Bind ratings
+        const key = `${topic.id}_${idx}`;
+        const goodBtn = document.getElementById(`st-rate-good-${idx}`);
+        const pracBtn = document.getElementById(`st-rate-practice-${idx}`);
+
+        goodBtn.onclick = () => {
+            ratings[key] = "good";
+            goodBtn.classList.add("selected");
+            pracBtn.classList.remove("selected");
+            checkNextUnification();
+        };
+
+        pracBtn.onclick = () => {
+            ratings[key] = "practice";
+            pracBtn.classList.add("selected");
+            goodBtn.classList.remove("selected");
+            checkNextUnification();
+        };
+    });
+
+    checkNextUnification();
+}
+
+function renderST_Stage3(topic) {
+    const content = document.getElementById("sprechtrainer-stage-content");
+
+    let html = `
+        <div class="st-stage-header">
+            <h3>Schritt 3: Lückentext (Recall & Fill)</h3>
+            <p>Fill in the missing words in the monologue below. Type your response in the boxes. Correct answers will turn green. Fill all correct to proceed!</p>
+        </div>
+        <div class="st-sentence-list">
+    `;
+
+    // Define standard gaps per sentence to make a clean, deterministic experience
+    const gapWords = [
+        "Name",      // Hallo, mein Name ist Maria.
+        "kommen",    // Ich komme aus Indien.
+        "wohne",     // Ich wohne in Kerala.
+        "Jahre",     // Ich bin 28 Jahre alt.
+        "Deutsch",   // Ich spreche ein bisschen Deutsch.
+        "seit",      // Ich lerne seit drei Monaten Deutsch.
+        "A1",        // Ich mache den Goethe A1 Kurs.
+        "kennenlernen" // Es freut mich, Sie kennenzulernen!
+    ];
+
+    topic.sentences.forEach((s, idx) => {
+        // Fallback to last word if index exceeds gapWords list size (shouldn't happen)
+        const targetWord = gapWords[idx] || s.de.split(" ").pop().replace(/[.!?]/g, "");
+        const splitText = s.de.split(new RegExp(`\\b${targetWord}\\b`, "i"));
+        
+        let gapHtml = "";
+        if (splitText.length > 1) {
+            gapHtml = `${splitText[0]}<input type="text" id="st-gap-${idx}" class="st-gap-input" placeholder="..." style="background:var(--color-panel); border:1px solid var(--color-border); color:var(--color-text-primary); border-radius:6px; padding:4px 8px; width:120px; font-weight:700; text-align:center; font-family:inherit;">${splitText[1]}`;
+        } else {
+            gapHtml = s.de; // Fallback
+        }
+
+        html += `
+            <div class="st-sentence-card" id="st-gap-card-${idx}">
+                <div class="st-sentence-top">
+                    <span class="st-sentence-num">${idx + 1}</span>
+                    <div class="st-sentence-texts">
+                        <p class="st-sentence-de" style="line-height:2;">${gapHtml}</p>
+                        <p class="st-sentence-en" style="margin-top:6px; opacity:0.8;">🇬🇧 ${s.en}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+
+    html += `</div>`;
+    content.innerHTML = html;
+
+    const checkGaps = () => {
+        let allCorrect = true;
+        topic.sentences.forEach((s, idx) => {
+            const input = document.getElementById(`st-gap-${idx}`);
+            if (!input) return;
+            const targetWord = gapWords[idx] || s.de.split(" ").pop().replace(/[.!?]/g, "");
+            
+            const userVal = input.value.trim().toLowerCase().replace(/[.!?]/g, "");
+            const targetVal = targetWord.toLowerCase().replace(/[.!?]/g, "");
+
+            if (userVal === targetVal) {
+                input.style.borderColor = "#4ade80";
+                input.style.background = "rgba(74, 222, 128, 0.15)";
+            } else {
+                allCorrect = false;
+                if (userVal.length > 0) {
+                    input.style.borderColor = "#f87171";
+                    input.style.background = "rgba(248, 113, 113, 0.15)";
+                } else {
+                    input.style.borderColor = "var(--color-border)";
+                    input.style.background = "var(--color-panel)";
+                }
+            }
+        });
+
+        document.getElementById("btn-sprechtrainer-next").disabled = !allCorrect;
+    };
+
+    // Bind real-time input checks
+    topic.sentences.forEach((s, idx) => {
+        const input = document.getElementById(`st-gap-${idx}`);
+        if (input) {
+            input.oninput = checkGaps;
+        }
+    });
+
+    checkGaps();
+}
+function renderST_Stage4(topic) {
+    const content = document.getElementById("sprechtrainer-stage-content");
+    
+    let currentRound = 1; // 1 to 5 rounds
+    
+    const renderRound = () => {
+        // Build monologue sentences with vanishing rules
+        let sentencesHtml = "";
+        topic.sentences.forEach((s, idx) => {
+            let txt = s.de;
+            if (currentRound === 2) {
+                // Round 2: Hide every 3rd sentence
+                if ((idx + 1) % 3 === 0) txt = `<span style="background:rgba(139,92,246,0.15); border:1px dashed var(--color-border); border-radius:4px; padding:2px 8px; color:transparent; user-select:none;">[Hidden Sentence]</span>`;
+            } else if (currentRound === 3) {
+                // Round 3: Hide alternate sentences
+                if (idx % 2 === 1) txt = `<span style="background:rgba(139,92,246,0.15); border:1px dashed var(--color-border); border-radius:4px; padding:2px 8px; color:transparent; user-select:none;">[Hidden Sentence]</span>`;
+            } else if (currentRound === 4) {
+                // Round 4: Only show first word of each sentence
+                const words = s.de.split(" ");
+                const first = words[0];
+                const rest = words.slice(1).join(" ");
+                txt = `<strong>${first}</strong> <span style="opacity:0.25; filter:blur(2px); user-select:none;">${rest}</span>`;
+            } else if (currentRound === 5) {
+                // Round 5: Hide everything
+                txt = `<span style="background:rgba(139,92,246,0.15); border:1px dashed var(--color-border); border-radius:4px; padding:2px 8px; color:transparent; user-select:none;">[Speak Monologue From Memory]</span>`;
+            }
+
+            sentencesHtml += `<p style="font-size:1.05rem; line-height:1.6; margin-bottom:12px;">${idx + 1}. ${txt}</p>`;
+        });
+
+        let pipsHtml = "";
+        for (let r = 1; r <= 5; r++) {
+            pipsHtml += `<div class="st-round-pip ${r === currentRound ? 'active' : ''} ${r < currentRound ? 'done' : ''}"></div>`;
+        }
+
+        const qId = `${topic.id}_stage4_round_${currentRound}`;
+
+        content.innerHTML = `
+            <div class="st-stage-header">
+                <h3>Schritt 4: Aufbau-Rede (Vanishing Cues)</h3>
+                <p>Read the monologue aloud. With each round, more text will vanish. Finish all 5 rounds to proceed!</p>
+            </div>
+            
+            <div class="st-round-indicator">
+                ${pipsHtml}
+            </div>
+            
+            <p style="text-align:center; font-size:0.85rem; font-weight:700; color:#a78bfa; margin-bottom:16px;">ROUND ${currentRound} OF 5</p>
+
+            <div style="background:var(--color-panel-solid); border:1px solid var(--color-border); border-radius:12px; padding:20px; margin-bottom:20px;">
+                ${sentencesHtml}
+            </div>
+
+            <div style="display:flex; justify-content:center; align-items:center; gap:16px; flex-wrap:wrap;">
+                <button class="btn btn-touch" id="st-round-mic-btn" style="background:#dc2626; color:#fff; border:none; border-radius:8px; padding:8px 18px; font-weight:700; cursor:pointer;">🎙️ Record Round ${currentRound}</button>
+                <button class="btn btn-secondary btn-touch" id="st-round-play-btn" style="display:none; padding:8px 18px;">🎧 Playback</button>
+                <span id="st-round-status" style="font-size:0.85rem; color:var(--color-text-secondary);">Not recorded</span>
+            </div>
+
+            <div style="display:flex; justify-content:center; margin-top:24px;">
+                <button class="btn btn-primary btn-touch" id="st-round-next-btn" disabled style="min-width:160px;">Next Round &rarr;</button>
+            </div>
+        `;
+
+        const micBtn = document.getElementById("st-round-mic-btn");
+        const playBtn = document.getElementById("st-round-play-btn");
+        const statusLbl = document.getElementById("st-round-status");
+        const nextRoundBtn = document.getElementById("st-round-next-btn");
+
+        if (speakingRecordings[qId]) {
+            playBtn.style.display = "block";
+            statusLbl.textContent = "Recorded";
+            nextRoundBtn.disabled = false;
+        }
+
+        let isRecording = false;
+
+        micBtn.onclick = () => {
+            if (!isRecording) {
+                isRecording = true;
+                micBtn.textContent = "⏹ Stop";
+                micBtn.style.background = "var(--color-text-primary)";
+                statusLbl.textContent = "Recording...";
+                playBtn.style.display = "none";
+                nextRoundBtn.disabled = true;
+
+                startRecording(qId,
+                    (dur) => statusLbl.textContent = `Recording... (${dur})`,
+                    (url) => {
+                        isRecording = false;
+                        micBtn.textContent = `🎙️ Re-Record Round ${currentRound}`;
+                        micBtn.style.background = "#dc2626";
+                        statusLbl.textContent = "Recorded";
+                        playBtn.style.display = "block";
+                        nextRoundBtn.disabled = false;
+                        playBtn.onclick = () => {
+                            const aud = new Audio(url);
+                            aud.play();
+                        };
+                    }
+                );
+            } else {
+                stopRecordingProcess();
+            }
+        };
+
+        if (speakingRecordings[qId]) {
+            playBtn.onclick = () => {
+                const aud = new Audio(speakingRecordings[qId].url);
+                aud.play();
+            };
+        }
+
+        nextRoundBtn.onclick = () => {
+            if (currentRound < 5) {
+                currentRound++;
+                renderRound();
+            } else {
+                document.getElementById("btn-sprechtrainer-next").disabled = false;
+                // Auto-advance next stage trigger
+                const nextBtn = document.getElementById("btn-sprechtrainer-next");
+                if (nextBtn) nextBtn.click();
+            }
+        };
+    };
+
+    renderRound();
+}
+
+function renderST_Stage5(topic) {
+    const content = document.getElementById("sprechtrainer-stage-content");
+
+    let monologueText = topic.sentences.map(s => s.de).join(" ");
+    const qId = `${topic.id}_stage5_complete`;
+
+    content.innerHTML = `
+        <div class="st-stage-header" style="text-align:center;">
+            <h3>Schritt 5: Freies Sprechen (Complete Monologue)</h3>
+            <p>You are ready! Deliver your full monologue. Speak continuously and natural. Download your recording and ask the AI evaluator for feedback!</p>
+        </div>
+
+        <div class="st-free-speech-panel">
+            <div class="st-free-timer" id="st-free-timer">00:00</div>
+            <button class="btn btn-touch" id="st-free-record-btn" style="background:#dc2626; color:#fff; border:none; border-radius:50%; width:80px; height:80px; font-size:1.6rem; cursor:pointer; box-shadow:0 0 12px rgba(220,38,38,0.4); display:inline-flex; align-items:center; justify-content:center; transition:transform 0.2s;">🎙️</button>
+            <p id="st-free-status" style="margin-top:12px; font-weight:700; color:var(--color-text-secondary);">Tap to start recording</p>
+        </div>
+
+        <div class="st-playback-panel" id="st-free-playback" style="display:none; flex-direction:column; gap:16px;">
+            <div style="display:flex; align-items:center; width:100%; gap:12px; justify-content:center;">
+                <span style="font-weight:700;">🎵 Your Monologue:</span>
+                <audio id="st-free-audio" controls style="flex:1; max-width:320px;"></audio>
+                <a class="btn btn-secondary btn-touch" id="st-free-download-btn">⬇️ Download (.wav)</a>
+            </div>
+            <button class="btn btn-warning btn-touch" id="st-free-eval-btn" style="width:100%; max-width:360px; font-weight:700;">🤖 Evaluate with AI</button>
+        </div>
+    `;
+
+    const recordBtn = document.getElementById("st-free-record-btn");
+    const timerLbl = document.getElementById("st-free-timer");
+    const statusLbl = document.getElementById("st-free-status");
+    const playbackPanel = document.getElementById("st-free-playback");
+    const audioEl = document.getElementById("st-free-audio");
+    const downloadBtn = document.getElementById("st-free-download-btn");
+    const evalBtn = document.getElementById("st-free-eval-btn");
+
+    const setupUIForRecording = (url) => {
+        playbackPanel.style.display = "flex";
+        audioEl.src = url;
+        downloadBtn.href = url;
+        downloadBtn.download = `sprechtrainer_${topic.id}.wav`;
+        document.getElementById("btn-sprechtrainer-next").disabled = false;
+
+        evalBtn.onclick = () => {
+            const promptText = `Goethe-Zertifikat A1: Speaking Practice Evaluation (Sprechtrainer)
+Topic: ${topic.titleDE} (${topic.titleEN})
+
+--- MONOLOGUE INSTRUCTIONS ---
+The student is speaking about: ${topic.descDE} (${topic.descEN})
+Target Monologue German text:
+${monologueText}
+
+--- EVALUATION GUIDELINES ---
+I am an absolute beginner learning German at the A1 level. I have attached my spoken monologue (.wav recording file).
+
+Please evaluate my spoken response and provide feedback in English. Include:
+1. Transcription of my spoken audio response (if attached).
+2. Grammatical and spelling review of my spoken content against the target monologue.
+3. Specific pronunciation tips for words I may have mispronounced.
+4. Encouraging feedback, rated out of 5 stars for flow, rhythm, and accuracy.
+5. Provide explanations and feedback entirely in English. Use German sentences only as clear examples followed by English translation.`;
+
+            showAIPromptModal(promptText);
+        };
+    };
+
+    if (speakingRecordings[qId]) {
+        setupUIForRecording(speakingRecordings[qId].url);
+    }
+
+    let isRecording = false;
+
+    recordBtn.onclick = () => {
+        if (!isRecording) {
+            isRecording = true;
+            recordBtn.style.transform = "scale(1.15)";
+            recordBtn.innerHTML = "⏹";
+            statusLbl.textContent = "Recording monologue...";
+            playbackPanel.style.display = "none";
+
+            startRecording(qId,
+                (dur) => timerLbl.textContent = dur,
+                (url) => {
+                    isRecording = false;
+                    recordBtn.style.transform = "scale(1)";
+                    recordBtn.innerHTML = "🎙️";
+                    statusLbl.textContent = "Recording complete";
+                    setupUIForRecording(url);
+                }
+            );
+        } else {
+            stopRecordingProcess();
+        }
+    };
+}
