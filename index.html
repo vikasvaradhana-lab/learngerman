@@ -239,18 +239,7 @@
                             </div>
                         </div>
 
-                        <!-- 🎙️ SPRECHTRAINER CARD -->
-                        <div class="module-card glass-panel sprechtrainer-card" id="card-nav-sprechtrainer" role="link" tabindex="0" aria-label="Sprechtrainer. Guided German Fluency Builder.">
-                            <div class="module-card-icon">🎙️</div>
-                            <div class="module-card-body">
-                                <h3>SPRECHTRAINER / Fluency Builder</h3>
-                                <p>Build real speaking fluency step by step. Learn, repeat, and deliver complete German monologues with AI feedback.</p>
-                                <span class="module-card-action">Sprechen üben &rarr;</span>
-                            </div>
-                            <div class="sprechtrainer-card-badge">NEW</div>
                         </div>
-
-                    </div>
 
                     <!-- Core Mistakes Panel Quick Access -->
                     <div class="mistakes-quick-banner glass-panel">
@@ -315,6 +304,14 @@
                             <div class="topic-icon">🗣️</div>
                             <h3>Sprechen / Speaking</h3>
                             <p>Generate verbal cards. Record microphone, playback voice, and export prompts for AI feedback.</p>
+                        </div>
+
+                        <!-- Sprechtrainer (Fluency Builder) -->
+                        <div class="practice-topic-card glass-panel sprechtrainer-topic" data-topic="sprechtrainer" tabindex="0" id="card-nav-sprechtrainer">
+                            <div class="topic-icon">🎙️</div>
+                            <h3>Sprechtrainer / Fluency Builder</h3>
+                            <p>Build real speaking fluency step by step. Learn, repeat, and deliver complete German monologues with AI feedback.</p>
+                            <div class="sprechtrainer-card-badge" style="position: absolute; top: 12px; right: 12px; background: linear-gradient(135deg, #8b5cf6, #6366f1); color: #fff; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.08em; padding: 3px 8px; border-radius: 20px; text-transform: uppercase;">NEW</div>
                         </div>
 
                         <!-- Phrasen / Phrase Bank -->
@@ -1779,40 +1776,10 @@
                                  </button>
                              </div>
                          </div>
-
                      </div>
+                </section>
                 
                     
-</section>
-
-            </main>
-        </div>
-
-        <!-- Sticky Footer Navigation Bar (Only for Exam Mode) -->
-        <footer class="app-footer" id="app-footer" style="display: none;">
-            <div class="footer-left">
-                <button id="btn-prev-question" class="btn btn-secondary">
-                    <svg class="icon-left" viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
-                    Zurück
-                </button>
-            </div>
-            
-            <div class="footer-center" id="footer-center-indicator">
-                Frage 1 von 15
-            </div>
-
-            <div class="footer-right">
-                <button id="btn-review-screen" class="btn btn-secondary text-warning">
-                    Durchsicht
-                </button>
-                <button id="btn-next-question" class="btn btn-primary">
-                    Weiter
-                    <svg class="icon-right" viewBox="0 0 24 24"><path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
-                </button>
-            </div>
-        </footer>
-    </div>
-
     <!-- ==================== SPRECHTRAINER: TOPIC HUB ==================== -->
     <section id="view-sprechtrainer-hub" class="view-panel">
         <div class="panel-header-nav">
@@ -1847,6 +1814,34 @@
             <button id="btn-sprechtrainer-next" class="btn btn-primary btn-touch">Weiter (Next) &rarr;</button>
         </div>
     </section>
+
+            </main>
+        </div>
+
+        <!-- Sticky Footer Navigation Bar (Only for Exam Mode) -->
+        <footer class="app-footer" id="app-footer" style="display: none;">
+            <div class="footer-left">
+                <button id="btn-prev-question" class="btn btn-secondary">
+                    <svg class="icon-left" viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+                    Zurück
+                </button>
+            </div>
+            
+            <div class="footer-center" id="footer-center-indicator">
+                Frage 1 von 15
+            </div>
+
+            <div class="footer-right">
+                <button id="btn-review-screen" class="btn btn-secondary text-warning">
+                    Durchsicht
+                </button>
+                <button id="btn-next-question" class="btn btn-primary">
+                    Weiter
+                    <svg class="icon-right" viewBox="0 0 24 24"><path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                </button>
+            </div>
+        </footer>
+    </div>
 
     <!-- Modals for Warnings/Confirmation -->
     <div class="modal-overlay" id="confirm-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="modal-title">

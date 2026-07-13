@@ -7680,6 +7680,9 @@ function startPracticeMode(type) {
         practiceState.subTopic = "Speaking Cards";
         loadPracticeQuestion();
         
+    } else if (type === "sprechtrainer") {
+        showSprechtrainerHub();
+
     } else if (type === "mistakes") {
         renderMistakesPortal();
         switchToView("view-mistakes-portal");
@@ -9075,19 +9078,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Sprechtrainer dashboard card click
-    const cardSprechtrainer = document.getElementById("card-nav-sprechtrainer");
-    if (cardSprechtrainer) {
-        cardSprechtrainer.onclick = () => {
-            showSprechtrainerHub();
-        };
-        cardSprechtrainer.onkeydown = (e) => {
-            if (e.key === " " || e.key === "Enter") {
-                e.preventDefault();
-                showSprechtrainerHub();
-            }
-        };
-    }
 
     // Back to Sprechtrainer hub button
     const btnBackHub = document.getElementById("btn-sprechtrainer-back-hub");
