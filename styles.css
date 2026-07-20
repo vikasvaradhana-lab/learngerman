@@ -5,6 +5,7 @@
     /* Fonts */
     --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
 
     /* Accessibility sizing ratio */
     --font-scale: 1;
@@ -48,6 +49,11 @@ body.dark-mode {
     --color-accent-light: rgba(99, 102, 241, 0.15);
     --color-accent-glow: rgba(99, 102, 241, 0.35);
 
+    /* Primary aliases (used by Sprechtrainer, category pills, etc.) */
+    --color-primary: #8b5cf6;
+    --color-primary-light: rgba(139, 92, 246, 0.15);
+    --color-primary-transparent: rgba(139, 92, 246, 0.1);
+
     --color-success: #10b981; /* Emerald */
     --color-success-light: rgba(16, 185, 129, 0.15);
     
@@ -77,6 +83,11 @@ body.light-mode {
     --color-accent-hover: #4338ca;
     --color-accent-light: rgba(79, 70, 229, 0.08);
     --color-accent-glow: rgba(79, 70, 229, 0.2);
+
+    /* Primary aliases (used by Sprechtrainer, category pills, etc.) */
+    --color-primary: #7c3aed;
+    --color-primary-light: rgba(124, 58, 237, 0.12);
+    --color-primary-transparent: rgba(124, 58, 237, 0.08);
 
     --color-success: #059669;
     --color-success-light: rgba(5, 150, 105, 0.08);
@@ -582,7 +593,7 @@ textarea:focus-visible,
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(6px); }
+    from { opacity: 0; transform: translateY(4px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -859,11 +870,7 @@ textarea:focus-visible,
     background: var(--color-danger);
 }
 
-/* Color Accent presets */
-.font-indigo { color: #6366f1 !important; }
-.font-orange { color: #f59e0b !important; }
-.font-emerald { color: #10b981 !important; }
-.font-muted { color: var(--color-text-secondary) !important; }
+/* Color Accent presets — defined below in V2.2 section with better contrast values */
 
 /* ==================== 4. MISTAKES CENTER PORTAL ==================== */
 .mistakes-card {
@@ -2165,10 +2172,6 @@ textarea:focus-visible,
     margin: 0;
     animation: fadeIn 0.3s ease;
 }
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(4px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
 
 /* Animations */
 @keyframes pulse {
@@ -2215,6 +2218,7 @@ textarea:focus-visible,
     }
     .app-sidebar.open {
         left: 0;
+        box-shadow: 0 0 0 100vmax rgba(0,0,0,0.5);
     }
 }
 
@@ -2226,6 +2230,14 @@ textarea:focus-visible,
     /* SRS Insights internal grid: 2x2 layout since it has more space */
     .srs-insights-widget .streak-grid {
         grid-template-columns: repeat(4, 1fr);
+    }
+    /* Streak grid: 2-col on tablet to prevent cramped 4-col */
+    .streak-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* Results breakdown: 2-col on tablet to prevent cramped 4-col */
+    .results-breakdown-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -2246,10 +2258,14 @@ textarea:focus-visible,
     }
     .header-stats {
         gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     .stat-item {
         padding: 4px 8px;
         font-size: 0.75rem;
+        max-width: 100%;
+        overflow: hidden;
     }
     .results-breakdown-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -2267,6 +2283,92 @@ textarea:focus-visible,
     .mistakes-quick-banner button {
         width: 100%;
     }
+    /* H2: Review summary cards collapse on phone */
+    .review-summary-cards {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+    /* H3: Speaking card fluid on phone */
+    .speaking-card-wrapper {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+        aspect-ratio: 280 / 180;
+    }
+    /* M1: Writing form label stacks above input */
+    .schreiben-form-row {
+        grid-template-columns: 1fr;
+    }
+    /* M4: Strength/weakness lists single column */
+    .strength-weakness-lists {
+        grid-template-columns: 1fr;
+    }
+    /* M5: Module nav tabs text truncation */
+    .nav-tab {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 0.65rem;
+    }
+    /* M6: Revision dashboard single column */
+    .revision-dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    /* M8: Footer padding reduced */
+    .app-footer {
+        padding: 12px 16px;
+    }
+    /* M9: Dashboard padding reduced */
+    .review-dashboard,
+    .results-dashboard {
+        padding: 16px;
+    }
+    /* L2: Button min-widths relaxed on phone */
+    .btn-touch {
+        min-width: 0;
+    }
+    /* L3: Action rows wrap on phone */
+    .practice-actions-row,
+    .editor-actions {
+        flex-wrap: wrap;
+    }
+    /* Grammar lesson responsive */
+    .grammar-lesson-container {
+        padding: 16px;
+    }
+    .lesson-tabs .tab-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+    .grammar-rule-card {
+        padding: 16px;
+    }
+    .grammar-explanation {
+        padding: 16px;
+    }
+    .grammar-example-card {
+        padding: 14px;
+    }
+    .grammar-example-german {
+        font-size: 1.05rem;
+    }
+    .grammar-start-practice .btn {
+        width: 100%;
+        min-height: 48px;
+    }
+    /* L1: Consolidate Sprechtrainer rules from separate block */
+    .sprechtrainer-topic-grid {
+        grid-template-columns: 1fr;
+    }
+    .st-topic-card {
+        padding: 14px;
+        gap: 12px;
+    }
+    .st-stage-line { width: 14px; }
+    .st-stage-circle { width: 30px; height: 30px; font-size: 0.68rem; }
+    .sprechtrainer-stage-content { padding: 16px; }
+    .st-free-timer { font-size: 2.2rem; }
+    .sprechtrainer-stage-nav { justify-content: stretch; }
+    .sprechtrainer-stage-nav .btn { flex: 1; }
 }
 
 /* --- Printer Friendly certificate styling --- */
@@ -2341,7 +2443,7 @@ textarea:focus-visible,
 .english-text {
     font-size: 0.95rem;
     font-style: italic;
-    color: var(--color-success) !important;
+    color: var(--color-success);
     background: rgba(16, 185, 129, 0.05);
     border-radius: var(--radius-sm);
     padding: 8px 12px;
@@ -2394,12 +2496,14 @@ textarea:focus-visible,
 
 /* Learning Workspace */
 .learning-container {
+    width: 100%;
     max-width: 800px;
     margin: 0 auto;
     background: var(--color-panel);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     padding: 32px;
+    box-sizing: border-box;
 }
 
 /* Vocab Learn card */
@@ -2453,21 +2557,156 @@ textarea:focus-visible,
     padding: 12px 20px;
 }
 
-/* Keyframe animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(4px); }
-    to { opacity: 1; transform: translateY(0); }
+/* ==================== GRAMMAR LESSON STYLES ==================== */
+.grammar-lesson-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 28px;
+    box-sizing: border-box;
 }
+.grammar-lesson-container.topic-grid-mode {
+    max-width: 1200px;
+}
+.learning-container.topic-grid-mode {
+    max-width: 1200px;
+}
+.hoeren-hub-panel {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.lesson-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 0;
+}
+.lesson-tabs .tab-btn {
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    padding: 12px 24px;
+    font-weight: 700;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all var(--transition-fast);
+}
+.lesson-tabs .tab-btn.active {
+    border-bottom-color: var(--color-accent);
+    background: var(--color-accent-light);
+    color: var(--color-accent);
+}
+.grammar-rule-card {
+    background: rgba(99, 102, 241, 0.05);
+    border-left: 4px solid var(--color-primary);
+    padding: 20px 24px;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    margin-bottom: 24px;
+}
+.grammar-rule-card h3 {
+    margin: 0 0 8px 0;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--color-text-primary);
+}
+.grammar-rule-card p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+}
+.grammar-explanation {
+    margin-top: 24px;
+    padding: 20px 24px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+.grammar-explanation h3 {
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+    color: var(--color-text-primary);
+}
+.grammar-explanation p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+}
+.grammar-examples-section {
+    border-top: 1px dashed var(--color-border);
+    padding-top: 24px;
+    margin-top: 24px;
+}
+.grammar-examples-section h4 {
+    margin: 0 0 16px 0;
+    font-size: 1rem;
+    color: var(--color-text-primary);
+}
+.grammar-example-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px 20px;
+    background: var(--color-panel-solid);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    margin-bottom: 12px;
+    transition: border-color var(--transition-fast);
+}
+.grammar-example-card:hover {
+    border-color: var(--color-accent);
+}
+.grammar-example-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.grammar-example-german {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1.4;
+}
+.grammar-example-meaning {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--color-success);
+    padding-top: 8px;
+    border-top: 1px dashed var(--color-border);
+}
+.grammar-example-actions {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+.grammar-start-practice {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    justify-content: center;
+}
+.grammar-start-practice .btn {
+    min-height: 48px;
+    padding: 14px 32px;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+/* Keyframe animations */
 
 /* Responsiveness overrides */
 @media (max-width: 768px) {
     .app-sidebar {
-        width: min(320px, 85vw) !important;
-        left: calc(-1 * min(320px, 85vw)) !important;
+        width: min(320px, 85vw);
+        left: calc(-1 * min(320px, 85vw));
     }
     .app-sidebar.open {
-        left: 0 !important;
-        box-shadow: 0 0 0 100vmax rgba(0,0,0,0.5) !important;
+        left: 0;
     }
     .learning-container {
         padding: var(--panel-padding);
@@ -2483,6 +2722,10 @@ textarea:focus-visible,
     }
     .learning-navigation button {
         width: 100% !important;
+    }
+    /* L1: Consolidate writing-stages-bar from separate block */
+    .writing-stages-bar {
+        padding: 10px 12px;
     }
 }
 /* ==================== 11. V2.2 LEARNING ACCELERATION EXPERIENCE ==================== */
@@ -2643,31 +2886,31 @@ body.light-mode .pronunciation-subtext {
 }
 
 /* Option Card styling for V2.2 quiz panels to fix text readability */
-.option-card {
+.workspace-qa .option-card {
     background: var(--color-panel-solid);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     cursor: pointer;
     transition: all var(--transition-fast);
-    color: var(--color-text-primary) !important;
+    color: var(--color-text-primary);
     font-family: var(--font-body);
     font-weight: 500;
 }
-.option-card:hover {
+.workspace-qa .option-card:hover {
     border-color: var(--color-text-muted);
     background: var(--color-panel-hover);
 }
-.option-card.selected {
-    border-color: var(--color-accent) !important;
-    background: var(--color-accent-light) !important;
+.workspace-qa .option-card.selected {
+    border-color: var(--color-accent);
+    background: var(--color-accent-light);
     box-shadow: 0 0 0 1px var(--color-accent);
 }
 
-/* Priority 3 - Font readability & layout adjustments */
-.font-indigo { color: #818cf8 !important; }
-.font-emerald { color: #34d399 !important; }
-.font-orange { color: #fb923c !important; }
-.font-blue { color: #60a5fa !important; }
+/* Color Accent presets — scoped and deduplicated */
+.app-container .font-indigo { color: #818cf8; }
+.app-container .font-emerald { color: #34d399; }
+.app-container .font-orange { color: #fb923c; }
+.app-container .font-blue { color: #60a5fa; }
 
 /* Stage Progress Bar indicators (Priority 1 & 2 UI Wizards) */
 .wizard-progress-bar {
@@ -2714,7 +2957,7 @@ body.light-mode .pronunciation-subtext {
 
 /* Dynamic view-mode-tabs override */
 .view-mode-tabs button {
-    font-size: 0.85rem !important;
+    font-size: 0.85rem;
 }
 
 /* Touch targets min 44px for accessibility */
@@ -2759,10 +3002,7 @@ body.light-mode .pronunciation-subtext {
     50% { transform: scaleY(2.2); }
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+/* Light / Dark Mode Color Overrides to maintain readability and compliance */
 
 /* Premium Academic Branding Styles */
 .branding-divider {
@@ -2814,13 +3054,13 @@ body.light-mode .pronunciation-subtext {
 
 .branding-academic .branding-name {
     font-style: italic;
-    font-weight: 600; /* Semi-bold (refined weight) */
-    font-size: 1.15rem; /* Slightly larger */
-    color: #D4AF37; /* Refined muted gold color */
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: #D4AF37;
     position: relative;
     display: inline-flex;
     align-items: baseline;
-    vertical-align: baseline; /* Ensure baseline alignment */
+    vertical-align: baseline;
 }
 
 .branding-academic .branding-name .char {
@@ -2846,7 +3086,6 @@ body.light-mode .pronunciation-subtext {
 .branding-academic .branding-name .char:nth-child(14) { animation-delay: 650ms; }
 .branding-academic .branding-name .char:nth-child(15) { animation-delay: 700ms; }
 
-/* Light / Dark Mode Color Overrides to maintain readability and compliance */
 body.dark-mode .branding-academic .branding-text {
     color: #9CA3AF; /* Muted slate for dark mode */
 }
@@ -2904,16 +3143,31 @@ body.dark-mode .branding-academic .branding-text {
         color: #D4AF37 !important;
         text-shadow: none !important;
     }
+    /* M7: Additional reduced-motion coverage */
+    .streak-emoji {
+        animation: none !important;
+    }
+    .audio-waveform-animation.playing span {
+        animation: none !important;
+        height: 15% !important;
+    }
+    .recording-wave span {
+        animation: none !important;
+        height: 10px !important;
+    }
+    .timer-badge.warning-time {
+        animation: none !important;
+    }
 }
 
 /* Version 2.3.2 Spacing & Touch targets overrides */
-.sentence-breakdown-card,
-.transcript-bubble,
-.vocab-support-item {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 8px !important;
+.view-panel .sentence-breakdown-card,
+.view-panel .transcript-bubble,
+.learning-container .vocab-support-item {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
 }
 
 /* Category pills touch target scale */
@@ -2939,28 +3193,23 @@ body.dark-mode .branding-academic .branding-text {
     box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
 }
 
-.model-sentence-span:hover {
-    color: var(--color-accent) !important;
+.writing-studio-stimulus-body .model-sentence-span:hover {
+    color: var(--color-accent);
     background: rgba(99, 102, 241, 0.05);
 }
 
-.guided-part-input:focus {
-    border-color: var(--color-accent) !important;
+.writing-studio-qa-body .guided-part-input:focus {
+    border-color: var(--color-accent);
     outline: none;
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
 }
 
-.ws-topic-btn:hover {
+.writing-studio-stimulus-body .ws-topic-btn:hover {
     transform: translateY(-1px);
-    border-color: var(--color-accent) !important;
+    border-color: var(--color-accent);
     box-shadow: var(--shadow-sm);
 }
 
-@media (max-width: 768px) {
-    .writing-stages-bar {
-        padding: 10px 12px !important;
-    }
-}
 
 
 /* ================================================================
@@ -2968,14 +3217,14 @@ body.dark-mode .branding-academic .branding-text {
    ================================================================ */
 
 /* --- Dashboard Card Badge --- */
-.sprechtrainer-card {
+.practice-topic-card.sprechtrainer-card {
     position: relative;
-    border-color: rgba(139, 92, 246, 0.4) !important;
-    background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(99,102,241,0.05)) !important;
+    border-color: rgba(139, 92, 246, 0.4);
+    background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(99,102,241,0.05));
 }
-.sprechtrainer-card:hover {
-    border-color: rgba(139, 92, 246, 0.7) !important;
-    box-shadow: 0 0 24px rgba(139, 92, 246, 0.2) !important;
+.practice-topic-card.sprechtrainer-card:hover {
+    border-color: rgba(139, 92, 246, 0.7);
+    box-shadow: 0 0 24px rgba(139, 92, 246, 0.2);
 }
 .sprechtrainer-card-badge {
     position: absolute;
@@ -3382,23 +3631,6 @@ body.dark-mode .branding-academic .branding-text {
     align-items: center;
     gap: 12px;
     flex-wrap: wrap;
-}
-
-/* --- Responsive --- */
-@media (max-width: 600px) {
-    .sprechtrainer-topic-grid {
-        grid-template-columns: 1fr;
-    }
-    .st-topic-card {
-        padding: 14px;
-        gap: 12px;
-    }
-    .st-stage-line { width: 14px; }
-    .st-stage-circle { width: 30px; height: 30px; font-size: 0.68rem; }
-    .sprechtrainer-stage-content { padding: 16px; }
-    .st-free-timer { font-size: 2.2rem; }
-    .sprechtrainer-stage-nav { justify-content: stretch; }
-    .sprechtrainer-stage-nav .btn { flex: 1; }
 }
 
 

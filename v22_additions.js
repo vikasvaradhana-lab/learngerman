@@ -27,48 +27,66 @@ const PRONUNCIATION_DICTIONARY = {
 
 function germanToPhoneticEnglish(text) {
     if (!text) return "";
-    let word = text.toLowerCase();
-    
-    // sequential regex replacements for German rules
-    word = word.replace(/sch/g, "sh");
-    word = word.replace(/ch/g, "kh");
-    word = word.replace(/\bsp/g, "shp");
-    word = word.replace(/\bst/g, "sht");
-    word = word.replace(/qu/g, "kv");
-    word = word.replace(/ph/g, "f");
-    word = word.replace(/ck/g, "k");
-    word = word.replace(/tz/g, "ts");
-    word = word.replace(/z/g, "ts");
-    word = word.replace(/ß/g, "s");
-    word = word.replace(/v/g, "f");
-    word = word.replace(/w/g, "v");
-    word = word.replace(/j/g, "y");
-    
-    // Diphthongs
-    word = word.replace(/ei/g, "ai");
-    word = word.replace(/ie/g, "ee");
-    word = word.replace(/au/g, "ow");
-    word = word.replace(/eu/g, "oy");
-    word = word.replace(/äu/g, "oy");
-    
-    // Umlauts
-    word = word.replace(/ä/g, "ae");
-    word = word.replace(/ö/g, "oe");
-    word = word.replace(/ü/g, "ue");
-    
-    // Final combinations
-    word = word.replace(/ig\b/g, "ikh");
-    word = word.replace(/er\b/g, "er");
-    
-    // Voiced s before vowel
-    word = word.replace(/\bs(?=[aeiouäöü])/g, "z");
-    word = word.replace(/([aeiouäöüy])s(?=[aeiouäöüy])/g, "$1z");
-    
-    // Short vowels and vowel length approximations
-    word = word.replace(/u/g, "oo");
-    word = word.replace(/a/g, "ah");
-    
-    return word;
+    const word = text.toLowerCase();
+
+    // Single-pass replacement table: longest patterns first to avoid overlap.
+    // Each entry: [regex, replacement]
+    const rules = [
+        // Word-boundary consonant clusters
+        [/\bsch/g, "sh"],
+        [/\bsp/g, "shp"],
+        [/\bst/g, "sht"],
+
+        // Multi-char consonant digraphs
+        [/sch/g, "sh"],
+        [/ch/g, "kh"],
+        [/qu/g, "kv"],
+        [/ph/g, "f"],
+        [/ck/g, "k"],
+        [/tz/g, "ts"],
+        [/pf/g, "pf"],
+
+        // Single consonants
+        [/\bß/g, "s"],
+        [/ß/g, "s"],
+        [/z/g, "ts"],
+        [/v/g, "f"],
+        [/w/g, "v"],
+        [/j/g, "y"],
+        [/x/g, "ks"],
+
+        // Diphthongs (before single vowel rules)
+        [/\bäu/g, "oy"],
+        [/\beu/g, "oy"],
+        [/äu/g, "oy"],
+        [/eu/g, "oy"],
+        [/ei/g, "ai"],
+        [/ie/g, "ee"],
+        [/au/g, "ow"],
+
+        // Umlauts
+        [/ä/g, "ae"],
+        [/ö/g, "oe"],
+        [/ü/g, "ue"],
+
+        // Final combinations (word-boundary)
+        [/\ig\b/g, "ikh"],
+        [/\er\b/g, "er"],
+
+        // Voiced s between / after vowels
+        [/\bs(?=[aeiouäöü])/g, "z"],
+        [/([aeiouäöüy])s(?=[aeiouäöüy])/g, "$1z"],
+
+        // Vowel approximations (single chars last)
+        [/u/g, "oo"],
+        [/a/g, "ah"],
+    ];
+
+    let result = word;
+    for (const [regex, replacement] of rules) {
+        result = result.replace(regex, replacement);
+    }
+    return result;
 }
 
 function transliterateWord(word, lang) {
@@ -611,7 +629,7 @@ const REAL_LIFE_DATABASE = [
             { question: "Wie viel Zuzahlung leistet der Kunde im Dialog?", options: ["Drei Euro", "Fünf Euro", "Zwei Euro"], correct: 0, explanation: "The pharmacist says: 'drei Euro Zuzahlung'." },
             { question: "Wie oft soll der Kunde die Tabletten nehmen?", options: ["Einmal täglich", "Zweimal täglich", "Dreimal täglich"], correct: 1, explanation: "The pharmacist says: 'Zweimal täglich jedna Tablette'." },
             { question: "Wann nimmt man die Tabletten ein?", options: ["Vor dem Essen", "Nach dem Essen", "Beim Schlafen"], correct: 1, explanation: "The pharmacist says: 'nach dem Essen'." },
-            { word: "tablet", question: "Was bedeutet 'die Tablette'?", options: ["Table", "Pill/Tablet", "Teacup"], correct: 1, explanation: "die Tablette means Pill/Tablet." },
+            { question: "Was bedeutet 'die Tablette'?", options: ["Table", "Pill/Tablet", "Teacup"], correct: 1, explanation: "die Tablette means Pill/Tablet." },
             { question: "Was bedeutet 'in bar'?", options: ["By card", "In cash", "In coins"], correct: 1, explanation: "in bar means in cash." }
         ]
     },
@@ -652,7 +670,7 @@ const REAL_LIFE_DATABASE = [
             { question: "Wo hatte der Schüler eine Frage?", options: ["Bei Nummer zwei", "Bei Nummer drei", "Bei Nummer vier"], correct: 1, explanation: "He says: 'eine Frage bei Nummer drei'." },
             { question: "Was leiht der Lehrer dem Schüler?", options: ["Ein Buch", "Einen Kugelschreiber", "Ein Heft"], correct: 1, explanation: "He lends a blue pen (Kugelschreiber)." },
             { question: "Was bedeutet 'das Heft'?", options: ["Notebook", "Blackboard", "Break"], correct: 0, explanation: "das Heft means Notebook." },
-            { question: "Was bedeutet 'die Tafel'?", options: [" black board", "table", "chair"], correct: 0, explanation: "die Tafel means blackboard." }
+            { question: "Was bedeutet 'die Tafel'?", options: ["blackboard", "table", "chair"], correct: 0, explanation: "die Tafel means blackboard." }
         ]
     },
     {
@@ -5484,12 +5502,15 @@ function openGrammarLessonHub() {
     document.getElementById("grammar-lesson-panel").style.display = "none";
     document.getElementById("grammar-practice-panel").style.display = "none";
     
+    // Widen container for topic grid
+    document.querySelector(".grammar-lesson-container").classList.add("topic-grid-mode");
+    
     // Check if we already have a topic list container, else create one
     let listContainer = document.getElementById("grammar-topic-list-container");
     if (!listContainer) {
         listContainer = document.createElement("div");
         listContainer.id = "grammar-topic-list-container";
-        listContainer.style.cssText = "display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px; margin-top:20px;";
+        listContainer.style.cssText = "display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px; margin-top:20px;";
         document.querySelector(".grammar-lesson-container").appendChild(listContainer);
     }
     listContainer.style.display = "grid";
@@ -5527,6 +5548,9 @@ function startGrammarLesson(topicId) {
     
     currentGrammarLesson = topic;
     
+    // Reset container for lesson view
+    document.querySelector(".grammar-lesson-container").classList.remove("topic-grid-mode");
+    
     // Hide topic list
     const listContainer = document.getElementById("grammar-topic-list-container");
     if (listContainer) listContainer.style.display = "none";
@@ -5540,31 +5564,31 @@ function startGrammarLesson(topicId) {
     
     // Load lesson content
     document.getElementById("grammar-lesson-rules").innerHTML = `
-        <div style="background:rgba(99,102,241,0.05); border-left:4px solid var(--color-primary); padding:16px; border-radius:var(--radius-md); margin-bottom:20px;">
-            <h3 style="margin-top:0; font-family:var(--font-display); color:var(--color-text-primary);">Systemregeln / Core Rules</h3>
-            <p style="margin-bottom:0; font-size:1.05rem; line-height:1.6;">${topic.rule}</p>
+        <div class="grammar-rule-card">
+            <h3>Systemregeln / Core Rules</h3>
+            <p>${topic.rule}</p>
         </div>
-        <div style="margin-top:20px;">
+        <div class="grammar-explanation">
             <h3>Englische Erklärung / English Explanation</h3>
-            <p style="font-size:0.95rem; line-height:1.6; color:var(--color-text-secondary);">${topic.englishExplanation}</p>
+            <p>${topic.englishExplanation}</p>
         </div>
     `;
     
     let examplesHTML = "";
     topic.examples.forEach(ex => {
         examplesHTML += `
-            <div class="vocab-support-item" style="flex-direction:column; align-items:flex-start; gap:6px; padding:16px; margin-bottom:10px;">
-                <div style="display:flex; justify-content:space-between; align-items:center; width:100%; flex-wrap:wrap; gap:8px;">
-                    <div style="display:flex; flex-direction:column;">
-                        <span style="font-size:1.15rem; font-weight:700; color:var(--color-text-primary);">${ex.german}</span>
+            <div class="grammar-example-card">
+                <div class="grammar-example-top">
+                    <div>
+                        <span class="grammar-example-german">${ex.german}</span>
                         ${getPronunciationHTML(ex.german)}
                     </div>
-                    <div style="display:flex; gap:8px;">
-                        <button class="btn btn-secondary btn-xs btn-touch" onclick="playSpeech('${ex.german.replace(/'/g, "\\'")}', 1.0)" style="padding:4px 8px; font-size:0.75rem;">🔊 Play</button>
-                        <button class="btn btn-secondary btn-xs btn-touch" onclick="playSpeech('${ex.german.replace(/'/g, "\\'")}', 0.65)" style="padding:4px 8px; font-size:0.75rem;">🐢 Slow</button>
+                    <div class="grammar-example-actions">
+                        <button class="btn btn-secondary btn-xs btn-touch" onclick="playSpeech('${ex.german.replace(/'/g, "\\'")}', 1.0)" style="padding:4px 10px; font-size:0.75rem;">🔊 Play</button>
+                        <button class="btn btn-secondary btn-xs btn-touch" onclick="playSpeech('${ex.german.replace(/'/g, "\\'")}', 0.65)" style="padding:4px 10px; font-size:0.75rem;">🐢 Slow</button>
                     </div>
                 </div>
-                <div style="border-top:1px dashed var(--color-border); width:100%; margin-top:8px; padding-top:6px; color:var(--color-success); font-style:italic; font-size:0.9rem;">
+                <div class="grammar-example-meaning">
                     ${ex.meaning}
                 </div>
             </div>
@@ -7114,6 +7138,10 @@ function loadReadingLearnItem() {
         if (barContainer) barContainer.style.display = "none";
         if (navRow) navRow.style.display = "none";
 
+        // Widen container for topic grid
+        const lc = document.querySelector(".learning-container");
+        if (lc) lc.classList.add("topic-grid-mode");
+
         let gridHTML = `
             <div style="text-align:center; margin-bottom:20px; animation: fadeIn 0.2s ease-out;">
                 <h3 style="font-family:var(--font-display); color:var(--color-primary); margin-top:0;">Wählen Sie ein Lesethema / Choose a Reading Topic</h3>
@@ -7151,6 +7179,10 @@ function loadReadingLearnItem() {
         if (badge) badge.style.display = "block";
         if (barContainer) barContainer.style.display = "block";
         if (navRow) navRow.style.display = "flex";
+
+        // Reset container width for lesson view
+        const lc = document.querySelector(".learning-container");
+        if (lc) lc.classList.remove("topic-grid-mode");
 
         badge.textContent = `Stage ${readingLearnState.stage} / 5`;
         bar.style.width = `${(readingLearnState.stage / 5) * 100}%`;
@@ -11528,6 +11560,7 @@ function showInteractiveHoerenSummary() {
 // --- AUDIO PLAYER CONTROLLER WITH PLAY/PAUSE, SCRUBBING SLIDER & TIME DISPLAY ---
 
 let hoerenAudioController = {
+    generation: 0,
     isPlaying: false,
     isPaused: false,
     hasPendingSeek: false,
@@ -11628,9 +11661,17 @@ function toggleHoerenAudioPlayPause() {
             hoerenAudioController.hasPendingSeek = false;
             playHoerenAudioAtRate(hoerenAudioController.rate || 1.0, offset);
         } else {
-            window.speechSynthesis.resume();
-            hoerenAudioController.isPaused = false;
-            setHoerenPlayButtonState("playing");
+            // Mobile: speechSynthesis.resume() produces no sound.
+            // Restart ~2s before the pause point for a clean entry.
+            const secBack = 2;
+            const resumeSecs = Math.max(0, hoerenAudioController.currentSecs - secBack);
+            const fullText = hoerenAudioController.text || "";
+            const pct = resumeSecs / (hoerenAudioController.durationSecs || 1);
+            const charIdx = Math.floor(fullText.length * pct);
+            let spaceIdx = fullText.indexOf(" ", charIdx);
+            if (spaceIdx === -1) spaceIdx = charIdx;
+            // Force full-text restart from offset so timer tracks correctly
+            playHoerenAudioAtRate(hoerenAudioController.rate || 1.0, spaceIdx, resumeSecs);
         }
     } else {
         const offset = hoerenAudioController.hasPendingSeek ? hoerenAudioController.pendingSeekOffset : 0;
@@ -11639,10 +11680,11 @@ function toggleHoerenAudioPlayPause() {
     }
 }
 
-function playHoerenAudioAtRate(rate, offsetCharIndex = 0) {
+function playHoerenAudioAtRate(rate, offsetCharIndex = 0, startSecsOverride = null) {
     window.speechSynthesis.cancel();
     if (hoerenAudioController.timer) clearInterval(hoerenAudioController.timer);
     
+    const gen = ++hoerenAudioController.generation;
     hoerenAudioController.rate = rate;
     hoerenAudioController.isPlaying = true;
     hoerenAudioController.isPaused = false;
@@ -11653,7 +11695,10 @@ function playHoerenAudioAtRate(rate, offsetCharIndex = 0) {
     const wordCount = textToSpeak.split(/\s+/).length;
     const estSecs = Math.max(1, Math.round((wordCount / (2.0 * rate)) + 0.5));
     
-    if (offsetCharIndex === 0) {
+    if (startSecsOverride !== null) {
+        // Resume case: keep existing duration, set position to override
+        hoerenAudioController.currentSecs = startSecsOverride;
+    } else if (offsetCharIndex === 0) {
         hoerenAudioController.durationSecs = Math.max(3, Math.round((hoerenAudioController.text.split(/\s+/).length / (2.0 * rate)) + 1));
         hoerenAudioController.currentSecs = 0;
     }
@@ -11667,6 +11712,7 @@ function playHoerenAudioAtRate(rate, offsetCharIndex = 0) {
         textToSpeak,
         () => {},
         () => {
+            if (hoerenAudioController.generation !== gen) return;
             if (hoerenAudioController.timer) clearInterval(hoerenAudioController.timer);
             hoerenAudioController.isPlaying = false;
             hoerenAudioController.isPaused = false;
@@ -11683,6 +11729,7 @@ function playHoerenAudioAtRate(rate, offsetCharIndex = 0) {
             }, 800);
         },
         () => {
+            if (hoerenAudioController.generation !== gen) return;
             setHoerenPlayButtonState("stopped");
             hoerenAudioController.isPlaying = false;
             hoerenAudioController.isPaused = false;
@@ -11691,7 +11738,7 @@ function playHoerenAudioAtRate(rate, offsetCharIndex = 0) {
     );
     
     hoerenAudioController.timer = setInterval(() => {
-        if (hoerenAudioController.isPlaying && !hoerenAudioController.isPaused && window.speechSynthesis.speaking) {
+        if (hoerenAudioController.isPlaying && !hoerenAudioController.isPaused) {
             stepCount++;
             const pct = Math.min(1.0, stepCount / totalSteps);
             hoerenAudioController.currentSecs = Math.min(hoerenAudioController.durationSecs, startSecs + (pct * estSecs));

@@ -658,7 +658,7 @@ const VOCABULARY_DATABASE = {
             "word": "der Vater",
             "translation": "Father",
             "example": "Mein Vater arbeitet im Garten.",
-            "exampleTranslation": "Mein Vater works in the garden.",
+            "exampleTranslation": "My father works in the garden.",
             "emoji": "👨"
         },
         {
@@ -2021,7 +2021,7 @@ const VOCABULARY_DATABASE = {
             "translation": "Cap",
             "example": "Im Winter trage ich eine Mütze.",
             "exampleTranslation": "In winter I wear a cap.",
-            "emoji": " Cap"
+            "emoji": "🧢"
         },
         {
             "word": "der Hut",
@@ -2042,7 +2042,7 @@ const VOCABULARY_DATABASE = {
             "translation": "Belt",
             "example": "Mein Gürtel ist zu kurz.",
             "exampleTranslation": "My belt is too short.",
-            "emoji": "ベルト"
+            "emoji": "👔"
         },
         {
             "word": "die Handschuhe",
