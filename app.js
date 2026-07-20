@@ -4053,6 +4053,176 @@ const VOCABULARY_DATABASE = {
             "exampleTranslation": "The spider weaves a web.",
             "emoji": "🕷"
         }
+    ],
+    "farben": [
+        { "word": "rot", "translation": "Red", "example": "Das Auto ist rot.", "exampleTranslation": "The car is red.", "emoji": "🔴" },
+        { "word": "blau", "translation": "Blue", "example": "Der Himmel ist heute blau.", "exampleTranslation": "The sky is blue today.", "emoji": "🔵" },
+        { "word": "grün", "translation": "Green", "example": "Das Gras ist grün.", "exampleTranslation": "The grass is green.", "emoji": "🟢" },
+        { "word": "gelb", "translation": "Yellow", "example": "Die Sonne ist gelb.", "exampleTranslation": "The sun is yellow.", "emoji": "🟡" },
+        { "word": "schwarz", "translation": "Black", "example": "Die Katze ist schwarz.", "exampleTranslation": "The cat is black.", "emoji": "⚫" },
+        { "word": "weiß", "translation": "White", "example": "Der Schnee ist weiß.", "exampleTranslation": "The snow is white.", "emoji": "⚪" },
+        { "word": "orange", "translation": "Orange", "example": "Die Orange ist orange.", "exampleTranslation": "The orange is orange.", "emoji": "🟠" },
+        { "word": "lila", "translation": "Purple / violet", "example": "Ihr Kleid ist lila.", "exampleTranslation": "Her dress is purple.", "emoji": "🟣" },
+        { "word": "braun", "translation": "Brown", "example": "Der Bär ist braun.", "exampleTranslation": "The bear is brown.", "emoji": "🟤" },
+        { "word": "rosa", "translation": "Pink", "example": "Das Baby trägt rosa Kleidung.", "exampleTranslation": "The baby wears pink clothing.", "emoji": "🌸" },
+        { "word": "grau", "translation": "Grey", "example": "Die Wolken sind grau.", "exampleTranslation": "The clouds are grey.", "emoji": "🩶" },
+        { "word": "hell", "translation": "Light / bright", "example": "Das Zimmer ist hell.", "exampleTranslation": "The room is bright.", "emoji": "☀️" },
+        { "word": "dunkel", "translation": "Dark", "example": "Es wird dunkel draußen.", "exampleTranslation": "It is getting dark outside.", "emoji": "🌑" },
+        { "word": "bunt", "translation": "Colourful", "example": "Der Regenbogen ist sehr bunt.", "exampleTranslation": "The rainbow is very colourful.", "emoji": "🌈" },
+        { "word": "golden", "translation": "Golden", "example": "Sie trägt einen goldenen Ring.", "exampleTranslation": "She wears a golden ring.", "emoji": "🥇" }
+    ],
+    "koerper": [
+        { "word": "der Kopf", "translation": "Head", "example": "Ich habe Kopfschmerzen.", "exampleTranslation": "I have a headache.", "emoji": "🧠" },
+        { "word": "das Auge", "translation": "Eye", "example": "Sie hat blaue Augen.", "exampleTranslation": "She has blue eyes.", "emoji": "👁️" },
+        { "word": "die Nase", "translation": "Nose", "example": "Meine Nase ist kalt.", "exampleTranslation": "My nose is cold.", "emoji": "👃" },
+        { "word": "der Mund", "translation": "Mouth", "example": "Öffne den Mund, bitte.", "exampleTranslation": "Open your mouth, please.", "emoji": "👄" },
+        { "word": "das Ohr", "translation": "Ear", "example": "Ich höre die Musik mit den Ohren.", "exampleTranslation": "I hear the music with my ears.", "emoji": "👂" },
+        { "word": "die Hand", "translation": "Hand", "example": "Ich wasche mir die Hände.", "exampleTranslation": "I wash my hands.", "emoji": "🖐️" },
+        { "word": "der Fuß", "translation": "Foot", "example": "Mein Fuß tut weh.", "exampleTranslation": "My foot hurts.", "emoji": "🦶" },
+        { "word": "der Bauch", "translation": "Stomach / belly", "example": "Ich habe Bauchschmerzen.", "exampleTranslation": "I have a stomachache.", "emoji": "🫃" },
+        { "word": "der Rücken", "translation": "Back", "example": "Mein Rücken schmerzt.", "exampleTranslation": "My back aches.", "emoji": "🦴" },
+        { "word": "das Knie", "translation": "Knee", "example": "Er hat sich das Knie verletzt.", "exampleTranslation": "He injured his knee.", "emoji": "🦵" },
+        { "word": "der Hals", "translation": "Throat / neck", "example": "Ich habe Halsschmerzen.", "exampleTranslation": "I have a sore throat.", "emoji": "🤕" },
+        { "word": "die Schulter", "translation": "Shoulder", "example": "Er trägt die Tasche auf der Schulter.", "exampleTranslation": "He carries the bag on his shoulder.", "emoji": "💪" },
+        { "word": "der Finger", "translation": "Finger", "example": "Sie zeigt mit dem Finger.", "exampleTranslation": "She points with her finger.", "emoji": "☝️" },
+        { "word": "das Haar", "translation": "Hair", "example": "Sie hat langes blondes Haar.", "exampleTranslation": "She has long blonde hair.", "emoji": "💇" },
+        { "word": "das Herz", "translation": "Heart", "example": "Das Herz schlägt schnell.", "exampleTranslation": "The heart beats fast.", "emoji": "❤️" }
+    ],
+    "musik": [
+        { "word": "die Musik", "translation": "Music", "example": "Ich höre gerne Musik.", "exampleTranslation": "I like listening to music.", "emoji": "🎵" },
+        { "word": "das Lied", "translation": "Song", "example": "Das Lied ist sehr schön.", "exampleTranslation": "The song is very beautiful.", "emoji": "🎶" },
+        { "word": "das Klavier", "translation": "Piano", "example": "Sie spielt Klavier.", "exampleTranslation": "She plays the piano.", "emoji": "🎹" },
+        { "word": "die Gitarre", "translation": "Guitar", "example": "Er spielt Gitarre in einer Band.", "exampleTranslation": "He plays guitar in a band.", "emoji": "🎸" },
+        { "word": "die Geige", "translation": "Violin", "example": "Die Geige klingt wunderschön.", "exampleTranslation": "The violin sounds wonderful.", "emoji": "🎻" },
+        { "word": "das Konzert", "translation": "Concert", "example": "Wir gehen morgen ins Konzert.", "exampleTranslation": "We are going to a concert tomorrow.", "emoji": "🎤" },
+        { "word": "singen", "translation": "To sing", "example": "Die Kinder singen ein Lied.", "exampleTranslation": "The children sing a song.", "emoji": "🎙️" },
+        { "word": "tanzen", "translation": "To dance", "example": "Sie tanzen auf der Bühne.", "exampleTranslation": "They dance on the stage.", "emoji": "💃" },
+        { "word": "der Rhythmus", "translation": "Rhythm", "example": "Der Rhythmus ist sehr schnell.", "exampleTranslation": "The rhythm is very fast.", "emoji": "🥁" },
+        { "word": "laut", "translation": "Loud", "example": "Die Musik ist zu laut.", "exampleTranslation": "The music is too loud.", "emoji": "🔊" },
+        { "word": "leise", "translation": "Quiet / soft", "example": "Bitte sprich leiser!", "exampleTranslation": "Please speak more quietly!", "emoji": "🔉" },
+        { "word": "die Band", "translation": "Band", "example": "Die Band spielt heute Abend.", "exampleTranslation": "The band plays tonight.", "emoji": "🎼" },
+        { "word": "das Radio", "translation": "Radio", "example": "Ich höre jeden Morgen Radio.", "exampleTranslation": "I listen to the radio every morning.", "emoji": "📻" },
+        { "word": "die Stimme", "translation": "Voice", "example": "Sie hat eine schöne Stimme.", "exampleTranslation": "She has a beautiful voice.", "emoji": "🗣️" },
+        { "word": "der Chor", "translation": "Choir", "example": "Er singt im Kirchenchor.", "exampleTranslation": "He sings in the church choir.", "emoji": "🎵" }
+    ],
+    "natur": [
+        { "word": "der Wald", "translation": "Forest", "example": "Wir machen einen Spaziergang im Wald.", "exampleTranslation": "We go for a walk in the forest.", "emoji": "🌲" },
+        { "word": "der Fluss", "translation": "River", "example": "Der Fluss ist sehr breit.", "exampleTranslation": "The river is very wide.", "emoji": "🏞️" },
+        { "word": "der Berg", "translation": "Mountain", "example": "Der Berg ist sehr hoch.", "exampleTranslation": "The mountain is very high.", "emoji": "⛰️" },
+        { "word": "der See", "translation": "Lake", "example": "Wir schwimmen im See.", "exampleTranslation": "We swim in the lake.", "emoji": "🏖️" },
+        { "word": "das Meer", "translation": "Sea / ocean", "example": "Das Meer ist heute ruhig.", "exampleTranslation": "The sea is calm today.", "emoji": "🌊" },
+        { "word": "die Blume", "translation": "Flower", "example": "Die Blume ist sehr bunt.", "exampleTranslation": "The flower is very colourful.", "emoji": "🌸" },
+        { "word": "der Baum", "translation": "Tree", "example": "Der Baum ist sehr alt.", "exampleTranslation": "The tree is very old.", "emoji": "🌳" },
+        { "word": "das Gras", "translation": "Grass", "example": "Das Gras ist grün und frisch.", "exampleTranslation": "The grass is green and fresh.", "emoji": "🌿" },
+        { "word": "der Strand", "translation": "Beach", "example": "Wir liegen am Strand.", "exampleTranslation": "We lie on the beach.", "emoji": "🏝️" },
+        { "word": "der Himmel", "translation": "Sky", "example": "Der Himmel ist heute wolkenlos.", "exampleTranslation": "The sky is cloudless today.", "emoji": "☁️" },
+        { "word": "die Sonne", "translation": "Sun", "example": "Die Sonne scheint sehr hell.", "exampleTranslation": "The sun shines very brightly.", "emoji": "☀️" },
+        { "word": "der Regen", "translation": "Rain", "example": "Es gibt heute viel Regen.", "exampleTranslation": "There is a lot of rain today.", "emoji": "🌧️" },
+        { "word": "der Schnee", "translation": "Snow", "example": "Im Winter gibt es oft Schnee.", "exampleTranslation": "In winter there is often snow.", "emoji": "❄️" },
+        { "word": "der Stein", "translation": "Stone / rock", "example": "Der Stein liegt auf dem Boden.", "exampleTranslation": "The stone lies on the ground.", "emoji": "🪨" },
+        { "word": "der Vogel", "translation": "Bird", "example": "Der Vogel singt am Morgen.", "exampleTranslation": "The bird sings in the morning.", "emoji": "🐦" }
+    ],
+    "sport_vocab": [
+        { "word": "der Fußball", "translation": "Football / soccer", "example": "Er spielt jeden Tag Fußball.", "exampleTranslation": "He plays football every day.", "emoji": "⚽" },
+        { "word": "schwimmen", "translation": "To swim", "example": "Sie schwimmt im Hallenbad.", "exampleTranslation": "She swims in the indoor pool.", "emoji": "🏊" },
+        { "word": "laufen", "translation": "To run / jog", "example": "Er läuft jeden Morgen fünf Kilometer.", "exampleTranslation": "He runs five kilometres every morning.", "emoji": "🏃" },
+        { "word": "das Fahrrad", "translation": "Bicycle", "example": "Sie fährt jeden Tag mit dem Fahrrad.", "exampleTranslation": "She cycles every day.", "emoji": "🚴" },
+        { "word": "das Tennis", "translation": "Tennis", "example": "Wir spielen Tennis am Wochenende.", "exampleTranslation": "We play tennis at the weekend.", "emoji": "🎾" },
+        { "word": "das Training", "translation": "Training / practice", "example": "Das Training beginnt um neun Uhr.", "exampleTranslation": "Training starts at nine o'clock.", "emoji": "🏋️" },
+        { "word": "der Sport", "translation": "Sport", "example": "Sport macht Spaß!", "exampleTranslation": "Sport is fun!", "emoji": "🏅" },
+        { "word": "gewinnen", "translation": "To win", "example": "Unser Team hat gewonnen!", "exampleTranslation": "Our team won!", "emoji": "🏆" },
+        { "word": "verlieren", "translation": "To lose", "example": "Sie haben das Spiel verloren.", "exampleTranslation": "They lost the game.", "emoji": "😔" },
+        { "word": "der Spieler", "translation": "Player", "example": "Der Spieler macht ein Tor.", "exampleTranslation": "The player scores a goal.", "emoji": "👟" },
+        { "word": "das Tor", "translation": "Goal", "example": "Er schießt ein Tor.", "exampleTranslation": "He scores a goal.", "emoji": "🥅" },
+        { "word": "die Mannschaft", "translation": "Team", "example": "Die Mannschaft trainiert jeden Tag.", "exampleTranslation": "The team trains every day.", "emoji": "👥" },
+        { "word": "das Stadion", "translation": "Stadium", "example": "Das Stadion ist voll.", "exampleTranslation": "The stadium is full.", "emoji": "🏟️" },
+        { "word": "klettern", "translation": "To climb", "example": "Die Kinder klettern auf den Baum.", "exampleTranslation": "The children climb the tree.", "emoji": "🧗" },
+        { "word": "das Hallenbad", "translation": "Indoor swimming pool", "example": "Das Hallenbad ist morgens geöffnet.", "exampleTranslation": "The indoor pool is open in the mornings.", "emoji": "🏊" }
+    ],
+    "berufe": [
+        { "word": "der Arzt", "translation": "Doctor (m)", "example": "Der Arzt untersucht den Patienten.", "exampleTranslation": "The doctor examines the patient.", "emoji": "👨‍⚕️" },
+        { "word": "die Ärztin", "translation": "Doctor (f)", "example": "Die Ärztin gibt ein Rezept.", "exampleTranslation": "The doctor gives a prescription.", "emoji": "👩‍⚕️" },
+        { "word": "der Lehrer", "translation": "Teacher (m)", "example": "Der Lehrer erklärt die Grammatik.", "exampleTranslation": "The teacher explains the grammar.", "emoji": "👨‍🏫" },
+        { "word": "die Lehrerin", "translation": "Teacher (f)", "example": "Die Lehrerin korrigiert die Aufgaben.", "exampleTranslation": "The teacher corrects the exercises.", "emoji": "👩‍🏫" },
+        { "word": "der Koch", "translation": "Cook / chef (m)", "example": "Der Koch kocht sehr gut.", "exampleTranslation": "The chef cooks very well.", "emoji": "👨‍🍳" },
+        { "word": "der Polizist", "translation": "Police officer (m)", "example": "Der Polizist hilft den Touristen.", "exampleTranslation": "The police officer helps the tourists.", "emoji": "👮" },
+        { "word": "der Feuerwehrmann", "translation": "Firefighter", "example": "Der Feuerwehrmann löscht das Feuer.", "exampleTranslation": "The firefighter extinguishes the fire.", "emoji": "👨‍🚒" },
+        { "word": "der Ingenieur", "translation": "Engineer", "example": "Der Ingenieur baut eine Brücke.", "exampleTranslation": "The engineer builds a bridge.", "emoji": "👨‍💻" },
+        { "word": "der Kellner", "translation": "Waiter", "example": "Der Kellner bringt das Essen.", "exampleTranslation": "The waiter brings the food.", "emoji": "🍽️" },
+        { "word": "der Mechaniker", "translation": "Mechanic", "example": "Der Mechaniker repariert das Auto.", "exampleTranslation": "The mechanic repairs the car.", "emoji": "🔧" },
+        { "word": "die Krankenschwester", "translation": "Nurse (f)", "example": "Die Krankenschwester nimmt Blut ab.", "exampleTranslation": "The nurse takes blood.", "emoji": "👩‍⚕️" },
+        { "word": "der Pilot", "translation": "Pilot", "example": "Der Pilot fliegt nach New York.", "exampleTranslation": "The pilot flies to New York.", "emoji": "✈️" },
+        { "word": "der Bäcker", "translation": "Baker", "example": "Der Bäcker backt frisches Brot.", "exampleTranslation": "The baker bakes fresh bread.", "emoji": "🥖" },
+        { "word": "der Anwalt", "translation": "Lawyer", "example": "Der Anwalt hilft seinem Mandanten.", "exampleTranslation": "The lawyer helps his client.", "emoji": "⚖️" },
+        { "word": "der Journalist", "translation": "Journalist", "example": "Der Journalist schreibt einen Artikel.", "exampleTranslation": "The journalist writes an article.", "emoji": "📰" }
+    ],
+    "gefuehle": [
+        { "word": "glücklich", "translation": "Happy", "example": "Ich bin sehr glücklich heute.", "exampleTranslation": "I am very happy today.", "emoji": "😊" },
+        { "word": "traurig", "translation": "Sad", "example": "Sie ist traurig, weil ihr Hund krank ist.", "exampleTranslation": "She is sad because her dog is sick.", "emoji": "😢" },
+        { "word": "müde", "translation": "Tired", "example": "Ich bin sehr müde nach der Arbeit.", "exampleTranslation": "I am very tired after work.", "emoji": "😴" },
+        { "word": "aufgeregt", "translation": "Excited", "example": "Die Kinder sind aufgeregt vor Weihnachten.", "exampleTranslation": "The children are excited before Christmas.", "emoji": "🤩" },
+        { "word": "nervös", "translation": "Nervous", "example": "Er ist nervös vor dem Test.", "exampleTranslation": "He is nervous before the test.", "emoji": "😰" },
+        { "word": "wütend", "translation": "Angry", "example": "Sie ist wütend auf ihn.", "exampleTranslation": "She is angry at him.", "emoji": "😠" },
+        { "word": "überrascht", "translation": "Surprised", "example": "Er ist überrascht von der Nachricht.", "exampleTranslation": "He is surprised by the news.", "emoji": "😲" },
+        { "word": "ängstlich", "translation": "Anxious / scared", "example": "Das Kind ist ängstlich im Dunkeln.", "exampleTranslation": "The child is scared in the dark.", "emoji": "😨" },
+        { "word": "zufrieden", "translation": "Satisfied / content", "example": "Ich bin zufrieden mit meiner Arbeit.", "exampleTranslation": "I am satisfied with my work.", "emoji": "😌" },
+        { "word": "stolz", "translation": "Proud", "example": "Die Eltern sind stolz auf ihr Kind.", "exampleTranslation": "The parents are proud of their child.", "emoji": "🦁" },
+        { "word": "einsam", "translation": "Lonely", "example": "Er fühlt sich einsam in der neuen Stadt.", "exampleTranslation": "He feels lonely in the new city.", "emoji": "💔" },
+        { "word": "verliebt", "translation": "In love", "example": "Sie ist verliebt in ihren Nachbarn.", "exampleTranslation": "She is in love with her neighbour.", "emoji": "😍" },
+        { "word": "entspannt", "translation": "Relaxed", "example": "Nach dem Urlaub ist er sehr entspannt.", "exampleTranslation": "After the holiday he is very relaxed.", "emoji": "😎" },
+        { "word": "neugierig", "translation": "Curious", "example": "Das Kind ist sehr neugierig.", "exampleTranslation": "The child is very curious.", "emoji": "🤔" },
+        { "word": "dankbar", "translation": "Grateful", "example": "Ich bin sehr dankbar für Ihre Hilfe.", "exampleTranslation": "I am very grateful for your help.", "emoji": "🙏" }
+    ],
+    "haushalt": [
+        { "word": "kochen", "translation": "To cook", "example": "Ich koche das Abendessen.", "exampleTranslation": "I am cooking dinner.", "emoji": "🍳" },
+        { "word": "putzen", "translation": "To clean", "example": "Wir putzen das Haus am Samstag.", "exampleTranslation": "We clean the house on Saturday.", "emoji": "🧹" },
+        { "word": "waschen", "translation": "To wash", "example": "Sie wäscht die Wäsche.", "exampleTranslation": "She washes the laundry.", "emoji": "🫧" },
+        { "word": "bügeln", "translation": "To iron", "example": "Er bügelt die Hemden.", "exampleTranslation": "He irons the shirts.", "emoji": "👕" },
+        { "word": "staubsaugen", "translation": "To vacuum", "example": "Ich staubsauge jeden Freitag.", "exampleTranslation": "I vacuum every Friday.", "emoji": "🫧" },
+        { "word": "der Müll", "translation": "Rubbish / garbage", "example": "Bitte bring den Müll raus.", "exampleTranslation": "Please take the rubbish out.", "emoji": "🗑️" },
+        { "word": "das Geschirr", "translation": "Dishes / crockery", "example": "Ich spüle das Geschirr nach dem Essen.", "exampleTranslation": "I wash the dishes after eating.", "emoji": "🍽️" },
+        { "word": "die Spülmaschine", "translation": "Dishwasher", "example": "Räum die Spülmaschine aus.", "exampleTranslation": "Empty the dishwasher.", "emoji": "🔧" },
+        { "word": "einkaufen", "translation": "To go shopping", "example": "Wir gehen einkaufen.", "exampleTranslation": "We go shopping.", "emoji": "🛒" },
+        { "word": "aufräumen", "translation": "To tidy up", "example": "Räum bitte dein Zimmer auf!", "exampleTranslation": "Please tidy your room!", "emoji": "📦" },
+        { "word": "der Herd", "translation": "Cooker / stove", "example": "Stell den Topf auf den Herd.", "exampleTranslation": "Put the pot on the stove.", "emoji": "🔥" },
+        { "word": "der Kühlschrank", "translation": "Fridge / refrigerator", "example": "Die Milch steht im Kühlschrank.", "exampleTranslation": "The milk is in the fridge.", "emoji": "🧊" },
+        { "word": "der Staubsauger", "translation": "Vacuum cleaner", "example": "Der Staubsauger ist kaputt.", "exampleTranslation": "The vacuum cleaner is broken.", "emoji": "🫧" },
+        { "word": "das Handtuch", "translation": "Towel", "example": "Ich nehme ein frisches Handtuch.", "exampleTranslation": "I take a fresh towel.", "emoji": "🛁" },
+        { "word": "die Waschmaschine", "translation": "Washing machine", "example": "Die Waschmaschine läuft gerade.", "exampleTranslation": "The washing machine is running.", "emoji": "🔄" }
+    ],
+    "nahrungsmittel": [
+        { "word": "das Fleisch", "translation": "Meat", "example": "Er isst kein Fleisch.", "exampleTranslation": "He does not eat meat.", "emoji": "🥩" },
+        { "word": "der Fisch", "translation": "Fish", "example": "Wir essen freitags oft Fisch.", "exampleTranslation": "We often eat fish on Fridays.", "emoji": "🐟" },
+        { "word": "das Gemüse", "translation": "Vegetables", "example": "Gemüse ist sehr gesund.", "exampleTranslation": "Vegetables are very healthy.", "emoji": "🥦" },
+        { "word": "das Obst", "translation": "Fruit", "example": "Ich esse täglich Obst.", "exampleTranslation": "I eat fruit every day.", "emoji": "🍎" },
+        { "word": "die Nudeln", "translation": "Pasta / noodles", "example": "Nudeln sind sein Lieblingsessen.", "exampleTranslation": "Pasta is his favourite food.", "emoji": "🍝" },
+        { "word": "der Reis", "translation": "Rice", "example": "Wir kochen Reis mit Gemüse.", "exampleTranslation": "We cook rice with vegetables.", "emoji": "🍚" },
+        { "word": "die Suppe", "translation": "Soup", "example": "Die Suppe ist noch heiß.", "exampleTranslation": "The soup is still hot.", "emoji": "🍲" },
+        { "word": "das Ei", "translation": "Egg", "example": "Ich esse zum Frühstück ein Ei.", "exampleTranslation": "I eat an egg for breakfast.", "emoji": "🥚" },
+        { "word": "die Butter", "translation": "Butter", "example": "Er streicht Butter aufs Brot.", "exampleTranslation": "He spreads butter on the bread.", "emoji": "🧈" },
+        { "word": "der Käse", "translation": "Cheese", "example": "Deutschland hat viele Käsesorten.", "exampleTranslation": "Germany has many types of cheese.", "emoji": "🧀" },
+        { "word": "die Kartoffel", "translation": "Potato", "example": "Kartoffeln wachsen in der Erde.", "exampleTranslation": "Potatoes grow in the ground.", "emoji": "🥔" },
+        { "word": "das Salz", "translation": "Salt", "example": "Zu viel Salz ist ungesund.", "exampleTranslation": "Too much salt is unhealthy.", "emoji": "🧂" },
+        { "word": "der Zucker", "translation": "Sugar", "example": "Ich trinke Kaffee ohne Zucker.", "exampleTranslation": "I drink coffee without sugar.", "emoji": "🍬" },
+        { "word": "das Öl", "translation": "Oil", "example": "Wir braten das Fleisch in Öl.", "exampleTranslation": "We fry the meat in oil.", "emoji": "🫙" },
+        { "word": "die Tomate", "translation": "Tomato", "example": "Die Tomate ist rot und saftig.", "exampleTranslation": "The tomato is red and juicy.", "emoji": "🍅" }
+    ],
+    "jahreszeiten": [
+        { "word": "der Frühling", "translation": "Spring", "example": "Im Frühling blühen die Blumen.", "exampleTranslation": "In spring the flowers bloom.", "emoji": "🌸" },
+        { "word": "der Sommer", "translation": "Summer", "example": "Im Sommer ist es sehr heiß.", "exampleTranslation": "In summer it is very hot.", "emoji": "☀️" },
+        { "word": "der Herbst", "translation": "Autumn", "example": "Im Herbst fallen die Blätter.", "exampleTranslation": "In autumn the leaves fall.", "emoji": "🍂" },
+        { "word": "der Winter", "translation": "Winter", "example": "Im Winter schneit es oft.", "exampleTranslation": "In winter it often snows.", "emoji": "❄️" },
+        { "word": "das Blatt", "translation": "Leaf", "example": "Das Blatt fällt vom Baum.", "exampleTranslation": "The leaf falls from the tree.", "emoji": "🍃" },
+        { "word": "heiß", "translation": "Hot", "example": "Das Wasser ist sehr heiß.", "exampleTranslation": "The water is very hot.", "emoji": "🔥" },
+        { "word": "kalt", "translation": "Cold", "example": "Es ist sehr kalt heute.", "exampleTranslation": "It is very cold today.", "emoji": "🥶" },
+        { "word": "warm", "translation": "Warm", "example": "Das Wetter ist warm und sonnig.", "exampleTranslation": "The weather is warm and sunny.", "emoji": "🌤️" },
+        { "word": "der Regenschirm", "translation": "Umbrella", "example": "Nimm den Regenschirm mit!", "exampleTranslation": "Take the umbrella with you!", "emoji": "☂️" },
+        { "word": "der Frost", "translation": "Frost", "example": "Heute Nacht gibt es Frost.", "exampleTranslation": "There will be frost tonight.", "emoji": "🧊" },
+        { "word": "das Gewitter", "translation": "Thunderstorm", "example": "Das Gewitter kommt schnell.", "exampleTranslation": "The thunderstorm comes quickly.", "emoji": "⛈️" },
+        { "word": "der Nebel", "translation": "Fog / mist", "example": "Im Herbst gibt es oft Nebel.", "exampleTranslation": "In autumn there is often fog.", "emoji": "🌫️" },
+        { "word": "blühen", "translation": "To bloom / blossom", "example": "Die Kirschbäume blühen im April.", "exampleTranslation": "The cherry trees blossom in April.", "emoji": "🌺" },
+        { "word": "die Ernte", "translation": "Harvest", "example": "Im Herbst ist die Ernte.", "exampleTranslation": "In autumn is the harvest.", "emoji": "🌾" },
+        { "word": "das Eis", "translation": "Ice", "example": "Das Eis auf dem See ist gefährlich.", "exampleTranslation": "The ice on the lake is dangerous.", "emoji": "🧊" }
     ]
 };
 
@@ -4254,6 +4424,166 @@ const PRACTICE_DATABASE = {
                 { word: "geschlossen", translation: "closed" },
                 { word: "geöffnet", translation: "open" },
                 { word: "die Bäckerei", translation: "bakery" }
+            ]
+        },
+        {
+            id: "pr_read_11",
+            text: `<div class="document-box notice"><h3>Arztpraxis Dr. Becker</h3><p>Die Arztpraxis Dr. Becker ist vom 15. bis zum 22. August wegen Urlaub geschlossen. In dringenden Fällen wenden Sie sich bitte an Dr. Weber, Hauptstraße 10, Telefon: 555-1234.</p></div>`,
+            question: "Die Praxis von Dr. Becker ist im August eine Woche geschlossen.",
+            options: ["Richtig (True)", "Falsch (False)"],
+            correct: 0,
+            explanation: "The notice says the office is closed from August 15th to August 22nd, which is exactly one week.",
+            topic: "Lesen",
+            translation: "Doctor's office Dr. Becker. The doctor's office Dr. Becker is closed from August 15th to August 22nd due to holiday. In urgent cases, please contact Dr. Weber, Hauptstrasse 10, Phone: 555-1234.",
+            questionTranslation: "Dr. Becker's office is closed for one week in August.",
+            vocabSupport: [
+                { word: "wegen Urlaub", translation: "due to vacation/holiday" },
+                { word: "dringend", translation: "urgent" },
+                { word: "wenden an", translation: "to contact/turn to" }
+            ]
+        },
+        {
+            id: "pr_read_12",
+            text: `<div class="document-box letter"><h3>Pension Sonnenblick</h3><p>Sehr geehrte Familie Meier, wir bestätigen Ihre Reservierung für ein Dreibettzimmer vom 3. bis 6. September. Das Frühstück ist im Preis von 75 Euro pro Nacht enthalten. Herzliche Grüße, Pension Sonnenblick.</p></div>`,
+            question: "Familie Meier muss extra für das Frühstück bezahlen.",
+            options: ["Richtig (True)", "Falsch (False)"],
+            correct: 1,
+            explanation: "The confirmation letter states that breakfast is included in the price ('Das Frühstück ist im Preis ... enthalten').",
+            topic: "Lesen",
+            translation: "Guesthouse Sonnenblick. Dear family Meier, we confirm your reservation for a triple room from September 3rd to 6th. Breakfast is included in the price of 75 Euros per night. Warm regards, Guesthouse Sonnenblick.",
+            questionTranslation: "Family Meier has to pay extra for breakfast.",
+            vocabSupport: [
+                { word: "bestätigen", translation: "to confirm" },
+                { word: "das Dreibettzimmer", translation: "triple room" },
+                { word: "enthalten", translation: "included/contained" }
+            ]
+        },
+        {
+            id: "pr_read_13",
+            text: `<div class="document-box notice"><h3>Deutschkurs A2</h3><p>Deutsch lernen am Abend! Unser neuer A2-Kurs beginnt am Montag, 12. Oktober. Der Unterricht findet immer montags und mittwochs von 18:30 bis 20:00 Uhr statt. Anmeldung online möglich.</p></div>`,
+            question: "Der Deutschkurs findet zweimal in der Woche statt.",
+            options: ["Richtig (True)", "Falsch (False)"],
+            correct: 0,
+            explanation: "The flyer states the class takes place every Monday and Wednesday ('immer montags und mittwochs'), which is twice a week.",
+            topic: "Lesen",
+            translation: "German Course A2. Learn German in the evening! Our new A2 course starts on Monday, October 12th. Classes take place every Monday and Wednesday from 6:30 PM to 8:00 PM. Online registration available.",
+            questionTranslation: "The German course takes place twice a week.",
+            vocabSupport: [
+                { word: "am Abend", translation: "in the evening" },
+                { word: "stattfinden", translation: "to take place" },
+                { word: "immer", translation: "always" }
+            ]
+        },
+        {
+            id: "pr_read_14",
+            text: `<div class="document-box notice"><h3>Wetterwarnung</h3><p>Achtung: Am Dienstagabend gibt es im Süden von Deutschland starken Regen und Wind. Bitte bleiben Sie nach 18:00 Uhr zu Hause und schließen Sie alle Fenster.</p></div>`,
+            question: "Am Dienstagabend soll man zu Hause bleiben.",
+            options: ["Richtig (True)", "Falsch (False)"],
+            correct: 0,
+            explanation: "The weather warning asks people to stay home after 6 PM ('Bitte bleiben Sie nach 18:00 Uhr zu Hause').",
+            topic: "Lesen",
+            translation: "Weather Warning. Attention: On Tuesday evening there is heavy rain and wind in the south of Germany. Please stay at home after 6:00 PM and close all windows.",
+            questionTranslation: "One should stay at home on Tuesday evening.",
+            vocabSupport: [
+                { word: "Achtung", translation: "attention/warning" },
+                { word: "schließen", translation: "to close" },
+                { word: "der Süden", translation: "the south" }
+            ]
+        },
+        {
+            id: "pr_read_15",
+            text: `<div class="document-box letter"><h3>Einladung zum Hoffest</h3><p>Liebe Nachbarn, wir laden euch herzlich zu unserem Hoffest am Samstag, 5. Juni, ab 15:00 Uhr ein. Für Essen und Getränke ist gesorgt. Bitte bringt gute Laune mit!</p></div>`,
+            question: "Das Fest der Nachbarn fängt am Nachmittag an.",
+            options: ["Richtig (True)", "Falsch (False)"],
+            correct: 0,
+            explanation: "The invitation states the party starts at 3 PM ('ab 15:00 Uhr'), which is in the afternoon.",
+            topic: "Lesen",
+            translation: "Invitation to the Yard Party. Dear neighbors, we cordially invite you to our yard party on Saturday, June 5th, from 3:00 PM. Food and drinks are provided. Please bring good mood!",
+            questionTranslation: "The neighbors' party starts in the afternoon.",
+            vocabSupport: [
+                { word: "herzlich", translation: "cordially/warmly" },
+                { word: "die Nachbarn", translation: "neighbors" },
+                { word: "gesorgt", translation: "provided/cared for" }
+            ]
+        },
+        {
+            id: "pr_read_16",
+            text: `<div class="document-box notice"><h3>Fundbüro der Stadtwerke</h3><p>Haben Sie etwas im Bus oder in der S-Bahn verloren? Unser Fundbüro in der Bahnhofstraße 4 ist von Montag bis Donnerstag von 9:00 bis 16:00 Uhr geöffnet. Freitags geschlossen.</p></div>`,
+            question: "Man kann am Freitag verlorene Sachen abholen.",
+            options: ["Richtig (True)", "Falsch (False)"],
+            correct: 1,
+            explanation: "The notice says the lost and found office is closed on Fridays ('Freitags geschlossen').",
+            topic: "Lesen",
+            translation: "Lost and Found of the City Utilities. Have you lost something on the bus or subway? Our lost and found office at Bahnhofstrasse 4 is open from Monday to Thursday from 9:00 AM to 4:00 PM. Closed on Fridays.",
+            questionTranslation: "You can collect lost things on Friday.",
+            vocabSupport: [
+                { word: "verlieren", translation: "to lose" },
+                { word: "abholen", translation: "to collect/pick up" },
+                { word: "das Fundbüro", translation: "lost and found office" }
+            ]
+        },
+        {
+            id: "pr_read_17",
+            text: `<div class="document-box notice"><h3>Restaurant Pizzeria Bella</h3><p>Pizzeria Bella. Neue Öffnungszeiten: Täglich geöffnet von 11:30 bis 14:30 Uhr und von 17:30 bis 22:30 Uhr. Dienstag ist Ruhetag. Telefonische Bestellung: 089-456789.</p></div>`,
+            question: "Das Restaurant hat am Dienstag geschlossen.",
+            options: ["Richtig (True)", "Falsch (False)"],
+            correct: 0,
+            explanation: "The notice states Tuesday is a rest day ('Dienstag ist Ruhetag'), which means it is closed.",
+            topic: "Lesen",
+            translation: "Restaurant Pizzeria Bella. New opening hours: Open daily from 11:30 AM to 2:30 PM and from 5:30 PM to 10:30 PM. Tuesday is rest day (closed). Phone order: 089-456789.",
+            questionTranslation: "The restaurant is closed on Tuesday.",
+            vocabSupport: [
+                { word: "der Ruhetag", translation: "day of rest/closed day" },
+                { word: "geöffnet", translation: "open" },
+                { word: "täglich", translation: "daily" }
+            ]
+        },
+        {
+            id: "pr_read_18",
+            text: `<div class="document-box note"><h3>Paketstation Information</h3><p>Guten Tag, Ihr Paket liegt ab heute in der Paketstation 104, Marktstraße. Bitte holen Sie es innerhalb von 7 Tagen mit dem Abholcode 8765 ab.</p></div>`,
+            question: "Man muss das Paket heute abholen.",
+            options: ["Richtig (True)", "Falsch (False)"],
+            correct: 1,
+            explanation: "You have 7 days to collect the package ('innerhalb von 7 Tagen abholen'), so you don't have to pick it up today.",
+            topic: "Lesen",
+            translation: "Parcel Station Information. Good day, your package is located in parcel station 104, Marktstrasse from today. Please pick it up within 7 days using pick-up code 8765.",
+            questionTranslation: "You must pick up the package today.",
+            vocabSupport: [
+                { word: "innerhalb", translation: "within" },
+                { word: "abholen", translation: "to collect/pick up" },
+                { word: "der Abholcode", translation: "pick-up code" }
+            ]
+        },
+        {
+            id: "pr_read_19",
+            text: `<div class="document-box notice"><h3>Waschsalon Express</h3><p>Waschsalon Express: Geöffnet täglich von 6:00 bis 22:00 Uhr. Letzter Einlass um 21:00 Uhr. Bitte bringen Sie Ihr eigenes Waschmittel mit. Münzwechselautomat steht bereit.</p></div>`,
+            question: "Man kann um 21:30 Uhr noch mit dem Waschen beginnen.",
+            options: ["Richtig (True)", "Falsch (False)"],
+            correct: 1,
+            explanation: "The notice says the last entry is at 9:00 PM ('Letzter Einlass um 21:00 Uhr'), so you cannot enter or start after that.",
+            topic: "Lesen",
+            translation: "Laundromat Express. Open daily from 6:00 AM to 10:00 PM. Last admission at 9:00 PM. Please bring your own detergent. Coin change machine is ready.",
+            questionTranslation: "One can still start washing at 9:30 PM.",
+            vocabSupport: [
+                { word: "der Einlass", translation: "admission/entry" },
+                { word: "das Waschmittel", translation: "detergent" },
+                { word: "bereitstehen", translation: "to stand ready" }
+            ]
+        },
+        {
+            id: "pr_read_20",
+            text: `<div class="document-box notice"><h3>Hallenbad Aqua-Fun</h3><p>Hallenbad Aqua-Fun: Wegen Wartungsarbeiten bleibt das Hallenbad am kommenden Samstag (18. September) den ganzen Tag für Besucher geschlossen. Ab Sonntag normal geöffnet.</p></div>`,
+            question: "Am Sonntag kann man wieder im Hallenbad schwimmen.",
+            options: ["Richtig (True)", "Falsch (False)"],
+            correct: 0,
+            explanation: "The pool is only closed on Saturday; it opens normally starting from Sunday ('Ab Sonntag normal geöffnet').",
+            topic: "Lesen",
+            translation: "Indoor Pool Aqua-Fun. Indoor Pool Aqua-Fun: Due to maintenance work, the indoor pool remains closed to visitors all day this coming Saturday (September 18th). Normally open from Sunday.",
+            questionTranslation: "On Sunday you can swim in the indoor pool again.",
+            vocabSupport: [
+                { word: "die Wartungsarbeiten", translation: "maintenance works" },
+                { word: "geschlossen", translation: "closed" },
+                { word: "kommend", translation: "coming/upcoming" }
             ]
         }
     ],
@@ -5375,6 +5705,502 @@ const PRACTICE_DATABASE = {
                 { wrong: "Krankenkasse: TK Insurance", correct: "Krankenkasse: Techniker Krankenkasse (TK)", reason: "Use the full official German name, or the recognised abbreviation TK." }
             ],
             checklist: ["Name and DOB", "Address", "Insurance provider and type", "Symptoms listed", "Preferred time given", "New patient status", "Date and signature"]
+        },
+        // ── CATEGORY: PERSONAL (ws_021 – ws_022) ─────────────────────────────────
+        {
+            id: "ws_021",
+            category: "Personal",
+            categoryIcon: "👤",
+            title: "My Best Friend",
+            titleDE: "Mein bester Freund / Meine beste Freundin",
+            prompt: "Write a short text about your best friend. Mention their name, age, where they live, what they do, and what you like to do together.",
+            promptDE: "Schreiben Sie einen kurzen Text über Ihren besten Freund / Ihre beste Freundin. Schreiben Sie den Namen, das Alter, den Wohnort, den Beruf und was Sie gerne zusammen machen.",
+            wordTarget: 45,
+            vocab: [
+                { word: "der Freund / die Freundin", translation: "male friend / female friend", ml: "ഡേർ ഫ്രോയ്ന്ഡ് / ഡി ഫ്രോയ്ന്ഡിൻ" },
+                { word: "kennen", translation: "to know (a person)", ml: "കെനൻ" },
+                { word: "seit", translation: "since / for (time)", ml: "സൈറ്റ്" },
+                { word: "lustig", translation: "funny / fun", ml: "ലൂസ്ടിഗ്" },
+                { word: "hilfreich", translation: "helpful", ml: "ഹിൽഫ്റൈഹ്" },
+                { word: "treffen", translation: "to meet", ml: "ട്രെഫൻ" },
+                { word: "zusammen", translation: "together", ml: "ത്സൂസാമൻ" },
+                { word: "vertrauen", translation: "to trust", ml: "ഫേർട്രൗൻ" }
+            ],
+            expressions: [
+                { de: "Mein bester Freund heißt ...", en: "My best friend's name is ..." },
+                { de: "Ich kenne ihn/sie seit ... Jahren.", en: "I have known him/her for ... years." },
+                { de: "Er/Sie ist ... Jahre alt.", en: "He/She is ... years old." },
+                { de: "Er/Sie wohnt in ...", en: "He/She lives in ..." },
+                { de: "Wir treffen uns oft ...", en: "We often meet ..." },
+                { de: "Er/Sie ist sehr lustig und hilfsbereit.", en: "He/She is very funny and helpful." }
+            ],
+            tips: [
+                "Use 'er' for male friends and 'sie' for female friends consistently.",
+                "Use 'seit' to express how long you have known someone: 'Ich kenne sie seit 3 Jahren.'",
+                "Describe one or two personality traits using adjectives.",
+                "Mention an activity you enjoy doing together.",
+                "Keep sentences short and in the present tense."
+            ],
+            modelAnswer: "Mein bester Freund heißt Thomas. Ich kenne ihn seit fünf Jahren. Er ist 30 Jahre alt und wohnt in München. Er arbeitet als Lehrer. Thomas ist sehr lustig und hilfsbereit. Wir treffen uns oft am Wochenende und gehen zusammen wandern. Er ist ein wirklich guter Freund!",
+            guidedScaffold: [
+                { label: "Name + How long you know them", hint: "Mein bester Freund / Meine beste Freundin heißt ... / Ich kenne ihn/sie seit ... Jahren." },
+                { label: "Age + City", hint: "Er/Sie ist ... Jahre alt und wohnt in ..." },
+                { label: "Job / Studies", hint: "Er/Sie arbeitet als ... / Er/Sie studiert ..." },
+                { label: "Personality traits", hint: "Er/Sie ist sehr ... und ..." },
+                { label: "Activities together", hint: "Wir ... gerne zusammen ..." },
+                { label: "Closing sentence", hint: "Er/Sie ist ein wirklich guter Freund / eine wirklich gute Freundin!" }
+            ],
+            commonMistakes: [
+                { wrong: "Mein beste Freundin heißt ...", correct: "Meine beste Freundin heißt ...", reason: "'Freundin' is feminine, so the possessive must be 'meine', not 'mein'." },
+                { wrong: "Ich kenne sie für 3 Jahre.", correct: "Ich kenne sie seit 3 Jahren.", reason: "Use 'seit' (+ dative) in German for durations extending into the present, not 'für'." }
+            ],
+            checklist: ["Friend's name mentioned", "How long you know them", "Age or city included", "Job or activity mentioned", "Personality described", "Activity together mentioned"]
+        },
+        {
+            id: "ws_022",
+            category: "Personal",
+            categoryIcon: "👤",
+            title: "My Favorite Food",
+            titleDE: "Mein Lieblingsessen",
+            prompt: "Write a short text about food you like. Describe what you eat for breakfast, lunch, and dinner. Mention your favorite dish and whether you like to cook.",
+            promptDE: "Schreiben Sie einen kurzen Text über Ihr Essen. Beschreiben Sie, was Sie zum Frühstück, Mittagessen und Abendessen essen. Nennen Sie Ihr Lieblingsessen und ob Sie gerne kochen.",
+            wordTarget: 45,
+            vocab: [
+                { word: "das Frühstück", translation: "breakfast", ml: "ദാസ് ഫ്രൂഷ്ടൂക്ക്" },
+                { word: "das Mittagessen", translation: "lunch", ml: "ദാസ് മിറ്റാഗ്സ്സൻ" },
+                { word: "das Abendessen", translation: "dinner", ml: "ദാസ് ആബൻഡ്സൻ" },
+                { word: "kochen", translation: "to cook", ml: "കോഷൻ" },
+                { word: "schmecken", translation: "to taste (good)", ml: "ഷ്മെകൻ" },
+                { word: "das Lieblingsessen", translation: "favourite food", ml: "ദാസ് ലീബ്ലിങ്സ്സൻ" },
+                { word: "lecker", translation: "delicious / yummy", ml: "ലെകർ" },
+                { word: "vegetarisch", translation: "vegetarian", ml: "വെഗെടാരിഷ്" }
+            ],
+            expressions: [
+                { de: "Zum Frühstück esse ich ...", en: "For breakfast I eat ..." },
+                { de: "Zum Mittagessen esse ich meistens ...", en: "For lunch I usually eat ..." },
+                { de: "Zum Abendessen koche ich oft ...", en: "For dinner I often cook ..." },
+                { de: "Mein Lieblingsessen ist ...", en: "My favourite food is ..." },
+                { de: "Das schmeckt sehr lecker!", en: "That tastes very delicious!" },
+                { de: "Ich koche gern / nicht so gern.", en: "I like / do not really like to cook." }
+            ],
+            tips: [
+                "Structure your text by meal: Frühstück → Mittagessen → Abendessen.",
+                "Use 'meistens' (usually) or 'manchmal' (sometimes) to make your text natural.",
+                "Mention one specific dish you love and why.",
+                "Say whether you cook at home or prefer restaurants.",
+                "Keep adjectives simple: lecker, gut, gesund, süß."
+            ],
+            modelAnswer: "Ich esse gerne und probiere gerne neues Essen. Zum Frühstück trinke ich Kaffee und esse Toast mit Butter. Zum Mittagessen esse ich meistens Reis mit Gemüse oder eine Suppe. Mein Lieblingsessen ist Spaghetti Bolognese – das schmeckt sehr lecker! Am Abend koche ich oft selbst. Ich koche gern, aber manchmal bestelle ich auch Pizza. Ich esse kein Fleisch, ich bin vegetarisch.",
+            guidedScaffold: [
+                { label: "Introduction", hint: "Ich esse gerne ... / Ich mag ... sehr gern." },
+                { label: "Breakfast", hint: "Zum Frühstück esse/trinke ich ..." },
+                { label: "Lunch", hint: "Zum Mittagessen esse ich meistens ..." },
+                { label: "Favourite dish", hint: "Mein Lieblingsessen ist ... Das schmeckt ..." },
+                { label: "Dinner + Cooking", hint: "Am Abend ... / Ich koche gern, weil ..." },
+                { label: "Special note", hint: "Ich bin vegetarisch. / Ich esse alles gern." }
+            ],
+            commonMistakes: [
+                { wrong: "Ich esse Frühstück Brot.", correct: "Zum Frühstück esse ich Brot.", reason: "Use 'zum + meal' to express 'for breakfast/lunch/dinner'." },
+                { wrong: "Das schmeckt sehr gut lecker.", correct: "Das schmeckt sehr lecker. / Das ist sehr lecker.", reason: "'Lecker' already means delicious; 'gut lecker' is redundant." }
+            ],
+            checklist: ["Breakfast described", "Lunch mentioned", "Dinner or cooking mentioned", "Favourite dish named", "Adjective used to describe food", "Cooking preference stated"]
+        },
+        // ── CATEGORY: MESSAGES (ws_023 – ws_025) ─────────────────────────────────
+        {
+            id: "ws_023",
+            category: "Messages",
+            categoryIcon: "💬",
+            title: "Reschedule a Meeting",
+            titleDE: "Termin verschieben",
+            prompt: "Send a short message to your colleague. Say that you cannot attend the meeting tomorrow at 10 AM, explain why (you are sick), and suggest rescheduling to Friday afternoon at 2 PM.",
+            promptDE: "Schreiben Sie eine kurze Nachricht an Ihren Kollegen / Ihre Kollegin. Sagen Sie, dass Sie morgen um 10 Uhr nicht zum Meeting kommen können, erklären Sie den Grund (Sie sind krank) und schlagen Sie einen neuen Termin vor: Freitag, 14 Uhr.",
+            wordTarget: 40,
+            vocab: [
+                { word: "der Termin", translation: "appointment / meeting", ml: "ഡേർ ടെർമീൻ" },
+                { word: "verschieben", translation: "to postpone / reschedule", ml: "ഫേർഷീബൻ" },
+                { word: "leider", translation: "unfortunately", ml: "ലൈഡർ" },
+                { word: "krank", translation: "sick / ill", ml: "ക്രാങ്ക്" },
+                { word: "der Vorschlag", translation: "suggestion / proposal", ml: "ഡേർ ഫോർഷ്ലാഗ്" },
+                { word: "möglich", translation: "possible", ml: "മോഗ്ലിഹ്" },
+                { word: "passen", translation: "to suit / be convenient", ml: "പാസൺ" },
+                { word: "entschuldigung", translation: "excuse me / sorry", ml: "എൻഷൂൾഡിഗൂങ്" }
+            ],
+            expressions: [
+                { de: "Leider kann ich morgen nicht kommen.", en: "Unfortunately I cannot come tomorrow." },
+                { de: "Ich bin krank und muss zu Hause bleiben.", en: "I am sick and have to stay at home." },
+                { de: "Können wir den Termin verschieben?", en: "Can we reschedule the appointment?" },
+                { de: "Wäre Freitag um 14 Uhr möglich?", en: "Would Friday at 2 PM be possible?" },
+                { de: "Es tut mir leid für die Unannehmlichkeiten.", en: "I am sorry for the inconvenience." },
+                { de: "Passt Ihnen / dir ...?", en: "Does ... suit you?" }
+            ],
+            tips: [
+                "Start with a polite greeting and name the recipient.",
+                "Use 'leider' to sound polite when declining: 'Leider kann ich nicht ...'",
+                "Give a brief, clear reason — no need for long explanations.",
+                "Always suggest a new date/time as an alternative.",
+                "End with an apology and a friendly closing."
+            ],
+            modelAnswer: "Hallo Markus,\n\nleider kann ich morgen um 10 Uhr nicht zum Meeting kommen. Ich bin krank und muss zu Hause bleiben. Es tut mir sehr leid!\n\nKönnen wir den Termin verschieben? Wäre Freitag um 14 Uhr möglich? Das passt mir sehr gut.\n\nViele Grüße,\nSophie",
+            guidedScaffold: [
+                { label: "Greeting + Recipient", hint: "Hallo [Name]," },
+                { label: "Cancellation + Reason", hint: "Leider kann ich am ... nicht kommen, weil ich krank bin." },
+                { label: "Apology", hint: "Es tut mir sehr leid!" },
+                { label: "Suggest new time", hint: "Können wir den Termin verschieben? Wäre [day + time] möglich?" },
+                { label: "Check availability", hint: "Passt dir/Ihnen das?" },
+                { label: "Closing", hint: "Viele Grüße, [Your Name]" }
+            ],
+            commonMistakes: [
+                { wrong: "Ich kann nicht kommen weil ich bin krank.", correct: "Ich kann nicht kommen, weil ich krank bin.", reason: "In German, the verb goes to the END of a 'weil' (because) clause." },
+                { wrong: "Können wir den Termin pushen?", correct: "Können wir den Termin verschieben?", reason: "Use the German word 'verschieben' to mean reschedule/postpone, not the English loanword 'pushen'." }
+            ],
+            checklist: ["Recipient greeted", "Cannot attend stated clearly", "Reason given", "Apology included", "New time suggested", "Polite closing used"]
+        },
+        {
+            id: "ws_024",
+            category: "Messages",
+            categoryIcon: "💬",
+            title: "Dinner Invitation",
+            titleDE: "Einladung zum Abendessen",
+            prompt: "Invite your neighbor to dinner at your home. Mention the day (Saturday evening), the time (7 PM), what you will cook, and ask if they can bring something to drink.",
+            promptDE: "Laden Sie Ihren Nachbarn / Ihre Nachbarin zum Abendessen ein. Nennen Sie den Tag (Samstagabend), die Uhrzeit (19 Uhr), was Sie kochen, und fragen Sie, ob er/sie etwas zu trinken mitbringen kann.",
+            wordTarget: 40,
+            vocab: [
+                { word: "einladen", translation: "to invite", ml: "ഐൻലാഡൻ" },
+                { word: "der Nachbar / die Nachbarin", translation: "neighbour (m/f)", ml: "ഡേർ നാഹ്ബാർ / ഡി നാഹ്ബാരിൻ" },
+                { word: "das Abendessen", translation: "dinner", ml: "ദാസ് ആബൻഡ്സൻ" },
+                { word: "mitbringen", translation: "to bring along", ml: "മിറ്റ്ബ്രിങ്ഗൻ" },
+                { word: "herzlich", translation: "warmly / cordially", ml: "ഹേർട്സ്ലിഹ്" },
+                { word: "kochen", translation: "to cook", ml: "കോഷൻ" },
+                { word: "Samstagabend", translation: "Saturday evening", ml: "സാംസ്ടാഗ്സ്ആബൻഡ്" },
+                { word: "Getränke", translation: "drinks / beverages", ml: "ഗേട്രേങ്കേ" }
+            ],
+            expressions: [
+                { de: "Ich möchte Sie / dich herzlich einladen.", en: "I would like to cordially invite you." },
+                { de: "Am Samstagabend um 19 Uhr.", en: "On Saturday evening at 7 PM." },
+                { de: "Ich koche ... für uns.", en: "I am cooking ... for us." },
+                { de: "Können Sie / kannst du etwas mitbringen?", en: "Can you bring something?" },
+                { de: "Zum Beispiel etwas zu trinken.", en: "For example something to drink." },
+                { de: "Ich freue mich auf Ihren / deinen Besuch.", en: "I look forward to your visit." }
+            ],
+            tips: [
+                "Use 'Sie' (formal) if writing to someone older or less familiar, 'du' if close.",
+                "State the day and time clearly.",
+                "Mention what you plan to cook — it makes the invitation more personal.",
+                "Politely ask the guest to bring something using 'Können Sie/du ...?'",
+                "End warmly: 'Ich freue mich auf dich!'"
+            ],
+            modelAnswer: "Hallo Frau Müller,\n\nIch möchte Sie herzlich zu einem Abendessen bei mir einladen! Am Samstagabend um 19 Uhr.\n\nIch koche Spaghetti Bolognese und einen Salat. Das Essen ist fertig um 19:30 Uhr.\n\nKönnen Sie bitte etwas zu trinken mitbringen? Zum Beispiel Wasser oder Saft.\n\nIch freue mich sehr auf Ihren Besuch!\n\nViele Grüße,\nAnna",
+            guidedScaffold: [
+                { label: "Greeting", hint: "Hallo [Name]," },
+                { label: "Invitation + Day & Time", hint: "Ich möchte Sie/dich herzlich einladen. Am [day] um [time] Uhr." },
+                { label: "What you are cooking", hint: "Ich koche ... Das Essen ist fertig um ..." },
+                { label: "Request to bring something", hint: "Können Sie/du bitte etwas mitbringen? Zum Beispiel ..." },
+                { label: "Closing excitement", hint: "Ich freue mich auf Ihren/deinen Besuch!" },
+                { label: "Sign-off", hint: "Viele Grüße, [Your Name]" }
+            ],
+            commonMistakes: [
+                { wrong: "Ich lade Sie einladen.", correct: "Ich möchte Sie einladen.", reason: "'Einladen' is a separable verb. The prefix 'ein' goes to the end: 'Ich lade Sie ein.' Or use 'möchte ... einladen'." },
+                { wrong: "Am Samstag Abend", correct: "am Samstagabend", reason: "In German, compound time words like 'Samstagabend' are written as one word, and 'am' is lowercase." }
+            ],
+            checklist: ["Recipient greeted", "Invitation clearly stated", "Day and time given", "Food mentioned", "Request to bring something included", "Warm closing used"]
+        },
+        {
+            id: "ws_025",
+            category: "Messages",
+            categoryIcon: "💬",
+            title: "Package Collection",
+            titleDE: "Paket abholen – Nachricht an den Nachbarn",
+            prompt: "Write a short note to your neighbor. Ask them if they can collect a delivery package for you tomorrow (you are at work all day). Tell them where to leave it and thank them warmly.",
+            promptDE: "Schreiben Sie eine kurze Nachricht an Ihren Nachbarn. Fragen Sie, ob er/sie morgen ein Paket für Sie annehmen kann (Sie sind den ganzen Tag auf der Arbeit). Sagen Sie, wo er/sie das Paket lassen soll, und bedanken Sie sich herzlich.",
+            wordTarget: 40,
+            vocab: [
+                { word: "das Paket", translation: "parcel / package", ml: "ദാസ് പേക്കേറ്റ്" },
+                { word: "abholen", translation: "to pick up / collect", ml: "ആബ്ഹോലൻ" },
+                { word: "annehmen", translation: "to accept / receive", ml: "ആൻനേമൻ" },
+                { word: "die Lieferung", translation: "delivery", ml: "ഡി ലീഫേറൂങ്" },
+                { word: "den ganzen Tag", translation: "all day / the whole day", ml: "ഡൻ ഗാൻഷൻ ടാഗ്" },
+                { word: "die Tür", translation: "door", ml: "ഡി ടൂർ" },
+                { word: "danke vielmals", translation: "many thanks", ml: "ഡാങ്കേ ഫീൽമാൽസ്" },
+                { word: "vor der Tür", translation: "in front of the door", ml: "ഫോർ ഡേർ ടൂർ" }
+            ],
+            expressions: [
+                { de: "Kannst du / Können Sie morgen ein Paket für mich annehmen?", en: "Can you accept a package for me tomorrow?" },
+                { de: "Ich bin morgen den ganzen Tag auf der Arbeit.", en: "I am at work all day tomorrow." },
+                { de: "Bitte stelle das Paket vor meine Tür.", en: "Please put the parcel in front of my door." },
+                { de: "Vielen Dank für deine Hilfe!", en: "Many thanks for your help!" },
+                { de: "Ich mache das nächste Woche wieder gut.", en: "I'll make it up to you next week." },
+                { de: "Der Lieferant kommt zwischen ... und ... Uhr.", en: "The delivery person comes between ... and ... o'clock." }
+            ],
+            tips: [
+                "Be polite and brief — this is an informal neighbour note.",
+                "State clearly that you will be away and why.",
+                "Give simple instructions on where to leave the parcel.",
+                "Thank them sincerely at the end.",
+                "Optional: offer to return the favour."
+            ],
+            modelAnswer: "Hallo Klaus,\n\nkannst du morgen ein Paket für mich annehmen? Ich bin den ganzen Tag auf der Arbeit und kann nicht zu Hause sein.\n\nDer Lieferant kommt zwischen 10 und 14 Uhr. Bitte stelle das Paket einfach vor meine Tür.\n\nVielen Dank für deine Hilfe! Ich mache das nächste Woche wieder gut.\n\nLiebe Grüße,\nMaria",
+            guidedScaffold: [
+                { label: "Greeting", hint: "Hallo [Name]," },
+                { label: "Request + Reason", hint: "Kannst du morgen ein Paket für mich annehmen? Ich bin den ganzen Tag auf der Arbeit." },
+                { label: "Delivery time", hint: "Der Lieferant kommt zwischen ... und ... Uhr." },
+                { label: "Where to put the package", hint: "Bitte stelle das Paket vor meine Tür / in den Flur." },
+                { label: "Thanks + Offer to return favour", hint: "Vielen Dank! Ich mache das nächste Woche wieder gut." },
+                { label: "Closing", hint: "Liebe Grüße, [Your Name]" }
+            ],
+            commonMistakes: [
+                { wrong: "Kannst du ein Paket für mich nehmen?", correct: "Kannst du ein Paket für mich annehmen?", reason: "'Annehmen' means to receive/accept a delivery. 'Nehmen' alone means simply to take, which is less precise here." },
+                { wrong: "Ich bin auf die Arbeit.", correct: "Ich bin auf der Arbeit.", reason: "Use 'auf der Arbeit' (dative) to say you are at work. 'auf die Arbeit' would imply going to work (movement)." }
+            ],
+            checklist: ["Neighbour greeted", "Request to collect stated", "Reason for absence given", "Delivery time or window mentioned", "Instructions where to put package", "Thanks included"]
+        },
+        // ── CATEGORY: EMAILS (ws_026 – ws_028) ───────────────────────────────────
+        {
+            id: "ws_026",
+            category: "Emails",
+            categoryIcon: "📧",
+            title: "Job Application Email",
+            titleDE: "Bewerbung um einen Minijob",
+            prompt: "Write a formal email applying for a mini-job as a cashier at a supermarket. Introduce yourself, describe your German language level and availability, and ask for an interview appointment.",
+            promptDE: "Schreiben Sie eine formelle E-Mail als Bewerbung für einen Minijob als Kassiererin/Kassierer im Supermarkt. Stellen Sie sich vor, beschreiben Sie Ihre Deutschkenntnisse und Verfügbarkeit, und bitten Sie um ein Vorstellungsgespräch.",
+            wordTarget: 60,
+            vocab: [
+                { word: "die Bewerbung", translation: "application", ml: "ഡി ബേവേർബൂങ്" },
+                { word: "der Minijob", translation: "mini-job (part-time)", ml: "ഡേർ മിനിജോബ്" },
+                { word: "die Kassiererin", translation: "cashier (female)", ml: "ഡി കാസ്സീരേരിൻ" },
+                { word: "verfügbar", translation: "available", ml: "ഫേർഫൂഗ്ബാർ" },
+                { word: "die Deutschkenntnisse", translation: "German language skills", ml: "ഡി ഡോയ്ഷ്കെൻട്നിസ്സേ" },
+                { word: "das Vorstellungsgespräch", translation: "job interview", ml: "ദാസ് ഫോർഷ്ടെലൂങ്ഗ്സ്ഗ്ഷ്പ്രേഹ്" },
+                { word: "sich bewerben", translation: "to apply (for a job)", ml: "സിഹ് ബേവേർബൺ" },
+                { word: "mit freundlichen Grüßen", translation: "with kind regards", ml: "മിറ്റ് ഫ്രോയ്ൻഡ്ലിഹൻ ഗ്രൂസൺ" }
+            ],
+            expressions: [
+                { de: "Ich bewerbe mich um die Stelle als ...", en: "I am applying for the position as ..." },
+                { de: "Ich habe Deutschkenntnisse auf Niveau A1/A2.", en: "I have German skills at A1/A2 level." },
+                { de: "Ich bin montags bis freitags verfügbar.", en: "I am available Monday to Friday." },
+                { de: "Ich würde mich über ein Vorstellungsgespräch freuen.", en: "I would be happy to come for an interview." },
+                { de: "Über Ihre Rückmeldung freue ich mich.", en: "I look forward to hearing from you." },
+                { de: "Mit freundlichen Grüßen,", en: "With kind regards," }
+            ],
+            tips: [
+                "Always start a formal email with 'Sehr geehrte Damen und Herren,' if you don't know the name.",
+                "State clearly which position you are applying for in the first sentence.",
+                "Mention your language level and practical availability.",
+                "Request an interview politely using 'Ich würde mich über ein Gespräch freuen.'",
+                "End all formal emails with 'Mit freundlichen Grüßen' (not 'Viele Grüße')."
+            ],
+            modelAnswer: "Sehr geehrte Damen und Herren,\n\nmein Name ist Priya Kumar und ich bewerbe mich um die Stelle als Kassiererin in Ihrem Supermarkt.\n\nIch bin 25 Jahre alt und komme aus Indien. Ich lerne seit einem Jahr Deutsch und habe Sprachkenntnisse auf Niveau A2. Ich bin montags bis freitags verfügbar, auch morgens und nachmittags.\n\nIch würde mich sehr über ein Vorstellungsgespräch freuen. Bitte kontaktieren Sie mich unter: priya.kumar@email.de\n\nMit freundlichen Grüßen,\nPriya Kumar",
+            guidedScaffold: [
+                { label: "Formal greeting", hint: "Sehr geehrte Damen und Herren," },
+                { label: "Who you are + which job", hint: "Mein Name ist ... und ich bewerbe mich um die Stelle als ..." },
+                { label: "Background (age, origin)", hint: "Ich bin ... Jahre alt und komme aus ..." },
+                { label: "Language skills + Level", hint: "Ich lerne seit ... Deutsch. Mein Niveau ist ..." },
+                { label: "Availability", hint: "Ich bin ... verfügbar." },
+                { label: "Request interview + Contact", hint: "Ich würde mich über ein Gespräch freuen. Sie erreichen mich unter ..." },
+                { label: "Formal closing", hint: "Mit freundlichen Grüßen, [Full Name]" }
+            ],
+            commonMistakes: [
+                { wrong: "Ich bewerbe für den Minijob.", correct: "Ich bewerbe mich für den Minijob / um die Stelle als ...", reason: "'Sich bewerben' is a reflexive verb — always include the reflexive pronoun 'mich'." },
+                { wrong: "Viele Grüße", correct: "Mit freundlichen Grüßen", reason: "'Viele Grüße' is informal. In formal emails and letters, always use 'Mit freundlichen Grüßen'." }
+            ],
+            checklist: ["Formal greeting used", "Position applied for stated", "Personal background given", "German language level mentioned", "Availability stated", "Interview request included", "Formal closing with full name"]
+        },
+        {
+            id: "ws_027",
+            category: "Emails",
+            categoryIcon: "📧",
+            title: "German Learning Help",
+            titleDE: "Hilfe beim Deutschlernen – E-Mail an den Lehrer",
+            prompt: "Write an email to your German teacher. Ask for help with a grammar point (the dative case). Suggest a time to meet (Thursday at 4 PM) and thank them for their support.",
+            promptDE: "Schreiben Sie eine E-Mail an Ihren Deutschlehrer. Bitten Sie um Hilfe bei einem Grammatikthema (Dativ). Schlagen Sie eine Treffen-Zeit vor (Donnerstag um 16 Uhr) und bedanken Sie sich für die Unterstützung.",
+            wordTarget: 55,
+            vocab: [
+                { word: "die Grammatik", translation: "grammar", ml: "ഡി ഗ്രമ്മാടിക്ക്" },
+                { word: "der Dativ", translation: "dative case", ml: "ഡേർ ഡാടീഫ്" },
+                { word: "verstehen", translation: "to understand", ml: "ഫേർഷ്ടേൻ" },
+                { word: "die Hilfe", translation: "help", ml: "ഡി ഹിൽഫേ" },
+                { word: "ein Treffen", translation: "a meeting", ml: "ഐൻ ട്രെഫൻ" },
+                { word: "vorschlagen", translation: "to suggest", ml: "ഫോർഷ്ലാഗൻ" },
+                { word: "dankbar", translation: "grateful / thankful", ml: "ഡാങ്ക്ബാർ" },
+                { word: "die Sprechstunde", translation: "office hours", ml: "ഡി ഷ്പ്രെഹ്ഷ്ടൂൻഡേ" }
+            ],
+            expressions: [
+                { de: "Ich verstehe den Dativ nicht gut.", en: "I don't understand the dative case well." },
+                { de: "Könnten Sie mir helfen?", en: "Could you help me?" },
+                { de: "Ich schlage vor, uns am Donnerstag zu treffen.", en: "I suggest we meet on Thursday." },
+                { de: "Wäre 16 Uhr für Sie in Ordnung?", en: "Would 4 PM be okay for you?" },
+                { de: "Ich bin Ihnen sehr dankbar.", en: "I am very grateful to you." },
+                { de: "Herzlichen Dank für Ihre Unterstützung.", en: "Many thanks for your support." }
+            ],
+            tips: [
+                "Use 'Sehr geehrte/r ...' for teachers you address formally, or 'Liebe/r ...' if the tone is friendly.",
+                "Explain the specific grammar problem clearly and briefly.",
+                "Suggest a specific day and time — don't leave it vague.",
+                "Always thank the teacher at the end.",
+                "Keep the email polite but not too stiff — teachers appreciate warmth."
+            ],
+            modelAnswer: "Liebe Frau Schmidt,\n\nmein Name ist Arjun und ich besuche Ihren Deutschkurs auf Niveau A1.\n\nIch schreibe Ihnen, weil ich ein Problem mit der Grammatik habe. Ich verstehe den Dativ nicht gut und mache viele Fehler. Könnten Sie mir bitte helfen?\n\nIch schlage vor, uns am Donnerstag zu treffen. Wäre 16 Uhr für Sie in Ordnung? Ich komme gerne in Ihre Sprechstunde.\n\nHerzlichen Dank für Ihre Hilfe und Unterstützung!\n\nMit freundlichen Grüßen,\nArjun Patel",
+            guidedScaffold: [
+                { label: "Greeting", hint: "Liebe Frau / Lieber Herr [Name]," },
+                { label: "Who you are", hint: "Mein Name ist ... und ich besuche Ihren ... Kurs." },
+                { label: "Grammar problem", hint: "Ich verstehe [topic] nicht gut und brauche Hilfe." },
+                { label: "Request for help", hint: "Könnten Sie mir bitte helfen?" },
+                { label: "Suggest time", hint: "Ich schlage vor, uns am [day] um [time] Uhr zu treffen. Wäre das in Ordnung?" },
+                { label: "Thank you + Closing", hint: "Herzlichen Dank! Mit freundlichen Grüßen, [Your Name]" }
+            ],
+            commonMistakes: [
+                { wrong: "Ich verstehe nicht der Dativ.", correct: "Ich verstehe den Dativ nicht.", reason: "In German, negation 'nicht' usually comes at or near the end of the sentence, not before the object." },
+                { wrong: "Könnten Sie helfen mir?", correct: "Könnten Sie mir helfen?", reason: "The indirect object pronoun 'mir' comes before the infinitive 'helfen' in standard German word order." }
+            ],
+            checklist: ["Greeting used", "Self-identified as a student", "Grammar problem clearly stated", "Help requested politely", "Time suggested", "Thank you included", "Formal closing used"]
+        },
+        {
+            id: "ws_028",
+            category: "Emails",
+            categoryIcon: "📧",
+            title: "Vacation Notice to Landlord",
+            titleDE: "Mitteilung an den Vermieter – Urlaub",
+            prompt: "Write an email to your landlord. Inform them that you are going on vacation for 2 weeks (August 1–14). Mention who has your spare key in case of emergency, and give your return date.",
+            promptDE: "Schreiben Sie eine E-Mail an Ihren Vermieter. Informieren Sie ihn darüber, dass Sie für 2 Wochen in Urlaub fahren (1.–14. August). Sagen Sie, wer Ihren Ersatzschlüssel hat (bei Notfall), und nennen Sie Ihr Rückkehrdatum.",
+            wordTarget: 55,
+            vocab: [
+                { word: "der Vermieter", translation: "landlord", ml: "ഡേർ ഫേർമീറ്റർ" },
+                { word: "der Urlaub", translation: "vacation / holiday", ml: "ഡേർ ഊർലൗബ്" },
+                { word: "der Notfall", translation: "emergency", ml: "ഡേർ നോട്ഫൾ" },
+                { word: "der Ersatzschlüssel", translation: "spare key", ml: "ഡേർ എർസ്സാട്ട്ഷ്ലൂസ്സൽ" },
+                { word: "abwesend", translation: "absent", ml: "ആബ്വേസൻഡ്" },
+                { word: "die Rückkehr", translation: "return", ml: "ഡി റൂക്ക്കേർ" },
+                { word: "informieren", translation: "to inform", ml: "ഇൻഫോർമീരൻ" },
+                { word: "erreichbar", translation: "reachable / contactable", ml: "എർറൈഹ്ബാർ" }
+            ],
+            expressions: [
+                { de: "Ich möchte Sie informieren, dass ich in Urlaub fahre.", en: "I would like to inform you that I am going on vacation." },
+                { de: "Ich bin vom 1. bis 14. August abwesend.", en: "I will be absent from August 1st to 14th." },
+                { de: "Im Notfall hat Frau / Herr ... meinen Ersatzschlüssel.", en: "In case of emergency, Ms./Mr. ... has my spare key." },
+                { de: "Ich bin unter ... erreichbar.", en: "I can be reached at ..." },
+                { de: "Ich kehre am 15. August zurück.", en: "I return on August 15th." },
+                { de: "Bitte kontaktieren Sie mich, wenn es Probleme gibt.", en: "Please contact me if there are any problems." }
+            ],
+            tips: [
+                "Keep the tone formal since you are writing to your landlord.",
+                "Clearly state the exact dates you will be away.",
+                "Always mention who has the spare key — this is practical and reassuring.",
+                "Provide a contact number in case of emergency.",
+                "Give your exact return date so the landlord knows when you're back."
+            ],
+            modelAnswer: "Sehr geehrter Herr Becker,\n\nmit dieser E-Mail möchte ich Sie informieren, dass ich vom 1. bis 14. August in Urlaub fahre. Ich werde für zwei Wochen abwesend sein.\n\nIm Notfall hat meine Nachbarin, Frau Anna Schulz (Wohnung 3B), meinen Ersatzschlüssel. Sie können sie unter 0176-1234567 erreichen.\n\nIch bin per E-Mail erreichbar: priya@email.de. Ich kehre am 15. August zurück.\n\nVielen Dank für Ihr Verständnis.\n\nMit freundlichen Grüßen,\nPriya Kumar",
+            guidedScaffold: [
+                { label: "Formal greeting", hint: "Sehr geehrter Herr / Sehr geehrte Frau [Name]," },
+                { label: "Purpose of email", hint: "Mit dieser E-Mail möchte ich Sie informieren, dass ich in Urlaub fahre." },
+                { label: "Exact dates", hint: "Ich bin vom [date] bis [date] abwesend." },
+                { label: "Spare key holder", hint: "Im Notfall hat [name] meinen Ersatzschlüssel. Sie/Er wohnt in ..." },
+                { label: "Contact info", hint: "Ich bin per E-Mail / Telefon erreichbar: ..." },
+                { label: "Return date + Closing", hint: "Ich kehre am [date] zurück. Mit freundlichen Grüßen, [Name]" }
+            ],
+            commonMistakes: [
+                { wrong: "Ich fahre Urlaub.", correct: "Ich fahre in Urlaub.", reason: "The correct phrase is 'in Urlaub fahren' — always include the preposition 'in'." },
+                { wrong: "Ich kehre am 15. August zurücke.", correct: "Ich kehre am 15. August zurück.", reason: "'Zurückkehren' is separable: the prefix 'zurück' goes to the end without an extra 'e'." }
+            ],
+            checklist: ["Formal greeting", "Vacation dates stated (from–to)", "Duration mentioned", "Spare key holder named with contact", "Your contact info provided", "Return date given", "Formal closing used"]
+        },
+        // ── CATEGORY: FORMS (ws_029 – ws_030) ────────────────────────────────────
+        {
+            id: "ws_029",
+            category: "Forms",
+            categoryIcon: "📋",
+            title: "Fitness Club Registration",
+            titleDE: "Anmeldung beim Fitnessstudio",
+            prompt: "Fill out a fitness club registration form. Include: your full name, date of birth, address, telephone number, desired membership type (monthly), and starting date (next Monday).",
+            promptDE: "Füllen Sie ein Anmeldeformular für ein Fitnessstudio aus. Angaben: Vollständiger Name, Geburtsdatum, Adresse, Telefonnummer, gewünschte Mitgliedschaft (monatlich) und Startdatum (nächsten Montag).",
+            wordTarget: 40,
+            vocab: [
+                { word: "das Fitnessstudio", translation: "gym / fitness centre", ml: "ദാസ് ഫിറ്റ്നസ്സ്ടൂഡിയോ" },
+                { word: "die Mitgliedschaft", translation: "membership", ml: "ഡി മിറ്റ്ഗ്ലീഡ്ഷാഫ്ട്" },
+                { word: "das Startdatum", translation: "start date", ml: "ദാസ് ഷ്ടാർട്ടഡാടൂം" },
+                { word: "monatlich", translation: "monthly", ml: "മോനാട്ലിഹ്" },
+                { word: "die Bankverbindung", translation: "bank details", ml: "ഡി ബാൻക്ഫേർബിൻഡൂങ്" },
+                { word: "die Kündigung", translation: "cancellation / termination", ml: "ഡി കൂൻഡിഗൂങ്" },
+                { word: "der Mitgliedsbeitrag", translation: "membership fee", ml: "ഡേർ മിറ്റ്ഗ്ലീഡ്സ്ബൈട്രാഗ്" },
+                { word: "die Unterschrift", translation: "signature", ml: "ഡി ഉൻടർഷ്രിഫ്ട്" }
+            ],
+            expressions: [
+                { de: "Name: ...", en: "Name: ..." },
+                { de: "Geburtsdatum: ...", en: "Date of birth: ..." },
+                { de: "Gewünschte Mitgliedschaft: monatlich", en: "Desired membership: monthly" },
+                { de: "Startdatum: nächsten Montag / ab dem ...", en: "Start date: next Monday / from the ..." },
+                { de: "Ich beantrage eine Mitgliedschaft.", en: "I am applying for a membership." },
+                { de: "Datum und Unterschrift:", en: "Date and signature:" }
+            ],
+            tips: [
+                "Fill in all fields completely — forms must not have blank required fields.",
+                "Write dates in German format: DD.MM.YYYY (e.g., 15.08.2024).",
+                "Use 'monatlich' for monthly membership, 'jährlich' for yearly.",
+                "Sign and date at the bottom.",
+                "Double-check spelling of your name and address."
+            ],
+            modelAnswer: "Anmeldeformular – FitLife Fitnessstudio\n\nVorname: Arjun\nNachname: Patel\nGeburtsdatum: 12.04.1998\nAdresse: Rosenstraße 5, 80331 München\nTelefon: 0176-9876543\nE-Mail: arjun.patel@email.de\n\nGewünschte Mitgliedschaft: monatlich (29 €/Monat)\nStartdatum: 28.07.2025\nZahlungsart: Lastschrift (SEPA)\n\nIch bestätige, dass alle Angaben korrekt sind.\n\nDatum: 20.07.2025\nUnterschrift: Arjun Patel",
+            guidedScaffold: [
+                { label: "Personal details", hint: "Vorname: ... / Nachname: ... / Geburtsdatum: DD.MM.YYYY" },
+                { label: "Contact", hint: "Adresse: ... / Telefon: ... / E-Mail: ..." },
+                { label: "Membership type + Start date", hint: "Mitgliedschaft: monatlich/jährlich / Startdatum: ..." },
+                { label: "Payment method", hint: "Zahlungsart: Lastschrift / Überweisung" },
+                { label: "Confirmation statement", hint: "Ich bestätige, dass alle Angaben korrekt sind." },
+                { label: "Date + Signature", hint: "Datum: ... / Unterschrift: [Full Name]" }
+            ],
+            commonMistakes: [
+                { wrong: "Geburtsdatum: 1998/04/12", correct: "Geburtsdatum: 12.04.1998", reason: "In Germany, dates are written in DD.MM.YYYY format, not YYYY/MM/DD or MM/DD/YYYY." },
+                { wrong: "Unterschrift: Arjun", correct: "Unterschrift: Arjun Patel", reason: "Always use your full name as a signature on official forms — first name alone is not sufficient." }
+            ],
+            checklist: ["Full name (first + last)", "Date of birth in correct format", "Full address", "Phone or email", "Membership type chosen", "Start date given", "Confirmation + Date + Signature"]
+        },
+        {
+            id: "ws_030",
+            category: "Forms",
+            categoryIcon: "📋",
+            title: "Job Application Form",
+            titleDE: "Bewerbungsformular ausfüllen",
+            prompt: "Fill out a job application form for a supermarket cashier position. Include: personal details, highest education level (high school), current job status (unemployed), languages spoken (German A2, English B2), and a contact person for reference.",
+            promptDE: "Füllen Sie ein Bewerbungsformular für die Stelle als Kassierer/in im Supermarkt aus. Angaben: Persönliche Daten, höchster Bildungsabschluss (Abitur), aktueller Berufsstatus (arbeitslos), Sprachkenntnisse (Deutsch A2, Englisch B2) und eine Referenzperson.",
+            wordTarget: 50,
+            vocab: [
+                { word: "das Bewerbungsformular", translation: "job application form", ml: "ദാസ് ബേവേർബൂങ്ഗ്സ്ഫോർമൂലർ" },
+                { word: "der Bildungsabschluss", translation: "educational qualification", ml: "ഡേർ ബിൽഡൂങ്ഗ്സ്ആബ്ഷ്ലൂസ്" },
+                { word: "arbeitslos", translation: "unemployed", ml: "ആർബൈട്ട്സ്ലോസ്" },
+                { word: "die Sprachkenntnisse", translation: "language skills", ml: "ഡി ഷ്പ്രാഹ്കെൻട്നിസ്സേ" },
+                { word: "die Referenz", translation: "reference", ml: "ഡി റേഫേരൻട്സ്" },
+                { word: "die Stelle", translation: "position / job", ml: "ഡി ഷ്ടെൽലേ" },
+                { word: "angestellt", translation: "employed", ml: "ആൻഗേഷ്ടെൽട്ട്" },
+                { word: "Vollzeit / Teilzeit", translation: "full-time / part-time", ml: "ഫോൾസൈറ്റ് / ടൈൽസൈറ്റ്" }
+            ],
+            expressions: [
+                { de: "Ich bewerbe mich für die Stelle als ...", en: "I am applying for the position as ..." },
+                { de: "Höchster Bildungsabschluss: Abitur", en: "Highest qualification: A-levels / high school diploma" },
+                { de: "Berufsstatus: derzeit arbeitslos", en: "Employment status: currently unemployed" },
+                { de: "Sprachkenntnisse: Deutsch (A2), Englisch (B2)", en: "Languages: German (A2), English (B2)" },
+                { de: "Referenzperson: Name, Telefon, Beziehung", en: "Reference: name, phone, relationship" },
+                { de: "Ich bin sofort verfügbar.", en: "I am available immediately." }
+            ],
+            tips: [
+                "Write 'derzeit arbeitslos' if currently unemployed — don't leave this field blank.",
+                "Always list language levels using the European CEFR scale (A1, A2, B1, B2, C1, C2).",
+                "A reference person should be a former employer or teacher, not a family member.",
+                "State whether you are available for Vollzeit (full-time) or Teilzeit (part-time).",
+                "Double-check all dates and spellings before submitting."
+            ],
+            modelAnswer: "Bewerbungsformular\n\nGewünschte Stelle: Kassiererin / Kassierer\n\n── Persönliche Daten ──\nVorname: Priya\nNachname: Kumar\nGeburtsdatum: 05.09.1999\nAdresse: Lindenallee 8, 10115 Berlin\nTelefon: 0176-5544332\nE-Mail: priya.kumar@email.de\n\n── Bildung ──\nHöchster Abschluss: Abitur (2017, Delhi, Indien)\n\n── Berufsstatus ──\nAktueller Status: derzeit arbeitslos\nVerfügbarkeit: sofort, Teilzeit (20 Std./Woche)\n\n── Sprachkenntnisse ──\nDeutsch: A2\nEnglisch: B2\nHindi: Muttersprache\n\n── Referenz ──\nName: Dr. Anita Sharma\nBeziehung: ehemalige Arbeitgeberin\nTelefon: 0176-9988776\n\nDatum: 20.07.2025\nUnterschrift: Priya Kumar",
+            guidedScaffold: [
+                { label: "Job applied for", hint: "Gewünschte Stelle: ..." },
+                { label: "Personal details", hint: "Vorname, Nachname, Geburtsdatum, Adresse, Telefon, E-Mail" },
+                { label: "Education", hint: "Höchster Abschluss: ... (Jahr, Ort)" },
+                { label: "Employment status + Availability", hint: "Aktueller Status: ... / Verfügbarkeit: sofort / ab [date], Vollzeit/Teilzeit" },
+                { label: "Languages", hint: "Deutsch: A2 / Englisch: B2 / Muttersprache: ..." },
+                { label: "Reference person", hint: "Name: ... / Beziehung: ... / Telefon: ..." },
+                { label: "Date + Signature", hint: "Datum: ... / Unterschrift: [Full Name]" }
+            ],
+            commonMistakes: [
+                { wrong: "Sprachkenntnisse: Deutsch gut", correct: "Sprachkenntnisse: Deutsch A2 (Grundkenntnisse)", reason: "Use the official CEFR level (A1–C2) for language skills on formal forms, not vague adjectives like 'gut'." },
+                { wrong: "Referenz: Meine Mutter", correct: "Referenz: [former employer / teacher name]", reason: "References must be professional contacts, not family members." }
+            ],
+            checklist: ["Position applied for", "Full personal details", "Education level stated", "Employment status given", "Availability (full/part-time)", "Language skills with CEFR levels", "Reference person included", "Date + Signature"]
         }
     ],
     speaking: [
@@ -7255,29 +8081,40 @@ const EXAM_TRANSLATION_MAP = {
 };
 
 const VOCAB_TOPIC_INFO = {
-    familie: { name: "Familie", emoji: "👪" },
-    begruessung: { name: "Begrüßung & Vorstellung", emoji: "👋" },
-    personalinfo: { name: "Persönliche Informationen", emoji: "ℹ️" },
-    laender: { name: "Länder & Sprachen", emoji: "🌐" },
-    tage: { name: "Tage, Monate & Datum", emoji: "📅" },
-    zahlen: { name: "Zahlen", emoji: "🔢" },
-    uhrzeit: { name: "Uhrzeit & Termine", emoji: "⏰" },
-    wetter: { name: "Wetter", emoji: "☀️" },
-    wohnung: { name: "Wohnung & Möbel", emoji: "🏠" },
-    kleidung: { name: "Kleidung", emoji: "👕" },
-    essen: { name: "Essen & Trinken", emoji: "🍎" },
-    einkaufen: { name: "Einkaufen & Geld", emoji: "🛍️" },
-    hobbys: { name: "Hobbys & Sport", emoji: "⚽" },
-    reisen: { name: "Reisen & Urlaub", emoji: "✈️" },
-    verkehr: { name: "Verkehr & Transport", emoji: "🚗" },
-    stadt: { name: "Stadt & Orte", emoji: "🏙️" },
-    schule: { name: "Schule & Lernen", emoji: "🏫" },
-    arbeit: { name: "Arbeit & Beruf", emoji: "💼" },
-    technologie: { name: "Technologie & Kommunikation", emoji: "💻" },
-    tagesablauf: { name: "Tagesablauf", emoji: "🌅" },
-    gesundheit: { name: "Gesundheit & Körper", emoji: "💪" },
-    medizin: { name: "Medizin & Arzt", emoji: "🏥" },
-    notfall: { name: "Notfall-Vokabeln", emoji: "🚨" }
+    familie:        { name: "Familie",                      english: "Family",                        emoji: "👪" },
+    begruessung:    { name: "Begrüßung & Vorstellung",      english: "Greetings & Introductions",     emoji: "👋" },
+    personalinfo:   { name: "Persönliche Informationen",   english: "Personal Information",           emoji: "ℹ️" },
+    laender:        { name: "Länder & Sprachen",            english: "Countries & Languages",          emoji: "🌐" },
+    tage:           { name: "Tage, Monate & Datum",        english: "Days, Months & Dates",           emoji: "📅" },
+    zahlen:         { name: "Zahlen",                       english: "Numbers",                        emoji: "🔢" },
+    uhrzeit:        { name: "Uhrzeit & Termine",            english: "Time & Appointments",            emoji: "⏰" },
+    wetter:         { name: "Wetter",                       english: "Weather",                        emoji: "☀️" },
+    wohnung:        { name: "Wohnung & Möbel",              english: "Home & Furniture",               emoji: "🏠" },
+    kleidung:       { name: "Kleidung",                     english: "Clothing",                       emoji: "👕" },
+    essen:          { name: "Essen & Trinken",              english: "Food & Drinks",                  emoji: "🍎" },
+    einkaufen:      { name: "Einkaufen & Geld",             english: "Shopping & Money",               emoji: "🛍️" },
+    hobbys:         { name: "Hobbys & Sport",               english: "Hobbies & Sports",               emoji: "⚽" },
+    reisen:         { name: "Reisen & Urlaub",              english: "Travel & Holidays",              emoji: "✈️" },
+    verkehr:        { name: "Verkehr & Transport",          english: "Traffic & Transport",            emoji: "🚗" },
+    stadt:          { name: "Stadt & Orte",                 english: "City & Places",                  emoji: "🏙️" },
+    schule:         { name: "Schule & Lernen",              english: "School & Learning",              emoji: "🏫" },
+    arbeit:         { name: "Arbeit & Beruf",               english: "Work & Profession",              emoji: "💼" },
+    technologie:    { name: "Technologie & Kommunikation", english: "Technology & Communication",     emoji: "💻" },
+    tagesablauf:    { name: "Tagesablauf",                  english: "Daily Routine",                  emoji: "🌅" },
+    gesundheit:     { name: "Gesundheit & Körper",          english: "Health & Body",                  emoji: "💪" },
+    medizin:        { name: "Medizin & Arzt",               english: "Medicine & Doctor",              emoji: "🏥" },
+    notfall:        { name: "Notfall-Vokabeln",             english: "Emergency Words",                emoji: "🚨" },
+    tiere:          { name: "Tiere & Natur",                english: "Animals & Nature",               emoji: "🐾" },
+    farben:         { name: "Farben & Beschreibungen",      english: "Colours & Descriptions",         emoji: "🎨" },
+    koerper:        { name: "Körperteile",                  english: "Body Parts",                     emoji: "🧠" },
+    musik:          { name: "Musik & Kunst",                english: "Music & Art",                    emoji: "🎵" },
+    natur:          { name: "Natur & Umwelt",               english: "Nature & Environment",           emoji: "🌿" },
+    sport_vocab:    { name: "Sport & Bewegung",             english: "Sport & Movement",               emoji: "🏅" },
+    berufe:         { name: "Berufe & Jobs",                english: "Jobs & Professions",             emoji: "👔" },
+    gefuehle:       { name: "Gefühle & Emotionen",          english: "Feelings & Emotions",            emoji: "😊" },
+    haushalt:       { name: "Haushalt & Alltag",            english: "Household & Everyday Life",      emoji: "🏠" },
+    nahrungsmittel: { name: "Nahrungsmittel & Kochen",      english: "Food Ingredients & Cooking",     emoji: "🥘" },
+    jahreszeiten:   { name: "Jahreszeiten & Wetter",        english: "Seasons & Weather",              emoji: "🌦️" }
 };
 
 let learningState = {
@@ -7588,7 +8425,7 @@ function startPracticeMode(type) {
         document.getElementById("practice-stimulus-label").textContent = "Wortschatz-Auswahl";
         
         let html = `<div class="vocab-topics-selection glass-panel" style="padding: 16px;">
-            <p style="margin-top:0;"><strong>Bitte wählen Sie ein Vokabelthema (23 Themen):</strong></p>
+            <p style="margin-top:0;"><strong>Bitte wählen Sie ein Vokabelthema (34 Themen):</strong></p>
             <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:12px; max-height:480px; overflow-y:auto; padding-right:6px;">`;
             
         for (const t in VOCAB_TOPIC_INFO) {
@@ -7599,8 +8436,10 @@ function startPracticeMode(type) {
             if (stats.practised) badgesHTML += `<span class="badge status-badge" style="background:rgba(245,158,11,0.15); color:var(--color-warning); font-size:0.65rem; padding:2px 4px; border-radius:4px; margin-left:4px;">Geübt</span>`;
             if (stats.mastered) badgesHTML += `<span class="badge status-badge" style="background:rgba(234,179,8,0.15); color:#eab308; font-size:0.65rem; padding:2px 4px; border-radius:4px; margin-left:4px;">Meister</span>`;
             
-            html += `<button class="btn btn-secondary btn-touch subtopic-select-btn" data-subtopic="${t}" style="width:100%; text-align:left; padding:12px; display:flex; flex-direction:column; gap:4px; justify-content:center;">
+
+            html += `<button class="btn btn-secondary btn-touch subtopic-select-btn" data-subtopic="${t}" style="width:100%; text-align:left; padding:12px; display:flex; flex-direction:column; gap:2px; justify-content:center;">
                 <span style="font-weight:600; font-size:0.9rem;">${info.emoji} ${info.name}</span>
+                <span style="font-size:0.7rem; color:var(--color-text-muted); font-style:italic; margin-bottom:2px;">${info.english}</span>
                 <div style="display:flex; flex-wrap:wrap; margin-top:2px;">${badgesHTML || '<span style="font-size:0.65rem; color:var(--color-text-muted);">Neu</span>'}</div>
             </button>`;
         }
@@ -10891,7 +11730,7 @@ const FLUENCY_DATABASE = [
             { de: "In meiner Freizeit lese ich gern.", en: "In my free time I like to read.", phonetic: "ഇൻ മൈനർ ഫ്രൈത്സൈറ്റ് ലേസെ ഇഖ് ഗേൺ.", grammar: "'gern' + verb = to like doing something. Verb moves to position 2." },
             { de: "Mein liebstes Hobby ist Musik hören.", en: "My favourite hobby is listening to music.", phonetic: "മൈൻ ലീബ്സ്റ്റസ് ഹോബ്ബി ഇസ്റ്റ് മൂസീക് ഹേറൻ.", grammar: "'liebst-' = favourite (superlative). Infinitive at end: 'Musik hören'." },
             { de: "Ich spiele gern Fußball.", en: "I like to play football.", phonetic: "ഇഖ് ഷ്പീലെ ഗേൺ ഫൂസ്ബൽ.", grammar: "'spielen' = to play. 'gern' makes it express enjoyment." },
-            { de: "Ich koche auch gern.", en: "Ich auch gern kochen.", phonetic: "ഇഖ് കോഖെ ഔഖ് ഗേൺ.", grammar: "'auch' = also. Position: after the verb, before 'gern'." },
+            { de: "Ich koche auch gern.", en: "I also like to cook.", phonetic: "ഇഖ് കോഖെ ഔഖ് ഗേൺ.", grammar: "'auch' = also. Position: after the verb, before 'gern'." },
             { de: "Am Wochenende gehe ich schwimmen.", en: "At the weekend I go swimming.", phonetic: "ആം വൊഖൻഎൻഡെ ഗേ ഇഖ് ഷ്വിമ്മൻ.", grammar: "Time phrase at start → verb before subject: 'gehe ich' (inversion)." },
             { de: "Ich interessiere mich für Filme.", en: "I am interested in films.", phonetic: "ഇഖ് ഇൻററെസ്സീറെ മിഖ് ഫൂർ ഫിൽമെ.", grammar: "'sich interessieren für' = to be interested in. Reflexive verb." },
             { de: "Manchmal male ich auch Bilder.", en: "Sometimes I also paint pictures.", phonetic: "മാൻഷ്മാൽ മാലെ ഇഖ് ഔഖ് ബിൽഡർ.", grammar: "'manchmal' = sometimes. Causes verb-subject inversion." },
@@ -10903,7 +11742,7 @@ const FLUENCY_DATABASE = [
         descDE: "Beschreiben Sie Ihren Alltag", descEN: "Describe your daily routine",
         sentences: [
             { de: "Ich stehe um sieben Uhr auf.", en: "I get up at seven o'clock.", phonetic: "ഇഖ് ഷ്ടേ ഉം സീബൻ ഉർ ഔഫ്.", grammar: "'aufstehen' is separable: 'auf' goes to end of sentence." },
-            { de: "Dann dusche ich und frühstücke.", en: "Then I shower and have breakfast.", phonetic: "ഡាន ഡൂഷെ ഇഖ് ഉൻഡ് ഫ്രൂഷ്ടൂക്കെ.", grammar: "'dann' = then (causes inversion). Two verbs joined with 'und'." },
+            { de: "Dann dusche ich und frühstücke.", en: "Then I shower and have breakfast.", phonetic: "ഡാന ഡൂഷെ ഇഖ് ഉൻഡ് ഫ്രൂഷ്ടൂക്കെ.", grammar: "'dann' = then (causes inversion). Two verbs joined with 'und'." },
             { de: "Um acht Uhr fahre ich zur Arbeit.", en: "At eight o'clock I go to work.", phonetic: "ഉം ആഹ്ട്ട് ഉർ ഫാറെ ഇഖ് ത്സൂർ ആർബൈറ്റ്.", grammar: "'zur Arbeit fahren' = to go to work. 'zur' = zu + der." },
             { de: "Ich arbeite von neun bis fünf Uhr.", en: "I work from nine to five.", phonetic: "ഇഖ് ആർബൈറ്റെ ഫോൻ നോയൻ ബിസ് ഫൂൻഫ് ഉർ.", grammar: "'von ... bis' = from ... to (time). Both take dative." },
             { de: "Mittags esse ich in der Kantine.", en: "At lunchtime I eat in the canteen.", phonetic: "മിറ്റാഗ്സ് എസ്സെ ഇഖ് ഇൻ ഡേർ കൻടീനെ.", grammar: "'mittags' = at midday. 'in der' = in the (dative, feminine)." },
@@ -10922,7 +11761,7 @@ const FLUENCY_DATABASE = [
             { de: "Ich arbeite auch Teilzeit.", en: "I also work part-time.", phonetic: "ഇഖ് ആർബൈറ്റെ ഔഖ് ടൈൽറ്റ്സൈറ്റ്.", grammar: "'Teilzeit' = part-time. 'Vollzeit' = full-time." },
             { de: "Mein Chef ist sehr nett.", en: "My boss is very nice.", phonetic: "മൈൻ ഷേഫ് ഇസ്റ്റ് സേർ നെറ്റ്.", grammar: "'Chef' = boss/manager (masculine). 'Chefin' = female boss." },
             { de: "Das Gehalt ist nicht schlecht.", en: "The salary is not bad.", phonetic: "ഡാസ് ഗെഹൽട്ട് ഇസ്റ്റ് നിഹ്ട് ഷ്ലെഹ്ട്ട്.", grammar: "'Gehalt' = salary (neuter). 'nicht schlecht' = not bad (understatement)." },
-            { de: "Ich möchte später Ingenieurin werden.", en: "Later I would like to become an engineer.", phonetic: "ഇഖ് മേহ്ടെ ഷ്പേട്ടർ ഇൻഷെനിയൂറിൻ വേർഡൻ.", grammar: "'möchten + infinitive' = would like to. 'werden' goes to end." },
+            { de: "Ich möchte später Ingenieurin werden.", en: "Later I would like to become an engineer.", phonetic: "ഇഖ് മേഹ്ടെ ഷ്പേട്ടർ ഇൻഷെനിയൂറിൻ വേർഡൻ.", grammar: "'möchten + infinitive' = would like to. 'werden' goes to end." },
             { de: "Arbeit macht mir Spaß.", en: "Work is fun for me.", phonetic: "ആർബൈറ്റ് മാഖ്ട്ട് മിർ ഷ്പാസ്.", grammar: "'Spaß machen' = to be fun. 'mir' = to me (dative)." }
         ]
     },
@@ -10934,10 +11773,10 @@ const FLUENCY_DATABASE = [
             { de: "Kochi ist eine große Stadt.", en: "Kochi is a big city.", phonetic: "കൊഛി ഇസ്റ്റ് ഐനെ ഗ്രോസ്സെ ഷ്ടഡ്ട്.", grammar: "'eine' + adjective + '-e' ending (feminine nominative)." },
             { de: "Es gibt viele Sehenswürdigkeiten.", en: "There are many sights to see.", phonetic: "എസ് ഗിബ്ട്ട് ഫീലെ സേഹൻസ്വൂർഡിഹ്കൈറ്റൻ.", grammar: "'es gibt' + accusative. 'Sehenswürdigkeiten' = tourist attractions." },
             { de: "Die Stadt hat einen schönen Hafen.", en: "The city has a beautiful harbour.", phonetic: "ഡീ ഷ്ടഡ്ട് ഹാട്ട് ഐനൻ ഷേനൻ ഹാഫൻ.", grammar: "'Hafen' = harbour (masculine → 'einen' accusative)." },
-            { de: "Der öffentliche Verkehr ist gut.", en: "Der öffentliche Verkehr ist gut.", phonetic: "ഡേർ ഓഫൻ‌ലിഖെ ഫേർകേർ ഇസ്റ്റ് ഗൂട്ടു.", grammar: "'öffentlich' = public. 'Verkehr' = traffic/transport (masculine)." },
+            { de: "Der öffentliche Verkehr ist gut.", en: "Public transport is good.", phonetic: "ഡേർ ഓഫൻ‌ലിഖെ ഫേർകേർ ഇസ്റ്റ് ഗൂട്ടു.", grammar: "'öffentlich' = public. 'Verkehr' = traffic/transport (masculine)." },
             { de: "Es gibt viele Restaurants und Cafés.", en: "There are many restaurants and cafés.", phonetic: "എസ് ഗിബ്ട്ട് ഫീലെ റെസ്റ്റോറൻറ്സ് ഉൻഡ് കഫേസ്.", grammar: "Both are loan words with plural -s." },
-            { de: "Ich mag die Atmosphäre hier.", en: "Ich mag die Atmosphäre hier.", phonetic: "ഇഖ് മാഗ് ഡീ ആട്ട്‌മോസ്ഫ്യേറെ ഹീർ.", grammar: "'mögen/mag' = to like. 'hier' = here." },
-            { de: "Kochi ist wirklich wunderschön.", en: "Kochi ist wirklich wunderschön.", phonetic: "കൊഛി ഇസ്റ്റ് വിർക്ലിഹ് വൂൻഡർഷേൻ.", grammar: "'wirklich' = truly/really. 'wunderschön' = wonderful/very beautiful." }
+            { de: "Ich mag die Atmosphäre hier.", en: "I like the atmosphere here.", phonetic: "ഇഖ് മാഗ് ഡീ ആട്ട്‌മോസ്ഫ്യേറെ ഹീർ.", grammar: "'mögen/mag' = to like. 'hier' = here." },
+            { de: "Kochi ist wirklich wunderschön.", en: "Kochi is truly wonderful.", phonetic: "കൊഛി ഇസ്റ്റ് വിർക്ലിഹ് വൂൻഡർഷേൻ.", grammar: "'wirklich' = truly/really. 'wunderschön' = wonderful/very beautiful." }
         ]
     },
     {
@@ -10948,9 +11787,9 @@ const FLUENCY_DATABASE = [
             { de: "Ich kaufe meistens im Supermarkt.", en: "I usually shop at the supermarket.", phonetic: "ഇഖ് കൗഫെ മൈസ്റ്റൻസ് ഇം സൂപർമർക്ടു.", grammar: "'meistens' = usually. 'im' = in dem (dative, masculine)." },
             { de: "Ich brauche Brot, Milch und Obst.", en: "I need bread, milk and fruit.", phonetic: "ഇഖ് ബ്രൗഖെ ബ്രോട്ടു, മിൽഹ് ഉൻഡ് ഓബ്സ്ത്.", grammar: "'brauchen' = to need. Direct object (accusative): no article for uncountable nouns." },
             { de: "Was kostet das Kilo Äpfel?", en: "How much does a kilo of apples cost?", phonetic: "വാസ് കോസ്റ്റേട്ട് ഡാസ് കിലോ എഫൽ?", grammar: "'Was kostet' = how much does it cost? 'Äpfel' = apples (plural)." },
-            { de: "Das ist zu teuer für mich.", en: "Das ist zu teuer für mich.", phonetic: "ഡാസ് ഇസ്റ്റ് ത്സൂ ടോയൈർ ഫൂർ മിഖ്.", grammar: "'zu' + adjective = too (adjective). 'teuer' = expensive." },
-            { de: "Haben Sie etwas Günstigeres?", en: "Haben Sie etwas Günstigeres?", phonetic: "ഹാബൻ സീ എട്‌വസ് ഗൂൻസ്റ്റിഗേറെസ്?", grammar: "Comparative: 'günstig' → 'günstiger'. 'etwas + adj + -es' = something + adj." },
-            { de: "Ich zahle mit Karte.", en: "Ich zahle mit Karte.", phonetic: "ഇഖ് ത്സാലെ മിറ്റ് കർട്ടെ.", grammar: "'zahlen' = to pay. 'mit' + dative = with/by (payment method)." },
+            { de: "Das ist zu teuer für mich.", en: "That is too expensive for me.", phonetic: "ഡാസ് ഇസ്റ്റ് ത്സൂ ടോയൈർ ഫൂർ മിഖ്.", grammar: "'zu' + adjective = too (adjective). 'teuer' = expensive." },
+            { de: "Haben Sie etwas Günstigeres?", en: "Do you have something cheaper?", phonetic: "ഹാബൻ സീ എട്‌വസ് ഗൂൻസ്റ്റിഗേറെസ്?", grammar: "Comparative: 'günstig' → 'günstiger'. 'etwas + adj + -es' = something + adj." },
+            { de: "Ich zahle mit Karte.", en: "I pay by card.", phonetic: "ഇഖ് ത്സാലെ മിറ്റ് കർട്ടെ.", grammar: "'zahlen' = to pay. 'mit' + dative = with/by (payment method)." },
             { de: "Danke, auf Wiedersehen!", en: "Thank you, goodbye!", phonetic: "ഡൻക്കെ, ഔഫ് വീഡർസേൻ!", grammar: "Standard farewell. 'Tschüss!' is informal; 'Auf Wiedersehen' is polite." }
         ]
     },
@@ -10959,27 +11798,307 @@ const FLUENCY_DATABASE = [
         descDE: "Sprechen Sie im Restaurant", descEN: "Ordering and talking at a restaurant",
         sentences: [
             { de: "Guten Abend! Haben Sie einen Tisch für zwei?", en: "Good evening! Do you have a table for two?", phonetic: "Guten Abend! Haben Sie einen Tisch für zwei?", grammar: "'einen Tisch' = a table (masculine accusative). 'für' + accusative." },
-            { de: "Ich möchte bitte die Speisekarte.", en: "Ich möchte bitte die Speisekarte.", phonetic: "ഇഖ് മേഹ്ടെ ബിറ്റ്റ്റെ ഡീ ഷ്പൈസ്സെകർട്ടെ.", grammar: "'möchte' = would like. 'bitte' = please (polite add-on)." },
-            { de: "Was empfehlen Sie heute?", en: "Was empfehlen Sie heute?", phonetic: "വാസ് എംഫ്ഫേലൻ സീ ഹോയ്ടെ?", grammar: "'empfehlen' = to recommend. Formal 'Sie' form." },
-            { de: "Ich nehme die Suppe und das Schnitzel.", en: "Ich nehme die Suppe und das Schnitzel.", phonetic: "ഇഖ് നേമെ ഡീ സൂപ്പെ ഉൻഡ് ഡാസ് ഷ്നിറ്റ്സൽ.", grammar: "'nehmen' = to take/have (food). 'die Suppe' (f), 'das Schnitzel' (n)." },
+            { de: "Ich möchte bitte die Speisekarte.", en: "I would like the menu, please.", phonetic: "ഇഖ് മേഹ്ടെ ബിറ്റ്റ്റെ ഡീ ഷ്പൈസ്സെകർട്ടെ.", grammar: "'möchte' = would like. 'bitte' = please (polite add-on)." },
+            { de: "Was empfehlen Sie heute?", en: "What do you recommend today?", phonetic: "വാസ് എംഫ്ഫേലൻ സീ ഹോയ്ടെ?", grammar: "'empfehlen' = to recommend. Formal 'Sie' form." },
+            { de: "Ich nehme die Suppe und das Schnitzel.", en: "I'll have the soup and the schnitzel.", phonetic: "ഇഖ് നേമെ ഡീ സൂപ്പെ ഉൻഡ് ഡാസ് ഷ്niറ്റ്സൽ.", grammar: "'nehmen' = to take/have (food). 'die Suppe' (f), 'das Schnitzel' (n)." },
             { de: "Ich bin Vegetarier. Gibt es vegetarische Gerichte?", en: "I am vegetarian. Are there vegetarian dishes?", phonetic: "ഇഖ് ബിൻ വേഗെടൻ‍റ്റ്യൂ. ഗിബ്ട്ട് എസ് വേഗെടൻ‍റ്റ്യൂ ഗെറിഹ്ടെ?", grammar: "'vegetarisch' = vegetarian (adj). 'Gerichte' = dishes (plural)." },
-            { de: "Das Essen ist sehr lecker!", en: "Das Essen ist sehr lecker!", phonetic: "ഡാസ് എസ്സൻ ഇസ്റ്റ് സേർ ലെക്കർ!", grammar: "'Essen' = food/meal (neuter). 'lecker' = tasty/delicious." },
-            { de: "Ich möchte bitte die Rechnung.", en: "Ich möchte bitte die Rechnung.", phonetic: "ഇഖ് മേഹ്ടെ ബിറ്റ്റ്റെ ഡീ റെഹ്നൂങ്.", grammar: "'die Rechnung' = the bill/invoice (feminine)." },
-            { de: "Das war ein toller Abend!", en: "Das war ein toller Abend!", phonetic: "ഡാസ് വൂർ ഐൻ ടോലർ ആബൻഡ്!", grammar: "'war' = was (past tense of 'sein'). 'toller' = great (masculine nominative)." }
+            { de: "Das Essen ist sehr lecker!", en: "The food is very delicious!", phonetic: "ഡാസ് എസ്സൻ ഇസ്റ്റ് സേർ ലെക്കർ!", grammar: "'Essen' = food/meal (neuter). 'lecker' = tasty/delicious." },
+            { de: "Ich möchte bitte die Rechnung.", en: "I would like the bill, please.", phonetic: "ഇഖ് മേഹ്ടെ ബിറ്റ്റ്റെ ഡീ റെഹ്നൂങ്.", grammar: "'die Rechnung' = the bill/invoice (feminine)." },
+            { de: "Das war ein toller Abend!", en: "That was a great evening!", phonetic: "ഡാസ് വൂർ ഐൻ ടോലർ ആബൻഡ്!", grammar: "'war' = was (past tense of 'sein'). 'toller' = great (masculine nominative)." }
         ]
     },
     {
         id: "st_10", emoji: "✈️", titleDE: "Reisen", titleEN: "Travelling",
         descDE: "Sprechen Sie über das Reisen", descEN: "Talk about travel and holidays",
         sentences: [
-            { de: "Ich reise sehr gern.", en: "Ich reise sehr gern.", phonetic: "ഇഖ് റൈസ്സെ സേർ ഗേൺ.", grammar: "'reisen' = to travel. 'gern' expresses enjoyment." },
-            { de: "Letzten Sommer bin ich nach Deutschland gefahren.", en: "Letzten Sommer bin ich nach Deutschland gefahren.", phonetic: "ലേറ്റ്സ്ടൻ സൂമ്മർ ബിൻ ഇഖ് നാഹ് ഡോയ്ഷ്‍ലൻഡ് ഗെഫാറൻ.", grammar: "Past tense (Perfekt): 'bin + gefahren'. 'nach' + country name = to." },
-            { de: "Ich habe eine Woche in Berlin verbracht.", en: "Ich habe eine Woche in Berlin verbracht.", phonetic: "ഇഖ് ഹാബെ ഐനെ വൊഖെ ഇൻ ബേർലിൻ ഫേർബ്രൂഹ്ട്ട്.", grammar: "'verbringen' = to spend (time). Past: 'habe verbracht'." },
-            { de: "Berlin ist eine faszinierende Stadt.", en: "Berlin ist eine faszinierende Stadt.", phonetic: "ബേർലിൻ ഇസ്റ്റ് ഐനെ ഫസ്സീനീറൻഡെ ഷ്ടഡ്ട്.", grammar: "'faszinierend' = fascinating. '-e' ending (feminine nominative after 'eine')." },
-            { de: "Ich habe viele Museen besucht.", en: "Ich habe viele Museen besucht.", phonetic: "ഇഖ് ഹാബെ ഫീലെ മൂസേൻ ബെസൂഹ്ട്ട്.", grammar: "'besuchen' = to visit. 'Museen' = museums (plural of 'Museum')." },
-            { de: "Das Essen war wirklich fantastisch.", en: "Das Essen war wirklich fantastisch.", phonetic: "ഡാസ് എസ്സൻ വൂർ വിർക്ലിഹ് ഫൻടൻ‍റ്റ്യൂ.", grammar: "'war' = was (simple past of 'sein'). Used for descriptions in narrative." },
-            { de: "Nächstes Jahr möchte ich nach Wien fahren.", en: "Nächstes Jahr möchte ich nach Wien fahren.", phonetic: "നേഹ്സ്ടസ് യൂർ മേഹ്ടെ ഇഖ് നാഹ് വീൻ ഫാറൻ.", grammar: "'nächstes Jahr' = next year. 'möchte + infinitive' = would like to." },
-            { de: "Reisen macht mich glücklich.", en: "Reisen macht mich glücklich.", phonetic: "റൈസ്സൻ മാഖ്ട്ട് മിഖ് ഗ്ലൂക്ലിഹ്.", grammar: "'machen' = to make. 'mich' = me (accusative). Infinitive as subject." }
+            { de: "Ich reise sehr gern.", en: "I love travelling.", phonetic: "ഇഖ് റൈസ്സെ സേർ ഗേൺ.", grammar: "'reisen' = to travel. 'gern' expresses enjoyment." },
+            { de: "Letzten Sommer bin ich nach Deutschland gefahren.", en: "Last summer I travelled to Germany.", phonetic: "ലേറ്റ്സ്ടൻ സൂമ്മർ ബിൻ ഇഖ് നാഹ് ഡോയ്ഷ്‍ലൻഡ് ഗെഫാറൻ.", grammar: "Past tense (Perfekt): 'bin + gefahren'. 'nach' + country name = to." },
+            { de: "Ich habe eine Woche in Berlin verbracht.", en: "I spent one week in Berlin.", phonetic: "ഇഖ് ഹാബെ ഐനെ വൊഖെ ഇൻ ബേർലിൻ ഫേർബ്രൂഹ്ട്ട്.", grammar: "'verbringen' = to spend (time). Past: 'habe verbracht'." },
+            { de: "Berlin ist eine faszinierende Stadt.", en: "Berlin is a fascinating city.", phonetic: "ബേർലിൻ ഇസ്റ്റ് ഐനെ ഫസ്സീനീറൻഡെ ഷ്ടഡ്ട്.", grammar: "'faszinierend' = fascinating. '-e' ending (feminine nominative after 'eine')." },
+            { de: "Ich habe viele Museen besucht.", en: "I visited many museums.", phonetic: "ഇഖ് ഹാബെ ഫീലെ മൂസേൻ ബെസൂഹ്ട്ട്.", grammar: "'besuchen' = to visit. 'Museen' = museums (plural of 'Museum')." },
+            { de: "Das Essen war wirklich fantastisch.", en: "The food was really fantastic.", phonetic: "ഡാസ് എസ്സൻ വൂർ വിർക്ലിഹ് ഫൻടൻ‍റ്റ്യൂ.", grammar: "'war' = was (simple past of 'sein'). Used for descriptions in narrative." },
+            { de: "Nächstes Jahr möchte ich nach Wien fahren.", en: "Next year I would like to go to Vienna.", phonetic: "നേഹ്സ്ടസ് യൂർ മേഹ്ടെ ഇഖ് നാഹ് വീൻ ഫാറൻ.", grammar: "'nächstes Jahr' = next year. 'möchte + infinitive' = would like to." },
+            { de: "Reisen macht mich glücklich.", en: "Travelling makes me happy.", phonetic: "റൈസ്സൻ മാഖ്ട്ട് മിഖ് ഗ്ലൂക്ലിഹ്.", grammar: "'machen' = to make. 'mich' = me (accusative). Infinitive as subject." }
+        ]
+    },
+    {
+        id: "st_11", emoji: "👥", titleDE: "Freunde und Kontakte", titleEN: "Friends & Contacts",
+        descDE: "Sprechen Sie über Freunde", descEN: "Talk about your friends and contacts",
+        sentences: [
+            { de: "Ich habe viele Freunde.", en: "I have many friends.", phonetic: "ഇഖ് ഹാബെ ഫീലെ ഫ്രോയ്ൻഡെ.", grammar: "'Freunde' is the plural of 'Freund' (masculine). 'viele' = many." },
+            { de: "Mein bester Freund heißt Rahul.", en: "My best friend is named Rahul.", phonetic: "മൈൻ ബെസ്റ്റർ ഫ്രോയ്ൻഡ് ഹൈസ്റ്റ് രാഹുൽ.", grammar: "'mein bester Freund' (masculine nominative subject with adjective ending)." },
+            { de: "Wir kennen uns seit der Schule.", en: "We have known each other since school.", phonetic: "വിർ കെന്നൻ ഉൻസ് സൈറ്റ് ഡേർ ഷൂലെ.", grammar: "'seit' takes dative: 'seit der Schule' (feminine dative)." },
+            { de: "Wir telefonieren oft am Abend.", en: "We often talk on the phone in the evening.", phonetic: "വിർ ടെലിഫോണിയറൻ ഓഫ്റ്റ് ആം ആബൻഡ്.", grammar: "'am Abend' = at evening. 'oft' = often." },
+            { de: "Am Wochenende treffen wir uns.", en: "At the weekend we meet up.", phonetic: "ആം വൊഖൻഎൻഡെ ട്രെഫൻ വിർ ഉൻസ്.", grammar: "'sich treffen' = to meet (reflexive). Verb in position 2." },
+            { de: "Wir gehen zusammen ins Kino.", en: "We go to the cinema together.", phonetic: "വിർ ഗേൻ ത്സുസമ്മൻ ഇൻസ് കീനോ.", grammar: "'ins' = in + das (accusative direction to cinema)." },
+            { de: "Er hilft mir immer beim Lernen.", en: "He always helps me with learning.", phonetic: "എർ ഹിൽഫ്ട് മിർ ഇമ്മർ ബൈം ലേർനൻ.", grammar: "'helfen' takes dative: 'mir'. 'beim' = bei + dem." },
+            { de: "Ich bin froh, ihn zu haben.", en: "I am glad to have him.", phonetic: "ഇഖ് ബിൻ ഫ്രോ, ഈൻ ത്സൂ ഹാബൻ.", grammar: "Infinitiv mit 'zu' structure: 'ihn zu haben'. 'ihn' = him (accusative)." }
+        ]
+    },
+    {
+        id: "st_12", emoji: "🏥", titleDE: "Gesundheit und Arzt", titleEN: "Health & Doctor",
+        descDE: "Beschreiben Sie Gesundheitsprobleme", descEN: "Describe symptoms and visiting a doctor",
+        sentences: [
+            { de: "Ich fühle mich heute nicht gut.", en: "I don't feel well today.", phonetic: "ഇഖ് ഫൂലെ മിഖ് ഹോയ്ടെ നിഹ്ട് ഗൂട്ട്.", grammar: "'sich fühlen' = to feel (reflexive). 'nicht' negates 'gut'." },
+            { de: "Mein Kopf tut sehr weh.", en: "My head hurts a lot.", phonetic: "മൈൻ കോപ്ഫ് ടൂട്ട് സേർ വേ.", grammar: "'weh tun' = to hurt/ache. 'Kopf' is masculine." },
+            { de: "Ich habe seit gestern Fieber.", en: "I have had a fever since yesterday.", phonetic: "ഇഖ് ഹാബെ സൈറ്റ് ഗെസ്റ്റേൺ ഫീബർ.", grammar: "'Fieber' = fever (neuter). 'seit gestern' = since yesterday." },
+            { de: "Ich muss zum Arzt gehen.", en: "I must go to the doctor.", phonetic: "ഇഖ് മുസ് ത്സും ആർറ്റ്സ്ത് ഗേൻ.", grammar: "Modal verb 'müssen' (muss) + infinitive at end ('gehen'). 'zum' = zu + dem." },
+            { de: "Ich brauche einen Termin.", en: "I need an appointment.", phonetic: "ഇഖ് ബ്രൗഖെ ഐനൻ ടെർമീൻ.", grammar: "'brauchen' takes accusative: 'einen Termin' (masculine)." },
+            { de: "Der Arzt verschreibt mir ein Medikament.", en: "The doctor prescribes me a medicine.", phonetic: "ഡേർ ആർറ്റ്സ്ത് ഫെർഷ്രൈប്ട് മിർ ഐൻ മെഡികമെൻ്റ്.", grammar: "'verschreiben' = to prescribe. Dative 'mir' (to me), Accusative 'ein Medikament' (neuter)." },
+            { de: "Ich soll dreimal täglich eine Tablette nehmen.", en: "I should take one tablet three times a day.", phonetic: "ഇഖ് സോൾ ഡ്രൈമൽ ടേഗ്ലിഹ് ഐനെ ടാബ്ലെറ്റെ നേമെൻ.", grammar: "Modal verb 'sollen' (soll). 'täglich' = daily." },
+            { de: "Ich hoffe, ich werde schnell gesund.", en: "I hope I get well quickly.", phonetic: "ഇഖ് ഹോഫെ, ഇഖ് വേർഡെ ഷ്നെൽ ഗെസുൻഡ്.", grammar: "'werden' = to become. 'gesund' = healthy." }
+        ]
+    },
+    {
+        id: "st_13", emoji: "☀️", titleDE: "Wetter und Jahreszeiten", titleEN: "Weather & Seasons",
+        descDE: "Beschreiben Sie das Wetter", descEN: "Describe weather and seasons",
+        sentences: [
+            { de: "Das Wetter ist heute sehr schön.", en: "The weather is very beautiful today.", phonetic: "ഡാസ് വെറ്റർ ഇസ്റ്റ് ഹോയ്ടെ സേർ ഷേൻ.", grammar: "'Wetter' is neuter. 'schön' = nice/beautiful." },
+            { de: "Es ist sonnig und warm.", en: "It is sunny and warm.", phonetic: "എസ് ഇസ്റ്റ് സോണിഹ് ഉൻഡ് വാർം.", grammar: "Pronoun 'es' is used for weather descriptions." },
+            { de: "Im Sommer ist es oft sehr heiß.", en: "In summer it is often very hot.", phonetic: "ഇം സൂമ്മർ ഇസ്റ്റ് എസ് ഓഫ്റ്റ് സേർ ഹൈസ്.", grammar: "'im' = in + dem (dative masculine). 'heiß' = hot." },
+            { de: "Im Winter schneit es manchmal.", en: "In winter it snows sometimes.", phonetic: "ഇം വിൻ്റർ ഷ്നൈറ്റ് എസ് മാൻഷ്മാൽ.", grammar: "Verb 'schneien' = to snow. 'manchmal' = sometimes." },
+            { de: "Ich mag den Herbst wegen der bunten Blätter.", en: "I like autumn because of the colorful leaves.", phonetic: "ഇഖ് മാഗ് ഡൻ ഹെർബസ്റ്റ് വേഗൻ ഡേർ ബൂണ്ടൻ ബ്ലെറ്റർ.", grammar: "'den Herbst' (masculine accusative). 'wegen' + genitive/dative." },
+            { de: "Der Frühling ist meine Lieblingsjahreszeit.", en: "Spring is my favorite season.", phonetic: "ഡേർ ഫ്രൂലിങ് ഇസ്റ്റ് മൈനെ ലീബ്ലിങ്സ് യാറെസ് ത്സൈറ്റ്.", grammar: "'Frühling' is masculine. 'Lieblingsjahreszeit' = favorite season." },
+            { de: "Es regnet, ich brauche einen Regenschirm.", en: "It's raining, I need an umbrella.", phonetic: "എസ് റെഗ്നെറ്റ്, ഇഖ് ബ്രൗഖെ ഐനൻ റെഗൻഷീം.", grammar: "'regnen' = to rain. 'Regenschirm' is masculine accusative ('einen')." },
+            { de: "Die Temperatur liegt bei 20 Grad.", en: "The temperature is around 20 degrees.", phonetic: "ഡീ ടെമ്പറേച്ചർ ലീഗ്ട് ബൈ ത്സ്വാൻസിഗ് ഗ്രാഡ്.", grammar: "'die Temperatur' (feminine). 'liegen bei' = to lie at/stand at." }
+        ]
+    },
+    {
+        id: "st_14", emoji: "🎉", titleDE: "Feste und Feiertage", titleEN: "Celebrations & Holidays",
+        descDE: "Erzählen Sie über Feste", descEN: "Talk about birthdays and seasonal holidays",
+        sentences: [
+            { de: "Ich feiere meinen Geburtstag im Juli.", en: "I celebrate my birthday in July.", phonetic: "ഇഖ് ഫൈയറെ മൈനൻ ഗെബർട്സ്റ്റാഗ് ഇം യൂലി.", grammar: "'meinen Geburtstag' (masculine accusative). Months take 'im'." },
+            { de: "Ich lade viele Gäste ein.", en: "I invite many guests.", phonetic: "ഇഖ് ലാഡെ ഫീലെ ഗെസ്റ്റെ ഐൻ.", grammar: "Separable verb 'einladen': 'lade ... ein'." },
+            { de: "Wir essen Kuchen und trinken Saft.", en: "We eat cake and drink juice.", phonetic: "വിർ എസ്സൻ കൂഖൻ ഉൻഡ് ട്രിങ്കൻ സാഫ്റ്റ്.", grammar: "Plural verbs matching subject 'wir'. No articles for general food/drinks." },
+            { de: "Ich bekomme viele schöne Geschenke.", en: "I get many beautiful gifts.", phonetic: "ഇഖ് ബെകൊമ്മെ ഫീലെ ഷേനെ ഗെഷെൻകെ.", grammar: "'bekommen' = to get/receive. Adjective plural ending after 'viele': '-e'." },
+            { de: "Weihnachten ist ein wichtiges Familienfest.", en: "Christmas is an important family celebration.", phonetic: "വൈനാഹ്റ്റൻ ഇസ്റ്റ് ഐൻ വിഹ്തിഗെസ് ഫമീലിയൻഫെസ്റ്റ്.", grammar: "'Familienfest' is neuter. Adjective ending after 'ein': '-es'." },
+            { de: "Wir schmücken einen Tannenbaum.", en: "We decorate a Christmas tree.", phonetic: "വിർ ഷ്മുക്കെൻ ഐനൻ ടാന്നൻബൗം.", grammar: "'schmücken' = to decorate. 'Tannenbaum' is masculine accusative." },
+            { de: "Zu Silvester gibt es ein Feuerwerk.", en: "On New Year's Eve there is a firework display.", phonetic: "ത്സൂ സിൽവെസ്റ്റർ ഗിബ്ട് എസ് ഐൻ ഫോയർവെർക്ക്.", grammar: "'zu' = at/for holiday. 'Feuerwerk' is neuter." },
+            { de: "Frohe Ostern wünsche ich dir!", en: "Happy Easter I wish to you!", phonetic: "ഫ്രോഹെ ഓസ്റ്റേൺ വുൺഷെ ഇഖ് ഡിർ.", grammar: "'wünschen' takes dative 'dir'. 'Ostern' = Easter." }
+        ]
+    },
+    {
+        id: "st_15", emoji: "🏫", titleDE: "Schule und Lernen", titleEN: "School & Education",
+        descDE: "Erzählen Sie über die Schule", descEN: "Describe your school days and study tips",
+        sentences: [
+            { de: "Ich bin in der Schule gern gegangen.", en: "I liked going to school.", phonetic: "ഇഖ് ബിൻ ഇൻ ഡേർ ഷൂലെ ഗേൺ ഗെഗാംഗൻ.", grammar: "Past Perfekt: 'bin gegangen'. 'in der Schule' (dative)." },
+            { de: "Mein Lieblingsfach war Deutsch.", en: "My favorite subject was German.", phonetic: "മൈൻ ലീബ്ലിങ്സ്ഫാഹ് വാർ ഡോയ്ഷ്.", grammar: "'Lieblingsfach' is neuter. 'war' = was." },
+            { de: "Der Lehrer war sehr freundlich.", en: "The teacher was very friendly.", phonetic: "ഡേർ ലേരെർ വാർ സേർ ഫ്രോയ്ൻഡ്‌ലിഹ്.", grammar: "'Lehrer' is masculine singular. 'freundlich' = friendly." },
+            { de: "Wir hatten viele Hausaufgaben.", en: "We had a lot of homework.", phonetic: "വിർ ഹാറ്റൻ ഫീലെ ഹൗസ് ഔഫ്ഗാബെൻ.", grammar: "Präteritum of haben: 'hatten'. 'Hausaufgaben' is plural." },
+            { de: "Ich lerne jetzt für eine Prüfung.", en: "I am studying for an exam now.", phonetic: "ഇഖ് ലേർനെ യെറ്റ്സ്റ്റ് ഫൂർ ഐനെ പ്രൂഫൂങ്.", grammar: "'für' takes accusative: 'eine Prüfung' (feminine)." },
+            { de: "Vokabeln lernen ist manchmal schwer.", en: "Learning vocabulary is sometimes difficult.", phonetic: "വൊകാബെൽൻ ലേർനൻ ഇസ്റ്റ് മാൻഷ്മാൽ ഷ്വേർ.", grammar: "'schwer' = difficult/heavy. 'manchmal' = sometimes." },
+            { de: "Wir müssen im Kurs viel sprechen.", en: "We must speak a lot in the course.", phonetic: "വിർ മുസ്സൻ ഇം куർസ് ഫീൽ ഷ്പ്രേഖൻ.", grammar: "Modal verb 'müssen' + infinitive 'sprechen'. 'im' = in dem." },
+            { de: "Bildung ist sehr wichtig für die Zukunft.", en: "Education is very important for the future.", phonetic: "ബിൽഡൂങ് ഇസ്റ്റ് സേർ വിഹ്തിഹ് ഫൂർ ഡീ ത്സുകുൻഫ്റ്റ്.", grammar: "'Bildung' = education (feminine). 'die Zukunft' = the future (feminine)." }
+        ]
+    },
+    {
+        id: "st_16", emoji: "🚗", titleDE: "Verkehrsmittel", titleEN: "Transportation & Directions",
+        descDE: "Sprechen Sie über Verkehrsmittel", descEN: "Describe how you commute and travel locally",
+        sentences: [
+            { de: "Ich fahre jeden Tag mit der U-Bahn.", en: "I ride the subway every day.", phonetic: "ഇഖ് ഫാറെ യേഡൻ ടാഗ് മിറ്റ് ഡേർ ഊ-ബാൻ.", grammar: "'mit' always takes dative: 'mit der U-Bahn' (feminine dative)." },
+            { de: "Das Ticket kostet drei Euro.", en: "The ticket costs three euros.", phonetic: "ഡാസ് ടിക്കറ്റ് കോസ്റ്റേട്ട് ഡ്രൈ ഓയ്‌റോ.", grammar: "'Ticket' is neuter. 'kostet' = costs." },
+            { de: "Die U-Bahn ist meistens sehr pünktlich.", en: "The subway is usually very punctual.", phonetic: "ഡീ ഊ-ബാൻ ഇസ്റ്റ് മൈസ്റ്റൻസ് സേർ പൂങ്ത്‌ലിഹ്.", grammar: "'pünktlich' = punctual/on time. 'meistens' = mostly." },
+            { de: "Ich habe kein Auto.", en: "I have no car.", phonetic: "ഇഖ് ഹാബെ കൈൻ ഔട്ടോ.", grammar: "Neuter negation 'kein' before 'Auto' (accusative object)." },
+            { de: "Ich fahre auch gern Fahrrad.", en: "I also like to ride a bicycle.", phonetic: "ഇഖ് ഫാറെ ഔഖ് ഗേൺ ഫാറാഡ്.", grammar: "'Fahrrad fahren' = to ride a bicycle. 'Fahrrad' is neuter." },
+            { de: "Der Bahnhof ist in der Nähe.", en: "The train station is nearby.", phonetic: "ഡേർ ബാൻഹോഫ് ഇസ്റ്റ് ഇൻ ഡേർ നേയെ.", grammar: "'in der Nähe' = in the proximity/nearby (dative feminine)." },
+            { de: "Entschuldigung, wo ist die Bushaltestelle?", en: "Excuse me, where is the bus stop?", phonetic: "എൻ്റ്ഷുൽഡിഗൂങ്, വോ ഇസ്റ്റ് ഡീ ബൂസ്ഹാൽറ്റെസ്റ്റെല്ലെ.", grammar: "'wo ist' = where is. 'Bushaltestelle' is feminine." },
+            { de: "Sie müssen hier geradeaus gehen.", en: "You must go straight ahead here.", phonetic: "സീ മുസ്സൻ ഹീർ ഗെരാഡെ ഔസ് ഗേൻ.", grammar: "Directions: 'geradeaus' = straight ahead. Formal 'Sie' command." }
+        ]
+    },
+    {
+        id: "st_17", emoji: "🍿", titleDE: "Freizeit und Medien", titleEN: "Media & Technology",
+        descDE: "Erzählen Sie über Medien", descEN: "Describe how you use technology and media",
+        sentences: [
+            { de: "Ich benutze mein Smartphone jeden Tag.", en: "I use my smartphone every day.", phonetic: "ഇഖ് ബെനുറ്റ്സെ മൈൻ സ്മാർട്ട്ഫോൺ യേഡൻ ടാഗ്.", grammar: "'benutzen' = to use. 'mein Smartphone' (neuter accusative)." },
+            { de: "Ich surfe oft im Internet.", en: "I often surf the internet.", phonetic: "ഇഖ് സൂർഫെ ഓഫ്റ്റ് ഇം ഇൻറർനെറ്റ്.", grammar: "'im Internet' = in the internet. 'oft' = often." },
+            { de: "Abends sehe ich gern fern.", en: "In the evening I like to watch TV.", phonetic: "ആബൻഡ്സ് സേയെ ഇഖ് ഗേൺ ഫെൻ.", grammar: "Separable verb 'fernsehen': 'sehe ... fern'." },
+            { de: "Ich sehe mir Serien auf Netflix an.", en: "I watch series on Netflix.", phonetic: "ഇഖ് സേയെ മിർ സേരിയൻ ഔഫ് നെറ്റ്ഫ്ലിക്സ് ആൻ.", grammar: "Separable reflexive 'sich ansehen': 'sehe mir ... an'." },
+            { de: "Ich lese auch E-Books auf meinem Tablet.", en: "I also read e-books on my tablet.", phonetic: "ഇഖ് ലേസെ ഔഖ് ഈ-ബുക്സ് ഔഫ് മൈനം ടാബ്ലെറ്റ്.", grammar: "'auf meinem' = on my (dative neuter)." },
+            { de: "Social Media ist sehr beliebt bei Jugendlichen.", en: "Social media is very popular with young people.", phonetic: "സോഷ്യൽ മീഡിയ ഇസ്റ്റ് സേർ ബെലീബ്ട് ബൈ യൂഗൻഡ്‌ലിഖൻ.", grammar: "'beliebt bei' = popular with. 'Jugendlichen' (dative plural)." },
+            { de: "Ich schreibe viele E-Mails.", en: "I write many emails.", phonetic: "ഇഖ് ഷ്രൈബെ ഫീലെ ഈ-മെയ്‌ൽസ്.", grammar: "'viele E-Mails' (accusative feminine plural)." },
+            { de: "Technologie macht das Leben einfacher.", en: "Technology makes life simpler.", phonetic: "ടെക്നോളജി മാഖ്ട് ഡാസ് ലേബൻ ഐൻഫാഖർ.", grammar: "'einfacher' = easier/simpler (comparative of einfach)." }
+        ]
+    },
+    {
+        id: "st_18", emoji: "👕", titleDE: "Kleidung", titleEN: "Clothing & Fashion",
+        descDE: "Sprechen Sie über Kleidung", descEN: "Describe what you wear and buying clothes",
+        sentences: [
+            { de: "Heute trage ich eine blaue Jeans.", en: "Today I am wearing blue jeans.", phonetic: "ഹോയ്ടെ ട്രാഗെ ഇഖ് ഐനെ ബ്ലൗവെ ജീൻസ്.", grammar: "Adjective ending: feminine accusative after 'eine' takes '-e'." },
+            { de: "Ich trage auch ein weißes T-Shirt.", en: "I am also wearing a white T-shirt.", phonetic: "ഇഖ് ട്രാഗെ ഔഖ് ഐൻ വൈസെസ് ടി-ഷർട്ട്.", grammar: "Adjective ending: neuter accusative after 'ein' takes '-es'." },
+            { de: "Im Winter brauche ich eine warme Jacke.", en: "In winter I need a warm jacket.", phonetic: "ഇം വിൻ്റർ ബ്രൗഖെ ഇഖ് ഐനെ വാർമെ യാക്കെ.", grammar: "'brauchen' + accusative feminine: 'eine warme Jacke'." },
+            { de: "Meine Lieblingsfarbe für Kleidung ist Schwarz.", en: "My favorite color for clothes is black.", phonetic: "മൈനെ ലീബ്ലിങ്സ്ഫാർബെ ഫൂർ ക്ലൈഡൂങ് ഇസ്റ്റ് ഷ്വാർട്സ്.", grammar: "'Lieblingsfarbe' = favorite color (feminine)." },
+            { de: "Ich kaufe meine Kleidung im Geschäft.", en: "I buy my clothes in the shop.", phonetic: "ഇഖ് കൗഫെ മൈനെ ക്ലൈഡൂങ് ഇം ഗെഷെഫ്റ്റ്.", grammar: "'im Geschäft' = in the shop (dative neuter)." },
+            { de: "Manchmal bestelle ich Kleidung online.", en: "Sometimes I order clothes online.", phonetic: "മാൻഷ്മാൽ ബെസ്റ്റെല്ലെ ഇഖ് ക്ലൈഡൂങ് ഓൺലൈൻ.", grammar: "'bestellen' = to order. Adverb 'manchmal' causes inversion." },
+            { de: "Die Schuhe passen mir gut.", en: "The shoes fit me well.", phonetic: "ഡീ ഷൂവെ പാസ്സൻ മിർ ഗൂട്ട്.", grammar: "'passen' takes dative object: 'mir' (me). 'Schuhe' is plural." },
+            { de: "Kleidung soll bequem sein.", en: "Clothing should be comfortable.", phonetic: "ക്ലൈഡൂങ് സോൾ ബെക്വേം സൈൻ.", grammar: "Modal verb 'sollen' (soll) + infinitive 'sein'. 'bequem' = comfortable." }
+        ]
+    },
+    {
+        id: "st_19", emoji: "🏆", titleDE: "Sport und Fitness", titleEN: "Sports & Fitness",
+        descDE: "Erzählen Sie über Sport", descEN: "Describe your sports habits and active life",
+        sentences: [
+            { de: "Ich mache zweimal pro Woche Sport.", en: "I do sport twice a week.", phonetic: "ഇഖ് മാഖെ ത്സ്വൈമൽ പ്രോ വൊഖെ ഷ്പോർട്ട്.", grammar: "'Sport machen' = to do sport. 'zweimal' = twice." },
+            { de: "Mein Lieblingssport ist Badminton.", en: "My favorite sport is badminton.", phonetic: "മൈൻ ലീബ്ലിങ്സ്പോർട്ട് ഇസ്റ്റ് ബാഡ്മിൻ്റൺ.", grammar: "'Lieblingssport' is masculine. 'ist' = is." },
+            { de: "Ich spiele am Samstag mit Freunden.", en: "I play on Saturday with friends.", phonetic: "ഇഖ് ഷ്പീലെ ആം സാംസ്താഗ് മിറ്റ് ഫ്രോയ്ൻഡൻ.", grammar: "'mit' takes dative plural: 'mit Freunden'. Days take 'am'." },
+            { de: "Laufen ist gut für die Fitness.", en: "Running is good for fitness.", phonetic: "ലൗഫൻ ഇസ്റ്റ് ഗൂട്ട് ഫൂർ ഡീ ഫിറ്റ്നസ്.", grammar: "Gerund 'Laufen' (running) as subject. 'für die Fitness' (accusative feminine)." },
+            { de: "Ich trinke viel Wasser beim Training.", en: "I drink plenty of water during training.", phonetic: "ഇഖ് ട്രിങ്കെ ഫീൽ വാസ്സർ ബൈം ട്രെയിനിങ്.", grammar: "'viel' before uncountable nouns. 'beim' = bei + dem (dative neuter)." },
+            { de: "Ich gehe gern im Park spazieren.", en: "I like to go walking in the park.", phonetic: "ഇഖ് ഗേ ഗേൺ ഇം പാർക്ക് ഷ്പാത്സീറൻ.", grammar: "'spazieren gehen' = to go for a walk. 'im Park' (dative)." },
+            { de: "Sport hilft gegen Stress.", en: "Sport helps against stress.", phonetic: "ഷ്പോർട്ട് ഹിൽഫ്ട് ഗേഗൻ സ്ട്രെസ്സ്.", grammar: "'helfen' (hilft). 'gegen' takes accusative: 'gegen Stress'." },
+            { de: "Ich möchte fit und gesund bleiben.", en: "I want to stay fit and healthy.", phonetic: "ഇഖ് മേഹ്റ്റെ ഫിറ്റ് ഉൻഡ് ഗെസുൻഡ് ബ്ലൈബൻ.", grammar: "Modal 'möchten' + infinitive at end: 'bleiben' (to stay)." }
+        ]
+    },
+    {
+        id: "st_20", emoji: "🍂", titleDE: "Pläne für das Wochenende", titleEN: "Weekend Plans",
+        descDE: "Erzählen Sie über Pläne", descEN: "Describe your plans for the weekend",
+        sentences: [
+            { de: "Am Wochenende habe ich endlich Freizeit.", en: "At the weekend I finally have free time.", phonetic: "ആം വൊഖൻഎൻഡെ ഹാബെ ഇഖ് എൻഡ്‌ലിഹ് ഫ്രൈത്സൈറ്റ്.", grammar: "Time phrase at start causes inversion. 'Freizeit' (feminine)." },
+            { de: "Ich möchte am Samstag ausschlafen.", en: "I would like to sleep in on Saturday.", phonetic: "ഇഖ് മേഹ്റ്റെ ആം സാംസ്താഗ് ഔസ്ഷ്ലാഫൻ.", grammar: "Separable verb 'ausschlafen' in infinitive form at the end." },
+            { de: "Ich plane ein Picknick im Park.", en: "I am planning a picnic in the park.", phonetic: "ഇഖ് പ്ലാനെ ഐൻ പിക്നിക് ഇം പാർക്ക്.", grammar: "'planen' = to plan. 'ein Picknick' (neuter accusative)." },
+            { de: "Ich treffe meine Freunde am Nachmittag.", en: "I am meeting my friends in the afternoon.", phonetic: "ഇഖ് ട്രെഫെ മൈനെ ഫ്രോയ്ൻഡെ ആം നാഖ്മിറ്റാഗ്.", grammar: "'treffen' = to meet. 'meine Freunde' (plural accusative)." },
+            { de: "Am Sonntag besuche ich meine Großeltern.", en: "On Sunday I am visiting my grandparents.", phonetic: "ആം സോൺടാഗ് ബെസൂഹെ ഇഖ് മൈനെ ഗ്രോസ്സ് എൽറ്റേൺ.", grammar: "'besuchen' = to visit. 'meine Großeltern' (plural accusative)." },
+            { de: "Wir trinken zusammen Kaffee.", en: "We drink coffee together.", phonetic: "വിർ ട്രിങ്കൻ ത്സുസമ്മൻ കഫേ.", grammar: "'zusammen' = together. No article for 'Kaffee'." },
+            { de: "Abends möchte ich ein Buch lesen.", en: "In the evenings I would like to read a book.", phonetic: "ആബൻഡ്സ് മേഹ്റ്റെ ഇഖ് ഐൻ ബൂഖ് ലേസെൻ.", grammar: "Modal verb 'möchten' + infinitive 'lesen'." },
+            { de: "Das Wochenende wird bestimmt toll.", en: "The weekend will surely be great.", phonetic: "ഡാസ് വൊഖൻഎൻഡെ വിർട്ട് ബെസ്റ്റിംറ്റ് ടോൾ.", grammar: "Future indicator 'werden' (wird). 'bestimmt' = certainly/surely." }
+        ]
+    },
+    {
+        id: "st_21", emoji: "🍔", titleDE: "Esen und Trinken", titleEN: "Food & Drink",
+        descDE: "Sprechen Sie über Essen", descEN: "Talk about your food and drink preferences",
+        sentences: [
+            { de: "Ich esse gern Gemüse und Reis.", en: "I like to eat vegetables and rice.", phonetic: "ഇഖ് എസ്സെ ഗേൺ ഗെമ്യൂസെ ഉൻഡ് റൈസ്.", grammar: "'Gemüse' is neuter. 'gern' + verb indicates liking." },
+            { de: "Mein Lieblingsessen ist Hähnchen mit Pommes.", en: "My favorite food is chicken with fries.", phonetic: "മൈൻ ലീബ്ലിങ്സ് എസ്സൻ ഇസ്റ്റ് ഹേൻഖൻ മിറ്റ് പോമ്മസ്.", grammar: "'Lieblingsessen' is neuter. 'mit' takes dative." },
+            { de: "Zum Frühstück trinke ich Kaffee.", en: "For breakfast, I drink coffee.", phonetic: "ത്സും ഫ്രൂഷ്ടൂക്ക് ട്രിങ്കെ ഇഖ് കഫേ.", grammar: "'zum' = zu + dem (dative neuter)." },
+            { de: "Mittags esse ich meistens einen Salat.", en: "At lunchtime, I usually eat a salad.", phonetic: "മിറ്റാഗ്സ് എസ്സെ ഇഖ് മൈസ്റ്റൻസ് ഐനൻ സലാറ്റ്.", grammar: "'Salat' is masculine accusative ('einen Salat')." },
+            { de: "Ich koche gern für meine Freunde.", en: "I like to cook for my friends.", phonetic: "ഇഖ് കോഖെ ഗേൺ ഫൂർ മൈനെ ഫ്രോയ്ൻഡെ.", grammar: "'für' takes accusative plural: 'meine Freunde'." },
+            { de: "Das Essen im Restaurant schmeckt lecker.", en: "The food in the restaurant tastes delicious.", phonetic: "ഡാസ് എസ്സൻ ഇം റെസ്റ്റോറൻ്റ് ഷ്മെക്ട് ലെക്കർ.", grammar: "'schmecken' = to taste. 'im' = in dem." },
+            { de: "Trinken Sie lieber Wasser oder Tee?", en: "Do you prefer to drink water or tea?", phonetic: "トരിങ്കൻ സീ ലീബർ വാസ്സർ ഓഡർ ടെയ്?", grammar: "'lieber' = prefer (comparative of gern). Formal 'Sie' question." },
+            { de: "Ich mag keinen Fisch.", en: "I do not like fish.", phonetic: "ഇഖ് മാഗ് കൈനൻ ഫിഷ്.", grammar: "'Fisch' is masculine accusative, negated by 'keinen'." }
+        ]
+    },
+    {
+        id: "st_22", emoji: "🛋️", titleDE: "Meine Wohnungseinrichtung", titleEN: "Furniture & Rooms",
+        descDE: "Beschreiben Sie Ihre Möbel", descEN: "Describe your furniture and room arrangements",
+        sentences: [
+            { de: "Mein Wohnzimmer ist gemütlich.", en: "My living room is cozy.", phonetic: "മൈൻ വോൻത്സിമ്മർ ഇസ്റ്റ് ഗെമ്യൂട്ട്ലിഹ്.", grammar: "'gemütlich' = cozy/comfortable. 'Wohnzimmer' is neuter." },
+            { de: "In der Mitte steht ein großer Tisch.", en: "In the middle stands a big table.", phonetic: "ഇൻ ഡേർ മിറ്റെ ഷ്ടേറ്റ് ഐൻ ഗ്രോസ്സർ ടിഷ്.", grammar: "'in der Mitte' (dative feminine). Nominative masculine adjective ending: '-er'." },
+            { de: "Das Sofa ist blau und sehr bequem.", en: "The sofa is blue and very comfortable.", phonetic: "ഡാസ് സോഫ ഇസ്റ്റ് ബ്ലൗ ഉൻഡ് സേർ ബെക്വേം.", grammar: "'Sofa' is neuter. 'bequem' = comfortable." },
+            { de: "An der Wand hängt ein schönes Bild.", en: "On the wall hangs a beautiful picture.", phonetic: "ആൻ ഡേർ വാൻഡ് ഹേങ്ത് ഐൻ ഷേനെസ് ബിൽഡ്.", grammar: "'an der Wand' (dative feminine for location). Neuter adjective ending: '-es'." },
+            { de: "Im Schlafzimmer steht mein Bett.", en: "My bed is in the bedroom.", phonetic: "ഇം ഷ്ലാഫ്ത്സിമ്മർ ഷ്ടേറ്റ് മൈൻ ബെറ്റ്.", grammar: "'Bett' is neuter. 'im' = in dem." },
+            { de: "Ich habe einen großen Kleiderschrank.", en: "I have a big wardrobe.", phonetic: "ഇഖ് ഹാബെ ഐനൻ ഗ്രോസ്സൻ ക്ലൈഡർഷ്രാങ്ക്.", grammar: "'haben' + accusative masculine: 'einen großen Kleiderschrank'." },
+            { de: "Die Küche hat einen modernen Kühlschrank.", en: "The kitchen has a modern refrigerator.", phonetic: "ഡീ കൂഖെ ഹാട്ട് ഐനൻ മോഡേണൻ കൂൽഷ്രാങ്ക്.", grammar: "'Kühlschrank' is masculine accusative." },
+            { de: "Meine Wohnung hat viele helle Fenster.", en: "My apartment has many bright windows.", phonetic: "മൈനെ വോനൂങ് ഹാട്ട് ഫീലെ ഹെല്ലെ ഫെൻസ്റ്റർ.", grammar: "'Fenster' is plural (neuter). Adjective ending after 'viele': '-e'." }
+        ]
+    },
+    {
+        id: "st_23", emoji: "📅", titleDE: "Wochentage und Termine", titleEN: "Days & Appointments",
+        descDE: "Sprechen Sie über Termine", descEN: "Talk about days, calendars and planning appointments",
+        sentences: [
+            { de: "Heute ist Montag.", en: "Today is Monday.", phonetic: "ഹോയ്ടെ ഇസ്റ്റ് മോൺടാഗ്.", grammar: "Days of the week are masculine and capitalization is required." },
+            { de: "Am Dienstag habe ich einen Termin.", en: "On Tuesday, I have an appointment.", phonetic: "ആം ഡീൻസ്താഗ് ഹാബെ ഇഖ് ഐനൻ ടെർമീൻ.", grammar: "Days take preposition 'am' (an dem). Inversion of subject-verb." },
+            { de: "Mittwochs spiele ich meistens Tennis.", en: "On Wednesdays, I usually play tennis.", phonetic: "മിറ്റ്വോഖ്സ് ഷ്പീലെ ഇഖ് മൈസ്റ്റൻസ് ടെന്നിസ്.", grammar: "Adverbs of time ending in '-s' indicate habitual action (every Wednesday)." },
+            { de: "Der Termin ist um zehn Uhr.", en: "The appointment is at ten o'clock.", phonetic: "ഡേർ ടെർമീൻ ഇസ്റ്റ് ഉം ത്സേൻ ഉർ.", grammar: "Time is expressed with preposition 'um'." },
+            { de: "Passt es Ihnen am Donnerstag?", en: "Does Thursday suit you?", phonetic: "പാസ്റ്റ് എസ് ഈനൻ ആം ഡോണേർസ്താഗ്?", grammar: "'passen' + dative pronoun 'Ihnen' (formal you)." },
+            { de: "Am Freitag fahre ich nach Hause.", en: "On Friday, I drive home.", phonetic: "ആം ഫ്രൈറ്റാഗ് ഫാറെ ഇഖ് നാഹ് ഹൗസെ.", grammar: "'nach Hause fahren' = going home (fixed idiom)." },
+            { de: "Das Wochenende beginnt am Samstag.", en: "The weekend begins on Saturday.", phonetic: "ഡാസ് വൊഖൻഎൻഡെ ബെഗിൻ്റ് ആം സാംസ്താഗ്.", grammar: "'Wochenende' is neuter. 'beginnen' = to begin." },
+            { de: "Am Sonntag schlafe ich lange.", en: "On Sunday, I sleep for a long time.", phonetic: "ആം സോൺടാഗ് ഷ്ളാഫെ ഇഖ് ലാംഗെ.", grammar: "Adverb 'lange' = long/for a long duration." }
+        ]
+    },
+    {
+        id: "st_24", emoji: "💼", titleDE: "Am Arbeitsplatz", titleEN: "At the Workplace",
+        descDE: "Erzählen Sie über die Arbeit", descEN: "Describe your desk, tasks and office colleagues",
+        sentences: [
+            { de: "Ich arbeite in einem großen Büro.", en: "I work in a big office.", phonetic: "ഇഖ് ആർബൈറ്റെ ഇൻ ഐനം ഗ്രോസ്സൻ ബൂറോ.", grammar: "'in einem' = in a (dative neuter)." },
+            { de: "Auf meinem Schreibtisch steht ein Computer.", en: "There is a computer on my desk.", phonetic: "ഔഫ് മൈനം ഷ്രൈബ്ടിഷ് ഷ്ടേറ്റ് ഐൻ കമ്പ്യൂട്ടർ.", grammar: "'auf meinem' = on my (dative masculine). 'Schreibtisch' = desk." },
+            { de: "Ich schreibe viele E-Mails jeden Tag.", en: "I write many emails every day.", phonetic: "ഇഖ് ഷ്രൈബെ ഫീലെ ഈ-മെയ്‌ൽസ് യേഡൻ ടാഗ്.", grammar: "'viele E-Mails' (accusative plural). 'jeden Tag' = every day." },
+            { de: "Meine Kollegen sind sehr nett.", en: "My colleagues are very nice.", phonetic: "മൈനെ കൊള്ളേഗൻ സിൻഡ് സേർ നെറ്റ്.", grammar: "'Kollegen' is plural. 'sind' = are." },
+            { de: "Um zwölf Uhr machen wir Mittagspause.", en: "At twelve o'clock, we take a lunch break.", phonetic: "ഉം ത്സ്വോൾഫ് ഉർ മാഖൻ വിർ മിറ്റാഗ്സ് പാസ്സെ.", grammar: "'Mittagspause machen' = to take a lunch break." },
+            { de: "Ich telefoniere oft mit Kunden.", en: "I often talk on the phone with clients.", phonetic: "ഇഖ് ടെലിഫോണിയറെ ഓഫ്റ്റ് മിറ്റ് കുണ്ടൻ.", grammar: "'mit' takes dative plural: 'mit Kunden'." },
+            { de: "Die Arbeit macht mir viel Spaß.", en: "The work is a lot of fun for me.", phonetic: "ഡീ ആർബൈറ്റ് മാഖ്ട് മിർ ഫീൽ ഷ്പാസ്.", grammar: "'Spaß machen' takes dative pronoun 'mir'." },
+            { de: "Um fünf Uhr habe ich Feierabend.", en: "At five o'clock, I finish work.", phonetic: "ഉം ഫൂൻഫ് ഉർ ഹാബെ ഇഖ് ഫൈയറാബൻഡ്.", grammar: "'Feierabend' = end of working day/free time after work." }
+        ]
+    },
+    {
+        id: "st_25", emoji: "👤", titleDE: "Aussehen und Charakter", titleEN: "Appearance & Character",
+        descDE: "Beschreiben Sie Personen", descEN: "Describe looks and traits of a family member or friend",
+        sentences: [
+            { de: "Mein Bruder ist sehr groß.", en: "My brother is very tall.", phonetic: "മൈൻ ബ്രൂഡർ ഇസ്റ്റ് സേർ ഗ്രോസ്.", grammar: "'Bruder' is masculine. 'groß' = tall/big." },
+            { de: "Er hat kurze braune Haare.", en: "He has short brown hair.", phonetic: "എർ ഹാറ്റ് കുർത്സെ ബ്രൗനെ ഹാരെ.", grammar: "'Haare' is plural (neuter). Adjective ending: '-e'." },
+            { de: "Sie hat blaue Augen und ein nettes Lächeln.", en: "She has blue eyes and a nice smile.", phonetic: "സീ ഹാറ്റ് ബ്ലൗവെ ഔഗൻ ഉൻഡ് ഐൻ നെറ്റെസ് ലേഷ്ൻ.", grammar: "'Augen' is plural (blaue). 'Lächeln' is neuter singular (ein nettes)." },
+            { de: "Mein Vater trägt eine Brille.", en: "My father wears glasses.", phonetic: "മൈൻ  ഫാട്ടർ ട്രേഗ്ട് ഐനെ ബ്രില്ലെ.", grammar: "'tragen' = to wear/carry. 'Brille' is feminine." },
+            { de: "Meine Schwester ist sehr freundlich.", en: "My sister is very friendly.", phonetic: "മൈനെ ഷ്വെസ്റ്റർ ഇസ്റ്റ് സേർ ഫ്രോയ്ൻഡ്‌ലിഹ്.", grammar: "'freundlich' = friendly/kind." },
+            { de: "Sie hilft mir immer bei Problemen.", en: "She always helps me with problems.", phonetic: "സീ ഹിൽഫ്ട് മിർ ഇമ്മർ ബൈ പ്രോബ്ലേമൻ.", grammar: "'helfen' + dative: 'mir'. 'bei' + dative plural: 'bei Problemen'." },
+            { de: "Mein Onkel ist ein lustiger Mensch.", en: "My uncle is a funny person.", phonetic: "മൈൻ ഓങ്കൽ ഇസ്റ്റ് ഐൻ ലുസ്റ്റിഗർ മെൻഷ്.", grammar: "'Mensch' is masculine nominative. Adjective ending after 'ein': '-er'." },
+            { de: "Wir lachen oft zusammen.", en: "We often laugh together.", phonetic: "വിർ ലാഖൻ ഓഫ്റ്റ് ത്സുസമ്മൻ.", grammar: "'lachen' = to laugh. 'zusammen' = together." }
+        ]
+    },
+    {
+        id: "st_26", emoji: "🛒", titleDE: "Im Supermarkt", titleEN: "At the Supermarket",
+        descDE: "Sprechen Sie über Lebensmittel", descEN: "Grocery shopping, prices, asking for items and payment",
+        sentences: [
+            { de: "Ich brauche einen Einkaufswagen.", en: "I need a shopping cart.", phonetic: "ഇഖ് ബ്രൗഖെ ഐനൻ ഐൻകൗഫസ് വാഗൻ.", grammar: "'Einkaufswagen' is masculine accusative: 'einen'." },
+            { de: "Wo finde ich die Milch?", en: "Where do I find the milk?", phonetic: "വോ ഫിൻഡെ ഇഖ് ഡീ മിൽഹ്?", grammar: "'die Milch' is feminine accusative object." },
+            { de: "Die Bananen sind heute im Angebot.", en: "The bananas are on offer today.", phonetic: "ഡീ ബനാനൻ സിൻഡ് ഹോയ്ടെ ഇം അൻഗെബോട്ട്.", grammar: "'im Angebot' = on sale/special offer. 'Bananen' is plural." },
+            { de: "Was kostet ein Kilo Kartoffeln?", en: "How much does a kilo of potatoes cost?", phonetic: "വാസ് കോസ്റ്റേട്ട് ഐൻ കിലോ കാർട്ടോഫെൽൻ?", grammar: "'Kartoffeln' is plural. 'Kilo' is neuter." },
+            { de: "Ich kaufe auch Brot und Butter.", en: "I also buy bread and butter.", phonetic: "ഇഖ് കൗഫെ ഔഖ് ബ്രോട്ടു ഉൻഡ് ബൂട്ടർ.", grammar: "'Brot' is neuter, 'Butter' is feminine. No articles for groceries." },
+            { de: "Das Gemüse ist sehr frisch.", en: "The vegetables are very fresh.", phonetic: "ഡാസ് ഗെമ്യൂസെ ഇസ്റ്റ് സേർ ഫ്രിഷ്.", grammar: "'Gemüse' is neuter singular." },
+            { de: "Ich bezahle an der Kasse.", en: "I pay at the checkout counter.", phonetic: "ഇഖ് bezahle ആൻ ഡേർ കാസ്സെ.", grammar: "'an der Kasse' (dative feminine location)." },
+            { de: "Zahlen Sie bar oder mit Karte?", en: "Are you paying in cash or by card?", phonetic: "ത്സാലൻ സീ ബാർ ഓഡർ മിറ്റ് കർട്ടെ?", grammar: "'bar' = cash. 'mit Karte' = with card." }
+        ]
+    },
+    {
+        id: "st_27", emoji: "🏨", titleDE: "Im Hotel", titleEN: "At the Hotel",
+        descDE: "Gespräch an der Rezeption", descEN: "Checking in, checking out, and asking about guest facilities",
+        sentences: [
+            { de: "Guten Tag, ich habe ein Zimmer reserviert.", en: "Good day, I have reserved a room.", phonetic: "ഗൂറ്റൻ ടാഗ്, ഇഖ് ഹാബെ ഐൻ ത്സിമ്മർ റെസെർവീയർട്ട്.", grammar: "Perfect tense: 'habe reserviert'. 'Zimmer' is neuter accusative." },
+            { de: "Mein Name ist Nair.", en: "My name is Nair.", phonetic: "മൈൻ നാമെ ഇസ്റ്റ് നായർ.", grammar: "'Name' is masculine." },
+            { de: "Hier ist mein Reisepass.", en: "Here is my passport.", phonetic: "ഹീർ ഇസ്റ്റ് മൈൻ റൈസെപാസ്സ്.", grammar: "'Reisepass' is masculine nominative." },
+            { de: "Um wie viel Uhr gibt es Frühstück?", en: "At what time is breakfast available?", phonetic: "ഉം വീ ഫീൽ ഉർ ഗിബ്ട് എസ് ഫ്രൂഷ്ടൂക്ക്?", grammar: "'Um wie viel Uhr' = at what time (fixed phrase)." },
+            { de: "Das Frühstück ist von sieben bis zehn Uhr.", en: "Breakfast is from seven to ten o'clock.", phonetic: "ഡാസ് ഫ്രൂഷ്ടൂക്ക് ഇസ്റ്റ് ഫോൻ സീബൻ ബിസ് ത്സേൻ ഉർ.", grammar: "'von ... bis' = from ... to." },
+            { de: "Gibt es WLAN im Zimmer?", en: "Is there Wi-Fi in the room?", phonetic: "ഗിബ്ട് എസ് വേ-ലാൻ ഇം ത്സിമ്മർ?", grammar: "'im' = in dem (dative location)." },
+            { de: "Wo ist der Aufzug, bitte?", en: "Where is the elevator, please?", phonetic: "വോ ഇസ്റ്റ് ഡേർ ഔഫ്ത്സൂഗ്, ബിറ്റ്റ്റെ?", grammar: "'Aufzug' is masculine." },
+            { de: "Ich möchte morgen um neun Uhr auschecken.", en: "I would like to check out tomorrow at nine o'clock.", phonetic: "ഇഖ് മേഹ്റ്റെ മോർഗൻ ഉം നോയൻ ഉർ ഔസ്ഷെക്കൻ.", grammar: "Separable verb 'auschecken' as infinitive at end." }
+        ]
+    },
+    {
+        id: "st_28", emoji: "🚀", titleDE: "Zukunftspläne", titleEN: "Future Plans",
+        descDE: "Erzählen Sie über Zukunftspläne", descEN: "Describe what you wish to study, do and live in future",
+        sentences: [
+            { de: "Ich möchte mein Deutsch verbessern.", en: "I would like to improve my German.", phonetic: "ഇഖ് മേഹ്റ്റെ മൈൻ ഡോയ്ഷ് ഫെർബെസ്സെൻ.", grammar: "Modal 'möchten' + infinitive 'verbessern' (to improve)." },
+            { de: "Nächstes Jahr mache ich eine Reise.", en: "Next year, I am making a trip.", phonetic: "നേഹ്സ്ടസ് യൂർ മാഖെ ഇഖ് ഐനെ റൈസെ.", grammar: "Time adverb at start causes inversion. 'Reise' is feminine." },
+            { de: "Ich will in Deutschland studieren.", en: "I want to study in Germany.", phonetic: "ഇഖ് വിൽ ഇൻ ഡോയ്ഷ്‍ലൻഡ് ഷ്ടൂഡിയറൻ.", grammar: "Modal verb 'wollen' (will) + infinitive 'studieren' at end." },
+            { de: "Ich suche eine gute Arbeit.", en: "I am looking for a good job.", phonetic: "ഇഖ് സൂഖെ ഐനെ ഗൂട്ടെ ആർബൈറ്റ്.", grammar: "'Arbeit' is feminine accusative: 'eine gute'." },
+            { de: "Später möchte ich ein Haus kaufen.", en: "Later I would like to buy a house.", phonetic: "ഷ്പേട്ടർ മേഹ്റ്റെ ഇഖ് ഐൻ ഹൗസ് കൗഫൻ.", grammar: "'Haus' is neuter. 'kaufen' = to buy." },
+            { de: "Ich möchte eine neue Sprache lernen.", en: "I want to learn a new language.", phonetic: "ഇഖ് മേഹ്റ്റെ ഐനെ നോയെ ഷ്പ്രാഖെ ലേർനൻ.", grammar: "'Sprache' is feminine. Adjective ending: '-e'." },
+            { de: "Ich werde fleißig lernen.", en: "I will study hard.", phonetic: "ഇഖ് വേർഡെ ഫ്ലൈസിഹ് ലേർനൻ.", grammar: "Future tense: 'werden' (werde) + infinitive 'lernen'. 'fleißig' = diligent/hardworking." },
+            { de: "Ich hoffe, meine Träume werden wahr.", en: "I hope my dreams come true.", phonetic: "ഇഖ് ഹോഫെ, മൈനെ ട്രോയ്മെ വേർഡൻ വാർ.", grammar: "'Träume' is plural. 'wahr werden' = to become true." }
+        ]
+    },
+    {
+        id: "st_29", emoji: "📬", titleDE: "Post und Briefe", titleEN: "Mail & Post Office",
+        descDE: "Erzählen Sie über die Post", descEN: "Talk about mail, sending envelopes or buying postage stamps",
+        sentences: [
+            { de: "Ich bringe ein Paket zur Post.", en: "I am taking a parcel to the post office.", phonetic: "ഇഖ് ബിംഗെ ഐൻ പാകേറ്റ് ത്സൂർ പോസ്റ്റ്.", grammar: "'Paket' is neuter. 'zur' = zu + der (dative feminine)." },
+            { de: "Wo kann ich Briefmarken kaufen?", en: "Where can I buy stamps?", phonetic: "വോ കാൻ ഇഖ് ബ്രീഫ്മാർക്കൻ കൗഫൻ?", grammar: "Modal 'können' (kann) + infinitive 'kaufen'." },
+            { de: "Ich möchte diesen Brief nach Indien schicken.", en: "I want to send this letter to India.", phonetic: "ഇഖ് മേഹ്റ്റെ ഡീസൻ ബ്രീഫ് നാഹ് ഇൻഡിയൻ ഷിക്കൻ.", grammar: "'Brief' is masculine accusative: 'diesen Brief'. 'nach' for country names." },
+            { de: "Wie viel kostet das Porto?", en: "How much is the postage?", phonetic: "വീ ഫീൽ കോസ്റ്റേട്ട് ഡാസ് പോർട്ടോ?", grammar: "'Porto' is neuter." },
+            { de: "Ich schreibe eine Postkarte an meine Familie.", en: "I am writing a postcard to my family.", phonetic: "ഇഖ് ഷ്രൈബെ ഐനെ പോസ്റ്റ് കാർട്ടെ ആൻ മൈനെ ഫമീലിയ.", grammar: "'an' + accusative for recipient: 'an meine Familie'." },
+            { de: "Der Postbote kommt jeden Vormittag.", en: "The mail carrier comes every morning.", phonetic: "ഡേർ പോസ്റ്റ്ബോറ്റെ കൊമ്ത് യേഡൻ ഫോർമിറ്റാഗ്.", grammar: "'Postbote' is masculine (weak noun). 'jeden Vormittag' (accusative time)." },
+            { de: "Haben Sie einen Briefkasten gesehen?", en: "Have you seen a mailbox?", phonetic: "ഹാബൻ സീ ഐനൻ ബ്രീഫ്കാസ്റ്റൻ ഗെസേഹൻ?", grammar: "Perfect tense: 'haben gesehen'. 'Briefkasten' is masculine accusative: 'einen'." },
+            { de: "Ich habe heute einen Brief bekommen.", en: "I received a letter today.", phonetic: "ഇഖ് ഹാബെ ഹോയ്ടെ ഐനൻ ബ്രീഫ് ബെകൊമ്മൻ.", grammar: "Perfect tense: 'habe bekommen'." }
+        ]
+    },
+    {
+        id: "st_30", emoji: "🌳", titleDE: "In der Natur", titleEN: "In Nature",
+        descDE: "Erzählen Sie über die Natur", descEN: "Describe nature walks, forests, lakes and hiking",
+        sentences: [
+            { de: "Ich gehe gern im Wald spazieren.", en: "I like to walk in the forest.", phonetic: "ഇഖ് ഗേ ഗേൺ ഇം വാൽഡ് ഷ്പാത്സീറൻ.", grammar: "'Wald' is masculine. 'im' = in dem (location dative)." },
+            { de: "Die Luft in der Natur ist frisch.", en: "The air in nature is fresh.", phonetic: "ഡീ ലുഫ്ട് ഇൻ ഡേർ നടുർ ഇസ്റ്റ് ഫ്രിഷ്.", grammar: "'Luft' is feminine. 'in der Natur' (dative)." },
+            { de: "Wir wandern am Wochenende in den Bergen.", en: "We hike in the mountains at the weekend.", phonetic: "വിർ വാൻഡേൺ ആം വൊഖൻഎൻഡെ ഇൻ ഡൻ ബെർഗൻ.", grammar: "'in den Bergen' = in the mountains (dative plural)." },
+            { de: "Der See ist blau und sehr sauber.", en: "The lake is blue and very clean.", phonetic: "ഡേർ സേയ് ഇസ്റ്റ് ബ്ലൗ ഉൻഡ് സേർ സൗബർ.", grammar: "'See' (lake) is masculine. 'sauber' = clean." },
+            { de: "Es gibt viele Blumen auf der Wiese.", en: "There are many flowers in the meadow.", phonetic: "എസ് ഗിബ്ട് ഫീലെ ബ്ലൂമൻ ഔഫ് ഡേർ വീസ്സെ.", grammar: "'auf der Wiese' = on the meadow (dative feminine)." },
+            { de: "Ich höre die Vögel singen.", en: "I hear the birds singing.", phonetic: "ഇഖ് ഹേറെ ഡീ ഫോഗൽ സിംഗൻ.", grammar: "'Vögel' is plural of 'Vogel' (bird). Accusative object." },
+            { de: "Die Sonne scheint den ganzen Tag.", en: "The sun shines all day.", phonetic: "ഡീ സോണ്ണെ ഷൈൻ്റ് ഡൻ ഗാൻത്സൻ ടാഗ്.", grammar: "'Sonne' is feminine. 'den ganzen Tag' (masculine accusative duration)." },
+            { de: "Ich fotografiere gern Tiere.", en: "I like to photograph animals.", phonetic: "ഇഖ് ഫോട്ടോപോണിയറെ ഗേൺ തീയറെ.", grammar: "'Tiere' is plural of 'Tier' (neuter)." }
         ]
     }
 ];

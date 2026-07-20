@@ -854,6 +854,406 @@ const REAL_LIFE_DATABASE = [
             { question: "Was bedeutet 'die Küche'?", options: ["Kitchen", "Bathroom", "Living room"], correct: 0, explanation: "die Küche means Kitchen." },
             { question: "Was bedeutet 'die Miete'?", options: ["House", "Rent", "Garden"], correct: 1, explanation: "die Miete means Rent." }
         ]
+    },
+    {
+        id: "rl_post_office",
+        title: "At the Post Office (Auf der Post)",
+        vocab: [
+            { word: "das Paket", translation: "Package / parcel" },
+            { word: "die Briefmarke", translation: "Stamp" },
+            { word: "der Brief", translation: "Letter" },
+            { word: "schicken", translation: "To send" },
+            { word: "die Waage", translation: "Scales" }
+        ],
+        phrases: [
+            { german: "Ich möchte dieses Paket schicken.", english: "I would like to send this package." },
+            { german: "Wie viel kostet eine Briefmarke nach Indien?", english: "How much does a stamp to India cost?" },
+            { german: "Wie lange dauert die Lieferung?", english: "How long does the delivery take?" },
+            { german: "Bitte auf die Waage legen.", english: "Please put it on the scales." },
+            { german: "Haben Sie den Absender angegeben?", english: "Have you written the sender's address?" }
+        ],
+        dialogue: [
+            { speaker: "Kunde", text: "Guten Tag. Ich möchte dieses Paket nach München schicken.", translation: "Good day. I would like to send this package to Munich." },
+            { speaker: "Postbeamter", text: "Bitte legen Sie das Paket auf die Waage.", translation: "Please put the package on the scales." },
+            { speaker: "Kunde", text: "Wie viel kostet das?", translation: "How much does that cost?" },
+            { speaker: "Postbeamter", text: "Das Paket wiegt zwei Kilo. Das kostet sechs Euro fünfzig.", translation: "The package weighs two kilos. That costs six euros fifty." },
+            { speaker: "Kunde", text: "Gut. Wann kommt es an?", translation: "Good. When will it arrive?" }
+        ],
+        reading: {
+            text: "Frau Bauer geht heute auf die Post. Sie möchte zwei Dinge erledigen: einen Brief nach England schicken und ein Paket für ihre Tochter abholen. Der Brief kostet neunzig Cent Porto. Das Paket hat seit gestern auf Frau Bauer gewartet. Sie zeigt ihren Ausweis und bekommt das Paket. Es ist schwer – fast fünf Kilo.",
+            translation: "Mrs Bauer goes to the post office today. She wants to do two things: send a letter to England and collect a package for her daughter. The letter costs ninety cents postage. The package has been waiting for Mrs Bauer since yesterday. She shows her ID and receives the package. It is heavy – almost five kilos.",
+            question: "Was macht Frau Bauer auf der Post?",
+            options: ["Nur ein Paket abholen", "Einen Brief schicken und ein Paket abholen", "Eine Briefmarke kaufen"],
+            correct: 1,
+            explanation: "The text says she wants to do two things: send a letter and collect a package."
+        },
+        quiz: [
+            { question: "Was möchte der Kunde im Dialog schicken?", options: ["Einen Brief", "Ein Paket", "Eine Postkarte"], correct: 1, explanation: "He says: 'Ich möchte dieses Paket nach München schicken.'" },
+            { question: "Wie viel wiegt das Paket?", options: ["Ein Kilo", "Zwei Kilo", "Fünf Kilo"], correct: 1, explanation: "The clerk says: 'Das Paket wiegt zwei Kilo.'" },
+            { question: "Was kostet das Paket zu schicken?", options: ["Vier Euro", "Sechs Euro fünfzig", "Acht Euro"], correct: 1, explanation: "Six euros fifty: 'Das kostet sechs Euro fünfzig.'" },
+            { question: "Was bedeutet 'die Briefmarke'?", options: ["Stamp", "Scales", "Letter"], correct: 0, explanation: "die Briefmarke means Stamp." },
+            { question: "Was bedeutet 'schicken'?", options: ["To receive", "To send", "To weigh"], correct: 1, explanation: "schicken means To send." }
+        ]
+    },
+    {
+        id: "rl_bank",
+        title: "At the Bank (Auf der Bank)",
+        vocab: [
+            { word: "das Konto", translation: "Bank account" },
+            { word: "überweisen", translation: "To transfer money" },
+            { word: "abheben", translation: "To withdraw money" },
+            { word: "der Geldautomat", translation: "ATM / cash machine" },
+            { word: "die PIN", translation: "PIN number" }
+        ],
+        phrases: [
+            { german: "Ich möchte ein Konto eröffnen.", english: "I would like to open an account." },
+            { german: "Wie hoch ist die Gebühr?", english: "What is the fee?" },
+            { german: "Ich möchte Geld abheben.", english: "I would like to withdraw money." },
+            { german: "Bitte geben Sie Ihre PIN ein.", english: "Please enter your PIN." },
+            { german: "Kann ich hier Geld wechseln?", english: "Can I exchange money here?" }
+        ],
+        dialogue: [
+            { speaker: "Kunde", text: "Guten Morgen. Ich möchte ein neues Girokonto eröffnen.", translation: "Good morning. I would like to open a new current account." },
+            { speaker: "Bankangestellter", text: "Natürlich. Haben Sie Ihren Ausweis dabei?", translation: "Of course. Do you have your ID with you?" },
+            { speaker: "Kunde", text: "Ja, hier ist mein Reisepass.", translation: "Yes, here is my passport." },
+            { speaker: "Bankangestellter", text: "Gut. Die Kontoführung ist kostenlos. Sie bekommen eine Karte in drei Werktagen.", translation: "Good. Account management is free. You will receive a card in three working days." },
+            { speaker: "Kunde", text: "Kann ich auch Online-Banking nutzen?", translation: "Can I also use online banking?" }
+        ],
+        reading: {
+            text: "Herr Kim hat ein Problem. Er hat seine Bankkarte verloren. Er geht zur Filiale seiner Bank. Dort spricht er mit einer Angestellten. Sie sperrt die alte Karte sofort. Eine neue Karte kommt in fünf Werktagen. Herr Kim hebt noch einmal einhundert Euro bar am Schalter ab, damit er heute einkaufen kann.",
+            translation: "Mr Kim has a problem. He has lost his bank card. He goes to his bank branch. There he speaks with a member of staff. She immediately blocks the old card. A new card will come in five working days. Mr Kim withdraws one hundred euros in cash at the counter so he can shop today.",
+            question: "Warum geht Herr Kim zur Bank?",
+            options: ["Um ein Konto zu eröffnen", "Weil er seine Bankkarte verloren hat", "Um Geld zu überweisen"],
+            correct: 1,
+            explanation: "The text says: 'Er hat seine Bankkarte verloren.'"
+        },
+        quiz: [
+            { question: "Was möchte der Kunde im Dialog eröffnen?", options: ["Ein Sparkonto", "Ein Girokonto", "Ein Festgeldkonto"], correct: 1, explanation: "He says: 'Ich möchte ein neues Girokonto eröffnen.'" },
+            { question: "Was muss der Kunde mitbringen?", options: ["Ein Foto", "Seinen Ausweis / Reisepass", "Eine Unterschrift"], correct: 1, explanation: "The clerk asks: 'Haben Sie Ihren Ausweis dabei?'" },
+            { question: "Wann kommt die Bankkarte?", options: ["Am nächsten Tag", "In drei Werktagen", "In einer Woche"], correct: 1, explanation: "The clerk says: 'Sie bekommen eine Karte in drei Werktagen.'" },
+            { question: "Was bedeutet 'abheben'?", options: ["To deposit", "To transfer", "To withdraw"], correct: 2, explanation: "abheben means To withdraw money." },
+            { question: "Was bedeutet 'der Geldautomat'?", options: ["Bank account", "ATM", "Receipt"], correct: 1, explanation: "der Geldautomat means ATM / cash machine." }
+        ]
+    },
+    {
+        id: "rl_airport",
+        title: "At the Airport (Am Flughafen)",
+        vocab: [
+            { word: "der Flug", translation: "Flight" },
+            { word: "das Gepäck", translation: "Luggage" },
+            { word: "der Gate", translation: "Gate" },
+            { word: "einchecken", translation: "To check in" },
+            { word: "die Verspätung", translation: "Delay" }
+        ],
+        phrases: [
+            { german: "Mein Flug hat Verspätung.", english: "My flight is delayed." },
+            { german: "Wo ist der Check-in-Schalter?", english: "Where is the check-in counter?" },
+            { german: "Darf ich eine Tasche als Handgepäck mitnehmen?", english: "May I take a bag as hand luggage?" },
+            { german: "Ihr Flug geht von Gate B12 ab.", english: "Your flight departs from gate B12." },
+            { german: "Bitte zeigen Sie Ihren Boardingpass.", english: "Please show your boarding pass." }
+        ],
+        dialogue: [
+            { speaker: "Reisender", text: "Guten Morgen. Ich möchte einchecken. Mein Flug geht nach Wien.", translation: "Good morning. I would like to check in. My flight goes to Vienna." },
+            { speaker: "Mitarbeiterin", text: "Ihren Pass bitte. Haben Sie Gepäck aufzugeben?", translation: "Your passport please. Do you have luggage to check in?" },
+            { speaker: "Reisender", text: "Ja, einen Koffer. Wie viel Kilo darf er haben?", translation: "Yes, one suitcase. How many kilos may it weigh?" },
+            { speaker: "Mitarbeiterin", text: "Maximal dreiundzwanzig Kilo. Ihr Koffer wiegt einundzwanzig – alles gut.", translation: "Maximum twenty-three kilos. Your suitcase weighs twenty-one – all good." },
+            { speaker: "Reisender", text: "Wunderbar. Von welchem Gate geht mein Flug ab?", translation: "Wonderful. From which gate does my flight depart?" }
+        ],
+        reading: {
+            text: "Lisa fliegt heute das erste Mal alleine. Sie ist sehr aufgeregt. Ihr Flug nach Hamburg geht um zehn Uhr ab. Sie kommt früh am Flughafen an und checkt um acht Uhr ein. Dann geht sie durch die Sicherheitskontrolle. Sie muss ihre Schuhe ausziehen und ihren Rucksack auf das Band legen. Danach wartet sie am Gate G5 auf den Abflug.",
+            translation: "Lisa is flying alone for the first time today. She is very excited. Her flight to Hamburg departs at ten o'clock. She arrives early at the airport and checks in at eight o'clock. Then she goes through security. She has to take off her shoes and put her backpack on the belt. After that she waits at gate G5 for the departure.",
+            question: "Um wie viel Uhr checkt Lisa ein?",
+            options: ["Um neun Uhr", "Um acht Uhr", "Um zehn Uhr"],
+            correct: 1,
+            explanation: "The text says: 'Sie kommt früh am Flughafen an und checkt um acht Uhr ein.'"
+        },
+        quiz: [
+            { question: "Wohin fliegt der Reisende im Dialog?", options: ["Nach Berlin", "Nach Wien", "Nach München"], correct: 1, explanation: "He says: 'Mein Flug geht nach Wien.'" },
+            { question: "Wie viel darf der Koffer maximal wiegen?", options: ["Zwanzig Kilo", "Dreiundzwanzig Kilo", "Fünfundzwanzig Kilo"], correct: 1, explanation: "The clerk says: 'Maximal dreiundzwanzig Kilo.'" },
+            { question: "Wie schwer ist der Koffer des Reisenden?", options: ["Einundzwanzig Kilo", "Dreiundzwanzig Kilo", "Fünfzehn Kilo"], correct: 0, explanation: "She says: 'Ihr Koffer wiegt einundzwanzig.'" },
+            { question: "Was bedeutet 'die Verspätung'?", options: ["Departure", "Delay", "Luggage"], correct: 1, explanation: "die Verspätung means Delay." },
+            { question: "Was bedeutet 'einchecken'?", options: ["To check in", "To board", "To land"], correct: 0, explanation: "einchecken means To check in." }
+        ]
+    },
+    {
+        id: "rl_gym",
+        title: "At the Gym (Im Fitnessstudio)",
+        vocab: [
+            { word: "die Mitgliedschaft", translation: "Membership" },
+            { word: "trainieren", translation: "To train / work out" },
+            { word: "der Kurs", translation: "Class / course" },
+            { word: "die Umkleidekabine", translation: "Changing room" },
+            { word: "der Beitrag", translation: "Fee / contribution" }
+        ],
+        phrases: [
+            { german: "Ich möchte Mitglied werden.", english: "I would like to become a member." },
+            { german: "Wie viel kostet die Monatsmitgliedschaft?", english: "How much does the monthly membership cost?" },
+            { german: "Gibt es einen Yoga-Kurs?", english: "Is there a yoga class?" },
+            { german: "Wo sind die Umkleidekabinen?", english: "Where are the changing rooms?" },
+            { german: "Kann ich das Studio erst ausprobieren?", english: "Can I try out the studio first?" }
+        ],
+        dialogue: [
+            { speaker: "Kunde", text: "Hallo. Ich interessiere mich für eine Mitgliedschaft.", translation: "Hello. I am interested in a membership." },
+            { speaker: "Mitarbeiter", text: "Willkommen! Wir haben verschiedene Angebote. Der günstigste Plan kostet dreißig Euro pro Monat.", translation: "Welcome! We have different offers. The cheapest plan costs thirty euros per month." },
+            { speaker: "Kunde", text: "Sind Kurse inklusive?", translation: "Are classes included?" },
+            { speaker: "Mitarbeiter", text: "Ja, alle Gruppenkurse wie Yoga und Zumba sind kostenlos dabei.", translation: "Yes, all group classes like yoga and zumba are included free of charge." },
+            { speaker: "Kunde", text: "Super. Kann ich heute noch anfangen?", translation: "Great. Can I start today?" }
+        ],
+        reading: {
+            text: "Tom geht dreimal pro Woche ins Fitnessstudio. Er hat eine Monatsmitgliedschaft für achtundzwanzig Euro. Heute macht er zuerst dreißig Minuten auf dem Laufband. Dann hebt er Gewichte. Nach dem Training duscht er in der Umkleidekabine. Sein Lieblingstag ist Mittwoch, weil dann um 18 Uhr ein Bauchkurs stattfindet.",
+            translation: "Tom goes to the gym three times a week. He has a monthly membership for twenty-eight euros. Today he first does thirty minutes on the treadmill. Then he lifts weights. After training he showers in the changing room. His favourite day is Wednesday because there is a core class at 6 PM.",
+            question: "Wie oft geht Tom ins Fitnessstudio?",
+            options: ["Einmal pro Woche", "Dreimal pro Woche", "Jeden Tag"],
+            correct: 1,
+            explanation: "The text says: 'Tom geht dreimal pro Woche ins Fitnessstudio.'"
+        },
+        quiz: [
+            { question: "Was kostet die günstigste Mitgliedschaft im Dialog?", options: ["Zwanzig Euro", "Dreißig Euro", "Vierzig Euro"], correct: 1, explanation: "The staff says: 'Der günstigste Plan kostet dreißig Euro pro Monat.'" },
+            { question: "Welche Kurse sind inklusive?", options: ["Nur Yoga", "Nur Schwimmen", "Alle Gruppenkurse wie Yoga und Zumba"], correct: 2, explanation: "He says: 'alle Gruppenkurse wie Yoga und Zumba sind kostenlos dabei.'" },
+            { question: "Was bedeutet 'trainieren'?", options: ["To rest", "To train / work out", "To swim"], correct: 1, explanation: "trainieren means To train / work out." },
+            { question: "Was bedeutet 'die Umkleidekabine'?", options: ["Locker", "Changing room", "Shower"], correct: 1, explanation: "die Umkleidekabine means Changing room." },
+            { question: "Was fragt der Kunde am Ende des Dialogs?", options: ["Wo ist die Dusche?", "Kann er heute noch anfangen?", "Wie lange ist das Studio offen?"], correct: 1, explanation: "He asks: 'Kann ich heute noch anfangen?'" }
+        ]
+    },
+    {
+        id: "rl_hair_salon",
+        title: "At the Hair Salon (Beim Friseur)",
+        vocab: [
+            { word: "der Haarschnitt", translation: "Haircut" },
+            { word: "die Farbe", translation: "Colour / dye" },
+            { word: "waschen", translation: "To wash" },
+            { word: "föhnen", translation: "To blow-dry" },
+            { word: "das Trinkgeld", translation: "Tip" }
+        ],
+        phrases: [
+            { german: "Ich möchte einen Haarschnitt.", english: "I would like a haircut." },
+            { german: "Bitte nicht zu kurz schneiden.", english: "Please do not cut it too short." },
+            { german: "Können Sie meine Haare waschen?", english: "Can you wash my hair?" },
+            { german: "Wie lange muss ich warten?", english: "How long do I have to wait?" },
+            { german: "Das sieht sehr gut aus!", english: "That looks very good!" }
+        ],
+        dialogue: [
+            { speaker: "Kundin", text: "Guten Tag. Haben Sie heute noch einen freien Termin?", translation: "Good day. Do you still have a free appointment today?" },
+            { speaker: "Friseur", text: "Ja, in einer halben Stunde. Was möchten Sie machen lassen?", translation: "Yes, in half an hour. What would you like done?" },
+            { speaker: "Kundin", text: "Nur einen Haarschnitt, bitte. Die Spitzen schneiden und etwas kürzer an den Seiten.", translation: "Just a haircut, please. Trim the ends and a little shorter on the sides." },
+            { speaker: "Friseur", text: "Möchten Sie auch die Haare waschen und föhnen?", translation: "Would you also like to have your hair washed and blow-dried?" },
+            { speaker: "Kundin", text: "Ja, gerne. Wie viel kostet das alles zusammen?", translation: "Yes, please. How much does all of that cost together?" }
+        ],
+        reading: {
+            text: "Sandra geht jeden zweiten Monat zum Friseur. Heute hat sie einen Termin um vierzehn Uhr. Die Friseuse wäscht zuerst die Haare, dann schneidet sie die Spitzen und föhnt die Haare. Das dauert insgesamt vierzig Minuten. Sandra bezahlt achtzehn Euro und gibt zwei Euro Trinkgeld. Sie ist sehr zufrieden mit dem Ergebnis.",
+            translation: "Sandra goes to the hairdresser every other month. Today she has an appointment at two o'clock. The hairdresser first washes the hair, then trims the ends and blow-dries the hair. It takes forty minutes in total. Sandra pays eighteen euros and gives two euros tip. She is very satisfied with the result.",
+            question: "Wie lange dauert der Friseurbesuch?",
+            options: ["Dreißig Minuten", "Vierzig Minuten", "Eine Stunde"],
+            correct: 1,
+            explanation: "The text says: 'Das dauert insgesamt vierzig Minuten.'"
+        },
+        quiz: [
+            { question: "Wann ist der freie Termin im Dialog?", options: ["Sofort", "In einer halben Stunde", "Morgen"], correct: 1, explanation: "The hairdresser says: 'in einer halben Stunde.'" },
+            { question: "Was möchte die Kundin machen lassen?", options: ["Die Haare färben", "Einen Haarschnitt", "Eine Dauerwelle"], correct: 1, explanation: "She says: 'Nur einen Haarschnitt, bitte.'" },
+            { question: "Was macht die Friseuse nach dem Waschen?", options: ["Sie färbt die Haare", "Sie schneidet die Spitzen und föhnt", "Sie gibt Trinkgeld"], correct: 1, explanation: "The reading says: 'schneidet sie die Spitzen und föhnt die Haare.'" },
+            { question: "Was bedeutet 'föhnen'?", options: ["To colour", "To wash", "To blow-dry"], correct: 2, explanation: "föhnen means To blow-dry." },
+            { question: "Was bedeutet 'das Trinkgeld'?", options: ["Tip", "Receipt", "Fee"], correct: 0, explanation: "das Trinkgeld means Tip." }
+        ]
+    },
+    {
+        id: "rl_cinema",
+        title: "At the Cinema (Im Kino)",
+        vocab: [
+            { word: "der Film", translation: "Film / movie" },
+            { word: "die Eintrittskarte", translation: "Ticket" },
+            { word: "die Vorstellung", translation: "Showing / performance" },
+            { word: "der Platz", translation: "Seat" },
+            { word: "das Popcorn", translation: "Popcorn" }
+        ],
+        phrases: [
+            { german: "Zwei Karten für den Film um acht, bitte.", english: "Two tickets for the eight o'clock film, please." },
+            { german: "Welcher Film läuft gerade?", english: "Which film is on right now?" },
+            { german: "Sind noch Plätze frei?", english: "Are there still seats free?" },
+            { german: "Ich möchte in der Mitte sitzen.", english: "I would like to sit in the middle." },
+            { german: "Ist der Film auf Deutsch oder auf Englisch?", english: "Is the film in German or in English?" }
+        ],
+        dialogue: [
+            { speaker: "Kunde", text: "Hallo. Zwei Karten für 'Berlin Nights' um neunzehn Uhr, bitte.", translation: "Hello. Two tickets for 'Berlin Nights' at seven PM, please." },
+            { speaker: "Kassiererin", text: "Gerne. Wo möchten Sie sitzen? Vorne, in der Mitte oder hinten?", translation: "Of course. Where would you like to sit? At the front, in the middle, or at the back?" },
+            { speaker: "Kunde", text: "In der Mitte, bitte. Nicht zu nah an der Leinwand.", translation: "In the middle, please. Not too close to the screen." },
+            { speaker: "Kassiererin", text: "Reihe G, Platz 14 und 15. Das macht sechzehn Euro.", translation: "Row G, seats 14 and 15. That comes to sixteen euros." },
+            { speaker: "Kunde", text: "Danke. Gibt es auch Popcorn hier?", translation: "Thank you. Is there also popcorn here?" }
+        ],
+        reading: {
+            text: "Felix und seine Schwester gehen am Samstagabend ins Kino. Sie wählen einen Actionfilm. Die Vorstellung beginnt um zwanzig Uhr dreißig. Felix kauft zwei Karten und eine große Tüte Popcorn. Die Karten kosten je acht Euro. Platz zehn und elf in Reihe E sind ihre Sitze. Der Film ist sehr spannend und dauert zwei Stunden.",
+            translation: "Felix and his sister go to the cinema on Saturday evening. They choose an action film. The showing begins at 8:30 PM. Felix buys two tickets and a large bag of popcorn. The tickets cost eight euros each. Seats ten and eleven in row E are their seats. The film is very exciting and lasts two hours.",
+            question: "Wann beginnt die Vorstellung?",
+            options: ["Um zwanzig Uhr", "Um zwanzig Uhr dreißig", "Um einundzwanzig Uhr"],
+            correct: 1,
+            explanation: "The text says: 'Die Vorstellung beginnt um zwanzig Uhr dreißig.'"
+        },
+        quiz: [
+            { question: "Für welchen Film kauft der Kunde Karten im Dialog?", options: ["'Hamburg Night'", "'Berlin Nights'", "'Vienna Dreams'"], correct: 1, explanation: "He says: 'Zwei Karten für Berlin Nights um neunzehn Uhr.'" },
+            { question: "Wo möchte der Kunde sitzen?", options: ["Vorne", "In der Mitte", "Hinten"], correct: 1, explanation: "He says: 'In der Mitte, bitte.'" },
+            { question: "Wie viel kosten die zwei Karten zusammen?", options: ["Zwölf Euro", "Vierzehn Euro", "Sechzehn Euro"], correct: 2, explanation: "The cashier says: 'Das macht sechzehn Euro.'" },
+            { question: "Was bedeutet 'die Vorstellung'?", options: ["Showing / performance", "Seat", "Screen"], correct: 0, explanation: "die Vorstellung means Showing / performance." },
+            { question: "Was bedeutet 'der Platz'?", options: ["Film", "Seat", "Ticket"], correct: 1, explanation: "der Platz means Seat." }
+        ]
+    },
+    {
+        id: "rl_market",
+        title: "At the Weekly Market (Auf dem Wochenmarkt)",
+        vocab: [
+            { word: "der Stand", translation: "Market stall" },
+            { word: "frisch", translation: "Fresh" },
+            { word: "das Angebot", translation: "Offer / special deal" },
+            { word: "das Kilo", translation: "Kilogram" },
+            { word: "wechseln", translation: "To change / give change" }
+        ],
+        phrases: [
+            { german: "Was kostet ein Kilo Tomaten?", english: "How much does a kilo of tomatoes cost?" },
+            { german: "Die sind heute ganz frisch.", english: "These are very fresh today." },
+            { german: "Geben Sie mir bitte ein halbes Kilo.", english: "Please give me half a kilo." },
+            { german: "Kann ich mit Karte zahlen?", english: "Can I pay by card?" },
+            { german: "Haben Sie etwas Kleingeld?", english: "Do you have any small change?" }
+        ],
+        dialogue: [
+            { speaker: "Kundin", text: "Guten Morgen! Was kostet das Kilo Erdbeeren heute?", translation: "Good morning! How much does a kilo of strawberries cost today?" },
+            { speaker: "Händler", text: "Guten Morgen! Nur drei Euro das Kilo. Die sind heute frisch aus der Region.", translation: "Good morning! Only three euros per kilo. They are fresh from the region today." },
+            { speaker: "Kundin", text: "Sehr gut. Ich nehme zwei Kilo. Und die Äpfel da – wie viel kosten die?", translation: "Very good. I'll take two kilos. And those apples there – how much do they cost?" },
+            { speaker: "Händler", text: "Zwei Euro fünfzig das Kilo. Heute im Angebot!", translation: "Two euros fifty per kilo. On special offer today!" },
+            { speaker: "Kundin", text: "Perfekt. Dann nehme ich auch ein Kilo Äpfel.", translation: "Perfect. Then I'll also take a kilo of apples." }
+        ],
+        reading: {
+            text: "Jeden Samstag geht Herr Patel auf den Markt in seiner Stadt. Er kauft gerne frisches Gemüse und Obst direkt vom Bauern. Heute kauft er Karotten, Salat und Paprika. Er bezahlt insgesamt sieben Euro fünfzig. Der Händler gibt ihm fünfzig Cent Wechselgeld zurück. Herr Patel findet den Markt viel besser als den Supermarkt.",
+            translation: "Mr Patel goes to the market in his town every Saturday. He likes to buy fresh vegetables and fruit directly from the farmer. Today he buys carrots, lettuce and peppers. He pays seven euros fifty in total. The trader gives him fifty cents change. Mr Patel finds the market much better than the supermarket.",
+            question: "Was kauft Herr Patel heute?",
+            options: ["Obst und Brot", "Karotten, Salat und Paprika", "Tomaten und Erdbeeren"],
+            correct: 1,
+            explanation: "The text says: 'Heute kauft er Karotten, Salat und Paprika.'"
+        },
+        quiz: [
+            { question: "Was kostet ein Kilo Erdbeeren im Dialog?", options: ["Zwei Euro", "Drei Euro", "Vier Euro"], correct: 1, explanation: "The trader says: 'Nur drei Euro das Kilo.'" },
+            { question: "Woher kommen die Erdbeeren?", options: ["Aus dem Supermarkt", "Aus der Region", "Aus Spanien"], correct: 1, explanation: "He says: 'Die sind heute frisch aus der Region.'" },
+            { question: "Wie viel kostet ein Kilo Äpfel?", options: ["Ein Euro fünfzig", "Zwei Euro fünfzig", "Drei Euro"], correct: 1, explanation: "He says: 'Zwei Euro fünfzig das Kilo.'" },
+            { question: "Was bedeutet 'frisch'?", options: ["Expensive", "Fresh", "Heavy"], correct: 1, explanation: "frisch means Fresh." },
+            { question: "Was bedeutet 'das Angebot'?", options: ["Request", "Special offer / deal", "Receipt"], correct: 1, explanation: "das Angebot means Offer / special deal." }
+        ]
+    },
+    {
+        id: "rl_landlord",
+        title: "Talking to the Landlord (Mit dem Vermieter sprechen)",
+        vocab: [
+            { word: "der Vermieter", translation: "Landlord" },
+            { word: "die Miete", translation: "Rent" },
+            { word: "die Kaution", translation: "Deposit" },
+            { word: "die Reparatur", translation: "Repair" },
+            { word: "der Mietvertrag", translation: "Rental contract / lease" }
+        ],
+        phrases: [
+            { german: "Die Heizung funktioniert nicht.", english: "The heating is not working." },
+            { german: "Ich möchte die Wohnung kündigen.", english: "I would like to give notice on the apartment." },
+            { german: "Wann kommt der Handwerker?", english: "When is the tradesman coming?" },
+            { german: "Ich zahle die Miete am ersten des Monats.", english: "I pay the rent on the first of the month." },
+            { german: "Kann ich einen Hund halten?", english: "Am I allowed to keep a dog?" }
+        ],
+        dialogue: [
+            { speaker: "Mieter", text: "Guten Tag, Herr Becker. Ich habe ein Problem in der Wohnung.", translation: "Good day, Mr Becker. I have a problem in the apartment." },
+            { speaker: "Vermieter", text: "Was ist passiert?", translation: "What has happened?" },
+            { speaker: "Mieter", text: "Die Heizung im Schlafzimmer funktioniert nicht mehr. Es ist sehr kalt.", translation: "The heating in the bedroom is no longer working. It is very cold." },
+            { speaker: "Vermieter", text: "Das tut mir leid. Ich schicke morgen früh einen Techniker.", translation: "I am sorry. I will send a technician tomorrow morning." },
+            { speaker: "Mieter", text: "Danke. Um wie viel Uhr kommt er ungefähr?", translation: "Thank you. What time will he come approximately?" }
+        ],
+        reading: {
+            text: "Frau Nowak wohnt seit zwei Jahren in ihrer Wohnung. Sie ist sehr zufrieden. Die Miete beträgt achthundert Euro pro Monat. Sie zahlt immer pünktlich. Letzten Monat gab es ein Problem: das Waschbecken war kaputt. Frau Nowak hat ihrem Vermieter eine E-Mail geschrieben. Der Handwerker kam am nächsten Tag und hat alles repariert.",
+            translation: "Mrs Nowak has been living in her apartment for two years. She is very satisfied. The rent is eight hundred euros per month. She always pays on time. Last month there was a problem: the washbasin was broken. Mrs Nowak wrote her landlord an email. The tradesman came the next day and repaired everything.",
+            question: "Was war das Problem bei Frau Nowak?",
+            options: ["Die Heizung war kaputt", "Das Waschbecken war kaputt", "Die Küche war kaputt"],
+            correct: 1,
+            explanation: "The text says: 'das Waschbecken war kaputt.'"
+        },
+        quiz: [
+            { question: "Was ist das Problem im Dialog?", options: ["Das Waschbecken ist kaputt", "Die Heizung funktioniert nicht", "Die Tür ist kaputt"], correct: 1, explanation: "The tenant says: 'Die Heizung im Schlafzimmer funktioniert nicht mehr.'" },
+            { question: "Wann schickt der Vermieter den Techniker?", options: ["Heute Abend", "Morgen früh", "Übermorgen"], correct: 1, explanation: "The landlord says: 'Ich schicke morgen früh einen Techniker.'" },
+            { question: "Wie hoch ist die Miete von Frau Nowak?", options: ["Sechshundert Euro", "Siebenhundert Euro", "Achthundert Euro"], correct: 2, explanation: "The reading says: 'Die Miete beträgt achthundert Euro pro Monat.'" },
+            { question: "Was bedeutet 'die Kaution'?", options: ["Rent", "Deposit", "Repair"], correct: 1, explanation: "die Kaution means Deposit." },
+            { question: "Was bedeutet 'der Mietvertrag'?", options: ["Landlord", "Rental contract", "Monthly fee"], correct: 1, explanation: "der Mietvertrag means Rental contract / lease." }
+        ]
+    },
+    {
+        id: "rl_language_school",
+        title: "At the Language School (In der Sprachschule)",
+        vocab: [
+            { word: "sich anmelden", translation: "To register / sign up" },
+            { word: "das Niveau", translation: "Level" },
+            { word: "die Hausaufgaben", translation: "Homework" },
+            { word: "der Unterricht", translation: "Lesson / class" },
+            { word: "der Einstufungstest", translation: "Placement test" }
+        ],
+        phrases: [
+            { german: "Ich möchte mich für einen Deutschkurs anmelden.", english: "I would like to sign up for a German course." },
+            { german: "Welches Niveau ist für mich richtig?", english: "Which level is right for me?" },
+            { german: "Wann findet der Unterricht statt?", english: "When does the class take place?" },
+            { german: "Wie viele Schüler sind in der Klasse?", english: "How many students are in the class?" },
+            { german: "Gibt es einen Einstufungstest?", english: "Is there a placement test?" }
+        ],
+        dialogue: [
+            { speaker: "Student", text: "Guten Tag. Ich möchte mich für einen Deutschkurs anmelden.", translation: "Good day. I would like to sign up for a German course." },
+            { speaker: "Sekretärin", text: "Herzlich willkommen! Haben Sie schon Deutschkenntnisse?", translation: "Welcome! Do you already have German skills?" },
+            { speaker: "Student", text: "Ja, etwas. Ich lerne seit sechs Monaten und spreche Deutsch auf Niveau A2.", translation: "Yes, a little. I have been learning for six months and speak German at A2 level." },
+            { speaker: "Sekretärin", text: "Dann empfehle ich den B1-Kurs. Wir haben einen kostenlosen Einstufungstest, wenn Sie möchten.", translation: "Then I recommend the B1 course. We have a free placement test if you would like." },
+            { speaker: "Student", text: "Super! Wann kann ich den Test machen?", translation: "Great! When can I take the test?" }
+        ],
+        reading: {
+            text: "Mei macht einen Deutschkurs an der Berliner Sprachschule. Der Kurs findet montags und mittwochs von neun bis elf Uhr statt. Es gibt vierzehn Schüler aus zehn verschiedenen Ländern. Der Lehrer heißt Herr Graf. Er gibt jede Woche Hausaufgaben auf. Mei findet die Aussprache schwierig, aber sie übt jeden Abend zu Hause.",
+            translation: "Mei is doing a German course at the Berlin language school. The course takes place on Mondays and Wednesdays from nine to eleven. There are fourteen students from ten different countries. The teacher's name is Mr Graf. He assigns homework every week. Mei finds pronunciation difficult, but she practises every evening at home.",
+            question: "Wann findet Meis Kurs statt?",
+            options: ["Dienstags und donnerstags", "Montags und mittwochs", "Täglich"],
+            correct: 1,
+            explanation: "The text says: 'Der Kurs findet montags und mittwochs von neun bis elf Uhr statt.'"
+        },
+        quiz: [
+            { question: "Welches Niveau hat der Student im Dialog?", options: ["A1", "A2", "B1"], correct: 1, explanation: "He says: 'spreche Deutsch auf Niveau A2.'" },
+            { question: "Welchen Kurs empfiehlt die Sekretärin?", options: ["Den A2-Kurs", "Den B1-Kurs", "Den C1-Kurs"], correct: 1, explanation: "She says: 'empfehle ich den B1-Kurs.'" },
+            { question: "Was kostet der Einstufungstest?", options: ["Zwanzig Euro", "Zehn Euro", "Nichts (kostenlos)"], correct: 2, explanation: "She says: 'einen kostenlosen Einstufungstest.'" },
+            { question: "Was bedeutet 'sich anmelden'?", options: ["To graduate", "To sign up / register", "To study"], correct: 1, explanation: "sich anmelden means To register / sign up." },
+            { question: "Was bedeutet 'der Einstufungstest'?", options: ["Final exam", "Placement test", "Progress report"], correct: 1, explanation: "der Einstufungstest means Placement test." }
+        ]
+    },
+    {
+        id: "rl_neighbours",
+        title: "Talking to the Neighbours (Mit den Nachbarn sprechen)",
+        vocab: [
+            { word: "der Nachbar", translation: "Neighbour (male)" },
+            { word: "der Lärm", translation: "Noise" },
+            { word: "klingeln", translation: "To ring the doorbell" },
+            { word: "sich beschweren", translation: "To complain" },
+            { word: "entschuldigen", translation: "To excuse / apologise" }
+        ],
+        phrases: [
+            { german: "Entschuldigung, darf ich kurz stören?", english: "Excuse me, may I disturb you briefly?" },
+            { german: "Es ist sehr laut bei Ihnen.", english: "It is very loud at your place." },
+            { german: "Ich wollte mich nur vorstellen.", english: "I just wanted to introduce myself." },
+            { german: "Wir machen nach zehn Uhr keinen Lärm mehr.", english: "We will not make any more noise after ten o'clock." },
+            { german: "Schönen Abend noch!", english: "Have a nice evening!" }
+        ],
+        dialogue: [
+            { speaker: "Nachbar A", text: "Entschuldigung. Ich bin Ihr neuer Nachbar. Ich wohne seit dieser Woche in Wohnung 4B.", translation: "Excuse me. I am your new neighbour. I have been living in apartment 4B since this week." },
+            { speaker: "Nachbar B", text: "Oh, hallo! Willkommen im Haus. Ich bin Frau Lehmann.", translation: "Oh, hello! Welcome to the building. I am Mrs Lehmann." },
+            { speaker: "Nachbar A", text: "Danke. Ich wollte mich nur kurz vorstellen. Falls ich zu laut bin, sagen Sie mir bitte Bescheid.", translation: "Thank you. I just wanted to introduce myself briefly. If I am too loud, please let me know." },
+            { speaker: "Nachbar B", text: "Sehr freundlich von Ihnen! Wir machen hier ab 22 Uhr Nachtruhe.", translation: "Very kind of you! We observe quiet hours here from 10 PM." },
+            { speaker: "Nachbar A", text: "Verstanden. Das respektiere ich natürlich.", translation: "Understood. I will of course respect that." }
+        ],
+        reading: {
+            text: "Carlos zieht in eine neue Wohnung. Sein Nachbar heißt Herr Fischer. Am ersten Tag klingelt Carlos bei Herrn Fischer und stellt sich vor. Er bringt auch einen kleinen Kuchen mit. Herr Fischer ist sehr nett und lädt Carlos auf einen Kaffee ein. Sie sprechen über das Haus und die Nachbarschaft. Carlos ist froh, einen freundlichen Nachbarn zu haben.",
+            translation: "Carlos moves into a new apartment. His neighbour's name is Mr Fischer. On the first day Carlos rings Mr Fischer's doorbell and introduces himself. He also brings a small cake. Mr Fischer is very nice and invites Carlos in for a coffee. They talk about the building and the neighbourhood. Carlos is glad to have a friendly neighbour.",
+            question: "Was bringt Carlos mit, als er seinen Nachbarn besucht?",
+            options: ["Eine Flasche Wein", "Einen kleinen Kuchen", "Blumen"],
+            correct: 1,
+            explanation: "The text says: 'Er bringt auch einen kleinen Kuchen mit.'"
+        },
+        quiz: [
+            { question: "In welcher Wohnung lebt der neue Nachbar im Dialog?", options: ["4A", "4B", "3B"], correct: 1, explanation: "He says: 'Ich wohne seit dieser Woche in Wohnung 4B.'" },
+            { question: "Wie heißt die Nachbarin im Dialog?", options: ["Frau Müller", "Frau Lehmann", "Frau Fischer"], correct: 1, explanation: "She says: 'Ich bin Frau Lehmann.'" },
+            { question: "Ab wann gilt Nachtruhe im Haus?", options: ["Ab 21 Uhr", "Ab 22 Uhr", "Ab 23 Uhr"], correct: 1, explanation: "She says: 'ab 22 Uhr Nachtruhe.'" },
+            { question: "Was bedeutet 'der Lärm'?", options: ["Noise", "Complaint", "Doorbell"], correct: 0, explanation: "der Lärm means Noise." },
+            { question: "Was bedeutet 'sich beschweren'?", options: ["To introduce oneself", "To complain", "To apologise"], correct: 1, explanation: "sich beschweren means To complain." }
+        ]
     }
 ];
 
@@ -3378,6 +3778,1486 @@ const LISTENING_STORIES_DATABASE = [
                 "explanation": "They will call next week: 'wir rufen Sie nächste Woche an.'"
             }
         ]
+    },
+    {
+        "id": "st_library",
+        "title": "In der Bibliothek (Library)",
+        "text": "Guten Tag! Ich suche ein deutsches Grammatikbuch für Anfänger. Haben Sie das? - Guten Tag. Ja, die Sprachbücher stehen im ersten Stock in Regal fünf. - Danke schön. Kann ich das Buch mit nach Hause nehmen? - Ja, Sie können Bücher für vier Wochen ausleihen. Sie brauchen aber einen Bibliotheksausweis. - Wie viel kostet der Ausweis? - Für Studenten kostet er zehn Euro pro Jahr. Bringen Sie bitte Ihren Pass und Ihre Meldebescheinigung mit. - Gut, das mache ich. Kann ich den Ausweis sofort bekommen? - Ja, das dauert nur pfünf Minuten.",
+        "translation": "Good day! I am looking for a German grammar book for beginners. Do you have that? - Good day. Yes, the language books are on the first floor in shelf five. - Thank you. Can I take the book home? - Yes, you can borrow books for four weeks. However, you need a library card. - How much does the card cost? - For students, it costs ten euros per year. Please bring your passport and registration certificate. - Good, I'll do that. Can I get the card immediately? - Yes, it only takes five minutes.",
+        "vocab": [
+            { "word": "die Bibliothek", "translation": "Library" },
+            { "word": "ausleihen", "translation": "To borrow" },
+            { "word": "der Ausweis", "translation": "ID card / Library card" },
+            { "word": "das Regal", "translation": "Shelf" }
+        ],
+        "questions": [
+            {
+                "question": "Was sucht der Mann in der Bibliothek?",
+                "options": ["Einen Roman", "Ein deutsches Grammatikbuch", "Ein Wörterbuch"],
+                "correct": 1,
+                "explanation": "He is looking for a grammar book: 'Ich suche ein deutsches Grammatikbuch für Anfänger.'"
+            },
+            {
+                "question": "In welchem Stock stehen die Sprachbücher?",
+                "options": ["Im Erdgeschoss", "Im ersten Stock", "Im zweiten Stock"],
+                "correct": 1,
+                "explanation": "The books are on the first floor: 'stehen im ersten Stock.'"
+            },
+            {
+                "question": "In welchem Regal stehen die Sprachbücher?",
+                "options": ["Regal drei", "Regal fünf", "Regal zehn"],
+                "correct": 1,
+                "explanation": "In shelf five: 'in Regal fünf.'"
+            },
+            {
+                "question": "Wie lange kann man ein Buch ausleihen?",
+                "options": ["Für zwei Wochen", "Für vier Wochen", "Für einen Monat"],
+                "correct": 1,
+                "explanation": "Borrowing time is four weeks: 'Bücher für vier Wochen ausleihen.'"
+            },
+            {
+                "question": "Was braucht man, um Bücher auszuleihen?",
+                "options": ["Einen Bibliotheksausweis", "Nur Geld", "Nichts"],
+                "correct": 0,
+                "explanation": "A library card is required: 'Sie brauchen aber einen Bibliotheksausweis.'"
+            },
+            {
+                "question": "Wie viel kostet der Ausweis für Studenten pro Jahr?",
+                "options": ["Fünf Euro", "Zehn Euro", "Kostenlos"],
+                "correct": 1,
+                "explanation": "It costs 10 euros: 'Für Studenten kostet er zehn Euro pro Jahr.'"
+            },
+            {
+                "question": "Welche Dokumente muss der Student mitbringen?",
+                "options": ["Einen Arbeitsvertrag", "Einen Pass und eine Meldebescheinigung", "Nichts"],
+                "correct": 1,
+                "explanation": "Passport and registration form: 'Bringen Sie bitte Ihren Pass und Ihre Meldebescheinigung mit.'"
+            },
+            {
+                "question": "Wie lange dauert es, den Ausweis zu erstellen?",
+                "options": ["Einen Tag", "Fünf Minuten", "Eine Stunde"],
+                "correct": 1,
+                "explanation": "It takes 5 minutes: 'das dauert nur fünf Minuten.'"
+            },
+            {
+                "question": "Kann man das Buch sofort mit nach Hause nehmen?",
+                "options": ["Nein, erst morgen", "Ja, nachdem der Ausweis fertig ist", "Nein, nur in der Bibliothek lesen"],
+                "correct": 1,
+                "explanation": "Yes, once the library card is made: 'das dauert nur fünf Minuten.'"
+            },
+            {
+                "question": "Für wen gilt die Gebühr von zehn Euro?",
+                "options": ["Für alle Erwachsenen", "Für Studenten", "Für Kinder"],
+                "correct": 1,
+                "explanation": "For students: 'Für Studenten kostet er zehn Euro.'"
+            }
+        ]
+    },
+    {
+        "id": "st_birthday",
+        "title": "Die Geburtstagsparty (Birthday Party)",
+        "text": "Morgen hat meine Schwester Geburtstag. Sie wird fünfundzwanzig Jahre alt. Am Abend feiern wir eine große Party in unserem Garten. Wir haben zwanzig Gäste eingeladen: Freunde, Kollegen und Verwandte. Mein Vater grillt Fleisch und Würstchen. Meine Mutter backt einen Erdbeerkuchen und macht Kartoffelsalat. Ich habe heute ein schönes Kleid als Geschenk gekauft. Die Party beginnt um achtzehn Uhr. Wir hoffen, dass das Wetter warm bleibt und es nicht regnet.",
+        "translation": "Tomorrow is my sister's birthday. She is turning twenty-five years old. In the evening we are celebrating a big party in our garden. We have invited twenty guests: friends, colleagues, and relatives. My father is grilling meat and sausages. My mother is baking a strawberry cake and making potato salad. Today I bought a beautiful dress as a gift. The party starts at eighteen o'clock (6 PM). We hope that the weather stays warm and it does not rain.",
+        "vocab": [
+            { "word": "feiern", "translation": "To celebrate" },
+            { "word": "der Gast", "translation": "Guest" },
+            { "word": "das Geschenk", "translation": "Gift / Present" },
+            { "word": "der Kuchen", "translation": "Cake" }
+        ],
+        "questions": [
+            {
+                "question": "Wer hat morgen Geburtstag?",
+                "options": ["Mein Bruder", "Meine Schwester", "Meine Mutter"],
+                "correct": 1,
+                "explanation": "My sister: 'Morgen hat meine Schwester Geburtstag.'"
+            },
+            {
+                "question": "Wie alt wird die Schwester?",
+                "options": ["Zwanzig Jahre", "Fünfundzwanzig Jahre (25)", "Dreißig Jahre"],
+                "correct": 1,
+                "explanation": "She turns 25: 'Sie wird fünfundzwanzig Jahre alt.'"
+            },
+            {
+                "question": "Wo feiern sie die Geburtstagsparty?",
+                "options": ["Im Restaurant", "Im Garten", "In der Wohnung"],
+                "correct": 1,
+                "explanation": "In the garden: 'feiern wir eine große Party in unserem Garten.'"
+            },
+            {
+                "question": "Wie viele Gäste sind eingeladen?",
+                "options": ["Zehn Gäste", "Zwanzig Gäste (20)", "Dreißig Gäste"],
+                "correct": 1,
+                "explanation": "20 guests: 'Wir haben zwanzig Gäste eingeladen.'"
+            },
+            {
+                "question": "Was macht der Vater für die Party?",
+                "options": ["Er grillt Fleisch und Würstchen", "Er backt den Kuchen", "Er kauft Getränke"],
+                "correct": 0,
+                "explanation": "Father grills: 'Mein Vater grillt Fleisch und Würstchen.'"
+            },
+            {
+                "question": "Welchen Kuchen backt die Mutter?",
+                "options": ["Einen Schokoladenkuchen", "Einen Erdbeerkuchen", "Einen Apfelkuchen"],
+                "correct": 1,
+                "explanation": "Strawberry cake: 'Meine Mutter backt einen Erdbeerkuchen...'"
+            },
+            {
+                "question": "Welches Geschenk hat die Erzählerin gekauft?",
+                "options": ["Ein Buch", "Ein schönes Kleid", "Ein Parfüm"],
+                "correct": 1,
+                "explanation": "A dress: 'ein schönes Kleid als Geschenk gekauft.'"
+            },
+            {
+                "question": "Um wie viel Uhr beginnt die Party?",
+                "options": ["Um siebzehn Uhr", "Um achtzehn Uhr (18:00)", "Um zwanzig Uhr"],
+                "correct": 1,
+                "explanation": "Starts at 18:00: 'Die Party beginnt um achtzehn Uhr.'"
+            },
+            {
+                "question": "Welches Wetter hoffen sie für den Abend?",
+                "options": ["Dass es regnet", "Dass es warm bleibt und nicht regnet", "Dass es schneit"],
+                "correct": 1,
+                "explanation": "Warm and no rain: 'dass das Wetter warm bleibt und es nicht regnet.'"
+            },
+            {
+                "question": "Wer gehört zu den geladenen Gästen?",
+                "options": ["Nur Lehrer", "Freunde, Kollegen und Verwandte", "Nur Nachbarn"],
+                "correct": 1,
+                "explanation": "Friends, colleagues and relatives: 'Freunde, Kollegen und Verwandte.'"
+            }
+        ]
+    },
+    {
+        "id": "st_lost",
+        "title": "Wegbeschreibung in Berlin (Directions)",
+        "text": "Entschuldigung, können Sie mir helfen? Ich suche den Alexanderplatz. - Ja, natürlich. Das ist nicht weit von hier. Gehen Sie geradeaus bis zur Kreuzung. Biegen Sie dann links in die Karl-Liebknecht-Straße ab. Gehen Sie an der Kirche vorbei. Nach ungefähr zweihundert Metern sehen Sie den großen Fernsehturm. Der Alexanderplatz liegt direkt unter dem Fernsehturm. - Kann ich auch mit dem Bus fahren? - Ja, Sie können die Buslinie zweihundert nehmen. Die Haltestelle ist dort drüben. Die Fahrt dauert nur zwei Stationen. - Vielen Dank für Ihre Hilfe! - Keine Ursache, schönen Tag noch!",
+        "translation": "Excuse me, can you help me? I am looking for Alexanderplatz. - Yes, of course. That is not far from here. Go straight ahead until the intersection. Then turn left onto Karl-Liebknecht-Straße. Go past the church. After about two hundred meters you will see the tall TV tower. Alexanderplatz is located right under the TV tower. - Can I also go by bus? - Yes, you can take bus line two hundred. The stop is over there. The ride only takes two stops. - Thank you very much for your help! - No problem, have a nice day!",
+        "vocab": [
+            { "word": "geradeaus", "translation": "Straight ahead" },
+            { "word": "biegen", "translation": "To turn" },
+            { "word": "die Kreuzung", "translation": "Intersection" },
+            { "word": "die Haltestelle", "translation": "Bus stop" }
+        ],
+        "questions": [
+            {
+                "question": "Welchen Ort sucht der Tourist?",
+                "options": ["Den Hauptbahnhof", "Den Alexanderplatz", "Das Brandenburger Tor"],
+                "correct": 1,
+                "explanation": "He is looking for Alexanderplatz: 'Ich suche den Alexanderplatz.'"
+            },
+            {
+                "question": "Ist der Alexanderplatz weit weg?",
+                "options": ["Ja, sehr weit", "Nein, das ist nicht weit von hier", "Er ist in einer anderen Stadt"],
+                "correct": 1,
+                "explanation": "Not far: 'Das ist nicht weit von hier.'"
+            },
+            {
+                "question": "Wie soll der Tourist zuerst gehen?",
+                "options": ["Nach rechts", "Geradeaus bis zur Kreuzung", "Nach links"],
+                "correct": 1,
+                "explanation": "Straight ahead: 'Gehen Sie geradeaus bis zur Kreuzung.'"
+            },
+            {
+                "question": "In welche Straße soll man abbiegen?",
+                "options": ["In die Friedrichstraße", "In die Karl-Liebknecht-Straße", "In die Hauptstraße"],
+                "correct": 1,
+                "explanation": "Karl-Liebknecht-Straße: 'Biegen Sie dann links in die Karl-Liebknecht-Straße ab.'"
+            },
+            {
+                "question": "An welchem Gebäude geht man vorbei?",
+                "options": ["An der Schule", "An der Kirche", "Am Supermarkt"],
+                "correct": 1,
+                "explanation": "Past the church: 'Gehen Sie an der Kirche vorbei.'"
+            },
+            {
+                "question": "Welche Sehenswürdigkeit sieht man nach zweihundert Metern?",
+                "options": ["Das Reichstagsgebäude", "Den großen Fernsehturm", "Einen Fluss"],
+                "correct": 1,
+                "explanation": "The TV tower: 'sehen Sie den großen Fernsehturm.'"
+            },
+            {
+                "question": "Wo genau liegt der Alexanderplatz?",
+                "options": ["Direkt unter dem Fernsehturm", "Hinter dem Bahnhof", "Neben der Kirche"],
+                "correct": 0,
+                "explanation": "Under the TV tower: 'liegt direkt unter dem Fernsehturm.'"
+            },
+            {
+                "question": "Welche Buslinie fährt dorthin?",
+                "options": ["Linie 100", "Linie 200", "Linie 300"],
+                "correct": 1,
+                "explanation": "Bus line 200: 'Sie können die Buslinie zweihundert nehmen.'"
+            },
+            {
+                "question": "Wie viele Stationen dauert die Busfahrt?",
+                "options": ["Eine Station", "Zwei Stationen", "Fünf Stationen"],
+                "correct": 1,
+                "explanation": "Two stops: 'Die Fahrt dauert nur zwei Stationen.'"
+            },
+            {
+                "question": "Was wünscht der Helfer dem Touristen zum Schluss?",
+                "options": ["Gute Besserung", "Schönen Tag noch!", "Gute Nacht"],
+                "correct": 1,
+                "explanation": "Have a nice day: 'Keine Ursache, schönen Tag noch!'"
+            }
+        ]
+    },
+    {
+        "id": "st_zoo",
+        "title": "Ein Tag im Zoo (Zoo)",
+        "text": "Heute besuchen Herr und Frau Fischer mit ihren Kindern den Zoo in München. Der Eintritt kostet fünfzehn Euro für Erwachsene und acht Euro für Kinder. Im Zoo gibt es viele wilde Tiere. Zuerst gehen sie zu den Elefanten. Die Elefanten sind sehr groß und fressen Gras. Danach sehen sie die Affen, die auf die Bäume klettern und Bananen fressen. Die Kinder lachen viel. Um zwölf Uhr macht die Familie ein Picknick auf einer Bank. Sie essen Käsebrot und trinken Apfelsaft. Am Nachmittag schauen sie die Fütterung der Pinguine an. Das macht großen Spaß.",
+        "translation": "Today Mr. and Mrs. Fischer visit the zoo in Munich with their children. The admission costs fifteen euros for adults and eight euros for children. In the zoo there are many wild animals. First they go to the elephants. The elephants are very big and eat grass. Then they see the monkeys climbing trees and eating bananas. The children laugh a lot. At twelve o'clock the family has a picnic on a bench. They eat cheese sandwiches and drink apple juice. In the afternoon they watch the penguins being fed. That is great fun.",
+        "vocab": [
+            { "word": "der Zoo", "translation": "Zoo" },
+            { "word": "der Eintritt", "translation": "Admission / Entry" },
+            { "word": "fressen", "translation": "To eat (of animals)" },
+            { "word": "klettern", "translation": "To climb" }
+        ],
+        "questions": [
+            {
+                "question": "Welche Stadt hat den Zoo, den die Familie besucht?",
+                "options": ["Berlin", "München", "Hamburg"],
+                "correct": 1,
+                "explanation": "Munich Zoo: 'den Zoo in München.'"
+            },
+            {
+                "question": "Wie viel kostet der Eintritt für einen Erwachsenen?",
+                "options": ["Acht Euro", "Fünfzehn Euro", "Zwanzig Euro"],
+                "correct": 1,
+                "explanation": "15 euros for adults: 'fünfzehn Euro für Erwachsene.'"
+            },
+            {
+                "question": "Welche Tiere sieht die Familie zuerst?",
+                "options": ["Die Affen", "Die Elefanten", "Die Pinguine"],
+                "correct": 1,
+                "explanation": "Elephants first: 'Zuerst gehen sie zu den Elefanten.'"
+            },
+            {
+                "question": "Was fressen die Elefanten?",
+                "options": ["Bananen", "Gras", "Fisch"],
+                "correct": 1,
+                "explanation": "They eat grass: 'Die Elefanten ... fressen Gras.'"
+            },
+            {
+                "question": "Welche Tiere klettern auf Bäume?",
+                "options": ["Die Elefanten", "Die Affen", "Die Pinguine"],
+                "correct": 1,
+                "explanation": "Monkeys climb trees: 'sehen sie die Affen, die auf die Bäume klettern...'"
+            },
+            {
+                "question": "Was fressen die Affen?",
+                "options": ["Fleisch", "Bananen", "Äpfel"],
+                "correct": 1,
+                "explanation": "They eat bananas: 'und Bananen fressen.'"
+            },
+            {
+                "question": "Wann macht die Familie ein Picknick?",
+                "options": ["Um elf Uhr", "Um zwölf Uhr", "Um dreizehn Uhr"],
+                "correct": 1,
+                "explanation": "At 12:00: 'Um zwölf Uhr macht die Familie ein Picknick...'"
+            },
+            {
+                "question": "Was essen sie beim Picknick?",
+                "options": ["Pizza", "Käsebrot", "Wurst"],
+                "correct": 1,
+                "explanation": "Cheese bread: 'Sie essen Käsebrot...'"
+            },
+            {
+                "question": "Welche Fütterung schauen sie am Nachmittag an?",
+                "options": ["Die der Löwen", "Die der Pinguine", "Die der Affen"],
+                "correct": 1,
+                "explanation": "Penguins feeding: 'schauen sie die Fütterung der Pinguine an.'"
+            },
+            {
+                "question": "Wie viel kostet der Eintritt für ein Kind?",
+                "options": ["Fünf Euro", "Acht Euro", "Zehn Euro"],
+                "correct": 1,
+                "explanation": "8 euros for kids: 'und acht Euro für Kinder.'"
+            }
+        ]
+    },
+    {
+        "id": "st_hobbies",
+        "title": "Meine Hobbys (Hobbies)",
+        "text": "Hallo, ich heiße David. In meiner Freizeit habe ich viele Hobbys. Ich spiele sehr gerne Fußball im Verein. Jeden Dienstagabend haben wir Training. Am Wochenende haben wir oft ein Spiel gegen andere Mannschaften. Ich mag auch Musik. Ich lerne seit zwei Jahren Gitarre spielen und übe jeden Tag eine halbe Stunde in meinem Zimmer. Wenn das Wetter schön ist, fahre ich mit meinem Fahrrad im Wald oder treffe Freunde. Im Winter lese ich gerne Bücher oder spiele Computerspiele.",
+        "translation": "Hello, my name is David. In my free time I have many hobbies. I really like playing football in a club. Every Tuesday evening we have training. On weekends we often have a game against other teams. I also like music. I have been learning to play the guitar for two years and practice for half an hour every day in my room. When the weather is nice, I ride my bike in the forest or meet friends. In winter I like to read books or play computer games.",
+        "vocab": [
+            { "word": "das Hobby", "translation": "Hobby" },
+            { "word": "der Verein", "translation": "Club / Association" },
+            { "word": "üben", "translation": "To practice" },
+            { "word": "das Training", "translation": "Training / Practice" }
+        ],
+        "questions": [
+            {
+                "question": "Wie heißt the Sprecher?",
+                "options": ["Lucas", "David", "Thomas"],
+                "correct": 1,
+                "explanation": "His name is David: 'Hallo, ich heiße David.'"
+            },
+            {
+                "question": "Welchen Sport spielt David gerne?",
+                "options": ["Tennis", "Fußball", "Basketball"],
+                "correct": 1,
+                "explanation": "He plays football: 'Ich spiele sehr gerne Fußball im Verein.'"
+            },
+            {
+                "question": "An welchem Wochentag hat er Fußballtraining?",
+                "options": ["Montagabend", "Dienstagabend", "Samstagmorgen"],
+                "correct": 1,
+                "explanation": "On Tuesdays: 'Jeden Dienstagabend haben wir Training.'"
+            },
+            {
+                "question": "Welches Instrument lernt David?",
+                "options": ["Klavier", "Gitarre", "Flöte"],
+                "correct": 1,
+                "explanation": "He learns guitar: 'Ich lerne seit zwei Jahren Gitarre spielen...'"
+            },
+            {
+                "question": "Seit wie vielen Jahren lernt er dieses Instrument?",
+                "options": ["Einem Jahr", "Zwei Jahren", "Drei Jahren"],
+                "correct": 1,
+                "explanation": "For two years: 'seit zwei Jahren Gitarre spielen...'"
+            },
+            {
+                "question": "Wie lange übt er jeden Tag Gitarre?",
+                "options": ["Eine Stunde", "Eine halbe Stunde", "Zwei Stunden"],
+                "correct": 1,
+                "explanation": "30 minutes: 'übe jeden Tag eine halbe Stunde.'"
+            },
+            {
+                "question": "Wo fährt David mit dem Fahrrad, wenn das Wetter schön ist?",
+                "options": ["In der Stadt", "Im Wald", "Am Strand"],
+                "correct": 1,
+                "explanation": "In the forest: 'fahre ich mit meinem Fahrrad im Wald...'"
+            },
+            {
+                "question": "Was macht David im Winter?",
+                "options": ["Fußball spielen", "Bücher lesen oder Computerspiele spielen", "Fahrrad fahren"],
+                "correct": 1,
+                "explanation": "Reads or plays computer games: 'lese ich gerne Bücher oder spiele Computerspiele.'"
+            },
+            {
+                "question": "Wo übt David jeden Tag Gitarre?",
+                "options": ["In der Musikschule", "In seinem Zimmer", "Im Park"],
+                "correct": 1,
+                "explanation": "In his room: 'übe jeden Tag eine halbe Stunde in meinem Zimmer.'"
+            },
+            {
+                "question": "Wann hat er meistens Fußballspiele gegen andere Mannschaften?",
+                "options": ["Unter der Woche", "Am Wochenende", "Jeden Dienstag"],
+                "correct": 1,
+                "explanation": "On weekends: 'Am Wochenende haben wir oft ein Spiel...'"
+            }
+        ]
+    },
+    {
+        "id": "st_cooking",
+        "title": "Kochen für Freunde (Cooking)",
+        "text": "Heute Abend koche ich für meine Freunde Jan und Lisa. Sie kommen um neunzehn Uhr zu mir. Ich möchte eine Lasagne zubereiten. Dafür brauche ich Hackfleisch, Tomaten, Zwiebeln, Käse und Lasagneplatten. Ich gehe zuerst in den Supermarkt, um alle Zutaten frisch einzukaufen. Ich kaufe auch Salat und eine Flasche Rotwein. Die Lasagne muss für vierzig Minuten im Ofen backen. Jan bringt den Nachtisch mit: einen Schokoladenpudding. Lisa bringt Säfte. Ich hoffe, dass das Essen meinen Freunden schmeckt.",
+        "translation": "This evening I am cooking for my friends Jan and Lisa. They are coming to my place at nineteen o'clock (7 PM). I want to prepare a lasagna. For that I need minced meat, tomatoes, onions, cheese, and lasagna sheets. First I go to the supermarket to buy all ingredients fresh. I also buy salad and a bottle of red wine. The lasagna has to bake in the oven for forty minutes. Jan is bringing the dessert: a chocolate pudding. Lisa is bringing juices. I hope that my friends like the food.",
+        "vocab": [
+            { "word": "kochen", "translation": "To cook" },
+            { "word": "zubereiten", "translation": "To prepare food" },
+            { "word": "die Zutaten", "translation": "Ingredients" },
+            { "word": "der Nachtisch", "translation": "Dessert" }
+        ],
+        "questions": [
+            {
+                "question": "Für wen kocht der Sprecher heute Abend?",
+                "options": ["Für seine Eltern", "Für seine Freunde Jan und Lisa", "Für seine Kollegen"],
+                "correct": 1,
+                "explanation": "For Jan and Lisa: 'koche ich für meine Freunde Jan und Lisa.'"
+            },
+            {
+                "question": "Um wie viel Uhr kommen die Freunde?",
+                "options": ["Um 18:00 Uhr", "Um 19:00 Uhr (neunzehn Uhr)", "Um 20:00 Uhr"],
+                "correct": 1,
+                "explanation": "At 19:00: 'Sie kommen um neunzehn Uhr zu mir.'"
+            },
+            {
+                "question": "Welches Gericht möchte er zubereiten?",
+                "options": ["Eine Pizza", "Eine Lasagne", "Spaghetti"],
+                "correct": 1,
+                "explanation": "Lasagna: 'Ich möchte eine Lasagne zubereiten.'"
+            },
+            {
+                "question": "Welche Zutat wird für die Lasagne NICHT genannt?",
+                "options": ["Fisch", "Hackfleisch", "Käse"],
+                "correct": 0,
+                "explanation": "Fish is not in lasagna: 'brauche ich Hackfleisch, Tomaten, Zwiebeln, Käse...'"
+            },
+            {
+                "question": "Wo kauft er die Zutaten?",
+                "options": ["Auf dem Markt", "Im Supermarkt", "Er bestellt online"],
+                "correct": 1,
+                "explanation": "Supermarket: 'Ich gehe zuerst in den Supermarkt...'"
+            },
+            {
+                "question": "Welches Getränk kauft der Koch im Supermarkt?",
+                "options": ["Bier", "Rotwein", "Apfelsaft"],
+                "correct": 1,
+                "explanation": "Red wine: 'und eine Flasche Rotwein.'"
+            },
+            {
+                "question": "Wie lange muss die Lasagne im Ofen backen?",
+                "options": ["Zwanzig Minuten", "Vierzig Minuten", "Eine Stunde"],
+                "correct": 1,
+                "explanation": "40 minutes: 'für vierzig Minuten im Ofen backen.'"
+            },
+            {
+                "question": "Wer bringt den Nachtisch mit?",
+                "options": ["Lisa", "Jan", "Niemand"],
+                "correct": 1,
+                "explanation": "Jan brings dessert: 'Jan bringt den Nachtisch mit...'"
+            },
+            {
+                "question": "Was für einen Nachtisch bringt er mit?",
+                "options": ["Einen Kuchen", "Einen Schokoladenpudding", "Eis"],
+                "correct": 1,
+                "explanation": "Chocolate pudding: 'einen Schokoladenpudding.'"
+            },
+            {
+                "question": "Was bringt Lisa mit?",
+                "options": ["Rotwein", "Säfte", "Brot"],
+                "correct": 1,
+                "explanation": "Lisa brings juices: 'Lisa bringt Säfte.'"
+            }
+        ]
+    },
+    {
+        "id": "st_supermarket",
+        "title": "Im Supermarkt (Supermarket)",
+        "text": "Guten Tag, wo finde ich Milch und Joghurt? - Guten Tag! Milchprodukte stehen im Kühlregal ganz hinten rechts. - Danke. Und wo ist das Brot? - Frisches Brot und Brötchen finden Sie vorne links beim Bäcker. - Sehr gut. Ich brauche auch noch Zucker, Kaffee und eine Flasche Mineralwasser. Kostet die Plastikflasche Pfand? - Ja, das Pfand für die Wasserflasche beträgt fünfundzwanzig Cent. Sie können die leere Flasche am Automaten abgeben. - Perfekt, danke. Kann ich mit Karte bezahlen? - Ja, ab fünf Euro können Sie mit Karte zahlen.",
+        "translation": "Good day, where can I find milk and yogurt? - Good day! Dairy products are in the refrigerated section at the very back on the right. - Thank you. And where is the bread? - Fresh bread and rolls can be found at the front on the left, at the bakery. - Very good. I also need sugar, coffee, and a bottle of mineral water. Does the plastic bottle have a deposit? - Yes, the deposit for the water bottle is twenty-five cents. You can return the empty bottle at the machine. - Perfect, thank you. Can I pay with a card? - Yes, you can pay with a card for purchases of five euros or more.",
+        "vocab": [
+            { "word": "das Kühlregal", "translation": "Refrigerated display / section" },
+            { "word": "das Pfand", "translation": "Bottle deposit" },
+            { "word": "leere Flasche", "translation": "Empty bottle" },
+            { "word": "bezahlen", "translation": "To pay" }
+        ],
+        "questions": [
+            {
+                "question": "Wo stehen Milch und Joghurt?",
+                "options": ["Vorne beim Eingang", "Im Kühlregal ganz hinten rechts", "Neben dem Obst"],
+                "correct": 1,
+                "explanation": "Back right in fridge: 'Milchprodukte stehen im Kühlregal ganz hinten rechts.'"
+            },
+            {
+                "question": "Wo findet der Kunde frisches Brot?",
+                "options": ["Hinten beim Fleisch", "Vorne links beim Bäcker", "Im Kühlregal"],
+                "correct": 1,
+                "explanation": "Front left bakery: 'finden Sie vorne links beim Bäcker.'"
+            },
+            {
+                "question": "Welche Lebensmittel sucht der Kunde zusätzlich?",
+                "options": ["Zucker und Kaffee", "Nudeln und Salz", "Käse und Butter"],
+                "correct": 0,
+                "explanation": "Sugar and coffee: 'Ich brauche auch noch Zucker, Kaffee...'"
+            },
+            {
+                "question": "Welches Getränk möchte er kaufen?",
+                "options": ["Bier", "Mineralwasser", "Apfelsaft"],
+                "correct": 1,
+                "explanation": "Mineral water: 'und eine Flasche Mineralwasser.'"
+            },
+            {
+                "question": "Wie hoch ist das Flaschenpfand für das Wasser?",
+                "options": ["Fünfzehn Cent", "Fünfundzwanzig Cent (25)", "Fünfzig Cent"],
+                "correct": 1,
+                "explanation": "25 cents deposit: 'das Pfand für die Wasserflasche beträgt fünfundzwanzig Cent.'"
+            },
+            {
+                "question": "Wo kann man leere Flaschen zurückgeben?",
+                "options": ["An der Kasse", "Am Automaten", "Gar nicht"],
+                "correct": 1,
+                "explanation": "At the machine: 'Sie können die leere Flasche am Automaten abgeben.'"
+            },
+            {
+                "question": "Ab welchem Betrag kann man mit Karte bezahlen?",
+                "options": ["Ab einem Euro", "Ab fünf Euro", "Ab zehn Euro"],
+                "correct": 1,
+                "explanation": "Minimum 5 euros: 'ab fünf Euro können Sie mit Karte zahlen.'"
+            },
+            {
+                "question": "Welcher Ladenbereich enthält die Milch?",
+                "options": ["Die Bäckerei", "Das Kühlregal", "Das Gemüseregal"],
+                "correct": 1,
+                "explanation": "The fridge section: 'Milchprodukte stehen im Kühlregal.'"
+            },
+            {
+                "question": "Was gehört neben Brot zu den Backwaren vorne links?",
+                "options": ["Kuchen", "Brötchen", "Kekse"],
+                "correct": 1,
+                "explanation": "Bread rolls: 'Frisches Brot und Brötchen finden Sie...'"
+            },
+            {
+                "question": "Wie reagiert der Mitarbeiter auf die Fragen?",
+                "options": ["Er ist unfreundlich", "Er hilft dem Kunden höflich", "Er geht weg"],
+                "correct": 1,
+                "explanation": "He answers and helps: 'Milchprodukte stehen...'"
+            }
+        ]
+    },
+    {
+        "id": "st_job",
+        "title": "Mein neuer Job (New Job)",
+        "text": "Hallo, ich bin Lukas. Seit einer Woche habe ich eine neue Stelle in Berlin. Ich arbeite als Verkäufer in einem großen Elektromarkt im Stadtzentrum. Meine Kollegen sind sehr nett und helfen mir viel. Meine Arbeitszeit ist von Montag bis Freitag, von neun Uhr morgens bis siebzehn Uhr dreißig am Nachmittag. Am Mittag machen wir eine Stunde Pause. Ich berate Kunden, die Handys oder Laptops kaufen möchten. Der Job macht mir großen Spaß, weil ich gerne mit Technik und Menschen arbeite. Das Gehalt ist auch gut.",
+        "translation": "Hello, I am Lukas. Since a week I have a new job in Berlin. I work as a salesperson in a large electronics store in the city center. My colleagues are very nice and help me a lot. My working hours are from Monday to Friday, from nine o'clock in the morning to seventeen-thirty in the afternoon. At noon we have a one-hour break. I advise customers who want to buy cell phones or laptops. I enjoy the job a lot because I like working with technology and people. The salary is also good.",
+        "vocab": [
+            { "word": "die Stelle", "translation": "Job / Position" },
+            { "word": "der Verkäufer", "translation": "Salesperson" },
+            { "word": "beraten", "translation": "To advise" },
+            { "word": "das Gehalt", "translation": "Salary" }
+        ],
+        "questions": [
+            {
+                "question": "In welcher Stadt arbeitet Lukas?",
+                "options": ["München", "Berlin", "Hamburg"],
+                "correct": 1,
+                "explanation": "He works in Berlin: 'eine neue Stelle in Berlin.'"
+            },
+            {
+                "question": "Als was arbeitet Lukas?",
+                "options": ["Ingenieur", "Verkäufer", "Lehrer"],
+                "correct": 1,
+                "explanation": "He is a salesperson: 'Ich arbeite als Verkäufer...'"
+            },
+            {
+                "question": "Wo liegt das Geschäft?",
+                "options": ["Am Stadtrand", "Im Stadtzentrum", "In einem Dorf"],
+                "correct": 1,
+                "explanation": "In the city center: 'in einem großen Elektromarkt im Stadtzentrum.'"
+            },
+            {
+                "question": "Wie sind die Kollegen?",
+                "options": ["Sehr nett und hilfsbereit", "Unfreundlich", "Sie sprechen nicht mit ihm"],
+                "correct": 0,
+                "explanation": "They are nice and help: 'meine Kollegen sind sehr nett und helfen mir viel.'"
+            },
+            {
+                "question": "An welchen Tagen arbeitet Lukas?",
+                "options": ["Nur am Wochenende", "Von Montag bis Freitag", "Jeden Tag"],
+                "correct": 1,
+                "explanation": "Monday to Friday: 'von Montag bis Freitag.'"
+            },
+            {
+                "question": "Um wie viel Uhr beginnt seine Arbeit?",
+                "options": ["Um acht Uhr", "Um neun Uhr", "Um zehn Uhr"],
+                "correct": 1,
+                "explanation": "Starts at 9:00: 'von neun Uhr morgens...'"
+            },
+            {
+                "question": "Wann endet sein Arbeitstag?",
+                "options": ["Um siebzehn Uhr", "Um siebzehn Uhr dreißig (17:30)", "Um achtzehn Uhr"],
+                "correct": 1,
+                "explanation": "Ends at 17:30: 'bis siebzehn Uhr dreißig am Nachmittag.'"
+            },
+            {
+                "question": "Wie lange dauert die Mittagspause?",
+                "options": ["Eine halbe Stunde", "Eine Stunde", "Zwei Stunden"],
+                "correct": 1,
+                "explanation": "One hour: 'Am Mittag machen wir eine Stunde Pause.'"
+            },
+            {
+                "question": "Welche Produkte berät Lukas hauptsächlich?",
+                "options": ["Autos", "Handys und Laptops", "Kühlschränke"],
+                "correct": 1,
+                "explanation": "Phones and laptops: 'Ich berate Kunden, die Handys oder Laptops kaufen möchten.'"
+            },
+            {
+                "question": "Warum gefällt ihm die Arbeit?",
+                "options": ["Weil das Gehalt schlecht ist", "Weil er Technik und Menschen mag", "Weil er nicht arbeiten muss"],
+                "correct": 1,
+                "explanation": "He likes tech and people: 'weil ich gerne mit Technik und Menschen arbeite.'"
+            }
+        ]
+    },
+    {
+        "id": "st_cafe",
+        "title": "Kaffeeklatsch im Café (Café)",
+        "text": "Guten Tag, Herr Keller! Haben Sie einen Tisch für zwei Personen frei? - Guten Tag! Ja, am Fenster ist noch ein schöner Tisch frei. Bitte nehmen Sie Platz. - Danke. Was möchten Sie bestellen? - Ich nehme einen Kaffee mit Milch und ein Stück Apfelkuchen mit Sahne. - Und für mich bitte einen grünen Tee und ein Stück Käsekuchen. - Sehr gerne. Kommt sofort. - Wie geht es dir, Anna? Hast du viel zu tun? - Danke, gut! Ich habe diese Woche Urlaub und viel Zeit zum Lesen.",
+        "translation": "Good day, Mr. Keller! Do you have a table for two people free? - Good day! Yes, by the window a nice table is still free. Please take a seat. - Thank you. What would you like to order? - I'll have a coffee with milk and a piece of apple cake with whipped cream. - And for me please a green tea and a piece of cheesecake. - Very gladly. Coming right up. - How are you, Anna? Do you have a lot to do? - Thanks, good! I have a vacation this week and plenty of time to read.",
+        "vocab": [
+            { "word": "der Kaffeeklatsch", "translation": "Coffee and chat / gossip" },
+            { "word": "der Tisch", "translation": "Table" },
+            { "word": "nehmen Sie Platz", "translation": "Take a seat" },
+            { "word": "der Kuchen", "translation": "Cake" }
+        ],
+        "questions": [
+            {
+                "question": "Wie viele Personen möchten im Café sitzen?",
+                "options": ["Eine Person", "Zwei Personen", "Drei Personen"],
+                "correct": 1,
+                "explanation": "Two people: 'einen Tisch für zwei Personen frei?'"
+            },
+            {
+                "question": "Wo befindet sich der freie Tisch im Café?",
+                "options": ["Am Fenster", "Draußen auf der Terrasse", "Neben der Küche"],
+                "correct": 0,
+                "explanation": "By the window: 'am Fenster ist noch ein schöner Tisch frei.'"
+            },
+            {
+                "question": "Wie heißt der Kellner?",
+                "options": ["Herr Schmidt", "Herr Keller", "Herr Becker"],
+                "correct": 1,
+                "explanation": "Mr. Keller: 'Guten Tag, Herr Keller!'"
+            },
+            {
+                "question": "Was bestellt die erste Person zum Trinken?",
+                "options": ["Tee", "Kaffee mit Milch", "Wasser"],
+                "correct": 1,
+                "explanation": "Coffee with milk: 'einen Kaffee mit Milch...'"
+            },
+            {
+                "question": "Welchen Kuchen bestellt die erste Person?",
+                "options": ["Käsekuchen", "Apfelkuchen mit Sahne", "Schokoladenkuchen"],
+                "correct": 1,
+                "explanation": "Apple cake with cream: 'ein Stück Apfelkuchen mit Sahne.'"
+            },
+            {
+                "question": "Was bestellt die zweite Person zum Trinken?",
+                "options": ["Kaffee", "Grünen Tee", "Bier"],
+                "correct": 1,
+                "explanation": "Green tea: 'einen grünen Tee...'"
+            },
+            {
+                "question": "Welchen Kuchen bestellt die zweite Person?",
+                "options": ["Erdbeerkuchen", "Käsekuchen", "Zitronenkuchen"],
+                "correct": 1,
+                "explanation": "Cheesecake: 'und ein Stück Käsekuchen.'"
+            },
+            {
+                "question": "Wie heißt die Freundin, die gefragt wird?",
+                "options": ["Julia", "Anna", "Lisa"],
+                "correct": 1,
+                "explanation": "Her name is Anna: 'Wie geht es dir, Anna?'"
+            },
+            {
+                "question": "Warum hat Anna diese Woche viel Zeit?",
+                "options": ["Weil sie krank ist", "Weil sie Urlaub hat", "Weil sie arbeitslos ist"],
+                "correct": 1,
+                "explanation": "She is on vacation: 'Ich habe diese Woche Urlaub und viel Zeit...'"
+            },
+            {
+                "question": "Was macht Anna in ihrem Urlaub gerne?",
+                "options": ["Sport machen", "Bücher lesen (Zeit zum Lesen)", "Kochen"],
+                "correct": 1,
+                "explanation": "Reading books: 'viel Zeit zum Lesen.'"
+            }
+        ]
+    },
+    {
+        "id": "st_museum",
+        "title": "Ein Besuch im Museum (Museum)",
+        "text": "Heute Nachmittag besuchen Frau Krause und ihr Sohn Tim das Kunstmuseum. Das Museum ist dienstags geschlossen, aber heute ist Mittwoch. Ein Ticket für Erwachsene kostet zehn Euro, für Kinder unter zwölf Jahren ist der Eintritt frei. Tim ist neun Jahre alt, also bezahlt er nichts. Am Eingang leihen sie sich einen Audioguide auf Deutsch aus. Im Museum hängen viele berühmte Gemälde und alte Statuen. Tim findet die bunten Bilder sehr schön. Nach dem Besuch trinken sie eine Limonade im Museumscafé.",
+        "translation": "This afternoon Mrs. Krause and her son Tim visit the art museum. The museum is closed on Tuesdays, but today is Wednesday. A ticket for adults costs ten euros, and entry is free for children under twelve years. Tim is nine years old, so he pays nothing. At the entrance they borrow an audio guide in German. In the museum there are many famous paintings and old statues. Tim finds the colorful pictures very beautiful. After the visit they drink a lemonade in the museum café.",
+        "vocab": [
+            { "word": "geschlossen", "translation": "Closed" },
+            { "word": "das Gemälde", "translation": "Painting / Picture" },
+            { "word": "der Audioguide", "translation": "Audio guide" },
+            { "word": "der Eintritt frei", "translation": "Free admission" }
+        ],
+        "questions": [
+            {
+                "question": "Welches Museum besuchen Frau Krause und Tim?",
+                "options": ["Das Naturkundemuseum", "Das Kunstmuseum", "Das Technikmuseum"],
+                "correct": 1,
+                "explanation": "The art museum: 'besuchen ... das Kunstmuseum.'"
+            },
+            {
+                "question": "An welchem Wochentag ist das Museum normalerweise geschlossen?",
+                "options": ["Montags", "Dienstags", "Mittwochs"],
+                "correct": 1,
+                "explanation": "Closed on Tuesdays: 'Das Museum ist dienstags geschlossen...'"
+            },
+            {
+                "question": "Welcher Wochentag ist heute?",
+                "options": ["Dienstag", "Mittwoch", "Donnerstag"],
+                "correct": 1,
+                "explanation": "Today is Wednesday: 'aber heute ist Mittwoch.'"
+            },
+            {
+                "question": "Wie viel kostet ein Ticket für Erwachsene?",
+                "options": ["Fünf Euro", "Zehn Euro", "Fünfzehn Euro"],
+                "correct": 1,
+                "explanation": "10 euros: 'Ein Ticket für Erwachsene kostet zehn Euro...'"
+            },
+            {
+                "question": "Bis zu welchem Alter ist der Eintritt für Kinder frei?",
+                "options": ["Unter sechs Jahren", "Unter zwölf Jahren", "Unter achtzehn Jahren"],
+                "correct": 1,
+                "explanation": "Under twelve: 'für Kinder unter zwölf Jahren ist der Eintritt frei.'"
+            },
+            {
+                "question": "Wie alt ist der Sohn Tim?",
+                "options": ["Acht Jahre", "Neun Jahre", "Zehn Jahre"],
+                "correct": 1,
+                "explanation": "He is nine: 'Tim ist neun Jahre alt...'"
+            },
+            {
+                "question": "Wie viel bezahlt Tim für seinen Eintritt?",
+                "options": ["Fünf Euro", "Nichts (frei)", "Zehn Euro"],
+                "correct": 1,
+                "explanation": "Free because he is under 12: 'also bezahlt er nichts.'"
+            },
+            {
+                "question": "Was leihen sie sich am Eingang aus?",
+                "options": ["Einen Regenschirm", "Einen Audioguide auf Deutsch", "Einen Rollstuhl"],
+                "correct": 1,
+                "explanation": "An audio guide: 'leihen sie sich einen Audioguide auf Deutsch aus.'"
+            },
+            {
+                "question": "Was gefällt Tim im Museum besonders gut?",
+                "options": ["Die alten Statuen", "Die bunten Bilder / Gemälde", "Das Café"],
+                "correct": 1,
+                "explanation": "Colorful pictures: 'Tim findet die bunten Bilder sehr schön.'"
+            },
+            {
+                "question": "Was trinken sie nach dem Museumsbesuch im Café?",
+                "options": ["Kaffee", "Eine Limonade", "Tee"],
+                "correct": 1,
+                "explanation": "Lemonade: 'trinken sie eine Limonade im Museumscafé.'"
+            }
+        ]
+    },
+    {
+        "id": "st_playground",
+        "title": "Am Spielplatz (Playground)",
+        "text": "Es ist Samstagnachmittag und das Wetter ist schön. Anna geht mit ihren zwei Kindern, Leon und Mia, zum Spielplatz. Leon ist sieben Jahre alt und Mia ist vier. Auf dem Spielplatz gibt es eine Rutsche, eine Schaukel und einen Sandkasten. Leon klettert sofort auf das Klettergerüst. Mia spielt lieber im Sandkasten und baut eine Burg. Anna sitzt auf einer Bank und schaut den Kindern zu. Nach einer Stunde sind die Kinder müde und hungrig. Anna kauft am Kiosk zwei Eis am Stiel, eines für Leon und eines für Mia. Dann gehen sie zusammen nach Hause.",
+        "translation": "It is Saturday afternoon and the weather is nice. Anna goes to the playground with her two children, Leon and Mia. Leon is seven years old and Mia is four. At the playground there is a slide, a swing and a sandpit. Leon immediately climbs on the climbing frame. Mia prefers playing in the sandpit and builds a castle. Anna sits on a bench and watches the children. After one hour the children are tired and hungry. Anna buys two ice lollies at the kiosk, one for Leon and one for Mia. Then they all go home together.",
+        "vocab": [
+            { "word": "die Rutsche", "translation": "Slide" },
+            { "word": "die Schaukel", "translation": "Swing" },
+            { "word": "der Sandkasten", "translation": "Sandpit" },
+            { "word": "das Klettergerüst", "translation": "Climbing frame" }
+        ],
+        "questions": [
+            {
+                "question": "Wann gehen Anna und die Kinder zum Spielplatz?",
+                "options": ["Am Samstagmorgen", "Am Samstagnachmittag", "Am Sonntagabend"],
+                "correct": 1,
+                "explanation": "Saturday afternoon: 'Es ist Samstagnachmittag...'"
+            },
+            {
+                "question": "Wie viele Kinder hat Anna?",
+                "options": ["Ein Kind", "Zwei Kinder", "Drei Kinder"],
+                "correct": 1,
+                "explanation": "Two children: 'mit ihren zwei Kindern, Leon und Mia.'"
+            },
+            {
+                "question": "Wie alt ist Leon?",
+                "options": ["Vier Jahre", "Sechs Jahre", "Sieben Jahre"],
+                "correct": 2,
+                "explanation": "Seven years old: 'Leon ist sieben Jahre alt.'"
+            },
+            {
+                "question": "Was macht Leon auf dem Spielplatz?",
+                "options": ["Er schaukelt", "Er klettert auf das Klettergerüst", "Er baut eine Burg"],
+                "correct": 1,
+                "explanation": "Climbs the frame: 'Leon klettert sofort auf das Klettergerüst.'"
+            },
+            {
+                "question": "Was macht Mia auf dem Spielplatz?",
+                "options": ["Sie rutscht", "Sie schaukelt", "Sie spielt im Sandkasten"],
+                "correct": 2,
+                "explanation": "Plays in the sandpit: 'Mia spielt lieber im Sandkasten.'"
+            },
+            {
+                "question": "Was baut Mia im Sandkasten?",
+                "options": ["Ein Haus", "Eine Burg", "Ein Schloss"],
+                "correct": 1,
+                "explanation": "A castle: 'baut eine Burg.'"
+            },
+            {
+                "question": "Wo sitzt Anna während die Kinder spielen?",
+                "options": ["Auf einer Schaukel", "Auf einer Bank", "Auf dem Boden"],
+                "correct": 1,
+                "explanation": "On a bench: 'Anna sitzt auf einer Bank.'"
+            },
+            {
+                "question": "Wie lange spielen die Kinder auf dem Spielplatz?",
+                "options": ["Dreißig Minuten", "Eine Stunde", "Zwei Stunden"],
+                "correct": 1,
+                "explanation": "One hour: 'Nach einer Stunde sind die Kinder müde.'"
+            },
+            {
+                "question": "Was kauft Anna am Kiosk?",
+                "options": ["Zwei Äpfel", "Zwei Eis am Stiel", "Zwei Brötchen"],
+                "correct": 1,
+                "explanation": "Two ice lollies: 'kauft am Kiosk zwei Eis am Stiel.'"
+            },
+            {
+                "question": "Warum kauft Anna etwas zu essen?",
+                "options": ["Weil es Mittagszeit ist", "Weil die Kinder müde und hungrig sind", "Weil der Kiosk billig ist"],
+                "correct": 1,
+                "explanation": "Because they are tired and hungry: 'sind die Kinder müde und hungrig.'"
+            }
+        ]
+    },
+    {
+        "id": "st_cinema",
+        "title": "Im Kino (Cinema)",
+        "text": "Heute Abend gehen Julia und ihr Freund Marco ins Kino. Sie möchten einen neuen Film sehen. Der Film beginnt um 20 Uhr. Sie kaufen die Karten online, weil es an der Kinokasse eine lange Schlange gibt. Julia kauft eine große Tüte Popcorn und Marco kauft eine Cola. Sie sitzen in Reihe sieben, in der Mitte. Der Film ist eine Komödie und sehr lustig. Das Publikum lacht oft. Der Film dauert neunzig Minuten. Nach dem Film sprechen Julia und Marco über die Geschichte und gehen zusammen in ein kleines Café.",
+        "translation": "This evening Julia and her boyfriend Marco go to the cinema. They want to see a new film. The film starts at 8 PM. They buy the tickets online because there is a long queue at the box office. Julia buys a large bag of popcorn and Marco buys a cola. They sit in row seven, in the middle. The film is a comedy and very funny. The audience laughs often. The film lasts ninety minutes. After the film Julia and Marco talk about the story and go together to a small café.",
+        "vocab": [
+            { "word": "die Kinokasse", "translation": "Box office / cinema ticket desk" },
+            { "word": "die Schlange", "translation": "Queue" },
+            { "word": "die Komödie", "translation": "Comedy" },
+            { "word": "das Publikum", "translation": "Audience" }
+        ],
+        "questions": [
+            {
+                "question": "Wann gehen Julia und Marco ins Kino?",
+                "options": ["Heute Mittag", "Heute Abend", "Heute Morgen"],
+                "correct": 1,
+                "explanation": "This evening: 'Heute Abend gehen Julia und ihr Freund Marco ins Kino.'"
+            },
+            {
+                "question": "Wann beginnt der Film?",
+                "options": ["Um 18 Uhr", "Um 19 Uhr", "Um 20 Uhr"],
+                "correct": 2,
+                "explanation": "At 8 PM: 'Der Film beginnt um 20 Uhr.'"
+            },
+            {
+                "question": "Warum kaufen sie die Karten online?",
+                "options": ["Weil es billiger ist", "Weil es an der Kasse eine lange Schlange gibt", "Weil das Kino geschlossen ist"],
+                "correct": 1,
+                "explanation": "Long queue: 'weil es an der Kinokasse eine lange Schlange gibt.'"
+            },
+            {
+                "question": "Was kauft Julia im Kino?",
+                "options": ["Eine Cola", "Eine Tüte Popcorn", "Ein Eis"],
+                "correct": 1,
+                "explanation": "Popcorn: 'Julia kauft eine große Tüte Popcorn.'"
+            },
+            {
+                "question": "Was kauft Marco im Kino?",
+                "options": ["Popcorn", "Wasser", "Eine Cola"],
+                "correct": 2,
+                "explanation": "Cola: 'Marco kauft eine Cola.'"
+            },
+            {
+                "question": "In welcher Reihe sitzen Julia und Marco?",
+                "options": ["Reihe fünf", "Reihe sieben", "Reihe neun"],
+                "correct": 1,
+                "explanation": "Row seven: 'Sie sitzen in Reihe sieben.'"
+            },
+            {
+                "question": "Welches Genre ist der Film?",
+                "options": ["Ein Thriller", "Ein Drama", "Eine Komödie"],
+                "correct": 2,
+                "explanation": "A comedy: 'Der Film ist eine Komödie.'"
+            },
+            {
+                "question": "Wie reagiert das Publikum auf den Film?",
+                "options": ["Es weint", "Es lacht oft", "Es schläft"],
+                "correct": 1,
+                "explanation": "Laughs often: 'Das Publikum lacht oft.'"
+            },
+            {
+                "question": "Wie lange dauert der Film?",
+                "options": ["Sechzig Minuten", "Neunzig Minuten", "Hundertundzwanzig Minuten"],
+                "correct": 1,
+                "explanation": "Ninety minutes: 'Der Film dauert neunzig Minuten.'"
+            },
+            {
+                "question": "Was machen Julia und Marco nach dem Kino?",
+                "options": ["Sie gehen nach Hause", "Sie gehen in ein kleines Café", "Sie gehen ins Restaurant"],
+                "correct": 1,
+                "explanation": "To a café: 'gehen zusammen in ein kleines Café.'"
+            }
+        ]
+    },
+    {
+        "id": "st_haircut",
+        "title": "Beim Friseur (Hairdresser)",
+        "text": "Herr Wagner möchte einen neuen Haarschnitt. Er geht am Freitagmorgen zum Friseur. Die Friseuse heißt Sandra. Sie fragt: 'Wie möchten Sie die Haare?' Herr Wagner sagt: 'Bitte nicht zu kurz, nur die Spitzen schneiden.' Sandra fragt auch, ob er seine Haare waschen lassen möchte. Herr Wagner sagt ja. Das Haarewaschen kostet zwei Euro extra. Sandra wäscht, schneidet und föhnt die Haare. Das dauert ungefähr dreißig Minuten. Am Ende zeigt sie Herrn Wagner das Ergebnis mit einem Spiegel. Er ist sehr zufrieden. Er bezahlt fünfzehn Euro und gibt Sandra zwei Euro Trinkgeld.",
+        "translation": "Mr Wagner wants a new haircut. He goes to the hairdresser on Friday morning. The hairdresser's name is Sandra. She asks: 'How would you like your hair?' Mr Wagner says: 'Please not too short, just trim the ends.' Sandra also asks if he would like to have his hair washed. Mr Wagner says yes. The hair wash costs two euros extra. Sandra washes, cuts and blow-dries the hair. This takes approximately thirty minutes. At the end she shows Mr Wagner the result with a mirror. He is very satisfied. He pays fifteen euros and gives Sandra a two-euro tip.",
+        "vocab": [
+            { "word": "der Haarschnitt", "translation": "Haircut" },
+            { "word": "die Spitzen schneiden", "translation": "To trim the ends" },
+            { "word": "föhnen", "translation": "To blow-dry" },
+            { "word": "das Trinkgeld", "translation": "Tip (money)" }
+        ],
+        "questions": [
+            {
+                "question": "Wann geht Herr Wagner zum Friseur?",
+                "options": ["Am Donnerstagabend", "Am Freitagmorgen", "Am Samstagnachmittag"],
+                "correct": 1,
+                "explanation": "Friday morning: 'Er geht am Freitagmorgen zum Friseur.'"
+            },
+            {
+                "question": "Wie heißt die Friseuse?",
+                "options": ["Maria", "Anna", "Sandra"],
+                "correct": 2,
+                "explanation": "Sandra: 'Die Friseuse heißt Sandra.'"
+            },
+            {
+                "question": "Was möchte Herr Wagner beim Haarschnitt?",
+                "options": ["Sehr kurze Haare", "Nur die Spitzen schneiden", "Eine neue Haarfarbe"],
+                "correct": 1,
+                "explanation": "Just trim the ends: 'nur die Spitzen schneiden.'"
+            },
+            {
+                "question": "Möchte Herr Wagner auch seine Haare waschen lassen?",
+                "options": ["Nein", "Ja", "Er weiß es nicht"],
+                "correct": 1,
+                "explanation": "Yes: 'Herr Wagner sagt ja.'"
+            },
+            {
+                "question": "Was kostet das Haarewaschen extra?",
+                "options": ["Ein Euro", "Zwei Euro", "Drei Euro"],
+                "correct": 1,
+                "explanation": "Two euros: 'Das Haarewaschen kostet zwei Euro extra.'"
+            },
+            {
+                "question": "Was macht Sandra nach dem Waschen und Schneiden?",
+                "options": ["Sie kämmt die Haare", "Sie föhnt die Haare", "Sie färbt die Haare"],
+                "correct": 1,
+                "explanation": "Blow-dries: 'Sandra wäscht, schneidet und föhnt die Haare.'"
+            },
+            {
+                "question": "Wie lange dauert alles beim Friseur?",
+                "options": ["Zehn Minuten", "Dreißig Minuten", "Eine Stunde"],
+                "correct": 1,
+                "explanation": "About thirty minutes: 'Das dauert ungefähr dreißig Minuten.'"
+            },
+            {
+                "question": "Womit zeigt Sandra das Ergebnis?",
+                "options": ["Mit einem Foto", "Mit einem Spiegel", "Mit dem Handy"],
+                "correct": 1,
+                "explanation": "With a mirror: 'zeigt sie Herrn Wagner das Ergebnis mit einem Spiegel.'"
+            },
+            {
+                "question": "Wie viel bezahlt Herr Wagner insgesamt?",
+                "options": ["Dreizehn Euro", "Fünfzehn Euro", "Siebzehn Euro"],
+                "correct": 1,
+                "explanation": "Fifteen euros: 'Er bezahlt fünfzehn Euro.'"
+            },
+            {
+                "question": "Wie viel Trinkgeld gibt Herr Wagner?",
+                "options": ["Einen Euro", "Zwei Euro", "Fünf Euro"],
+                "correct": 1,
+                "explanation": "Two euros: 'gibt Sandra zwei Euro Trinkgeld.'"
+            }
+        ]
+    },
+    {
+        "id": "st_gym",
+        "title": "Im Fitnessstudio (Gym)",
+        "text": "Karim geht dreimal pro Woche ins Fitnessstudio. Er ist Mitglied seit sechs Monaten. Heute geht er um sieben Uhr morgens hin, weil das Studio dann nicht so voll ist. Er zieht sich in der Umkleidekabine um und geht in die Sporthalle. Zuerst läuft er dreißig Minuten auf dem Laufband. Dann macht er Kraftübungen für die Arme und den Rücken. Nach dem Training geht er in die Dusche. Im Studio gibt es auch einen Kurs für Yoga, aber Karim mag kein Yoga. Er bevorzugt Schwimmen. Das Fitnessstudio hat auch ein Schwimmbad, aber heute hat er keine Zeit mehr.",
+        "translation": "Karim goes to the gym three times a week. He has been a member for six months. Today he goes there at seven in the morning because the studio is not so full then. He gets changed in the changing room and goes into the sports hall. First he runs for thirty minutes on the treadmill. Then he does strength exercises for his arms and back. After training he goes to the shower. The studio also has a yoga class, but Karim does not like yoga. He prefers swimming. The gym also has a swimming pool, but today he has no more time.",
+        "vocab": [
+            { "word": "die Umkleidekabine", "translation": "Changing room" },
+            { "word": "das Laufband", "translation": "Treadmill" },
+            { "word": "die Kraftübung", "translation": "Strength exercise" },
+            { "word": "das Schwimmbad", "translation": "Swimming pool" }
+        ],
+        "questions": [
+            {
+                "question": "Wie oft geht Karim ins Fitnessstudio?",
+                "options": ["Einmal pro Woche", "Dreimal pro Woche", "Fünfmal pro Woche"],
+                "correct": 1,
+                "explanation": "Three times a week: 'Karim geht dreimal pro Woche ins Fitnessstudio.'"
+            },
+            {
+                "question": "Seit wann ist Karim Mitglied im Fitnessstudio?",
+                "options": ["Seit drei Monaten", "Seit sechs Monaten", "Seit einem Jahr"],
+                "correct": 1,
+                "explanation": "Six months: 'Er ist Mitglied seit sechs Monaten.'"
+            },
+            {
+                "question": "Warum geht Karim um sieben Uhr ins Studio?",
+                "options": ["Weil es billiger ist", "Weil es dann nicht so voll ist", "Weil er früh arbeiten muss"],
+                "correct": 1,
+                "explanation": "Not so crowded: 'weil das Studio dann nicht so voll ist.'"
+            },
+            {
+                "question": "Wo zieht sich Karim um?",
+                "options": ["Im Büro", "In der Sporthalle", "In der Umkleidekabine"],
+                "correct": 2,
+                "explanation": "In the changing room: 'Er zieht sich in der Umkleidekabine um.'"
+            },
+            {
+                "question": "Wie lange läuft Karim auf dem Laufband?",
+                "options": ["Zwanzig Minuten", "Dreißig Minuten", "Eine Stunde"],
+                "correct": 1,
+                "explanation": "Thirty minutes: 'läuft er dreißig Minuten auf dem Laufband.'"
+            },
+            {
+                "question": "Für welche Körperteile macht Karim Kraftübungen?",
+                "options": ["Beine und Bauch", "Arme und Rücken", "Schultern und Brust"],
+                "correct": 1,
+                "explanation": "Arms and back: 'Kraftübungen für die Arme und den Rücken.'"
+            },
+            {
+                "question": "Was macht Karim nach dem Training?",
+                "options": ["Er geht ins Café", "Er geht in die Dusche", "Er trinkt einen Protein-Shake"],
+                "correct": 1,
+                "explanation": "Goes to shower: 'geht er in die Dusche.'"
+            },
+            {
+                "question": "Welchen Kurs gibt es im Studio, den Karim nicht mag?",
+                "options": ["Pilates", "Yoga", "Zumba"],
+                "correct": 1,
+                "explanation": "Yoga: 'Es gibt auch einen Kurs für Yoga, aber Karim mag kein Yoga.'"
+            },
+            {
+                "question": "Was macht Karim lieber als Yoga?",
+                "options": ["Radfahren", "Schwimmen", "Joggen"],
+                "correct": 1,
+                "explanation": "Swimming: 'Er bevorzugt Schwimmen.'"
+            },
+            {
+                "question": "Warum geht Karim heute nicht schwimmen?",
+                "options": ["Das Schwimmbad ist geschlossen", "Er hat keine Zeit mehr", "Er hat seinen Badeanzug vergessen"],
+                "correct": 1,
+                "explanation": "No more time: 'heute hat er keine Zeit mehr.'"
+            }
+        ]
+    },
+    {
+        "id": "st_lost_keys",
+        "title": "Die verlorenen Schlüssel (Lost Keys)",
+        "text": "Es ist Montagnachmittag. Lisa kommt nach Hause und sucht ihren Hausschlüssel. Aber sie findet ihn nicht in ihrer Tasche. Sie sucht überall: in der Jackentasche, im Rucksack, auf dem Tisch im Flur. Der Schlüssel ist nirgendwo. Lisa ist sehr nervös. Sie ruft ihren Mann Peter an. Peter ist noch im Büro. Er fragt: 'Hast du am Supermarkt bezahlt? Vielleicht liegt der Schlüssel an der Kasse.' Lisa erinnert sich: Ja, sie war heute im Supermarkt! Sie ruft den Supermarkt an. Die Kassiererin sagt, jemand hat einen Schlüssel an der Kasse abgegeben. Lisa fährt sofort zum Supermarkt und holt ihren Schlüssel ab. Sie ist sehr erleichtert.",
+        "translation": "It is Monday afternoon. Lisa comes home and looks for her house key. But she cannot find it in her bag. She looks everywhere: in her jacket pocket, in her backpack, on the table in the hallway. The key is nowhere. Lisa is very nervous. She calls her husband Peter. Peter is still in the office. He asks: 'Did you pay at the supermarket? Maybe the key is at the checkout.' Lisa remembers: Yes, she was at the supermarket today! She calls the supermarket. The cashier says someone handed in a key at the checkout. Lisa goes to the supermarket immediately and collects her key. She is very relieved.",
+        "vocab": [
+            { "word": "der Hausschlüssel", "translation": "House key" },
+            { "word": "die Jackentasche", "translation": "Jacket pocket" },
+            { "word": "nirgendwo", "translation": "Nowhere" },
+            { "word": "erleichtert", "translation": "Relieved" }
+        ],
+        "questions": [
+            {
+                "question": "Wann kommt Lisa nach Hause?",
+                "options": ["Am Montagmorgen", "Am Montagnachmittag", "Am Montagabend"],
+                "correct": 1,
+                "explanation": "Monday afternoon: 'Es ist Montagnachmittag. Lisa kommt nach Hause.'"
+            },
+            {
+                "question": "Was sucht Lisa?",
+                "options": ["Ihren Geldbeutel", "Ihren Hausschlüssel", "Ihr Handy"],
+                "correct": 1,
+                "explanation": "Her house key: 'sucht ihren Hausschlüssel.'"
+            },
+            {
+                "question": "Wo sucht Lisa NICHT?",
+                "options": ["In der Jackentasche", "Im Rucksack", "Im Auto"],
+                "correct": 2,
+                "explanation": "She does not mention the car. She looks in her jacket pocket, backpack and on the table in the hallway."
+            },
+            {
+                "question": "Wie fühlt sich Lisa, als sie den Schlüssel nicht findet?",
+                "options": ["Ruhig", "Nervös", "Glücklich"],
+                "correct": 1,
+                "explanation": "Very nervous: 'Lisa ist sehr nervös.'"
+            },
+            {
+                "question": "Wen ruft Lisa an?",
+                "options": ["Ihre Mutter", "Die Polizei", "Ihren Mann Peter"],
+                "correct": 2,
+                "explanation": "Her husband Peter: 'Sie ruft ihren Mann Peter an.'"
+            },
+            {
+                "question": "Wo ist Peter gerade?",
+                "options": ["Zu Hause", "Im Supermarkt", "Im Büro"],
+                "correct": 2,
+                "explanation": "Still in the office: 'Peter ist noch im Büro.'"
+            },
+            {
+                "question": "Was schlägt Peter vor?",
+                "options": ["Sie soll die Polizei anrufen", "Sie soll beim Supermarkt fragen", "Sie soll einen Schlüsseldienst rufen"],
+                "correct": 1,
+                "explanation": "Ask at the supermarket checkout: 'vielleicht liegt der Schlüssel an der Kasse.'"
+            },
+            {
+                "question": "Was hat Lisa heute gemacht?",
+                "options": ["Sie war im Kino", "Sie war im Supermarkt", "Sie war in der Schule"],
+                "correct": 1,
+                "explanation": "She was at the supermarket: 'sie war heute im Supermarkt!'"
+            },
+            {
+                "question": "Was sagt die Kassiererin am Telefon?",
+                "options": ["Der Schlüssel ist nicht hier", "Jemand hat einen Schlüssel abgegeben", "Lisa soll morgen kommen"],
+                "correct": 1,
+                "explanation": "Key was handed in: 'jemand hat einen Schlüssel an der Kasse abgegeben.'"
+            },
+            {
+                "question": "Wie fühlt sich Lisa am Ende?",
+                "options": ["Noch nervöser", "Traurig", "Sehr erleichtert"],
+                "correct": 2,
+                "explanation": "Very relieved: 'Sie ist sehr erleichtert.'"
+            }
+        ]
+    },
+    {
+        "id": "st_neighbours",
+        "title": "Die neuen Nachbarn (New Neighbours)",
+        "text": "Familie Schneider zieht in eine neue Wohnung. Die Wohnung ist im dritten Stock. Am ersten Tag klingelt die Nachbarin, Frau Weber, an der Tür. Sie bringt einen Kuchen als Willkommensgeschenk mit. Herr Schneider öffnet die Tür und bedankt sich herzlich. Frau Weber fragt, ob die Familie Hilfe braucht. Herr Schneider sagt, dass sie ein Möbelpacker-Team haben, aber danke. Am nächsten Tag begegnen sich Frau Schneider und Frau Weber im Treppenhaus. Frau Schneider lädt Frau Weber zum Kaffee ein. Die beiden Frauen unterhalten sich eine Stunde lang und werden schnell Freundinnen.",
+        "translation": "The Schneider family moves into a new apartment. The apartment is on the third floor. On the first day the neighbour, Mrs Weber, rings the doorbell. She brings a cake as a welcome gift. Mr Schneider opens the door and thanks her warmly. Mrs Weber asks if the family needs help. Mr Schneider says that they have a removal team, but thanks. The next day Mrs Schneider and Mrs Weber meet each other in the stairwell. Mrs Schneider invites Mrs Weber for a coffee. The two women chat for an hour and quickly become friends.",
+        "vocab": [
+            { "word": "das Willkommensgeschenk", "translation": "Welcome gift" },
+            { "word": "der Möbelpacker", "translation": "Removal worker" },
+            { "word": "das Treppenhaus", "translation": "Stairwell" },
+            { "word": "sich unterhalten", "translation": "To chat / converse" }
+        ],
+        "questions": [
+            {
+                "question": "In welchem Stock ist die neue Wohnung der Familie Schneider?",
+                "options": ["Im zweiten Stock", "Im dritten Stock", "Im vierten Stock"],
+                "correct": 1,
+                "explanation": "Third floor: 'Die Wohnung ist im dritten Stock.'"
+            },
+            {
+                "question": "Wer klingelt am ersten Tag an der Tür?",
+                "options": ["Der Hausmeister", "Die Nachbarin Frau Weber", "Der Postbote"],
+                "correct": 1,
+                "explanation": "Neighbour Mrs Weber: 'klingelt die Nachbarin, Frau Weber, an der Tür.'"
+            },
+            {
+                "question": "Was bringt Frau Weber mit?",
+                "options": ["Eine Flasche Wein", "Einen Kuchen", "Blumen"],
+                "correct": 1,
+                "explanation": "A cake: 'Sie bringt einen Kuchen als Willkommensgeschenk mit.'"
+            },
+            {
+                "question": "Wer öffnet die Tür?",
+                "options": ["Frau Schneider", "Herr Schneider", "Ein Kind"],
+                "correct": 1,
+                "explanation": "Mr Schneider: 'Herr Schneider öffnet die Tür.'"
+            },
+            {
+                "question": "Was fragt Frau Weber?",
+                "options": ["Ob sie den Kuchen mögen", "Ob die Familie Hilfe braucht", "Ob sie ruhig sein können"],
+                "correct": 1,
+                "explanation": "If they need help: 'Frau Weber fragt, ob die Familie Hilfe braucht.'"
+            },
+            {
+                "question": "Wie zieht Familie Schneider um?",
+                "options": ["Sie machen es selbst", "Mit einem Möbelpacker-Team", "Mit Hilfe der Nachbarn"],
+                "correct": 1,
+                "explanation": "With a removal team: 'sie haben ein Möbelpacker-Team.'"
+            },
+            {
+                "question": "Wo treffen sich Frau Schneider und Frau Weber am nächsten Tag?",
+                "options": ["Im Supermarkt", "Im Treppenhaus", "Im Park"],
+                "correct": 1,
+                "explanation": "In the stairwell: 'begegnen sich ... im Treppenhaus.'"
+            },
+            {
+                "question": "Was macht Frau Schneider, als sie Frau Weber trifft?",
+                "options": ["Sie bringt ihr auch einen Kuchen", "Sie lädt sie zum Kaffee ein", "Sie bittet um Hilfe"],
+                "correct": 1,
+                "explanation": "Invites her for coffee: 'Frau Schneider lädt Frau Weber zum Kaffee ein.'"
+            },
+            {
+                "question": "Wie lange unterhalten sich die zwei Frauen?",
+                "options": ["Dreißig Minuten", "Eine Stunde", "Zwei Stunden"],
+                "correct": 1,
+                "explanation": "One hour: 'unterhalten sich eine Stunde lang.'"
+            },
+            {
+                "question": "Was werden Frau Schneider und Frau Weber?",
+                "options": ["Kolleginnen", "Freundinnen", "Mitbewohnerinnen"],
+                "correct": 1,
+                "explanation": "Friends: 'werden schnell Freundinnen.'"
+            }
+        ]
+    },
+    {
+        "id": "st_airport",
+        "title": "Am Flughafen (Airport)",
+        "text": "Herr und Frau Bauer fliegen morgen früh in den Urlaub nach Spanien. Ihr Flug geht um acht Uhr morgens ab. Deshalb fahren sie schon um sechs Uhr zum Flughafen. Am Check-in-Schalter zeigen sie ihre Reisepässe und geben ihre Koffer ab. Jeder Koffer darf maximal dreiundzwanzig Kilo wiegen. Der Koffer von Frau Bauer ist zu schwer, sie nimmt ein paar Sachen heraus. Dann gehen sie durch die Sicherheitskontrolle. Sie müssen ihre Jacken, Schuhe und Laptops in eine Schale legen. Am Gate warten sie noch zwanzig Minuten auf den Abflug. Frau Bauer kauft ein Buch am Zeitungskiosk.",
+        "translation": "Mr and Mrs Bauer are flying on holiday to Spain tomorrow morning. Their flight departs at eight in the morning. Therefore they drive to the airport at six o'clock. At the check-in counter they show their passports and hand over their suitcases. Each suitcase may weigh a maximum of twenty-three kilograms. Mrs Bauer's suitcase is too heavy, so she takes some things out. Then they go through security. They have to put their jackets, shoes and laptops in a tray. At the gate they wait twenty more minutes for the departure. Mrs Bauer buys a book at the newspaper kiosk.",
+        "vocab": [
+            { "word": "der Reisepass", "translation": "Passport" },
+            { "word": "der Koffer", "translation": "Suitcase" },
+            { "word": "die Sicherheitskontrolle", "translation": "Security check" },
+            { "word": "der Abflug", "translation": "Departure (of a flight)" }
+        ],
+        "questions": [
+            {
+                "question": "Wohin fliegen Herr und Frau Bauer?",
+                "options": ["Nach Italien", "Nach Spanien", "Nach Frankreich"],
+                "correct": 1,
+                "explanation": "Spain: 'fliegen ... in den Urlaub nach Spanien.'"
+            },
+            {
+                "question": "Wann geht der Flug ab?",
+                "options": ["Um sechs Uhr", "Um acht Uhr", "Um zehn Uhr"],
+                "correct": 1,
+                "explanation": "At eight: 'Ihr Flug geht um acht Uhr morgens ab.'"
+            },
+            {
+                "question": "Wann fahren sie zum Flughafen?",
+                "options": ["Um fünf Uhr", "Um sechs Uhr", "Um sieben Uhr"],
+                "correct": 1,
+                "explanation": "At six: 'fahren sie schon um sechs Uhr zum Flughafen.'"
+            },
+            {
+                "question": "Was zeigen sie am Check-in-Schalter?",
+                "options": ["Ihre Flugtickets", "Ihre Reisepässe", "Ihre Kreditkarten"],
+                "correct": 1,
+                "explanation": "Their passports: 'zeigen sie ihre Reisepässe.'"
+            },
+            {
+                "question": "Wie viel darf ein Koffer maximal wiegen?",
+                "options": ["Zwanzig Kilo", "Dreiundzwanzig Kilo", "Fünfundzwanzig Kilo"],
+                "correct": 1,
+                "explanation": "23 kilos: 'maximal dreiundzwanzig Kilo wiegen.'"
+            },
+            {
+                "question": "Was ist das Problem mit dem Koffer von Frau Bauer?",
+                "options": ["Er ist zu klein", "Er ist zu schwer", "Er ist kaputt"],
+                "correct": 1,
+                "explanation": "Too heavy: 'Der Koffer von Frau Bauer ist zu schwer.'"
+            },
+            {
+                "question": "Was müssen sie bei der Sicherheitskontrolle in eine Schale legen?",
+                "options": ["Reisepässe und Portemonnaie", "Jacken, Schuhe und Laptops", "Koffer und Taschen"],
+                "correct": 1,
+                "explanation": "Jackets, shoes and laptops: 'Sie müssen ihre Jacken, Schuhe und Laptops in eine Schale legen.'"
+            },
+            {
+                "question": "Wie lange warten sie noch am Gate?",
+                "options": ["Zehn Minuten", "Zwanzig Minuten", "Dreißig Minuten"],
+                "correct": 1,
+                "explanation": "Twenty minutes: 'warten sie noch zwanzig Minuten auf den Abflug.'"
+            },
+            {
+                "question": "Was kauft Frau Bauer am Zeitungskiosk?",
+                "options": ["Eine Zeitschrift", "Ein Buch", "Schokolade"],
+                "correct": 1,
+                "explanation": "A book: 'Frau Bauer kauft ein Buch am Zeitungskiosk.'"
+            },
+            {
+                "question": "Warum fahren sie schon um sechs Uhr zum Flughafen?",
+                "options": ["Weil der Zug früh fährt", "Weil der Flug um acht Uhr abgeht", "Weil der Flughafen weit weg ist"],
+                "correct": 1,
+                "explanation": "Because the flight is at 8 AM: 'Ihr Flug geht um acht Uhr morgens ab. Deshalb fahren sie schon um sechs Uhr.'"
+            }
+        ]
+    },
+    {
+        "id": "st_birthday_cake",
+        "title": "Der Geburtstagskuchen (Birthday Cake)",
+        "text": "Morgen hat Oma Elfriede Geburtstag. Sie wird achtzig Jahre alt. Ihre Enkelin Sophie möchte einen Kuchen backen. Sophie kauft alle Zutaten im Supermarkt: Mehl, Zucker, Butter, Eier, Milch und Backpulver. Zu Hause liest sie das Rezept sehr genau. Sie mischt alle Zutaten in einer großen Schüssel und gießt den Teig in die Backform. Der Kuchen kommt für vierzig Minuten in den Ofen bei einhundertachtzig Grad. Nach dem Backen lässt Sophie den Kuchen abkühlen. Dann dekoriert sie ihn mit Sahne und roten Erdbeeren. Sie schreibt auch 'Happy Birthday, Oma!' mit Schokolade auf den Kuchen.",
+        "translation": "Tomorrow is Grandma Elfriede's birthday. She is turning eighty years old. Her granddaughter Sophie wants to bake a cake. Sophie buys all the ingredients at the supermarket: flour, sugar, butter, eggs, milk and baking powder. At home she reads the recipe very carefully. She mixes all the ingredients in a large bowl and pours the batter into the baking tin. The cake goes into the oven for forty minutes at one hundred and eighty degrees. After baking, Sophie lets the cake cool down. Then she decorates it with cream and red strawberries. She also writes 'Happy Birthday, Grandma!' on the cake with chocolate.",
+        "vocab": [
+            { "word": "die Zutaten", "translation": "Ingredients" },
+            { "word": "der Teig", "translation": "Dough / batter" },
+            { "word": "abkühlen", "translation": "To cool down" },
+            { "word": "die Sahne", "translation": "Cream" }
+        ],
+        "questions": [
+            {
+                "question": "Wessen Geburtstag ist morgen?",
+                "options": ["Sophies Mutter", "Oma Elfriede", "Sophies Schwester"],
+                "correct": 1,
+                "explanation": "Grandma Elfriede's: 'Morgen hat Oma Elfriede Geburtstag.'"
+            },
+            {
+                "question": "Wie alt wird Oma Elfriede?",
+                "options": ["Siebzig Jahre", "Fünfundsiebzig Jahre", "Achtzig Jahre"],
+                "correct": 2,
+                "explanation": "Eighty: 'Sie wird achtzig Jahre alt.'"
+            },
+            {
+                "question": "Wer backt den Kuchen?",
+                "options": ["Oma Elfriede selbst", "Sophies Mutter", "Sophie"],
+                "correct": 2,
+                "explanation": "Sophie: 'Ihre Enkelin Sophie möchte einen Kuchen backen.'"
+            },
+            {
+                "question": "Wo kauft Sophie die Zutaten?",
+                "options": ["Auf dem Markt", "Im Supermarkt", "In der Bäckerei"],
+                "correct": 1,
+                "explanation": "At the supermarket: 'Sophie kauft alle Zutaten im Supermarkt.'"
+            },
+            {
+                "question": "Was macht Sophie mit den Zutaten?",
+                "options": ["Sie kocht sie auf dem Herd", "Sie mischt sie in einer Schüssel", "Sie friert sie ein"],
+                "correct": 1,
+                "explanation": "Mixes them in a bowl: 'mischt alle Zutaten in einer großen Schüssel.'"
+            },
+            {
+                "question": "Wie lange kommt der Kuchen in den Ofen?",
+                "options": ["Dreißig Minuten", "Vierzig Minuten", "Eine Stunde"],
+                "correct": 1,
+                "explanation": "Forty minutes: 'für vierzig Minuten in den Ofen.'"
+            },
+            {
+                "question": "Bei wie viel Grad backt der Kuchen?",
+                "options": ["Hundertfünfzig Grad", "Einhundertachtzig Grad", "Zweihundert Grad"],
+                "correct": 1,
+                "explanation": "180 degrees: 'bei einhundertachtzig Grad.'"
+            },
+            {
+                "question": "Was macht Sophie, bevor sie den Kuchen dekoriert?",
+                "options": ["Sie isst ein Stück", "Sie lässt den Kuchen abkühlen", "Sie ruft Oma an"],
+                "correct": 1,
+                "explanation": "Lets it cool: 'lässt Sophie den Kuchen abkühlen.'"
+            },
+            {
+                "question": "Womit dekoriert Sophie den Kuchen?",
+                "options": ["Mit Schokoladenstreuseln", "Mit Sahne und Erdbeeren", "Mit Zuckerguss"],
+                "correct": 1,
+                "explanation": "Cream and strawberries: 'dekoriert sie ihn mit Sahne und roten Erdbeeren.'"
+            },
+            {
+                "question": "Was schreibt Sophie auf den Kuchen?",
+                "options": ["'Herzlichen Glückwunsch!'", "'Happy Birthday, Oma!'", "'Ich liebe dich, Oma!'"],
+                "correct": 1,
+                "explanation": "'Happy Birthday, Oma!': 'Sie schreibt auch 'Happy Birthday, Oma!' mit Schokolade auf den Kuchen.'"
+            }
+        ]
+    },
+    {
+        "id": "st_language_course",
+        "title": "Der Deutschkurs (German Course)",
+        "text": "Priya kommt aus Indien und wohnt seit drei Monaten in Berlin. Sie macht einen Deutschkurs an der Volkshochschule. Der Kurs findet dienstags und donnerstags von neun bis elf Uhr statt. In der Klasse sind achtzehn Schüler aus verschiedenen Ländern: Italien, Türkei, Syrien und Vietnam. Der Lehrer heißt Herr Mauer. Er erklärt die Grammatik auf Deutsch und zeigt viele Beispiele. Priya findet die deutschen Artikel schwierig: der, die, das. Herr Mauer gibt auch Hausaufgaben auf. Priya macht ihre Hausaufgaben jeden Abend. Nach drei Monaten macht die Klasse eine Prüfung. Priya besteht die Prüfung mit einer guten Note.",
+        "translation": "Priya comes from India and has been living in Berlin for three months. She is doing a German course at the adult education centre. The course takes place on Tuesdays and Thursdays from nine to eleven. In the class there are eighteen students from different countries: Italy, Turkey, Syria and Vietnam. The teacher's name is Mr Mauer. He explains grammar in German and shows many examples. Priya finds the German articles difficult: der, die, das. Mr Mauer also sets homework. Priya does her homework every evening. After three months the class takes an exam. Priya passes the exam with a good grade.",
+        "vocab": [
+            { "word": "die Volkshochschule", "translation": "Adult education centre (VHS)" },
+            { "word": "die Hausaufgaben", "translation": "Homework" },
+            { "word": "die Prüfung", "translation": "Exam / test" },
+            { "word": "bestehen", "translation": "To pass (an exam)" }
+        ],
+        "questions": [
+            {
+                "question": "Woher kommt Priya?",
+                "options": ["Aus China", "Aus Indien", "Aus Pakistan"],
+                "correct": 1,
+                "explanation": "From India: 'Priya kommt aus Indien.'"
+            },
+            {
+                "question": "Wie lange wohnt Priya schon in Berlin?",
+                "options": ["Seit einem Monat", "Seit drei Monaten", "Seit einem Jahr"],
+                "correct": 1,
+                "explanation": "Three months: 'wohnt seit drei Monaten in Berlin.'"
+            },
+            {
+                "question": "Wo macht Priya den Deutschkurs?",
+                "options": ["An der Universität", "An der Volkshochschule", "An einer Privatschule"],
+                "correct": 1,
+                "explanation": "At the adult education centre: 'an der Volkshochschule.'"
+            },
+            {
+                "question": "Wann findet der Kurs statt?",
+                "options": ["Montags und mittwochs", "Dienstags und donnerstags", "Montags bis freitags"],
+                "correct": 1,
+                "explanation": "Tuesdays and Thursdays: 'findet dienstags und donnerstags ... statt.'"
+            },
+            {
+                "question": "Wie viele Schüler sind in der Klasse?",
+                "options": ["Zwölf", "Fünfzehn", "Achtzehn"],
+                "correct": 2,
+                "explanation": "Eighteen: 'In der Klasse sind achtzehn Schüler.'"
+            },
+            {
+                "question": "Wie heißt der Lehrer?",
+                "options": ["Herr Müller", "Herr Mauer", "Herr Meyer"],
+                "correct": 1,
+                "explanation": "Herr Mauer: 'Der Lehrer heißt Herr Mauer.'"
+            },
+            {
+                "question": "Was findet Priya schwierig?",
+                "options": ["Das Alphabet", "Die deutschen Artikel (der, die, das)", "Die Zahlen"],
+                "correct": 1,
+                "explanation": "The articles: 'Priya findet die deutschen Artikel schwierig: der, die, das.'"
+            },
+            {
+                "question": "Wann macht Priya ihre Hausaufgaben?",
+                "options": ["Am Morgen", "In der Mittagspause", "Jeden Abend"],
+                "correct": 2,
+                "explanation": "Every evening: 'Priya macht ihre Hausaufgaben jeden Abend.'"
+            },
+            {
+                "question": "Wann macht die Klasse eine Prüfung?",
+                "options": ["Nach einem Monat", "Nach zwei Monaten", "Nach drei Monaten"],
+                "correct": 2,
+                "explanation": "After three months: 'Nach drei Monaten macht die Klasse eine Prüfung.'"
+            },
+            {
+                "question": "Wie besteht Priya die Prüfung?",
+                "options": ["Sie fällt durch", "Mit einer schlechten Note", "Mit einer guten Note"],
+                "correct": 2,
+                "explanation": "With a good grade: 'Priya besteht die Prüfung mit einer guten Note.'"
+            }
+        ]
+    },
+    {
+        "id": "st_market",
+        "title": "Auf dem Wochenmarkt (Weekly Market)",
+        "text": "Jeden Samstag geht Frau Klein auf den Wochenmarkt in ihrer Stadt. Der Markt beginnt um acht Uhr morgens und endet um dreizehn Uhr. Es gibt viele Stände mit frischem Obst, Gemüse, Käse, Brot und Blumen. Frau Klein kauft zuerst beim Bäcker ein Brot und drei Brötchen. Dann geht sie zum Gemüsestand und kauft Tomaten, Karotten und einen Salat. Am Käsestand probiert sie zwei Sorten und kauft dann einen Ziegen-käse. Sie bezahlt alles bar. Am Ende kauft sie noch einen Blumenstrauß für die Küche. Der Wochenmarkt ist frischer und billiger als der Supermarkt, findet Frau Klein.",
+        "translation": "Every Saturday Mrs Klein goes to the weekly market in her town. The market starts at eight in the morning and ends at one o'clock. There are many stalls with fresh fruit, vegetables, cheese, bread and flowers. Mrs Klein first buys a loaf of bread and three bread rolls from the baker. Then she goes to the vegetable stall and buys tomatoes, carrots and a lettuce. At the cheese stall she tries two varieties and then buys a goat's cheese. She pays for everything in cash. At the end she also buys a bunch of flowers for the kitchen. The weekly market is fresher and cheaper than the supermarket, Mrs Klein thinks.",
+        "vocab": [
+            { "word": "der Stand", "translation": "Stall / stand (at a market)" },
+            { "word": "der Blumenstrauß", "translation": "Bunch of flowers" },
+            { "word": "bar bezahlen", "translation": "To pay in cash" },
+            { "word": "der Ziegenkäse", "translation": "Goat's cheese" }
+        ],
+        "questions": [
+            {
+                "question": "Wie oft geht Frau Klein auf den Wochenmarkt?",
+                "options": ["Jeden Freitag", "Jeden Samstag", "Jeden Sonntag"],
+                "correct": 1,
+                "explanation": "Every Saturday: 'Jeden Samstag geht Frau Klein auf den Wochenmarkt.'"
+            },
+            {
+                "question": "Wann beginnt der Markt?",
+                "options": ["Um sieben Uhr", "Um acht Uhr", "Um neun Uhr"],
+                "correct": 1,
+                "explanation": "At eight: 'Der Markt beginnt um acht Uhr morgens.'"
+            },
+            {
+                "question": "Wann endet der Markt?",
+                "options": ["Um zwölf Uhr", "Um dreizehn Uhr", "Um vierzehn Uhr"],
+                "correct": 1,
+                "explanation": "At one: 'endet um dreizehn Uhr.'"
+            },
+            {
+                "question": "Was kauft Frau Klein zuerst?",
+                "options": ["Gemüse", "Blumen", "Brot und Brötchen"],
+                "correct": 2,
+                "explanation": "Bread and rolls: 'kauft zuerst beim Bäcker ein Brot und drei Brötchen.'"
+            },
+            {
+                "question": "Was kauft Frau Klein am Gemüsestand?",
+                "options": ["Kartoffeln, Zwiebeln und Paprika", "Tomaten, Karotten und einen Salat", "Äpfel, Birnen und Bananen"],
+                "correct": 1,
+                "explanation": "Tomatoes, carrots, and lettuce: 'kauft Tomaten, Karotten und einen Salat.'"
+            },
+            {
+                "question": "Was macht Frau Klein am Käsestand, bevor sie kauft?",
+                "options": ["Sie fragt nach dem Preis", "Sie probiert zwei Sorten", "Sie vergleicht die Käse"],
+                "correct": 1,
+                "explanation": "Tries two varieties: 'probiert sie zwei Sorten.'"
+            },
+            {
+                "question": "Welchen Käse kauft Frau Klein?",
+                "options": ["Gouda", "Camembert", "Ziegenkäse"],
+                "correct": 2,
+                "explanation": "Goat's cheese: 'kauft dann einen Ziegenkäse.'"
+            },
+            {
+                "question": "Wie bezahlt Frau Klein?",
+                "options": ["Mit Kreditkarte", "Mit dem Handy", "Bar"],
+                "correct": 2,
+                "explanation": "In cash: 'Sie bezahlt alles bar.'"
+            },
+            {
+                "question": "Was kauft Frau Klein am Ende?",
+                "options": ["Einen Kuchen", "Einen Blumenstrauß", "Mehr Gemüse"],
+                "correct": 1,
+                "explanation": "A bunch of flowers: 'kauft sie noch einen Blumenstrauß für die Küche.'"
+            },
+            {
+                "question": "Was denkt Frau Klein über den Wochenmarkt?",
+                "options": ["Er ist teurer als der Supermarkt", "Er ist frischer und billiger als der Supermarkt", "Er ist zu weit weg"],
+                "correct": 1,
+                "explanation": "Fresher and cheaper: 'Der Wochenmarkt ist frischer und billiger als der Supermarkt.'"
+            }
+        ]
     }
 ];
 
@@ -5224,7 +7104,7 @@ function loadReadingLearnItem() {
         let gridHTML = `
             <div style="text-align:center; margin-bottom:20px; animation: fadeIn 0.2s ease-out;">
                 <h3 style="font-family:var(--font-display); color:var(--color-primary); margin-top:0;">Wählen Sie ein Lesethema / Choose a Reading Topic</h3>
-                <p style="color:var(--color-text-muted); font-size:0.95rem;">Jedes Thema führt Sie durch Vokabeln, Sätze, Text, Übungen und einen Abschlusstest.</p>
+                <p style="color:var(--color-text-muted); font-size:0.95rem;">Jedes Thema führt Sie durch Vokabeln, Sätze, Text, Übungen und einen Abschlussstest.</p>
             </div>
             <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:16px; max-height:480px; overflow-y:auto; padding:4px;">
         `;
