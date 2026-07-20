@@ -22,12 +22,12 @@ const QUESTION_BANK = {
             {
                 id: "h_t1_q1",
                 type: "mc",
-                script: "Hallo Sarah. Gehen wir heute Abend ins Kino? - Nein, tut mir leid, Thomas. Ich muss lernen. Morgen habe ich eine Prüfung. Aber wir können am Samstag ins Kino gehen. - Samstag? Ja, das passt mir gut.",
-                question: "Wann gehen Thomas und Sarah ins Kino?",
+                script: "Guten Tag, Volkshochschule Hamburg, was kann ich für Sie tun? - Guten Tag. Ich möchte mich für den Aquarellkurs anmelden. Ist noch ein Platz frei? - Ja, der Kurs beginnt nächsten Dienstag. Er findet jeden Dienstag von 18 bis 20 Uhr statt. - Und wie viel kostet das? - Dreißig Euro für acht Einheiten.",
+                question: "Wann findet der Aquarellkurs statt?",
                 options: [
-                    { text: "Heute Abend", letter: "A" },
-                    { text: "Am Samstag", letter: "B" },
-                    { text: "Am Sonntag", letter: "C" }
+                    { text: "Jeden Montag von 18–20 Uhr", letter: "A" },
+                    { text: "Jeden Dienstag von 18–20 Uhr", letter: "B" },
+                    { text: "Jeden Mittwoch von 18–20 Uhr", letter: "C" }
                 ],
                 correct: 1, // B
                 playback_limit: 2,
@@ -37,212 +37,212 @@ const QUESTION_BANK = {
             {
                 id: "h_t1_q2",
                 type: "mc",
-                script: "Entschuldigung, wie viel kostet dieses Buch? - Das kostet fünfzehn Euro. - Fünfzehn? Oh, das ist teuer. Gibt es das auch billiger? - Ja, das Taschenbuch kostet nur neun Euro neunzig. - Gut, das nehme ich.",
-                question: "Wie viel bezahlt der Mann für das Buch?",
+                script: "Hallo Markus. Hast du Lust, dem Kleingärtnerverein beizutreten? Es gibt noch freie Parzellen. - Was kostet das pro Jahr? - Fünfzig Euro Mitgliedsbeitrag und dann noch die Pacht für das Grundstück, das sind zwanzig Euro im Monat. - Das klingt günstig. Wo kann ich mich anmelden? - Im Vereinsbüro, Samstags von neun bis zwölf.",
+                question: "Wie viel kostet die monatliche Pacht für das Grundstück?",
                 options: [
-                    { text: "15,00 Euro", letter: "A" },
-                    { text: "9,90 Euro", letter: "B" },
-                    { text: "5,00 Euro", letter: "C" }
+                    { text: "Fünfzig Euro", letter: "A" },
+                    { text: "Zwanzig Euro", letter: "B" },
+                    { text: "Dreißig Euro", letter: "C" }
                 ],
                 correct: 1, // B
                 playback_limit: 2,
                 grammar: "Zahlen",
-                vocab: "Einkaufen"
+                vocab: "Natur & Umwelt"
             },
             {
                 id: "h_t1_q3",
                 type: "mc",
-                script: "Guten Tag. Ich möchte nach Köln fahren. Wann geht der nächste Zug? - Der nächste Zug fährt um vierzehn Uhr dreißig auf Gleis vier. - Und wann kommt er an? - Um sechzehn Uhr fünfzehn.",
-                question: "Wann kommt der Zug in Köln an?",
+                script: "Hallo, hier spricht die Spedition Schnell. Wir haben heute versucht, ein Paket für Sie abzuliefern, aber Sie waren nicht zu Hause. Das Paket liegt jetzt in der Filiale in der Bergstraße 12. Sie können es abholen montags bis freitags von acht bis achtzehn Uhr oder samstags von neun bis vierzehn Uhr.",
+                question: "Wo kann das Paket abgeholt werden?",
                 options: [
-                    { text: "Um 14:30 Uhr", letter: "A" },
-                    { text: "Um 16:15 Uhr", letter: "B" },
-                    { text: "Um 16:30 Uhr", letter: "C" }
-                ],
-                correct: 1, // B
-                playback_limit: 2,
-                grammar: "Zeitangaben",
-                vocab: "Reisen & Verkehr"
-            },
-            {
-                id: "h_t1_q4",
-                type: "mc",
-                script: "Hallo Peter. Was möchtest du trinken? Kaffee oder Tee? - Kaffee trinke ich morgens nicht, lieber einen Orangensaft bitte. - Und möchtest du auch ein Brötchen essen? - Nein danke, ich habe keinen Hunger.",
-                question: "Was trinkt Peter?",
-                options: [
-                    { text: "Kaffee", letter: "A" },
-                    { text: "Tee", letter: "B" },
-                    { text: "Orangensaft", letter: "C" }
-                ],
-                correct: 2, // C
-                playback_limit: 2,
-                grammar: "Artikel",
-                vocab: "Essen & Trinken"
-            },
-            {
-                id: "h_t1_q5",
-                type: "mc",
-                script: "Entschuldigung, wo ist der Bahnhof? - Gehen Sie hier geradeaus und an der Ampel rechts. Nach hundert Metern sehen Sie den Bahnhof auf der linken Seite. - Vielen Dank! - Bitte, gerne.",
-                question: "Wo liegt der Bahnhof?",
-                options: [
-                    { text: "Geradeaus und an der Ampel links", letter: "A" },
-                    { text: "Geradeaus und an der Ampel rechts, dann links", letter: "B" },
-                    { text: "Direkt an der nächsten Ecke", letter: "C" }
+                    { text: "Direkt beim Fahrer", letter: "A" },
+                    { text: "In der Filiale in der Bergstraße 12", letter: "B" },
+                    { text: "Am Hauptbahnhof", letter: "C" }
                 ],
                 correct: 1, // B
                 playback_limit: 2,
                 grammar: "Präpositionen",
-                vocab: "Reisen & Verkehr"
+                vocab: "Haushalt & Alltag"
             },
             {
-                id: "h_t1_q6",
+                id: "h_t1_q4",
                 type: "mc",
-                script: "Guten Tag, Herr Müller. Sind Sie am Freitag im Büro? - Nein, am Freitag habe ich frei. Ich bin nur von Montag bis Donnerstag da. Rufen Sie mich am Montag wieder an.",
-                question: "An welchen Tagen arbeitet Herr Müller?",
+                script: "Guten Tag, Schwimmbad Neptun, was kann ich für Sie tun? - Ich möchte wissen, wann das Freibad in dieser Woche geöffnet ist. - Das Freibad ist täglich von sieben bis zwanzig Uhr geöffnet. Donnerstagvormittag ist jedoch Schulbetrieb, da sind wir erst um dreizehn Uhr für die Öffentlichkeit zugänglich. - Und wie viel kostet der Eintritt? - Vier Euro fünfzig für Erwachsene.",
+                question: "Wann öffnet das Freibad am Donnerstag für die Öffentlichkeit?",
                 options: [
-                    { text: "Am Freitag", letter: "A" },
-                    { text: "Von Montag bis Donnerstag", letter: "B" },
-                    { text: "Nur am Montag", letter: "C" }
+                    { text: "Um sieben Uhr", letter: "A" },
+                    { text: "Um dreizehn Uhr", letter: "B" },
+                    { text: "Um zwanzig Uhr", letter: "C" }
                 ],
                 correct: 1, // B
                 playback_limit: 2,
                 grammar: "Zeitangaben",
-                vocab: "Arbeit & Beruf"
+                vocab: "Sport & Bewegung"
+            },
+            {
+                id: "h_t1_q5",
+                type: "mc",
+                script: "Und nun die Verkehrsmeldungen. Auf der Autobahn A3 zwischen Frankfurt-Nord und Bad Homburg gibt es wegen eines Unfalls einen Stau von etwa zwölf Kilometern. Die Polizei empfiehlt, die Ausfahrt Frankfurt-Süd zu nehmen und über die Bundesstraße 8 auszuweichen. Bitte planen Sie mehr Zeit ein.",
+                question: "Was empfiehlt die Polizei den Fahrern?",
+                options: [
+                    { text: "Die A3 langsam weiterfahren", letter: "A" },
+                    { text: "Die Ausfahrt Frankfurt-Süd nehmen und über B8 fahren", letter: "B" },
+                    { text: "Den Zug nehmen", letter: "C" }
+                ],
+                correct: 1, // B
+                playback_limit: 2,
+                grammar: "Modalverben",
+                vocab: "Verkehr & Transport"
+            },
+            {
+                id: "h_t1_q6",
+                type: "mc",
+                script: "Hallo zusammen, hier ist eine kurze Ansage für alle Bewohner des Hauses. Ab nächster Woche gibt es einen neuen Putzplan für das Treppenhaus. Jede Wohnung ist einmal im Monat dran. Wohnung eins: der erste Montag. Wohnung zwei: der erste Dienstag. Wohnung drei: der erste Mittwoch. Bitte tragen Sie sich im Aushang ein.",
+                question: "Was sollen die Bewohner im Aushang machen?",
+                options: [
+                    { text: "Ihren Namen als Mieter eintragen", letter: "A" },
+                    { text: "Sich für den Putztag eintragen", letter: "B" },
+                    { text: "Eine neue Reinigungsfirma vorschlagen", letter: "C" }
+                ],
+                correct: 1, // B
+                playback_limit: 2,
+                grammar: "Imperativ",
+                vocab: "Haushalt & Alltag"
             }
         ],
         teil2: [
             {
                 id: "h_t2_q7",
                 type: "tf",
-                script: "Achtung an Gleis zwei! Der Intercity aus Frankfurt zur Weiterfahrt nach Hamburg fährt heute nicht von Gleis zwei, sondern von Gleis sieben ab. Ich wiederhole: Der Zug nach Hamburg fährt von Gleis sieben.",
-                question: "Der Zug nach Hamburg fährt heute von Gleis zwei ab.",
+                script: "Liebe Bürgerinnen und Bürger! Das Stadtfest findet dieses Jahr nicht wie gewohnt im Juli, sondern wegen der Bauarbeiten am Marktplatz erst im September statt. Das Festprogramm bleibt gleich: Musik, Tanz und regionale Spezialitäten. Wir freuen uns auf Ihren Besuch!",
+                question: "Das Stadtfest findet dieses Jahr im Juli statt.",
                 options: [
                     { text: "Richtig (True)", val: true },
                     { text: "Falsch (False)", val: false }
                 ],
                 correct: false,
                 playback_limit: 1,
-                grammar: "Präpositionen",
-                vocab: "Reisen & Verkehr"
+                grammar: "Zeitangaben",
+                vocab: "Stadt & Orte"
             },
             {
                 id: "h_t2_q8",
                 type: "tf",
-                script: "Sehr geehrte Kunden! Wegen unseres Jubiläums schließen wir heute bereits um achtzehn Uhr statt um zwanzig Uhr. Wir bitten um Ihr Verständnis. Morgen sind wir wieder ab acht Uhr für Sie da.",
-                question: "Das Geschäft schließt heute früher als gewöhnlich.",
+                script: "Guten Tag, hier ist die Stadtbibliothek. Wir möchten Sie daran erinnern, dass die von Ihnen entliehenen Bücher übermorgen zurückgegeben werden müssen. Eine Verlängerung ist online oder telefonisch möglich, aber nur einmal pro Ausleihe.",
+                question: "Man kann die Bücher mehrmals verlängern.",
                 options: [
                     { text: "Richtig (True)", val: true },
                     { text: "Falsch (False)", val: false }
                 ],
-                correct: true,
+                correct: false,
                 playback_limit: 1,
-                grammar: "Verbbildung",
-                vocab: "Einkaufen"
+                grammar: "Modalverben",
+                vocab: "Schule & Lernen"
             },
             {
                 id: "h_t2_q9",
                 type: "tf",
-                script: "Achtung im Supermarkt! Heute im Angebot: Frische Erdbeeren aus Spanien, das Kilo für nur zwei Euro neunundneunzig. Greifen Sie zu, das Angebot gilt nur solange der Vorrat reicht.",
-                question: "Das Kilo Erdbeeren kostet 2,99 Euro.",
+                script: "Achtung, Achtung! Wegen Straßenbauarbeiten ist die Hauptstraße zwischen der Kreuzung Rosenweg und dem Rathaus ab Montag für vier Wochen voll gesperrt. Eine Umleitung ist über die Gartenstraße und Kirchgasse eingerichtet. Bitte beachten Sie die Hinweisschilder.",
+                question: "Die Hauptstraße ist wegen Bauarbeiten gesperrt.",
                 options: [
                     { text: "Richtig (True)", val: true },
                     { text: "Falsch (False)", val: false }
                 ],
                 correct: true,
                 playback_limit: 1,
-                grammar: "Zahlen",
-                vocab: "Einkaufen"
+                grammar: "Präpositionen",
+                vocab: "Verkehr & Transport"
             },
             {
                 id: "h_t2_q10",
                 type: "tf",
-                script: "Liebe Fluggäste der Lufthansa Flug LH452 nach New York. Bitte begeben Sie sich sofort zum Ausgang B12. Das Boarding beginnt in wenigen Minuten. Bitte halten Sie Ihren Reisepass bereit.",
-                question: "Die Passagiere sollen sofort zum Flugausgang gehen.",
+                script: "Guten Morgen, Schulsekretariat der Grundschule Lindenweg. Hier ist Frau Vogel. Mein Sohn Tim aus der Klasse 3b ist heute krank. Er hat hohes Fieber und kann leider nicht in die Schule kommen. Er bringt nach der Krankheit ein ärztliches Attest mit.",
+                question: "Tim hat heute Schule und bringt später ein Attest mit.",
                 options: [
                     { text: "Richtig (True)", val: true },
                     { text: "Falsch (False)", val: false }
                 ],
-                correct: true,
+                correct: false,
                 playback_limit: 1,
-                grammar: "Modalverben",
-                vocab: "Reisen & Verkehr"
+                grammar: "Verbbildung",
+                vocab: "Gesundheit & Körper"
             }
         ],
         teil3: [
             {
                 id: "h_t3_q11",
                 type: "mc",
-                script: "Hallo Maria, hier ist Stefan. Kannst du mir das Kochbuch mitbringen? Ich koche heute Abend für meine Eltern. - Ja, gern. Liegt es im Wohnzimmer? - Nein, auf dem Küchentisch neben der Kaffeemaschine. - Okay, ich bringe es mit.",
-                question: "Wo liegt Stefans Kochbuch?",
+                script: "Hallo Sabine, kannst du nächste Woche auf meine Katze aufpassen? Ich fahre für drei Tage zu einer Fortbildung. - Klar, kein Problem. Wie oft muss ich füttern? - Einmal morgens und einmal abends. Das Futter liegt im Schrank über dem Kühlschrank. Und bitte täglich die Wasserschüssel auffüllen. - Alles klar, ich mache das gerne.",
+                question: "Wie oft muss Sabine die Katze füttern?",
                 options: [
-                    { text: "Im Wohnzimmer", letter: "A" },
-                    { text: "Auf dem Küchentisch", letter: "B" },
-                    { text: "Im Schlafzimmer", letter: "C" }
+                    { text: "Einmal täglich", letter: "A" },
+                    { text: "Zweimal täglich – morgens und abends", letter: "B" },
+                    { text: "Dreimal täglich", letter: "C" }
                 ],
                 correct: 1, // B
                 playback_limit: 2,
-                grammar: "Präpositionen",
-                vocab: "Wohnung & Haus"
+                grammar: "Adverbien",
+                vocab: "Tiere & Natur"
             },
             {
                 id: "h_t3_q12",
                 type: "mc",
-                script: "Hallo Julia, hier ist Sabine. Du hast gestern deinen Schirm bei mir vergessen. - Oh, echt? Welchen? Den blauen oder den gelben? - Den gelben. Der blaue steht im Flur, der gehört mir. - Ah, super, ich hole ihn morgen ab.",
-                question: "Welchen Schirm hat Julia vergessen?",
+                script: "Hallo Herr Özdemir, hier ist Petra Fischer aus Wohnung 14. Ich fahre morgen früh weg und brauche jemanden, der meinen Schlüssel hat, falls der Handwerker kommt. Können Sie den Schlüssel nehmen? - Ja, natürlich. Ich bin den ganzen Tag zu Hause. - Vielen Dank! Ich lege ihn abends noch in Ihren Briefkasten.",
+                question: "Wie bekommt Herr Özdemir den Schlüssel?",
                 options: [
-                    { text: "Den blauen Schirm", letter: "A" },
-                    { text: "Den gelben Schirm", letter: "B" },
-                    { text: "Den roten Schirm", letter: "C" }
+                    { text: "Frau Fischer bringt ihn persönlich", letter: "A" },
+                    { text: "Sie legt ihn in seinen Briefkasten", letter: "B" },
+                    { text: "Der Handwerker bringt ihn mit", letter: "C" }
                 ],
                 correct: 1, // B
                 playback_limit: 2,
-                grammar: "Artikel",
-                vocab: "Familie & Freunde"
+                grammar: "Präpositionen",
+                vocab: "Haushalt & Alltag"
             },
             {
                 id: "h_t3_q13",
                 type: "mc",
-                script: "Guten Tag, Praxis Dr. Weber. Frau Becker, Ihr Termin am Mittwoch muss leider verschoben werden. Passt es Ihnen am Donnerstag um zehn Uhr? - Donnerstag um zehn? Ja, das geht. Vielen Dank.",
-                question: "Wann hat Frau Becker den neuen Termin?",
+                script: "Guten Tag, Deutschkurs B1 an der VHS. Wir möchten Sie informieren, dass die Prüfung am ursprünglich geplanten Termin am zwölften Mai nicht stattfindet. Die Prüfung wird auf den neunzehnten Mai verschoben. Uhrzeit und Raum bleiben gleich. Bitte informieren Sie auch Ihre Mitschüler.",
+                question: "Wann findet die Prüfung jetzt statt?",
                 options: [
-                    { text: "Am Mittwoch", letter: "A" },
-                    { text: "Am Donnerstag um 10:00 Uhr", letter: "B" },
-                    { text: "Am Donnerstag um 14:00 Uhr", letter: "C" }
+                    { text: "Am zwölften Mai", letter: "A" },
+                    { text: "Am neunzehnten Mai", letter: "B" },
+                    { text: "Am fünfundzwanzigsten Mai", letter: "C" }
                 ],
                 correct: 1, // B
                 playback_limit: 2,
                 grammar: "Zeitangaben",
-                vocab: "Gesundheit"
+                vocab: "Schule & Lernen"
             },
             {
                 id: "h_t3_q14",
                 type: "mc",
-                script: "Hallo Claudia. Hast du am Sonntag Zeit? Wir wollen im Park grillen. - Sonntag geht leider nicht, da treffe ich meine Tante. Aber am Samstag habe ich den ganzen Tag Zeit. - Samstag ist auch super, wir sagen den anderen Bescheid.",
-                question: "Wann treffen sie sich zum Grillen?",
+                script: "Hallo Lukas, ich bin's, Nina. Ich fahre für zwei Wochen in Urlaub. Kannst du meine Balkonpflanzen gießen? Die Tomaten brauchen täglich Wasser, die Blumen aber nur jeden zweiten Tag. Das Gießkanne steht auf dem Balkon links neben der Tür. - Kein Problem, ich pass gut auf sie auf.",
+                question: "Wie oft müssen die Tomaten gegossen werden?",
                 options: [
-                    { text: "Am Samstag", letter: "A" },
-                    { text: "Am Sonntag", letter: "B" },
-                    { text: "Am Freitag", letter: "C" }
+                    { text: "Jeden zweiten Tag", letter: "A" },
+                    { text: "Täglich", letter: "B" },
+                    { text: "Einmal pro Woche", letter: "C" }
                 ],
-                correct: 0, // A
+                correct: 1, // B
                 playback_limit: 2,
-                grammar: "Zeitangaben",
-                vocab: "Freizeit & Hobbys"
+                grammar: "Adverbien",
+                vocab: "Natur & Umwelt"
             },
             {
                 id: "h_t3_q15",
                 type: "mc",
-                script: "Hallo Anna. Hast du ein Auto für den Umzug? - Nein, aber mein Bruder hat einen kleinen Transporter. Den können wir am Samstag haben. - Klasse! Dann müssen wir keinen mieten.",
-                question: "Woher bekommen sie das Auto für den Umzug?",
+                script: "Hallo Frau Kern, hier ist das Sportgeschäft Aktiv. Ihr Gutschein über fünfzig Euro ist fertig. Sie können ihn ab Donnerstag in unserem Laden abholen. Bitte bringen Sie einen Lichtbildausweis mit. Der Gutschein ist ein Jahr gültig ab dem Kaufdatum. - Vielen Dank für die Info, ich komme am Freitag vorbei.",
+                question: "Was muss Frau Kern beim Abholen mitbringen?",
                 options: [
-                    { text: "Sie mieten ein Auto", letter: "A" },
-                    { text: "Vom Bruder von Anna", letter: "B" },
-                    { text: "Vom Vater von Claudia", letter: "C" }
+                    { text: "Die Kaufquittung", letter: "A" },
+                    { text: "Einen Lichtbildausweis", letter: "B" },
+                    { text: "Die Bestellbestätigung per E-Mail", letter: "C" }
                 ],
                 correct: 1, // B
                 playback_limit: 2,
-                grammar: "Artikel",
-                vocab: "Wohnung & Haus"
+                grammar: "Modalverben",
+                vocab: "Einkaufen & Geld"
             }
         ]
     },
@@ -4590,152 +4590,152 @@ const PRACTICE_DATABASE = {
     listening: [
         {
             id: "pr_list_1",
-            script: "Entschuldigung, wo ist der Bahnsteig drei? - Gehen Sie geradeaus und dann die Treppe hinunter. Der Bahnsteig ist auf der rechten Seite. - Vielen Dank. - Bitte sehr.",
-            question: "Wo ist der Bahnsteig drei?",
-            options: ["Geradeaus und die Treppe hinunter, rechts", "Geradeaus und die Treppe hinauf, links", "Direkt hinter der Information"],
-            correct: 0,
-            explanation: "The speaker says: 'Gehen Sie geradeaus und dann die Treppe hinunter. Der Bahnsteig ist auf der rechten Seite'.",
+            script: "Guten Tag, Volkshochschule Mainz, wie kann ich helfen? - Ich möchte mich für den Töpferkurs anmelden. Ist der Kurs für Anfänger geeignet? - Ja, absolut. Der Kurs startet nächste Woche Mittwoch und dauert zehn Wochen. Sie brauchen keine Vorkenntnisse. - Super, wie viele Plätze gibt es noch? - Noch drei freie Plätze.",
+            question: "Wie viele freie Plätze gibt es noch im Töpferkurs?",
+            options: ["Zwei Plätze", "Drei Plätze", "Fünf Plätze"],
+            correct: 1,
+            explanation: "The staff says: 'Noch drei freie Plätze.'",
             topic: "Hören",
-            translation: "Excuse me, where is platform three? - Go straight ahead and then down the stairs. The platform is on the right side. - Thank you very much. - You're welcome.",
+            translation: "Good day, Adult Education Centre Mainz, how can I help? - I would like to register for the pottery course. Is the course suitable for beginners? - Yes, absolutely. The course starts next Wednesday and lasts ten weeks. You need no prior knowledge. - Great, how many places are there left? - Three places left.",
             vocabSupport: [
-                { word: "der Bahnsteig", translation: "platform" },
-                { word: "geradeaus", translation: "straight ahead" },
-                { word: "die Treppe hinunter", translation: "down the stairs" }
+                { word: "der Töpferkurs", translation: "pottery course" },
+                { word: "die Vorkenntnisse", translation: "prior knowledge" },
+                { word: "der Platz", translation: "place / spot" }
             ]
         },
         {
             id: "pr_list_2",
-            script: "Hallo Thomas, kommst du mit zum Supermarkt? - Nein, ich habe keine Zeit. Ich muss meine Wohnung aufräumen. Meine Eltern kommen morgen. - Ach so, viel Spaß!",
-            question: "Warum geht Thomas nicht zum Supermarkt?",
-            options: ["Er ist krank", "Er muss arbeiten", "Er muss seine Wohnung aufräumen"],
-            correct: 2,
-            explanation: "Thomas says: 'Ich muss meine Wohnung aufräumen. Meine Eltern kommen morgen'.",
+            script: "Hallo, hier spricht Weber. Wir haben ein Problem mit dem Wasserhahn in der Küche. Er tropft die ganze Nacht. Können Sie heute noch kommen? - Leider haben wir heute keinen freien Termin mehr. Morgen früh um acht Uhr wäre möglich. - Ja, das ist gut. Ich bin zu Hause.",
+            question: "Wann kommt der Klempner?",
+            options: ["Heute Abend", "Morgen früh um acht Uhr", "Übermorgen"],
+            correct: 1,
+            explanation: "The plumber says: 'Morgen früh um acht Uhr wäre möglich.'",
             topic: "Hören",
-            translation: "Hello Thomas, are you coming to the supermarket? - No, I don't have time. I have to clean up my apartment. My parents are coming tomorrow. - Oh, I see, have fun!",
+            translation: "Hello, this is Weber speaking. We have a problem with the kitchen tap. It has been dripping all night. Can you come today? - Unfortunately we have no more free appointments today. Tomorrow morning at eight o'clock would be possible. - Yes, that is good. I will be at home.",
             vocabSupport: [
-                { word: "die Wohnung", translation: "apartment" },
-                { word: "aufräumen", translation: "to clean up/tidy up" },
-                { word: "die Eltern", translation: "parents" }
+                { word: "der Wasserhahn", translation: "tap / faucet" },
+                { word: "tropfen", translation: "to drip" },
+                { word: "der Klempner", translation: "plumber" }
             ]
         },
         {
             id: "pr_list_3",
-            script: "Guten Tag, Herr Bergmann. Was kostet das Zimmer pro Nacht? - Das Zimmer kostet 55 Euro ohne Frühstück. Mit Frühstück kostet es 65 Euro. - Gut, ich nehme das Zimmer mit Frühstück.",
-            question: "Wie viel bezahlt der Mann pro Nacht?",
-            options: ["55 Euro", "65 Euro", "45 Euro"],
+            script: "Hallo Karin. Hast du schon von dem neuen Gemeinschaftsgarten gehört? - Nein, was ist das? - Das ist ein Garten, den viele Nachbarn zusammen nutzen. Man kann Gemüse und Blumen pflanzen. Der Mitgliedsbeitrag ist nur fünf Euro pro Monat. - Das klingt toll! Wo ist der Garten? - Neben der alten Fabrik an der Mühlenstraße.",
+            question: "Wo liegt der Gemeinschaftsgarten?",
+            options: ["Neben dem Supermarkt", "Neben der alten Fabrik an der Mühlenstraße", "Im Stadtpark"],
             correct: 1,
-            explanation: "The man says: 'ich nehme das Zimmer mit Frühstück' which costs 65 Euro (55 Euro + 10 Euro).",
+            explanation: "The speaker says: 'Neben der alten Fabrik an der Mühlenstraße.'",
             topic: "Hören",
-            translation: "Good day, Mr. Bergmann. How much does the room cost per night? - The room costs 55 Euros without breakfast. With breakfast it costs 65 Euros. - Good, I will take the room with breakfast.",
+            translation: "Hello Karin. Have you heard about the new community garden? - No, what is that? - It is a garden that many neighbours use together. You can plant vegetables and flowers. The membership fee is only five euros per month. - That sounds great! Where is the garden? - Next to the old factory on Mühlenstraße.",
             vocabSupport: [
-                { word: "kosten", translation: "to cost" },
-                { word: "ohne", translation: "without" },
-                { word: "das Frühstück", translation: "breakfast" }
+                { word: "der Gemeinschaftsgarten", translation: "community garden" },
+                { word: "pflanzen", translation: "to plant" },
+                { word: "der Mitgliedsbeitrag", translation: "membership fee" }
             ]
         },
         {
             id: "pr_list_4",
-            script: "Guten Tag, was möchten Sie bestellen? - Ich hätte gerne ein Stück Apfelkuchen und einen Kaffee, bitte. - Und für Sie? - Für mich nur ein Mineralwasser, danke.",
-            question: "Was bestellt die erste Person?",
-            options: ["Einen Kaffee und Apfelkuchen", "Ein Mineralwasser und Kaffee", "Nur ein Stück Kuchen"],
-            correct: 0,
-            explanation: "The first person says: 'Ich hätte gerne ein Stück Apfelkuchen und einen Kaffee, bitte'.",
+            script: "Guten Tag, Kundenservice Telekonto. Was kann ich für Sie tun? - Ich möchte meinen Handyvertrag wechseln. Ich zahle jetzt 35 Euro im Monat, aber ich brauche mehr Datenvolumen. - Wir haben ein Angebot für 29 Euro mit zehn Gigabyte. - Das ist billiger! Kann ich den Vertrag heute noch ändern? - Ja, die Änderung gilt ab dem ersten des nächsten Monats.",
+            question: "Wann gilt der neue Handyvertrag?",
+            options: ["Ab sofort", "Ab dem ersten des nächsten Monats", "Ab nächster Woche"],
+            correct: 1,
+            explanation: "The customer service agent says: 'die Änderung gilt ab dem ersten des nächsten Monats.'",
             topic: "Hören",
-            translation: "Good day, what would you like to order? - I would like a piece of apple cake and a coffee, please. - And for you? - For me just a mineral water, thanks.",
+            translation: "Good day, Telekonto customer service. What can I do for you? - I would like to change my mobile phone contract. I currently pay 35 euros per month but I need more data. - We have an offer for 29 euros with ten gigabytes. - That is cheaper! Can I change the contract today? - Yes, the change takes effect from the first of next month.",
             vocabSupport: [
-                { word: "bestellen", translation: "to order" },
-                { word: "der Apfelkuchen", translation: "apple cake" },
-                { word: "das Mineralwasser", translation: "mineral water" }
+                { word: "der Handyvertrag", translation: "mobile phone contract" },
+                { word: "das Datenvolumen", translation: "data allowance" },
+                { word: "gelten", translation: "to apply / be valid" }
             ]
         },
         {
             id: "pr_list_5",
-            script: "Entschuldigung, gibt es diese Jacke auch in Größe M? - Nein, leider haben wir diese Jacke nur noch in S und L. Aber wir haben eine ähnliche Jacke in Blau in Größe M. - Nein danke, ich möchte lieber die schwarze.",
-            question: "In welchen Größen ist die schwarze Jacke noch da?",
-            options: ["In S und M", "In M und L", "In S und L"],
-            correct: 2,
-            explanation: "The salesperson says: 'leider haben wir diese Jacke nur noch in S und L'.",
+            script: "Guten Tag, Autowerkstatt Schnell. - Guten Tag. Mein Auto macht ein lautes Geräusch beim Bremsen. Können Sie es sich ansehen? - Ja, bringen Sie das Auto morgen Mittag vorbei. Wir schauen es uns direkt an. Haben Sie eine Telefonnummer, unter der wir Sie erreichen können? - Ja, 0171 445 33 22.",
+            question: "Wann soll das Auto in die Werkstatt gebracht werden?",
+            options: ["Heute Nachmittag", "Morgen Mittag", "Übermorgen früh"],
+            correct: 1,
+            explanation: "The mechanic says: 'bringen Sie das Auto morgen Mittag vorbei.'",
             topic: "Hören",
-            translation: "Excuse me, is this jacket also available in size M? - No, unfortunately we only have this jacket in S and L. But we have a similar jacket in blue in size M. - No thanks, I'd rather have the black one.",
+            translation: "Good day, Schnell car workshop. - Good day. My car makes a loud noise when braking. Can you look at it? - Yes, bring the car over tomorrow at midday. We will look at it straight away. Do you have a phone number we can reach you on? - Yes, 0171 445 33 22.",
             vocabSupport: [
-                { word: "die Jacke", translation: "jacket" },
-                { word: "die Größe", translation: "size" },
-                { word: "ähnlich", translation: "similar" }
+                { word: "die Werkstatt", translation: "workshop / garage" },
+                { word: "das Geräusch", translation: "noise / sound" },
+                { word: "bremsen", translation: "to brake" }
             ]
         },
         {
             id: "pr_list_6",
-            script: "Guten Tag, Praxis Dr. Keller. - Guten Tag, hier spricht Schmidt. Ich habe morgen um 10 Uhr einen Termin, aber ich kann leider nicht kommen. Kann ich am Freitag um 14 Uhr kommen? - Ja, am Freitag um 14 Uhr passt Herr Dr. Keller.",
-            question: "Wann ist der neue Termin von Herrn Schmidt?",
-            options: ["Morgen um 10 Uhr", "Freitag um 14 Uhr", "Freitag um 10 Uhr"],
+            script: "Hallo, ich habe gelesen, dass Sie einen Chor haben. Kann ich mitmachen? - Ja, gerne! Wir proben jeden Donnerstag von 19 bis 21 Uhr in der Gemeindehalle. - Muss ich gut singen können? - Nein, Anfänger sind herzlich willkommen. Kommen Sie einfach nächsten Donnerstag vorbei. - Super, danke!",
+            question: "Wann probt der Chor?",
+            options: ["Jeden Mittwoch von 19 bis 21 Uhr", "Jeden Donnerstag von 19 bis 21 Uhr", "Jeden Freitag von 18 bis 20 Uhr"],
             correct: 1,
-            explanation: "The receptionist confirms: 'Ja, am Freitag um 14 Uhr passt'.",
+            explanation: "The choir member says: 'Wir proben jeden Donnerstag von 19 bis 21 Uhr.'",
             topic: "Hören",
-            translation: "Good day, doctor's office Dr. Keller. - Good day, this is Schmidt speaking. I have an appointment tomorrow at 10 AM, but unfortunately I cannot come. Can I come on Friday at 2 PM? - Yes, Friday at 2 PM works for Dr. Keller.",
+            translation: "Hello, I read that you have a choir. Can I join? - Yes, of course! We rehearse every Thursday from 7 to 9 PM in the community hall. - Do I need to be able to sing well? - No, beginners are warmly welcome. Just come by next Thursday. - Great, thank you!",
             vocabSupport: [
-                { word: "der Termin", translation: "appointment" },
-                { word: "absagen", translation: "to cancel" },
-                { word: "passen", translation: "to fit/suit" }
+                { word: "der Chor", translation: "choir" },
+                { word: "proben", translation: "to rehearse" },
+                { word: "herzlich willkommen", translation: "warmly welcome" }
             ]
         },
         {
             id: "pr_list_7",
-            script: "Guten Tag. Ich brauche eine Fahrkarte nach Frankfurt. Fährt der Zug direkt? - Nein, Sie müssen in Kassel umsteigen. Der Zug fährt um 9:15 Uhr von Gleis 6 ab. - Danke sehr.",
-            question: "Was muss der Fahrgast tun?",
-            options: ["Direkt fahren", "In Kassel umsteigen", "Am Hauptbahnhof umsteigen"],
+            script: "Guten Tag, Lagerbox GmbH. - Ich suche eine kleine Lagerbox für ein paar Monate. Was kostet das? - Eine Box mit fünf Quadratmetern kostet 45 Euro pro Monat, mit zehn Quadratmetern kostet sie 80 Euro. - Fünf Quadratmeter reichen mir. Wann kann ich einziehen? - Ab sofort, Sie bringen nur Ihren Ausweis mit.",
+            question: "Was muss der Kunde beim Einzug mitbringen?",
+            options: ["Einen Mietvertrag", "Einen Ausweis", "Eine Kaution"],
             correct: 1,
-            explanation: "The railway worker says: 'Nein, Sie müssen in Kassel umsteigen'.",
+            explanation: "The staff says: 'Sie bringen nur Ihren Ausweis mit.'",
             topic: "Hören",
-            translation: "Good day. I need a train ticket to Frankfurt. Does the train go directly? - No, you have to transfer in Kassel. The train departs at 9:15 AM from track 6. - Thank you very much.",
+            translation: "Good day, Lagerbox GmbH. - I am looking for a small storage unit for a few months. What does it cost? - A 5 square metre unit costs 45 euros per month, a 10 square metre one costs 80 euros. - Five square metres is enough for me. When can I move in? - Immediately, you just need to bring your ID.",
             vocabSupport: [
-                { word: "die Fahrkarte", translation: "ticket" },
-                { word: "direkt", translation: "directly" },
-                { word: "umsteigen", translation: "to change/transfer trains" }
+                { word: "die Lagerbox", translation: "storage unit" },
+                { word: "der Quadratmeter", translation: "square metre" },
+                { word: "der Ausweis", translation: "ID card" }
             ]
         },
         {
             id: "pr_list_8",
-            script: "Hallo Lisa, treffen wir uns heute Nachmittag um drei? - Nein, drei Uhr ist mir zu früh. Ich habe bis vier Uhr Unterricht. Geht es um halb fünf? - Ja, halb fünf ist super.",
-            question: "Wann treffen sich Lisa und ihr Freund?",
-            options: ["Um 15:00 Uhr", "Um 16:30 Uhr", "Um 16:00 Uhr"],
+            script: "Guten Tag, hier ist Müller aus Wohnung 7. Die Heizung funktioniert seit gestern Abend nicht mehr. Es ist sehr kalt in der Wohnung. - Oh, das tut mir leid. Ich schicke heute noch einen Techniker vorbei. Können Sie zwischen 14 und 17 Uhr zu Hause sein? - Ja, ich bin den ganzen Nachmittag da.",
+            question: "Was ist das Problem in der Wohnung?",
+            options: ["Das Wasser funktioniert nicht", "Die Heizung funktioniert nicht", "Das Licht geht nicht an"],
             correct: 1,
-            explanation: "They agree on 'halb fünf' which means 16:30 Uhr.",
+            explanation: "The tenant says: 'Die Heizung funktioniert seit gestern Abend nicht mehr.'",
             topic: "Hören",
-            translation: "Hello Lisa, shall we meet this afternoon at three? - No, three o'clock is too early for me. I have classes until four o'clock. Does half past four work? - Yes, half past four is great.",
+            translation: "Good day, this is Müller from apartment 7. The heating has not been working since yesterday evening. It is very cold in the apartment. - Oh, I am sorry. I will send a technician today. Can you be at home between 2 and 5 PM? - Yes, I will be there all afternoon.",
             vocabSupport: [
-                { word: "treffen", translation: "to meet" },
-                { word: "der Unterricht", translation: "lesson/class" },
-                { word: "halb fünf", translation: "half past four (4:30)" }
+                { word: "die Heizung", translation: "heating" },
+                { word: "funktionieren", translation: "to work / function" },
+                { word: "der Techniker", translation: "technician" }
             ]
         },
         {
             id: "pr_list_9",
-            script: "Und hier das Wetter für morgen: Im Norden regnet es den ganzen Tag bei nur 12 Grad. Im Süden bleibt es trocken, aber es ist bewölkt. Im Osten und Westen gibt es viel Sonnenschein und Temperaturen bis 20 Grad.",
-            question: "Wie ist das Wetter im Norden?",
-            options: ["Es regnet", "Es ist sonnig", "Es ist bewölkt, aber trocken"],
-            correct: 0,
-            explanation: "The weather report says: 'Im Norden regnet es den ganzen Tag'.",
+            script: "Guten Tag, Volkshochschule Dresden, was kann ich für Sie tun? - Ich möchte mich für den Computerkurs für Anfänger anmelden. Wann findet er statt? - Der Kurs findet dienstags und donnerstags von 18 bis 19:30 Uhr statt. Er beginnt am dritten Oktober. - Wie viel kostet der Kurs? - Sechzig Euro für sechs Wochen. - Gut, ich melde mich an.",
+            question: "An welchen Tagen findet der Computerkurs statt?",
+            options: ["Montags und mittwochs", "Dienstags und donnerstags", "Mittwochs und freitags"],
+            correct: 1,
+            explanation: "The staff says: 'Der Kurs findet dienstags und donnerstags von 18 bis 19:30 Uhr statt.'",
             topic: "Hören",
-            translation: "And here is the weather for tomorrow: In the north it will rain all day at only 12 degrees. In the south it will remain dry, but it is cloudy. In the east and west there is plenty of sunshine and temperatures up to 20 degrees.",
+            translation: "Good day, Adult Education Centre Dresden, what can I do for you? - I would like to register for the beginner computer course. When does it take place? - The course takes place on Tuesdays and Thursdays from 6 to 7:30 PM. It starts on the third of October. - How much does the course cost? - Sixty euros for six weeks. - Good, I will register.",
             vocabSupport: [
-                { word: "das Wetter", translation: "weather" },
-                { word: "regnen", translation: "to rain" },
-                { word: "trocken", translation: "dry" }
+                { word: "der Computerkurs", translation: "computer course" },
+                { word: "der Anfänger", translation: "beginner" },
+                { word: "sich anmelden", translation: "to register / sign up" }
             ]
         },
         {
             id: "pr_list_10",
-            script: "Guten Abend. Haben Sie einen Tisch für vier Personen reserviert? - Nein, aber haben Sie noch einen freien Tisch für uns? - Ja, hier am Fenster ist noch ein Tisch frei. Bitte nehmen Sie Platz.",
-            question: "Haben die Leute einen Tisch reserviert?",
-            options: ["Ja, am Fenster", "Nein", "Ja, für zwei Personen"],
+            script: "Guten Tag, Finanzamt Hamburg-Mitte. - Guten Tag. Ich habe eine Frage zu meiner Steuererklärung. Bis wann muss ich sie einreichen? - Für das letzte Jahr ist der Abgabetermin der einunddreißigste Juli. - Und kann ich das online machen? - Ja, über das Portal ELSTER. Das ist kostenlos. - Danke schön.",
+            question: "Bis wann muss die Steuererklärung eingereicht werden?",
+            options: ["Bis zum dreißigsten Juni", "Bis zum einunddreißigsten Juli", "Bis zum ersten August"],
             correct: 1,
-            explanation: "The guest answers: 'Nein, aber haben Sie noch einen freien Tisch für uns?'..",
+            explanation: "The tax officer says: 'der Abgabetermin ist der einunddreißigste Juli.'",
             topic: "Hören",
-            translation: "Good evening. Have you reserved a table for four people? - No, but do you still have a free table for us? - Yes, here by the window is a free table. Please take a seat.",
+            translation: "Good day, Tax Office Hamburg-Mitte. - Good day. I have a question about my tax return. When do I have to submit it? - For last year the submission deadline is the thirty-first of July. - And can I do it online? - Yes, via the ELSTER portal. It is free of charge. - Thank you.",
             vocabSupport: [
-                { word: "reservieren", translation: "to reserve" },
-                { word: "der Tisch", translation: "table" },
-                { word: "frei", translation: "free/available" }
+                { word: "das Finanzamt", translation: "tax office" },
+                { word: "die Steuererklärung", translation: "tax return" },
+                { word: "der Abgabetermin", translation: "submission deadline" }
             ]
         }
     ],
@@ -8237,14 +8237,18 @@ function startReadingLearning() {
 }
 
 function startListeningLearning() {
-    learningState = {
-        type: "listening",
-        topic: "Hören",
-        items: PRACTICE_DATABASE.listening,
-        currentIndex: 0
-    };
-    switchToView("view-learning-workspace");
-    loadLearnItem();
+    if (typeof openInteractiveHoerenHub === "function") {
+        openInteractiveHoerenHub();
+    } else {
+        learningState = {
+            type: "listening",
+            topic: "Hören",
+            items: PRACTICE_DATABASE.listening,
+            currentIndex: 0
+        };
+        switchToView("view-learning-workspace");
+        loadLearnItem();
+    }
 }
 
 function startPracticeFromLearning() {
@@ -8506,8 +8510,12 @@ function startPracticeMode(type) {
     } else if (type === "reading") {
         startReadingLearning();
         
-    } else if (type === "listening") {
-        startListeningLearning();
+    } else if (type === "listening" || type === "stories") {
+        if (typeof openInteractiveHoerenHub === "function") {
+            openInteractiveHoerenHub();
+        } else {
+            startListeningLearning();
+        }
         
     } else if (type === "writing") {
         switchToView("view-practice-workspace");

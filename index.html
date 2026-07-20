@@ -845,6 +845,116 @@
                     </div>
                 </section>
 
+                <!-- ==================== 3E-2. INTERACTIVE HÖREN PRACTICE ==================== -->
+                <section id="view-interactive-hoeren" class="view-panel">
+                    <div class="panel-header-nav">
+                        <button class="btn btn-secondary btn-back-home" onclick="handleHoerenBackNavigation()">&larr; Zurück / Back</button>
+                        <h2>🎧 Hören / Listening Practice</h2>
+                    </div>
+
+                    <!-- Step 1: Topic Selection & Mode Picker -->
+                    <div id="hoeren-topic-selection-hub" style="max-width:1000px; margin:0 auto; padding: 10px 0 30px 0;">
+                        <div class="glass-panel" style="padding: 20px; margin-bottom: 20px; border-radius: var(--radius-lg);">
+                            <h3 style="margin-top:0; color:var(--color-primary);">Wählen Sie ein Thema / Choose a Topic</h3>
+                            <p style="color:var(--color-text-muted); font-size:0.9rem; margin-bottom:16px;">
+                                Wählen Sie ein Hörthema und danach Ihren bevorzugten Übungsmodus (Diktat, Lückentext, Rollenwechsel oder Richtig/Falsch).<br>
+                                <span style="font-style:italic; font-size:0.85rem; opacity:0.8;">Select a listening topic and then choose your preferred practice mode (Dictation, Fill-in-the-Blank, Role Completion, or True/False).</span>
+                            </p>
+                            <div id="hoeren-topics-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:16px;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Warm-Up & Vocabulary Preparation Hub -->
+                    <div id="hoeren-topic-warmup-hub" style="display:none; max-width:900px; margin:0 auto; padding: 10px 0 30px 0;">
+                        <div class="glass-panel" style="padding: 24px; border-radius: var(--radius-lg);">
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:16px; border-bottom:1px solid var(--color-border); padding-bottom:12px;">
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <span id="hoeren-warmup-topic-badge" class="badge" style="background:var(--color-primary-transparent); color:var(--color-primary); font-size:0.85rem; font-weight:700; padding:4px 10px;"></span>
+                                    <span id="hoeren-warmup-mode-badge" class="badge" style="background:rgba(234,179,8,0.15); color:#eab308; font-size:0.85rem; font-weight:700; padding:4px 10px;"></span>
+                                </div>
+                                <button class="btn btn-secondary btn-touch" style="padding:4px 10px; font-size:0.8rem;" onclick="openInteractiveHoerenHub()">Thema wechseln / Change Topic</button>
+                            </div>
+
+                            <h3 style="margin:0 0 4px 0; color:var(--color-primary);">📚 Vorbereitung & Wortschatz / Warm-Up & Vocabulary</h3>
+                            <p style="color:var(--color-text-muted); font-size:0.88rem; margin-bottom:20px;">
+                                Lernen Sie diese wichtigen Wörter und Redemittel, bevor Sie mit den Höraufgaben beginnen.<br>
+                                <span style="font-style:italic;">Learn these key words and phrases before starting the listening exercises.</span>
+                            </p>
+
+                            <!-- Vocab Cards Grid -->
+                            <div style="margin-bottom:24px;">
+                                <h4 style="margin:0 0 12px 0; color:#fff; font-size:0.95rem; text-transform:uppercase; letter-spacing:0.05em;">🔑 Schlüsselwörter / Key Vocabulary:</h4>
+                                <div id="hoeren-warmup-vocab-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:12px;"></div>
+                            </div>
+
+                            <!-- Phrases Container -->
+                            <div style="margin-bottom:24px;">
+                                <h4 style="margin:0 0 12px 0; color:#fff; font-size:0.95rem; text-transform:uppercase; letter-spacing:0.05em;">💬 Wichtige Redemittel / Key Dialogue Phrases:</h4>
+                                <div id="hoeren-warmup-phrases-list" style="display:flex; flex-direction:column; gap:8px;"></div>
+                            </div>
+
+                            <!-- Proceed Button -->
+                            <div style="text-align:center; padding-top:16px; border-top:1px solid var(--color-border);">
+                                <button id="btn-hoeren-start-practice" class="btn btn-primary btn-touch" style="font-size:1.05rem; padding:12px 32px;" onclick="proceedToHoerenPracticeWorkspace()">
+                                    🚀 Wortschatz gelernt — Weiter zur Übung 🎯 / Vocab Learned — Proceed to Practice 🎯
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Interactive Practice Workspace -->
+                    <div id="hoeren-practice-workspace" style="display:none; max-width:800px; margin:0 auto; padding-bottom:40px;">
+                        <div class="glass-panel" style="padding:24px; border-radius:var(--radius-lg);">
+                            <!-- Header with badges -->
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:16px; border-bottom:1px solid var(--color-border); padding-bottom:12px;">
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <span id="hoeren-active-topic-badge" class="badge" style="background:var(--color-primary-transparent); color:var(--color-primary); font-size:0.85rem; font-weight:700; padding:4px 10px;"></span>
+                                    <span id="hoeren-active-mode-badge" class="badge" style="background:rgba(234,179,8,0.15); color:#eab308; font-size:0.85rem; font-weight:700; padding:4px 10px;"></span>
+                                </div>
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <button class="btn btn-secondary btn-touch" style="padding:4px 10px; font-size:0.8rem;" onclick="showHoerenWarmupScreen()">📚 Wortschatz / View Vocab</button>
+                                    <span id="hoeren-dialogue-progress" style="font-size:0.85rem; color:var(--color-text-muted); font-weight:600;">Dialog 1 / 2</span>
+                                    <button class="btn btn-secondary btn-touch" style="padding:4px 10px; font-size:0.8rem;" onclick="openInteractiveHoerenHub()">Thema wechseln / Change Topic</button>
+                                </div>
+                            </div>
+
+                            <!-- Audio Player Card with Play/Pause & Scrubbing Slider -->
+                            <div class="glass-panel" style="background:rgba(255,255,255,0.03); padding:18px 20px; border-radius:var(--radius-md); text-align:center; margin-bottom:20px;">
+                                <div style="font-size:0.85rem; color:var(--color-text-muted); margin-bottom:12px;">🔊 Audio-Wiedergabe (Unbegrenzt anhören) / Audio Playback (Unlimited Replays)</div>
+                                
+                                <!-- Audio Scrubbing Slider & Time Display -->
+                                <div style="display:flex; align-items:center; gap:12px; max-width:550px; margin:0 auto 16px auto;">
+                                    <span id="hoeren-audio-time-current" style="font-size:0.8rem; color:var(--color-text-muted); font-family:monospace; min-width:42px; text-align:right;">00:00</span>
+                                    <input type="range" id="hoeren-audio-slider" min="0" max="100" value="0" style="flex:1; cursor:pointer; accent-color:var(--color-primary); height:6px;">
+                                    <span id="hoeren-audio-time-total" style="font-size:0.8rem; color:var(--color-text-muted); font-family:monospace; min-width:42px; text-align:left;">00:00</span>
+                                </div>
+
+                                <!-- Play/Pause & Speed Controls -->
+                                <div style="display:flex; justify-content:center; align-items:center; gap:12px; flex-wrap:wrap;">
+                                    <button id="btn-hoeren-play-pause" class="btn btn-primary btn-touch" style="font-size:0.95rem; padding:10px 22px; min-width:190px;">
+                                        <span id="hoeren-play-icon">▶️</span> <span id="hoeren-play-text">Abspielen / Play</span>
+                                    </button>
+                                    <button id="btn-hoeren-play-slow" class="btn btn-secondary btn-touch" style="font-size:0.95rem; padding:10px 18px;">
+                                        🐢 Langsam / Slow (0.65x)
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Interactive Task Container -->
+                            <div id="hoeren-task-container" style="margin-bottom:20px;"></div>
+
+                            <!-- Feedback & Reveal Box -->
+                            <div id="hoeren-feedback-container" style="display:none; margin-bottom:20px;"></div>
+
+                            <!-- Action Buttons -->
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px; border-top:1px solid var(--color-border); padding-top:16px;">
+                                <button id="btn-hoeren-submit" class="btn btn-primary btn-touch" style="font-size:1rem; padding:10px 24px;">Antwort prüfen / Check Answer</button>
+                                <button id="btn-hoeren-next" class="btn btn-success btn-touch" style="display:none; font-size:1rem; padding:10px 24px;">Nächster Dialog / Next &rarr;</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- ==================== 3F. LISTENING STORY LIBRARY ==================== -->
                 <section id="view-listening-stories" class="view-panel">
                     <div class="panel-header-nav">
@@ -1856,7 +1966,7 @@
     </div>
 
     <!-- Script loading -->
-    <script src="app.js?v=2.3.2e"></script>
-    <script src="v22_additions.js?v=2.3.2e"></script>
+    <script src="app.js?v=2.7.0"></script>
+    <script src="v22_additions.js?v=2.7.0"></script>
 </body>
 </html>

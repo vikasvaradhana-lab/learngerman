@@ -5435,12 +5435,13 @@ startPracticeMode = function(type) {
         openPhraseBank();
     } else if (type === "scenarios") {
         openRealLifeScenarios();
-    } else if (type === "stories") {
-        openListeningStoryHub();
+    } else if (type === "stories" || type === "listening") {
+        openInteractiveHoerenHub();
     } else {
         originalStartPracticeMode(type);
     }
 };
+window.startPracticeMode = startPracticeMode;
 
 // --- 8. REFRESH CONTENT HELPER ---
 function refreshActiveViewContent() {
@@ -6854,6 +6855,18 @@ document.addEventListener("DOMContentLoaded", () => {
         btnBackStories.onclick = () => {
             stopStorySpeech();
             switchToView("view-practice-menu");
+        };
+    }
+
+    // Bind back button from interactive hoeren
+    const btnBackHoeren = document.querySelector("#view-interactive-hoeren .btn-back-home");
+    if (btnBackHoeren) {
+        btnBackHoeren.onclick = (e) => {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            handleHoerenBackNavigation();
         };
     }
 
@@ -8728,10 +8741,9 @@ function initVersion23Bindings() {
     }
 
     // Redefine checkPracticeAnswer in case we are in special revision mode
-    const originalCheckPracticeAnswer = checkPracticeAnswer;
+    const originalCheckPracticeAnswer = window.checkPracticeAnswer || function(){};
     checkPracticeAnswer = function() {
         originalCheckPracticeAnswer();
-        // Refresh widgets after every question check in case SRS is updated
         refreshSRSWidgets();
     };
 
@@ -8743,6 +8755,8 @@ function initVersion23Bindings() {
             c.onclick = () => startReadingLearning();
         } else if (topic === "stories") {
             c.onclick = () => openListeningStoryHub();
+        } else if (topic === "listening") {
+            c.onclick = () => openInteractiveHoerenHub();
         }
     });
 }
@@ -8761,85 +8775,2956 @@ if (document.readyState === "loading") {
 // ============================================================================
 // --- VERSION 2.3 ADDITIONAL ROUTING & PRONUNCIATION HOOKS ---
 // ============================================================================
+window.startListeningLearning = function() {
+    openInteractiveHoerenHub();
+};
 
-// Intercept practice menu selections
-startPracticeMode = function(type) {
-    if (type === "grammar") {
-        openGrammarLessonHub();
-    } else if (type === "phrases") {
-        openPhraseBank();
-    } else if (type === "scenarios") {
-        openRealLifeScenarios();
-    } else if (type === "stories" || type === "listening") {
-        openListeningStoryHub();
-    } else if (type === "reading") {
-        startReadingLearning();
-    } else if (type === "revision") {
-        openRevisionCenter();
+const originalOpenPracticeTopicHub = window.openPracticeTopicHub || function(){};
+window.openPracticeTopicHub = function(type) {
+    if (type === "listening" || type === "stories") {
+        openInteractiveHoerenHub();
     } else {
-        originalStartPracticeMode(type);
+        originalOpenPracticeTopicHub(type);
     }
 };
 
-// Monkey-patch option rendering in app.js to show pronunciation helpers
-const originalRenderPracticeMCQuestion = renderPracticeMCQuestion;
-renderPracticeMCQuestion = function(q) {
-    originalRenderPracticeMCQuestion(q);
-    
-    // Inject pronunciation helper to options
-    const list = document.getElementById("practice-options-list");
-    if (list) {
-        const items = list.querySelectorAll(".option-item");
-        items.forEach((item, idx) => {
-            const content = item.querySelector(".option-content");
-            if (content) {
-                const optText = q.options[idx];
-                const pronHTML = getPronunciationHTML(optText);
-                if (pronHTML) {
-                    content.innerHTML = `<div>${optText}</div>${pronHTML}`;
+// ============================================================================
+// --- VERSION 2.4 INTERACTIVE HÖREN PRACTICE MODULE (5 TOPICS x 4 MODES) ---
+// ============================================================================
+
+const INTERACTIVE_HOEREN_DATABASE = {
+    hw: {
+        title: "Heim & Wohnen",
+        titleEN: "Home & Living",
+        emoji: "🏠",
+        warmup: {
+            vocab: [
+                { word: "Wasserhahn", gender: "der", translation: "tap / faucet", example: "Der Wasserhahn in der Küche tropft.", exampleEN: "The kitchen tap is dripping." },
+                { word: "Heizung", gender: "die", translation: "heating", example: "Die Heizung funktioniert seit gestern nicht.", exampleEN: "The heating hasn't been working since yesterday." },
+                { word: "Klempner", gender: "der", translation: "plumber", example: "Der Klempner kommt morgen früh.", exampleEN: "The plumber is coming tomorrow morning." },
+                { word: "Techniker", gender: "der", translation: "technician", example: "Ich schicke heute einen Techniker vorbei.", exampleEN: "I'll send a technician over today." },
+                { word: "Termin", gender: "der", translation: "appointment", example: "Wir haben keinen freien Termin mehr.", exampleEN: "We have no free appointments left." }
+            ],
+            phrases: [
+                { de: "Wir haben ein Problem mit...", en: "We have a problem with..." },
+                { de: "Können Sie heute noch kommen?", en: "Can you still come today?" },
+                { de: "Leider haben wir keinen freien Termin.", en: "Unfortunately we have no free appointment." },
+                { de: "Ich bin den ganzen Nachmittag da.", en: "I am there all afternoon." }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_hw_1",
+                title: "Der tropfende Wasserhahn",
+                titleEN: "The Dripping Tap",
+                script: "Hallo, hier spricht Weber. Wir haben ein Problem mit dem Wasserhahn in der Küche. Er tropft die ganze Nacht. Können Sie heute noch kommen? - Leider haben wir heute keinen freien Termin mehr. Morgen früh um acht Uhr wäre möglich. - Ja, das ist gut. Ich bin zu Hause.",
+                translation: "Hello, this is Weber speaking. We have a problem with the kitchen tap. It drips all night. Can you come today? - Unfortunately we have no free appointment today. Tomorrow morning at eight o'clock would be possible. - Yes, that is good. I am at home.",
+                vocabSupport: [
+                    { word: "der Wasserhahn", translation: "tap / faucet" },
+                    { word: "tropfen", translation: "to drip" },
+                    { word: "der Klempner", translation: "plumber" }
+                ],
+                fillBlank: {
+                    sentence: "Wir haben ein Problem mit dem _____ in der Küche.",
+                    target: "Wasserhahn",
+                    options: ["Wasserhahn", "Kühlschrank", "Fernseher"]
+                },
+                role: {
+                    speaker1: "Wir haben ein Problem mit dem Wasserhahn in der Küche. Können Sie heute noch kommen?",
+                    options: ["Morgen früh um acht Uhr wäre möglich.", "Nein, ich trinke keinen Kaffee.", "Der Wasserhahn ist blau."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Handwerker kann erst morgen früh um 8 Uhr kommen.",
+                    correct: true,
+                    explanation: "Richtig: Der Handwerker sagt, dass heute kein Termin mehr frei ist und er morgen um 8 Uhr kommt."
+                }
+            },
+            {
+                id: "hoer_hw_2",
+                title: "Die kaputte Heizung",
+                titleEN: "The Broken Heating",
+                script: "Guten Tag, hier ist Müller aus Wohnung 7. Die Heizung funktioniert seit gestern Abend nicht mehr. Es ist sehr kalt in der Wohnung. - Oh, das tut mir leid. Ich schicke heute noch einen Techniker vorbei. Können Sie zwischen 14 und 17 Uhr zu Hause sein? - Ja, ich bin den ganzen Nachmittag da.",
+                translation: "Good day, this is Müller from apartment 7. The heating has not been working since yesterday evening. It is very cold in the apartment. - Oh, I'm sorry. I'll send a technician today. Can you be at home between 2 and 5 pm? - Yes, I'm there all afternoon.",
+                vocabSupport: [
+                    { word: "die Heizung", translation: "heating" },
+                    { word: "der Techniker", translation: "technician" },
+                    { word: "funktionieren", translation: "to work / function" }
+                ],
+                fillBlank: {
+                    sentence: "Die _____ funktioniert seit gestern Abend nicht mehr.",
+                    target: "Heizung",
+                    options: ["Heizung", "Waschmaschine", "Kaffeemaschine"]
+                },
+                role: {
+                    speaker1: "Die Heizung funktioniert nicht mehr. Es ist sehr kalt in der Wohnung!",
+                    options: ["Ich schicke heute noch einen Techniker vorbei.", "Ich kaufe einen neuen Tisch.", "Gute Reise nach Berlin!"],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Frau Müller ist am Nachmittag nicht zu Hause.",
+                    correct: false,
+                    explanation: "Falsch: Sie sagt: 'Ja, ich bin den ganzen Nachmittag da.'"
                 }
             }
+        ]
+    },
+    kb: {
+        title: "Kurse & Bildung",
+        titleEN: "Courses & Education",
+        emoji: "🎓",
+        warmup: {
+            vocab: [
+                { word: "Töpferkurs", gender: "der", translation: "pottery course", example: "Der Töpferkurs startet nächste Woche.", exampleEN: "The pottery course starts next week." },
+                { word: "Computerkurs", gender: "der", translation: "computer course", example: "Der Computerkurs findet abends statt.", exampleEN: "The computer course takes place in the evening." },
+                { word: "Anfänger", gender: "der", translation: "beginner", example: "Ist der Kurs für Anfänger geeignet?", exampleEN: "Is the course suitable for beginners?" },
+                { word: "Vorkenntnisse", gender: "die (Pl.)", translation: "prior knowledge", example: "Sie brauchen keine Vorkenntnisse.", exampleEN: "You need no prior knowledge." },
+                { word: "Platz", gender: "der", translation: "spot / place", example: "Es gibt noch drei freie Plätze.", exampleEN: "There are still three spots left." }
+            ],
+            phrases: [
+                { de: "Ich möchte mich für den Kurs anmelden.", en: "I would like to register for the course." },
+                { de: "Ist der Kurs für Anfänger geeignet?", en: "Is the course suitable for beginners?" },
+                { de: "Sie brauchen keine Vorkenntnisse.", en: "You need no prior knowledge." },
+                { de: "Wann findet der Kurs statt?", en: "When does the course take place?" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_kb_1",
+                title: "Anmeldung zum Töpferkurs",
+                titleEN: "Pottery Course Registration",
+                script: "Guten Tag, Volkshochschule Mainz, wie kann ich helfen? - Ich möchte mich für den Töpferkurs anmelden. Ist der Kurs für Anfänger geeignet? - Ja, absolut. Der Kurs startet nächste Woche Mittwoch und dauert zehn Wochen. Sie brauchen keine Vorkenntnisse. - Super, wie viele Plätze gibt es noch? - Noch drei freie Plätze.",
+                translation: "Good day, Adult Education Center Mainz, how can I help? - I would like to register for the pottery course. Is the course suitable for beginners? - Yes, absolutely. The course starts next Wednesday and lasts ten weeks. You need no prior knowledge. - Great, how many places are left? - Three places left.",
+                vocabSupport: [
+                    { word: "der Töpferkurs", translation: "pottery course" },
+                    { word: "die Vorkenntnisse", translation: "prior knowledge" },
+                    { word: "der Platz", translation: "place / spot" }
+                ],
+                fillBlank: {
+                    sentence: "Der Töpferkurs startet nächste Woche _____",
+                    target: "Mittwoch",
+                    options: ["Mittwoch", "Montag", "Freitag"]
+                },
+                role: {
+                    speaker1: "Ist der Töpferkurs auch für Anfänger geeignet?",
+                    options: ["Ja, absolut. Sie brauchen keine Vorkenntnisse.", "Nein, das Brot kostet zwei Euro.", "Ich habe keine Zeit zum Kochen."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Es gibt nur noch drei freie Plätze im Töpferkurs.",
+                    correct: true,
+                    explanation: "Richtig: Am Ende sagt die Mitarbeiterin: 'Noch drei freie Plätze.'"
+                }
+            },
+            {
+                id: "hoer_kb_2",
+                title: "Der Computerkurs für Anfänger",
+                titleEN: "Beginner Computer Course",
+                script: "Guten Tag, Volkshochschule Dresden. - Ich möchte mich für den Computerkurs für Anfänger anmelden. Wann findet er statt? - Der Kurs findet dienstags und donnerstags von 18 bis 19:30 Uhr statt. Er beginnt am dritten Oktober. - Wie viel kostet der Kurs? - Sechzig Euro für sechs Wochen.",
+                translation: "Good day, Adult Education Center Dresden. - I would like to register for the beginner computer course. When does it take place? - The course takes place Tuesdays and Thursdays from 6 to 7:30 PM. It starts on October 3rd. - How much does the course cost? - Sixty euros for six weeks.",
+                vocabSupport: [
+                    { word: "der Computerkurs", translation: "computer course" },
+                    { word: "der Anfänger", translation: "beginner" },
+                    { word: "stattfinden", translation: "to take place" }
+                ],
+                fillBlank: {
+                    sentence: "Der Kurs findet dienstags und _____ statt.",
+                    target: "donnerstags",
+                    options: ["donnerstags", "samstags", "sonntags"]
+                },
+                role: {
+                    speaker1: "Wie viel kostet der Computerkurs für Anfänger?",
+                    options: ["Sechzig Euro für sechs Wochen.", "Der Kurs ist im zweiten Stock.", "Er kommt um zehn Uhr."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Computerkurs kostet 100 Euro.",
+                    correct: false,
+                    explanation: "Falsch: Der Computerkurs kostet 60 Euro für sechs Wochen."
+                }
+            }
+        ]
+    },
+    fg: {
+        title: "Freizeit & Gemeinschaft",
+        titleEN: "Leisure & Community",
+        emoji: "🌿",
+        warmup: {
+            vocab: [
+                { word: "Gemeinschaftsgarten", gender: "der", translation: "community garden", example: "Der Gemeinschaftsgarten liegt an der Mühlenstraße.", exampleEN: "The community garden is located on Mühlenstraße." },
+                { word: "Chor", gender: "der", translation: "choir", example: "Wir singen jeden Donnerstag im Chor.", exampleEN: "We sing in the choir every Thursday." },
+                { word: "Mitgliedsbeitrag", gender: "der", translation: "membership fee", example: "Der Mitgliedsbeitrag ist fünf Euro pro Monat.", exampleEN: "The membership fee is five euros per month." },
+                { word: "Gemeindehalle", gender: "die", translation: "community hall", example: "Wir proben in der Gemeindehalle.", exampleEN: "We rehearse in the community hall." },
+                { word: "Nachbar", gender: "der", translation: "neighbour", example: "Viele Nachbarn nutzen den Garten zusammen.", exampleEN: "Many neighbours use the garden together." }
+            ],
+            phrases: [
+                { de: "Hast du schon von ... gehört?", en: "Have you heard about...?" },
+                { de: "Man kann Gemüse und Blumen pflanzen.", en: "You can plant vegetables and flowers." },
+                { de: "Wir proben jeden Donnerstag von 19 bis 21 Uhr.", en: "We rehearse every Thursday from 7 to 9 PM." },
+                { de: "Anfänger sind herzlich willkommen.", en: "Beginners are warmly welcome." }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_fg_1",
+                title: "Der neue Gemeinschaftsgarten",
+                titleEN: "The New Community Garden",
+                script: "Hallo Karin. Hast du schon von dem neuen Gemeinschaftsgarten gehört? - Nein, was ist das? - Das ist ein Garten, den viele Nachbarn zusammen nutzen. Man kann Gemüse und Blumen pflanzen. Der Mitgliedsbeitrag ist nur fünf Euro pro Monat. - Das klingt toll! Wo ist der Garten? - Neben der alten Fabrik an der Mühlenstraße.",
+                translation: "Hello Karin. Have you heard about the new community garden? - No, what is that? - It's a garden that many neighbours use together. You can plant vegetables and flowers. The membership fee is only 5 euros per month. - That sounds great! Where is the garden? - Next to the old factory on Mühlenstraße.",
+                vocabSupport: [
+                    { word: "der Gemeinschaftsgarten", translation: "community garden" },
+                    { word: "pflanzen", translation: "to plant" },
+                    { word: "der Mitgliedsbeitrag", translation: "membership fee" }
+                ],
+                fillBlank: {
+                    sentence: "Der Mitgliedsbeitrag ist nur fünf _____ pro Monat.",
+                    target: "Euro",
+                    options: ["Euro", "Kilo", "Stunden"]
+                },
+                role: {
+                    speaker1: "Wo genau liegt denn der neue Gemeinschaftsgarten?",
+                    options: ["Neben der alten Fabrik an der Mühlenstraße.", "Im dritten Stock links.", "Ich trinke lieber Tee."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Mitgliedsbeitrag für den Garten beträgt 20 Euro im Monat.",
+                    correct: false,
+                    explanation: "Falsch: Der Beitrag ist nur 5 Euro pro Monat."
+                }
+            },
+            {
+                id: "hoer_fg_2",
+                title: "Mitsingen im Chor",
+                titleEN: "Singing in the Choir",
+                script: "Hallo, ich habe gelesen, dass Sie einen Chor haben. Kann ich mitmachen? - Ja, gerne! Wir proben jeden Donnerstag von 19 bis 21 Uhr in der Gemeindehalle. - Muss ich gut singen können? - Nein, Anfänger sind herzlich willkommen. Kommen Sie einfach nächsten Donnerstag vorbei.",
+                translation: "Hello, I read that you have a choir. Can I join? - Yes, of course! We rehearse every Thursday from 7 to 9 PM in the community hall. - Do I need to be able to sing well? - No, beginners are warmly welcome. Just come by next Thursday.",
+                vocabSupport: [
+                    { word: "der Chor", translation: "choir" },
+                    { word: "proben", translation: "to rehearse" },
+                    { word: "die Gemeindehalle", translation: "community hall" }
+                ],
+                fillBlank: {
+                    sentence: "Wir proben jeden _____ von 19 bis 21 Uhr.",
+                    target: "Donnerstag",
+                    options: ["Donnerstag", "Dienstag", "Sonntag"]
+                },
+                role: {
+                    speaker1: "Muss ich für den Chor gut singen können?",
+                    options: ["Nein, Anfänger sind herzlich willkommen.", "Ja, die Fahrkarte kostet zehn Euro.", "Ich habe heute keinen Appetit."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Chor probt jeden Donnerstagabend in der Gemeindehalle.",
+                    correct: true,
+                    explanation: "Richtig: 'Wir proben jeden Donnerstag von 19 bis 21 Uhr in der Gemeindehalle.'"
+                }
+            }
+        ]
+    },
+    dl: {
+        title: "Dienstleistungen",
+        titleEN: "Services",
+        emoji: "🔧",
+        warmup: {
+            vocab: [
+                { word: "Autowerkstatt", gender: "die", translation: "car repair workshop", example: "Mein Auto steht in der Autowerkstatt.", exampleEN: "My car is in the repair shop." },
+                { word: "Handyvertrag", gender: "der", translation: "mobile contract", example: "Ich möchte meinen Handyvertrag wechseln.", exampleEN: "I want to change my mobile contract." },
+                { word: "Geräusch", gender: "das", translation: "noise / sound", example: "Das Auto macht ein lautes Geräusch.", exampleEN: "The car is making a loud noise." },
+                { word: "Bremsen", gender: "das", translation: "braking", example: "Das Geräusch entsteht beim Bremsen.", exampleEN: "The noise happens during braking." },
+                { word: "Datenvolumen", gender: "das", translation: "data allowance", example: "Ich brauche 10 Gigabyte Datenvolumen.", exampleEN: "I need 10 gigabytes of data allowance." }
+            ],
+            phrases: [
+                { de: "Können Sie sich das ansehen?", en: "Can you take a look at it?" },
+                { de: "Bringen Sie das Auto morgen Mittag vorbei.", en: "Bring the car over tomorrow at noon." },
+                { de: "Wir haben ein Angebot für 29 Euro.", en: "We have an offer for 29 euros." },
+                { de: "Die Änderung gilt ab nächstem Monat.", en: "The change applies starting next month." }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_dl_1",
+                title: "Termin in der Autowerkstatt",
+                titleEN: "Car Repair Shop Appointment",
+                script: "Guten Tag, Autowerkstatt Schnell. - Guten Tag. Mein Auto macht ein lautes Geräusch beim Bremsen. Können Sie es sich ansehen? - Ja, bringen Sie das Auto morgen Mittag vorbei. Wir schauen es uns direkt an. Haben Sie eine Telefonnummer? - Ja, 0171 445 33 22.",
+                translation: "Good day, Schnell car workshop. - Good day. My car makes a loud noise when braking. Can you look at it? - Yes, bring the car over tomorrow at noon. We will look at it immediately. Do you have a phone number? - Yes, 0171 445 33 22.",
+                vocabSupport: [
+                    { word: "die Werkstatt", translation: "workshop / garage" },
+                    { word: "das Geräusch", translation: "noise / sound" },
+                    { word: "bremsen", translation: "to brake" }
+                ],
+                fillBlank: {
+                    sentence: "Mein Auto macht ein lautes Geräusch beim _____.",
+                    target: "Bremsen",
+                    options: ["Bremsen", "Parken", "Waschen"]
+                },
+                role: {
+                    speaker1: "Mein Auto macht ein lautes Geräusch beim Bremsen. Können Sie es ansehen?",
+                    options: ["Ja, bringen Sie das Auto morgen Mittag vorbei.", "Das Flugzeug fliegt um 14 Uhr.", "Der Salat schmeckt frisch."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Kunde soll das Auto heute Abend bringen.",
+                    correct: false,
+                    explanation: "Falsch: Der Mechaniker sagt: 'bringen Sie das Auto morgen Mittag vorbei.'"
+                }
+            },
+            {
+                id: "hoer_dl_2",
+                title: "Handyvertrag anpassen",
+                titleEN: "Adjust Mobile Contract",
+                script: "Guten Tag, Kundenservice Telekonto. - Ich möchte meinen Handyvertrag wechseln. Ich zahle jetzt 35 Euro im Monat, aber ich brauche mehr Datenvolumen. - Wir haben ein Angebot für 29 Euro mit zehn Gigabyte. - Das ist billiger! Kann ich den Vertrag heute noch ändern? - Ja, die Änderung gilt ab dem ersten des nächsten Monats.",
+                translation: "Good day, Telekonto customer service. - I would like to change my mobile contract. I pay 35 euros now, but I need more data. - We have an offer for 29 euros with 10 GB. - That is cheaper! Can I change the contract today? - Yes, the change applies from the 1st of next month.",
+                vocabSupport: [
+                    { word: "der Handyvertrag", translation: "mobile contract" },
+                    { word: "das Datenvolumen", translation: "data allowance" },
+                    { word: "gelten", translation: "to apply / be valid" }
+                ],
+                fillBlank: {
+                    sentence: "Wir haben ein Angebot für 29 Euro mit zehn _____.",
+                    target: "Gigabyte",
+                    options: ["Gigabyte", "Kilometer", "Kilo"]
+                },
+                role: {
+                    speaker1: "Kann ich meinen Handyvertrag heute noch ändern?",
+                    options: ["Ja, die Änderung gilt ab dem ersten des nächsten Monats.", "Nein, der Bahnhof ist geschlossen.", "Ich esse gerne Apfelkuchen."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Das neue Angebot für 29 Euro bietet 10 Gigabyte Datenvolumen.",
+                    correct: true,
+                    explanation: "Richtig: 'Wir haben ein Angebot für 29 Euro mit zehn Gigabyte.'"
+                }
+            }
+        ]
+    },
+    bb: {
+        title: "Behörden & Büros",
+        titleEN: "Offices & Authorities",
+        emoji: "📋",
+        warmup: {
+            vocab: [
+                { word: "Finanzamt", gender: "das", translation: "tax office", example: "Ich rufe beim Finanzamt an.", exampleEN: "I am calling the tax office." },
+                { word: "Steuererklärung", gender: "die", translation: "tax return", example: "Wann muss ich die Steuererklärung einreichen?", exampleEN: "When do I have to submit the tax return?" },
+                { word: "Abgabetermin", gender: "der", translation: "submission deadline", example: "Der Abgabetermin ist der 31. Juli.", exampleEN: "The submission deadline is July 31st." },
+                { word: "Lagerbox", gender: "die", translation: "storage unit", example: "Ich miete eine kleine Lagerbox.", exampleEN: "I am renting a small storage box." },
+                { word: "Ausweis", gender: "der", translation: "ID card", example: "Sie bringen nur Ihren Ausweis mit.", exampleEN: "You just bring your ID with you." }
+            ],
+            phrases: [
+                { de: "Ich habe eine Frage zu meiner Steuererklärung.", en: "I have a question about my tax return." },
+                { de: "Bis wann muss ich sie einreichen?", en: "By when do I have to submit it?" },
+                { de: "Das ist vollkommen kostenlos.", en: "That is completely free of charge." },
+                { de: "Wann kann ich einziehen?", en: "When can I move in?" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_bb_1",
+                title: "Auskunft beim Finanzamt",
+                titleEN: "Tax Office Inquiry",
+                script: "Guten Tag, Finanzamt Hamburg-Mitte. - Guten Tag. Ich habe eine Frage zu meiner Steuererklärung. Bis wann muss ich sie einreichen? - Für das letzte Jahr ist der Abgabetermin der einunddreißigste Juli. - Und kann ich das online machen? - Ja, über das Portal ELSTER. Das ist kostenlos.",
+                translation: "Good day, Tax Office Hamburg-Mitte. - Good day. I have a question about my tax return. By when do I have to submit it? - For last year the deadline is July 31st. - And can I do that online? - Yes, via the ELSTER portal. That is free of charge.",
+                vocabSupport: [
+                    { word: "das Finanzamt", translation: "tax office" },
+                    { word: "die Steuererklärung", translation: "tax return" },
+                    { word: "der Abgabetermin", translation: "deadline" }
+                ],
+                fillBlank: {
+                    sentence: "Der Abgabetermin ist der _____ Juli.",
+                    target: "einunddreißigste",
+                    options: ["einunddreißigste", "fünfzehnte", "erste"]
+                },
+                role: {
+                    speaker1: "Kann ich meine Steuererklärung auch online machen?",
+                    options: ["Ja, über das Portal ELSTER. Das ist kostenlos.", "Ich trage lieber einen grünen Pullover.", "Der Supermarkt schließt um 20 Uhr."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Die Online-Abgabe über das Portal ELSTER kostet Geld.",
+                    correct: false,
+                    explanation: "Falsch: Der Mitarbeiter sagt: 'Das ist kostenlos.'"
+                }
+            },
+            {
+                id: "hoer_bb_2",
+                title: "Eine Lagerbox mieten",
+                titleEN: "Renting a Storage Unit",
+                script: "Guten Tag, Lagerbox GmbH. - Ich suche eine kleine Lagerbox für ein paar Monate. Was kostet das? - Eine Box mit fünf Quadratmetern kostet 45 Euro pro Monat, mit zehn Quadratmetern kostet sie 80 Euro. - Fünf Quadratmeter reichen mir. Wann kann ich einziehen? - Ab sofort, Sie bringen nur Ihren Ausweis mit.",
+                translation: "Good day, Storage Box Ltd. - I am looking for a small storage box for a few months. How much does it cost? - A 5 square meter box costs 45 euros per month, 10 square meters costs 80 euros. - 5 square meters is enough for me. When can I move in? - Immediately, you just bring your ID.",
+                vocabSupport: [
+                    { word: "die Lagerbox", translation: "storage unit" },
+                    { word: "der Quadratmeter", translation: "square meter" },
+                    { word: "der Ausweis", translation: "ID card" }
+                ],
+                fillBlank: {
+                    sentence: "Eine Box mit fünf Quadratmetern kostet 45 Euro pro _____.",
+                    target: "Monat",
+                    options: ["Monat", "Jahr", "Tag"]
+                },
+                role: {
+                    speaker1: "Was muss ich mitbringen, wenn ich heute einziehen möchte?",
+                    options: ["Sie bringen nur Ihren Ausweis mit.", "Ein Rezept vom Arzt.", "Eine Fahrkarte nach München."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Die 5-Quadratmeter-Box kostet 45 Euro im Monat.",
+                    correct: true,
+                    explanation: "Richtig: 'Eine Box mit fünf Quadratmetern kostet 45 Euro pro Monat.'"
+                }
+            }
+        ]
+    },
+    se: {
+        title: "Supermarkt & Einkaufen",
+        titleEN: "Supermarket & Shopping",
+        emoji: "🛒",
+        warmup: {
+            vocab: [
+                { word: "Angebotspreis", gender: "der", translation: "offer price", example: "Das Olivenöl ist heute im Angebotspreis.", exampleEN: "The olive oil is on offer today." },
+                { word: "Pfandflasche", gender: "die", translation: "deposit bottle", example: "Wo kann ich die Pfandflaschen zurückgeben?", exampleEN: "Where can I return the deposit bottles?" },
+                { word: "Kassenzettel", gender: "der", translation: "receipt", example: "Möchten Sie den Kassenzettel mitnehmen?", exampleEN: "Would you like to take the receipt with you?" },
+                { word: "Einkaufswagen", gender: "der", translation: "shopping cart", example: "Für den Einkaufswagen braucht man eine Münze.", exampleEN: "You need a coin for the shopping cart." },
+                { word: "Tüte", gender: "die", translation: "plastic/paper bag", example: "Brauchen Sie eine Papiertüte?", exampleEN: "Do you need a paper bag?" }
+            ],
+            phrases: [
+                { de: "Wo finde ich frische Milch?", en: "Where do I find fresh milk?" },
+                { de: "Zahlen Sie bar oder mit Karte?", en: "Are you paying cash or by card?" },
+                { de: "Das macht zusammen 18 Euro 50.", en: "That comes to 18 euros 50 in total." },
+                { de: "Haben Sie eine Kundenkarte?", en: "Do you have a store loyalty card?" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_se_1",
+                title: "Der Einkauf im Supermarkt",
+                titleEN: "Shopping at the Supermarket",
+                script: "Entschuldigung, wo finde ich die frische Milch? - Im Gang vier auf der rechten Seite, direkt neben dem Käse. - Vielen Dank! Gibt es heute auch Äpfel im Angebot? - Ja, die roten Äpfel kosten nur ein Euro fünfzig pro Kilo.",
+                translation: "Excuse me, where do I find the fresh milk? - In aisle four on the right side, directly next to the cheese. - Thank you very much! Are apples on offer today as well? - Yes, the red apples cost only 1 euro 50 per kilo.",
+                vocabSupport: [
+                    { word: "die Milch", translation: "milk" },
+                    { word: "der Gang", translation: "aisle" },
+                    { word: "das Angebot", translation: "offer / deal" }
+                ],
+                fillBlank: {
+                    sentence: "Die frische Milch steht im Gang _____.",
+                    target: "vier",
+                    options: ["vier", "zwei", "zehn"]
+                },
+                role: {
+                    speaker1: "Entschuldigung, wo finde ich die frische Milch?",
+                    options: ["Im Gang vier auf der rechten Seite.", "Ich gehe morgen ins Kino.", "Das Flugzeug fliegt um 9 Uhr."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Die roten Äpfel kosten heute 1,50 Euro pro Kilo.",
+                    correct: true,
+                    explanation: "Richtig: Der Verkäufer sagt: 'die roten Äpfel kosten nur ein Euro fünfzig pro Kilo.'"
+                }
+            },
+            {
+                id: "hoer_se_2",
+                title: "An der Supermarktkasse",
+                titleEN: "At the Supermarket Checkout",
+                script: "Guten Tag. Haben Sie eine Kundenkarte? - Nein, habe ich nicht. - Das macht zusammen 24 Euro 80. Zahlen Sie bar oder mit Karte? - Mit Karte, bitte. Kann ich kontaktlos bezahlen? - Ja, legen Sie die Karte einfach auf das Gerät. Brauchen Sie eine Tüte? - Nein danke, ich habe einen Rucksack.",
+                translation: "Good day. Do you have a loyalty card? - No, I don't. - That comes to 24 euros 80 in total. Are you paying cash or by card? - By card, please. Can I pay contactless? - Yes, just place the card on the device. Do you need a bag? - No thanks, I have a backpack.",
+                vocabSupport: [
+                    { word: "die Kundenkarte", translation: "loyalty card" },
+                    { word: "kontaktlos", translation: "contactless" },
+                    { word: "die Tüte", translation: "bag" }
+                ],
+                fillBlank: {
+                    sentence: "Das macht zusammen 24 Euro _____.",
+                    target: "80",
+                    options: ["80", "50", "20"]
+                },
+                role: {
+                    speaker1: "Zahlen Sie heute bar oder mit Karte?",
+                    options: ["Mit Karte, bitte. Kann ich kontaktlos bezahlen?", "Ich wohne in der Bergstraße.", "Das Wetter ist sehr schön."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Kunde nimmt eine Papiertüte für den Einkauf.",
+                    correct: false,
+                    explanation: "Falsch: Der Kunde sagt: 'Nein danke, ich habe einen Rucksack.'"
+                }
+            }
+        ]
+    },
+    br: {
+        title: "Bahnhof & Reisen",
+        titleEN: "Train Station & Travel",
+        emoji: "🚆",
+        warmup: {
+            vocab: [
+                { word: "Fahrplan", gender: "der", translation: "timetable", example: "Der Fahrplan steht an der großen Anzeigetafel.", exampleEN: "The timetable is on the big display board." },
+                { word: "Gleis", gender: "das", translation: "platform / track", example: "Der ICE nach Berlin fährt von Gleis 7 ab.", exampleEN: "The ICE to Berlin departs from platform 7." },
+                { word: "Verspätung", gender: "die", translation: "delay", example: "Der Zug hat leider 15 Minuten Verspätung.", exampleEN: "Unfortunately the train has a 15-minute delay." },
+                { word: "Sitzplatzreservierung", gender: "die", translation: "seat reservation", example: "Ich habe eine Sitzplatzreservierung im Wagen 4.", exampleEN: "I have a seat reservation in coach 4." },
+                { word: "Umstieg", gender: "der", translation: "transfer / connection", example: "Der Umstieg in Frankfurt dauert zehn Minuten.", exampleEN: "The connection in Frankfurt takes ten minutes." }
+            ],
+            phrases: [
+                { de: "Auf welchem Gleis fährt der Zug ab?", en: "Which platform does the train depart from?" },
+                { de: "Hat der Zug nach Köln Verspätung?", en: "Is the train to Cologne delayed?" },
+                { de: "Einmal Hin- und Rückfahrt nach Hamburg, bitte.", en: "One round-trip ticket to Hamburg, please." },
+                { de: "Muss ich unterwegs umsteigen?", en: "Do I have to change trains on the way?" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_br_1",
+                title: "Am Fahrkartenschalter",
+                titleEN: "At the Ticket Counter",
+                script: "Guten Tag. Ich möchte eine Fahrkarte nach München für morgen früh. - Möchten Sie einfache Fahrt oder Hin- und Rückfahrt? - Hin- und Rückfahrt, bitte. Muss ich umsteigen? - Nein, das ist ein Direktzug ab Gleis 5. Er fährt um 7:15 Uhr ab. - Sehr gut, bitte mit Sitzplatz am Fenster.",
+                translation: "Good day. I would like a ticket to Munich for tomorrow morning. - Would you like a one-way or round-trip ticket? - Round-trip, please. Do I have to change trains? - No, that's a direct train from platform 5. It departs at 7:15 AM. - Very good, please with a window seat.",
+                vocabSupport: [
+                    { word: "die Fahrkarte", translation: "ticket" },
+                    { word: "die Hin- und Rückfahrt", translation: "round-trip" },
+                    { word: "der Direktzug", translation: "direct train" }
+                ],
+                fillBlank: {
+                    sentence: "Das ist ein Direktzug ab Gleis _____.",
+                    target: "5",
+                    options: ["5", "12", "2"]
+                },
+                role: {
+                    speaker1: "Muss ich auf der Fahrt nach München umsteigen?",
+                    options: ["Nein, das ist ein Direktzug ab Gleis 5.", "Ja, die Suppe schmeckt sehr gut.", "Der Laden öffnet um 9 Uhr."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Zug nach München fährt morgen um 7:15 Uhr ab.",
+                    correct: true,
+                    explanation: "Richtig: Die Bahnangestellte sagt: 'Er fährt um 7:15 Uhr ab.'"
+                }
+            },
+            {
+                id: "hoer_br_2",
+                title: "Gleisdurchsage am Bahnhof",
+                titleEN: "Platform Announcement",
+                script: "Achtung an Gleis 3: Der Regionalexpress nach Stuttgart, planmäßige Abfahrt 14:20 Uhr, fällt heute wegen einer technischen Störung aus. Fahrgäste nach Stuttgart nutzen bitte den Intercity um 14:45 Uhr von Gleis 8. Wir bitten um Entschuldigung.",
+                translation: "Attention on platform 3: The regional express to Stuttgart, scheduled departure 2:20 PM, is cancelled today due to a technical fault. Passengers to Stuttgart please use the Intercity at 2:45 PM from platform 8. We apologize.",
+                vocabSupport: [
+                    { word: "die Durchsage", translation: "announcement" },
+                    { word: "ausfallen", translation: "to be cancelled" },
+                    { word: "die Störung", translation: "technical fault" }
+                ],
+                fillBlank: {
+                    sentence: "Der Regionalexpress nach Stuttgart fällt wegen einer technischen _____ aus.",
+                    target: "Störung",
+                    options: ["Störung", "Pause", "Feier"]
+                },
+                role: {
+                    speaker1: "Fährt der Regionalexpress nach Stuttgart heute von Gleis 3?",
+                    options: ["Nein, er fällt heute wegen einer technischen Störung aus.", "Ja, der Salat kostet vier Euro.", "Nein, mein Name ist Thomas."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Fahrgäste nach Stuttgart können den Intercity um 14:45 Uhr von Gleis 8 nehmen.",
+                    correct: true,
+                    explanation: "Richtig: In der Durchsage heißt es: 'Fahrgäste nach Stuttgart nutzen bitte den Intercity um 14:45 Uhr von Gleis 8.'"
+                }
+            }
+        ]
+    },
+    rc: {
+        title: "Restaurant & Café",
+        titleEN: "Restaurant & Café",
+        emoji: "🍕",
+        warmup: {
+            vocab: [
+                { word: "Speisekarte", gender: "die", translation: "menu", example: "Bringen Sie uns bitte die Speisekarte?", exampleEN: "Could you please bring us the menu?" },
+                { word: "Tagesgericht", gender: "das", translation: "daily special", example: "Das Tagesgericht heute ist Fisch mit Kartoffeln.", exampleEN: "Today's daily special is fish with potatoes." },
+                { word: "Rechnung", gender: "die", translation: "bill / check", example: "Wir möchten bitte bezahlen und die Rechnung haben.", exampleEN: "We would like to pay and get the bill, please." },
+                { word: "Trinkgeld", gender: "das", translation: "tip", example: "Der Kellner bekommt zwei Euro Trinkgeld.", exampleEN: "The waiter gets two euros tip." },
+                { word: "Reservierung", gender: "die", translation: "reservation", example: "Ich habe eine Reservierung für zwei Personen um 19 Uhr.", exampleEN: "I have a reservation for two people at 7 PM." }
+            ],
+            phrases: [
+                { de: "Haben Sie noch einen Tisch für zwei Personen frei?", en: "Do you still have a table free for two people?" },
+                { de: "Ich hätte gerne ein Mineralwasser ohne Kohlensäure.", en: "I would like a still mineral water." },
+                { de: "Wir möchten gerne bezahlen.", en: "We would like to pay, please." },
+                { de: "Zusammen oder getrennt?", en: "Together or separately?" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_rc_1",
+                title: "Bestellung im Restaurant",
+                titleEN: "Ordering at the Restaurant",
+                script: "Guten Abend! Haben Sie schon gewählt? - Ja, als Vorspeise nehme ich eine Tomatensuppe. Und als Hauptgericht das Schnitzel mit Pommes. - Sehr gerne. Und was möchten Sie trinken? - Ein großes Mineralwasser ohne Kohlensäure, bitte. - Kommt sofort!",
+                translation: "Good evening! Have you decided? - Yes, for starter I'll take a tomato soup. And for main course the schnitzel with fries. - Very gladly. And what would you like to drink? - A large still mineral water, please. - Coming right up!",
+                vocabSupport: [
+                    { word: "die Vorspeise", translation: "starter / appetizer" },
+                    { word: "das Hauptgericht", translation: "main course" },
+                    { word: "ohne Kohlensäure", translation: "still (water)" }
+                ],
+                fillBlank: {
+                    sentence: "Als Vorspeise nehme ich eine _____.",
+                    target: "Tomatensuppe",
+                    options: ["Tomatensuppe", "Pizza", "Eiskugel"]
+                },
+                role: {
+                    speaker1: "Was möchten Sie heute Abend trinken?",
+                    options: ["Ein großes Mineralwasser ohne Kohlensäure, bitte.", "Ich möchte den Bus nehmen.", "Mein Bleistift ist rot."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Gast bestellt ein Schnitzel mit Pommes als Hauptgericht.",
+                    correct: true,
+                    explanation: "Richtig: Der Gast sagt: 'Und als Hauptgericht das Schnitzel mit Pommes.'"
+                }
+            },
+            {
+                id: "hoer_rc_2",
+                title: "Bezahlen beim Kellner",
+                titleEN: "Paying the Waiter",
+                script: "Entschuldigung, wir möchten bitte bezahlen! - Ja gerne. Zusammen oder getrennt? - Getrennt, bitte. Ich hatte die Gemüsesuppe und den Apfelsaft. - Das macht 12 Euro 50. - Hier sind 14 Euro. Der Rest ist Trinkgeld! - Vielen Dank, schönen Abend noch!",
+                translation: "Excuse me, we would like to pay, please! - Yes, gladly. Together or separately? - Separately, please. I had the vegetable soup and apple juice. - That makes 12 euros 50. - Here is 14 euros. Keep the change! - Thank you very much, have a nice evening!",
+                vocabSupport: [
+                    { word: "getrennt", translation: "separately" },
+                    { word: "das Trinkgeld", translation: "tip" },
+                    { word: "der Rest", translation: "the rest / change" }
+                ],
+                fillBlank: {
+                    sentence: "Das macht für die Gemüsesuppe und den Saft 12 Euro _____.",
+                    target: "50",
+                    options: ["50", "90", "10"]
+                },
+                role: {
+                    speaker1: "Möchten Sie zusammen oder getrennt bezahlen?",
+                    options: ["Getrennt, bitte. Ich hatte die Gemüsesuppe.", "Ich wohne im zweiten Stock.", "Der Regen ist kalt."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Gast gibt dem Kellner 1,50 Euro Trinkgeld.",
+                    correct: true,
+                    explanation: "Richtig: Die Rechnung ist 12,50 Euro, der Gast gibt 14 Euro und sagt: 'Der Rest ist Trinkgeld!'"
+                }
+            }
+        ]
+    },
+    ag: {
+        title: "Arzt & Gesundheit",
+        titleEN: "Doctor & Health",
+        emoji: "🩺",
+        warmup: {
+            vocab: [
+                { word: "Arztpraxis", gender: "die", translation: "doctor's surgery / clinic", example: "Die Arztpraxis hat am Mittwochnachmittag geschlossen.", exampleEN: "The clinic is closed on Wednesday afternoon." },
+                { word: "Krankenkassenkarte", gender: "die", translation: "health insurance card", example: "Geben Sie mir bitte Ihre Krankenkassenkarte.", exampleEN: "Please give me your health insurance card." },
+                { word: "Fieber", gender: "das", translation: "fever", example: "Das Kind hat seit gestern hohes Fieber.", exampleEN: "The child has had a high fever since yesterday." },
+                { word: "Rezept", gender: "das", translation: "prescription", example: "Der Arzt schreibt ein Rezept für Schmerzmittel.", exampleEN: "The doctor writes a prescription for painkillers." },
+                { word: "Krankmeldung", gender: "die", translation: "sick note", example: "Ich brauche eine Krankmeldung für meinen Arbeitgeber.", exampleEN: "I need a sick note for my employer." }
+            ],
+            phrases: [
+                { de: "Ich habe seit drei Tagen starke Kopfschmerzen.", en: "I have had a severe headache for three days." },
+                { de: "Nehmen Sie die Tabletten morgens und abends.", en: "Take the tablets morning and evening." },
+                { de: "Ich brauche ein Attest für die Arbeit.", en: "I need a doctor's certificate for work." },
+                { de: "Gute Besserung!", en: "Get well soon!" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_ag_1",
+                title: "Terminabsprache beim Hausarzt",
+                titleEN: "Appointment with the GP",
+                script: "Praxis Dr. Wagner, Guten Tag. - Guten Tag, mein Name ist Becker. Ich habe starke Halsschmerzen und Fieber. Kann ich heute noch vorbeikommen? - Ja, kommen Sie heute um 11:30 Uhr. Bringen Sie bitte Ihre Krankenkassenkarte mit. - Vielen Dank, bis später.",
+                translation: "Dr. Wagner's Surgery, good day. - Good day, my name is Becker. I have a severe sore throat and fever. Can I come by today? - Yes, come today at 11:30 AM. Please bring your health insurance card with you. - Thank you very much, see you later.",
+                vocabSupport: [
+                    { word: "die Halsschmerzen", translation: "sore throat" },
+                    { word: "das Fieber", translation: "fever" },
+                    { word: "die Krankenkassenkarte", translation: "health insurance card" }
+                ],
+                fillBlank: {
+                    sentence: "Kommen Sie heute bitte um 11:30 _____ in die Praxis.",
+                    target: "Uhr",
+                    options: ["Uhr", "Tage", "Wochen"]
+                },
+                role: {
+                    speaker1: "Ich habe starke Halsschmerzen und Fieber. Kann ich vorbeikommen?",
+                    options: ["Ja, kommen Sie heute um 11:30 Uhr.", "Nein, mein Auto ist blau.", "Ich trinke gerne Orangensaft."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Herr Becker muss seine Krankenkassenkarte zur Praxis mitbringen.",
+                    correct: true,
+                    explanation: "Richtig: Die Arzthelferin sagt: 'Bringen Sie bitte Ihre Krankenkassenkarte mit.'"
+                }
+            },
+            {
+                id: "hoer_ag_2",
+                title: "Rezept in der Apotheke einlösen",
+                titleEN: "Redeeming a Prescription at the Pharmacy",
+                script: "Guten Tag, wie kann ich Ihnen helfen? - Guten Tag, ich möchte dieses Rezept vom Arzt einlösen. - Sehr gerne. Nehmen Sie diese Tabletten zweimal täglich nach dem Essen mit etwas Wasser. Das Hustensaft-Flaschen kostet drei Euro Zuzahlung. - Alles klar, danke sehr!",
+                translation: "Good day, how can I help you? - Good day, I would like to redeem this prescription from the doctor. - Very gladly. Take these tablets twice daily after meals with some water. The cough syrup bottle costs a 3 euro co-payment. - All clear, thank you very much!",
+                vocabSupport: [
+                    { word: "das Rezept", translation: "prescription" },
+                    { word: "die Tabletten", translation: "tablets / pills" },
+                    { word: "die Zuzahlung", translation: "co-payment" }
+                ],
+                fillBlank: {
+                    sentence: "Nehmen Sie diese Tabletten _____ täglich nach dem Essen.",
+                    target: "zweimal",
+                    options: ["zweimal", "zehnmal", "nullmal"]
+                },
+                role: {
+                    speaker1: "Wie oft soll ich diese Tabletten einnehmen?",
+                    options: ["Nehmen Sie sie zweimal täglich nach dem Essen.", "Der Bahnhof liegt rechts.", "Die Schuhe passen gut."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Die Zuzahlung für den Hustensaft beträgt 10 Euro.",
+                    correct: false,
+                    explanation: "Falsch: Die Apothekerin sagt: 'Das Hustensaft-Flaschen kostet drei Euro Zuzahlung.'"
+                }
+            }
+        ]
+    },
+    hu: {
+        title: "Hotel & Unterkunft",
+        titleEN: "Hotel & Accommodation",
+        emoji: "🏨",
+        warmup: {
+            vocab: [
+                { word: "Doppelzimmer", gender: "das", translation: "double room", example: "Wir haben ein Doppelzimmer mit Balkon gebucht.", exampleEN: "We booked a double room with a balcony." },
+                { word: "Einzelzimmer", gender: "das", translation: "single room", example: "Ein Einzelzimmer kostet 65 Euro pro Nacht.", exampleEN: "A single room costs 65 euros per night." },
+                { word: "Schlüsselkarte", gender: "die", translation: "keycard", example: "Hier ist Ihre Schlüsselkarte für Zimmer 304.", exampleEN: "Here is your keycard for room 304." },
+                { word: "Frühstücksbuffet", gender: "das", translation: "breakfast buffet", example: "Das Frühstücksbuffet ist von 7 bis 10 Uhr geöffnet.", exampleEN: "The breakfast buffet is open from 7 to 10 AM." },
+                { word: "Aufzug", gender: "der", translation: "elevator / lift", example: "Der Aufzug befindet sich direkt hinter der Rezeption.", exampleEN: "The elevator is directly behind reception." }
+            ],
+            phrases: [
+                { de: "Ich habe ein Zimmer auf den Namen Weber reserviert.", en: "I reserved a room under the name Weber." },
+                { de: "Ist das Frühstück im Preis enthalten?", en: "Is breakfast included in the price?" },
+                { de: "Wie lautet das Passwort für das WLAN?", en: "What is the WiFi password?" },
+                { de: "Um wie viel Uhr ist der Check-out?", en: "What time is check-out?" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_hu_1",
+                title: "Einchecken im Hotel",
+                titleEN: "Hotel Check-in",
+                script: "Guten Abend, willkommen im Hotel Lindenhof. - Guten Abend, ich habe ein Doppelzimmer auf den Namen Schneider gebucht. - Ja genau, für zwei Nächte. Füllen Sie bitte noch das Anmeldeformular aus. Hier ist Ihre Schlüsselkarte. Ihr Zimmer liegt im dritten Stock, Zimmer 312. Der Aufzug ist auf der linken Seite.",
+                translation: "Good evening, welcome to Hotel Lindenhof. - Good evening, I booked a double room under the name Schneider. - Yes exactly, for two nights. Please fill out the registration form. Here is your keycard. Your room is on the 3rd floor, room 312. The elevator is on the left.",
+                vocabSupport: [
+                    { word: "das Doppelzimmer", translation: "double room" },
+                    { word: "das Anmeldeformular", translation: "registration form" },
+                    { word: "der Aufzug", translation: "elevator" }
+                ],
+                fillBlank: {
+                    sentence: "Ihr Zimmer liegt im dritten Stock, Zimmer _____.",
+                    target: "312",
+                    options: ["312", "101", "500"]
+                },
+                role: {
+                    speaker1: "Wo befindet sich denn der Aufzug zum dritten Stock?",
+                    options: ["Der Aufzug ist auf der linken Seite.", "Ich esse gerne Suppe.", "Das Fahrrad ist neu."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Herr Schneider bleibt drei Wochen im Hotel.",
+                    correct: false,
+                    explanation: "Falsch: Der Rezeptionist sagt: 'Ja genau, für zwei Nächte.'"
+                }
+            },
+            {
+                id: "hoer_hu_2",
+                title: "Fragen an der Rezeption",
+                titleEN: "Asking Questions at Reception",
+                script: "Entschuldigung, ab wann gibt es morgen Frühstück? - Das Frühstücksbuffet steht Ihnen von 6:30 bis 10:30 Uhr im Erdgeschoss bereit. - Wunderbar. Und wie lautet der WLAN-Code? - Der Code ist 'Lindenhof2026' – alles kleingeschrieben.",
+                translation: "Excuse me, from what time is breakfast available tomorrow? - The breakfast buffet is ready for you from 6:30 to 10:30 AM on the ground floor. - Wonderful. And what is the WiFi code? - The code is 'lindenhof2026' – all lower case.",
+                vocabSupport: [
+                    { word: "das Erdgeschoss", translation: "ground floor" },
+                    { word: "der WLAN-Code", translation: "WiFi code" },
+                    { word: "kleingeschrieben", translation: "lower case" }
+                ],
+                fillBlank: {
+                    sentence: "Das Frühstücksbuffet gibt es im _____.",
+                    target: "Erdgeschoss",
+                    options: ["Erdgeschoss", "Dachgeschoss", "Garten"]
+                },
+                role: {
+                    speaker1: "Ab wann gibt es morgen früh das Frühstücksbuffet?",
+                    options: ["Von 6:30 bis 10:30 Uhr im Erdgeschoss.", "Der Zug ist schon abgefahren.", "Ich kauf mir eine Jacke."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Das Frühstücksbuffet ist morgen bis 10:30 Uhr geöffnet.",
+                    correct: true,
+                    explanation: "Richtig: Der Rezeptionist sagt: 'von 6:30 bis 10:30 Uhr im Erdgeschoss.'"
+                }
+            }
+        ]
+    },
+    ab: {
+        title: "Arbeitsplatz & Büro",
+        titleEN: "Workplace & Office",
+        emoji: "💼",
+        warmup: {
+            vocab: [
+                { word: "Besprechung", gender: "die", translation: "meeting", example: "Die Besprechung beginnt um 10 Uhr im Konferenzraum.", exampleEN: "The meeting begins at 10 AM in the conference room." },
+                { word: "Kollege", gender: "der", translation: "colleague (male)", example: "Mein Kollege Herr Mayer hilft mir beim Projekt.", exampleEN: "My colleague Mr. Mayer is helping me with the project." },
+                { word: "Mittagspause", gender: "die", translation: "lunch break", example: "Wir machen um 12:30 Uhr Mittagspause.", exampleEN: "We are having a lunch break at 12:30 PM." },
+                { word: "Dienstplan", gender: "der", translation: "duty roster / shift schedule", example: "Der neue Dienstplan hängt am Schwarzem Brett.", exampleEN: "The new shift schedule is hanging on the notice board." },
+                { word: "Urlaubsantrag", gender: "der", translation: "leave application", example: "Ich muss den Urlaubsantrag beim Chef einreichen.", exampleEN: "I must submit the leave application to the boss." }
+            ],
+            phrases: [
+                { de: "Ich kann heute leider nicht zur Arbeit kommen.", en: "Unfortunately I cannot come to work today." },
+                { de: "Können Sie mir die Unterlagen per E-Mail schicken?", en: "Could you send me the documents by email?" },
+                { de: "Der Termin wird auf Freitag verschoben.", en: "The appointment is postponed to Friday." },
+                { de: "Schönes Wochenende!", en: "Have a nice weekend!" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_ab_1",
+                title: "Krankmeldung beim Vorgesetzten",
+                titleEN: "Calling in Sick to the Supervisor",
+                script: "Hallo Frau Hoffmann, hier spricht Thomas Schulz. Ich bin leider krank und kann heute nicht ins Büro kommen. - Oh, das tut mir leid Herr Schulz. Waren Sie schon beim Arzt? - Ja, ich schicke Ihnen die Attest-Krankmeldung heute Nachmittag per E-Mail. - Gut, danke für die Info und gute Besserung!",
+                translation: "Hello Ms. Hoffmann, this is Thomas Schulz speaking. Unfortunately I am sick and cannot come to the office today. - Oh, I'm sorry Mr. Schulz. Have you been to the doctor? - Yes, I will send you the doctor's sick note this afternoon by email. - Good, thanks for letting us know and get well soon!",
+                vocabSupport: [
+                    { word: "krankmelden", translation: "to call in sick" },
+                    { word: "das Attest", translation: "medical certificate" },
+                    { word: "die Info", translation: "info / notice" }
+                ],
+                fillBlank: {
+                    sentence: "Ich schicke Ihnen die Krankmeldung heute Nachmittag per _____.",
+                    target: "E-Mail",
+                    options: ["E-Mail", "Postkarte", "Fax"]
+                },
+                role: {
+                    speaker1: "Guten Morgen Frau Hoffmann, ich bin leider krank.",
+                    options: ["Das tut mir leid. Schicken Sie bitte die Krankmeldung.", "Ich esse jetzt einen Apfel.", "Die Bahn kommt um drei Uhr."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Herr Schulz schickt seine Krankmeldung per E-Mail.",
+                    correct: true,
+                    explanation: "Richtig: Er sagt: 'Ich schicke Ihnen die Attest-Krankmeldung heute Nachmittag per E-Mail.'"
+                }
+            },
+            {
+                id: "hoer_ab_2",
+                title: "Terminverschiebung im Büro",
+                titleEN: "Rescheduling a Meeting in the Office",
+                script: "Hallo Jan, hast du kurz Zeit? Es geht um die Besprechung am Donnerstag. - Ja, worum geht es? - Frau Neumann ist am Donnerstag auf Geschäftsreise. Können wir den Termin auf Freitag um 14 Uhr verschieben? - Freitag um 14 Uhr passt mir gut. Ich trage das in den Kalender ein.",
+                translation: "Hello Jan, do you have a moment? It's about the meeting on Thursday. - Yes, what is it about? - Ms. Neumann is on a business trip on Thursday. Can we postpone the meeting to Friday at 2 PM? - Friday at 2 PM suits me well. I'll put that in the calendar.",
+                vocabSupport: [
+                    { word: "die Besprechung", translation: "meeting" },
+                    { word: "die Geschäftsreise", translation: "business trip" },
+                    { word: "verschieben", translation: "to postpone / reschedule" }
+                ],
+                fillBlank: {
+                    sentence: "Können wir den Termin auf Freitag um _____ Uhr verschieben?",
+                    target: "14",
+                    options: ["14", "9", "18"]
+                },
+                role: {
+                    speaker1: "Können wir die Besprechung auf Freitag um 14 Uhr verschieben?",
+                    options: ["Freitag um 14 Uhr passt mir gut.", "Nein, meine Hose ist blau.", "Das Hotel ist sehr alt."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Die Besprechung wird auf Freitag um 14 Uhr verschoben.",
+                    correct: true,
+                    explanation: "Richtig: Jan sagt: 'Freitag um 14 Uhr passt mir gut. Ich trage das in den Kalender ein.'"
+                }
+            }
+        ]
+    },
+    fz: {
+        title: "Flughafen & Zoll",
+        titleEN: "Airport & Customs",
+        emoji: "✈️",
+        warmup: {
+            vocab: [
+                { word: "Bordkarte", gender: "die", translation: "boarding pass", example: "Zeigen Sie mir bitte Ihre Bordkarte und Ihren Pass.", exampleEN: "Please show me your boarding pass and passport." },
+                { word: "Gepäckabgabe", gender: "die", translation: "baggage drop-off", example: "Die Gepäckabgabe für den Flug nach Madrid ist an Schalter 12.", exampleEN: "Baggage drop-off for the Madrid flight is at counter 12." },
+                { word: "Handgepäck", gender: "das", translation: "carry-on luggage", example: "Sie dürfen ein Stück Handgepäck mit ins Flugzeug nehmen.", exampleEN: "You may take one piece of hand luggage onto the plane." },
+                { word: "Sicherheitskontrolle", gender: "die", translation: "security check", example: "An der Sicherheitskontrolle müssen Sie Gürtel und Jacke ausziehen.", exampleEN: "At security you must take off your belt and jacket." },
+                { word: "Abfluggate", gender: "das", translation: "departure gate", example: "Das Abfluggate B24 befindet sich im zweiten Stock.", exampleEN: "Departure gate B24 is located on the second floor." }
+            ],
+            phrases: [
+                { de: "Wo ist die Gepäckabgabe für Lufthansa?", en: "Where is the baggage drop-off for Lufthansa?" },
+                { de: "Der Flug hat 30 Minuten Verspätung.", en: "The flight has a 30-minute delay." },
+                { de: "Bitte legen Sie alle elektronischen Geräte in die Schale.", en: "Please place all electronic devices in the tray." },
+                { de: "Guten Flug!", en: "Have a good flight!" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_fz_1",
+                title: "Gepäckabgabe am Schalter",
+                titleEN: "Luggage Drop-off at the Counter",
+                script: "Guten Tag. Ihren Reisepass bitte. - Guten Tag, hier ist mein Pass. - Stellen Sie bitte den Koffer auf die Waage. ... Der Koffer wiegt 19 Kilo, das ist perfekt. Haben Sie Flüssigkeiten im Handgepäck? - Nein, nur ein Buch und mein Tablet. - Gut. Hier ist Ihre Bordkarte. Boarding ist um 16:45 Uhr an Gate B18.",
+                translation: "Good day. Your passport please. - Good day, here is my passport. - Please place the suitcase on the scales. ... The suitcase weighs 19 kg, that's perfect. Do you have liquids in your hand luggage? - No, only a book and my tablet. - Good. Here is your boarding pass. Boarding is at 4:45 PM at Gate B18.",
+                vocabSupport: [
+                    { word: "die Waage", translation: "scales" },
+                    { word: "die Flüssigkeiten", translation: "liquids" },
+                    { word: "das Boarding", translation: "boarding" }
+                ],
+                fillBlank: {
+                    sentence: "Boarding ist um 16:45 Uhr an Gate _____.",
+                    target: "B18",
+                    options: ["B18", "A5", "C30"]
+                },
+                role: {
+                    speaker1: "Haben Sie Flüssigkeiten im Handgepäck dabei?",
+                    options: ["Nein, nur ein Buch und mein Tablet.", "Ich trinke morgens Kaffee.", "Der Koffer ist gelb."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Koffer des Passagiers wiegt 19 Kilo.",
+                    correct: true,
+                    explanation: "Richtig: Die Schalterkraft sagt: 'Der Koffer wiegt 19 Kilo, das ist perfekt.'"
+                }
+            },
+            {
+                id: "hoer_fz_2",
+                title: "Flughafendurchsage am Gate",
+                titleEN: "Airport Gate Announcement",
+                script: "Letzter Aufruf für alle noch fehlenden Passagiere des Fluges LH 450 nach New York. Bitte kommen Sie umgehend zu Gate C12. Das Boarding wird in fünf Minuten geschlossen. Bitte halten Sie Ihren Pass und Ihre Bordkarte bereit.",
+                translation: "Final call for all remaining passengers of flight LH 450 to New York. Please proceed immediately to Gate C12. Boarding will close in five minutes. Please have your passport and boarding pass ready.",
+                vocabSupport: [
+                    { word: "der Aufruf", translation: "call / announcement" },
+                    { word: "umgehend", translation: "immediately" },
+                    { word: "schließen", translation: "to close" }
+                ],
+                fillBlank: {
+                    sentence: "Letzter Aufruf für den Flug LH 450 nach _____.",
+                    target: "New York",
+                    options: ["New York", "Berlin", "Tokio"]
+                },
+                role: {
+                    speaker1: "Wohin geht der Flug LH 450?",
+                    options: ["Nach New York. Bitte kommen Sie zu Gate C12.", "Nach München mit dem Zug.", "Der Flug ist gestern angekommen."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Das Boarding schließt in fünf Minuten.",
+                    correct: true,
+                    explanation: "Richtig: In der Durchsage heißt es: 'Das Boarding wird in fünf Minuten geschlossen.'"
+                }
+            }
+        ]
+    },
+    pp: {
+        title: "Post & Paketdienst",
+        titleEN: "Post Office & Parcel Service",
+        emoji: "✉️",
+        warmup: {
+            vocab: [
+                { word: "Paket", gender: "das", translation: "parcel / package", example: "Ich möchte dieses Paket nach Spanien schicken.", exampleEN: "I would like to send this parcel to Spain." },
+                { word: "Briefmarke", gender: "die", translation: "stamp", example: "Ich brauche fünf Briefmarken für Standardbriefe.", exampleEN: "I need five stamps for standard letters." },
+                { word: "Einschreiben", gender: "das", translation: "registered mail", example: "Schicken Sie den Vertrag bitte als Einschreiben.", exampleEN: "Please send the contract as registered mail." },
+                { word: "Absender", gender: "der", translation: "sender", example: "Vergessen Sie nicht, den Absender oben links einzutragen.", exampleEN: "Don't forget to enter the sender in the top left." },
+                { word: "Abholkarte", gender: "die", translation: "pickup notification card", example: "Der Briefträger hat eine Abholkarte im Briefkasten hinterlassen.", exampleEN: "The mail carrier left a pickup card in the mailbox." }
+            ],
+            phrases: [
+                { de: "Wie viel kostet das Porto für diesen Brief?", en: "How much is the postage for this letter?" },
+                { de: "Ich möchte ein Paket abholen.", en: "I would like to pick up a package." },
+                { de: "Bitte unterschreiben Sie hier auf dem Display.", en: "Please sign here on the display." },
+                { de: "Wie lange dauert der Versand?", en: "How long does shipping take?" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_pp_1",
+                title: "Ein Paket auf der Post aufgeben",
+                titleEN: "Mailing a Package at the Post Office",
+                script: "Guten Tag. Ich möchte dieses Paket nach Italien verschicken. - Guten Tag. Bitte legen Sie es auf die Waage. Es wiegt 2,4 Kilo. Möchten Sie Standardversand oder Express? - Standardversand reicht aus. Wie lange dauert das? - Ca. drei bis vier Werktage. Das macht 8 Euro 90.",
+                translation: "Good day. I would like to send this package to Italy. - Good day. Please place it on the scales. It weighs 2.4 kg. Would you like standard shipping or express? - Standard shipping is sufficient. How long does that take? - Approx. three to four business days. That comes to 8 euros 90.",
+                vocabSupport: [
+                    { word: "verschicken", translation: "to send / mail" },
+                    { word: "der Werktag", translation: "business day / workday" },
+                    { word: "das Porto", translation: "postage" }
+                ],
+                fillBlank: {
+                    sentence: "Der Standardversand dauert ca. drei bis vier _____.",
+                    target: "Werktage",
+                    options: ["Werktage", "Monate", "Stunden"]
+                },
+                role: {
+                    speaker1: "Wie lange dauert der Standardversand nach Italien?",
+                    options: ["Ca. drei bis vier Werktage.", "Das Brot kostet zwei Euro.", "Ich fahre mit dem Bus."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Versand des Pakets nach Italien kostet 8,90 Euro.",
+                    correct: true,
+                    explanation: "Richtig: Der Postmitarbeiter sagt: 'Das macht 8 Euro 90.'"
+                }
+            },
+            {
+                id: "hoer_pp_2",
+                title: "Ein Paket mit Abholkarte abholen",
+                titleEN: "Picking up a Parcel with Notification Card",
+                script: "Guten Tag, ich möchte ein Paket abholen. Ich hatte gestern diese Abholkarte im Briefkasten. - Guten Tag. Zeigen Sie mir bitte Ihren Lichtbildausweis. ... Danke Frau Graf. Bitte unterschreiben Sie hier auf dem kleinen Scanner. Hier ist Ihr Paket!",
+                translation: "Good day, I would like to pick up a package. I had this pickup card in my mailbox yesterday. - Good day. Please show me your photo ID. ... Thank you Ms. Graf. Please sign here on the small scanner. Here is your package!",
+                vocabSupport: [
+                    { word: "die Abholkarte", translation: "pickup notification card" },
+                    { word: "der Lichtbildausweis", translation: "photo ID" },
+                    { word: "unterschreiben", translation: "to sign" }
+                ],
+                fillBlank: {
+                    sentence: "Zeigen Sie mir bitte Ihren _____, Frau Graf.",
+                    target: "Lichtbildausweis",
+                    options: ["Lichtbildausweis", "Fahrschein", "Kassenzettel"]
+                },
+                role: {
+                    speaker1: "Ich möchte mein Paket mit der Abholkarte abholen.",
+                    options: ["Zeigen Sie mir bitte Ihren Lichtbildausweis.", "Ich kaufe drei Äpfel.", "Das Wetter ist regnerisch."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Frau Graf muss dem Postboten ihren Ausweis zeigen.",
+                    correct: true,
+                    explanation: "Richtig: Der Postmitarbeiter sagt: 'Zeigen Sie mir bitte Ihren Lichtbildausweis.'"
+                }
+            }
+        ]
+    },
+    tk: {
+        title: "Technik & Kundenservice",
+        titleEN: "Technology & Customer Support",
+        emoji: "📱",
+        warmup: {
+            vocab: [
+                { word: "Kundennummer", gender: "die", translation: "customer number", example: "Nennen Sie mir bitte Ihre Kundennummer.", exampleEN: "Please tell me your customer number." },
+                { word: "Internetverbindung", gender: "die", translation: "internet connection", example: "Die Internetverbindung ist seit heute Morgen weg.", exampleEN: "The internet connection has been gone since this morning." },
+                { word: "Garantie", gender: "die", translation: "warranty", example: "Auf die Kaffeemaschine haben Sie zwei Jahre Garantie.", exampleEN: "You have a two-year warranty on the coffee machine." },
+                { word: "Reparatur", gender: "die", translation: "repair", example: "Die Reparatur des Bildschirms kostet 80 Euro.", exampleEN: "The screen repair costs 80 euros." },
+                { word: "Kassenzettel", gender: "der", translation: "receipt", example: "Ohne Kassenzettel kann ich das Gerät nicht umtauschen.", exampleEN: "Without a receipt I cannot exchange the device." }
+            ],
+            phrases: [
+                { de: "Mein WLAN-Router blinkt rot.", en: "My WiFi router is flashing red." },
+                { de: "Ich möchte ein defektes Gerät umtauschen.", en: "I would like to exchange a defective device." },
+                { de: "Starten Sie den Router bitte neu.", en: "Please restart the router." },
+                { de: "Der Techniker ruft Sie morgen zurück.", en: "The technician will call you back tomorrow." }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_tk_1",
+                title: "Störung bei der Internet-Hotline",
+                titleEN: "Reporting an Internet Outage",
+                script: "Guten Tag, Kundenservice WebNetz. Mein Name ist König. - Guten Tag, hier ist Meier. Mein Internet funktioniert seit heute Morgen nicht mehr. Der Router blinkt rot. - Wie ist Ihre Kundennummer? - 88 43 12. - Danke. Schalten Sie den Router bitte kurz für 30 Sekunden aus und wieder ein. Ich überprüfe jetzt die Leitung.",
+                translation: "Good day, WebNetz customer service. My name is König. - Good day, this is Meier. My internet has not been working since this morning. The router is flashing red. - What is your customer number? - 88 43 12. - Thank you. Please switch the router off for 30 seconds and back on again. I am checking the line now.",
+                vocabSupport: [
+                    { word: "die Störung", translation: "outage / fault" },
+                    { word: "der Router", translation: "router" },
+                    { word: "ausschalten", translation: "to switch off" }
+                ],
+                fillBlank: {
+                    sentence: "Schalten Sie den Router bitte für _____ Sekunden aus.",
+                    target: "30",
+                    options: ["30", "100", "5"]
+                },
+                role: {
+                    speaker1: "Mein Internet funktioniert seit heute Morgen nicht mehr. Was soll ich tun?",
+                    options: ["Schalten Sie den Router bitte kurz für 30 Sekunden aus.", "Ich trinke Tee mit Zitrone.", "Der Bus hält an der Ecke."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Kunde gibt seine Kundennummer 88 43 12 durch.",
+                    correct: true,
+                    explanation: "Richtig: Auf die Frage antwortet Herr Meier: '88 43 12.'"
+                }
+            },
+            {
+                id: "hoer_tk_2",
+                title: "Reklamation im Elektronikfachgeschäft",
+                titleEN: "Returning an Item at the Electronics Store",
+                script: "Guten Tag, ich habe vor drei Tagen diese Kopfhörer gekauft, aber die rechte Seite funktioniert nicht. - Guten Tag. Haben Sie den Kassenzettel dabei? - Ja, hier ist die Quittung. - Gut, das fällt unter Garantie. Möchten Sie ein neues Paar Kopfhörer oder das Geld zurück? - Ich hätte gerne das Geld zurück, bitte.",
+                translation: "Good day, I bought these headphones three days ago, but the right side doesn't work. - Good day. Do you have the receipt with you? - Yes, here is the receipt. - Good, that falls under warranty. Would you like a new pair of headphones or your money back? - I would like the money back, please.",
+                vocabSupport: [
+                    { word: "die Reklamation", translation: "complaint / return" },
+                    { word: "die Quittung", translation: "receipt" },
+                    { word: "die Garantie", translation: "warranty" }
+                ],
+                fillBlank: {
+                    sentence: "Ich hätte gerne das _____ zurück, bitte.",
+                    target: "Geld",
+                    options: ["Geld", "Buch", "Fahrrad"]
+                },
+                role: {
+                    speaker1: "Möchten Sie für die defekten Kopfhörer ein neues Paar oder das Geld zurück?",
+                    options: ["Ich hätte gerne das Geld zurück, bitte.", "Ich fliege morgen nach Spanien.", "Das Haus ist grün."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Kunde wählt eine Erstattung des Kaufpreises (Geld zurück).",
+                    correct: true,
+                    explanation: "Richtig: Er sagt: 'Ich hätte gerne das Geld zurück, bitte.'"
+                }
+            }
+        ]
+    },
+    mt: {
+        title: "Mietwagen & Tankstelle",
+        titleEN: "Car Rental & Gas Station",
+        emoji: "🚗",
+        warmup: {
+            vocab: [
+                { word: "Führerschein", gender: "der", translation: "driver's license", example: "Zeigen Sie mir bitte Ihren Führerschein und Ihren Ausweis.", exampleEN: "Please show me your driver's license and ID." },
+                { word: "Mietwagen", gender: "der", translation: "rental car", example: "Ich möchte für das Wochenende einen Mietwagen buchen.", exampleEN: "I would like to book a rental car for the weekend." },
+                { word: "Vollkaskoversticherung", gender: "die", translation: "full comprehensive insurance", example: "Ist die Vollkaskoversicherung im Mietpreis enthalten?", exampleEN: "Is full comprehensive insurance included in the rental price?" },
+                { word: "Zapfsäule", gender: "die", translation: "fuel pump", example: "Ich habe an Zapfsäule 4 Super Benzin getankt.", exampleEN: "I filled up Super petrol at pump 4." },
+                { word: "Kaution", gender: "die", translation: "deposit", example: "Die Kaution von 200 Euro wird auf der Kreditkarte reserviert.", exampleEN: "The deposit of 200 euros is reserved on the credit card." }
+            ],
+            phrases: [
+                { de: "Ich möchte einen Kleinwagen für drei Tage mieten.", en: "I would like to rent a small car for three days." },
+                { de: "Der Tank ist aktuell voll.", en: "The fuel tank is currently full." },
+                { de: "Zahlen Sie bitte an Kasse 2.", en: "Please pay at checkout counter 2." },
+                { de: "Gute und sichere Fahrt!", en: "Have a good and safe trip!" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_mt_1",
+                title: "Ein Auto an der Mietwagenstation buchen",
+                titleEN: "Booking a Car at the Rental Desk",
+                script: "Guten Tag, Autovermietung DriveNow. - Guten Tag, ich brauche für das Wochenende einen Kleinwagen von Freitag bis Sonntag. Was kostet das? - Ein VW Polo kostet 79 Euro für das ganze Wochenende inklusive Vollkaskoversicherung. - Perfekt. Hier ist mein Führerschein und meine Kreditkarte. - Danke. Die Kaution beträgt 150 Euro.",
+                translation: "Good day, DriveNow Car Rental. - Good day, I need a small car for the weekend from Friday to Sunday. How much is that? - A VW Polo costs 79 euros for the whole weekend including comprehensive insurance. - Perfect. Here is my driver's license and credit card. - Thank you. The deposit is 150 euros.",
+                vocabSupport: [
+                    { word: "der Kleinwagen", translation: "small car" },
+                    { word: "die Kaution", translation: "deposit" },
+                    { word: "der Führerschein", translation: "driver's license" }
+                ],
+                fillBlank: {
+                    sentence: "Ein VW Polo kostet 79 Euro für das ganze _____.",
+                    target: "Wochenende",
+                    options: ["Wochenende", "Jahr", "Stunde"]
+                },
+                role: {
+                    speaker1: "Was kostet der Kleinwagen von Freitag bis Sonntag?",
+                    options: ["79 Euro für das ganze Wochenende inklusive Versicherung.", "Der Apfel kostet einen Euro.", "Ich lerne Deutsch."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Die Kaution für den Mietwagen beträgt 150 Euro.",
+                    correct: true,
+                    explanation: "Richtig: Die Angestellte sagt: 'Die Kaution beträgt 150 Euro.'"
+                }
+            },
+            {
+                id: "hoer_mt_2",
+                title: "Bezahlen an der Tankstelle",
+                titleEN: "Paying at the Gas Station",
+                script: "Guten Tag. Ich hatte Zapfsäule 3 – Super E10 und einen Kaffee zum Mitnehmen. - Guten Tag. Das Benzin macht 45 Euro 20 und der Kaffee zwei Euro fünfzig. Zusammen also 47 Euro 70. - Hier sind 50 Euro. - Und 2 Euro 30 zurück. Brauchen Sie eine Quittung? - Ja bitte für das Büro. Danke!",
+                translation: "Good day. I had pump 3 – Super E10 and a coffee to go. - Good day. The petrol comes to 45 euros 20 and the coffee two euros fifty. Total 47 euros 70. - Here is 50 euros. - And 2 euros 30 change. Do you need a receipt? - Yes please for the office. Thank you!",
+                vocabSupport: [
+                    { word: "die Zapfsäule", translation: "fuel pump" },
+                    { word: "der Kaffee zum Mitnehmen", translation: "coffee to go" },
+                    { word: "die Quittung", translation: "receipt" }
+                ],
+                fillBlank: {
+                    sentence: "Zusammen macht das 47 Euro _____.",
+                    target: "70",
+                    options: ["70", "10", "90"]
+                },
+                role: {
+                    speaker1: "Welche Zapfsäule hatten Sie?",
+                    options: ["Zapfsäule 3 – Super E10 und einen Kaffee.", "Ich wohne im dritten Stock.", "Die Sonne scheint."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Kunde nimmt eine Quittung für das Büro mit.",
+                    correct: true,
+                    explanation: "Richtig: Der Kunde antwortet: 'Ja bitte für das Büro. Danke!'"
+                }
+            }
+        ]
+    },
+    bg: {
+        title: "Bank & Geld",
+        titleEN: "Bank & Money",
+        emoji: "🏦",
+        warmup: {
+            vocab: [
+                { word: "Girokonto", gender: "das", translation: "checking account", example: "Ich möchte ein neues Girokonto eröffnen.", exampleEN: "I would like to open a new checking account." },
+                { word: "Geldautomat", gender: "der", translation: "ATM", example: "Der Geldautomat steht vor der Bankfiliale.", exampleEN: "The ATM is in front of the bank branch." },
+                { word: "Geheimzahl", gender: "die", translation: "PIN code", example: "Geben Sie bitte Ihre vierstellige Geheimzahl ein.", exampleEN: "Please enter your 4-digit PIN code." },
+                { word: "Überweisung", gender: "die", translation: "bank transfer", example: "Ich muss die Miete per Überweisung bezahlen.", exampleEN: "I must pay the rent by bank transfer." },
+                { word: "Kontoauszug", gender: "der", translation: "bank statement", example: "Sie können den Kontoauszug am Drucker ausdrucken.", exampleEN: "You can print the bank statement at the printer." }
+            ],
+            phrases: [
+                { de: "Ich möchte Bargeld am Automat abheben.", en: "I would like to withdraw cash at the ATM." },
+                { de: "Wie lautet die IBAN für die Überweisung?", en: "What is the IBAN for the bank transfer?" },
+                { de: "Fällt für das Konto eine Gebühr an?", en: "Is there a fee for the account?" },
+                { de: "Vergessen Sie Ihre Karte nicht!", en: "Don't forget your card!" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_bg_1",
+                title: "Ein Girokonto eröffnen",
+                titleEN: "Opening a Checking Account",
+                script: "Guten Tag, Stadtbank Frankfurt. - Guten Tag, ich möchte ein Girokonto eröffnen. Was brauche ich dafür? - Sie brauchen Ihren Pass und eine Meldebescheinigung. Das Basiskonto ist für Studenten kostenlos. - Das ist gut. Kann ich heute den Antrag ausfüllen? - Ja, gerne. Bitte nehmen Sie im Bereich B Platz.",
+                translation: "Good day, Frankfurt City Bank. - Good day, I would like to open a checking account. What do I need for that? - You need your passport and a registration certificate. The basic account is free for students. - That's good. Can I fill out the application today? - Yes, gladly. Please take a seat in area B.",
+                vocabSupport: [
+                    { word: "das Girokonto", translation: "checking account" },
+                    { word: "die Meldebescheinigung", translation: "registration certificate" },
+                    { word: "kostenlos", translation: "free of charge" }
+                ],
+                fillBlank: {
+                    sentence: "Das Basiskonto ist für Studenten _____.",
+                    target: "kostenlos",
+                    options: ["kostenlos", "teuer", "geschlossen"]
+                },
+                role: {
+                    speaker1: "Was brauche ich, um ein Girokonto zu eröffnen?",
+                    options: ["Sie brauchen Ihren Pass und eine Meldebescheinigung.", "Ich esse gerne Pizza.", "Der Zug hat Verspätung."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Für Studenten ist das Basiskonto der Stadtbank kostenlos.",
+                    correct: true,
+                    explanation: "Richtig: Der Bankberater sagt: 'Das Basiskonto ist für Studenten kostenlos.'"
+                }
+            },
+            {
+                id: "hoer_bg_2",
+                title: "Probleme am Geldautomat",
+                titleEN: "Trouble at the ATM",
+                script: "Entschuldigung, der Geldautomat draußen behält meine Karte nicht, aber gibt kein Geld aus. - Haben Sie Ihre Geheimzahl dreimal falsch eingegeben? - Nein, nur einmal. Jetzt steht 'Systemfehler' auf dem Bildschirm. - Kommen Sie bitte mit zum Schalter 3, wir entsperren Ihre Karte direkt.",
+                translation: "Excuse me, the ATM outside is not returning my card and didn't dispense money. - Did you enter your PIN incorrectly three times? - No, only once. Now it says 'System Error' on the screen. - Please come with me to counter 3, we'll unlock your card directly.",
+                vocabSupport: [
+                    { word: "der Geldautomat", translation: "ATM" },
+                    { word: "die Geheimzahl", translation: "PIN code" },
+                    { word: "entsperren", translation: "to unlock / unblock" }
+                ],
+                fillBlank: {
+                    sentence: "Kommen Sie bitte mit zum Schalter _____.",
+                    target: "3",
+                    options: ["3", "10", "1"]
+                },
+                role: {
+                    speaker1: "Der Geldautomat zeigt 'Systemfehler' an. Was soll ich tun?",
+                    options: ["Kommen Sie bitte mit zum Schalter 3, wir helfen Ihnen.", "Der Bus kommt morgen.", "Ich trinke Mineralwasser."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Kunde hat seine Geheimzahl drei Mal falsch eingegeben.",
+                    correct: false,
+                    explanation: "Falsch: Der Kunde sagt: 'Nein, nur einmal.'"
+                }
+            }
+        ]
+    },
+    kn: {
+        title: "Krankenhaus & Notfall",
+        titleEN: "Hospital & Emergency",
+        emoji: "🏥",
+        warmup: {
+            vocab: [
+                { word: "Notaufnahme", gender: "die", translation: "emergency room", example: "Die Notaufnahme ist rund um die Uhr geöffnet.", exampleEN: "The emergency room is open around the clock." },
+                { word: "Krankenwagen", gender: "der", translation: "ambulance", example: "Rufen Sie sofort einen Krankenwagen unter 112!", exampleEN: "Call an ambulance immediately on 112!" },
+                { word: "Verletzung", gender: "die", translation: "injury", example: "Der Patient hat eine leichte Verletzung am Bein.", exampleEN: "The patient has a minor injury on the leg." },
+                { word: "Krankenschwester", gender: "die", translation: "nurse", example: "Die Krankenschwester bringt ein Schmerzmittel.", exampleEN: "The nurse brings a painkiller." },
+                { word: "Besuchszeit", gender: "die", translation: "visiting hours", example: "Die Besuchszeit im Krankenhaus endet um 20 Uhr.", exampleEN: "Visiting hours at the hospital end at 8 PM." }
+            ],
+            phrases: [
+                { de: "Wo ist die Anmeldung für die Notaufnahme?", en: "Where is the emergency room registration desk?" },
+                { de: "Er hat sich den Arm gebrochen.", en: "He broke his arm." },
+                { de: "Der Arzt untersucht den Patienten sofort.", en: "The doctor examines the patient immediately." },
+                { de: "Wann darf ich nach Hause?", en: "When am I allowed to go home?" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_kn_1",
+                title: "Anmeldung in der Notaufnahme",
+                titleEN: "Emergency Room Registration",
+                script: "Guten Tag, Notaufnahme Klinik Nord. Was ist passiert? - Mein Mann ist von der Leiter gefallen und hat starke Schmerzen im Fuß. - Kann er auftreten? - Nein, gar nicht. - Bitte nehmen Sie im Rollstuhl Platz. Der Arzt macht zuerst ein Röntgenbild. Haben Sie die Versicherungskarte dabei?",
+                translation: "Good day, North Clinic Emergency Room. What happened? - My husband fell off the ladder and has severe foot pain. - Can he step on it? - No, not at all. - Please take a seat in the wheelchair. The doctor will take an X-ray first. Do you have the insurance card with you?",
+                vocabSupport: [
+                    { word: "die Notaufnahme", translation: "emergency room" },
+                    { word: "das Röntgenbild", translation: "X-ray" },
+                    { word: "der Rollstuhl", translation: "wheelchair" }
+                ],
+                fillBlank: {
+                    sentence: "Der Arzt macht zuerst ein _____ vom Fuß.",
+                    target: "Röntgenbild",
+                    options: ["Röntgenbild", "Foto", "Rezept"]
+                },
+                role: {
+                    speaker1: "Mein Mann ist gestürzt und kann nicht auftreten.",
+                    options: ["Bitte nehmen Sie im Rollstuhl Platz. Der Arzt kommt sofort.", "Die Fahrkarte kostet zwei Euro.", "Ich gehe einkaufen."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Mann soll zuerst geröntgt werden.",
+                    correct: true,
+                    explanation: "Richtig: Die Arzthelferin sagt: 'Der Arzt macht zuerst ein Röntgenbild.'"
+                }
+            },
+            {
+                id: "hoer_kn_2",
+                title: "Nachfragen zur Besuchszeit",
+                titleEN: "Inquiring about Visiting Hours",
+                script: "Guten Tag, auf welcher Station liegt Frau Berger? - Frau Berger liegt auf Station 4, Zimmer 412. - Kann ich sie jetzt besuchen? - Ja, die Besuchszeit geht noch bis 20 Uhr. Bitte nehmen Sie den Aufzug B im zweiten Flur.",
+                translation: "Good day, on which ward is Ms. Berger? - Ms. Berger is on Ward 4, Room 412. - Can I visit her now? - Yes, visiting hours go until 8 PM. Please take elevator B in the second corridor.",
+                vocabSupport: [
+                    { word: "die Station", translation: "ward / department" },
+                    { word: "die Besuchszeit", translation: "visiting hours" },
+                    { word: "der Flur", translation: "corridor / hallway" }
+                ],
+                fillBlank: {
+                    sentence: "Die Besuchszeit geht heute noch bis _____ Uhr.",
+                    target: "20",
+                    options: ["20", "15", "12"]
+                },
+                role: {
+                    speaker1: "Auf welcher Station liegt Frau Berger?",
+                    options: ["Frau Berger liegt auf Station 4, Zimmer 412.", "Sie wohnt in Berlin.", "Das Brot ist frisch."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Die Besuchszeit im Krankenhaus endet um 20 Uhr.",
+                    correct: true,
+                    explanation: "Richtig: Die Pflegerin sagt: 'die Besuchszeit geht noch bis 20 Uhr.'"
+                }
+            }
+        ]
+    },
+    fs: {
+        title: "Fitnessstudio & Sport",
+        titleEN: "Gym & Sports",
+        emoji: "🏋️",
+        warmup: {
+            vocab: [
+                { word: "Mitgliedschaft", gender: "die", translation: "membership", example: "Eine Mitgliedschaft kostet 29 Euro im Monat.", exampleEN: "A membership costs 29 euros per month." },
+                { word: "Umkleidekabine", gender: "die", translation: "changing room", example: "Die Umkleidekabine für Herren ist im 1. Stock.", exampleEN: "The men's changing room is on the 1st floor." },
+                { word: "Probetraining", gender: "das", translation: "trial workout", example: "Kann ich morgen ein kostenloses Probetraining machen?", exampleEN: "Can I do a free trial workout tomorrow?" },
+                { word: "Trainer", gender: "der", translation: "fitness trainer", example: "Der Trainer erstellt einen Trainingsplan für mich.", exampleEN: "The trainer is creating a workout plan for me." },
+                { word: "Handtuch", gender: "das", translation: "towel", example: "Bitte bringen Sie immer ein sauberes Handtuch mit.", exampleEN: "Please always bring a clean towel." }
+            ],
+            phrases: [
+                { de: "Ich möchte mich im Fitnessstudio anmelden.", en: "I would like to join the gym." },
+                { de: "Wo sind die Spinde für die Wertsachen?", en: "Where are the lockers for valuables?" },
+                { de: "Um wie viel Uhr beginnt der Yogakurs?", en: "What time does the yoga class start?" },
+                { de: "Viel Spaß beim Training!", en: "Have fun with your workout!" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_fs_1",
+                title: "Anmeldung im Fitnessstudio",
+                titleEN: "Gym Membership Registration",
+                script: "Guten Tag, FitLife Studio. - Guten Tag, ich möchte mich für ein Probetraining anmelden. - Sehr gerne! Morgen um 18 Uhr hätte unser Trainer Marco Zeit. Passt Ihnen das? - Ja, das passt gut. Muss ich etwas mitbringen? - Bringen Sie bitte Sportkleidung, Hallenschuhe und ein Handtuch mit.",
+                translation: "Good day, FitLife Gym. - Good day, I would like to sign up for a trial workout. - Very gladly! Tomorrow at 6 PM our trainer Marco is free. Does that suit you? - Yes, that suits well. Do I need to bring anything? - Please bring sports clothes, indoor shoes, and a towel.",
+                vocabSupport: [
+                    { word: "das Probetraining", translation: "trial workout" },
+                    { word: "die Hallenschuhe", translation: "indoor shoes" },
+                    { word: "das Handtuch", translation: "towel" }
+                ],
+                fillBlank: {
+                    sentence: "Unser Trainer Marco hat morgen um _____ Uhr Zeit.",
+                    target: "18",
+                    options: ["18", "10", "22"]
+                },
+                role: {
+                    speaker1: "Was soll ich zum Probetraining mitbringen?",
+                    options: ["Sportkleidung, Hallenschuhe und ein Handtuch.", "Eine Suppe und einen Löffel.", "Einen Reisepass."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Das Probetraining findet morgen um 18 Uhr mit Trainer Marco statt.",
+                    correct: true,
+                    explanation: "Richtig: Der Mitarbeiter sagt: 'Morgen um 18 Uhr hätte unser Trainer Marco Zeit.'"
+                }
+            },
+            {
+                id: "hoer_fs_2",
+                title: "Frage zum Kursplan",
+                titleEN: "Asking About the Class Schedule",
+                script: "Hallo, findet heute Abend der Rückenfit-Kurs statt? - Ja, der Kurs beginnt um 19:15 Uhr im Kursraum 2. - Benötige ich dafür eine Anmeldung? - Nein, kommen Sie einfach 10 Minuten vorher vorbei. Matten sind vorhanden.",
+                translation: "Hello, is the back fitness class taking place tonight? - Yes, the class starts at 7:15 PM in class room 2. - Do I need a registration for that? - No, just come by 10 minutes beforehand. Mats are available.",
+                vocabSupport: [
+                    { word: "der Kursraum", translation: "class room" },
+                    { word: "die Matte", translation: "mat" },
+                    { word: "vorhanden", translation: "available / present" }
+                ],
+                fillBlank: {
+                    sentence: "Der Kurs beginnt um 19:15 Uhr im Kursraum _____.",
+                    target: "2",
+                    options: ["2", "5", "1"]
+                },
+                role: {
+                    speaker1: "Muss ich mich für den Rückenfit-Kurs anmelden?",
+                    options: ["Nein, kommen Sie einfach 10 Minuten vorher.", "Ja, der Kurs kostet 500 Euro.", "Das Auto steht draußen."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Die Teilnehmer müssen eigene Matten mitbringen.",
+                    correct: false,
+                    explanation: "Falsch: Der Mitarbeiter sagt: 'Matten sind vorhanden.'"
+                }
+            }
+        ]
+    },
+    bb_lib: {
+        title: "Bibliothek & Buchhandlung",
+        titleEN: "Library & Bookstore",
+        emoji: "📚",
+        warmup: {
+            vocab: [
+                { word: "Bibliotheksausweis", gender: "der", translation: "library card", example: "Die Ausleihe ist nur mit Bibliotheksausweis möglich.", exampleEN: "Borrowing is only possible with a library card." },
+                { word: "Leihfrist", gender: "die", translation: "borrowing period", example: "Die Leihfrist für Bücher beträgt vier Wochen.", exampleEN: "The borrowing period for books is four weeks." },
+                { word: "Mahngebühr", gender: "die", translation: "overdue fee", example: "Wenn Sie zu spät zurückgeben, zahlen Sie eine Mahngebühr.", exampleEN: "If you return late, you pay an overdue fee." },
+                { word: "Wörterbuch", gender: "das", translation: "dictionary", example: "Ich suche ein Deutsch-Englisches Wörterbuch.", exampleEN: "I am looking for a German-English dictionary." },
+                { word: "Taschenbuch", gender: "das", translation: "paperback book", example: "Das Taschenbuch kostet nur 10 Euro.", exampleEN: "The paperback book costs only 10 euros." }
+            ],
+            phrases: [
+                { de: "Kann ich die Leihfrist online verlängern?", en: "Can I extend the borrowing period online?" },
+                { de: "Wo stehen die Sprachlernbücher für A1?", en: "Where are the language learning books for A1?" },
+                { de: "Sie dürfen maximal fünf Bücher ausleihen.", en: "You may borrow a maximum of five books." },
+                { de: "Viel Spaß beim Lesen!", en: "Enjoy your reading!" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_bl_1",
+                title: "Einen Bibliotheksausweis beantragen",
+                titleEN: "Applying for a Library Card",
+                script: "Guten Tag, Stadtbibliothek Leipzig. - Guten Tag, ich möchte mir gerne Bücher ausleihen. Was kostet ein Bibliotheksausweis? - Der Ausweis für Erwachsene kostet 15 Euro pro Jahr. Bringen Sie bitte Ihren Personalausweis mit. - Danke! Wie lange kann ich die Bücher behalten? - Die Leihfrist ist vier Wochen.",
+                translation: "Good day, Leipzig Public Library. - Good day, I would like to borrow books. How much is a library card? - The adult card costs 15 euros per year. Please bring your ID card with you. - Thank you! How long can I keep the books? - The borrowing period is four weeks.",
+                vocabSupport: [
+                    { word: "die Ausleihe", translation: "borrowing" },
+                    { word: "der Personalausweis", translation: "ID card" },
+                    { word: "die Leihfrist", translation: "borrowing period" }
+                ],
+                fillBlank: {
+                    sentence: "Die Leihfrist für Bücher beträgt _____ Wochen.",
+                    target: "vier",
+                    options: ["vier", "zwei", "zehn"]
+                },
+                role: {
+                    speaker1: "Wie viel kostet der Bibliotheksausweis pro Jahr?",
+                    options: ["Der Ausweis für Erwachsene kostet 15 Euro pro Jahr.", "Ich esse gerne Salat.", "Der Bus hält hier."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Ausweis für Erwachsene kostet 15 Euro im Jahr.",
+                    correct: true,
+                    explanation: "Richtig: Die Bibliothekarin sagt: 'Der Ausweis für Erwachsene kostet 15 Euro pro Jahr.'"
+                }
+            },
+            {
+                id: "hoer_bl_2",
+                title: "Ein Buch in der Buchhandlung suchen",
+                titleEN: "Searching for a Book at the Bookstore",
+                script: "Entschuldigung, haben Sie den neuen Roman von Daniel Kehlmann? - Moment, ich schaue im Computer nach. ... Leider haben wir das Buch aktuell nicht auf Lager, aber wir können es bis morgen bestellen. - Das wäre super! Wann kann ich es abholen? - Morgen ab 10 Uhr liegt es an der Kasse für Sie bereit.",
+                translation: "Excuse me, do you have the new novel by Daniel Kehlmann? - One moment, I'll check the computer. ... Unfortunately we don't have the book in stock right now, but we can order it by tomorrow. - That would be great! When can I pick it up? - Tomorrow from 10 AM it will be ready at checkout for you.",
+                vocabSupport: [
+                    { word: "auf Lager", translation: "in stock" },
+                    { word: "bestellen", translation: "to order" },
+                    { word: "bereitliegen", translation: "to be ready / waiting" }
+                ],
+                fillBlank: {
+                    sentence: "Morgen ab 10 Uhr liegt das Buch an der _____ bereit.",
+                    target: "Kasse",
+                    options: ["Kasse", "Post", "Bank"]
+                },
+                role: {
+                    speaker1: "Wann kann ich das bestellte Buch abholen?",
+                    options: ["Morgen ab 10 Uhr an der Kasse.", "Ich fahre nach Berlin.", "Die Kaffeemaschine ist kaputt."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Das Buch ist heute direkt im Laden vorrätig.",
+                    correct: false,
+                    explanation: "Falsch: Der Verkäufer sagt: 'Leider haben wir das Buch aktuell nicht auf Lager.'"
+                }
+            }
+        ]
+    },
+    km: {
+        title: "Kleidung & Mode",
+        titleEN: "Clothing & Fashion",
+        emoji: "👕",
+        warmup: {
+            vocab: [
+                { word: "Umkleidekabine", gender: "die", translation: "fitting room", example: "Die Umkleidekabine befindet sich hinten links.", exampleEN: "The fitting room is located in the back left." },
+                { word: "Kleidergröße", gender: "die", translation: "clothing size", example: "Welche Kleidergröße tragen Sie? Medium oder Large?", exampleEN: "Which clothing size do you wear? Medium or Large?" },
+                { word: "Sonderangebot", gender: "das", translation: "special offer / sale", example: "Die Winterjacken sind im Sonderangebot 30% günstiger.", exampleEN: "Winter jackets are 30% cheaper on special offer." },
+                { word: "Kassenzettel", gender: "der", translation: "receipt", example: "Behalten Sie den Kassenzettel für einen Umtausch.", exampleEN: "Keep the receipt for an exchange." },
+                { word: "Schuhe", gender: "die (Pl.)", translation: "shoes", example: "Passt die Schuhgröße 42 gut?", exampleEN: "Does shoe size 42 fit well?" }
+            ],
+            phrases: [
+                { de: "Haben Sie diesen Pullover auch in Größe M?", en: "Do you also have this sweater in size M?" },
+                { de: "Wo kann ich die Hose anprobieren?", en: "Where can I try on the trousers?" },
+                { de: "Kann ich das Hemd umtauschen, wenn es nicht passt?", en: "Can I exchange the shirt if it doesn't fit?" },
+                { de: "Das steht Ihnen wirklich ausgezeichnet!", en: "That suits you really well!" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_km_1",
+                title: "Ein Kleidungsstück anprobieren",
+                titleEN: "Trying on Clothes",
+                script: "Guten Tag, kann ich Ihnen helfen? - Ja, ich suche diese blaue Jeans in Größe 38. - Moment, ich schaue mal. ... Hier ist Größe 38. Die Kabinen sind da drüben. - Danke! ... Die Hose passt perfekt! Was kostet sie? - Die Jeans ist reduziert und kostet nur 39 Euro.",
+                translation: "Good day, can I help you? - Yes, I am looking for these blue jeans in size 38. - One moment, let me look. ... Here is size 38. The fitting rooms are over there. - Thank you! ... The trousers fit perfectly! How much are they? - The jeans are reduced and cost only 39 euros.",
+                vocabSupport: [
+                    { word: "anprobieren", translation: "to try on" },
+                    { word: "die Kabine", translation: "fitting room" },
+                    { word: "reduziert", translation: "discounted / reduced" }
+                ],
+                fillBlank: {
+                    sentence: "Die Jeans ist reduziert und kostet nur _____ Euro.",
+                    target: "39",
+                    options: ["39", "100", "5"]
+                },
+                role: {
+                    speaker1: "Wo sind hier die Umkleidekabinen?",
+                    options: ["Die Kabinen sind da drüben auf der linken Seite.", "Ich trinke gerne Apfelsaft.", "Der Zug kommt um 12 Uhr."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Die blaue Jeans kostet 39 Euro.",
+                    correct: true,
+                    explanation: "Richtig: Die Verkäuferin sagt: 'Die Jeans ist reduziert und kostet nur 39 Euro.'"
+                }
+            },
+            {
+                id: "hoer_km_2",
+                title: "Einen Pullover umtauschen",
+                titleEN: "Exchanging a Sweater",
+                script: "Guten Tag. Ich möchte diesen braunen Pullover umtauschen. Er ist meinem Mann leider zu klein. - Guten Tag. Haben Sie den Kassenbon? - Ja, hier ist der Bon. Ich hätte gerne Größe Large statt Medium. - Kein Problem, hier ist der Pullover in Large.",
+                translation: "Good day. I would like to exchange this brown sweater. Unfortunately it's too small for my husband. - Good day. Do you have the receipt? - Yes, here is the receipt. I would like size Large instead of Medium. - No problem, here is the sweater in Large.",
+                vocabSupport: [
+                    { word: "umtauschen", translation: "to exchange" },
+                    { word: "der Kassenbon", translation: "receipt" },
+                    { word: "zu klein", translation: "too small" }
+                ],
+                fillBlank: {
+                    sentence: "Ich hätte gerne Größe _____ statt Medium.",
+                    target: "Large",
+                    options: ["Large", "Small", "Mini"]
+                },
+                role: {
+                    speaker1: "Warum möchten Sie den Pullover umtauschen?",
+                    options: ["Er ist meinem Mann leider zu klein.", "Das Haus ist sehr alt.", "Ich gehe heute spazieren."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Die Kundin bekommt den Pullover in Größe Large.",
+                    correct: true,
+                    explanation: "Richtig: Die Verkäuferin antwortet: 'Kein Problem, hier ist der Pullover in Large.'"
+                }
+            }
+        ]
+    },
+    bk: {
+        title: "Bäckerei & Konditorei",
+        titleEN: "Bakery & Pastry Shop",
+        emoji: "🥐",
+        warmup: {
+            vocab: [
+                { word: "Brötchen", gender: "das", translation: "bread roll", example: "Ich nehme vier frische Brötchen.", exampleEN: "I'll take four fresh bread rolls." },
+                { word: "Vollkornbrot", gender: "das", translation: "whole grain bread", example: "Ein englisches Vollkornbrot hält lange frisch.", exampleEN: "A whole grain bread stays fresh for a long time." },
+                { word: "Kuchenstück", gender: "das", translation: "slice of cake", example: "Ein Stück Käsekuchen zum Mitnehmen, bitte.", exampleEN: "A slice of cheesecake to go, please." },
+                { word: "Bäcker", gender: "der", translation: "baker", example: "Der Bäcker backt jeden Morgen ab 4 Uhr.", exampleEN: "The baker bakes every morning from 4 AM." },
+                { word: "Brezel", gender: "die", translation: "pretzel", example: "Zwei lauwarme Brezeln kosten 1 Euro 80.", exampleEN: "Two lukewarm pretzels cost 1 euro 80." }
+            ],
+            phrases: [
+                { de: "Ich hätte gerne ein geschnittenes Bauernbrot.", en: "I would like a sliced country bread." },
+                { de: "Ist in diesem Kuchen Nüsse enthalten?", en: "Does this cake contain nuts?" },
+                { de: "Darf es sonst noch etwas sein?", en: "Would you like anything else?" },
+                { de: "Das macht 4 Euro 20 zusammen.", en: "That comes to 4 euros 20 in total." }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_bk_1",
+                title: "Brot und Brötchen kaufen",
+                titleEN: "Buying Bread and Rolls",
+                script: "Guten Morgen! Was darf es sein? - Guten Morgen, ich hätte gerne ein Bauernbrot. Können Sie das bitte schneiden? - Ja natürlich. Darf es sonst noch etwas sein? - Drei normale Brötchen und zwei Brezeln, bitte. - Das macht zusammen 5 Euro 40.",
+                translation: "Good morning! What can I get you? - Good morning, I would like a country bread. Could you please slice it? - Yes of course. Anything else? - Three regular rolls and two pretzels, please. - That comes to 5 euros 40 altogether.",
+                vocabSupport: [
+                    { word: "das Bauernbrot", translation: "country bread" },
+                    { word: "schneiden", translation: "to slice / cut" },
+                    { word: "die Brezel", translation: "pretzel" }
+                ],
+                fillBlank: {
+                    sentence: "Drei normale Brötchen und zwei _____.",
+                    target: "Brezeln",
+                    options: ["Brezeln", "Äpfel", "Pizzen"]
+                },
+                role: {
+                    speaker1: "Darf es sonst noch etwas sein?",
+                    options: ["Drei normale Brötchen und zwei Brezeln, bitte.", "Nein, ich fahre mit der U-Bahn.", "Das Wetter ist regnerisch."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Kunde möchte das Bauernbrot geschnitten haben.",
+                    correct: true,
+                    explanation: "Richtig: Er fragt: 'Können Sie das bitte schneiden?' und die Bäckersfrau sagt 'Ja natürlich.'"
+                }
+            },
+            {
+                id: "hoer_bk_2",
+                title: "Kaffee und Kuchen bestellen",
+                titleEN: "Ordering Coffee and Cake",
+                script: "Hallo! Ich möchte ein Stück Apfelkuchen und einen großen Cappuccino. - Gerne. Zum Hieressen oder zum Mitnehmen? - Zum Hieressen, bitte. Haben Sie Hafermilch für den Cappuccino? - Ja, Hafermilch kostet 30 Cent Aufpreis. Nehmen Sie bitte an Tisch 4 Platz.",
+                translation: "Hello! I would like a piece of apple cake and a large cappuccino. - Gladly. For here or to go? - For here, please. Do you have oat milk for the cappuccino? - Yes, oat milk costs a 30 cent surcharge. Please take a seat at table 4.",
+                vocabSupport: [
+                    { word: "der Cappuccino", translation: "cappuccino" },
+                    { word: "die Hafermilch", translation: "oat milk" },
+                    { word: "der Aufpreis", translation: "surcharge" }
+                ],
+                fillBlank: {
+                    sentence: "Hafermilch kostet 30 Cent _____.",
+                    target: "Aufpreis",
+                    options: ["Aufpreis", "Rabatt", "Strafe"]
+                },
+                role: {
+                    speaker1: "Möchten Sie den Cappuccino zum Hieressen oder zum Mitnehmen?",
+                    options: ["Zum Hieressen, bitte.", "Ich möchte nach Frankfurt.", "Die Hose ist blau."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Gast möchte den Kuchen und Kaffee mitnehmen.",
+                    correct: false,
+                    explanation: "Falsch: Der Gast antwortet: 'Zum Hieressen, bitte.'"
+                }
+            }
+        ]
+    },
+    fr: {
+        title: "Friseur & Kosmetik",
+        titleEN: "Hairdresser & Beauty",
+        emoji: "💇",
+        warmup: {
+            vocab: [
+                { word: "Haarschnitt", gender: "der", translation: "haircut", example: "Ein Waschen und Haarschnitt kostet 28 Euro.", exampleEN: "A wash and haircut costs 28 euros." },
+                { word: "Spitzen", gender: "die (Pl.)", translation: "hair ends / tips", example: "Bitte schneiden Sie nur zwei Zentimeter von den Spitzen.", exampleEN: "Please cut only two centimeters off the ends." },
+                { word: "Föhnen", gender: "das", translation: "blow-drying", example: "Möchten Sie nach dem Waschen auch Föhnen?", exampleEN: "Would you also like blow-drying after washing?" },
+                { word: "Terminvereinbarung", gender: "die", translation: "booking an appointment", example: "Die Terminvereinbarung geht schnell am Telefon.", exampleEN: "Booking an appointment is quick on the phone." },
+                { word: "Haarfarbe", gender: "die", translation: "hair dye / color", example: "Sie wählt eine dunkle Haarfarbe aus.", exampleEN: "She chooses a dark hair color." }
+            ],
+            phrases: [
+                { de: "Ich möchte mir die Haare schneiden lassen.", en: "I would like to get my hair cut." },
+                { de: "Bitte nur ganz leicht nachschneiden.", en: "Please just trim it very lightly." },
+                { de: "Ist das Wasser so angenehm?", en: "Is the water comfortable like this?" },
+                { de: "Sieht wirklich toll aus!", en: "It looks really great!" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_fr_1",
+                title: "Termin beim Friseur buchen",
+                titleEN: "Booking a Haircut Appointment",
+                script: "Friseursalon HaarGenau, Guten Tag. - Guten Tag, ich möchte einen Termin für einen Herrenhaarschnitt vereinbaren. - Haben Sie am Donnerstag um 15 Uhr Zeit? - Donnerstag 15 Uhr klappt prima. Was kostet Waschen und Schneiden? - Das kostet 24 Euro.",
+                translation: "HaarGenau Hair Salon, good day. - Good day, I would like to book an appointment for a men's haircut. - Do you have time on Thursday at 3 PM? - Thursday 3 PM works great. How much is wash and cut? - That costs 24 euros.",
+                vocabSupport: [
+                    { word: "der Herrenhaarschnitt", translation: "men's haircut" },
+                    { word: "vereinbaren", translation: "to arrange / book" },
+                    { word: "Waschen und Schneiden", translation: "wash and cut" }
+                ],
+                fillBlank: {
+                    sentence: "Waschen und Schneiden kostet _____ Euro.",
+                    target: "24",
+                    options: ["24", "100", "5"]
+                },
+                role: {
+                    speaker1: "Haben Sie am Donnerstag um 15 Uhr Zeit für den Haarschnitt?",
+                    options: ["Donnerstag 15 Uhr klappt prima.", "Ich esse kein Fleisch.", "Die Lampe brennt."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Herrenhaarschnitt inklusive Waschen kostet 24 Euro.",
+                    correct: true,
+                    explanation: "Richtig: Der Friseur sagt: 'Das kostet 24 Euro.'"
+                }
+            },
+            {
+                id: "hoer_fr_2",
+                title: "Wünsche beim Friseur besprechen",
+                titleEN: "Discussing Haircut Preferences",
+                script: "Guten Tag! Wie möchten Sie die Haare heute geschnitten haben? - Bitte an den Seiten etwas kürzer und oben nur die Spitzen schneiden. - Soll ich die Haare auch waschen? - Ja bitte. Und bitte nicht zu viel Haargel am Ende.",
+                translation: "Good day! How would you like your hair cut today? - Please a bit shorter on the sides and just trim the ends on top. - Should I wash your hair as well? - Yes please. And please not too much hair gel at the end.",
+                vocabSupport: [
+                    { word: "die Spitzen", translation: "hair ends" },
+                    { word: "kürzer", translation: "shorter" },
+                    { word: "das Haargel", translation: "hair gel" }
+                ],
+                fillBlank: {
+                    sentence: "An den Seiten bitte etwas _____.",
+                    target: "kürzer",
+                    options: ["kürzer", "länger", "bunter"]
+                },
+                role: {
+                    speaker1: "Wie soll ich die Haare heute schneiden?",
+                    options: ["Bitte an den Seiten kürzer und oben nur die Spitzen.", "Ich trinke gerne Orangensaft.", "Das Museum schließt um 17 Uhr."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Kunde möchte oben alle Haare komplett kurz rasieren.",
+                    correct: false,
+                    explanation: "Falsch: Er sagt: 'oben nur die Spitzen schneiden.'"
+                }
+            }
+        ]
+    },
+    kt: {
+        title: "Kino & Theater",
+        titleEN: "Cinema & Theater",
+        emoji: "🎬",
+        warmup: {
+            vocab: [
+                { word: "Kinovorstellung", gender: "die", translation: "cinema show / screening", example: "Die nächste Kinovorstellung beginnt um 20 Uhr.", exampleEN: "The next cinema screening starts at 8 PM." },
+                { word: "Eintrittskarte", gender: "die", translation: "admission ticket", example: "Zwei Eintrittskarten für Reihe 7, bitte.", exampleEN: "Two tickets for row 7, please." },
+                { word: "Popcorn", gender: "das", translation: "popcorn", example: "Ein großes süßes Popcorn und zwei Cola.", exampleEN: "A large sweet popcorn and two colas." },
+                { word: "Sitzplatz", gender: "der", translation: "seat", example: "Unsere Sitzplätze sind im Parkett in der Mitte.", exampleEN: "Our seats are in the stalls in the middle." },
+                { word: "Untertitel", gender: "die (Pl.)", translation: "subtitles", example: "Der Film läuft auf Deutsch mit englischen Untertiteln.", exampleEN: "The film runs in German with English subtitles." }
+            ],
+            phrases: [
+                { de: "Gibt es noch freie Plätze für die Vorstellung um 20 Uhr?", en: "Are there still free seats for the 8 PM show?" },
+                { de: "Ich hätte gerne zwei Tickets für Studenten.", en: "I would like two student tickets." },
+                { de: "Der Saaleingang ist auf der rechten Seite.", en: "The hall entrance is on the right side." },
+                { de: "Viel Spaß beim Film!", en: "Enjoy the movie!" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_kt_1",
+                title: "Kinokarten an der Kasse kaufen",
+                titleEN: "Buying Cinema Tickets at the Box Office",
+                script: "Guten Abend, zweimal für den neuen James-Bond-Film um 20:15 Uhr, bitte. - Gerne. Möchten Sie lieber Parkett oder Loge? - Loge bitte, möglichst weit hinten. - Reihe 9, Platz 14 und 15 sind noch frei. Zusammen macht das 22 Euro. - Hier bitte. In welchem Saal läuft der Film? - In Saal 3.",
+                translation: "Good evening, twice for the new James Bond film at 8:15 PM, please. - Gladly. Would you prefer stalls or balcony loge? - Balcony loge please, as far back as possible. - Row 9, seats 14 and 15 are still free. Altogether 22 euros. - Here you go. Which hall is the movie playing in? - In Hall 3.",
+                vocabSupport: [
+                    { word: "die Loge", translation: "balcony loge / premium seat" },
+                    { word: "das Parkett", translation: "stalls / standard seat" },
+                    { word: "der Saal", translation: "cinema hall / auditorium" }
+                ],
+                fillBlank: {
+                    sentence: "Der Film läuft in Saal _____.",
+                    target: "3",
+                    options: ["3", "12", "1"]
+                },
+                role: {
+                    speaker1: "Möchten Sie lieber Parkett oder Loge sitzen?",
+                    options: ["Loge bitte, möglichst weit hinten.", "Ich möchte ein Brot kaufen.", "Der Regen fällt vom Himmel."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Die beiden Kinokarten kosten zusammen 22 Euro.",
+                    correct: true,
+                    explanation: "Richtig: Der Kassenangestellte sagt: 'Zusammen macht das 22 Euro.'"
+                }
+            },
+            {
+                id: "hoer_kt_2",
+                title: "Snacks am Kinoschalter",
+                titleEN: "Snacks at the Cinema Counter",
+                script: "Hallo! Ein mittleres Popcorn und eine Sprite, bitte. - Möchten Sie das Popcorn süß oder salzig? - Süß, bitte. - Das macht 8 Euro 50 zusammen. Haben Sie eine Kinocard für Punkte? - Nein, leider nicht.",
+                translation: "Hello! A medium popcorn and a Sprite, please. - Would you like the popcorn sweet or salty? - Sweet, please. - That makes 8 euros 50 in total. Do you have a CinemaCard for points? - No, unfortunately not.",
+                vocabSupport: [
+                    { word: "süß", translation: "sweet" },
+                    { word: "salzig", translation: "salty" },
+                    { word: "die Punkte", translation: "reward points" }
+                ],
+                fillBlank: {
+                    sentence: "Ein mittleres Popcorn und eine _____.",
+                    target: "Sprite",
+                    options: ["Sprite", "Suppe", "Pizza"]
+                },
+                role: {
+                    speaker1: "Möchten Sie das Popcorn lieber süß oder salzig?",
+                    options: ["Süß, bitte.", "Ich wohne im dritten Stock.", "Mein Fahrrad ist rot."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Das Popcorn und Getränk kosten 8,50 Euro.",
+                    correct: true,
+                    explanation: "Richtig: Der Verkäufer sagt: 'Das macht 8 Euro 50 zusammen.'"
+                }
+            }
+        ]
+    },
+    ht: {
+        title: "Haustiere & Tierarzt",
+        titleEN: "Pets & Vet",
+        emoji: "🐕",
+        warmup: {
+            vocab: [
+                { word: "Tierarztpraxis", gender: "die", translation: "veterinary clinic", example: "Die Tierarztpraxis hat Sprechstunde von 9 bis 12 Uhr.", exampleEN: "The vet clinic has consultation hours from 9 to 12." },
+                { word: "Impfung", gender: "die", translation: "vaccination", example: "Der Hund braucht seine jährliche Impfung.", exampleEN: "The dog needs its annual vaccination." },
+                { word: "Katzenfutter", gender: "das", translation: "cat food", example: "Ich kaufe drei Dosen Katzenfutter im Supermarkt.", exampleEN: "I buy three cans of cat food at the supermarket." },
+                { word: "Hundeleine", gender: "die", translation: "dog leash", example: "Im Stadtpark gilt Leinenpflicht für Hunde.", exampleEN: "Dogs must be kept on a leash in the city park." },
+                { word: "Untersuchung", gender: "die", translation: "examination / checkup", example: "Die Untersuchung des Katers verlief problemlos.", exampleEN: "The examination of the cat went without problems." }
+            ],
+            phrases: [
+                { de: "Mein Hund frisst seit gestern nichts mehr.", en: "My dog hasn't eaten anything since yesterday." },
+                { de: "Wann ist die nächste Impfung fällig?", en: "When is the next vaccination due?" },
+                { de: "Hunde müssen im Bus an der Leine bleiben.", en: "Dogs must stay on a leash on the bus." },
+                { de: "Alles ist in Ordnung mit dem Tier.", en: "Everything is fine with the animal." }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_ht_1",
+                title: "Termin in der Tierarztpraxis",
+                titleEN: "Appointment at the Vet Clinic",
+                script: "Tierarztpraxis Dr. Klein, Guten Tag. - Guten Tag, mein Name ist Sommer. Meine Katze humpelt am rechten Hinterbein. Kann ich heute vorbeikommen? - Ja, kommen Sie um 16:30 Uhr in die Sprechstunde. Bringen Sie bitte den Impfpass der Katze mit.",
+                translation: "Dr. Klein Vet Clinic, good day. - Good day, my name is Sommer. My cat is limping on its right hind leg. Can I come by today? - Yes, come to the surgery hours at 4:30 PM. Please bring the cat's vaccination passport.",
+                vocabSupport: [
+                    { word: "humpeln", translation: "to limp" },
+                    { word: "die Sprechstunde", translation: "surgery / office hours" },
+                    { word: "der Impfpass", translation: "vaccination passport" }
+                ],
+                fillBlank: {
+                    sentence: "Bringen Sie bitte den _____ der Katze mit.",
+                    target: "Impfpass",
+                    options: ["Impfpass", "Fahrschein", "Kassenzettel"]
+                },
+                role: {
+                    speaker1: "Meine Katze humpelt. Kann ich heute zum Tierarzt kommen?",
+                    options: ["Ja, kommen Sie um 16:30 Uhr in die Sprechstunde.", "Das Flugzeug fliegt nach Italien.", "Ich lerne Spanisch."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Frau Sommer soll um 16:30 Uhr mit der Katze kommen.",
+                    correct: true,
+                    explanation: "Richtig: Die Helferin sagt: 'kommen Sie um 16:30 Uhr in die Sprechstunde.'"
+                }
+            },
+            {
+                id: "hoer_ht_2",
+                title: "Tierbedarf im Fachgeschäft kaufen",
+                titleEN: "Buying Pet Supplies at the Pet Store",
+                script: "Guten Tag, wo finde ich Spezialfutter für junge Hunde? - Im Gang 2 auf der linken Seite. Wir haben heute auch Hundespielzeug im Angebot. - Super, ich nehme noch diesen roten Ball und einen Kausnack mit. Was macht das? - Das macht 14 Euro 20.",
+                translation: "Good day, where do I find special food for young dogs? - In aisle 2 on the left side. We also have dog toys on offer today. - Great, I'll take this red ball and a chew snack as well. How much is that? - That comes to 14 euros 20.",
+                vocabSupport: [
+                    { word: "das Spezialfutter", translation: "special food" },
+                    { word: "das Hundespielzeug", translation: "dog toy" },
+                    { word: "der Kausnack", translation: "chew snack" }
+                ],
+                fillBlank: {
+                    sentence: "Das Spezialfutter steht im Gang _____.",
+                    target: "2",
+                    options: ["2", "9", "4"]
+                },
+                role: {
+                    speaker1: "Wo finde ich das Hundefutter?",
+                    options: ["Im Gang 2 auf der linken Seite.", "Ich gehe ins Kino.", "Das Brot schmeckt gut."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Kunde kauft einen roten Ball und einen Kausnack.",
+                    correct: true,
+                    explanation: "Richtig: Er sagt: 'ich nehme noch diesen roten Ball und einen Kausnack mit.'"
+                }
+            }
+        ]
+    },
+    rw: {
+        title: "Reinigung & Wäscherei",
+        titleEN: "Dry Cleaning & Laundromat",
+        emoji: "🧹",
+        warmup: {
+            vocab: [
+                { word: "Textilreinigung", gender: "die", translation: "dry cleaners", example: "Ich bringe meinen Wintermantel in die Textilreinigung.", exampleEN: "I bring my winter coat to the dry cleaners." },
+                { word: "Flecken", gender: "die (Pl.)", translation: "stains", example: "Können Sie diese Rotweinflecken entfernen?", exampleEN: "Can you remove these red wine stains?" },
+                { word: "Waschsalon", gender: "der", translation: "laundromat", example: "Im Waschsalon kostet eine Maschinenwäsche 4 Euro.", exampleEN: "In the laundromat a machine wash costs 4 euros." },
+                { word: "Abholschein", gender: "der", translation: "pickup receipt ticket", example: "Verlieren Sie nicht Ihren Abholschein!", exampleEN: "Don't lose your pickup receipt ticket!" },
+                { word: "Bügeln", gender: "das", translation: "ironing", example: "Das Waschen und Bügeln von fünf Hemden dauert zwei Tage.", exampleEN: "Washing and ironing five shirts takes two days." }
+            ],
+            phrases: [
+                { de: "Wann kann ich die gereinigten Sachen abholen?", en: "When can I pick up the cleaned items?" },
+                { de: "Hier ist Ihr Abholschein Nummer 48.", en: "Here is your pickup ticket number 48." },
+                { de: "Wo bekomme ich Münzen für die Waschmaschine?", en: "Where do I get coins for the washing machine?" },
+                { de: "Die Reinigung dauert bis Freitag.", en: "The cleaning takes until Friday." }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_rw_1",
+                title: "Einen Anzug in die Reinigung bringen",
+                titleEN: "Dropping Off a Suit at the Dry Cleaners",
+                script: "Guten Tag, ich möchte diesen Herrenanzug reinigen lassen. Auf der Hose ist ein Kaffeefleck. - Guten Tag. Kein Problem, den Kaffeefleck bekommen wir raus. Wann brauchen Sie den Anzug zurück? - Am Donnerstagabend. - Passt, ab Donnerstag 17 Uhr ist der Anzug fertig. Das macht 18 Euro. Hier ist Ihr Abholschein.",
+                translation: "Good day, I would like to have this men's suit dry cleaned. There is a coffee stain on the trousers. - Good day. No problem, we'll get the coffee stain out. When do you need the suit back? - On Thursday evening. - Suits fine, from Thursday 5 PM the suit is ready. That comes to 18 euros. Here is your pickup ticket.",
+                vocabSupport: [
+                    { word: "der Kaffeefleck", translation: "coffee stain" },
+                    { word: "der Anzug", translation: "suit" },
+                    { word: "der Abholschein", translation: "pickup ticket" }
+                ],
+                fillBlank: {
+                    sentence: "Ab Donnerstag um _____ Uhr ist der Anzug fertig.",
+                    target: "17",
+                    options: ["17", "10", "8"]
+                },
+                role: {
+                    speaker1: "Wann kann ich meinen gereinigten Anzug abholen?",
+                    options: ["Ab Donnerstag um 17 Uhr ist er fertig.", "Das Brot kostet zwei Euro.", "Ich fahre mit dem Auto."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Die Reinigung des Anzugs kostet 18 Euro.",
+                    correct: true,
+                    explanation: "Richtig: Die Angestellte sagt: 'Das macht 18 Euro. Hier ist Ihr Abholschein.'"
+                }
+            },
+            {
+                id: "hoer_rw_2",
+                title: "Bedienung im Waschsalon",
+                titleEN: "Operating Machines at the Laundromat",
+                script: "Entschuldigung, wie funktioniert die Waschmaschine 5? - Sie werfen zwei 2-Euro-Münzen oben in den Automat und wählen das Waschprogramm 40 Grad. - Wo bekomme ich Waschpulver? - Der Waschmittelautomat steht drüben an der Wand. Eine Portion kostet 50 Cent.",
+                translation: "Excuse me, how does washing machine 5 work? - You throw two 2-euro coins into the top slot and select the 40 degree wash cycle. - Where do I get washing powder? - The detergent dispenser is over there on the wall. One portion costs 50 cents.",
+                vocabSupport: [
+                    { word: "der Automat", translation: "coin dispenser machine" },
+                    { word: "das Waschpulver", translation: "washing powder" },
+                    { word: "das Waschprogramm", translation: "wash cycle" }
+                ],
+                fillBlank: {
+                    sentence: "Eine Portion Waschpulver kostet _____ Cent.",
+                    target: "50",
+                    options: ["50", "90", "10"]
+                },
+                role: {
+                    speaker1: "Wo bekomme ich denn das Waschpulver?",
+                    options: ["Der Waschmittelautomat steht drüben an der Wand.", "Ich gehe ins Fitnessstudio.", "Das Flugzeug fliegt hoch."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Man muss zwei 2-Euro-Münzen in die Waschmaschine werfen.",
+                    correct: true,
+                    explanation: "Richtig: Der Mann erklärt: 'Sie werfen zwei 2-Euro-Münzen oben in den Automat.'"
+                }
+            }
+        ]
+    },
+    fm: {
+        title: "Fahrrad & Mobilität",
+        titleEN: "Bicycle & Mobility",
+        emoji: "🚲",
+        warmup: {
+            vocab: [
+                { word: "Fahrradverleih", gender: "der", translation: "bike rental", example: "Der Fahrradverleih am Bahnhof vermietet auch E-Bikes.", exampleEN: "The bike rental at the train station also rents out e-bikes." },
+                { word: "Reifenschaden", gender: "der", translation: "flat tire / tire damage", example: "Mein Hinterrad hat einen Reifenschaden.", exampleEN: "My rear wheel has tire damage." },
+                { word: "Fahrradhelm", gender: "der", translation: "bike helmet", example: "Ein passender Fahrradhelm schützt den Kopf.", exampleEN: "A fitting bike helmet protects the head." },
+                { word: "Schloss", gender: "das", translation: "bike lock", example: "Schließen Sie das Fahrrad immer mit dem Schloss an.", exampleEN: "Always lock the bicycle with the lock." },
+                { word: "Mietgebühr", gender: "die", translation: "rental fee", example: "Die Tages-Mietgebühr für ein normales Rad ist 12 Euro.", exampleEN: "The daily rental fee for a normal bike is 12 euros." }
+            ],
+            phrases: [
+                { de: "Ich möchte ein Fahrrad für einen Tag ausleihen.", en: "I would like to rent a bicycle for one day." },
+                { de: "Wie viel kostet die Reparatur des Reifens?", en: "How much is the tire repair?" },
+                { de: "Ist ein Fahrradschloss im Preis inbegriffen?", en: "Is a bike lock included in the price?" },
+                { de: "Gute Fahrt auf dem Radweg!", en: "Have a good ride on the bike path!" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_fm_1",
+                title: "Ein Fahrrad leihen",
+                titleEN: "Renting a Bike",
+                script: "Guten Tag, Fahrradverleih Mobil. - Guten Tag, ich möchte zwei Fahrräder für heute ausleihen. Was kostet das? - Ein Tourenrad kostet 14 Euro pro Tag, ein E-Bike kostet 28 Euro. - Wir nehmen zwei normale Tourenräder. Sind Helme und Schlösser dabei? - Ja, Helme und Schlösser sind kostenlos inklusive.",
+                translation: "Good day, Mobil Bike Rental. - Good day, I would like to rent two bicycles for today. How much is that? - A touring bike costs 14 euros per day, an e-bike costs 28 euros. - We'll take two normal touring bikes. Are helmets and locks included? - Yes, helmets and locks are included for free.",
+                vocabSupport: [
+                    { word: "das Tourenrad", translation: "touring bicycle" },
+                    { word: "der Fahrradhelm", translation: "bike helmet" },
+                    { word: "inklusive", translation: "included" }
+                ],
+                fillBlank: {
+                    sentence: "Ein Tourenrad kostet _____ Euro pro Tag.",
+                    target: "14",
+                    options: ["14", "50", "5"]
+                },
+                role: {
+                    speaker1: "Sind Helm und Schloss im Mietpreis enthalten?",
+                    options: ["Ja, Helme und Schlösser sind kostenlos inklusive.", "Nein, der Bus fährt um 8 Uhr.", "Ich esse gerne Nudeln."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Für Helme und Schlösser muss man extra bezahlen.",
+                    correct: false,
+                    explanation: "Falsch: Der Vermieter sagt: 'Ja, Helme und Schlösser sind kostenlos inklusive.'"
+                }
+            },
+            {
+                id: "hoer_fm_2",
+                title: "Reparatur in der Fahrradwerkstatt",
+                titleEN: "Repair at the Bike Workshop",
+                script: "Guten Tag, bei meinem Fahrrad ist die Kette abgesprungen und der Hinterreifen ist platt. - Guten Tag. Wir reparieren das bis heute Nachmittag 16 Uhr. - Was kostet die Reparatur ungefähr? - Kette reparieren und neuer Schlauch kosten zusammen 25 Euro.",
+                translation: "Good day, on my bike the chain came off and the rear tire is flat. - Good day. We will repair that by 4 PM this afternoon. - How much will the repair cost approximately? - Repairing the chain and a new inner tube cost 25 euros in total.",
+                vocabSupport: [
+                    { word: "die Kette", translation: "bike chain" },
+                    { word: "platt", translation: "flat (tire)" },
+                    { word: "der Schlauch", translation: "inner tube" }
+                ],
+                fillBlank: {
+                    sentence: "Die Reparatur ist heute Nachmittag um _____ Uhr fertig.",
+                    target: "16",
+                    options: ["16", "10", "20"]
+                },
+                role: {
+                    speaker1: "Wann kann ich mein repariertes Fahrrad abholen?",
+                    options: ["Bis heute Nachmittag 16 Uhr ist es fertig.", "Ich gehe einkaufen.", "Das Wetter ist windig."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Die Fahrradreparatur kostet insgesamt 25 Euro.",
+                    correct: true,
+                    explanation: "Richtig: Der Mechaniker sagt: 'kosten zusammen 25 Euro.'"
+                }
+            }
+        ]
+    },
+    le: {
+        title: "Lieferservice & Essen",
+        titleEN: "Food Delivery & Takeaway",
+        emoji: "🍕",
+        warmup: {
+            vocab: [
+                { word: "Lieferdienst", gender: "der", translation: "delivery service", example: "Der Lieferdienst bringt das Essen in 30 Minuten.", exampleEN: "The delivery service brings the food in 30 minutes." },
+                { word: "Mindestbestellwert", gender: "der", translation: "minimum order value", example: "Der Mindestbestellwert für kostenlose Lieferung ist 15 Euro.", exampleEN: "Minimum order value for free delivery is 15 euros." },
+                { word: "Lieferadresse", gender: "die", translation: "delivery address", example: "Nennen Sie bitte Ihre genaue Lieferadresse mit Etage.", exampleEN: "Please state your exact delivery address including floor." },
+                { word: "Lieferheld", gender: "der", translation: "delivery courier", example: "Der Lieferheld klingelt gleich an der Haustür.", exampleEN: "The delivery courier will ring the doorbell shortly." },
+                { word: "Trinkgeld", gender: "das", translation: "tip", example: "Ich gebe dem Lieferanten zwei Euro Trinkgeld.", exampleEN: "I give the delivery driver two euros tip." }
+            ],
+            phrases: [
+                { de: "Ich möchte eine Pizza Salami und einen Salat bestellen.", en: "I would like to order a salami pizza and a salad." },
+                { de: "Wie lange dauert die Lieferung ungefähr?", en: "How long does delivery take approximately?" },
+                { de: "Bezahlen Sie online oder bar an der Tür?", en: "Are you paying online or cash at the door?" },
+                { de: "Guten Appetit!", en: "Enjoy your meal!" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_le_1",
+                title: "Pizza am Telefon bestellen",
+                titleEN: "Ordering Pizza over the Phone",
+                script: "Pizzeria Napoli, Guten Abend. - Guten Abend, ich möchte eine große Pizza Tonno und eine Portion Tiramisu bestellen. - Gerne. Wohin sollen wir liefern? - In die Parkstraße 14 im zweiten Stock bei Wagner. - Gut. Das macht 16 Euro 50. Das Essen ist in 35 Minuten bei Ihnen.",
+                translation: "Pizzeria Napoli, good evening. - Good evening, I would like to order a large tuna pizza and a portion of tiramisu. - Gladly. Where should we deliver? - To Parkstraße 14 on the 2nd floor at Wagner. - Good. That makes 16 euros 50. The food will be at your place in 35 minutes.",
+                vocabSupport: [
+                    { word: "liefern", translation: "to deliver" },
+                    { word: "die Portion", translation: "portion / serving" },
+                    { word: "die Etage", translation: "floor / story" }
+                ],
+                fillBlank: {
+                    sentence: "Das Essen ist in _____ Minuten bei Ihnen.",
+                    target: "35",
+                    options: ["35", "90", "5"]
+                },
+                role: {
+                    speaker1: "Wohin dürfen wir Ihre Pizzabestellung liefern?",
+                    options: ["In die Parkstraße 14 im zweiten Stock.", "Ich habe Kopfschmerzen.", "Der Zug fährt pünktlich."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Die Lieferung dauert ungefähr 35 Minuten.",
+                    correct: true,
+                    explanation: "Richtig: Der Pizzabote am Telefon sagt: 'Das Essen ist in 35 Minuten bei Ihnen.'"
+                }
+            },
+            {
+                id: "hoer_le_2",
+                title: "Übergabe an der Haustür",
+                titleEN: "Handover at the Front Door",
+                script: "Guten Abend! Pizzeria Napoli. Hier ist Ihre warme Pizza und das Tiramisu. - Guten Abend! Das ging aber schnell. Was macht das zusammen? - 16 Euro 50. - Hier sind 19 Euro. Stimmt so, der Rest ist für Sie! - Vielen Dank und guten Appetit!",
+                translation: "Good evening! Pizzeria Napoli. Here is your warm pizza and tiramisu. - Good evening! That was quick. How much is that altogether? - 16 euros 50. - Here is 19 euros. Keep the change, the rest is for you! - Thank you very much and enjoy your meal!",
+                vocabSupport: [
+                    { word: "Stimmt so", translation: "keep the change" },
+                    { word: "guten Appetit", translation: "enjoy your meal" },
+                    { word: "der Rest", translation: "the rest / change" }
+                ],
+                fillBlank: {
+                    sentence: "Hier sind 19 Euro. _____ so!",
+                    target: "Stimmt",
+                    options: ["Stimmt", "Geht", "Steht"]
+                },
+                role: {
+                    speaker1: "Hier ist Ihre Pizza! Das macht 16 Euro 50.",
+                    options: ["Hier sind 19 Euro. Stimmt so, danke!", "Ich möchte den Schrank kaufen.", "Das Wetter ist schön."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Der Kunde gibt dem Lieferanten 2,50 Euro Trinkgeld.",
+                    correct: true,
+                    explanation: "Richtig: Der Betrag ist 16,50 Euro, der Kunde gibt 19 Euro und sagt 'Stimmt so!'"
+                }
+            }
+        ]
+    },
+    us: {
+        title: "Urlaub & Strand",
+        titleEN: "Vacation & Beach",
+        emoji: "🏖️",
+        warmup: {
+            vocab: [
+                { word: "Strandkorb", gender: "der", translation: "hooded beach chair", example: "Wir mieten einen Strandkorb für eine Woche an der Ostsee.", exampleEN: "We rent a hooded beach chair for a week at the Baltic Sea." },
+                { word: "Sonnenschirm", gender: "der", translation: "parasol / sun umbrella", example: "Unter dem Sonnenschirm ist es angenehm schattig.", exampleEN: "Under the parasol it is comfortably shady." },
+                { word: "Bootstour", gender: "die", translation: "boat tour", example: "Die Bootstour rund um die Insel dauert zwei Stunden.", exampleEN: "The boat tour around the island takes two hours." },
+                { word: "Sonnencreme", gender: "die", translation: "sunscreen", example: "Vergessen Sie nicht, Sonnencreme mit Schutzfaktor 30 zu benutzen.", exampleEN: "Don't forget to use sunscreen with SPF 30." },
+                { word: "Reiseführer", gender: "der", translation: "tourist guide / guidebook", example: "Der Reiseführer zeigt die schönsten Ausflugsziele.", exampleEN: "The guidebook shows the finest excursion destinations." }
+            ],
+            phrases: [
+                { de: "Was kostet die Tagesmiete für einen Strandkorb?", en: "How much is the daily rental for a beach chair?" },
+                { de: "Wann legt das Ausflugsschiff ab?", en: "When does the excursion boat depart?" },
+                { de: "Wie wird das Wetter morgen am Strand?", en: "How will the weather be tomorrow at the beach?" },
+                { de: "Schönen Urlaub!", en: "Have a great vacation!" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_us_1",
+                title: "Einen Strandkorb mieten",
+                titleEN: "Renting a Beach Chair",
+                script: "Guten Tag, Strandkorbvermietung Hansen. - Guten Tag, wir möchten für drei Tage einen Strandkorb in der ersten Reihe mieten. - In der ersten Reihe kostet der Korb 12 Euro pro Tag. - Sehr gut. Wir nehmen Korb Nummer 42. - Hier ist der Schlüssel. Kaution ist 5 Euro für den Schlüssel.",
+                translation: "Good day, Hansen Beach Chair Rental. - Good day, we would like to rent a beach chair in the front row for three days. - In the front row the chair costs 12 euros per day. - Very good. We'll take chair number 42. - Here is the key. Key deposit is 5 euros.",
+                vocabSupport: [
+                    { word: "der Strandkorb", translation: "hooded beach chair" },
+                    { word: "die Kaution", translation: "deposit" },
+                    { word: "der Schlüssel", translation: "key" }
+                ],
+                fillBlank: {
+                    sentence: "Der Strandkorb in der ersten Reihe kostet _____ Euro pro Tag.",
+                    target: "12",
+                    options: ["12", "50", "2"]
+                },
+                role: {
+                    speaker1: "Was kostet die Tagesmiete für einen Korb in der ersten Reihe?",
+                    options: ["In der ersten Reihe kostet der Korb 12 Euro pro Tag.", "Ich esse gerne Kuchen.", "Der Bus kommt pünktlich."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Für den Schlüssel muss man 5 Euro Kaution hinterlegen.",
+                    correct: true,
+                    explanation: "Richtig: Der Vermieter sagt: 'Kaution ist 5 Euro für den Schlüssel.'"
+                }
+            },
+            {
+                id: "hoer_us_2",
+                title: "Tickets für die Hafenrundfahrt",
+                titleEN: "Tickets for the Harbor Boat Tour",
+                script: "Hallo, fahren heute noch Ausflugsschiffe zur Seehundbank? - Ja, das nächste Schiff legt um 14:30 Uhr an Steg 2 ab. Die Fahrt dauert 90 Minuten. - Zwei Erwachsene und ein Kind, bitte. - Das macht 28 Euro zusammen. Einsteigen ist ab 14:15 Uhr.",
+                translation: "Hello, are there still excursion ships sailing to the seal bank today? - Yes, the next ship departs at 2:30 PM from Pier 2. The trip takes 90 minutes. - Two adults and one child, please. - That comes to 28 euros altogether. Boarding starts at 2:15 PM.",
+                vocabSupport: [
+                    { word: "ablegen", translation: "to depart (ship)" },
+                    { word: "der Steg", translation: "pier / jetty" },
+                    { word: "das Einsteigen", translation: "boarding" }
+                ],
+                fillBlank: {
+                    sentence: "Das nächste Schiff legt um 14:30 Uhr an Steg _____ ab.",
+                    target: "2",
+                    options: ["2", "10", "7"]
+                },
+                role: {
+                    speaker1: "Wann legt das nächste Ausflugsschiff ab?",
+                    options: ["Das nächste Schiff legt um 14:30 Uhr an Steg 2 ab.", "Ich trinke Mineralwasser.", "Die Sonne scheint sehr hell."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Die Bootstour dauert 90 Minuten.",
+                    correct: true,
+                    explanation: "Richtig: Die Ticketverkäuferin sagt: 'Die Fahrt dauert 90 Minuten.'"
+                }
+            }
+        ]
+    },
+    bg_store: {
+        title: "Baumarkt & Garten",
+        titleEN: "Hardware Store & Garden Center",
+        emoji: "🛠️",
+        warmup: {
+            vocab: [
+                { word: "Schraubenzieher", gender: "der", translation: "screwdriver", example: "Ich brauche einen Kreuzschlitz-Schraubenzieher.", exampleEN: "I need a Phillips screwdriver." },
+                { word: "Bohrmaschine", gender: "die", translation: "drilling machine / power drill", example: "Sie können eine leistungsstarke Bohrmaschine für 15 Euro am Tag mieten.", exampleEN: "You can rent a powerful drill for 15 euros a day." },
+                { word: "Wandfarbe", gender: "die", translation: "wall paint", example: "Wir kaufen weiße Wandfarbe für das Wohnzimmer.", exampleEN: "We buy white wall paint for the living room." },
+                { word: "Zimmerpflanze", gender: "die", translation: "houseplant", example: "Diese Zimmerpflanze braucht nur wenig Wasser.", exampleEN: "This houseplant needs only little water." },
+                { word: "Dünger", gender: "der", translation: "fertilizer", example: "Der Dünger hilft den Pflanzen im Frühling.", exampleEN: "The fertilizer helps plants in spring." }
+            ],
+            phrases: [
+                { de: "Wo finde ich Schrauben und Dübel?", en: "Where do I find screws and wall plugs?" },
+                { de: "Kann man hier auch Werkzeug mieten?", en: "Can one also rent tools here?" },
+                { de: "Liefern Sie große Möbel nach Hause?", en: "Do you deliver large furniture to home?" },
+                { de: "Frohes Schaffen!", en: "Happy working / good luck with your project!" }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_bgstore_1",
+                title: "Beratung im Baumarkt",
+                titleEN: "Advice at the Hardware Store",
+                script: "Entschuldigung, wo finde ich Dübel und passende Schrauben für eine Betonwand? - Im Gang 8, Regalboden 3. Welche Größe suchen Sie? - 8 Millimeter für ein schweres Regal. - Dann nehmen Sie diese Spezial-Betondübel. Die Packung kostet 4 Euro 50.",
+                translation: "Excuse me, where do I find wall plugs and matching screws for a concrete wall? - In aisle 8, shelf 3. What size are you looking for? - 8 millimeters for a heavy shelf. - Then take these special concrete plugs. The pack costs 4 euros 50.",
+                vocabSupport: [
+                    { word: "der Dübel", translation: "wall plug / rawlplug" },
+                    { word: "die Betonwand", translation: "concrete wall" },
+                    { word: "der Regalboden", translation: "shelf level" }
+                ],
+                fillBlank: {
+                    sentence: "Schrauben und Dübel stehen im Gang _____.",
+                    target: "8",
+                    options: ["8", "1", "20"]
+                },
+                role: {
+                    speaker1: "Wo finde ich Schrauben und Dübel für Beton?",
+                    options: ["Im Gang 8, Regalboden 3.", "Ich trinke Kaffee.", "Das Hotel ist groß."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Die Spezial-Betondübel kosten 4,50 Euro pro Packung.",
+                    correct: true,
+                    explanation: "Richtig: Der Baumarkt-Mitarbeiter sagt: 'Die Packung kostet 4 Euro 50.'"
+                }
+            },
+            {
+                id: "hoer_bgstore_2",
+                title: "Pflanzen im Gartencenter kaufen",
+                titleEN: "Buying Plants at the Garden Center",
+                script: "Guten Tag. Ich suche eine einfache Zimmerpflanze für einen schattigen Raum. - Da empfehle ich eine Efeutüte oder eine Bogenhanf-Pflanze. Beide brauchen sehr wenig Licht und Wasser. - Wunderbar, ich nehme den Bogenhanf. Brauche ich dazu speziellen Dünger? - Ein flüssiger Universaldünger einmal im Monat reicht völlig.",
+                translation: "Good day. I am looking for a simple houseplant for a shady room. - I recommend a pothos or a snake plant. Both need very little light and water. - Wonderful, I'll take the snake plant. Do I need special fertilizer for that? - A liquid universal fertilizer once a month is completely sufficient.",
+                vocabSupport: [
+                    { word: "schattig", translation: "shady" },
+                    { word: "der Dünger", translation: "fertilizer" },
+                    { word: "reichlich", translation: "abundant / sufficient" }
+                ],
+                fillBlank: {
+                    sentence: "Ein flüssiger Universaldünger _____ im Monat reicht völlig.",
+                    target: "einmal",
+                    options: ["einmal", "zehnmal", "nullmal"]
+                },
+                role: {
+                    speaker1: "Welche Pflanze eignet sich für einen schattigen Raum?",
+                    options: ["Ein Bogenhanf braucht sehr wenig Licht und Wasser.", "Ich fahre nach Italien.", "Das Auto steht im Hof."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Die Bogenhanf-Pflanze benötigt sehr viel direktes Sonnenlicht.",
+                    correct: false,
+                    explanation: "Falsch: Der Gärtner sagt: 'Beide brauchen sehr wenig Licht und Wasser.'"
+                }
+            }
+        ]
+    },
+    wu: {
+        title: "Wohnungsbesichtigung & Umzug",
+        titleEN: "Apartment Viewing & Moving",
+        emoji: "🔑",
+        warmup: {
+            vocab: [
+                { word: "Wohnungsbesichtigung", gender: "die", translation: "apartment viewing", example: "Die Wohnungsbesichtigung ist am Samstag um 11 Uhr.", exampleEN: "The apartment viewing is on Saturday at 11 AM." },
+                { word: "Mietkaution", gender: "die", translation: "rental deposit", example: "Die Mietkaution beträgt zwei Monatsmieten.", exampleEN: "The rental deposit amounts to two months' rent." },
+                { word: "Kaltmiete", gender: "die", translation: "rent excluding utilities", example: "Die Kaltmiete für die 2-Zimmer-Wohnung ist 550 Euro.", exampleEN: "Basic rent for the 2-room apartment is 550 euros." },
+                { word: "Nebenkosten", gender: "die (Pl.)", translation: "utility costs", example: "Die Nebenkosten für Heizung und Wasser betragen 120 Euro.", exampleEN: "Utility costs for heating and water amount to 120 euros." },
+                { word: "Mietvertrag", gender: "der", translation: "lease agreement", example: "Wir unterschreiben den Mietvertrag nächste Woche.", exampleEN: "We are signing the lease agreement next week." }
+            ],
+            phrases: [
+                { de: "Wie hoch ist die Warmmiete insgesamt?", en: "How high is the total rent including utilities?" },
+                { de: "Sind Haustiere in der Wohnung erlaubt?", en: "Are pets allowed in the apartment?" },
+                { de: "Ab wann ist die Wohnung frei?", en: "From when is the apartment available?" },
+                { de: "Hier ist meine Selbstauskunft.", en: "Here is my tenant application info sheet." }
+            ]
+        },
+        dialogues: [
+            {
+                id: "hoer_wu_1",
+                title: "Termin zur Wohnungsbesichtigung",
+                titleEN: "Apartment Viewing Appointment",
+                script: "Guten Tag, Immobilien Huber. - Guten Tag, mein Name ist Richter. Ich interessiere mich für die 2-Zimmer-Wohnung in der Schillerstraße. Ist sie noch frei? - Ja, die Wohnung ist frei ab dem 1. November. Die Besichtigung findet am Freitag um 16 Uhr statt. - Perfekt, wo treffen wir uns? - Direkt vor dem Hauseingang der Schillerstraße 8.",
+                translation: "Good day, Huber Real Estate. - Good day, my name is Richter. I am interested in the 2-room apartment on Schillerstraße. Is it still available? - Yes, the apartment is available from November 1st. The viewing takes place on Friday at 4 PM. - Perfect, where do we meet? - Directly in front of the building entrance at Schillerstraße 8.",
+                vocabSupport: [
+                    { word: "die Besichtigung", translation: "viewing" },
+                    { word: "der Hauseingang", translation: "building entrance" },
+                    { word: "ab dem 1. November", translation: "from November 1st" }
+                ],
+                fillBlank: {
+                    sentence: "Die Besichtigung findet am Freitag um _____ Uhr statt.",
+                    target: "16",
+                    options: ["16", "9", "22"]
+                },
+                role: {
+                    speaker1: "Wann findet die Wohnungsbesichtigung statt?",
+                    options: ["Am Freitag um 16 Uhr vor der Schillerstraße 8.", "Ich esse ein Brötchen.", "Das Fahrrad ist blau."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Die Wohnung ist erst ab Januar verfügbar.",
+                    correct: false,
+                    explanation: "Falsch: Der Makler sagt: 'die Wohnung ist frei ab dem 1. November.'"
+                }
+            },
+            {
+                id: "hoer_wu_2",
+                title: "Fragen zur Miete und Kaution",
+                titleEN: "Questions About Rent and Deposit",
+                script: "Herr Huber, wie hoch ist die Kaltmiete für die Wohnung? - Die Kaltmiete ist 600 Euro, dazu kommen 150 Euro Nebenkosten. Die Warmmiete ist also 750 Euro im Monat. - Und wie hoch ist die Kaution? - Die Kaution beträgt zwei Kaltmieten, also 1.200 Euro.",
+                translation: "Mr. Huber, how high is the basic rent for the apartment? - The basic rent is 600 euros, plus 150 euros utility costs. So total warm rent is 750 euros per month. - And how high is the deposit? - The deposit is two basic rents, so 1,200 euros.",
+                vocabSupport: [
+                    { word: "die Kaltmiete", translation: "rent excluding utilities" },
+                    { word: "die Warmmiete", translation: "rent including utilities" },
+                    { word: "die Kaution", translation: "security deposit" }
+                ],
+                fillBlank: {
+                    sentence: "Die Warmmiete beträgt insgesamt _____ Euro im Monat.",
+                    target: "750",
+                    options: ["750", "200", "1000"]
+                },
+                role: {
+                    speaker1: "Wie hoch ist die Kaution für diese Wohnung?",
+                    options: ["Die Kaution beträgt zwei Kaltmieten, also 1.200 Euro.", "Ich trinke gerne Orangensaft.", "Der Bus fährt nach Hause."],
+                    correct: 0
+                },
+                trueFalse: {
+                    statement: "Die Kaltmiete beträgt 600 Euro pro Monat.",
+                    correct: true,
+                    explanation: "Richtig: Der Makler erklärt: 'Die Kaltmiete ist 600 Euro.'"
+                }
+            }
+        ]
+    }
+};
+
+let activeHoerenState = {
+    topicKey: "hw",
+    modeKey: "dictation",
+    currentIndex: 0,
+    userSelectedOption: null,
+    isAnswerChecked: false,
+    score: 0
+};
+
+function openInteractiveHoerenHub() {
+    switchToView("view-interactive-hoeren");
+    document.getElementById("hoeren-topic-selection-hub").style.display = "block";
+    document.getElementById("hoeren-topic-warmup-hub").style.display = "none";
+    document.getElementById("hoeren-practice-workspace").style.display = "none";
+    
+    renderHoerenTopicsGrid();
+}
+
+window.openInteractiveHoerenHub = openInteractiveHoerenHub;
+
+function handleHoerenBackNavigation() {
+    if (window.hoerenAudioController && typeof window.hoerenAudioController.stop === "function") {
+        window.hoerenAudioController.stop();
+    }
+    
+    const practiceWorkspace = document.getElementById("hoeren-practice-workspace");
+    const warmupHub = document.getElementById("hoeren-topic-warmup-hub");
+    const topicHub = document.getElementById("hoeren-topic-selection-hub");
+    
+    if (practiceWorkspace && practiceWorkspace.style.display !== "none") {
+        showHoerenWarmupScreen();
+    } else if (warmupHub && warmupHub.style.display !== "none") {
+        openInteractiveHoerenHub();
+    } else {
+        switchToView("view-practice-menu");
+    }
+}
+window.handleHoerenBackNavigation = handleHoerenBackNavigation;
+
+function renderHoerenTopicsGrid() {
+    const grid = document.getElementById("hoeren-topics-grid");
+    if (!grid) return;
+    
+    let html = "";
+    for (const key in INTERACTIVE_HOEREN_DATABASE) {
+        const top = INTERACTIVE_HOEREN_DATABASE[key];
+        
+        html += `
+            <div class="glass-panel" style="padding:18px; border-radius:var(--radius-md); border:1px solid var(--color-border); display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                    <div style="font-size:1.6rem; margin-bottom:6px;">${top.emoji}</div>
+                    <h4 style="margin:0 0 4px 0; font-size:1.1rem; color:var(--color-primary);">${top.title}</h4>
+                    <div style="font-size:0.8rem; color:var(--color-text-muted); font-style:italic; margin-bottom:12px;">${top.titleEN}</div>
+                    
+                    <div style="font-size:0.8rem; color:var(--color-text); margin-bottom:16px; background:rgba(255,255,255,0.02); padding:8px; border-radius:6px;">
+                        🎧 <strong>Dialoge / Dialogues (${top.dialogues.length}):</strong><br>
+                        ${top.dialogues.map(d => `<span style="color:var(--color-text-muted);">&bull; ${d.title} <i style="font-size:0.75rem; opacity:0.85;">(${d.titleEN})</i></span>`).join("<br>")}
+                    </div>
+                </div>
+
+                <div>
+                    <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--color-text-muted); margin-bottom:8px;">Übungsmodus wählen / Select Mode:</div>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+                        <button class="btn btn-secondary btn-touch" style="padding:8px 6px; font-size:0.75rem; text-align:center; display:flex; flex-direction:column; align-items:center;" onclick="startInteractiveHoerenPractice('${key}', 'dictation')">
+                            <span>🎯 Diktat</span>
+                            <span style="font-size:0.65rem; color:var(--color-text-muted); font-style:italic;">Dictation</span>
+                        </button>
+                        <button class="btn btn-secondary btn-touch" style="padding:8px 6px; font-size:0.75rem; text-align:center; display:flex; flex-direction:column; align-items:center;" onclick="startInteractiveHoerenPractice('${key}', 'fillblank')">
+                            <span>🔁 Lückentext</span>
+                            <span style="font-size:0.65rem; color:var(--color-text-muted); font-style:italic;">Fill-in-Blank</span>
+                        </button>
+                        <button class="btn btn-secondary btn-touch" style="padding:8px 6px; font-size:0.75rem; text-align:center; display:flex; flex-direction:column; align-items:center;" onclick="startInteractiveHoerenPractice('${key}', 'role')">
+                            <span>🗣️ Rollenwechsel</span>
+                            <span style="font-size:0.65rem; color:var(--color-text-muted); font-style:italic;">Role Completion</span>
+                        </button>
+                        <button class="btn btn-secondary btn-touch" style="padding:8px 6px; font-size:0.75rem; text-align:center; display:flex; flex-direction:column; align-items:center;" onclick="startInteractiveHoerenPractice('${key}', 'truefalse')">
+                            <span>📋 Richtig/Falsch</span>
+                            <span style="font-size:0.65rem; color:var(--color-text-muted); font-style:italic;">True or False</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    grid.innerHTML = html;
+}
+
+function showHoerenWarmupScreen(topicKey, modeKey) {
+    if (topicKey) activeHoerenState.topicKey = topicKey;
+    if (modeKey) activeHoerenState.modeKey = modeKey;
+    
+    const topic = INTERACTIVE_HOEREN_DATABASE[activeHoerenState.topicKey];
+    const modeNames = {
+        dictation: "🎯 Diktat / Dictation",
+        fillblank: "🔁 Lückentext / Fill-in-Blank",
+        role: "🗣️ Rollenwechsel / Role Completion",
+        truefalse: "📋 Richtig oder Falsch / True or False"
+    };
+    
+    document.getElementById("hoeren-topic-selection-hub").style.display = "none";
+    document.getElementById("hoeren-practice-workspace").style.display = "none";
+    document.getElementById("hoeren-topic-warmup-hub").style.display = "block";
+    
+    document.getElementById("hoeren-warmup-topic-badge").textContent = `${topic.emoji} ${topic.title} (${topic.titleEN})`;
+    document.getElementById("hoeren-warmup-mode-badge").textContent = modeNames[activeHoerenState.modeKey];
+    
+    // Render Vocab Cards
+    const vocabGrid = document.getElementById("hoeren-warmup-vocab-grid");
+    let vocabHTML = "";
+    
+    const genderColors = {
+        "der": "background:rgba(59,130,246,0.2); color:#60a5fa; border:1px solid #3b82f6;",
+        "die": "background:rgba(239,68,68,0.2); color:#f87171; border:1px solid #ef4444;",
+        "das": "background:rgba(16,185,129,0.2); color:#34d399; border:1px solid #10b981;",
+        "die (Pl.)": "background:rgba(168,85,247,0.2); color:#c084fc; border:1px solid #a855f7;"
+    };
+    
+    if (topic.warmup && topic.warmup.vocab) {
+        topic.warmup.vocab.forEach(v => {
+            const gStyle = genderColors[v.gender] || "background:rgba(255,255,255,0.1); color:#fff;";
+            const fullWord = `${v.gender} ${v.word}`;
+            const exEN = v.exampleEN ? `<div style="font-size:0.75rem; color:var(--color-text-muted); opacity:0.85; margin-top:2px;">🌐 ${v.exampleEN}</div>` : '';
+            vocabHTML += `
+                <div class="glass-panel" style="padding:14px; border-radius:var(--radius-md); border:1px solid var(--color-border); display:flex; flex-direction:column; justify-content:space-between;">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                            <span class="badge" style="${gStyle} font-size:0.75rem; font-weight:700; padding:2px 8px;">${v.gender}</span>
+                            <button class="btn btn-secondary btn-touch" style="padding:4px 8px; font-size:0.8rem;" onclick="playSpeech('${fullWord}', 0.85)">🔊 Anhören</button>
+                        </div>
+                        <div style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:2px;">${v.word}</div>
+                        <div style="font-size:0.85rem; color:var(--color-primary); font-weight:600; margin-bottom:8px;">${v.translation}</div>
+                        <div style="font-size:0.8rem; color:var(--color-text-muted); font-style:italic;">"${v.example}"</div>
+                        ${exEN}
+                    </div>
+                </div>
+            `;
         });
     }
+    vocabGrid.innerHTML = vocabHTML;
     
-    // Inject pronunciation helper to question text
-    const qTextEl = document.getElementById("practice-question-text");
-    if (qTextEl) {
-        const qText = q.question;
-        const pronHTML = getPronunciationHTML(qText);
-        if (pronHTML) {
-            qTextEl.innerHTML = `<div>${qText}</div>${pronHTML}`;
-        }
+    // Render Phrases List
+    const phrasesList = document.getElementById("hoeren-warmup-phrases-list");
+    let phrasesHTML = "";
+    if (topic.warmup && topic.warmup.phrases) {
+        topic.warmup.phrases.forEach(p => {
+            phrasesHTML += `
+                <div class="glass-panel" style="padding:12px 16px; border-radius:var(--radius-sm); border:1px solid var(--color-border); display:flex; justify-content:space-between; align-items:center; gap:12px;">
+                    <div>
+                        <div style="font-size:0.95rem; font-weight:600; color:#fff; margin-bottom:2px;">"${p.de}"</div>
+                        <div style="font-size:0.85rem; color:var(--color-text-muted); font-style:italic;">🌐 ${p.en}</div>
+                    </div>
+                    <button class="btn btn-secondary btn-touch" style="padding:6px 12px; font-size:0.85rem; white-space:nowrap;" onclick="playSpeech('${p.de}', 0.85)">🔊 Anhören</button>
+                </div>
+            `;
+        });
     }
+    phrasesList.innerHTML = phrasesHTML;
+}
+
+window.showHoerenWarmupScreen = showHoerenWarmupScreen;
+
+function startInteractiveHoerenPractice(topicKey, modeKey) {
+    activeHoerenState = {
+        topicKey: topicKey,
+        modeKey: modeKey,
+        currentIndex: 0,
+        userSelectedOption: null,
+        isAnswerChecked: false,
+        score: 0
+    };
+    
+    showHoerenWarmupScreen(topicKey, modeKey);
+}
+
+window.startInteractiveHoerenPractice = startInteractiveHoerenPractice;
+
+function proceedToHoerenPracticeWorkspace() {
+    document.getElementById("hoeren-topic-warmup-hub").style.display = "none";
+    document.getElementById("hoeren-practice-workspace").style.display = "block";
+    
+    const topic = INTERACTIVE_HOEREN_DATABASE[activeHoerenState.topicKey];
+    const modeNames = {
+        dictation: "🎯 Diktat / Dictation",
+        fillblank: "🔁 Lückentext / Fill-in-Blank",
+        role: "🗣️ Rollenwechsel / Role Completion",
+        truefalse: "📋 Richtig oder Falsch / True or False"
+    };
+    
+    document.getElementById("hoeren-active-topic-badge").textContent = `${topic.emoji} ${topic.title} (${topic.titleEN})`;
+    document.getElementById("hoeren-active-mode-badge").textContent = modeNames[activeHoerenState.modeKey];
+    
+    loadInteractiveHoerenQuestion();
+}
+
+window.proceedToHoerenPracticeWorkspace = proceedToHoerenPracticeWorkspace;
+
+function loadInteractiveHoerenQuestion() {
+    const topic = INTERACTIVE_HOEREN_DATABASE[activeHoerenState.topicKey];
+    const dialogue = topic.dialogues[activeHoerenState.currentIndex];
+    
+    activeHoerenState.userSelectedOption = null;
+    activeHoerenState.isAnswerChecked = false;
+    
+    document.getElementById("hoeren-dialogue-progress").textContent = `Dialog ${activeHoerenState.currentIndex + 1} / ${topic.dialogues.length} (Dialogue ${activeHoerenState.currentIndex + 1} of ${topic.dialogues.length})`;
+    
+    // Initialize Audio Player with Play/Pause, Slider, and Timer
+    initHoerenAudioPlayer(dialogue.script);
+    
+    const taskContainer = document.getElementById("hoeren-task-container");
+    const feedbackContainer = document.getElementById("hoeren-feedback-container");
+    const btnSubmit = document.getElementById("btn-hoeren-submit");
+    const btnNext = document.getElementById("btn-hoeren-next");
+    
+    feedbackContainer.style.display = "none";
+    btnSubmit.style.display = "inline-block";
+    btnNext.style.display = "none";
+    
+    const mode = activeHoerenState.modeKey;
+    
+    if (mode === "dictation") {
+        taskContainer.innerHTML = `
+            <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:var(--radius-md); border:1px solid var(--color-border);">
+                <h4 style="margin:0 0 4px 0; color:var(--color-primary);">🎯 Diktat: Hören & Schreiben / Dictation: Listen & Write</h4>
+                <p style="font-size:0.85rem; color:var(--color-text-muted); margin-bottom:12px;">Hören Sie das Audio und schreiben Sie den vollen deutschen Text auf:<br><span style="font-style:italic;">Listen to the audio and write down the full German text:</span></p>
+                <textarea id="hoeren-dictation-input" rows="4" style="width:100%; padding:12px; border-radius:var(--radius-sm); border:1px solid var(--color-border); background:rgba(0,0,0,0.2); color:#fff; font-family:inherit; font-size:1rem; resize:vertical;" placeholder="Tippen Sie hier den deutschen Text... / Type German text here..."></textarea>
+            </div>
+        `;
+    } else if (mode === "fillblank") {
+        const fb = dialogue.fillBlank;
+        let optionsHTML = "";
+        fb.options.forEach((opt, idx) => {
+            optionsHTML += `
+                <button class="btn btn-secondary btn-touch hoeren-opt-btn" data-opt="${opt}" style="padding:12px 16px; font-size:1rem; width:100%; text-align:left;" onclick="selectHoerenOption(this, '${opt}')">
+                    ${String.fromCharCode(65 + idx)}: ${opt}
+                </button>
+            `;
+        });
+        
+        taskContainer.innerHTML = `
+            <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:var(--radius-md); border:1px solid var(--color-border);">
+                <h4 style="margin:0 0 4px 0; color:var(--color-primary);">🔁 Lückentext: Fehlendes Wort ergänzen / Fill-in-Blank: Complete Word</h4>
+                <p style="font-size:0.85rem; color:var(--color-text-muted); margin-bottom:12px;">Hören Sie das Audio und wählen Sie das fehlende Wort:<br><span style="font-style:italic;">Listen to the audio and select the missing word:</span></p>
+                <div style="font-size:1.1rem; line-height:1.6; background:rgba(255,255,255,0.04); padding:16px; border-radius:8px; border:1px solid var(--color-border); margin-bottom:16px;">
+                    ${fb.sentence.replace("_____", "<span style='color:#eab308; font-weight:800; border-bottom:2px dashed #eab308; padding:0 8px;'>[ ? ]</span>")}
+                </div>
+                <div style="display:flex; flex-direction:column; gap:8px;">
+                    ${optionsHTML}
+                </div>
+            </div>
+        `;
+    } else if (mode === "role") {
+        const r = dialogue.role;
+        let optionsHTML = "";
+        r.options.forEach((opt, idx) => {
+            optionsHTML += `
+                <button class="btn btn-secondary btn-touch hoeren-opt-btn" data-idx="${idx}" style="padding:12px 16px; font-size:0.95rem; width:100%; text-align:left;" onclick="selectHoerenOption(this, ${idx})">
+                    <strong>Speaker 2 (${String.fromCharCode(65 + idx)}):</strong> ${opt}
+                </button>
+            `;
+        });
+        
+        taskContainer.innerHTML = `
+            <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:var(--radius-md); border:1px solid var(--color-border);">
+                <h4 style="margin:0 0 4px 0; color:var(--color-primary);">🗣️ Rollenwechsel: Passende Antwort wählen / Role Completion: Fitting Reply</h4>
+                <div style="font-size:1rem; line-height:1.5; background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.3); padding:14px; border-radius:8px; margin-bottom:16px;">
+                    <strong style="color:var(--color-primary);">Speaker 1 (Audio):</strong><br>
+                    "${r.speaker1}"
+                </div>
+                <p style="font-size:0.9rem; color:var(--color-text-muted); margin-bottom:10px;">Was antwortet Speaker 2? / What does Speaker 2 reply?</p>
+                <div style="display:flex; flex-direction:column; gap:8px;">
+                    ${optionsHTML}
+                </div>
+            </div>
+        `;
+    } else if (mode === "truefalse") {
+        const tf = dialogue.trueFalse;
+        taskContainer.innerHTML = `
+            <div style="background:rgba(255,255,255,0.02); padding:16px; border-radius:var(--radius-md); border:1px solid var(--color-border);">
+                <h4 style="margin:0 0 4px 0; color:var(--color-primary);">📋 Richtig oder Falsch? / True or False?</h4>
+                <p style="font-size:0.85rem; color:var(--color-text-muted); margin-bottom:12px;">Ist diese Aussage Richtig oder Falsch? / Is this statement True or False?</p>
+                <div style="font-size:1.1rem; font-weight:600; line-height:1.5; background:rgba(255,255,255,0.04); padding:16px; border-radius:8px; border:1px solid var(--color-border); margin-bottom:20px; text-align:center;">
+                    "${tf.statement}"
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                    <button class="btn btn-touch hoeren-opt-btn" data-tf="true" style="padding:16px; font-size:1.1rem; font-weight:700; background:rgba(16,185,129,0.15); border:2px solid var(--color-success); color:var(--color-success);" onclick="selectHoerenOption(this, true)">
+                        🟢 Richtig (True)
+                    </button>
+                    <button class="btn btn-touch hoeren-opt-btn" data-tf="false" style="padding:16px; font-size:1.1rem; font-weight:700; background:rgba(239,68,68,0.15); border:2px solid #ef4444; color:#ef4444;" onclick="selectHoerenOption(this, false)">
+                        🔴 Falsch (False)
+                    </button>
+                </div>
+            </div>
+        `;
+    }
+    
+    btnSubmit.onclick = () => checkInteractiveHoerenAnswer();
+    btnNext.onclick = () => {
+        activeHoerenState.currentIndex++;
+        if (activeHoerenState.currentIndex < topic.dialogues.length) {
+            loadInteractiveHoerenQuestion();
+        } else {
+            showInteractiveHoerenSummary();
+        }
+    };
+}
+
+function selectHoerenOption(btnEl, value) {
+    if (activeHoerenState.isAnswerChecked) return;
+    activeHoerenState.userSelectedOption = value;
+    
+    document.querySelectorAll(".hoeren-opt-btn").forEach(b => {
+        b.style.borderColor = "var(--color-border)";
+        b.style.boxShadow = "none";
+    });
+    
+    btnEl.style.borderColor = "var(--color-primary)";
+    btnEl.style.boxShadow = "0 0 0 2px var(--color-primary)";
+}
+
+window.selectHoerenOption = selectHoerenOption;
+
+function checkInteractiveHoerenAnswer() {
+    if (activeHoerenState.isAnswerChecked) return;
+    
+    const topic = INTERACTIVE_HOEREN_DATABASE[activeHoerenState.topicKey];
+    const dialogue = topic.dialogues[activeHoerenState.currentIndex];
+    const mode = activeHoerenState.modeKey;
+    
+    let isCorrect = false;
+    let feedbackHTML = "";
+    
+    if (mode === "dictation") {
+        const inputEl = document.getElementById("hoeren-dictation-input");
+        const userText = inputEl ? inputEl.value.trim() : "";
+        const targetText = dialogue.script.trim();
+        
+        const userWords = userText.toLowerCase().replace(/[.,?!]/g, "").split(/\s+/).filter(Boolean);
+        const targetWords = targetText.toLowerCase().replace(/[.,?!]/g, "").split(/\s+/).filter(Boolean);
+        
+        let matches = 0;
+        targetWords.forEach(w => {
+            if (userWords.includes(w)) matches++;
+        });
+        
+        const accuracy = Math.round((matches / (targetWords.length || 1)) * 100);
+        isCorrect = (accuracy >= 75);
+        if (isCorrect) activeHoerenState.score++;
+        
+        feedbackHTML = `
+            <div class="glass-panel" style="padding:16px; border-radius:var(--radius-md); border:1px solid ${isCorrect ? 'var(--color-success)' : '#ef4444'}; background:${isCorrect ? 'rgba(16,185,129,0.1)' : 'rgba(239,68,68,0.1)'};">
+                <h4 style="margin:0 0 8px 0; color:${isCorrect ? 'var(--color-success)' : '#ef4444'};">${isCorrect ? '✅ Ausgezeichnet! / Excellent!' : '🎯 Übung macht den Meister! / Practice makes perfect!'} (Genauigkeit / Accuracy: ${accuracy}%)</h4>
+                <p style="margin:0 0 12px 0; font-size:0.9rem;"><strong>Ihr Text / Your Text:</strong> ${userText || "<i>Keine Eingabe / No Input</i>"}</p>
+            </div>
+        `;
+    } else if (mode === "fillblank") {
+        if (!activeHoerenState.userSelectedOption) {
+            alert("Bitte wählen Sie eine Option! / Please select an option!");
+            return;
+        }
+        isCorrect = (activeHoerenState.userSelectedOption === dialogue.fillBlank.target);
+        if (isCorrect) activeHoerenState.score++;
+        
+        feedbackHTML = `
+            <div class="glass-panel" style="padding:16px; border-radius:var(--radius-md); border:1px solid ${isCorrect ? 'var(--color-success)' : '#ef4444'}; background:${isCorrect ? 'rgba(16,185,129,0.1)' : 'rgba(239,68,68,0.1)'};">
+                <h4 style="margin:0 0 4px 0; color:${isCorrect ? 'var(--color-success)' : '#ef4444'};">${isCorrect ? '✅ Richtig! / Correct!' : '❌ Nicht ganz richtig... / Not quite correct...'}</h4>
+                <p style="margin:0;">Richtiges Wort / Correct word: <strong style="color:var(--color-success); font-size:1.1rem;">${dialogue.fillBlank.target}</strong></p>
+            </div>
+        `;
+    } else if (mode === "role") {
+        if (activeHoerenState.userSelectedOption === null) {
+            alert("Bitte wählen Sie eine Antwort! / Please select a reply!");
+            return;
+        }
+        isCorrect = (activeHoerenState.userSelectedOption === dialogue.role.correct);
+        if (isCorrect) activeHoerenState.score++;
+        
+        feedbackHTML = `
+            <div class="glass-panel" style="padding:16px; border-radius:var(--radius-md); border:1px solid ${isCorrect ? 'var(--color-success)' : '#ef4444'}; background:${isCorrect ? 'rgba(16,185,129,0.1)' : 'rgba(239,68,68,0.1)'};">
+                <h4 style="margin:0 0 4px 0; color:${isCorrect ? 'var(--color-success)' : '#ef4444'};">${isCorrect ? '✅ Richtig gewählt! / Correctly Chosen!' : '❌ Falsche Antwort... / Incorrect Reply...'}</h4>
+                <p style="margin:0;">Passende Antwort / Fitting reply: <strong>"${dialogue.role.options[dialogue.role.correct]}"</strong></p>
+            </div>
+        `;
+    } else if (mode === "truefalse") {
+        if (activeHoerenState.userSelectedOption === null) {
+            alert("Bitte wählen Sie Richtig oder Falsch! / Please select True or False!");
+            return;
+        }
+        isCorrect = (activeHoerenState.userSelectedOption === dialogue.trueFalse.correct);
+        if (isCorrect) activeHoerenState.score++;
+        
+        feedbackHTML = `
+            <div class="glass-panel" style="padding:16px; border-radius:var(--radius-md); border:1px solid ${isCorrect ? 'var(--color-success)' : '#ef4444'}; background:${isCorrect ? 'rgba(16,185,129,0.1)' : 'rgba(239,68,68,0.1)'};">
+                <h4 style="margin:0 0 4px 0; color:${isCorrect ? 'var(--color-success)' : '#ef4444'};">${isCorrect ? '✅ Richtig! / Correct!' : '❌ Falsch... / Incorrect...'}</h4>
+                <p style="margin:4px 0 0 0; font-size:0.95rem;">${dialogue.trueFalse.explanation}</p>
+            </div>
+        `;
+    }
+    
+    activeHoerenState.isAnswerChecked = true;
+    
+    let vocabChips = dialogue.vocabSupport.map(v => `<span class="badge" style="background:rgba(255,255,255,0.06); color:var(--color-text); font-size:0.85rem; padding:4px 8px;"><strong>${v.word}:</strong> ${v.translation}</span>`).join(" ");
+    
+    feedbackHTML += `
+        <div class="glass-panel" style="margin-top:16px; padding:16px; border-radius:var(--radius-md); border:1px solid var(--color-border); background:rgba(0,0,0,0.2);">
+            <h4 style="margin:0 0 8px 0; color:var(--color-primary);">📖 Transkript & Übersetzung / Transcript & Translation (Reveal)</h4>
+            <div style="font-size:1rem; line-height:1.6; margin-bottom:10px; color:#fff; background:rgba(255,255,255,0.03); padding:10px; border-radius:6px;">
+                "${dialogue.script}"
+            </div>
+            <div style="font-size:0.9rem; color:var(--color-text-muted); font-style:italic; margin-bottom:12px;">
+                🌐 ${dialogue.translation}
+            </div>
+            <div style="border-top:1px dashed var(--color-border); padding-top:10px;">
+                <div style="font-size:0.8rem; font-weight:700; color:var(--color-text-muted); margin-bottom:6px;">🔑 Schlüsselwörter / Key Vocab:</div>
+                <div style="display:flex; flex-wrap:wrap; gap:6px;">${vocabChips}</div>
+            </div>
+        </div>
+    `;
+    
+    const feedbackContainer = document.getElementById("hoeren-feedback-container");
+    feedbackContainer.innerHTML = feedbackHTML;
+    feedbackContainer.style.display = "block";
+    
+    document.getElementById("btn-hoeren-submit").style.display = "none";
+    document.getElementById("btn-hoeren-next").style.display = "inline-block";
+}
+
+function showInteractiveHoerenSummary() {
+    const topic = INTERACTIVE_HOEREN_DATABASE[activeHoerenState.topicKey];
+    const taskContainer = document.getElementById("hoeren-task-container");
+    const feedbackContainer = document.getElementById("hoeren-feedback-container");
+    const btnSubmit = document.getElementById("btn-hoeren-submit");
+    const btnNext = document.getElementById("btn-hoeren-next");
+    
+    feedbackContainer.style.display = "none";
+    btnSubmit.style.display = "none";
+    btnNext.style.display = "none";
+    
+    taskContainer.innerHTML = `
+        <div class="glass-panel" style="padding:24px; text-align:center; border-radius:var(--radius-lg); background:rgba(16,185,129,0.1); border:1px solid var(--color-success);">
+            <div style="font-size:3rem; margin-bottom:8px;">🎉</div>
+            <h3 style="margin:0 0 8px 0; color:var(--color-success);">Übung abgeschlossen! / Exercise Completed!</h3>
+            <p style="font-size:1.1rem; margin-bottom:16px;">Sie haben <strong>${activeHoerenState.score} / ${topic.dialogues.length}</strong> Punkte erzielt im Thema <strong>${topic.title} (${topic.titleEN})</strong>.<br><span style="font-size:0.9rem; color:var(--color-text-muted); font-style:italic;">You scored ${activeHoerenState.score} of ${topic.dialogues.length} points in ${topic.titleEN}.</span></p>
+            <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+                <button class="btn btn-primary btn-touch" onclick="startInteractiveHoerenPractice('${activeHoerenState.topicKey}', '${activeHoerenState.modeKey}')">🔄 Nochmal üben / Practice Again</button>
+                <button class="btn btn-secondary btn-touch" onclick="openInteractiveHoerenHub()">🏠 Thema oder Modus wechseln / Change Topic or Mode</button>
+            </div>
+        </div>
+    `;
+}
+
+// --- AUDIO PLAYER CONTROLLER WITH PLAY/PAUSE, SCRUBBING SLIDER & TIME DISPLAY ---
+
+let hoerenAudioController = {
+    isPlaying: false,
+    isPaused: false,
+    hasPendingSeek: false,
+    pendingSeekOffset: 0,
+    rate: 1.0,
+    text: "",
+    durationSecs: 0,
+    currentSecs: 0,
+    timer: null,
+    sliderEl: null,
+    timeCurEl: null,
+    timeTotEl: null,
+    btnPlayPause: null,
+    iconEl: null,
+    textEl: null
 };
 
-// Monkey-patch loadPracticeQuestion to intercept all practice modes
-const originalLoadPracticeQuestion = loadPracticeQuestion;
-loadPracticeQuestion = function() {
-    originalLoadPracticeQuestion();
+function initHoerenAudioPlayer(dialogueScript) {
+    window.speechSynthesis.cancel();
+    if (hoerenAudioController.timer) clearInterval(hoerenAudioController.timer);
     
-    const qTextEl = document.getElementById("practice-question-text");
-    if (qTextEl && practiceState.questions && practiceState.questions[practiceState.currentIndex]) {
-        const q = practiceState.questions[practiceState.currentIndex];
-        const qText = q.question;
-        const pronHTML = getPronunciationHTML(qText);
-        if (pronHTML) {
-            qTextEl.innerHTML = `<div>${qText}</div>${pronHTML}`;
-        }
-    }
-};
-
-// Enhance settings change listener for pronunciation dropdown
-document.addEventListener("DOMContentLoaded", () => {
-    const pronLangSelect = document.getElementById("settings-pronunciation-language-select");
-    if (pronLangSelect) {
-        pronLangSelect.value = portalState.pronunciationLang || "ml";
-        pronLangSelect.onchange = (e) => {
-            const val = e.target.value;
-            portalState.pronunciationLang = val;
-            portalState.showPronunciation = (val !== "hidden");
-            savePortalStateToStorage();
-            refreshActiveViewContent();
+    hoerenAudioController = {
+        isPlaying: false,
+        isPaused: false,
+        hasPendingSeek: false,
+        pendingSeekOffset: 0,
+        rate: 1.0,
+        text: dialogueScript,
+        durationSecs: Math.max(3, Math.round((dialogueScript.split(/\s+/).length / 2.0) + 1)),
+        currentSecs: 0,
+        timer: null,
+        sliderEl: document.getElementById("hoeren-audio-slider"),
+        timeCurEl: document.getElementById("hoeren-audio-time-current"),
+        timeTotEl: document.getElementById("hoeren-audio-time-total"),
+        btnPlayPause: document.getElementById("btn-hoeren-play-pause"),
+        iconEl: document.getElementById("hoeren-play-icon"),
+        textEl: document.getElementById("hoeren-play-text")
+    };
+    
+    if (hoerenAudioController.sliderEl) {
+        hoerenAudioController.sliderEl.value = 0;
+        hoerenAudioController.sliderEl.oninput = (e) => {
+            seekHoerenAudio(parseFloat(e.target.value));
         };
     }
-});
+    
+    updateHoerenTimeDisplay(0, hoerenAudioController.durationSecs);
+    setHoerenPlayButtonState("stopped");
+    
+    if (hoerenAudioController.btnPlayPause) {
+        hoerenAudioController.btnPlayPause.onclick = () => toggleHoerenAudioPlayPause();
+    }
+    
+    const btnSlow = document.getElementById("btn-hoeren-play-slow");
+    if (btnSlow) {
+        btnSlow.onclick = () => playHoerenAudioAtRate(0.65);
+    }
+}
+
+function formatAudioTime(secs) {
+    const m = Math.floor(secs / 60);
+    const s = Math.floor(secs % 60);
+    return `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+}
+
+function updateHoerenTimeDisplay(curSecs, totSecs) {
+    if (hoerenAudioController.timeCurEl) {
+        hoerenAudioController.timeCurEl.textContent = formatAudioTime(curSecs);
+    }
+    if (hoerenAudioController.timeTotEl) {
+        hoerenAudioController.timeTotEl.textContent = formatAudioTime(totSecs);
+    }
+}
+
+function setHoerenPlayButtonState(state) {
+    if (!hoerenAudioController.iconEl || !hoerenAudioController.textEl) return;
+    
+    if (state === "playing") {
+        hoerenAudioController.iconEl.textContent = "⏸️";
+        hoerenAudioController.textEl.textContent = "Pausieren / Pause";
+    } else if (state === "paused") {
+        hoerenAudioController.iconEl.textContent = "▶️";
+        hoerenAudioController.textEl.textContent = "Fortsetzen / Resume";
+    } else {
+        hoerenAudioController.iconEl.textContent = "▶️";
+        hoerenAudioController.textEl.textContent = "Abspielen / Play";
+    }
+}
+
+function toggleHoerenAudioPlayPause() {
+    if (hoerenAudioController.isPlaying && !hoerenAudioController.isPaused) {
+        window.speechSynthesis.pause();
+        hoerenAudioController.isPaused = true;
+        setHoerenPlayButtonState("paused");
+    } else if (hoerenAudioController.isPaused) {
+        if (hoerenAudioController.hasPendingSeek) {
+            const offset = hoerenAudioController.pendingSeekOffset;
+            hoerenAudioController.hasPendingSeek = false;
+            playHoerenAudioAtRate(hoerenAudioController.rate || 1.0, offset);
+        } else {
+            window.speechSynthesis.resume();
+            hoerenAudioController.isPaused = false;
+            setHoerenPlayButtonState("playing");
+        }
+    } else {
+        const offset = hoerenAudioController.hasPendingSeek ? hoerenAudioController.pendingSeekOffset : 0;
+        hoerenAudioController.hasPendingSeek = false;
+        playHoerenAudioAtRate(hoerenAudioController.rate || 1.0, offset);
+    }
+}
+
+function playHoerenAudioAtRate(rate, offsetCharIndex = 0) {
+    window.speechSynthesis.cancel();
+    if (hoerenAudioController.timer) clearInterval(hoerenAudioController.timer);
+    
+    hoerenAudioController.rate = rate;
+    hoerenAudioController.isPlaying = true;
+    hoerenAudioController.isPaused = false;
+    hoerenAudioController.hasPendingSeek = false;
+    setHoerenPlayButtonState("playing");
+    
+    const textToSpeak = offsetCharIndex > 0 ? hoerenAudioController.text.slice(offsetCharIndex) : hoerenAudioController.text;
+    const wordCount = textToSpeak.split(/\s+/).length;
+    const estSecs = Math.max(1, Math.round((wordCount / (2.0 * rate)) + 0.5));
+    
+    if (offsetCharIndex === 0) {
+        hoerenAudioController.durationSecs = Math.max(3, Math.round((hoerenAudioController.text.split(/\s+/).length / (2.0 * rate)) + 1));
+        hoerenAudioController.currentSecs = 0;
+    }
+    
+    const startSecs = hoerenAudioController.currentSecs;
+    const stepMs = 200;
+    const totalSteps = Math.max(10, estSecs * 5);
+    let stepCount = 0;
+    
+    speakText(
+        textToSpeak,
+        () => {},
+        () => {
+            if (hoerenAudioController.timer) clearInterval(hoerenAudioController.timer);
+            hoerenAudioController.isPlaying = false;
+            hoerenAudioController.isPaused = false;
+            hoerenAudioController.hasPendingSeek = false;
+            hoerenAudioController.currentSecs = 0;
+            if (hoerenAudioController.sliderEl) hoerenAudioController.sliderEl.value = 100;
+            updateHoerenTimeDisplay(hoerenAudioController.durationSecs, hoerenAudioController.durationSecs);
+            setHoerenPlayButtonState("stopped");
+            setTimeout(() => {
+                if (!hoerenAudioController.isPlaying) {
+                    if (hoerenAudioController.sliderEl) hoerenAudioController.sliderEl.value = 0;
+                    updateHoerenTimeDisplay(0, hoerenAudioController.durationSecs);
+                }
+            }, 800);
+        },
+        () => {
+            setHoerenPlayButtonState("stopped");
+            hoerenAudioController.isPlaying = false;
+            hoerenAudioController.isPaused = false;
+        },
+        rate
+    );
+    
+    hoerenAudioController.timer = setInterval(() => {
+        if (hoerenAudioController.isPlaying && !hoerenAudioController.isPaused && window.speechSynthesis.speaking) {
+            stepCount++;
+            const pct = Math.min(1.0, stepCount / totalSteps);
+            hoerenAudioController.currentSecs = Math.min(hoerenAudioController.durationSecs, startSecs + (pct * estSecs));
+            
+            const totalPct = Math.min(100, Math.round((hoerenAudioController.currentSecs / (hoerenAudioController.durationSecs || 1)) * 100));
+            if (hoerenAudioController.sliderEl) hoerenAudioController.sliderEl.value = totalPct;
+            updateHoerenTimeDisplay(hoerenAudioController.currentSecs, hoerenAudioController.durationSecs);
+        }
+    }, stepMs);
+}
+
+function seekHoerenAudio(pct) {
+    const fullText = hoerenAudioController.text;
+    if (!fullText) return;
+    
+    const targetCharIdx = Math.floor(fullText.length * (pct / 100));
+    let spaceIdx = fullText.indexOf(" ", targetCharIdx);
+    if (spaceIdx === -1) spaceIdx = targetCharIdx;
+    
+    hoerenAudioController.pendingSeekOffset = spaceIdx;
+    hoerenAudioController.hasPendingSeek = true;
+    
+    hoerenAudioController.currentSecs = (pct / 100) * hoerenAudioController.durationSecs;
+    updateHoerenTimeDisplay(hoerenAudioController.currentSecs, hoerenAudioController.durationSecs);
+    
+    if (hoerenAudioController.isPlaying && !hoerenAudioController.isPaused) {
+        hoerenAudioController.hasPendingSeek = false;
+        playHoerenAudioAtRate(hoerenAudioController.rate || 1.0, spaceIdx);
+    } else {
+        window.speechSynthesis.cancel();
+        hoerenAudioController.isPaused = true;
+        setHoerenPlayButtonState(pct === 0 ? "stopped" : "paused");
+    }
+}
+
+
