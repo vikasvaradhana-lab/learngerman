@@ -16,100 +16,127 @@
 // --- QUESTION BANK DATA ---
 const LEVEL = "A1";
 
+// SVG Scene Generator for Hören Teil 1 picture-matching
+function generateSceneSVG(scene) {
+    const scenes = {
+        classroom: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" fill="#1a1a2e" rx="8"/><rect x="10" y="10" width="180" height="120" fill="#16213e" rx="4"/><rect x="70" y="20" width="60" height="40" fill="#e8d5b7" rx="2"/><line x1="100" y1="30" x2="100" y2="50" stroke="#8b4513" stroke-width="2"/><circle cx="100" cy="28" r="6" fill="#f4a460"/><rect x="30" y="80" width="25" height="20" fill="#4a6fa5" rx="2"/><rect x="70" y="80" width="25" height="20" fill="#4a6fa5" rx="2"/><rect x="110" y="80" width="25" height="20" fill="#4a6fa5" rx="2"/><rect x="150" y="80" width="25" height="20" fill="#4a6fa5" rx="2"/><text x="100" y="130" text-anchor="middle" fill="#e8d5b7" font-size="10" font-family="sans-serif">Klassenzimmer</text></svg>`,
+        garden: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" fill="#1a1a2e" rx="8"/><rect x="10" y="50" width="180" height="80" fill="#2d5016" rx="4"/><rect x="20" y="55" width="35" height="30" fill="#3a7d1e" rx="2"/><circle cx="37" cy="48" r="8" fill="#ff6347"/><circle cx="30" cy="52" r="5" fill="#ffa500"/><rect x="65" y="55" width="35" height="30" fill="#3a7d1e" rx="2"/><circle cx="82" cy="48" r="8" fill="#ff4500"/><circle cx="75" cy="52" r="5" fill="#ff6347"/><rect x="110" y="55" width="35" height="30" fill="#3a7d1e" rx="2"/><circle cx="127" cy="48" r="8" fill="#ffa500"/><rect x="155" y="55" width="35" height="30" fill="#3a7d1e" rx="2"/><line x1="172" y1="40" x2="172" y2="55" stroke="#8b4513" stroke-width="2"/><circle cx="172" cy="35" r="6" fill="#ffd700"/><text x="100" y="130" text-anchor="middle" fill="#e8d5b7" font-size="10" font-family="sans-serif">Gartenparzelle</text></svg>`,
+        pool: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" fill="#1a1a2e" rx="8"/><rect x="10" y="10" width="180" height="70" fill="#87ceeb" rx="4"/><ellipse cx="60" cy="45" rx="25" ry="15" fill="#4da6ff"/><ellipse cx="140" cy="50" rx="25" ry="15" fill="#4da6ff"/><circle cx="60" cy="38" r="5" fill="#f4a460"/><circle cx="140" cy="43" r="5" fill="#f4a460"/><rect x="10" y="80" width="180" height="50" fill="#c2b280" rx="4"/><rect x="40" y="90" width="30" height="10" fill="#ff6347" rx="2"/><rect x="130" y="90" width="30" height="10" fill="#ffa500" rx="2"/><text x="100" y="130" text-anchor="middle" fill="#e8d5b7" font-size="10" font-family="sans-serif">Freibad</text></svg>`,
+        office: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" fill="#1a1a2e" rx="8"/><rect x="10" y="10" width="180" height="120" fill="#16213e" rx="4"/><rect x="50" y="50" width="100" height="50" fill="#8b7355" rx="3"/><rect x="60" y="35" width="60" height="35" fill="#2a2a4a" rx="2"/><rect x="65" y="38" width="50" height="25" fill="#4a9eff" rx="1"/><rect x="80" y="100" width="40" height="20" fill="#654321" rx="2"/><text x="100" y="130" text-anchor="middle" fill="#e8d5b7" font-size="10" font-family="sans-serif">Büro</text></svg>`,
+        vegGarden: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" fill="#1a1a2e" rx="8"/><rect x="10" y="40" width="180" height="90" fill="#3d2b1f" rx="4"/><line x1="10" y1="60" x2="190" y2="60" stroke="#5a3e2b" stroke-width="1"/><line x1="10" y1="80" x2="190" y2="80" stroke="#5a3e2b" stroke-width="1"/><line x1="10" y1="100" x2="190" y2="100" stroke="#5a3e2b" stroke-width="1"/><circle cx="30" cy="50" r="4" fill="#228b22"/><circle cx="50" cy="50" r="4" fill="#228b22"/><circle cx="70" cy="50" r="4" fill="#228b22"/><circle cx="110" cy="70" r="5" fill="#ff4500"/><circle cx="130" cy="70" r="5" fill="#ff4500"/><circle cx="150" cy="70" r="5" fill="#ff4500"/><circle cx="40" cy="90" r="3" fill="#ffa500"/><circle cx="60" cy="90" r="3" fill="#ffa500"/><circle cx="80" cy="90" r="3" fill="#ffa500"/><text x="100" y="130" text-anchor="middle" fill="#e8d5b7" font-size="10" font-family="sans-serif">Gemüsebeete</text></svg>`,
+        house: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" fill="#1a1a2e" rx="8"/><polygon points="100,15 40,60 160,60" fill="#8b0000"/><rect x="55" y="60" width="90" height="60" fill="#deb887"/><rect x="85" y="80" width="25" height="40" fill="#654321" rx="2"/><circle cx="105" cy="100" r="2" fill="#ffd700"/><rect x="130" y="70" width="40" height="50" fill="#a0a0a0" rx="2"/><rect x="135" y="75" width="30" height="40" fill="#808080" rx="1"/><rect x="55" y="65" width="18" height="15" fill="#87ceeb" rx="1"/><line x1="64" y1="65" x2="64" y2="80" stroke="#deb887" stroke-width="1"/><line x1="55" y1="72" x2="73" y2="72" stroke="#deb887" stroke-width="1"/><rect x="10" y="120" width="180" height="15" fill="#228b22" rx="2"/><text x="100" y="138" text-anchor="middle" fill="#e8d5b7" font-size="9" font-family="sans-serif">Haus mit Garage</text></svg>`,
+        packageDoor: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" fill="#1a1a2e" rx="8"/><rect x="10" y="10" width="180" height="120" fill="#16213e" rx="4"/><rect x="70" y="20" width="60" height="90" fill="#8b4513" rx="3"/><circle cx="120" cy="65" r="4" fill="#ffd700"/><rect x="80" y="95" width="40" height="25" fill="#d2691e" rx="2"/><line x1="80" y1="100" x2="120" y2="100" stroke="#8b4513" stroke-width="1"/><line x1="80" y1="107" x2="120" y2="107" stroke="#8b4513" stroke-width="1"/><text x="100" y="130" text-anchor="middle" fill="#e8d5b7" font-size="10" font-family="sans-serif">Paket an der Tür</text></svg>`,
+        packageShop: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" fill="#1a1a2e" rx="8"/><rect x="10" y="10" width="180" height="120" fill="#16213e" rx="4"/><rect x="30" y="30" width="140" height="80" fill="#2a2a4a" rx="3"/><rect x="40" y="40" width="50" height="35" fill="#d2691e" rx="2"/><line x1="40" y1="45" x2="90" y2="45" stroke="#8b4513" stroke-width="1"/><rect x="100" y="40" width="60" height="60" fill="#87ceeb" rx="2"/><rect x="40" y="85" width="120" height="15" fill="#4a6fa5" rx="2"/><text x="100" y="130" text-anchor="middle" fill="#e8d5b7" font-size="10" font-family="sans-serif">Filiale</text></svg>`,
+        packageStation: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" fill="#1a1a2e" rx="8"/><rect x="10" y="10" width="180" height="120" fill="#16213e" rx="4"/><rect x="20" y="70" width="160" height="8" fill="#808080"/><rect x="20" y="85" width="160" height="8" fill="#808080"/><rect x="50" y="30" width="100" height="40" fill="#2a2a4a" rx="3"/><rect x="60" y="35" width="30" height="25" fill="#4a9eff" rx="1"/><rect x="100" y="35" width="40" height="25" fill="#4a9eff" rx="1"/><rect x="130" y="50" width="30" height="25" fill="#d2691e" rx="2"/><text x="100" y="130" text-anchor="middle" fill="#e8d5b7" font-size="10" font-family="sans-serif">Bahnhof</text></svg>`,
+        schoolPool: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" fill="#1a1a2e" rx="8"/><rect x="10" y="10" width="180" height="60" fill="#87ceeb" rx="4"/><ellipse cx="50" cy="40" rx="15" ry="10" fill="#4da6ff"/><ellipse cx="100" cy="35" rx="15" ry="10" fill="#4da6ff"/><ellipse cx="150" cy="40" rx="15" ry="10" fill="#4da6ff"/><circle cx="50" cy="34" r="4" fill="#f4a460"/><circle cx="100" cy="29" r="4" fill="#f4a460"/><circle cx="150" cy="34" r="4" fill="#f4a460"/><rect x="10" y="75" width="180" height="55" fill="#c2b280" rx="4"/><rect x="60" y="80" width="20" height="8" fill="#ff6347" rx="1"/><rect x="90" y="80" width="20" height="8" fill="#ffa500" rx="1"/><rect x="120" y="80" width="20" height="8" fill="#4da6ff" rx="1"/><text x="100" y="130" text-anchor="middle" fill="#e8d5b7" font-size="10" font-family="sans-serif">Schulkinder am Bad</text></svg>`,
+        afternoonSwim: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" fill="#1a1a2e" rx="8"/><rect x="10" y="10" width="180" height="70" fill="#ff8c00" rx="4" opacity="0.3"/><rect x="10" y="30" width="180" height="50" fill="#4da6ff" rx="4"/><ellipse cx="100" cy="50" rx="30" ry="15" fill="#87ceeb"/><circle cx="100" cy="43" r="5" fill="#f4a460"/><rect x="10" y="80" width="180" height="50" fill="#c2b280" rx="4"/><rect x="30" y="85" width="15" height="10" fill="#ff6347" rx="2"/><rect x="55" y="85" width="15" height="10" fill="#ffa500" rx="2"/><text x="100" y="130" text-anchor="middle" fill="#e8d5b7" font-size="10" font-family="sans-serif">Nachmittagsschwimmen</text></svg>`,
+        nightSwim: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" fill="#0a0a1a" rx="8"/><circle cx="160" cy="25" r="15" fill="#ffd700" opacity="0.8"/><circle cx="40" cy="20" r="2" fill="#fff"/><circle cx="80" cy="15" r="1.5" fill="#fff"/><circle cx="120" cy="30" r="1" fill="#fff"/><rect x="10" y="50" width="180" height="40" fill="#1a3a5c" rx="4"/><ellipse cx="100" cy="65" rx="25" ry="12" fill="#2a5a8c"/><circle cx="100" cy="59" r="4" fill="#f4a460"/><rect x="10" y="90" width="180" height="40" fill="#1a1a2e" rx="4"/><text x="100" y="130" text-anchor="middle" fill="#e8d5b7" font-size="10" font-family="sans-serif">Nachtschwimmen</text></svg>`,
+        trafficJam: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" fill="#1a1a2e" rx="8"/><rect x="10" y="50" width="180" height="40" fill="#404040" rx="4"/><line x1="10" y1="70" x2="190" y2="70" stroke="#ffd700" stroke-width="2" stroke-dasharray="10,5"/><rect x="20" y="55" width="25" height="15" fill="#ff0000" rx="3"/><rect x="50" y="55" width="25" height="15" fill="#4169e1" rx="3"/><rect x="80" y="55" width="25" height="15" fill="#ff0000" rx="3"/><rect x="110" y="55" width="25" height="15" fill="#fff" rx="3"/><rect x="140" y="55" width="25" height="15" fill="#4169e1" rx="3"/><rect x="25" y="52" width="3" height="3" fill="#ffd700" rx="1"/><rect x="55" y="52" width="3" height="3" fill="#ffd700" rx="1"/><rect x="85" y="52" width="3" height="3" fill="#ffd700" rx="1"/><text x="100" y="110" text-anchor="middle" fill="#e8d5b7" font-size="10" font-family="sans-serif">Stau auf der Autobahn</text></svg>`,
+        detour: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" fill="#1a1a2e" rx="8"/><rect x="10" y="60" width="180" height="30" fill="#404040" rx="4"/><rect x="70" y="20" width="60" height="35" fill="#ffa500" rx="3"/><text x="100" y="38" text-anchor="middle" fill="#000" font-size="11" font-weight="bold" font-family="sans-serif">Umleitung</text><polygon points="85,42 100,30 115,42" fill="#000"/><rect x="20" y="95" width="40" height="25" fill="#228b22" rx="2"/><rect x="80" y="95" width="40" height="25" fill="#228b22" rx="2"/><rect x="140" y="95" width="40" height="25" fill="#228b22" rx="2"/><text x="100" y="130" text-anchor="middle" fill="#e8d5b7" font-size="10" font-family="sans-serif">Umleitungsschild</text></svg>`,
+        trainPlatform: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" fill="#1a1a2e" rx="8"/><rect x="10" y="10" width="180" height="120" fill="#16213e" rx="4"/><rect x="10" y="80" width="180" height="10" fill="#808080"/><rect x="10" y="95" width="180" height="10" fill="#808080"/><rect x="30" y="30" width="140" height="45" fill="#2a2a4a" rx="3"/><rect x="40" y="35" width="40" height="30" fill="#4a9eff" rx="1"/><rect x="90" y="35" width="40" height="30" fill="#4a9eff" rx="1"/><rect x="140" y="35" width="25" height="30" fill="#ff6347" rx="1"/><circle cx="60" cy="75" r="4" fill="#f4a460"/><circle cx="100" cy="75" r="4" fill="#f4a460"/><circle cx="140" cy="75" r="4" fill="#f4a460"/><text x="100" y="130" text-anchor="middle" fill="#e8d5b7" font-size="10" font-family="sans-serif">Bahnsteig</text></svg>`,
+        noticeBoard: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" fill="#1a1a2e" rx="8"/><rect x="10" y="10" width="180" height="120" fill="#16213e" rx="4"/><rect x="40" y="20" width="120" height="90" fill="#8b7355" rx="3"/><rect x="50" y="30" width="40" height="30" fill="#fff" rx="1"/><rect x="100" y="30" width="40" height="30" fill="#fff" rx="1"/><rect x="50" y="70" width="40" height="30" fill="#fff" rx="1"/><rect x="100" y="70" width="40" height="30" fill="#fff" rx="1"/><line x1="55" y1="38" x2="85" y2="38" stroke="#999" stroke-width="1"/><line x1="55" y1="43" x2="80" y2="43" stroke="#999" stroke-width="1"/><line x1="55" y1="48" x2="82" y2="48" stroke="#999" stroke-width="1"/><text x="100" y="130" text-anchor="middle" fill="#e8d5b7" font-size="10" font-family="sans-serif">Aushang</text></svg>`,
+        sweeping: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" fill="#1a1a2e" rx="8"/><rect x="10" y="10" width="180" height="120" fill="#16213e" rx="4"/><rect x="80" y="30" width="40" height="80" fill="#2a2a4a" rx="2"/><rect x="75" y="25" width="50" height="10" fill="#4a6fa5" rx="2"/><line x1="100" y1="35" x2="100" y2="110" stroke="#808080" stroke-width="2"/><circle cx="100" cy="45" r="8" fill="#f4a460"/><rect x="85" y="55" width="30" height="25" fill="#4a6fa5" rx="2"/><line x1="90" y1="80" x2="80" y2="110" stroke="#654321" stroke-width="2"/><line x1="110" y1="80" x2="120" y2="110" stroke="#654321" stroke-width="2"/><line x1="130" y1="85" x2="160" y2="100" stroke="#808080" stroke-width="2"/><circle cx="160" cy="100" r="5" fill="#c0c0c0"/><text x="100" y="130" text-anchor="middle" fill="#e8d5b7" font-size="10" font-family="sans-serif">Treppenhaus fegen</text></svg>`,
+        keyHandover: `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" fill="#1a1a2e" rx="8"/><rect x="10" y="10" width="180" height="120" fill="#16213e" rx="4"/><circle cx="60" cy="55" r="12" fill="#f4a460"/><rect x="50" y="70" width="20" height="25" fill="#4a6fa5" rx="2"/><circle cx="140" cy="55" r="12" fill="#f4a460"/><rect x="130" y="70" width="20" height="25" fill="#ff6347" rx="2"/><rect x="85" y="55" width="30" height="8" fill="#ffd700" rx="4"/><circle cx="115" cy="59" r="5" fill="#ffd700"/><text x="100" y="130" text-anchor="middle" fill="#e8d5b7" font-size="10" font-family="sans-serif">Schlüsselübergabe</text></svg>`
+    };
+    return scenes[scene] || `<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="140" fill="#1a1a2e" rx="8"/><text x="100" y="75" text-anchor="middle" fill="#e8d5b7" font-size="12">${scene}</text></svg>`;
+}
+
 const QUESTION_BANK = {
     hoeren: {
+        // Teil 1: Hören — 5 Dialoge, jeweils 3 Bilder (A/B/C), richtiges Bild wählen
         teil1: [
             {
                 id: "h_t1_q1",
-                type: "mc",
+                type: "picture_match",
                 script: "Guten Tag, Volkshochschule Hamburg, was kann ich für Sie tun? - Guten Tag. Ich möchte mich für den Aquarellkurs anmelden. Ist noch ein Platz frei? - Ja, der Kurs beginnt nächsten Dienstag. Er findet jeden Dienstag von 18 bis 20 Uhr statt. - Und wie viel kostet das? - Dreißig Euro für acht Einheiten.",
-                question: "Wann findet der Aquarellkurs statt?",
-                options: [
-                    { text: "Jeden Montag von 18–20 Uhr", letter: "A" },
-                    { text: "Jeden Dienstag von 18–20 Uhr", letter: "B" },
-                    { text: "Jeden Mittwoch von 18–20 Uhr", letter: "C" }
+                question: "Welches Bild passt zum Dialog?",
+                images: [
+                    { emoji: "🎨", label: "Malen in einem Klassenzimmer", letter: "A", scene: "classroom" },
+                    { emoji: "🌻", label: "Gärtnern auf einer Parzelle", letter: "B", scene: "garden" },
+                    { emoji: "🏊", label: "Schwimmen im Freibad", letter: "C", scene: "pool" }
                 ],
-                correct: 1, // B
+                correct: 0, // A — Aquarellkurs = painting
                 playback_limit: 2,
                 grammar: "Zeitangaben",
                 vocab: "Freizeit & Hobbys"
             },
             {
                 id: "h_t1_q2",
-                type: "mc",
+                type: "picture_match",
                 script: "Hallo Markus. Hast du Lust, dem Kleingärtnerverein beizutreten? Es gibt noch freie Parzellen. - Was kostet das pro Jahr? - Fünfzig Euro Mitgliedsbeitrag und dann noch die Pacht für das Grundstück, das sind zwanzig Euro im Monat. - Das klingt günstig. Wo kann ich mich anmelden? - Im Vereinsbüro, Samstags von neun bis zwölf.",
-                question: "Wie viel kostet die monatliche Pacht für das Grundstück?",
-                options: [
-                    { text: "Fünfzig Euro", letter: "A" },
-                    { text: "Zwanzig Euro", letter: "B" },
-                    { text: "Dreißig Euro", letter: "C" }
+                question: "Welches Bild passt zum Dialog?",
+                images: [
+                    { emoji: "🏢", label: "Ein Büro mit Schreibtisch", letter: "A", scene: "office" },
+                    { emoji: "🌱", label: "Ein Garten mit Gemüsebeeten", letter: "B", scene: "vegGarden" },
+                    { emoji: "🏡", label: "Ein Haus mit Garage", letter: "C", scene: "house" }
                 ],
-                correct: 1, // B
+                correct: 1, // B — Kleingärtnerverein = garden plots
                 playback_limit: 2,
                 grammar: "Zahlen",
                 vocab: "Natur & Umwelt"
             },
             {
                 id: "h_t1_q3",
-                type: "mc",
+                type: "picture_match",
                 script: "Hallo, hier spricht die Spedition Schnell. Wir haben heute versucht, ein Paket für Sie abzuliefern, aber Sie waren nicht zu Hause. Das Paket liegt jetzt in der Filiale in der Bergstraße 12. Sie können es abholen montags bis freitags von acht bis achtzehn Uhr oder samstags von neun bis vierzehn Uhr.",
-                question: "Wo kann das Paket abgeholt werden?",
-                options: [
-                    { text: "Direkt beim Fahrer", letter: "A" },
-                    { text: "In der Filiale in der Bergstraße 12", letter: "B" },
-                    { text: "Am Hauptbahnhof", letter: "C" }
+                question: "Welches Bild passt zum Dialog?",
+                images: [
+                    { emoji: "📦", label: "Ein Paket an der Haustür", letter: "A", scene: "packageDoor" },
+                    { emoji: "🏬", label: "Ein Paket in einem Geschäft", letter: "B", scene: "packageShop" },
+                    { emoji: "🚂", label: "Ein Paket am Bahnhof", letter: "C", scene: "packageStation" }
                 ],
-                correct: 1, // B
+                correct: 1, // B — Filiale = shop/branch
                 playback_limit: 2,
                 grammar: "Präpositionen",
                 vocab: "Haushalt & Alltag"
             },
             {
                 id: "h_t1_q4",
-                type: "mc",
+                type: "picture_match",
                 script: "Guten Tag, Schwimmbad Neptun, was kann ich für Sie tun? - Ich möchte wissen, wann das Freibad in dieser Woche geöffnet ist. - Das Freibad ist täglich von sieben bis zwanzig Uhr geöffnet. Donnerstagvormittag ist jedoch Schulbetrieb, da sind wir erst um dreizehn Uhr für die Öffentlichkeit zugänglich. - Und wie viel kostet der Eintritt? - Vier Euro fünfzig für Erwachsene.",
-                question: "Wann öffnet das Freibad am Donnerstag für die Öffentlichkeit?",
-                options: [
-                    { text: "Um sieben Uhr", letter: "A" },
-                    { text: "Um dreizehn Uhr", letter: "B" },
-                    { text: "Um zwanzig Uhr", letter: "C" }
+                question: "Welches Bild passt zum Dialog?",
+                images: [
+                    { emoji: "🏫", label: "Schulkinder im Schwimmbad", letter: "A", scene: "schoolPool" },
+                    { emoji: "🏊", label: "Schwimmer am späten Nachmittag", letter: "B", scene: "afternoonSwim" },
+                    { emoji: "🌙", label: "Nachtschwimmen bei Mondlicht", letter: "C", scene: "nightSwim" }
                 ],
-                correct: 1, // B
+                correct: 1, // B — Öffentlichkeit erst um 13 Uhr
                 playback_limit: 2,
                 grammar: "Zeitangaben",
                 vocab: "Sport & Bewegung"
             },
             {
                 id: "h_t1_q5",
-                type: "mc",
+                type: "picture_match",
                 script: "Und nun die Verkehrsmeldungen. Auf der Autobahn A3 zwischen Frankfurt-Nord und Bad Homburg gibt es wegen eines Unfalls einen Stau von etwa zwölf Kilometern. Die Polizei empfiehlt, die Ausfahrt Frankfurt-Süd zu nehmen und über die Bundesstraße 8 auszuweichen. Bitte planen Sie mehr Zeit ein.",
-                question: "Was empfiehlt die Polizei den Fahrern?",
-                options: [
-                    { text: "Die A3 langsam weiterfahren", letter: "A" },
-                    { text: "Die Ausfahrt Frankfurt-Süd nehmen und über B8 fahren", letter: "B" },
-                    { text: "Den Zug nehmen", letter: "C" }
+                question: "Welches Bild passt zur Verkehrsmeldung?",
+                images: [
+                    { emoji: "🚗", label: "Autos im Stau auf der Autobahn", letter: "A", scene: "trafficJam" },
+                    { emoji: "🛣️", label: "Umleitung über die Bundesstraße", letter: "B", scene: "detour" },
+                    { emoji: "🚂", label: "Fahrgäste am Bahnsteig", letter: "C", scene: "trainPlatform" }
                 ],
-                correct: 1, // B
+                correct: 1, // B — Umleitung über B8
                 playback_limit: 2,
                 grammar: "Modalverben",
                 vocab: "Verkehr & Transport"
             },
             {
                 id: "h_t1_q6",
-                type: "mc",
+                type: "picture_match",
                 script: "Hallo zusammen, hier ist eine kurze Ansage für alle Bewohner des Hauses. Ab nächster Woche gibt es einen neuen Putzplan für das Treppenhaus. Jede Wohnung ist einmal im Monat dran. Wohnung eins: der erste Montag. Wohnung zwei: der erste Dienstag. Wohnung drei: der erste Mittwoch. Bitte tragen Sie sich im Aushang ein.",
-                question: "Was sollen die Bewohner im Aushang machen?",
-                options: [
-                    { text: "Ihren Namen als Mieter eintragen", letter: "A" },
-                    { text: "Sich für den Putztag eintragen", letter: "B" },
-                    { text: "Eine neue Reinigungsfirma vorschlagen", letter: "C" }
+                question: "Welches Bild passt zur Ansage?",
+                images: [
+                    { emoji: "📋", label: "Ein Aushang mit Putzplan", letter: "A", scene: "noticeBoard" },
+                    { emoji: "🧹", label: "Jemand fegt das Treppenhaus", letter: "B", scene: "sweeping" },
+                    { emoji: "🔑", label: "Schlüsselübergabe an einen Mieter", letter: "C", scene: "keyHandover" }
                 ],
-                correct: 1, // B
+                correct: 0, // A — Aushang eintragen
                 playback_limit: 2,
                 grammar: "Imperativ",
                 vocab: "Haushalt & Alltag"
             }
         ],
+        // Teil 2: Hören — 4 Aussagen, Richtig oder Falsch?
         teil2: [
             {
                 id: "h_t2_q7",
@@ -247,315 +274,79 @@ const QUESTION_BANK = {
         ]
     },
     lesen: {
+        // Teil 1: Lesen — 5 Personen, 5 Anzeigen/Texte zuordnen
         teil1: [
             {
                 id: "l_t1_q1",
-                type: "tf",
-                text: `<div class="document-box email">
-                    <div class="email-meta">
-                        <div><strong>Von:</strong> lars.schmidt@gmx.de</div>
-                        <div><strong>An:</strong> petra.kruger@web.de</div>
-                        <div><strong>Betreff:</strong> Einladung zur Geburtstagsparty</div>
-                    </div>
-                    <p>Liebe Petra,</p>
-                    <p>ich feiere nächsten Samstag meinen Geburtstag! Ich möchte dich herzlich einladen. Wir feiern bei mir zu Hause im Garten ab 18:00 Uhr. Bring bitte gute Laune mit, für Essen und Getränke ist gesorgt. Sag mir bitte bis Donnerstag Bescheid, ob du kommen kannst.</p>
-                    <p>Liebe Grüße,<br>Lars</p>
-                </div>`,
-                question: "Lars feiert seinen Geburtstag im Garten.",
-                options: [
-                    { text: "Richtig (True)", val: true },
-                    { text: "Falsch (False)", val: false }
+                type: "people_match",
+                texts: [
+                    { id: "A", content: "Günstig übernachten für Schüler, Studenten und Familien. Betten ab 18 € pro Nacht inklusive Bettwäsche. Standorte in ganz Deutschland!" },
+                    { id: "B", content: "Luxuszimmer ab 120 € pro Nacht. Exklusives Frühstücksbuffet, Wellnessbereich und geführte City-Touren inklusive." },
+                    { id: "C", content: "Buchen Sie Ihre Zugtickets direkt online. Alle Verbindungen, Fahrpläne und Spezialpreise für den Fernverkehr." },
+                    { id: "D", content: "Spanischkurse für Anfänger und Fortgeschrittene. Abendkurse ab 19 Uhr zweimal wöchentlich. Lernen in kleinen Gruppen." },
+                    { id: "E", content: "85 qm, perfekt für Familien. Ruhige Wohnlage, Küche, Bad, Gäste-WC. Kaltmiete 750 €. Bezugsfertig ab nächsten Monat." }
                 ],
-                correct: true,
+                people: [
+                    { name: "Yusuf", situation: "Yusuf möchte billig in einer Jugendherberge übernachten.", correct: "A" },
+                    { name: "Maria", situation: "Maria möchte mit dem Zug von München nach Hamburg fahren.", correct: "C" },
+                    { name: "Anna", situation: "Anna möchte Spanisch in einer Abendgruppe lernen.", correct: "D" },
+                    { name: "Familie Braun", situation: "Die Familie Braun sucht eine 3-Zimmerwohnung.", correct: "E" },
+                    { name: "Herr Klein", situation: "Herr Klein möchte ein luxuriöses Hotel für sein Weekend-Trip buchen.", correct: "B" }
+                ],
                 grammar: "Präpositionen",
-                vocab: "Familie & Freunde"
-            },
-            {
-                id: "l_t1_q2",
-                type: "tf",
-                text: `<div class="document-box email">
-                    <div class="email-meta">
-                        <div><strong>Von:</strong> lars.schmidt@gmx.de</div>
-                        <div><strong>An:</strong> petra.kruger@web.de</div>
-                        <div><strong>Betreff:</strong> Einladung zur Geburtstagsparty</div>
-                    </div>
-                    <p>Liebe Petra,</p>
-                    <p>ich feiere nächsten Samstag meinen Geburtstag! Ich möchte dich herzlich einladen. Wir feiern bei mir zu Hause im Garten ab 18:00 Uhr. Bring bitte gute Laune mit, für Essen und Getränke ist gesorgt. Sag mir bitte bis Donnerstag Bescheid, ob du kommen kannst.</p>
-                    <p>Liebe Grüße,<br>Lars</p>
-                </div>`,
-                question: "Petra soll bis nächsten Samstag antworten.",
-                options: [
-                    { text: "Richtig (True)", val: true },
-                    { text: "Falsch (False)", val: false }
-                ],
-                correct: false, // Must reply by Thursday
-                grammar: "Zeitangaben",
-                vocab: "Familie & Freunde"
-            },
-            {
-                id: "l_t1_q3",
-                type: "tf",
-                text: `<div class="document-box email">
-                    <div class="email-meta">
-                        <div><strong>Von:</strong> hotel.alpenblick@tirol.at</div>
-                        <div><strong>An:</strong> markus.braun@t-online.de</div>
-                        <div><strong>Betreff:</strong> Ihre Reservierung vom 12.08. bis 15.08.</div>
-                    </div>
-                    <p>Sehr geehrter Herr Braun,</p>
-                    <p>wir bestätigen Ihre Zimmerreservierung für ein Einzelzimmer mit Frühstück vom 12. bis zum 15. August. Das Zimmer kostet 75 Euro pro Nacht. Sie können am Anreisetag ab 14:00 Uhr einchecken. Wenn Sie nach 20:00 Uhr ankommen, informieren Sie uns bitte per Telefon.</p>
-                    <p>Mit freundlichen Grüßen,<br>Familie Huber (Hotel Alpenblick)</p>
-                </div>`,
-                question: "Herr Braun hat ein Doppelzimmer reserviert.",
-                options: [
-                    { text: "Richtig (True)", val: true },
-                    { text: "Falsch (False)", val: false }
-                ],
-                correct: false, // Reserved a Single room (Einzelzimmer)
-                grammar: "Artikel",
                 vocab: "Reisen & Verkehr"
-            },
-            {
-                id: "l_t1_q4",
-                type: "tf",
-                text: `<div class="document-box email">
-                    <div class="email-meta">
-                        <div><strong>Von:</strong> hotel.alpenblick@tirol.at</div>
-                        <div><strong>An:</strong> markus.braun@t-online.de</div>
-                        <div><strong>Betreff:</strong> Ihre Reservierung vom 12.08. bis 15.08.</div>
-                    </div>
-                    <p>Sehr geehrter Herr Braun,</p>
-                    <p>wir bestätigen Ihre Zimmerreservierung für ein Einzelzimmer mit Frühstück vom 12. bis zum 15. August. Das Zimmer kostet 75 Euro pro Nacht. Sie können am Anreisetag ab 14:00 Uhr einchecken. Wenn Sie nach 20:00 Uhr ankommen, informieren Sie uns bitte per Telefon.</p>
-                    <p>Mit freundlichen Grüßen,<br>Familie Huber (Hotel Alpenblick)</p>
-                </div>`,
-                question: "Herr Braun muss Bescheid sagen, wenn er spät anreist.",
-                options: [
-                    { text: "Richtig (True)", val: true },
-                    { text: "Falsch (False)", val: false }
-                ],
-                correct: true,
-                grammar: "Modalverben",
-                vocab: "Reisen & Verkehr"
-            },
-            {
-                id: "l_t1_q5",
-                type: "tf",
-                text: `<div class="document-box email">
-                    <div class="email-meta">
-                        <div><strong>Von:</strong> info@sprachschule-dialog.de</div>
-                        <div><strong>An:</strong> studenten-liste@sprachschule.de</div>
-                        <div><strong>Betreff:</strong> Ausfall des Deutschkurses morgen</div>
-                    </div>
-                    <p>Liebe Kursteilnehmer,</p>
-                    <p>unsere Lehrerin, Frau Sommer, ist leider krank. Der Deutschkurs findet morgen am Dienstag nicht statt. Wir holen den Unterricht am Freitag von 9:00 bis 12:00 Uhr im Raum 204 nach. Der Unterricht am Mittwoch findet ganz normal statt.</p>
-                    <p>Vielen Dank für Ihr Verständnis.<br>Ihr Sprachschul-Team</p>
-                </div>`,
-                question: "Der Deutschkurs fällt am Mittwoch aus.",
-                options: [
-                    { text: "Richtig (True)", val: true },
-                    { text: "Falsch (False)", val: false }
-                ],
-                correct: false, // Fails on Tuesday (morgen)
-                grammar: "Zeitangaben",
-                vocab: "Arbeit & Beruf"
             }
         ],
+        // Teil 2: Lesen — Ein langer Text + 5 Richtig/Falsch-Aussagen
         teil2: [
             {
                 id: "l_t2_q6",
-                type: "matching",
-                situation: "Situation: Sie möchten billig Urlaub in Deutschland machen und suchen Informationen über Jugendherbergen (youth hostels).",
-                text: `<div class="matching-ads-container">
-                    <div class="document-box info">
-                        <strong>Anzeige A: www.hotel-berlin-mitte.de</strong>
-                        <p>Genießen Sie Ihren Aufenthalt im Herzen Berlins! Luxuszimmer ab 120 € pro Nacht. Exklusives Frühstücksbuffet, Wellnessbereich und geführte City-Touren inklusive.</p>
+                type: "shared_tf",
+                sharedText: `<div class="document-box email">
+                    <div class="email-meta">
+                        <div><strong>Von:</strong> info@sprachschule-dialog.de</div>
+                        <div><strong>An:</strong> kursteilnehmer@sprachschule.de</div>
+                        <div><strong>Betreff:</strong> wichtige Informationen zum Deutschkurs</div>
                     </div>
-                    <div class="document-box info">
-                        <strong>Anzeige B: www.jugendherberge-deutschland.net</strong>
-                        <p>Günstig übernachten für Schüler, Studenten und Familien. Betten ab 18 € pro Nacht inklusive Bettwäsche. Standorte in ganz Deutschland!</p>
-                    </div>
+                    <p>Liebe Kursteilnehmer,</p>
+                    <p>hier sind wichtige Informationen für den nächsten Monat:</p>
+                    <p><strong>Kurszeiten:</strong> Der Deutschkurs A1 findet immer dienstags und donnerstags von 18:00 bis 20:30 Uhr statt. Bitte kommen Sie 10 Minuten früher, um rechtzeitig beginnen zu können.</p>
+                    <p><strong>Prüfung:</strong> Die Abschlussprüfung ist am 28. März um 9:00 Uhr im Raum 201. Bitte bringen Sie einen Lichtbildausweis mit. Ohne Ausweis können Sie nicht an der Prüfung teilnehmen.</p>
+                    <p><strong>Materialien:</strong> Bitte bringen Sie das Lehrbuch "Netzwerk neu A1" zur jeden Kurstag mit. Kopien sind nicht erlaubt. Das Buch können Sie in der Buchhandlung Schmidt in der Hauptstraße kaufen.</p>
+                    <p><strong>Telefonkurs:</strong> Ab März bieten wir auch einen Telefonkurs an. Die Kosten betragen 80 Euro für vier Wochen. Anmeldung ist bis zum 20. März möglich.</p>
+                    <p>Bei Fragen können Sie uns gerne anrufen oder eine E-Mail schreiben.</p>
+                    <p>Mit freundlichen Grüßen,<br>Ihr Sprachschul-Team</p>
                 </div>`,
-                question: "Welche Anzeige passt zu Ihrem Wunsch?",
-                options: [
-                    { text: "Anzeige A", val: "A" },
-                    { text: "Anzeige B", val: "B" }
-                ],
-                correct: "B",
-                grammar: "Artikel",
-                vocab: "Reisen & Verkehr"
-            },
-            {
-                id: "l_t2_q7",
-                type: "matching",
-                situation: "Situation: Sie möchten am Wochenende mit dem Zug von München nach Hamburg fahren und suchen einen Fahrplan.",
-                text: `<div class="matching-ads-container">
-                    <div class="document-box info">
-                        <strong>Anzeige A: www.bahn-deutschland.de</strong>
-                        <p>Buchen Sie Ihre Zugtickets direkt online. Alle Verbindungen, Fahrpläne und Spezialpreise für den Fernverkehr in Deutschland und Europa.</p>
-                    </div>
-                    <div class="document-box info">
-                        <strong>Anzeige B: www.mietwagen-muenchen.com</strong>
-                        <p>Autovermietung direkt am Hauptbahnhof München. Große Auswahl an Kleinwagen, Limousinen und Transportern ab 25 € pro Tag.</p>
-                    </div>
-                </div>`,
-                question: "Welche Anzeige passt zu Ihrem Wunsch?",
-                options: [
-                    { text: "Anzeige A", val: "A" },
-                    { text: "Anzeige B", val: "B" }
-                ],
-                correct: "A",
-                grammar: "Artikel",
-                vocab: "Reisen & Verkehr"
-            },
-            {
-                id: "l_t2_q8",
-                type: "matching",
-                situation: "Situation: Sie haben Zahnschmerzen und suchen einen Zahnarzt am Samstagabend.",
-                text: `<div class="matching-ads-container">
-                    <div class="document-box info">
-                        <strong>Anzeige A: Zahnarztpraxis Dr. Becker</strong>
-                        <p>Moderne Praxis für die ganze Familie. Öffnungszeiten: Montag bis Freitag von 8:00 bis 18:00 Uhr. Terminvereinbarung online.</p>
-                    </div>
-                    <div class="document-box info">
-                        <strong>Anzeige B: Zahnärztlicher Notdienst Stadtklinik</strong>
-                        <p>Notaufnahme und Zahnärztliche Versorgung rund um die Uhr, auch an Wochenenden und Feiertagen geöffnet. Keine Anmeldung erforderlich.</p>
-                    </div>
-                </div>`,
-                question: "Welche Anzeige passt zu Ihrem Wunsch?",
-                options: [
-                    { text: "Anzeige A", val: "A" },
-                    { text: "Anzeige B", val: "B" }
-                ],
-                correct: "B",
-                grammar: "Zahlen",
-                vocab: "Gesundheit"
-            },
-            {
-                id: "l_t2_q9",
-                type: "matching",
-                situation: "Situation: Sie möchten Spanisch lernen und suchen einen Gruppen-Kurs am Abend.",
-                text: `<div class="matching-ads-container">
-                    <div class="document-box info">
-                        <strong>Anzeige A: Sprachakademie Interlingua</strong>
-                        <p>Spanischkurse für Anfänger und Fortgeschrittene. Abendkurse ab 19 Uhr zweimal wöchentlich. Lernen in kleinen Gruppen.</p>
-                    </div>
-                    <div class="document-box info">
-                        <strong>Anzeige B: Spanisch-Lern-App Duoglot</strong>
-                        <p>Lernen Sie Spanisch alleine auf Ihrem Smartphone! Nur 10 Minuten täglich. Kostenloser Download im App-Store.</p>
-                    </div>
-                </div>`,
-                question: "Welche Anzeige passt zu Ihrem Wunsch?",
-                options: [
-                    { text: "Anzeige A", val: "A" },
-                    { text: "Anzeige B", val: "B" }
-                ],
-                correct: "A",
-                grammar: "Zeitangaben",
-                vocab: "Arbeit & Beruf"
-            },
-            {
-                id: "l_t2_q10",
-                type: "matching",
-                situation: "Situation: Sie suchen eine Dreizimmerwohnung zur Miete für Ihre dreiköpfige Familie.",
-                text: `<div class="matching-ads-container">
-                    <div class="document-box info">
-                        <strong>Anzeige A: Gemütliches Einzimmer-Apartment</strong>
-                        <p>Ideal für Studenten! 35 qm mit kleiner Küche und Bad in Uninähe zu vermieten. Frei ab sofort für 400 € warm.</p>
-                    </div>
-                    <div class="document-box info">
-                        <strong>Anzeige B: Schöne 3-Zimmerwohnung mit Balkon</strong>
-                        <p>85 qm, perfekt für Familien. Ruhige Wohnlage, Küche, Bad, Gäste-WC. Kaltmiete 750 €. Bezugsfertig ab nächsten Monat.</p>
-                    </div>
-                </div>`,
-                question: "Welche Anzeige passt zu Ihrem Wunsch?",
-                options: [
-                    { text: "Anzeige A", val: "A" },
-                    { text: "Anzeige B", val: "B" }
-                ],
-                correct: "B",
-                grammar: "Zahlen",
-                vocab: "Wohnung & Haus"
+                statements: [
+                    { id: "l_t2_q6", question: "Der Kurs findet montags und mittwochs statt.", correct: false, grammar: "Zeitangaben", vocab: "Schule & Lernen" },
+                    { id: "l_t2_q7", question: "Die Prüfung findet um 9:00 Uhr morgens statt.", correct: true, grammar: "Zeitangaben", vocab: "Schule & Lernen" },
+                    { id: "l_t2_q8", question: "Man darf Kopien vom Lehrbuch machen.", correct: false, grammar: "Modalverben", vocab: "Schule & Lernen" },
+                    { id: "l_t2_q9", question: "Der Telefonkurs kostet 80 Euro für vier Wochen.", correct: true, grammar: "Zahlen", vocab: "Schule & Lernen" },
+                    { id: "l_t2_q10", question: "Für die Prüfung braucht man keinen Ausweis.", correct: false, grammar: "Modalverben", vocab: "Schule & Lernen" }
+                ]
             }
         ],
+        // Teil 3: Lesen — 5 Anzeigen/Texte, 5 Personen zuordnen
         teil3: [
             {
                 id: "l_t3_q11",
-                type: "tf",
-                text: `<div class="document-box notice">
-                    <h3>Bibliothek der Universität</h3>
-                    <p><strong>Achtung:</strong> Wegen Renovierungsarbeiten bleibt die Bibliothek vom 15.07. bis 22.07. geschlossen. Buchrückgaben sind über den Kasten am Haupteingang jederzeit möglich.</p>
-                </div>`,
-                question: "Man kann während der Renovierungsarbeiten keine Bücher zurückgeben.",
-                options: [
-                    { text: "Richtig (True)", val: true },
-                    { text: "Falsch (False)", val: false }
+                type: "matching",
+                texts: [
+                    { id: "A", label: "Anzeige A", content: "Günstig übernachten für Schüler, Studenten und Familien. Betten ab 18 € pro Nacht inklusive Bettwäsche. Standorte in ganz Deutschland!" },
+                    { id: "B", label: "Anzeige B", content: "Luxuszimmer ab 120 € pro Nacht. Exklusives Frühstücksbuffet, Wellnessbereich und geführte City-Touren inklusive." },
+                    { id: "C", label: "Anzeige C", content: "Buchen Sie Ihre Zugtickets direkt online. Alle Verbindungen, Fahrpläne und Spezialpreise für den Fernverkehr in Deutschland und Europa." },
+                    { id: "D", label: "Anzeige D", content: "Spanischkurse für Anfänger und Fortgeschrittene. Abendkurse ab 19 Uhr zweimal wöchentlich. Lernen in kleinen Gruppen." },
+                    { id: "E", label: "Anzeige E", content: "85 qm, perfekt für Familien. Ruhige Wohnlage, Küche, Bad, Gäste-WC. Kaltmiete 750 €. Bezugsfertig ab nächsten Monat." }
                 ],
-                correct: false, // Can return via box
+                situations: [
+                    { person: "Yusuf", situation: "Yusuf möchte billig in einer Jugendherberge übernachten.", correct: "A" },
+                    { person: "Maria", situation: "Maria möchte mit dem Zug von München nach Hamburg fahren.", correct: "C" },
+                    { person: "Anna", situation: "Anna möchte Spanisch in einer Abendgruppe lernen.", correct: "D" },
+                    { person: "Familie Braun", situation: "Die Familie Braun sucht eine 3-Zimmerwohnung.", correct: "E" },
+                    { person: "Herr Klein", situation: "Herr Klein möchte ein luxuriöses Hotel buchen.", correct: "B" }
+                ],
                 grammar: "Präpositionen",
-                vocab: "Arbeit & Beruf"
-            },
-            {
-                id: "l_t3_q12",
-                type: "tf",
-                text: `<div class="document-box notice">
-                    <h3>Hauptbahnhof München - Reisezentrum</h3>
-                    <p>Fahrkartenkauf und Beratung nur noch an den Ticketautomaten oder online. Unser Service-Schalter ist ab sofort nur noch für Reklamationen und Umtausch geöffnet.</p>
-                </div>`,
-                question: "Man kann Fahrkarten am Service-Schalter kaufen.",
-                options: [
-                    { text: "Richtig (True)", val: true },
-                    { text: "Falsch (False)", val: false }
-                ],
-                correct: false, // Purchase only online or ticket machine
-                grammar: "Wortstellung",
                 vocab: "Reisen & Verkehr"
-            },
-            {
-                id: "l_t3_q13",
-                type: "tf",
-                text: `<div class="document-box notice">
-                    <h3>Städtisches Hallenbad</h3>
-                    <p>Zutritt für Kinder unter 10 Jahren ist nur in Begleitung eines Erwachsenen gestattet. Bitte beachten Sie die Badeordnung am Beckenrand.</p>
-                </div>`,
-                question: "Ein 8-jähriges Kind darf nicht allein in das Hallenbad gehen.",
-                options: [
-                    { text: "Richtig (True)", val: true },
-                    { text: "Falsch (False)", val: false }
-                ],
-                correct: true,
-                grammar: "Modalverben",
-                vocab: "Freizeit & Hobbys"
-            },
-            {
-                id: "l_t3_q14",
-                type: "tf",
-                text: `<div class="document-box notice">
-                    <h3>Restaurant Krone</h3>
-                    <p>Heute Abend geschlossen wegen einer geschlossenen Gesellschaft (Hochzeitsfeier). Ab morgen Mittag sind wir wieder wie gewohnt ab 12 Uhr für Sie da.</p>
-                </div>`,
-                question: "Heute Abend kann man im Restaurant Krone normal essen.",
-                options: [
-                    { text: "Richtig (True)", val: true },
-                    { text: "Falsch (False)", val: false }
-                ],
-                correct: false, // Closed for private party
-                grammar: "Zeitangaben",
-                vocab: "Essen & Trinken"
-            },
-            {
-                id: "l_t3_q15",
-                type: "tf",
-                text: `<div class="document-box notice">
-                    <h3>Supermarkt - Eingangsbereich</h3>
-                    <p>Hunde müssen draußen bleiben! Bitte leinen Sie Ihren Hund vor dem Eingang an. Blindenführhunde sind selbstverständlich erlaubt.</p>
-                </div>`,
-                question: "Ein Blindenführhund darf mit in den Supermarkt gehen.",
-                options: [
-                    { text: "Richtig (True)", val: true },
-                    { text: "Falsch (False)", val: false }
-                ],
-                correct: true,
-                grammar: "Imperativ",
-                vocab: "Einkaufen"
             }
         ]
     },
@@ -591,6 +382,7 @@ const QUESTION_BANK = {
         ]
     },
     sprechen: {
+        // Teil 1: Sprechen — Sich vorstellen
         teil1: [
             {
                 id: "sp_t1_q1",
@@ -601,44 +393,94 @@ const QUESTION_BANK = {
                 hints: "z.B. Ich heiße... Ich bin... Jahre alt. Ich komme aus... Ich wohne in..."
             }
         ],
+        // Teil 2: Sprechen — Frage an Partner (Ihre Frage / Your Question)
         teil2: [
             {
-                id: "sp_t2_card1",
-                type: "sprechen_card",
-                theme: "Thema: Essen & Trinken",
-                icon: "🍞",
-                word: "Brot",
-                instruction: "Fragen Sie Ihren Partner nach Brot. (Ask a question about bread)",
-                hints: "z.B. Essen Sie gerne Brot? / Wo kann ich frisches Brot kaufen?"
+                id: "sp_t2_q1",
+                type: "partner_sim",
+                scenario: "Sie möchten im Supermarkt Brot kaufen.",
+                partner_says: "Guten Tag! Kann ich Ihnen helfen?",
+                your_task: "Stellen Sie eine Frage zum Brot.",
+                your_options: [
+                    "Entschuldigung, wo ist das Brot bitte?",
+                    "Ich hätte gern ein Brötchen, bitte.",
+                    "Wie viel kostet das Brot?"
+                ],
+                partner_responses: [
+                    "Das Brot finden Sie in Gang 3, ganz hinten links.",
+                    "Brötchen haben wir frische aus der Bäckerei! 0,30 Euro Stück.",
+                    "Das Vollkornbrot kostet 2,50 Euro. Das weiße Brot 1,80 Euro."
+                ],
+                correct: 2,
+                hints: "z.B. Wie viel kostet das Brot? / Wo finde ich frisches Brot?",
+                grammar: "Modalverben",
+                vocab: "Essen & Trinken"
             },
             {
-                id: "sp_t2_card2",
-                type: "sprechen_card",
-                theme: "Thema: Einkaufen",
-                icon: "🏪",
-                word: "Supermarkt",
-                instruction: "Formulieren Sie eine Frage mit 'Supermarkt'. (Ask a question about a supermarket)",
-                hints: "z.B. Wann öffnet der Supermarkt? / Wo ist der nächste Supermarkt?"
+                id: "sp_t2_q2",
+                type: "partner_sim",
+                scenario: "Sie möchten einen Termin beim Arzt machen.",
+                partner_says: "Praxis Dr. Meyer, guten Tag!",
+                your_task: "Fragen Sie nach einem Termin.",
+                your_options: [
+                    "Ich bin krank und brauche Hilfe.",
+                    "Kann ich bitte einen Termin für nächste Woche bekommen?",
+                    "Wann haben Sie geöffnet?"
+                ],
+                partner_responses: [
+                    "Was genau fehlt Ihnen? Haben Sie Fieber?",
+                    "Ja, gerne! Wir haben am Dienstag um 10 Uhr noch einen Platz frei.",
+                    "Wir haben montags bis freitags von 8 bis 18 Uhr geöffnet."
+                ],
+                correct: 1,
+                hints: "z.B. Kann ich einen Termin haben? / Ich hätte gern einen Termin.",
+                grammar: "Modalverben",
+                vocab: "Gesundheit"
             }
         ],
+        // Teil 3: Sprechen — Gemeinsam etwas planen (Partner Dialogue)
         teil3: [
             {
-                id: "sp_t3_card1",
-                type: "sprechen_card",
-                theme: "Situation: Bitte formulieren",
-                icon: "💧",
-                word: "Wasser",
-                instruction: "Bitten Sie um ein Glas Wasser. (Make a polite request for water)",
-                hints: "z.B. Geben Sie mir bitte ein Glas Wasser? / Kann ich bitte etwas Wasser haben?"
+                id: "sp_t3_q1",
+                type: "partner_sim",
+                scenario: "Planen Sie gemeinsam mit Ihrem Partner etwas für das Wochenende.",
+                partner_says: "Haben Sie am Wochenende Zeit? Was möchten Sie machen?",
+                your_task: "Machen Sie einen Vorschlag.",
+                your_options: [
+                    "Ja, gerne! Wollen wir ins Kino gehen?",
+                    "Nein, ich habe keine Zeit.",
+                    "Ich weiß nicht. Was schlagen Sie vor?"
+                ],
+                partner_responses: [
+                    "Super Idee! Was läuft denn im Kino? Ich mag Komödien.",
+                    "Schade! Vielleicht nächstes Wochenende?",
+                    "Wie wäre es mit einem Spaziergang im Park? Das Wetter soll schön werden."
+                ],
+                correct: 0,
+                hints: "z.B. Wollen wir ins Kino gehen? / Haben Sie Lust auf einen Ausflug?",
+                grammar: "Modalverben",
+                vocab: "Freizeit & Hobbys"
             },
             {
-                id: "sp_t3_card2",
-                type: "sprechen_card",
-                theme: "Situation: Bitte formulieren",
-                icon: "🔑",
-                word: "Schlüssel",
-                instruction: "Geben Sie dem Partner einen Schlüssel oder bitten Sie darum. (Ask for the key)",
-                hints: "z.B. Geben Sie mir bitte den Schlüssel? / Wo ist der Schlüssel?"
+                id: "sp_t3_q2",
+                type: "partner_sim",
+                scenario: "Planen Sie einen Ausflug mit Ihrem Partner.",
+                partner_says: "Ich schlage vor, am Samstag in die Stadt zu fahren. Was meinen Sie?",
+                your_task: "Stimmen Sie zu oder schlagen Sie etwas anderes vor.",
+                your_options: [
+                    "Das finde ich gut! Wann treffen wir uns?",
+                    "Nein, das gefällt mir nicht.",
+                    "Ich möchte zu Hause bleiben."
+                ],
+                partner_responses: [
+                    "Wollen wir uns um 10 Uhr am Bahnhof treffen? Ich kaufe die Tickets.",
+                    "Was schlagen Sie stattdessen vor?",
+                    "Na gut, dann bis nächste Woche!"
+                ],
+                correct: 0,
+                hints: "z.B. Das finde ich super! / Wann und wo treffen wir uns?",
+                grammar: "Wortstellung",
+                vocab: "Reisen & Verkehr"
             }
         ]
     }
@@ -6812,12 +6654,50 @@ function initExamSession() {
     state.sessionQuestions.hoeren.push(...shuffleArray([...QUESTION_BANK.hoeren.teil3]));
 
     // Lesen:
-    // Teil 1: 5 questions
+    // Teil 1: 1 people_match (covers 5 people)
     state.sessionQuestions.lesen.push(...shuffleArray([...QUESTION_BANK.lesen.teil1]));
-    // Teil 2: 5 situations
-    state.sessionQuestions.lesen.push(...shuffleArray([...QUESTION_BANK.lesen.teil2]));
-    // Teil 3: 5 notices
-    state.sessionQuestions.lesen.push(...shuffleArray([...QUESTION_BANK.lesen.teil3]));
+    // Teil 2: shared_tf → flatten into individual TF questions with shared text reference
+    QUESTION_BANK.lesen.teil2.forEach(item => {
+        if (item.type === "shared_tf" && item.statements) {
+            item.statements.forEach(st => {
+                state.sessionQuestions.lesen.push({
+                    id: st.id,
+                    type: "tf",
+                    text: item.sharedText,
+                    question: st.question,
+                    options: [
+                        { text: "Richtig (True)", val: true },
+                        { text: "Falsch (False)", val: false }
+                    ],
+                    correct: st.correct,
+                    grammar: st.grammar,
+                    vocab: st.vocab
+                });
+            });
+        } else {
+            state.sessionQuestions.lesen.push(item);
+        }
+    });
+    // Teil 3: matching → flatten into individual questions (each person = 1 question)
+    QUESTION_BANK.lesen.teil3.forEach(item => {
+        if (item.type === "matching" && item.situations) {
+            item.situations.forEach((s, idx) => {
+                state.sessionQuestions.lesen.push({
+                    id: `l_t3_q${11 + idx}`,
+                    type: "tf_match",
+                    texts: item.texts,
+                    person: s.person,
+                    situation: s.situation,
+                    correct: s.correct,
+                    question: `Welche Anzeige passt zu ${s.person}?`,
+                    grammar: item.grammar,
+                    vocab: item.vocab
+                });
+            });
+        } else {
+            state.sessionQuestions.lesen.push(item);
+        }
+    });
 
     // Schreiben:
     // Teil 1: 1 Form task
@@ -6881,11 +6761,14 @@ function loadQuestion(moduleIndex, questionIndex) {
         t.classList.toggle("active", i === moduleIndex);
     });
 
-    // Toggle dynamic stimulus panels
-    const stimulusPanels = document.querySelectorAll(".stimulus-content");
-    stimulusPanels.forEach((p, i) => {
-        p.classList.toggle("active", i === moduleIndex);
-    });
+    // Toggle dynamic stimulus panels — scoped to the currently active view
+    const activeView = document.querySelector(".view-panel.active");
+    if (activeView) {
+        const stimulusPanels = activeView.querySelectorAll(".stimulus-content");
+        stimulusPanels.forEach((p, i) => {
+            p.classList.toggle("active", i === moduleIndex);
+        });
+    }
 
     // Update global status displays
     const moduleNames = ["Hören (Listening)", "Lesen (Reading)", "Schreiben (Writing)", "Sprechen (Speaking)"];
@@ -6918,10 +6801,18 @@ function loadQuestion(moduleIndex, questionIndex) {
     // Render Question Stimulus + QA input depending on the module
     if (moduleIndex === 0) { // HÖREN
         setupListeningPlayer(q);
-        renderMCQuestion(q);
+        if (q.type === "picture_match") {
+            renderPictureMatch(q);
+        } else {
+            renderMCQuestion(q);
+        }
     } else if (moduleIndex === 1) { // LESEN
         setupLesenStimulus(q);
-        if (q.type === "tf" || q.type === "mc") {
+        if (q.type === "people_match") {
+            renderPeopleMatch(q);
+        } else if (q.type === "tf_match") {
+            renderTfMatch(q);
+        } else if (q.type === "tf" || q.type === "mc") {
             renderMCQuestion(q);
         } else if (q.type === "matching") {
             renderMatchingQuestion(q);
@@ -6935,7 +6826,11 @@ function loadQuestion(moduleIndex, questionIndex) {
         }
     } else if (moduleIndex === 3) { // SPRECHEN
         setupSprechenStimulus(q);
-        renderSprechenRecorder(q);
+        if (q.type === "partner_sim") {
+            renderPartnerSim(q);
+        } else {
+            renderSprechenRecorder(q);
+        }
     }
 
     // Reset and hide exam mode translation elements
@@ -7044,6 +6939,222 @@ function loadQuestion(moduleIndex, questionIndex) {
 
 // --- SETUP WORKSPACE INTERFACES ---
 
+// Render Hören Teil 1: Picture Matching (3 scene cards)
+function renderPictureMatch(q) {
+    const list = document.getElementById("options-list");
+    list.style.display = "grid";
+    list.style.gridTemplateColumns = "repeat(auto-fit, minmax(200px, 1fr))";
+    list.style.gap = "16px";
+    list.innerHTML = "";
+
+    document.getElementById("question-text").innerHTML = q.question;
+
+    q.images.forEach((img, idx) => {
+        const card = document.createElement("div");
+        card.classList.add("option-item");
+        if (state.answers[q.id] === idx) card.classList.add("selected");
+        card.setAttribute("role", "radio");
+        card.setAttribute("aria-checked", state.answers[q.id] === idx ? "true" : "false");
+        card.setAttribute("tabindex", "0");
+        card.style.cssText = "display:flex; flex-direction:column; align-items:center; gap:10px; padding:12px; border-radius:var(--radius-md); border:2px solid var(--color-border); cursor:pointer; transition:all 0.2s; text-align:center;";
+
+        const svgScene = img.scene ? generateSceneSVG(img.scene) : `<div style="font-size:3rem; line-height:1;">${img.emoji}</div>`;
+        card.innerHTML = `
+            <div style="width:100%; border-radius:var(--radius-sm); overflow:hidden; aspect-ratio:200/140;">${svgScene}</div>
+            <div style="font-weight:700; color:var(--color-accent); font-size:1.1rem;">Bild ${img.letter}</div>
+        `;
+        card.onclick = () => selectPictureOption(q.id, idx, list);
+        card.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); card.click(); } };
+        list.appendChild(card);
+    });
+}
+
+function selectPictureOption(qId, idx, list) {
+    state.answers[qId] = idx;
+    list.querySelectorAll(".option-item").forEach((item, i) => {
+        item.classList.toggle("selected", i === idx);
+        item.setAttribute("aria-checked", i === idx ? "true" : "false");
+    });
+    saveSessionToStorage();
+}
+
+// Render Hören Teil 2: Speaker Identification
+function renderSpeakerId(q) {
+    const list = document.getElementById("options-list");
+    list.style.display = "flex";
+    list.style.flexDirection = "column";
+    list.style.gap = "12px";
+    list.innerHTML = "";
+
+    document.getElementById("question-text").innerHTML = `Wer hat das gesagt?<br><em style="font-size:0.95rem; color:var(--color-text-secondary);">"${q.statement}"</em>`;
+
+    q.speakers.forEach((spk, idx) => {
+        const item = document.createElement("div");
+        item.classList.add("option-item");
+        if (state.answers[q.id] === idx) item.classList.add("selected");
+        item.setAttribute("role", "radio");
+        item.setAttribute("aria-checked", state.answers[q.id] === idx ? "true" : "false");
+        item.setAttribute("tabindex", "0");
+        item.style.cssText = "display:flex; align-items:center; gap:12px; padding:14px 18px; border-radius:var(--radius-md); border:2px solid var(--color-border); cursor:pointer; transition:all 0.2s;";
+        item.innerHTML = `
+            <span style="font-size:1.8rem;">${spk.icon}</span>
+            <span style="font-weight:500;">${spk.name}</span>
+        `;
+        item.onclick = () => selectPictureOption(q.id, idx, list);
+        item.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); item.click(); } };
+        list.appendChild(item);
+    });
+}
+
+// Render Lesen Teil 3: Single person matching (one person + dropdown)
+function renderTfMatch(q) {
+    const list = document.getElementById("matching-list");
+    list.style.display = "block";
+    list.innerHTML = "";
+    document.getElementById("options-list").style.display = "none";
+
+    document.getElementById("question-text").innerHTML = `Welche Anzeige passt zu <strong>${q.person}</strong>?<br><em style="font-size:0.9rem; color:var(--color-text-muted);">${q.situation}</em>`;
+
+    let html = `<div style="display:flex; flex-direction:column; gap:16px;">`;
+
+    // Reference texts
+    html += `<div class="glass-panel" style="padding:16px; border-radius:var(--radius-md); max-height:200px; overflow-y:auto;">`;
+    q.texts.forEach(t => {
+        html += `<div style="margin-bottom:8px; padding:8px; border-left:3px solid var(--color-accent); font-size:0.85rem;"><strong>${t.label || t.id}:</strong> ${t.content}</div>`;
+    });
+    html += `</div>`;
+
+    // Dropdown
+    const savedAnswer = state.answers[q.id] || "";
+    html += `<div style="display:flex; align-items:center; gap:12px;">
+        <span style="font-weight:600;">${q.person}:</span>
+        <select id="tf-match-select-${q.id}" class="matching-select" style="padding:8px 14px; border-radius:var(--radius-sm); border:1px solid var(--color-border); background:var(--color-panel-solid); color:var(--color-text-primary); font-size:0.9rem; min-width:120px;">
+            <option value="">— Wählen Sie —</option>
+            ${q.texts.map(t => `<option value="${t.id}" ${savedAnswer === t.id ? "selected" : ""}>${t.label || t.id}</option>`).join("")}
+        </select>
+    </div>`;
+    html += `</div>`;
+
+    list.innerHTML = html;
+
+    document.getElementById(`tf-match-select-${q.id}`).onchange = (e) => {
+        state.answers[q.id] = e.target.value;
+        saveSessionToStorage();
+    };
+}
+
+// Render Lesen Teil 1: People Matching (5 people ↔ 5 texts)
+function renderPeopleMatch(q) {
+    const list = document.getElementById("matching-list");
+    list.style.display = "block";
+    list.innerHTML = "";
+    document.getElementById("options-list").style.display = "none";
+
+    document.getElementById("question-text").innerHTML = "Ordnen Sie die Personen den richtigen Anzeigen zu.";
+
+    let html = `<div style="display:flex; flex-direction:column; gap:20px;">`;
+
+    // Show all texts in a compact reference box
+    html += `<div class="glass-panel" style="padding:16px; border-radius:var(--radius-md); max-height:250px; overflow-y:auto;">`;
+    html += `<h4 style="margin:0 0 10px 0; font-size:0.9rem; color:var(--color-text-muted);">Anzeigen / Texte:</h4>`;
+    q.texts.forEach(t => {
+        html += `<div style="margin-bottom:8px; padding:8px; border-left:3px solid var(--color-accent); font-size:0.85rem;"><strong>${t.id}:</strong> ${t.content}</div>`;
+    });
+    html += `</div>`;
+
+    // Dropdowns for each person
+    html += `<div style="display:flex; flex-direction:column; gap:12px;">`;
+    q.people.forEach((person, idx) => {
+        const savedAnswer = state.answers[q.id] ? state.answers[q.id][idx] : "";
+        html += `
+            <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+                <span style="font-weight:600; min-width:120px; font-size:0.9rem;">${person.name}:</span>
+                <span style="font-size:0.85rem; color:var(--color-text-muted); flex:1; min-width:150px;">${person.situation}</span>
+                <select class="people-match-select" data-idx="${idx}" style="padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--color-border); background:var(--color-panel-solid); color:var(--color-text-primary); font-size:0.85rem; min-width:80px;">
+                    <option value="">—</option>
+                    ${q.texts.map(t => `<option value="${t.id}" ${savedAnswer === t.id ? "selected" : ""}>${t.id}</option>`).join("")}
+                </select>
+            </div>
+        `;
+    });
+    html += `</div></div>`;
+
+    list.innerHTML = html;
+
+    // Save selections on change
+    list.querySelectorAll(".people-match-select").forEach(sel => {
+        sel.onchange = () => {
+            const answers = {};
+            list.querySelectorAll(".people-match-select").forEach(s => {
+                answers[s.dataset.idx] = s.value;
+            });
+            state.answers[q.id] = answers;
+            saveSessionToStorage();
+        };
+    });
+}
+
+// Render Sprechen: Partner Simulation
+function renderPartnerSim(q) {
+    const list = document.getElementById("options-list");
+    list.style.display = "flex";
+    list.style.flexDirection = "column";
+    list.style.gap = "12px";
+    list.innerHTML = "";
+
+    const selectedIdx = state.answers[q.id];
+    const hasResponse = selectedIdx !== undefined && q.partner_responses;
+
+    // Build dialogue transcript
+    let transcriptHTML = `
+        <div style="margin-bottom:12px;">
+            <div style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--color-text-muted); margin-bottom:4px;">Situation</div>
+            <div style="font-weight:500;">${q.scenario}</div>
+        </div>
+        <div class="partner-dialogue-box">
+            <div style="font-size:0.75rem; text-transform:uppercase; color:var(--color-accent); margin-bottom:4px;">Partner sagt:</div>
+            <div style="font-style:italic;">"${q.partner_says}"</div>
+        </div>
+    `;
+
+    // If user already selected, show the dialogue transcript
+    if (hasResponse) {
+        transcriptHTML += `
+            <div style="background:rgba(16,185,129,0.1); border-left:3px solid var(--color-success); padding:12px 16px; border-radius:0 var(--radius-sm) var(--radius-sm) 0; margin-bottom:12px;">
+                <div style="font-size:0.75rem; text-transform:uppercase; color:var(--color-success); margin-bottom:4px;">Sie sagen:</div>
+                <div>"${q.your_options[selectedIdx]}"</div>
+            </div>
+            <div class="partner-dialogue-box">
+                <div style="font-size:0.75rem; text-transform:uppercase; color:var(--color-accent); margin-bottom:4px;">Partner antwortet:</div>
+                <div style="font-style:italic;">"${q.partner_responses[selectedIdx]}"</div>
+            </div>
+        `;
+    }
+
+    transcriptHTML += `<div style="font-weight:600; margin-top:8px;">${q.your_task}</div>`;
+
+    document.getElementById("question-text").innerHTML = transcriptHTML;
+
+    q.your_options.forEach((opt, idx) => {
+        const item = document.createElement("div");
+        item.classList.add("option-item");
+        if (selectedIdx === idx) item.classList.add("selected");
+        item.setAttribute("role", "radio");
+        item.setAttribute("aria-checked", selectedIdx === idx ? "true" : "false");
+        item.setAttribute("tabindex", "0");
+        item.style.cssText = "display:flex; align-items:center; gap:12px; padding:14px 18px; border-radius:var(--radius-md); border:2px solid var(--color-border); cursor:pointer; transition:all 0.2s;";
+        item.innerHTML = `
+            <div class="option-radio"></div>
+            <span>${opt}</span>
+        `;
+        item.onclick = () => selectPictureOption(q.id, idx, list);
+        item.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); item.click(); } };
+        list.appendChild(item);
+    });
+}
+
+// Render Standard MC/TF Question
+
 // Render Standard MC/TF Question
 function renderMCQuestion(q) {
     const list = document.getElementById("options-list");
@@ -7109,6 +7220,57 @@ function renderMCQuestion(q) {
 // Render Matching dropdowns (Lesen Teil 2)
 function renderMatchingQuestion(q) {
     const list = document.getElementById("options-list");
+
+    // New format: texts + situations (Lesen Teil 3)
+    if (q.texts && q.situations) {
+        list.style.display = "block";
+        list.innerHTML = "";
+        document.getElementById("question-text").innerHTML = "Ordnen Sie die Anzeigen den richtigen Personen zu.";
+
+        let html = `<div style="display:flex; flex-direction:column; gap:20px;">`;
+
+        // Reference texts panel
+        html += `<div class="glass-panel" style="padding:16px; border-radius:var(--radius-md); max-height:250px; overflow-y:auto;">`;
+        html += `<h4 style="margin:0 0 10px 0; font-size:0.9rem; color:var(--color-text-muted);">Anzeigen / Texte:</h4>`;
+        q.texts.forEach(t => {
+            html += `<div style="margin-bottom:8px; padding:8px; border-left:3px solid var(--color-accent); font-size:0.85rem;"><strong>${t.label || t.id}:</strong> ${t.content}</div>`;
+        });
+        html += `</div>`;
+
+        // Dropdowns for each person
+        html += `<div style="display:flex; flex-direction:column; gap:12px;">`;
+        q.situations.forEach((s, idx) => {
+            const savedAnswer = state.answers[q.id] ? state.answers[q.id][idx] : "";
+            html += `
+                <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+                    <span style="font-weight:600; min-width:120px; font-size:0.9rem;">${s.person}:</span>
+                    <span style="font-size:0.85rem; color:var(--color-text-muted); flex:1; min-width:150px;">${s.situation}</span>
+                    <select class="matching-select" data-idx="${idx}" style="padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--color-border); background:var(--color-panel-solid); color:var(--color-text-primary); font-size:0.85rem; min-width:80px;">
+                        <option value="">—</option>
+                        ${q.texts.map(t => `<option value="${t.id}" ${savedAnswer === t.id ? "selected" : ""}>${t.label || t.id}</option>`).join("")}
+                    </select>
+                </div>
+            `;
+        });
+        html += `</div></div>`;
+
+        list.innerHTML = html;
+
+        // Save selections on change
+        list.querySelectorAll(".matching-select").forEach(sel => {
+            sel.onchange = () => {
+                const answers = {};
+                list.querySelectorAll(".matching-select").forEach(s => {
+                    answers[s.dataset.idx] = s.value;
+                });
+                state.answers[q.id] = answers;
+                saveSessionToStorage();
+            };
+        });
+        return;
+    }
+
+    // Legacy format: situation + options (old matching)
     list.style.display = "flex";
     list.innerHTML = "";
 
@@ -7124,7 +7286,7 @@ function renderMatchingQuestion(q) {
     const select = document.createElement("select");
     select.classList.add("matching-select");
     select.setAttribute("aria-label", "Anzeige auswählen");
-    
+
     const optDefault = document.createElement("option");
     optDefault.value = "";
     optDefault.textContent = "-- Wählen Sie --";
@@ -7324,10 +7486,15 @@ function setupListeningPlayer(q) {
     statusBadge.className = "status-badge";
     progressFill.style.width = "0%";
     timeCurrent.textContent = "0:00";
-    transcriptText.innerHTML = `<strong>Dialog-Transkription:</strong><br>${q.script}`;
+
+    // speaker_id questions use 'statement' instead of 'script'
+    const scriptText = q.script || q.statement || "";
+    transcriptText.innerHTML = scriptText
+        ? `<strong>Dialog-Transkription:</strong><br>${scriptText}`
+        : `<strong>Transkription:</strong><br><em>Kein Transkript verfügbar.</em>`;
 
     // Est. time display
-    const wordCount = q.script.split(/\s+/).length;
+    const wordCount = scriptText.split(/\s+/).filter(Boolean).length;
     const estSecs = Math.round(wordCount / 1.8) + 2;
     const formatTime = (secs) => {
         const m = Math.floor(secs / 60);
@@ -7369,7 +7536,7 @@ function setupListeningPlayer(q) {
         playsLabel.textContent = `Wiedergaben verbleibend: ${newLeft}/${q.playback_limit}`;
         saveSessionToStorage();
 
-        speakText(q.script,
+        speakText(scriptText,
             (percent) => {
                 progressFill.style.width = `${percent}%`;
                 const curSec = Math.round((percent / 100) * estSecs);
@@ -7433,11 +7600,18 @@ function setupListeningPlayer(q) {
 }
 
 function setupLesenStimulus(q) {
-    document.getElementById("lesen-doc-type").textContent = `Lesen: ${q.type === 'matching' ? 'Auswahl' : 'Textbeleg'}`;
+    document.getElementById("lesen-doc-type").textContent = `Lesen: ${q.type === 'matching' || q.type === 'people_match' ? 'Anzeigen zuordnen' : 'Textbeleg'}`;
     const displayEl = document.getElementById("lesen-text-display");
+
+    // Matching / people_match / tf_match questions: no shared text — ads shown in QA panel
+    if ((q.type === "matching" || q.type === "people_match" || q.type === "tf_match") && !q.text) {
+        displayEl.innerHTML = `<p style="color:var(--color-text-muted); font-style:italic;">Die Anzeigen werden in der Aufgabenstellung angezeigt.</p>`;
+        return;
+    }
+
     const text = q.text ? q.text.trim() : "";
     const isCommentOnly = text.startsWith("<!--") && text.endsWith("-->");
-    
+
     if (!text || isCommentOnly) {
         console.error(`DIAGNOSTICS: Reading passage failed to load for question ID: ${q.id}. Text content is empty or contains only comments.`);
         displayEl.innerHTML = `<div class="error-panel text-danger" style="padding: 20px; border: 1px dashed var(--color-danger); border-radius: var(--radius-md); background: var(--color-danger-light);">Reading text unavailable. Please reload the question.</div>`;
@@ -7593,6 +7767,44 @@ function switchToView(viewId, pushHistory = true) {
 // --- DYNAMIC GRAPHICS & PERFORMANCE ANALYTICS ENGINE ---
 
 // Grades and compiles weak grammar/vocab items
+// Helper: check if a question is answered correctly (handles all types)
+function isQuestionAnsweredCorrectly(q) {
+    const a = state.answers[q.id];
+    if (a === undefined || a === null) return false;
+    if (q.type === "people_match" && q.people) {
+        return q.people.every((p, i) => a[i] === p.correct);
+    } else if (q.type === "matching" && q.situations) {
+        return q.situations.every((s, i) => a[i] === s.correct);
+    } else if (q.type === "tf_match") {
+        return a === q.correct;
+    }
+    return a === q.correct;
+}
+
+// Goethe A1 Exam Section Metadata
+const EXAM_SECTIONS = {
+    hoeren:  { name: "Hören",  points: 30, timeMins: 20, questionCount: 15 },
+    lesen:   { name: "Lesen",  points: 30, timeMins: 25, questionCount: 11 },
+    schreiben: { name: "Schreiben", points: 15, timeMins: 20, questionCount: 2 },
+    sprechen:  { name: "Sprechen",  points: 15, timeMins: 15, questionCount: 5 }
+};
+
+// Calculate section score with proper weighting
+function calculateSectionScore(sectionKey) {
+    const section = EXAM_SECTIONS[sectionKey];
+    const questions = state.sessionQuestions[sectionKey];
+    if (!questions || !section) return { raw: 0, weighted: 0, max: section.points };
+
+    let correct = 0;
+    questions.forEach(q => {
+        if (isQuestionAnsweredCorrectly(q)) correct++;
+    });
+
+    // Weight: (correct / total) * section max points
+    const weighted = Math.round((correct / questions.length) * section.points);
+    return { raw: correct, total: questions.length, weighted, max: section.points };
+}
+
 function runScoringAndAnalytics() {
     let hoerenCorrect = 0;
     let lesenCorrect = 0;
@@ -7605,8 +7817,8 @@ function runScoringAndAnalytics() {
 
     const evaluateList = (list, isListening) => {
         list.forEach(q => {
-            const isCorrect = (state.answers[q.id] === q.correct);
-            
+            const isCorrect = isQuestionAnsweredCorrectly(q);
+
             if (isCorrect) {
                 if (isListening) hoerenCorrect++;
                 else lesenCorrect++;
@@ -7693,17 +7905,22 @@ function runScoringAndAnalytics() {
         }
     }
 
-    // Final total score and verdict calculation
+    // Final total score and verdict calculation (weighted by Goethe A1 point system)
     const verdict = document.getElementById("results-verdict");
     const scoreCircleText = document.getElementById("results-total-score");
     const percentageText = document.getElementById("results-percentage");
-    
-    if (hasSchreibenScore && hasSprechenScore) {
-        const totalScore = hoerenCorrect + lesenCorrect + schreibenScore + sprechenScore;
-        const finalPercentage = Math.round((totalScore / 60) * 100);
-        scoreCircleText.textContent = `${totalScore} / 60`;
+
+    const hoerenWeighted = calculateSectionScore("hoeren");
+    const lesenWeighted = calculateSectionScore("lesen");
+    const schreibenWeighted = hasSchreibenScore ? { weighted: schreibenScore, max: 15 } : null;
+    const sprechenWeighted = hasSprechenScore ? { weighted: sprechenScore, max: 15 } : null;
+
+    if (schreibenWeighted && sprechenWeighted) {
+        const totalWeighted = hoerenWeighted.weighted + lesenWeighted.weighted + schreibenWeighted.weighted + sprechenWeighted.weighted;
+        const finalPercentage = Math.round((totalWeighted / 90) * 100);
+        scoreCircleText.textContent = `${totalWeighted} / 90`;
         percentageText.textContent = `${finalPercentage}%`;
-        
+
         const pass = finalPercentage >= 60;
         if (pass) {
             verdict.textContent = "BESTANDEN / PASS";
@@ -7713,19 +7930,19 @@ function runScoringAndAnalytics() {
             verdict.className = "score-label text-danger";
         }
     } else {
-        const partialScore = hoerenCorrect + lesenCorrect;
-        const partialPercentage = Math.round((partialScore / 30) * 100);
-        scoreCircleText.textContent = `${partialScore} / 30 (Prelim.)`;
+        const partialWeighted = hoerenWeighted.weighted + lesenWeighted.weighted;
+        const partialPercentage = Math.round((partialWeighted / 60) * 100);
+        scoreCircleText.textContent = `${partialWeighted} / 60 (Prelim.)`;
         percentageText.textContent = `${partialPercentage}%`;
-        
+
         verdict.textContent = "RESULT AWAITING FINAL EVALUATION";
         verdict.className = "score-label text-warning";
     }
 
-    document.getElementById("results-hoeren-score").textContent = `${hoerenCorrect} / 15`;
-    document.getElementById("results-lesen-score").textContent = `${lesenCorrect} / 15`;
-    document.getElementById("results-hoeren-fill").style.width = `${(hoerenCorrect / 15) * 100}%`;
-    document.getElementById("results-lesen-fill").style.width = `${(lesenCorrect / 15) * 100}%`;
+    document.getElementById("results-hoeren-score").textContent = `${hoerenWeighted.weighted} / ${hoerenWeighted.max}`;
+    document.getElementById("results-lesen-score").textContent = `${lesenWeighted.weighted} / ${lesenWeighted.max}`;
+    document.getElementById("results-hoeren-fill").style.width = `${(hoerenWeighted.weighted / hoerenWeighted.max) * 100}%`;
+    document.getElementById("results-lesen-fill").style.width = `${(lesenWeighted.weighted / lesenWeighted.max) * 100}%`;
 
     // Populate Certificate Metadata
     document.getElementById("cert-candidate-name").textContent = state.candidateName;
@@ -7892,6 +8109,15 @@ function startGlobalExamTimer() {
         const mins = String(Math.floor(currentRemainingSecs / 60)).padStart(2, '0');
         const secs = String(currentRemainingSecs % 60).padStart(2, '0');
         document.getElementById("exam-timer").textContent = `${mins}:${secs}`;
+
+        // Show section time indicator
+        const sectionKeys = ["hoeren", "lesen", "schreiben", "sprechen"];
+        const currentSection = sectionKeys[state.currentModuleIndex];
+        if (currentSection && EXAM_SECTIONS[currentSection]) {
+            const sectionTimeMins = EXAM_SECTIONS[currentSection].timeMins;
+            const elapsedInSection = Math.floor(state.timeSpent / 60);
+            // Simple heuristic: track per-section time based on module switches
+        }
 
         // Update global progress bar depending on questions completed
         const totalQuestionsCount = 30; // listening + reading
@@ -8911,7 +9137,7 @@ function setupPracticeListeningPlayer(q) {
         
         const speed = parseFloat(speedSelect.value) || 0.85;
         
-        speakText(q.script,
+        speakText(scriptText,
             (percent) => {
                 // Ticks
             },
@@ -9663,10 +9889,10 @@ function generateAIEvalPackageExport() {
     let lesenCorrect = 0;
     
     state.sessionQuestions.hoeren.forEach(q => {
-        if (state.answers[q.id] === q.correct) hoerenCorrect++;
+        if (isQuestionAnsweredCorrectly(q)) hoerenCorrect++;
     });
     state.sessionQuestions.lesen.forEach(q => {
-        if (state.answers[q.id] === q.correct) lesenCorrect++;
+        if (isQuestionAnsweredCorrectly(q)) lesenCorrect++;
     });
 
     const grammarTotals = {};
@@ -9676,7 +9902,7 @@ function generateAIEvalPackageExport() {
 
     const fillAnalytics = (list) => {
         list.forEach(q => {
-            const isCorrect = (state.answers[q.id] === q.correct);
+            const isCorrect = isQuestionAnsweredCorrectly(q);
             if (q.grammar) {
                 grammarTotals[q.grammar] = (grammarTotals[q.grammar] || 0) + 1;
                 grammarScores[q.grammar] = (grammarScores[q.grammar] || 0) + (isCorrect ? 1 : 0);

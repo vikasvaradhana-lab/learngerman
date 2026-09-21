@@ -1431,6 +1431,30 @@ textarea:focus-visible,
     background: var(--color-accent-light);
     box-shadow: 0 0 0 1px var(--color-accent);
 }
+
+/* Hören Teil 1: Picture Match grid */
+.picture-match-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+}
+
+/* Lesen Teil 1: People Match layout */
+.people-match-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Sprechen: Partner Sim dialogue box */
+.partner-dialogue-box {
+    background: rgba(99, 102, 241, 0.1);
+    border-left: 3px solid var(--color-accent);
+    padding: 12px 16px;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    margin-bottom: 12px;
+}
 .option-radio {
     width: 20px;
     height: 20px;
@@ -3633,5 +3657,55 @@ body.dark-mode .branding-academic .branding-text {
     flex-wrap: wrap;
 }
 
+/* ===== A1/A2 Level Selector Toggle ===== */
+.level-selector-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 12px 0 6px;
+}
 
+.level-btn {
+    padding: 8px 22px;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    border: 2px solid var(--color-border);
+    background: var(--color-panel);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
 
+.level-btn:hover {
+    border-color: #3b82f6;
+    color: #3b82f6;
+    background: rgba(59, 130, 246, 0.08);
+}
+
+.level-btn-active {
+    background: linear-gradient(135deg, #6366f1, #3b82f6);
+    border-color: transparent;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.level-btn-active:hover {
+    background: linear-gradient(135deg, #4f46e5, #2563eb);
+    color: #ffffff !important;
+}
+
+/* A2-specific accent colour overrides */
+.a2-accent { color: #3b82f6; }
+.a2-btn-start {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: #fff;
+    border: none;
+}
+.a2-btn-start:hover {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+}

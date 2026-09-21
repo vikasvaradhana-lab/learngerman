@@ -113,7 +113,11 @@
                 <!-- ==================== 1. LANDING DASHBOARD ==================== -->
                 <section id="view-landing-dashboard" class="view-panel active">
                     <div class="dashboard-hero-title">
-                        <h2>GOETHE A1 LEARNING PORTAL</h2>
+                        <h2>GOETHE LEARNING PORTAL</h2>
+                        <div class="level-selector-row" style="display:flex;align-items:center;justify-content:center;gap:10px;margin:12px 0 6px;">
+                            <button id="btn-level-a1" class="btn level-btn level-btn-active" onclick="setActiveLevel('a1')" aria-pressed="true" title="Switch to A1">🎓 A1 — Starter</button>
+                            <button id="btn-level-a2" class="btn level-btn" onclick="setActiveLevel('a2')" aria-pressed="false" title="Switch to A2">📘 A2 — Elementary</button>
+                        </div>
                         <div class="branding-divider">
                             <span class="divider-line"></span>
                             <span class="divider-accent">✦</span>
@@ -1707,7 +1711,7 @@
                                     
                                     <div class="cert-score-main">
                                         <div class="score-circle">
-                                            <span class="score-num" id="results-total-score">0 / 30</span>
+                                            <span class="score-num" id="results-total-score">0 / 90</span>
                                             <span class="score-percent" id="results-percentage">0%</span>
                                         </div>
                                         <div class="score-label" id="results-verdict">Nicht bestanden / Fail</div>
@@ -1717,7 +1721,7 @@
                                      <div class="results-breakdown-grid">
                                          <div class="breakdown-card">
                                              <h4>Hören (Listening)</h4>
-                                             <span class="breakdown-score" id="results-hoeren-score">0 / 15</span>
+                                             <span class="breakdown-score" id="results-hoeren-score">0 / 30</span>
                                              <div class="progress-bar-small"><div class="fill" id="results-hoeren-fill" style="width: 0%"></div></div>
                                              <div class="status-indicator-wrapper" style="margin-top: 8px; font-size: 0.75rem; font-weight: 600; color: var(--color-success); display: flex; align-items: center; gap: 4px;">
                                                  <span style="display:inline-block; width:6px; height:6px; background:var(--color-success); border-radius:50%;"></span>
@@ -1726,7 +1730,7 @@
                                          </div>
                                          <div class="breakdown-card">
                                              <h4>Lesen (Reading)</h4>
-                                             <span class="breakdown-score" id="results-lesen-score">0 / 15</span>
+                                             <span class="breakdown-score" id="results-lesen-score">0 / 30</span>
                                              <div class="progress-bar-small"><div class="fill" id="results-lesen-fill" style="width: 0%"></div></div>
                                              <div class="status-indicator-wrapper" style="margin-top: 8px; font-size: 0.75rem; font-weight: 600; color: var(--color-success); display: flex; align-items: center; gap: 4px;">
                                                  <span style="display:inline-block; width:6px; height:6px; background:var(--color-success); border-radius:50%;"></span>
@@ -1951,6 +1955,80 @@
                 </button>
             </div>
         </footer>
+
+                <!-- ==================== A2 PRACTICE MENU ==================== -->
+                <section id="view-a2-practice-menu" class="view-panel">
+                    <div class="panel-header-nav">
+                        <button class="btn btn-secondary btn-back-home">&larr; Dashboard</button>
+                        <h2>A2 Übungsportal / A2 Practice Center</h2>
+                    </div>
+                    <div class="a2-level-badge" style="text-align:center;margin-bottom:18px;">
+                        <span style="background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;padding:4px 16px;border-radius:20px;font-size:0.75rem;font-weight:800;letter-spacing:0.08em;">📘 GOETHE A2 — ELEMENTARY</span>
+                    </div>
+                    <div class="practice-topics-grid">
+                        <div class="practice-topic-card glass-panel" data-a2-topic="vocab" tabindex="0" role="button" aria-label="A2 Vocabulary practice" id="a2-card-vocab">
+                            <div class="topic-icon">📖</div>
+                            <h3>Wortschatz A2 / Vocabulary</h3>
+                            <p>Master expanded A2 vocabulary across 8 themes: Work, Travel, Technology, Environment, Family, Media, Health, Shopping.</p>
+                        </div>
+                        <div class="practice-topic-card glass-panel" data-a2-topic="grammar" tabindex="0" role="button" aria-label="A2 Grammar practice" id="a2-card-grammar">
+                            <div class="topic-icon">🧠</div>
+                            <h3>Grammatik A2 / Grammar</h3>
+                            <p>Master A2 grammar: Perfekt, Komparativ, Konjunktionen (weil/dass/wenn), Reflexivverben, Trennbare Verben, Präpositionen.</p>
+                        </div>
+                        <div class="practice-topic-card glass-panel" data-a2-topic="reading" tabindex="0" role="button" aria-label="A2 Reading practice" id="a2-card-reading">
+                            <div class="topic-icon">👁️</div>
+                            <h3>Lesen A2 / Reading</h3>
+                            <p>Read longer emails, advertisements, instruction manuals, and social media posts. Answer comprehension questions.</p>
+                        </div>
+                        <div class="practice-topic-card glass-panel" data-a2-topic="hoeren" tabindex="0" role="button" aria-label="A2 Interactive Listening Hub" id="a2-card-hoeren">
+                            <div class="topic-icon">🎧</div>
+                            <h3>Interaktives Hören A2</h3>
+                            <p>15 real-life A2 dialogue topics with audio controller, slow speed, 4 practice modes per dialogue. Complex A2-level conversations.</p>
+                            <div style="position:absolute;top:12px;right:12px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;font-size:0.65rem;font-weight:800;letter-spacing:0.08em;padding:3px 8px;border-radius:20px;">A2</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== A2 INTERACTIVE HÖREN HUB ==================== -->
+                <section id="view-a2-interactive-hoeren" class="view-panel">
+                    <div class="panel-header-nav">
+                        <button class="btn btn-secondary btn-back-home" id="a2-hoeren-back-btn" onclick="handleA2HoerenBackNavigation()">&larr; Zurück / Back</button>
+                        <h2 id="a2-hoeren-hub-title">A2 Interaktives Hören</h2>
+                    </div>
+                    <div class="a2-level-badge" style="text-align:center;margin-bottom:12px;">
+                        <span style="background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;padding:4px 16px;border-radius:20px;font-size:0.75rem;font-weight:800;letter-spacing:0.08em;">📘 GOETHE A2 — ELEMENTARY</span>
+                    </div>
+
+                    <!-- Stage 0: Topic Selection -->
+                    <div id="a2-hoeren-topic-selection-hub" style="display:block;">
+                        <p style="text-align:center;color:var(--text-muted);margin-bottom:18px;">Wählen Sie ein A2-Thema / Choose an A2 topic:</p>
+                        <div id="a2-hoeren-topics-grid" class="hoeren-topics-grid"></div>
+                    </div>
+
+                    <!-- Stage 1: Warm-Up -->
+                    <div id="a2-hoeren-topic-warmup-hub" style="display:none;">
+                        <div id="a2-hoeren-warmup-content"></div>
+                        <div style="text-align:center;margin-top:20px;">
+                            <button id="a2-btn-start-practice" class="btn btn-primary btn-large" onclick="openA2HoerenPractice()">🎧 Zur Hörübung / Start Listening Practice &rarr;</button>
+                        </div>
+                    </div>
+
+                    <!-- Stage 2: Practice Workspace -->
+                    <div id="a2-hoeren-practice-workspace" style="display:none;">
+                        <div id="a2-hoeren-practice-content"></div>
+                    </div>
+                </section>
+
+                <!-- ==================== A2 PRACTICE WORKSPACE ==================== -->
+                <section id="view-a2-practice-workspace" class="view-panel">
+                    <div class="panel-header-nav">
+                        <button class="btn btn-secondary" id="a2-practice-back-btn">&larr; Zurück / Back</button>
+                        <h2 id="a2-practice-workspace-title">A2 Übung</h2>
+                    </div>
+                    <div id="a2-practice-workspace-content"></div>
+                </section>
+
     </div>
 
     <!-- Modals for Warnings/Confirmation -->
@@ -1966,7 +2044,8 @@
     </div>
 
     <!-- Script loading -->
-    <script src="app.js?v=2.7.0"></script>
-    <script src="v22_additions.js?v=2.7.0"></script>
+    <script src="app.js?v=2.8.0"></script>
+    <script src="v22_additions.js?v=2.8.0"></script>
+    <script src="a2_module.js?v=1.0.0"></script>
 </body>
 </html>
