@@ -7800,12 +7800,18 @@ function pushNavigationState(stateObj) {
 window.pushNavigationState = pushNavigationState;
 
 function handleAppBackNavigation() {
-    // If there is depth in the history stack, history.back() will cleanly pop to the previous state
-    if (window._spaHistoryDepth && window._spaHistoryDepth > 0 && window.history.length > 1) {
-        window.history.back();
-    } else {
-        // Fallback when directly navigated or history stack empty: move 1 step hierarchically
-        navigateAppOneStepBack();
+    // Stop any ongoing audio / TTS playback immediately
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    if (window.hoerenAudioController && typeof window.hoerenAudioController.stop === "function") {
+        window.hoerenAudioController.stop();
+    }
+    if (typeof stopDialogueSpeech === "function") stopDialogueSpeech();
+    if (typeof stopStorySpeech === "function") stopStorySpeech();
+
+    // Immediately step one structural page back hierarchically (bypass in-page subtabs/steps)
+    const didStep = navigateAppOneStepBack();
+    if (!didStep) {
+        switchToView("view-landing-dashboard", false);
     }
 }
 window.handleAppBackNavigation = handleAppBackNavigation;
@@ -7816,19 +7822,8 @@ function restoreNavigationState(navState) {
     // A2 Hören
     if (navState.viewId === "view-a2-interactive-hoeren") {
         switchToView("view-a2-interactive-hoeren", false);
-        if (navState.a2HoerenStage === "practice") {
-            if (typeof openA2HoerenPractice === "function") {
-                if (navState.topicKey && typeof activeA2HoerenState !== "undefined") activeA2HoerenState.topicKey = navState.topicKey;
-                openA2HoerenPractice(false);
-            }
-        } else if (navState.a2HoerenStage === "warmup") {
-            if (typeof openA2HoerenWarmup === "function") {
-                openA2HoerenWarmup(navState.topicKey || (activeA2HoerenState && activeA2HoerenState.topicKey) || "cafe", false);
-            }
-        } else {
-            if (typeof openA2InteractiveHoerenHub === "function") {
-                openA2InteractiveHoerenHub(false);
-            }
+        if (typeof openA2InteractiveHoerenHub === "function") {
+            openA2InteractiveHoerenHub(false);
         }
         return;
     }
@@ -7836,18 +7831,26 @@ function restoreNavigationState(navState) {
     // A2 Lesen
     if (navState.viewId === "view-a2-interactive-lesen") {
         switchToView("view-a2-interactive-lesen", false);
-        if (navState.a2LesenStage === "practice") {
-            if (typeof openA2ReadingPractice === "function") {
-                openA2ReadingPractice(typeof navState.passageIndex === "number" ? navState.passageIndex : 0, false);
-            }
-        } else if (navState.a2LesenStage === "warmup") {
-            if (typeof openA2ReadingWarmup === "function") {
-                openA2ReadingWarmup(typeof navState.passageIndex === "number" ? navState.passageIndex : 0, false);
-            }
-        } else {
-            if (typeof openA2InteractiveLesenHub === "function") {
-                openA2InteractiveLesenHub(false);
-            }
+        if (typeof openA2InteractiveLesenHub === "function") {
+            openA2InteractiveLesenHub(false);
+        }
+        return;
+    }
+
+    // A2 Schreiben
+    if (navState.viewId === "view-a2-writing") {
+        switchToView("view-a2-writing", false);
+        if (typeof openA2WritingStudio === "function") {
+            openA2WritingStudio(false);
+        }
+        return;
+    }
+
+    // A2 Sprechen
+    if (navState.viewId === "view-a2-speaking") {
+        switchToView("view-a2-speaking", false);
+        if (typeof openA2SpeakingLab === "function") {
+            openA2SpeakingLab(false);
         }
         return;
     }
@@ -7940,19 +7943,14 @@ function navigateAppOneStepBack() {
         const warmupHub = document.getElementById("a2-hoeren-topic-warmup-hub");
         const topicGrid = document.getElementById("a2-hoeren-topic-selection-hub");
         
-        if (practiceWS && practiceWS.style.display !== "none") {
-            practiceWS.style.display = "none";
-            if (warmupHub) warmupHub.style.display = "block";
-            const topic = (typeof A2_INTERACTIVE_HOEREN_DATABASE !== "undefined" && typeof activeA2HoerenState !== "undefined" && activeA2HoerenState.topicKey) ? A2_INTERACTIVE_HOEREN_DATABASE[activeA2HoerenState.topicKey] : null;
-            const titleEl = document.getElementById("a2-hoeren-hub-title");
-            if (titleEl && topic) titleEl.textContent = topic.emoji + " " + topic.title + " — Vorbereitung";
-            return true;
-        }
-        if (warmupHub && warmupHub.style.display !== "none") {
-            warmupHub.style.display = "none";
+        // If inside a topic (either practice questions or warmup), go straight back to 10 Topics Grid
+        if ((practiceWS && practiceWS.style.display !== "none") || (warmupHub && warmupHub.style.display !== "none")) {
+            if (practiceWS) practiceWS.style.display = "none";
+            if (warmupHub) warmupHub.style.display = "none";
             if (topicGrid) topicGrid.style.display = "block";
             const titleEl = document.getElementById("a2-hoeren-hub-title");
             if (titleEl) titleEl.textContent = "A2 Interaktives Hören";
+            if (typeof scrollAppToTop === "function") scrollAppToTop();
             return true;
         }
         // At topic grid -> step back to A2 practice menu
@@ -7967,19 +7965,14 @@ function navigateAppOneStepBack() {
         const warmupHub = document.getElementById("a2-lesen-topic-warmup-hub");
         const topicGrid = document.getElementById("a2-lesen-topic-selection-hub");
         
-        if (practiceWS && practiceWS.style.display !== "none") {
-            practiceWS.style.display = "none";
-            if (warmupHub) warmupHub.style.display = "block";
-            const passage = (typeof A2_READING_DATABASE !== "undefined" && typeof activeA2ReadingState !== "undefined" && typeof activeA2ReadingState.passageIndex === "number") ? A2_READING_DATABASE[activeA2ReadingState.passageIndex] : null;
-            const titleEl = document.getElementById("a2-lesen-hub-title");
-            if (titleEl && passage) titleEl.textContent = passage.emoji + " " + passage.title + " — Vorbereitung";
-            return true;
-        }
-        if (warmupHub && warmupHub.style.display !== "none") {
-            warmupHub.style.display = "none";
+        // If inside a topic (either reading text or warmup), go straight back to 15 Topics Grid
+        if ((practiceWS && practiceWS.style.display !== "none") || (warmupHub && warmupHub.style.display !== "none")) {
+            if (practiceWS) practiceWS.style.display = "none";
+            if (warmupHub) warmupHub.style.display = "none";
             if (topicGrid) topicGrid.style.display = "block";
             const titleEl = document.getElementById("a2-lesen-hub-title");
             if (titleEl) titleEl.textContent = "A2 Leseverstehen";
+            if (typeof scrollAppToTop === "function") scrollAppToTop();
             return true;
         }
         // At topic grid -> step back to A2 practice menu
@@ -7987,17 +7980,47 @@ function navigateAppOneStepBack() {
         return true;
     }
 
+    // 1c. Check A2 Writing Studio
+    const a2WritingView = document.getElementById("view-a2-writing");
+    if (a2WritingView && a2WritingView.classList.contains("active")) {
+        const workspace = document.getElementById("a2-writing-workspace");
+        const selHub = document.getElementById("a2-writing-selection-hub");
+        // If inside a writing task (any step), go straight back to 10 Tasks Hub
+        if (workspace && workspace.style.display !== "none") {
+            workspace.style.display = "none";
+            if (selHub) selHub.style.display = "block";
+            const titleEl = document.getElementById("a2-writing-title");
+            if (titleEl) titleEl.textContent = "A2 Schreibstudio / Writing Studio";
+            if (typeof scrollAppToTop === "function") scrollAppToTop();
+            return true;
+        }
+        // At task list -> step back to A2 practice menu
+        switchToView("view-a2-practice-menu", false);
+        return true;
+    }
+
+    // 1d. Check A2 Speaking Lab
+    const a2SpeakingView = document.getElementById("view-a2-speaking");
+    if (a2SpeakingView && a2SpeakingView.classList.contains("active")) {
+        const workspace = document.getElementById("a2-speaking-workspace");
+        const selHub = document.getElementById("a2-speaking-selection-hub");
+        // If inside speaking practice (card, monologue, or dialogue), go straight back to 3 Parts Hub
+        if (workspace && workspace.style.display !== "none") {
+            workspace.style.display = "none";
+            if (selHub) selHub.style.display = "block";
+            const titleEl = document.getElementById("a2-speaking-title");
+            if (titleEl) titleEl.textContent = "A2 Sprechlabor / Speaking & Fluency";
+            if (typeof scrollAppToTop === "function") scrollAppToTop();
+            return true;
+        }
+        // At speaking hub -> step back to A2 practice menu
+        switchToView("view-a2-practice-menu", false);
+        return true;
+    }
+
     // 2. Check A2 Practice Workspace (Reading, Vocab, Grammar)
     const a2WorkspaceView = document.getElementById("view-a2-practice-workspace");
     if (a2WorkspaceView && a2WorkspaceView.classList.contains("active")) {
-        // If in Reading and in text mode, go back to warmup mode
-        if (typeof activeA2ReadingState !== "undefined" && activeA2ReadingState && activeA2ReadingState.mode === "text") {
-            if (typeof setA2ReadingMode === "function") {
-                setA2ReadingMode("warmup", false);
-                return true;
-            }
-        }
-        // From warmup or vocab/grammar -> back to A2 practice menu
         switchToView("view-a2-practice-menu", false);
         return true;
     }
@@ -8008,12 +8031,11 @@ function navigateAppOneStepBack() {
         const practiceWS = document.getElementById("hoeren-practice-workspace");
         const warmupHub = document.getElementById("hoeren-topic-warmup-hub");
         const topicHub = document.getElementById("hoeren-topic-selection-hub");
-        if (practiceWS && practiceWS.style.display !== "none") {
-            if (typeof showHoerenWarmupScreen === "function") showHoerenWarmupScreen();
-            return true;
-        }
-        if (warmupHub && warmupHub.style.display !== "none") {
-            if (typeof openInteractiveHoerenHub === "function") openInteractiveHoerenHub(false);
+        if ((practiceWS && practiceWS.style.display !== "none") || (warmupHub && warmupHub.style.display !== "none")) {
+            if (practiceWS) practiceWS.style.display = "none";
+            if (warmupHub) warmupHub.style.display = "none";
+            if (topicHub) topicHub.style.display = "block";
+            if (typeof scrollAppToTop === "function") scrollAppToTop();
             return true;
         }
         switchToView("view-practice-menu", false);

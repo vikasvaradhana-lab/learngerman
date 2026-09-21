@@ -1970,12 +1970,14 @@
                     <div class="a2-menu-header">
                         <div class="a2-menu-hero-badge">📘 GOETHE A2 — ELEMENTARY</div>
                         <h3 class="a2-menu-title">Wählen Sie einen Übungsbereich</h3>
-                        <p class="a2-menu-subtitle">Gezielte Vorbereitung auf die Goethe-Zertifikat A2 Prüfung mit interaktiven Übungen, Grammatikregeln und Hördialogen.</p>
+                        <p class="a2-menu-subtitle">Gezielte Vorbereitung auf alle Prüfungsteile des Goethe-Zertifikats A2 mit interaktiven Übungen, Schreibstudio und Sprechlabor.</p>
                         <div class="a2-feature-pills">
                             <span class="a2-feature-pill">📖 8 Vokabelthemen</span>
                             <span class="a2-feature-pill">🧠 6 Grammatikkapitel</span>
-                            <span class="a2-feature-pill">👁️ 3 Modell-Lesetexte</span>
-                            <span class="a2-feature-pill">🎧 15 Hörthemen (30 Dialoge)</span>
+                            <span class="a2-feature-pill">👁️ 15 Lesetexte</span>
+                            <span class="a2-feature-pill">🎧 15 Hörthemen</span>
+                            <span class="a2-feature-pill">✍️ 10 Schreibaufgaben</span>
+                            <span class="a2-feature-pill">🎙️ 3-Teil Sprechlabor</span>
                         </div>
                     </div>
 
@@ -2067,6 +2069,50 @@
                                 <span class="a2-card-action-arrow">&rarr;</span>
                             </div>
                         </div>
+
+                        <!-- Card 5: Schreiben A2 -->
+                        <div class="a2-module-card a2-card-writing glass-panel" data-a2-topic="writing" tabindex="0" role="button" aria-label="Schreiben A2">
+                            <div class="a2-card-top">
+                                <div class="a2-card-icon-box">✍️</div>
+                                <span class="a2-card-badge badge-amber" style="background:rgba(245,158,11,0.2);color:#fbbf24;border:1px solid rgba(245,158,11,0.4);">Schreiben</span>
+                            </div>
+                            <div class="a2-card-body">
+                                <div class="a2-card-title">Schreiben A2</div>
+                                <div class="a2-card-subtitle">Writing Studio & Exam Prep</div>
+                                <div class="a2-card-desc">10 Prüfungsaufgaben (Teil 1: Informelle SMS & Teil 2: Formelle E-Mails) mit interaktiver Checkliste, Redemitteln, Wortzähler und Musterlösungen.</div>
+                                <div class="a2-tags-row">
+                                    <span class="a2-tag tag-amber" style="background:rgba(245,158,11,0.15);color:#fbbf24;">10 Aufgaben</span>
+                                    <span class="a2-tag">3 Leitpunkte</span>
+                                    <span class="a2-tag">🤖 KI-Feedback</span>
+                                </div>
+                            </div>
+                            <div class="a2-card-footer">
+                                <span class="a2-card-action-text" style="color:#fbbf24;">Texte verfassen</span>
+                                <span class="a2-card-action-arrow" style="color:#fbbf24;">&rarr;</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 6: Sprechen A2 -->
+                        <div class="a2-module-card a2-card-speaking glass-panel" data-a2-topic="speaking" tabindex="0" role="button" aria-label="Sprechen A2">
+                            <div class="a2-card-top">
+                                <div class="a2-card-icon-box">🎙️</div>
+                                <span class="a2-card-badge badge-rose" style="background:rgba(236,72,153,0.2);color:#f472b6;border:1px solid rgba(236,72,153,0.4);">Sprechen</span>
+                            </div>
+                            <div class="a2-card-body">
+                                <div class="a2-card-title">Sprechen A2</div>
+                                <div class="a2-card-subtitle">Speaking Lab & Fluency</div>
+                                <div class="a2-card-desc">Alle 3 Goethe-A2 Prüfungsteile: Fragen stellen mit Stichwortkarten, 5-Stufen-Monologe (Sprechtrainer) und interaktive Verhandlungsdialoge.</div>
+                                <div class="a2-tags-row">
+                                    <span class="a2-tag tag-pink" style="background:rgba(236,72,153,0.15);color:#f472b6;">Teil 1, 2 & 3</span>
+                                    <span class="a2-tag">8 Karten</span>
+                                    <span class="a2-tag">🗣️ Audio-Dialog</span>
+                                </div>
+                            </div>
+                            <div class="a2-card-footer">
+                                <span class="a2-card-action-text" style="color:#f472b6;">Sprechtraining starten</span>
+                                <span class="a2-card-action-arrow" style="color:#f472b6;">&rarr;</span>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
@@ -2132,6 +2178,58 @@
                     </div>
                 </section>
 
+                <!-- ==================== A2 WRITING STUDIO ==================== -->
+                <section id="view-a2-writing" class="view-panel">
+                    <div class="panel-header-nav">
+                        <button class="btn btn-secondary btn-back-step" id="a2-writing-back-btn" onclick="handleAppBackNavigation()">&larr; Zurück / Back</button>
+                        <h2 id="a2-writing-title">A2 Schreibstudio / Writing Studio</h2>
+                    </div>
+                    <div class="a2-level-badge" style="text-align:center;margin-bottom:12px;">
+                        <span style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;padding:4px 16px;border-radius:20px;font-size:0.75rem;font-weight:800;letter-spacing:0.08em;">✍️ GOETHE A2 — SCHREIBEN</span>
+                    </div>
+
+                    <!-- Stage 0: Topic Selection Hub -->
+                    <div id="a2-writing-selection-hub" style="display:block;">
+                        <div style="display:flex;justify-content:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;">
+                            <button class="hoeren-mode-tab active" id="a2-writing-filter-all" onclick="filterA2WritingPart('all')">Alle Aufgaben (10)</button>
+                            <button class="hoeren-mode-tab" id="a2-writing-filter-teil1" onclick="filterA2WritingPart('teil1')">Teil 1: SMS / Informell (5)</button>
+                            <button class="hoeren-mode-tab" id="a2-writing-filter-teil2" onclick="filterA2WritingPart('teil2')">Teil 2: E-Mail / Formell (5)</button>
+                        </div>
+                        <div id="a2-writing-topics-grid" class="hoeren-topics-grid"></div>
+                    </div>
+
+                    <!-- Stage 1: Writing Workspace -->
+                    <div id="a2-writing-workspace" style="display:none;">
+                        <div id="a2-writing-workspace-content"></div>
+                    </div>
+                </section>
+
+                <!-- ==================== A2 SPEAKING LAB ==================== -->
+                <section id="view-a2-speaking" class="view-panel">
+                    <div class="panel-header-nav">
+                        <button class="btn btn-secondary btn-back-step" id="a2-speaking-back-btn" onclick="handleAppBackNavigation()">&larr; Zurück / Back</button>
+                        <h2 id="a2-speaking-title">A2 Sprechlabor / Speaking & Fluency</h2>
+                    </div>
+                    <div class="a2-level-badge" style="text-align:center;margin-bottom:12px;">
+                        <span style="background:linear-gradient(135deg,#ec4899,#8b5cf6);color:#fff;padding:4px 16px;border-radius:20px;font-size:0.75rem;font-weight:800;letter-spacing:0.08em;">🎙️ GOETHE A2 — SPRECHEN</span>
+                    </div>
+
+                    <!-- Stage 0: Part Selection / Hub -->
+                    <div id="a2-speaking-selection-hub" style="display:block;">
+                        <div style="display:flex;justify-content:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;">
+                            <button class="hoeren-mode-tab active" id="a2-speaking-tab-teil1" onclick="switchA2SpeakingTab('teil1')">🃏 Teil 1: Fragen stellen (8 Karten)</button>
+                            <button class="hoeren-mode-tab" id="a2-speaking-tab-teil2" onclick="switchA2SpeakingTab('teil2')">🗣️ Teil 2: Von sich erzählen (6 Monologe)</button>
+                            <button class="hoeren-mode-tab" id="a2-speaking-tab-teil3" onclick="switchA2SpeakingTab('teil3')">🤝 Teil 3: Gemeinsam planen (4 Dialoge)</button>
+                        </div>
+                        <div id="a2-speaking-hub-content"></div>
+                    </div>
+
+                    <!-- Stage 1: Active Speaking Workspace -->
+                    <div id="a2-speaking-workspace" style="display:none;">
+                        <div id="a2-speaking-workspace-content"></div>
+                    </div>
+                </section>
+
                 <!-- ==================== A2 PRACTICE WORKSPACE ==================== -->
                 <section id="view-a2-practice-workspace" class="view-panel">
                     <div class="panel-header-nav">
@@ -2156,9 +2254,10 @@
     </div>
 
     <!-- Script loading -->
-    <script src="app.js?v=2.8.2"></script>
-    <script src="v22_additions.js?v=2.8.2"></script>
-    <script src="a2_module.js?v=1.0.9"></script>
+    <script src="app.js?v=2.8.3"></script>
+    <script src="v22_additions.js?v=2.8.3"></script>
+    <script src="a2_module.js?v=1.1.0"></script>
+    <script src="a2_writing_speaking.js?v=1.0.1"></script>
     <!-- Planned Level Modal -->
     <div class="modal-overlay" id="planned-level-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); z-index: 9999; align-items: center; justify-content: center;" role="dialog" aria-modal="true">
         <div class="planned-level-modal-card glass-panel">

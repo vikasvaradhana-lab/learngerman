@@ -84,6 +84,11 @@ function openA2Topic(topic) {
     else if (topic === "vocab") openA2PracticeWorkspace("vocab");
     else if (topic === "grammar") openA2PracticeWorkspace("grammar");
     else if (topic === "reading") openA2InteractiveLesenHub();
+    else if (topic === "writing") {
+        if (typeof openA2WritingStudio === "function") openA2WritingStudio();
+    } else if (topic === "speaking") {
+        if (typeof openA2SpeakingLab === "function") openA2SpeakingLab();
+    }
 }
 
 /* ============================================================
@@ -2612,9 +2617,6 @@ window.openA2InteractiveHoerenHub = function(pushHistory = true) {
     document.getElementById("a2-hoeren-practice-workspace").style.display = "none";
     document.getElementById("a2-hoeren-hub-title").textContent = "A2 Interaktives Hören";
     renderA2HoerenTopicsGrid();
-    if (pushHistory && typeof pushNavigationState === "function") {
-        pushNavigationState({ viewId: "view-a2-interactive-hoeren", a2HoerenStage: "topics" });
-    }
 };
 
 window.handleA2HoerenBackNavigation = function() {
@@ -2628,14 +2630,11 @@ window.handleA2HoerenBackNavigation = function() {
         const practiceWS = document.getElementById("a2-hoeren-practice-workspace");
         const practiceVisible = practiceWS && practiceWS.style.display !== "none";
         const warmupVisible = warmupHub && warmupHub.style.display !== "none";
-        if (practiceVisible) {
+        if (practiceVisible || warmupVisible) {
             window.speechSynthesis && window.speechSynthesis.cancel();
-            practiceWS.style.display = "none";
-            warmupHub.style.display = "block";
-            document.getElementById("a2-hoeren-hub-title").textContent = A2_INTERACTIVE_HOEREN_DATABASE[activeA2HoerenState.topicKey].title + " — Vorbereitung";
-        } else if (warmupVisible) {
-            warmupHub.style.display = "none";
-            selHub.style.display = "block";
+            if (practiceWS) practiceWS.style.display = "none";
+            if (warmupHub) warmupHub.style.display = "none";
+            if (selHub) selHub.style.display = "block";
             document.getElementById("a2-hoeren-hub-title").textContent = "A2 Interaktives Hören";
         } else {
             if (typeof switchToView === "function") switchToView("view-a2-practice-menu");
@@ -2705,9 +2704,6 @@ window.openA2InteractiveLesenHub = function(pushHistory = true) {
         requestAnimationFrame(scrollAppToTop);
         setTimeout(scrollAppToTop, 25);
     }
-    if (pushHistory && typeof pushNavigationState === "function") {
-        pushNavigationState({ viewId: "view-a2-interactive-lesen", a2LesenStage: "topics" });
-    }
 };
 
 window.handleA2LesenBackNavigation = function() {
@@ -2722,13 +2718,9 @@ window.handleA2LesenBackNavigation = function() {
         const practiceVisible = practiceWS && practiceWS.style.display !== "none";
         const warmupVisible = warmupHub && warmupHub.style.display !== "none";
 
-        if (practiceVisible) {
-            practiceWS.style.display = "none";
-            if (warmupHub) warmupHub.style.display = "block";
-            const passage = A2_READING_DATABASE[activeA2ReadingState.passageIndex];
-            if (passage) document.getElementById("a2-lesen-hub-title").textContent = passage.emoji + " " + passage.title + " — Vorbereitung";
-        } else if (warmupVisible) {
-            warmupHub.style.display = "none";
+        if (practiceVisible || warmupVisible) {
+            if (practiceWS) practiceWS.style.display = "none";
+            if (warmupHub) warmupHub.style.display = "none";
             if (selHub) selHub.style.display = "block";
             document.getElementById("a2-lesen-hub-title").textContent = "A2 Leseverstehen";
         } else {
@@ -2843,9 +2835,6 @@ window.openA2ReadingWarmup = function(passageIndex, pushHistory = true) {
         requestAnimationFrame(scrollAppToTop);
         setTimeout(scrollAppToTop, 25);
     }
-    if (pushHistory && typeof pushNavigationState === "function") {
-        pushNavigationState({ viewId: "view-a2-interactive-lesen", a2LesenStage: "warmup", passageIndex: passageIndex });
-    }
 };
 
 /* ============================================================
@@ -2934,9 +2923,6 @@ window.openA2ReadingPractice = function(passageIndex, pushHistory = true) {
         setTimeout(scrollAppToTop, 25);
         setTimeout(scrollAppToTop, 100);
     }
-    if (pushHistory && typeof pushNavigationState === "function") {
-        pushNavigationState({ viewId: "view-a2-interactive-lesen", a2LesenStage: "practice", passageIndex: passageIndex });
-    }
 };
 
 window.toggleA2ReadingTranslation = function() {
@@ -3016,9 +3002,6 @@ function openA2HoerenWarmup(topicKey, pushHistory = true) {
         requestAnimationFrame(scrollAppToTop);
         setTimeout(scrollAppToTop, 25);
     }
-    if (pushHistory && typeof pushNavigationState === "function") {
-        pushNavigationState({ viewId: "view-a2-interactive-hoeren", a2HoerenStage: "warmup", topicKey: topicKey });
-    }
 }
 window.openA2HoerenWarmup = openA2HoerenWarmup;
 
@@ -3040,9 +3023,6 @@ window.openA2HoerenPractice = function(pushHistory = true) {
         scrollAppToTop();
         requestAnimationFrame(scrollAppToTop);
         setTimeout(scrollAppToTop, 25);
-    }
-    if (pushHistory && typeof pushNavigationState === "function") {
-        pushNavigationState({ viewId: "view-a2-interactive-hoeren", a2HoerenStage: "practice", topicKey: topicKey });
     }
 };
 
@@ -3227,25 +3207,16 @@ window.openA2PracticeWorkspace = function(topic, pushHistory = true) {
     if (topic === "vocab") { 
         titleEl.textContent = "Wortschatz A2"; 
         renderA2VocabWorkspace(contentEl); 
-        if (pushHistory && typeof pushNavigationState === "function") {
-            pushNavigationState({ viewId: "view-a2-practice-workspace", a2Topic: "vocab" });
-        }
     }
     else if (topic === "grammar") { 
         titleEl.textContent = "Grammatik A2"; 
         renderA2GrammarWorkspace(contentEl); 
-        if (pushHistory && typeof pushNavigationState === "function") {
-            pushNavigationState({ viewId: "view-a2-practice-workspace", a2Topic: "grammar" });
-        }
     }
     else if (topic === "reading") { 
         titleEl.textContent = "Lesen A2"; 
         activeA2ReadingState.passageIndex = 0;
         activeA2ReadingState.mode = "warmup";
         renderA2ReadingWorkspace(contentEl);
-        if (pushHistory && typeof pushNavigationState === "function") {
-            pushNavigationState({ viewId: "view-a2-practice-workspace", a2Topic: "reading", a2ReadingMode: "warmup", passageIndex: 0 });
-        }
     }
     if (typeof scrollAppToTop === "function") {
         scrollAppToTop();

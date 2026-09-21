@@ -4411,6 +4411,8 @@ body.dark-mode .branding-academic .branding-text {
 .a2-card-grammar::before { background: linear-gradient(90deg, #8b5cf6, #6366f1); }
 .a2-card-reading::before { background: linear-gradient(90deg, #06b6d4, #0284c7); }
 .a2-card-hoeren::before { background: linear-gradient(90deg, #3b82f6, #ec4899); }
+.a2-card-writing::before { background: linear-gradient(90deg, #f59e0b, #d97706); }
+.a2-card-speaking::before { background: linear-gradient(90deg, #ec4899, #8b5cf6); }
 
 .a2-module-card:hover {
     transform: translateY(-6px) !important;
@@ -4422,6 +4424,8 @@ body.dark-mode .branding-academic .branding-text {
 .a2-card-grammar:hover { border-color: rgba(139, 92, 246, 0.5) !important; box-shadow: 0 16px 36px -10px rgba(139, 92, 246, 0.25) !important; }
 .a2-card-reading:hover { border-color: rgba(6, 182, 212, 0.5) !important; box-shadow: 0 16px 36px -10px rgba(6, 182, 212, 0.25) !important; }
 .a2-card-hoeren:hover { border-color: rgba(59, 130, 246, 0.5) !important; box-shadow: 0 16px 36px -10px rgba(59, 130, 246, 0.3) !important; }
+.a2-card-writing:hover { border-color: rgba(245, 158, 11, 0.5) !important; box-shadow: 0 16px 36px -10px rgba(245, 158, 11, 0.25) !important; }
+.a2-card-speaking:hover { border-color: rgba(236, 72, 153, 0.5) !important; box-shadow: 0 16px 36px -10px rgba(236, 72, 153, 0.25) !important; }
 
 .a2-module-card:hover::before {
     height: 5px;
@@ -4450,6 +4454,8 @@ body.dark-mode .branding-academic .branding-text {
 .a2-card-grammar .a2-card-icon-box { background: rgba(139, 92, 246, 0.15); border: 1px solid rgba(139, 92, 246, 0.3); }
 .a2-card-reading .a2-card-icon-box { background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6, 182, 212, 0.3); }
 .a2-card-hoeren .a2-card-icon-box { background: rgba(59, 130, 246, 0.18); border: 1px solid rgba(59, 130, 246, 0.35); }
+.a2-card-writing .a2-card-icon-box { background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.3); }
+.a2-card-speaking .a2-card-icon-box { background: rgba(236, 72, 153, 0.18); border: 1px solid rgba(236, 72, 153, 0.35); }
 
 .a2-module-card:hover .a2-card-icon-box {
     transform: scale(1.1) rotate(-3deg);
