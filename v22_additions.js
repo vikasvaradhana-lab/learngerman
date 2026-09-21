@@ -6857,40 +6857,51 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Bind back button from phrase bank
-    const btnBackPhrases = document.querySelector("#view-phrase-bank .btn-back-home");
+    const btnBackPhrases = document.querySelector("#view-phrase-bank .btn-back-home, #view-phrase-bank .btn-back-step");
     if (btnBackPhrases) {
-        btnBackPhrases.onclick = () => {
-            switchToView("view-practice-menu");
+        btnBackPhrases.onclick = (e) => {
+            if (e) { e.preventDefault(); e.stopPropagation(); }
+            if (typeof handleAppBackNavigation === "function") handleAppBackNavigation();
+            else switchToView("view-practice-menu");
         };
     }
 
     // Bind back button from real life
-    const btnBackRealLife = document.querySelector("#view-real-life-modules .btn-back-home");
+    const btnBackRealLife = document.querySelector("#view-real-life-modules .btn-back-home, #view-real-life-modules .btn-back-step");
     if (btnBackRealLife) {
-        btnBackRealLife.onclick = () => {
-            stopDialogueSpeech();
-            switchToView("view-practice-menu");
+        btnBackRealLife.onclick = (e) => {
+            if (e) { e.preventDefault(); e.stopPropagation(); }
+            if (typeof handleAppBackNavigation === "function") handleAppBackNavigation();
+            else {
+                stopDialogueSpeech();
+                switchToView("view-practice-menu");
+            }
         };
     }
 
     // Bind back button from stories
-    const btnBackStories = document.querySelector("#view-listening-stories .btn-back-home");
+    const btnBackStories = document.querySelector("#view-listening-stories .btn-back-home, #view-listening-stories .btn-back-step");
     if (btnBackStories) {
-        btnBackStories.onclick = () => {
-            stopStorySpeech();
-            switchToView("view-practice-menu");
+        btnBackStories.onclick = (e) => {
+            if (e) { e.preventDefault(); e.stopPropagation(); }
+            if (typeof handleAppBackNavigation === "function") handleAppBackNavigation();
+            else {
+                stopStorySpeech();
+                switchToView("view-practice-menu");
+            }
         };
     }
 
     // Bind back button from interactive hoeren
-    const btnBackHoeren = document.querySelector("#view-interactive-hoeren .btn-back-home");
+    const btnBackHoeren = document.querySelector("#view-interactive-hoeren .btn-back-home, #view-interactive-hoeren .btn-back-step");
     if (btnBackHoeren) {
         btnBackHoeren.onclick = (e) => {
             if (e) {
                 e.preventDefault();
                 e.stopPropagation();
             }
-            handleHoerenBackNavigation();
+            if (typeof handleAppBackNavigation === "function") handleAppBackNavigation();
+            else handleHoerenBackNavigation();
         };
     }
 
@@ -11128,20 +11139,23 @@ function openInteractiveHoerenHub() {
 window.openInteractiveHoerenHub = openInteractiveHoerenHub;
 
 function handleHoerenBackNavigation() {
-    if (window.hoerenAudioController && typeof window.hoerenAudioController.stop === "function") {
-        window.hoerenAudioController.stop();
-    }
-    
-    const practiceWorkspace = document.getElementById("hoeren-practice-workspace");
-    const warmupHub = document.getElementById("hoeren-topic-warmup-hub");
-    const topicHub = document.getElementById("hoeren-topic-selection-hub");
-    
-    if (practiceWorkspace && practiceWorkspace.style.display !== "none") {
-        showHoerenWarmupScreen();
-    } else if (warmupHub && warmupHub.style.display !== "none") {
-        openInteractiveHoerenHub();
+    if (typeof handleAppBackNavigation === "function") {
+        handleAppBackNavigation();
+    } else if (typeof navigateAppOneStepBack === "function") {
+        navigateAppOneStepBack();
     } else {
-        switchToView("view-practice-menu");
+        if (window.hoerenAudioController && typeof window.hoerenAudioController.stop === "function") {
+            window.hoerenAudioController.stop();
+        }
+        const practiceWorkspace = document.getElementById("hoeren-practice-workspace");
+        const warmupHub = document.getElementById("hoeren-topic-warmup-hub");
+        if (practiceWorkspace && practiceWorkspace.style.display !== "none") {
+            showHoerenWarmupScreen();
+        } else if (warmupHub && warmupHub.style.display !== "none") {
+            openInteractiveHoerenHub();
+        } else {
+            switchToView("view-practice-menu");
+        }
     }
 }
 window.handleHoerenBackNavigation = handleHoerenBackNavigation;

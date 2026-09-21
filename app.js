@@ -7737,6 +7737,30 @@ function buildReviewScreen() {
     document.getElementById("summary-marked").textContent = marked;
 }
 
+function scrollAppToTop() {
+    const origHtmlBehavior = document.documentElement ? document.documentElement.style.scrollBehavior : "";
+    const origBodyBehavior = document.body ? document.body.style.scrollBehavior : "";
+    if (document.documentElement) document.documentElement.style.scrollBehavior = "auto";
+    if (document.body) document.body.style.scrollBehavior = "auto";
+
+    try {
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    } catch (e) {
+        window.scrollTo(0, 0);
+    }
+    if (document.documentElement) document.documentElement.scrollTop = 0;
+    if (document.body) document.body.scrollTop = 0;
+    const mainContent = document.getElementById("main-content");
+    if (mainContent) mainContent.scrollTop = 0;
+    document.querySelectorAll(".view-panel").forEach(p => {
+        p.scrollTop = 0;
+    });
+
+    if (document.documentElement) document.documentElement.style.scrollBehavior = origHtmlBehavior;
+    if (document.body) document.body.style.scrollBehavior = origBodyBehavior;
+}
+window.scrollAppToTop = scrollAppToTop;
+
 // Navigation flow switches
 function switchToView(viewId, pushHistory = true) {
     const panels = document.querySelectorAll(".view-panel");
@@ -7745,9 +7769,10 @@ function switchToView(viewId, pushHistory = true) {
     });
 
     // Always scroll to top on every view/page switch
-    const mainContent = document.getElementById("main-content");
-    if (mainContent) mainContent.scrollTop = 0;
-    window.scrollTo(0, 0);
+    scrollAppToTop();
+    requestAnimationFrame(scrollAppToTop);
+    setTimeout(scrollAppToTop, 25);
+    setTimeout(scrollAppToTop, 100);
 
     const isExamView = (viewId === "view-exam-screen");
     document.getElementById("app-sidebar").style.display = isExamView ? "flex" : "none";
@@ -7756,13 +7781,397 @@ function switchToView(viewId, pushHistory = true) {
     document.getElementById("progress-bar-wrapper").style.display = (viewId !== "view-start-screen") ? "block" : "none";
 
     if (pushHistory) {
-        try {
-            window.history.pushState({ viewId: viewId }, "", "");
-        } catch (e) {
-            console.warn("History pushState failed:", e);
-        }
+        pushNavigationState({ viewId: viewId });
     }
 }
+
+// --- UNIFIED HIERARCHICAL NAVIGATION SYSTEM ---
+window._spaHistoryDepth = 0;
+
+function pushNavigationState(stateObj) {
+    try {
+        window._spaHistoryDepth = (window._spaHistoryDepth || 0) + 1;
+        stateObj.depth = window._spaHistoryDepth;
+        window.history.pushState(stateObj, "", "");
+    } catch (e) {
+        console.warn("pushNavigationState failed:", e);
+    }
+}
+window.pushNavigationState = pushNavigationState;
+
+function handleAppBackNavigation() {
+    // If there is depth in the history stack, history.back() will cleanly pop to the previous state
+    if (window._spaHistoryDepth && window._spaHistoryDepth > 0 && window.history.length > 1) {
+        window.history.back();
+    } else {
+        // Fallback when directly navigated or history stack empty: move 1 step hierarchically
+        navigateAppOneStepBack();
+    }
+}
+window.handleAppBackNavigation = handleAppBackNavigation;
+
+function restoreNavigationState(navState) {
+    if (!navState) return;
+
+    // A2 Hören
+    if (navState.viewId === "view-a2-interactive-hoeren") {
+        switchToView("view-a2-interactive-hoeren", false);
+        if (navState.a2HoerenStage === "practice") {
+            if (typeof openA2HoerenPractice === "function") {
+                if (navState.topicKey && typeof activeA2HoerenState !== "undefined") activeA2HoerenState.topicKey = navState.topicKey;
+                openA2HoerenPractice(false);
+            }
+        } else if (navState.a2HoerenStage === "warmup") {
+            if (typeof openA2HoerenWarmup === "function") {
+                openA2HoerenWarmup(navState.topicKey || (activeA2HoerenState && activeA2HoerenState.topicKey) || "cafe", false);
+            }
+        } else {
+            if (typeof openA2InteractiveHoerenHub === "function") {
+                openA2InteractiveHoerenHub(false);
+            }
+        }
+        return;
+    }
+
+    // A2 Lesen
+    if (navState.viewId === "view-a2-interactive-lesen") {
+        switchToView("view-a2-interactive-lesen", false);
+        if (navState.a2LesenStage === "practice") {
+            if (typeof openA2ReadingPractice === "function") {
+                openA2ReadingPractice(typeof navState.passageIndex === "number" ? navState.passageIndex : 0, false);
+            }
+        } else if (navState.a2LesenStage === "warmup") {
+            if (typeof openA2ReadingWarmup === "function") {
+                openA2ReadingWarmup(typeof navState.passageIndex === "number" ? navState.passageIndex : 0, false);
+            }
+        } else {
+            if (typeof openA2InteractiveLesenHub === "function") {
+                openA2InteractiveLesenHub(false);
+            }
+        }
+        return;
+    }
+
+    // A2 Practice Workspace
+    if (navState.viewId === "view-a2-practice-workspace") {
+        switchToView("view-a2-practice-workspace", false);
+        const titleEl = document.getElementById("a2-practice-workspace-title");
+        const contentEl = document.getElementById("a2-practice-workspace-content");
+        if (navState.a2Topic === "reading") {
+            if (titleEl) titleEl.textContent = "Lesen A2";
+            if (typeof activeA2ReadingState !== "undefined") {
+                activeA2ReadingState.passageIndex = (typeof navState.passageIndex === "number") ? navState.passageIndex : 0;
+                activeA2ReadingState.mode = navState.a2ReadingMode || "warmup";
+            }
+            if (typeof renderA2ReadingCurrentView === "function") renderA2ReadingCurrentView();
+        } else if (navState.a2Topic === "vocab") {
+            if (titleEl) titleEl.textContent = "Wortschatz A2";
+            if (typeof renderA2VocabWorkspace === "function" && contentEl) renderA2VocabWorkspace(contentEl);
+        } else if (navState.a2Topic === "grammar") {
+            if (titleEl) titleEl.textContent = "Grammatik A2";
+            if (typeof renderA2GrammarWorkspace === "function" && contentEl) renderA2GrammarWorkspace(contentEl);
+        }
+        return;
+    }
+
+    // A1 Hören
+    if (navState.viewId === "view-interactive-hoeren") {
+        switchToView("view-interactive-hoeren", false);
+        if (navState.hoerenStage === "practice") {
+            // practice screen active
+        } else if (navState.hoerenStage === "warmup") {
+            if (typeof showHoerenWarmupScreen === "function") showHoerenWarmupScreen(navState.hoerenKey, false);
+        } else {
+            if (typeof openInteractiveHoerenHub === "function") openInteractiveHoerenHub(false);
+        }
+        return;
+    }
+
+    // A1 Real Life
+    if (navState.viewId === "view-real-life-modules") {
+        switchToView("view-real-life-modules", false);
+        const player = document.getElementById("real-life-player-container");
+        const hub = document.getElementById("real-life-menu-container");
+        if (navState.scenarioStage === "player") {
+            if (player) player.style.display = "block";
+            if (hub) hub.style.display = "none";
+        } else {
+            if (player) player.style.display = "none";
+            if (hub) hub.style.display = "block";
+        }
+        return;
+    }
+
+    // A1 Stories
+    if (navState.viewId === "view-listening-stories") {
+        switchToView("view-listening-stories", false);
+        const player = document.getElementById("listening-story-player");
+        const hub = document.getElementById("listening-stories-menu");
+        if (navState.storyStage === "player") {
+            if (player) player.style.display = "block";
+            if (hub) hub.style.display = "none";
+        } else {
+            if (player) player.style.display = "none";
+            if (hub) hub.style.display = "block";
+        }
+        return;
+    }
+
+    // General view panel
+    if (navState.viewId) {
+        switchToView(navState.viewId, false);
+    }
+}
+window.restoreNavigationState = restoreNavigationState;
+
+function navigateAppOneStepBack() {
+    // Stop any speech / audio on back step
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    if (window.hoerenAudioController && typeof window.hoerenAudioController.stop === "function") {
+        window.hoerenAudioController.stop();
+    }
+    if (typeof stopDialogueSpeech === "function") stopDialogueSpeech();
+    if (typeof stopStorySpeech === "function") stopStorySpeech();
+
+    // 1. Check A2 Interactive Hören
+    const a2HoerenView = document.getElementById("view-a2-interactive-hoeren");
+    if (a2HoerenView && a2HoerenView.classList.contains("active")) {
+        const practiceWS = document.getElementById("a2-hoeren-practice-workspace");
+        const warmupHub = document.getElementById("a2-hoeren-topic-warmup-hub");
+        const topicGrid = document.getElementById("a2-hoeren-topic-selection-hub");
+        
+        if (practiceWS && practiceWS.style.display !== "none") {
+            practiceWS.style.display = "none";
+            if (warmupHub) warmupHub.style.display = "block";
+            const topic = (typeof A2_INTERACTIVE_HOEREN_DATABASE !== "undefined" && typeof activeA2HoerenState !== "undefined" && activeA2HoerenState.topicKey) ? A2_INTERACTIVE_HOEREN_DATABASE[activeA2HoerenState.topicKey] : null;
+            const titleEl = document.getElementById("a2-hoeren-hub-title");
+            if (titleEl && topic) titleEl.textContent = topic.emoji + " " + topic.title + " — Vorbereitung";
+            return true;
+        }
+        if (warmupHub && warmupHub.style.display !== "none") {
+            warmupHub.style.display = "none";
+            if (topicGrid) topicGrid.style.display = "block";
+            const titleEl = document.getElementById("a2-hoeren-hub-title");
+            if (titleEl) titleEl.textContent = "A2 Interaktives Hören";
+            return true;
+        }
+        // At topic grid -> step back to A2 practice menu
+        switchToView("view-a2-practice-menu", false);
+        return true;
+    }
+
+    // 1b. Check A2 Interactive Lesen
+    const a2LesenView = document.getElementById("view-a2-interactive-lesen");
+    if (a2LesenView && a2LesenView.classList.contains("active")) {
+        const practiceWS = document.getElementById("a2-lesen-practice-workspace");
+        const warmupHub = document.getElementById("a2-lesen-topic-warmup-hub");
+        const topicGrid = document.getElementById("a2-lesen-topic-selection-hub");
+        
+        if (practiceWS && practiceWS.style.display !== "none") {
+            practiceWS.style.display = "none";
+            if (warmupHub) warmupHub.style.display = "block";
+            const passage = (typeof A2_READING_DATABASE !== "undefined" && typeof activeA2ReadingState !== "undefined" && typeof activeA2ReadingState.passageIndex === "number") ? A2_READING_DATABASE[activeA2ReadingState.passageIndex] : null;
+            const titleEl = document.getElementById("a2-lesen-hub-title");
+            if (titleEl && passage) titleEl.textContent = passage.emoji + " " + passage.title + " — Vorbereitung";
+            return true;
+        }
+        if (warmupHub && warmupHub.style.display !== "none") {
+            warmupHub.style.display = "none";
+            if (topicGrid) topicGrid.style.display = "block";
+            const titleEl = document.getElementById("a2-lesen-hub-title");
+            if (titleEl) titleEl.textContent = "A2 Leseverstehen";
+            return true;
+        }
+        // At topic grid -> step back to A2 practice menu
+        switchToView("view-a2-practice-menu", false);
+        return true;
+    }
+
+    // 2. Check A2 Practice Workspace (Reading, Vocab, Grammar)
+    const a2WorkspaceView = document.getElementById("view-a2-practice-workspace");
+    if (a2WorkspaceView && a2WorkspaceView.classList.contains("active")) {
+        // If in Reading and in text mode, go back to warmup mode
+        if (typeof activeA2ReadingState !== "undefined" && activeA2ReadingState && activeA2ReadingState.mode === "text") {
+            if (typeof setA2ReadingMode === "function") {
+                setA2ReadingMode("warmup", false);
+                return true;
+            }
+        }
+        // From warmup or vocab/grammar -> back to A2 practice menu
+        switchToView("view-a2-practice-menu", false);
+        return true;
+    }
+
+    // 3. Check A1 Interactive Hören
+    const a1HoerenView = document.getElementById("view-interactive-hoeren");
+    if (a1HoerenView && a1HoerenView.classList.contains("active")) {
+        const practiceWS = document.getElementById("hoeren-practice-workspace");
+        const warmupHub = document.getElementById("hoeren-topic-warmup-hub");
+        const topicHub = document.getElementById("hoeren-topic-selection-hub");
+        if (practiceWS && practiceWS.style.display !== "none") {
+            if (typeof showHoerenWarmupScreen === "function") showHoerenWarmupScreen();
+            return true;
+        }
+        if (warmupHub && warmupHub.style.display !== "none") {
+            if (typeof openInteractiveHoerenHub === "function") openInteractiveHoerenHub(false);
+            return true;
+        }
+        switchToView("view-practice-menu", false);
+        return true;
+    }
+
+    // 4. Check A1 Real-Life Modules
+    const realLifeView = document.getElementById("view-real-life-modules");
+    if (realLifeView && realLifeView.classList.contains("active")) {
+        const player = document.getElementById("real-life-player-container");
+        if (player && player.style.display !== "none") {
+            player.style.display = "none";
+            const hub = document.getElementById("real-life-menu-container");
+            if (hub) hub.style.display = "block";
+            return true;
+        }
+        switchToView("view-practice-menu", false);
+        return true;
+    }
+
+    // 5. Check A1 Listening Stories
+    const storiesView = document.getElementById("view-listening-stories");
+    if (storiesView && storiesView.classList.contains("active")) {
+        const player = document.getElementById("listening-story-player");
+        if (player && player.style.display !== "none") {
+            player.style.display = "none";
+            const hub = document.getElementById("listening-stories-menu");
+            if (hub) hub.style.display = "block";
+            return true;
+        }
+        switchToView("view-practice-menu", false);
+        return true;
+    }
+
+    // 6. Check A1 Grammar Lessons
+    const grammarView = document.getElementById("view-grammar-lessons");
+    if (grammarView && grammarView.classList.contains("active")) {
+        const listContainer = document.getElementById("grammar-topic-list-container");
+        if (listContainer && listContainer.style.display === "none") {
+            if (typeof openGrammarLessonHub === "function") openGrammarLessonHub();
+            return true;
+        }
+        switchToView("view-practice-menu", false);
+        return true;
+    }
+
+    // 7. Check A1 Phrase Bank
+    const phraseView = document.getElementById("view-phrase-bank");
+    if (phraseView && phraseView.classList.contains("active")) {
+        switchToView("view-practice-menu", false);
+        return true;
+    }
+
+    // 8. Check A1 Practice Workspace (Vocab / Grammar / Writing / Reading)
+    const practiceWorkspaceView = document.getElementById("view-practice-workspace");
+    if (practiceWorkspaceView && practiceWorkspaceView.classList.contains("active")) {
+        if (typeof practiceState !== "undefined" && practiceState && practiceState.mode === "writing" && typeof writingStudioState !== "undefined" && writingStudioState.activeActivity) {
+            if (typeof showWritingStudioTopics === "function") {
+                showWritingStudioTopics();
+                return true;
+            }
+        }
+        if (typeof practiceState !== "undefined" && practiceState && (practiceState.subTopic || practiceState.mode === "vocab" || practiceState.mode === "grammar")) {
+            switchToView("view-practice-topic-hub", false);
+            return true;
+        }
+        switchToView("view-practice-menu", false);
+        return true;
+    }
+
+    // 9. Check A1 Learning Workspace (Study cards)
+    const learningWorkspaceView = document.getElementById("view-learning-workspace");
+    if (learningWorkspaceView && learningWorkspaceView.classList.contains("active")) {
+        if (typeof learningState !== "undefined" && learningState && (learningState.type === "vocab" || learningState.type === "grammar")) {
+            switchToView("view-practice-topic-hub", false);
+            return true;
+        }
+        switchToView("view-practice-menu", false);
+        return true;
+    }
+
+    // 10. Check A1 Practice Topic Hub
+    const topicHubView = document.getElementById("view-practice-topic-hub");
+    if (topicHubView && topicHubView.classList.contains("active")) {
+        switchToView("view-practice-menu", false);
+        return true;
+    }
+
+    // 11. Check A1 Practice Menu
+    const practiceMenuView = document.getElementById("view-practice-menu");
+    if (practiceMenuView && practiceMenuView.classList.contains("active")) {
+        switchToView("view-landing-dashboard", false);
+        return true;
+    }
+
+    // 12. Check A2 Practice Menu
+    const a2MenuView = document.getElementById("view-a2-practice-menu");
+    if (a2MenuView && a2MenuView.classList.contains("active")) {
+        switchToView("view-landing-dashboard", false);
+        return true;
+    }
+
+    // 13. Check Sprechtrainer
+    const sprechStage = document.getElementById("view-sprechtrainer-stage");
+    if (sprechStage && sprechStage.classList.contains("active")) {
+        switchToView("view-sprechtrainer-hub", false);
+        return true;
+    }
+    const sprechHub = document.getElementById("view-sprechtrainer-hub");
+    if (sprechHub && sprechHub.classList.contains("active")) {
+        switchToView("view-landing-dashboard", false);
+        return true;
+    }
+    const sprechView = document.getElementById("view-sprechtrainer");
+    if (sprechView && sprechView.classList.contains("active")) {
+        switchToView("view-landing-dashboard", false);
+        return true;
+    }
+
+    // 14. Check Mistakes Portal
+    const mistakesView = document.getElementById("view-mistakes-portal");
+    if (mistakesView && mistakesView.classList.contains("active")) {
+        if (typeof portalState !== "undefined" && portalState && portalState._cameFromRevision) {
+            switchToView("view-revision-center", false);
+        } else {
+            switchToView("view-landing-dashboard", false);
+        }
+        return true;
+    }
+
+    // 15. Other top-level subviews: Settings, Progress, Revision Center, Results, Start screen
+    const topViews = ["view-settings", "view-progress-dashboard", "view-revision-center", "view-results-screen", "view-start-screen"];
+    for (const vId of topViews) {
+        const el = document.getElementById(vId);
+        if (el && el.classList.contains("active")) {
+            switchToView("view-landing-dashboard", false);
+            return true;
+        }
+    }
+
+    // 16. Exam screen
+    const examView = document.getElementById("view-exam-screen");
+    if (examView && examView.classList.contains("active")) {
+        if (typeof state !== "undefined" && state && state.isStarted && !state.isSubmitted) {
+            const confirmModal = document.getElementById("confirm-modal");
+            if (confirmModal) {
+                confirmModal.style.display = "flex";
+                return true;
+            }
+        }
+        switchToView("view-landing-dashboard", false);
+        return true;
+    }
+
+    // 17. Landing Dashboard (Root page) - already at home
+    return false;
+}
+window.navigateAppOneStepBack = navigateAppOneStepBack;
 
 // --- DYNAMIC GRAPHICS & PERFORMANCE ANALYTICS ENGINE ---
 
@@ -10026,46 +10435,54 @@ document.addEventListener("DOMContentLoaded", () => {
         switchToView("view-landing-dashboard", false);
     }
 
-    // Setup back button history popstate listener
+    // Setup back button history popstate listener & physical back button support
     window.addEventListener("popstate", (event) => {
-        if (event.state) {
-            if (event.state.isBase) {
-                // If we popped to base (which is the entry point below dashboard/launch screen)
+        if (window._spaHistoryDepth > 0) {
+            window._spaHistoryDepth--;
+        }
+
+        // Stop any ongoing TTS / audio playback on back action
+        if (window.speechSynthesis) window.speechSynthesis.cancel();
+        if (window.hoerenAudioController && typeof window.hoerenAudioController.stop === "function") {
+            window.hoerenAudioController.stop();
+        }
+        if (typeof stopDialogueSpeech === "function") stopDialogueSpeech();
+        if (typeof stopStorySpeech === "function") stopStorySpeech();
+
+        if (event.state && !event.state.isBase) {
+            restoreNavigationState(event.state);
+        } else {
+            // Popped to base or null state: use hierarchical 1-step retreat
+            const didStep = navigateAppOneStepBack();
+            if (!didStep) {
+                // Already at root landing dashboard
                 const currentActivePanel = document.querySelector(".view-panel.active");
                 const currentViewId = currentActivePanel ? currentActivePanel.id : "view-landing-dashboard";
-                
                 if (currentViewId === "view-landing-dashboard" || currentViewId === "view-start-screen") {
-                    if (confirm("Möchten Sie das Lernportal wirklich schließen? / Do you really want to close the learning portal?")) {
+                    if (confirm("Möchten Sie das Lernportal wirklich verlassen? / Do you really want to exit the learning portal?")) {
                         window.close();
-                        window.history.back();
                     } else {
-                        // Push the view state back to prevent leaving
-                        window.history.pushState({ viewId: currentViewId }, "", "");
+                        // Prevent leaving without confirmation
+                        pushNavigationState({ viewId: currentViewId, isBase: false });
                     }
                 } else {
-                    // If they hit base from a sub-page, go back to dashboard
-                    window.history.pushState({ viewId: "view-landing-dashboard" }, "", "");
                     switchToView("view-landing-dashboard", false);
                 }
-            } else if (event.state.viewId) {
-                // Navigate back to the previous view panel
-                switchToView(event.state.viewId, false);
-            }
-        } else {
-            // Fallback for empty state
-            const currentActivePanel = document.querySelector(".view-panel.active");
-            const currentViewId = currentActivePanel ? currentActivePanel.id : "view-landing-dashboard";
-            if (currentViewId === "view-landing-dashboard" || currentViewId === "view-start-screen") {
-                if (confirm("Möchten Sie das Lernportal wirklich schließen? / Do you really want to close the learning portal?")) {
-                    window.close();
-                } else {
-                    window.history.pushState({ viewId: currentViewId }, "", "");
-                }
-            } else {
-                switchToView("view-landing-dashboard", false);
             }
         }
     });
+
+    // Support Android / mobile physical hardware back button (Cordova / Capacitor)
+    document.addEventListener("backbutton", (e) => {
+        if (e) { e.preventDefault(); e.stopPropagation(); }
+        handleAppBackNavigation();
+    }, false);
+
+    if (window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.App) {
+        window.Capacitor.Plugins.App.addListener("backButton", () => {
+            handleAppBackNavigation();
+        });
+    }
 
     // Settings elements triggers setup
     const themeSelect = document.getElementById("settings-theme-select");
@@ -10169,24 +10586,16 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     }
 
-    // Back to Home buttons
-    document.querySelectorAll(".btn-back-home").forEach(btn => {
-        btn.onclick = () => {
-            switchToView("view-landing-dashboard");
+    // Universal Back Navigation buttons (Physical & On-Screen single step backwards)
+    document.querySelectorAll(".btn-back-home, .btn-back-step, #btn-back-practice-menu, #a2-practice-back-btn, #a2-hoeren-back-btn, #btn-back-to-topics, #btn-back-to-hub, #btn-back-grammar-menu, #btn-back-to-real-life-menu, #btn-back-to-stories-menu").forEach(btn => {
+        btn.onclick = (e) => {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            handleAppBackNavigation();
         };
     });
-
-    // Back to Practice Menu button
-    const btnBackPracticeMenu = document.getElementById("btn-back-practice-menu");
-    if (btnBackPracticeMenu) {
-        btnBackPracticeMenu.onclick = () => {
-            if (practiceState.mode === "writing" && writingStudioState.activeActivity) {
-                showWritingStudioTopics();
-            } else {
-                switchToView("view-practice-menu");
-            }
-        };
-    }
 
     // Practice workspace check & next buttons
     document.getElementById("btn-practice-check-answer").onclick = () => {

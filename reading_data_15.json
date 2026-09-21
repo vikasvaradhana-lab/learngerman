@@ -1,0 +1,1592 @@
+[
+  {
+    "id": "a2_read_1",
+    "title": "Stellenausschreibung: Büroassistenz",
+    "titleEN": "Job Ad: Office Assistant",
+    "emoji": "💼",
+    "warmup": {
+      "vocab": [
+        {
+          "word": "die Stellenausschreibung",
+          "gender": "die",
+          "translation": "job posting / vacancy",
+          "example": "Wir haben eine interessante Stellenausschreibung gesehen.",
+          "exampleEN": "We saw an interesting job posting."
+        },
+        {
+          "word": "der/die Büroassistent/in",
+          "gender": "der/die",
+          "translation": "office assistant",
+          "example": "Sie arbeitet als Büroassistentin in Vollzeit.",
+          "exampleEN": "She works as a full-time office assistant."
+        },
+        {
+          "word": "ab sofort",
+          "gender": "Adv.",
+          "translation": "immediately / starting now",
+          "example": "Die Stelle ist ab sofort zu besetzen.",
+          "exampleEN": "The position is to be filled immediately."
+        },
+        {
+          "word": "der unbefristete Vertrag",
+          "gender": "der",
+          "translation": "permanent contract",
+          "example": "Ein unbefristeter Vertrag bietet finanzielle Sicherheit.",
+          "exampleEN": "A permanent contract provides financial security."
+        },
+        {
+          "word": "die Terminkoordination",
+          "gender": "die",
+          "translation": "appointment scheduling",
+          "example": "Terminkoordination gehört zu ihren Hauptaufgaben.",
+          "exampleEN": "Appointment scheduling is among her main tasks."
+        },
+        {
+          "word": "die Bewerbungsunterlagen",
+          "gender": "die (Pl.)",
+          "translation": "application documents",
+          "example": "Bitte senden Sie Ihre vollständigen Bewerbungsunterlagen.",
+          "exampleEN": "Please send your complete application documents."
+        }
+      ],
+      "tips": [
+        {
+          "de": "m/w/d = männlich / weiblich / divers",
+          "en": "Legally required gender-neutral designation in German job ads."
+        },
+        {
+          "de": "ab sofort = ab jetzt / unmittelbar",
+          "en": "Look for 'ab sofort' to know the start date is immediate."
+        },
+        {
+          "de": "Homeoffice (1 Tag/Woche) = Telearbeit",
+          "en": "One day per week remote working allowed."
+        }
+      ]
+    },
+    "text": "**Stellenausschreibung**\n\nWir suchen ab sofort eine/n **Büroassistent/in** (m/w/d) in Vollzeit für unser Team in München.\n\n**Ihre Aufgaben:**\n- Bearbeitung der täglichen Korrespondenz per E-Mail und Post\n- Terminkoordination für das Management-Team\n- Empfang von Besuchern und Kundenbetreuung\n\n**Wir bieten:**\n- Unbefristeter Vertrag\n- 28 Urlaubstage pro Jahr\n- Möglichkeit zum Homeoffice (1 Tag/Woche)\n\nBitte senden Sie Ihre Bewerbungsunterlagen an: bewerbung@beispiel-gmbh.de",
+    "textEN": "**Job Advertisement**\n\nWe are looking immediately for a full-time **Office Assistant** (m/f/d) for our team in Munich.\n\n**Your Tasks:**\n- Processing daily correspondence via email and post\n- Appointment coordination for the management team\n- Reception of visitors and customer support\n\n**We Offer:**\n- Permanent contract\n- 28 vacation days per year\n- Option for home office (1 day/week)\n\nPlease send your application documents to: bewerbung@beispiel-gmbh.de",
+    "questions": [
+      {
+        "question": "Wann kann man mit der Stelle anfangen?",
+        "questionEN": "When can one start the job?",
+        "options": [
+          "Sofort / Immediately",
+          "Erst nächstes Jahr",
+          "Im Januar",
+          "Nach einer Probezeit"
+        ],
+        "correct": 0,
+        "explanation": "The ad says 'ab sofort' (immediately)."
+      },
+      {
+        "question": "Wie viele Urlaubstage gibt es pro Jahr?",
+        "questionEN": "How many vacation days are there per year?",
+        "options": [
+          "28 Tage",
+          "20 Tage",
+          "30 Tage",
+          "25 Tage"
+        ],
+        "correct": 0,
+        "explanation": "The ad states '28 Urlaubstage pro Jahr'."
+      },
+      {
+        "question": "Was ist NICHT in den Aufgaben enthalten?",
+        "questionEN": "What is NOT included in the tasks?",
+        "options": [
+          "Buchhaltung / Accounting",
+          "Korrespondenz",
+          "Terminkoordination",
+          "Kundenbetreuung"
+        ],
+        "correct": 0,
+        "explanation": "Buchhaltung (accounting) is not mentioned in the tasks list."
+      }
+    ]
+  },
+  {
+    "id": "a2_read_2",
+    "title": "E-Mail an den Vermieter",
+    "titleEN": "Email to the Landlord",
+    "emoji": "🏠",
+    "warmup": {
+      "vocab": [
+        {
+          "word": "der Vermieter",
+          "gender": "der",
+          "translation": "landlord",
+          "example": "Ich habe dem Vermieter eine Mängelanzeige gesendet.",
+          "exampleEN": "I sent a defect notice to the landlord."
+        },
+        {
+          "word": "die Reparatur",
+          "gender": "die",
+          "translation": "repair",
+          "example": "Die Reparatur der Heizung ist dringend.",
+          "exampleEN": "The repair of the heater is urgent."
+        },
+        {
+          "word": "die Heizung",
+          "gender": "die",
+          "translation": "heating / radiator",
+          "example": "Seit Montag funktioniert die Heizung nicht mehr.",
+          "exampleEN": "Since Monday the heating hasn't been working."
+        },
+        {
+          "word": "das Thermostat",
+          "gender": "das",
+          "translation": "thermostat",
+          "example": "Das Thermostat reagiert leider nicht.",
+          "exampleEN": "Unfortunately the thermostat does not respond."
+        },
+        {
+          "word": "der Handwerker",
+          "gender": "der",
+          "translation": "craftsman / technician",
+          "example": "Könnten Sie bitte einen Handwerker schicken?",
+          "exampleEN": "Could you please send a repair technician?"
+        },
+        {
+          "word": "dringend",
+          "gender": "Adj.",
+          "translation": "urgent / urgently",
+          "example": "Ich schreibe Ihnen wegen eines dringenden Problems.",
+          "exampleEN": "I am writing regarding an urgent problem."
+        }
+      ],
+      "tips": [
+        {
+          "de": "Sehr geehrter Herr... / Mit freundlichen Grüßen",
+          "en": "Formal German email salutation and sign-off."
+        },
+        {
+          "de": "Seit Montag = Beginn des Problems",
+          "en": "Key time marker indicating duration of the problem."
+        },
+        {
+          "de": "von 8 bis 18 Uhr zu Hause",
+          "en": "Availability hours for the technician visit."
+        }
+      ]
+    },
+    "text": "**Betreff:** Reparatur der Heizung\n\nSehr geehrter Herr Schreiber,\n\nich schreibe Ihnen wegen eines dringenden Problems. Seit Montag funktioniert die Heizung im Wohnzimmer nicht mehr. Die Temperaturen sind unter null Grad und es ist sehr kalt.\n\nIch habe bereits versucht, das Problem selbst zu lösen, aber es ist mir leider nicht gelungen. Das Thermostat reagiert nicht.\n\nKönnten Sie bitte so schnell wie möglich einen Handwerker schicken? Ich bin täglich von 8 bis 18 Uhr zu Hause.\n\nMit freundlichen Grüßen,\nMarina Fonseca",
+    "textEN": "**Subject:** Repair of the heating\n\nDear Mr. Schreiber,\n\nI am writing to you because of an urgent problem. Since Monday the heating in the living room has not been working. The temperatures are below zero degrees and it is very cold.\n\nI have already tried to solve the problem myself, but unfortunately I did not succeed. The thermostat does not respond.\n\nCould you please send a repair technician as soon as possible? I am at home daily from 8 AM to 6 PM.\n\nKind regards,\nMarina Fonseca",
+    "questions": [
+      {
+        "question": "Was ist das Problem in der Wohnung?",
+        "questionEN": "What is the problem in the apartment?",
+        "options": [
+          "Die Heizung funktioniert nicht.",
+          "Das Fenster ist kaputt.",
+          "Es gibt kein warmes Wasser.",
+          "Die Tür schließt nicht."
+        ],
+        "correct": 0,
+        "explanation": "Marina writes: 'die Heizung im Wohnzimmer funktioniert nicht mehr' (heating does not work)."
+      },
+      {
+        "question": "Seit wann gibt es das Problem?",
+        "questionEN": "Since when has the problem existed?",
+        "options": [
+          "Seit Montag",
+          "Seit einer Woche",
+          "Seit gestern",
+          "Seit dem Winter"
+        ],
+        "correct": 0,
+        "explanation": "She writes 'Seit Montag funktioniert die Heizung nicht mehr' (since Monday)."
+      },
+      {
+        "question": "Wann ist Marina zu Hause?",
+        "questionEN": "When is Marina at home?",
+        "options": [
+          "Von 8 bis 18 Uhr",
+          "Von 9 bis 17 Uhr",
+          "Nur am Wochenende",
+          "Den ganzen Tag"
+        ],
+        "correct": 0,
+        "explanation": "She writes 'Ich bin täglich von 8 bis 18 Uhr zu Hause' (daily from 8 to 18)."
+      }
+    ]
+  },
+  {
+    "id": "a2_read_3",
+    "title": "Anleitung: Paket zurückschicken",
+    "titleEN": "Instructions: Returning a Parcel",
+    "emoji": "📦",
+    "warmup": {
+      "vocab": [
+        {
+          "word": "die Rücksendung",
+          "gender": "die",
+          "translation": "return / sending back",
+          "example": "Die Rücksendung muss innerhalb von 30 Tagen erfolgen.",
+          "exampleEN": "The return must occur within 30 days."
+        },
+        {
+          "word": "das Rücksendeetikett",
+          "gender": "das",
+          "translation": "return label",
+          "example": "Kleben Sie das Rücksendeetikett auf das Paket.",
+          "exampleEN": "Stick the return label onto the parcel."
+        },
+        {
+          "word": "die Originalverpackung",
+          "gender": "die",
+          "translation": "original packaging",
+          "example": "Verpacken Sie den Artikel in der Originalverpackung.",
+          "exampleEN": "Pack the item in the original packaging."
+        },
+        {
+          "word": "die Postfiliale",
+          "gender": "die",
+          "translation": "post office branch",
+          "example": "Geben Sie das Paket bei einer Postfiliale ab.",
+          "exampleEN": "Drop off the parcel at a post office branch."
+        },
+        {
+          "word": "die Rückerstattung",
+          "gender": "die",
+          "translation": "refund / reimbursement",
+          "example": "Die Rückerstattung erfolgt innerhalb von 7 Werktagen.",
+          "exampleEN": "The refund will be processed within 7 business days."
+        },
+        {
+          "word": "der Werktag",
+          "gender": "der",
+          "translation": "working day / business day",
+          "example": "Samstage und Sonntage zählen meist nicht als Werktage.",
+          "exampleEN": "Saturdays and Sundays usually do not count as working days."
+        }
+      ],
+      "tips": [
+        {
+          "de": "in 4 einfachen Schritten",
+          "en": "Instructional guide format broken down chronologically."
+        },
+        {
+          "de": "Frist: innerhalb von 30 Tagen",
+          "en": "Deadline condition required for a valid return."
+        },
+        {
+          "de": "Kundenportal -> 'Meine Bestellungen'",
+          "en": "Where to download the digital return shipping label."
+        }
+      ]
+    },
+    "text": "**So senden Sie Ihr Paket zurück — in 4 einfachen Schritten:**\n\n**Schritt 1:** Füllen Sie das Rücksendeformular aus.\n\n**Schritt 2:** Verpacken Sie den Artikel sicher in der Originalverpackung.\n\n**Schritt 3:** Kleben Sie das Rücksendeetikett auf das Paket. Das Etikett finden Sie auf unserem Kundenportal unter 'Meine Bestellungen'.\n\n**Schritt 4:** Geben Sie das Paket bei einer Postfiliale ab.\n\n**Wichtig:** Die Rücksendung muss innerhalb von 30 Tagen nach Erhalt erfolgen. Die Rückerstattung erfolgt innerhalb von 7 Werktagen.",
+    "textEN": "**How to return your parcel — in 4 simple steps:**\n\n**Step 1:** Fill out the return form.\n\n**Step 2:** Pack the item securely in the original packaging.\n\n**Step 3:** Stick the return label onto the parcel. You can find the label on our customer portal under 'My Orders'.\n\n**Step 4:** Drop off the parcel at a post office branch.\n\n**Important:** The return must be made within 30 days of receipt. The refund will be issued within 7 working days.",
+    "questions": [
+      {
+        "question": "Wo findet man das Rücksendeetikett?",
+        "questionEN": "Where can one find the return label?",
+        "options": [
+          "Auf dem Kundenportal unter 'Meine Bestellungen'",
+          "In der Verpackung",
+          "Per E-Mail automatisch",
+          "Beim Paketshop"
+        ],
+        "correct": 0,
+        "explanation": "Step 3 states: 'Das Etikett finden Sie auf unserem Kundenportal' (on customer portal)."
+      },
+      {
+        "question": "Innerhalb welcher Frist muss man zurückschicken?",
+        "questionEN": "Within what period must one return it?",
+        "options": [
+          "30 Tage",
+          "14 Tage",
+          "60 Tage",
+          "7 Tage"
+        ],
+        "correct": 0,
+        "explanation": "'innerhalb von 30 Tagen nach Erhalt' (within 30 days)."
+      },
+      {
+        "question": "Wie lange dauert die Rückerstattung?",
+        "questionEN": "How long does the refund take?",
+        "options": [
+          "7 Werktage",
+          "14 Werktage",
+          "30 Tage",
+          "24 Stunden"
+        ],
+        "correct": 0,
+        "explanation": "'innerhalb von 7 Werktagen' (within 7 working days)."
+      }
+    ]
+  },
+  {
+    "id": "a2_read_4",
+    "title": "Elternbrief: Schulfest & Wandertag",
+    "titleEN": "School Letter: Festival & Hiking Day",
+    "emoji": "🏫",
+    "warmup": {
+      "vocab": [
+        {
+          "word": "der Elternbrief",
+          "gender": "der",
+          "translation": "parent letter / circular",
+          "example": "Die Schule hat einen wichtigen Elternbrief verschickt.",
+          "exampleEN": "The school sent an important letter to parents."
+        },
+        {
+          "word": "der Wandertag",
+          "gender": "der",
+          "translation": "school hiking / field trip day",
+          "example": "Am Freitag findet der jährliche Wandertag statt.",
+          "exampleEN": "On Friday the annual hiking day takes place."
+        },
+        {
+          "word": "die Einverständniserklärung",
+          "gender": "die",
+          "translation": "consent / permission form",
+          "example": "Bitte unterschreiben Sie die Einverständniserklärung.",
+          "exampleEN": "Please sign the permission form."
+        },
+        {
+          "word": "wetterfeste Kleidung",
+          "gender": "die",
+          "translation": "weatherproof clothing",
+          "example": "Die Kinder brauchen feste Schuhe und wetterfeste Kleidung.",
+          "exampleEN": "The children need sturdy shoes and weatherproof clothing."
+        },
+        {
+          "word": "der Kuchenbasar",
+          "gender": "der",
+          "translation": "cake sale / bake sale",
+          "example": "Die Einnahmen aus dem Kuchenbasar gehen an den Förderverein.",
+          "exampleEN": "Proceeds from the cake sale go to the booster club."
+        },
+        {
+          "word": "die Aufsichtspflicht",
+          "gender": "die",
+          "translation": "duty of supervision",
+          "example": "Die Lehrer übernehmen während des Ausflugs die Aufsichtspflicht.",
+          "exampleEN": "Teachers assume the duty of supervision during the trip."
+        }
+      ],
+      "tips": [
+        {
+          "de": "Rückgabefrist beachten",
+          "en": "Look for dates indicated by 'bis spätestens' or 'bitte bis zum'."
+        },
+        {
+          "de": "Verpflegung der Schüler",
+          "en": "Check whether food/lunch is provided or brought from home."
+        },
+        {
+          "de": "Treffpunkt und Uhrzeit",
+          "en": "Verify exact departure location and return time."
+        }
+      ]
+    },
+    "text": "**Goethe-Grundschule Heidelberg**\n\nLiebe Eltern,\n\nam kommenden **Freitag, den 24. Juni**, veranstalten wir unseren traditionellen Sommer-Wandertag mit anschließendem Schulfest.\n\n**Ablauf des Tages:**\n- **08:30 Uhr:** Treffpunkt auf dem Schulhof. Wir wandern gemeinsam zum Philosophenweg.\n- **12:00 Uhr:** Rückkehr zur Schule und Beginn des Schulfestes mit Musik, Spielen und einem Kuchenbasar.\n- **15:00 Uhr:** Offizielles Ende der Veranstaltung.\n\n**Wichtige Hinweise:**\nBitte geben Sie Ihrem Kind einen kleinen Rucksack mit Wasserflasche und Proviant mit. Bei Regenwetter findet das Fest in der Turnhalle statt.\n\nBitte füllen Sie den untenstehenden **Abschnitt zur Einverständniserklärung** aus und geben Sie ihn bis spätestens **Mittwoch** bei der Klassenlehrerin ab.\n\nHerzliche Grüße,\nDas Lehrerkollegium",
+    "textEN": "**Goethe Primary School Heidelberg**\n\nDear Parents,\n\nOn upcoming **Friday, June 24th**, we are hosting our traditional summer hiking day followed by a school festival.\n\n**Schedule of the Day:**\n- **08:30 AM:** Meeting point in the schoolyard. We will hike together to the Philosophenweg.\n- **12:00 PM:** Return to school and start of the school festival with music, games, and a cake sale.\n- **03:00 PM:** Official end of the event.\n\n**Important Notes:**\nPlease provide your child with a small backpack containing a water bottle and lunch snacks. In case of rain, the festival will take place in the sports hall.\n\nPlease fill out the **permission slip section** below and submit it to the class teacher by **Wednesday at the latest**.\n\nWarm regards,\nThe Teaching Staff",
+    "questions": [
+      {
+        "question": "Um wie viel Uhr beginnt der Wandertag?",
+        "questionEN": "At what time does the hiking day begin?",
+        "options": [
+          "Um 08:30 Uhr",
+          "Um 12:00 Uhr",
+          "Um 15:00 Uhr",
+          "Um 09:00 Uhr"
+        ],
+        "correct": 0,
+        "explanation": "The letter states '08:30 Uhr: Treffpunkt auf dem Schulhof'."
+      },
+      {
+        "question": "Was passiert, wenn es regnet?",
+        "questionEN": "What happens if it rains?",
+        "options": [
+          "Das Fest findet in der Turnhalle statt.",
+          "Der Wandertag fällt komplett aus.",
+          "Die Kinder haben schulfrei.",
+          "Die Veranstaltung wird um eine Woche verschoben."
+        ],
+        "correct": 0,
+        "explanation": "The text says 'Bei Regenwetter findet das Fest in der Turnhalle statt'."
+      },
+      {
+        "question": "Bis wann muss die Einverständniserklärung abgegeben werden?",
+        "questionEN": "By when must the consent slip be submitted?",
+        "options": [
+          "Bis spätestens Mittwoch",
+          "Am Freitag",
+          "Am Donnerstagabend",
+          "Bis zum Monatsende"
+        ],
+        "correct": 0,
+        "explanation": "'geben Sie ihn bis spätestens Mittwoch bei der Klassenlehrerin ab'."
+      }
+    ]
+  },
+  {
+    "id": "a2_read_5",
+    "title": "Buchungsbestätigung: Urlaub am Bodensee",
+    "titleEN": "Booking Confirmation: Holiday at Lake Constance",
+    "emoji": "✈️",
+    "warmup": {
+      "vocab": [
+        {
+          "word": "die Buchungsbestätigung",
+          "gender": "die",
+          "translation": "booking confirmation",
+          "example": "Hier ist Ihre offizielle Buchungsbestätigung.",
+          "exampleEN": "Here is your official booking confirmation."
+        },
+        {
+          "word": "die Kurtaxe",
+          "gender": "die",
+          "translation": "local tourism tax",
+          "example": "Die Kurtaxe beträgt 2,50 Euro pro Person und Nacht.",
+          "exampleEN": "The visitor tax is 2.50 euros per person per night."
+        },
+        {
+          "word": "das Doppelzimmer",
+          "gender": "das",
+          "translation": "double room",
+          "example": "Wir haben ein Doppelzimmer mit Seeblick reserviert.",
+          "exampleEN": "We reserved a double room with lake view."
+        },
+        {
+          "word": "die Stornierungsfrist",
+          "gender": "die",
+          "translation": "cancellation period / deadline",
+          "example": "Die Stornierungsfrist endet 48 Stunden vor Anreise.",
+          "exampleEN": "The cancellation deadline ends 48 hours prior to arrival."
+        },
+        {
+          "word": "das Frühstücksbuffet",
+          "gender": "das",
+          "translation": "breakfast buffet",
+          "example": "Das reichhaltige Frühstücksbuffet ist im Preis inbegriffen.",
+          "exampleEN": "The rich breakfast buffet is included in the price."
+        },
+        {
+          "word": "die Anreise / Abreise",
+          "gender": "die",
+          "translation": "arrival / departure",
+          "example": "Die Anreise ist ab 15:00 Uhr möglich.",
+          "exampleEN": "Arrival is possible from 3:00 PM."
+        }
+      ],
+      "tips": [
+        {
+          "de": "Check-in und Check-out Zeiten",
+          "en": "Carefully note the earliest arrival and latest departure times."
+        },
+        {
+          "de": "Inklusivleistungen",
+          "en": "Identify what is free (e.g. breakfast, WLAN) versus extra fees (Kurtaxe)."
+        },
+        {
+          "de": "Stornierungsbedingungen",
+          "en": "Check if cancellation is free and how many hours notice is required."
+        }
+      ]
+    },
+    "text": "**Seehotel Seeblick — Buchungsbestätigung**\n\nSehr geehrte Familie Lindner,\n\nvielen Dank für Ihre Reservierung. Wir bestätigen hiermit Ihren Aufenthalt wie folgt:\n\n- **Buchungsnummer:** BOD-2026-884\n- **Zimmer:** 1x Komfort-Doppelzimmer mit Balkon\n- **Anreise:** Freitag, 15. Juli (Check-in ab 15:00 Uhr)\n- **Abreise:** Montag, 18. Juli (Check-out bis 11:00 Uhr)\n- **Gesamtpreis:** 360,00 € (inkl. reichhaltigem Frühstücksbuffet und WLAN)\n\n**Zusatzinformationen:**\nDie örtliche Kurtaxe von 2,50 € pro Person und Tag ist nicht im Preis enthalten und wird vor Ort bezahlt.\n\nEine kostenfreie Stornierung ist bis zu **48 Stunden vor Anreise** möglich. Bei späterer Absage berechnen wir 80 % des Gesamtbetrags.\n\nWir wünschen Ihnen eine angenehme Anreise!\nIhr Seehotel-Team",
+    "textEN": "**Lake Hotel Seeblick — Booking Confirmation**\n\nDear Lindner Family,\n\nThank you very much for your reservation. We hereby confirm your stay as follows:\n\n- **Booking Reference:** BOD-2026-884\n- **Room:** 1x Comfort Double Room with Balcony\n- **Arrival:** Friday, July 15th (Check-in from 3:00 PM)\n- **Departure:** Monday, July 18th (Check-out by 11:00 AM)\n- **Total Price:** €360.00 (incl. rich breakfast buffet and Wi-Fi)\n\n**Additional Information:**\nThe local city visitor tax of €2.50 per person per day is not included in the price and is payable on site.\n\nFree cancellation is possible up to **48 hours before arrival**. For later cancellations we charge 80% of the total amount.\n\nWe wish you a pleasant journey!\nYour Seehotel Team",
+    "questions": [
+      {
+        "question": "Was ist im Zimmerpreis bereits enthalten?",
+        "questionEN": "What is already included in the room price?",
+        "options": [
+          "Frühstücksbuffet und WLAN",
+          "Kurtaxe und Parkplatz",
+          "Nur das Zimmer ohne Frühstück",
+          "Abendessen im Hotelrestaurant"
+        ],
+        "correct": 0,
+        "explanation": "The confirmation states 'inkl. reichhaltigem Frühstücksbuffet und WLAN'."
+      },
+      {
+        "question": "Bis wann muss am Abreisetag das Zimmer verlassen werden?",
+        "questionEN": "By what time must the room be vacated on departure day?",
+        "options": [
+          "Bis 11:00 Uhr",
+          "Bis 10:00 Uhr",
+          "Bis 12:00 Uhr",
+          "Bis 15:00 Uhr"
+        ],
+        "correct": 0,
+        "explanation": "Check-out is listed as 'bis 11:00 Uhr'."
+      },
+      {
+        "question": "Wie bezahlt man die Kurtaxe?",
+        "questionEN": "How does one pay the tourism tax?",
+        "options": [
+          "Vor Ort im Hotel",
+          "Wurde bereits per Kreditkarte abgebucht",
+          "Per Banküberweisung vor der Anreise",
+          "Die Kurtaxe ist kostenlos"
+        ],
+        "correct": 0,
+        "explanation": "The text mentions 'wird vor Ort bezahlt'."
+      }
+    ]
+  },
+  {
+    "id": "a2_read_6",
+    "title": "Mitteilung der Krankenkasse: Bonusprogramm",
+    "titleEN": "Health Insurance: Bonus Programme",
+    "emoji": "📄",
+    "warmup": {
+      "vocab": [
+        {
+          "word": "die Krankenkasse",
+          "gender": "die",
+          "translation": "statutory health insurance",
+          "example": "Die Krankenkasse übernimmt die Kosten für die Behandlung.",
+          "exampleEN": "The health insurance covers the costs of treatment."
+        },
+        {
+          "word": "das Bonusprogramm",
+          "gender": "das",
+          "translation": "bonus incentive program",
+          "example": "Mit unserem Bonusprogramm belohnen wir einen gesunden Lebensstil.",
+          "exampleEN": "With our bonus programme we reward a healthy lifestyle."
+        },
+        {
+          "word": "die Vorsorgeuntersuchung",
+          "gender": "die",
+          "translation": "preventive medical examination / check-up",
+          "example": "Gehen Sie regelmäßig zur Vorsorgeuntersuchung beim Zahnarzt.",
+          "exampleEN": "Go regularly for check-ups at the dentist."
+        },
+        {
+          "word": "der Stempel",
+          "gender": "der",
+          "translation": "official stamp / seal",
+          "example": "Der Arzt muss die Untersuchung mit einem Stempel bestätigen.",
+          "exampleEN": "The doctor must confirm the examination with a stamp."
+        },
+        {
+          "word": "die Prämie",
+          "gender": "die",
+          "translation": "reward / cash bonus",
+          "example": "Sie können zwischen einer Barprämie und einem Zuschuss wählen.",
+          "exampleEN": "You can choose between a cash bonus and a grant."
+        },
+        {
+          "word": "einreichen",
+          "gender": "Verb",
+          "translation": "to submit / send in",
+          "example": "Reichen Sie das Heft bis zum 31. Dezember ein.",
+          "exampleEN": "Submit the booklet by December 31st."
+        }
+      ],
+      "tips": [
+        {
+          "de": "Bedingungen für die Prämie",
+          "en": "Identify how many activities or stamps are required."
+        },
+        {
+          "de": "Auszahlungsmöglichkeiten",
+          "en": "Notice if the bonus can be cash (Barprämie) or credit for sports gear."
+        },
+        {
+          "de": "Einsendefrist (Deadline)",
+          "en": "Spot the final date by which the booklet must be turned in."
+        }
+      ]
+    },
+    "text": "**AOK VitalPlus — Ihr Bonusprogramm 2026**\n\nSehr geehrte Versicherte, sehr geehrter Versicherter,\n\nGesundheit zahlt sich aus! Mit unserem jährlichen Bonusheft sichern Sie sich bis zu **150 Euro Prämie** für Ihre aktive Gesundheitsvorsorge.\n\n**So einfach funktioniert es:**\n1. **Stempel sammeln:** Lassen Sie Ihre regelmäßigen Vorsorgeuntersuchungen (z. B. Zahnarzt-Check-up, Impfungen oder Krebsfrüherkennung) im Bonusheft abstempeln.\n2. **Sportliche Aktivität nachweisen:** Auch die Mitgliedschaft im Sportverein oder Fitnessstudio zählt als Bonusaktivität.\n3. **Prämie wählen:** Ab drei bestätigten Aktivitäten erhalten Sie 90 Euro, ab fünf Aktivitäten die volle Prämie von 150 Euro direkt auf Ihr Bankkonto überwiesen.\n\n**Wichtige Frist:**\nBitte reichen Sie Ihr ausgefülltes Bonusheft bis spätestens **15. Dezember 2026** in einer Geschäftsstelle ein oder laden Sie es in unserer App hoch.\n\nBleiben Sie gesund!\nIhre AOK VitalPlus",
+    "textEN": "**AOK VitalPlus — Your Bonus Programme 2026**\n\nDear Insured Member,\n\nHealth pays off! With our annual bonus booklet you can secure up to **€150 reward** for your proactive healthcare.\n\n**How simple it works:**\n1. **Collect stamps:** Have your regular preventative check-ups (e.g. dentist check-up, vaccinations, or early cancer screening) stamped in the bonus booklet.\n2. **Prove sporting activity:** Membership in a sports club or gym also counts as a bonus activity.\n3. **Choose your reward:** From three verified activities you receive €90, from five activities the full reward of €150 transferred directly to your bank account.\n\n**Important Deadline:**\nPlease submit your completed booklet by **December 15th, 2026 at the latest** at a branch office or upload it via our app.\n\nStay healthy!\nYour AOK VitalPlus",
+    "questions": [
+      {
+        "question": "Wie viele Aktivitäten braucht man für die volle Prämie von 150 Euro?",
+        "questionEN": "How many activities are needed for the full 150-euro reward?",
+        "options": [
+          "Mindestens 5 Aktivitäten",
+          "Mindestens 3 Aktivitäten",
+          "Genau 10 Aktivitäten",
+          "Nur 1 Vorsorgeuntersuchung"
+        ],
+        "correct": 0,
+        "explanation": "The text states 'ab fünf Aktivitäten die volle Prämie von 150 Euro'."
+      },
+      {
+        "question": "Welche Aktivität wird neben Arztbesuchen auch anerkannt?",
+        "questionEN": "Which activity is accepted in addition to doctor visits?",
+        "options": [
+          "Mitgliedschaft im Fitnessstudio oder Sportverein",
+          "Tägliches Spazierengehen im Park",
+          "Kauf von Bio-Lebensmitteln",
+          "Urlaub am Meer"
+        ],
+        "correct": 0,
+        "explanation": "'Auch die Mitgliedschaft im Sportverein oder Fitnessstudio zählt'."
+      },
+      {
+        "question": "Bis zu welchem Datum muss das Heft eingereicht werden?",
+        "questionEN": "By which date must the booklet be submitted?",
+        "options": [
+          "Bis zum 15. Dezember 2026",
+          "Bis zum 31. Dezember 2026",
+          "Bis zum 1. Januar 2027",
+          "Innerhalb von 14 Tagen"
+        ],
+        "correct": 0,
+        "explanation": "The deadline states 'bis spätestens 15. Dezember 2026'."
+      }
+    ]
+  },
+  {
+    "id": "a2_read_7",
+    "title": "Werkstatt-Mitteilung: Auto-Inspektion",
+    "titleEN": "Car Workshop: Inspection Notice",
+    "emoji": "🚗",
+    "warmup": {
+      "vocab": [
+        {
+          "word": "die Kfz-Werkstatt",
+          "gender": "die",
+          "translation": "car repair shop / garage",
+          "example": "Mein Auto steht zur Inspektion in der Werkstatt.",
+          "exampleEN": "My car is in the garage for an inspection."
+        },
+        {
+          "word": "die Hauptuntersuchung (TÜV)",
+          "gender": "die",
+          "translation": "mandatory vehicle inspection (MOT)",
+          "example": "Der TÜV ist im März fällig.",
+          "exampleEN": "The vehicle inspection is due in March."
+        },
+        {
+          "word": "die Bremsbeläge",
+          "gender": "die (Pl.)",
+          "translation": "brake pads",
+          "example": "Die vorderen Bremsbeläge sind stark abgenutzt.",
+          "exampleEN": "The front brake pads are heavily worn down."
+        },
+        {
+          "word": "der Kostenvoranschlag",
+          "gender": "der",
+          "translation": "cost estimate / quote",
+          "example": "Wir erstellen Ihnen gern einen kostenlosen Kostenvoranschlag.",
+          "exampleEN": "We gladly prepare a free cost estimate for you."
+        },
+        {
+          "word": "abholbereit",
+          "gender": "Adj.",
+          "translation": "ready for collection / pick-up",
+          "example": "Ihr Fahrzeug ist heute ab 16:30 Uhr abholbereit.",
+          "exampleEN": "Your vehicle is ready for pick-up today from 4:30 PM."
+        },
+        {
+          "word": "das Zahlungsziel",
+          "gender": "das",
+          "translation": "payment deadline / terms",
+          "example": "Das Zahlungsziel beträgt 14 Tage nach Erhalt der Rechnung.",
+          "exampleEN": "The payment deadline is 14 days following receipt of invoice."
+        }
+      ],
+      "tips": [
+        {
+          "de": "Uhrzeit der Abholung",
+          "en": "Locate when the vehicle is completed and shop closing hours."
+        },
+        {
+          "de": "Kostenaufstellung",
+          "en": "Distinguish between labour costs (Arbeitszeit) and material (Ersatzteile)."
+        },
+        {
+          "de": "TÜV-Plakette",
+          "en": "Check if the car successfully passed official inspection."
+        }
+      ]
+    },
+    "text": "**Autohaus & Meisterwerkstatt Müller & Söhne**\n\nSehr geehrter Herr Demir,\n\nwir haben die Jahresinspektion und Hauptuntersuchung (TÜV) an Ihrem Fahrzeug (VW Golf, Kennzeichen: M-MD 442) erfolgreich durchgeführt.\n\n**Durchgeführte Arbeiten:**\n- Ölwechsel inklusive neuem Ölfilter\n- Bremsflüssigkeit erneuert\n- Neue Scheibenwischer vorne montiert\n- TÜV-Plakette ohne festgestellte Mängel erteilt\n\n**Hinweis des Werkstattleiters:**\nDie hinteren Bremsbeläge haben noch etwa 4 mm Stärke. Sie sollten in spätestens 5.000 Kilometern ausgetauscht werden.\n\n**Abholung & Bezahlung:**\nIhr Fahrzeug steht ab heute, **16:30 Uhr**, auf unserem Kundenparkplatz bereit. Unsere Werkstatt schließt um 18:00 Uhr.\nDie Gesamtrechnung über **384,50 €** können Sie bequem bei Abholung mit EC-Karte oder bar bezahlen.\n\nFreundliche Grüße,\nIhr Werkstatt-Team Müller",
+    "textEN": "**Auto Dealership & Master Workshop Müller & Sons**\n\nDear Mr. Demir,\n\nWe have successfully carried out the annual inspection and roadworthiness check (TÜV) on your vehicle (VW Golf, license plate: M-MD 442).\n\n**Work Performed:**\n- Oil change including new oil filter\n- Brake fluid renewed\n- New windshield wiper blades mounted in front\n- TÜV roadworthiness badge issued without defects detected\n\n**Note from the Workshop Manager:**\nThe rear brake pads have about 4 mm thickness remaining. They should be replaced within 5,000 kilometres at the latest.\n\n**Collection & Payment:**\nYour vehicle will be ready today from **4:30 PM** on our customer parking lot. Our workshop closes at 6:00 PM.\nThe total invoice of **€384.50** can conveniently be settled upon pick-up via debit card or cash.\n\nKind regards,\nYour Workshop Team Müller",
+    "questions": [
+      {
+        "question": "Wann kann Herr Demir sein Auto heute abholen?",
+        "questionEN": "When can Mr. Demir pick up his car today?",
+        "options": [
+          "Zwischen 16:30 und 18:00 Uhr",
+          "Bereits am Vormittag",
+          "Erst morgen früh um 08:00 Uhr",
+          "Jederzeit rund um die Uhr"
+        ],
+        "correct": 0,
+        "explanation": "The message says 'ab heute, 16:30 Uhr' and 'Werkstatt schließt um 18:00 Uhr'."
+      },
+      {
+        "question": "Was empfiehlt der Werkstattleiter für die Zukunft?",
+        "questionEN": "What does the workshop manager advise for the future?",
+        "options": [
+          "Hintere Bremsbeläge in ca. 5.000 km austauschen",
+          "Einen neuen Motor einbauen lassen",
+          "Das Auto sofort stilllegen",
+          "Kein Öl mehr nachfüllen"
+        ],
+        "correct": 0,
+        "explanation": "'Die hinteren Bremsbeläge ... sollten in spätestens 5.000 km ausgetauscht werden'."
+      },
+      {
+        "question": "Hat das Auto die TÜV-Prüfung bestanden?",
+        "questionEN": "Did the car pass the TÜV test?",
+        "options": [
+          "Ja, ohne festgestellte Mängel.",
+          "Nein, es muss zur Nachprüfung.",
+          "Nur mit einer Verwarnung.",
+          "Der TÜV wurde noch nicht gemacht."
+        ],
+        "correct": 0,
+        "explanation": "Text states: 'TÜV-Plakette ohne festgestellte Mängel erteilt'."
+      }
+    ]
+  },
+  {
+    "id": "a2_read_8",
+    "title": "Bürgerinfo: Neue Abfallordnung der Stadt",
+    "titleEN": "Municipal Notice: New Waste Separation",
+    "emoji": "♻️",
+    "warmup": {
+      "vocab": [
+        {
+          "word": "der Abfallkalender",
+          "gender": "der",
+          "translation": "waste collection calendar",
+          "example": "Den neuen Abfallkalender finden Sie auf der Website der Stadt.",
+          "exampleEN": "You can find the new waste calendar on the city website."
+        },
+        {
+          "word": "der Wertstoffhof",
+          "gender": "der",
+          "translation": "recycling / civic amenity centre",
+          "example": "Große Kartons und Elektroschrott gehören auf den Wertstoffhof.",
+          "exampleEN": "Large cardboard boxes and electronic waste belong at the recycling centre."
+        },
+        {
+          "word": "der Sperrmüll",
+          "gender": "der",
+          "translation": "bulky waste",
+          "example": "Alte Möbel können als Sperrmüll angemeldet werden.",
+          "exampleEN": "Old furniture can be registered as bulky waste."
+        },
+        {
+          "word": "die Biotonne",
+          "gender": "die",
+          "translation": "organic waste bin",
+          "example": "Kaffeesatz und Obstschalen gehören in die Biotonne.",
+          "exampleEN": "Coffee grounds and fruit peels belong in the organic bin."
+        },
+        {
+          "word": "die Gebühr",
+          "gender": "die",
+          "translation": "fee / charge",
+          "example": "Die Entsorgung von Batterien ist gebührenfrei.",
+          "exampleEN": "The disposal of batteries is free of charge."
+        },
+        {
+          "word": "bereitstellen",
+          "gender": "Verb",
+          "translation": "to place outside / make available",
+          "example": "Stellen Sie die Mülltonne bis 6:00 Uhr morgens an den Straßenrand.",
+          "exampleEN": "Place the rubbish bin by the curb by 6:00 AM."
+        }
+      ],
+      "tips": [
+        {
+          "de": "Farben der Tonnen",
+          "en": "Match waste categories: Grau/Schwarz (Restmüll), Blau (Papier), Gelb (Verpackungen), Braun (Bio)."
+        },
+        {
+          "de": "Uhrzeit zur Bereitstellung",
+          "en": "Bins must be placed at the roadside before collection starts."
+        },
+        {
+          "de": "Kostenlose Entsorgung",
+          "en": "Look for 'gebührenfrei' (free of charge) vs. 'kostenpflichtig' (subject to a fee)."
+        }
+      ]
+    },
+    "text": "**Stadtwerke Köln — Amt für Abfallwirtschaft**\n\nLiebe Bürgerinnen und Bürger,\n\nab dem **1. August** gilt in unserem Stadtbezirk ein neuer Abfuhrrhythmus für Restmüll und Altpapier.\n\n**Wichtige Änderungen:**\n- **Blaue Papiertonne:** Die Abholung erfolgt ab sofort alle vier Wochen jeweils am Donnerstag.\n- **Graue Restmülltonne:** Wird weiterhin alle zwei Wochen am Dienstag geleert.\n- **Bereitstellung:** Bitte stellen Sie alle Behälter am Abfuhrtag bis spätestens **06:00 Uhr morgens** gut sichtbar an den Bürgersteig.\n\n**Sperrmüll und Elektrogeräte:**\nAlte Elektrogeräte (Fernseher, Kühlschränke) und Sperrmüll dürfen nicht am Straßenrand abgestellt werden! Sie können kostenlos am städtischen Wertstoffhof (Industriestraße 12, geöffnet Mo–Sa 08:00–17:00 Uhr) abgegeben werden.\n\nVielen Dank für Ihren Beitrag zum Umweltschutz!\nIhre Stadtverwaltung",
+    "textEN": "**Cologne City Utilities — Waste Management Department**\n\nDear Citizens,\n\nStarting **August 1st**, a new collection schedule applies in our municipal district for residual waste and waste paper.\n\n**Important Changes:**\n- **Blue Paper Bin:** Collection takes place from now on every four weeks on Thursdays.\n- **Grey Residual Bin:** Continues to be emptied fortnightly on Tuesdays.\n- **Placement:** Please position all containers visibly on the sidewalk by **06:00 AM** at the latest on collection day.\n\n**Bulky Waste and Electrical Appliances:**\nOld electronic devices (TVs, refrigerators) and bulky waste may not be dumped on the curb! They can be dropped off free of charge at the municipal recycling depot (Industriestraße 12, open Mon–Sat 08:00–17:00).\n\nThank you very much for your contribution to environmental protection!\nYour City Administration",
+    "questions": [
+      {
+        "question": "Wann muss die blaue Papiertonne an die Straße gestellt werden?",
+        "questionEN": "When must the blue paper bin be placed on the street?",
+        "options": [
+          "Am Abfuhrtag bis spätestens 06:00 Uhr",
+          "Am Vorabend ab 18:00 Uhr",
+          "Erst um 09:00 Uhr vormittags",
+          "Nur am Wochenende"
+        ],
+        "correct": 0,
+        "explanation": "The notice says 'am Abfuhrtag bis spätestens 06:00 Uhr morgens'."
+      },
+      {
+        "question": "Wie oft wird das Altpapier (blaue Tonne) ab August abgeholt?",
+        "questionEN": "How often will waste paper (blue bin) be collected starting August?",
+        "options": [
+          "Alle vier Wochen",
+          "Jede Woche",
+          "Alle zwei Wochen",
+          "Einmal im halben Jahr"
+        ],
+        "correct": 0,
+        "explanation": "Text specifies: 'Die Abholung erfolgt ab sofort alle vier Wochen'."
+      },
+      {
+        "question": "Wo kann man alte Elektrogeräte kostenlos entsorgen?",
+        "questionEN": "Where can one dispose of old electronic devices for free?",
+        "options": [
+          "Am städtischen Wertstoffhof",
+          "Einfach in die Restmülltonne werfen",
+          "Am Straßenrand abstellen",
+          "Im Supermarkt abgeben"
+        ],
+        "correct": 0,
+        "explanation": "'Sie können kostenlos am städtischen Wertstoffhof ... abgegeben werden'."
+      }
+    ]
+  },
+  {
+    "id": "a2_read_9",
+    "title": "Gesundheits-Tipp: Fit im Büroalltag",
+    "titleEN": "Health Advice: Fit at the Office",
+    "emoji": "🥗",
+    "warmup": {
+      "vocab": [
+        {
+          "word": "der Büroalltag",
+          "gender": "der",
+          "translation": "everyday office routine",
+          "example": "Langes Sitzen prägt den modernen Büroalltag.",
+          "exampleEN": "Prolonged sitting characterizes the modern office routine."
+        },
+        {
+          "word": "die Körperhaltung",
+          "gender": "die",
+          "translation": "body posture",
+          "example": "Eine aufrechte Körperhaltung beugt Rückenschmerzen vor.",
+          "exampleEN": "An upright posture prevents back pain."
+        },
+        {
+          "word": "die Bildschirmpause",
+          "gender": "die",
+          "translation": "screen break",
+          "example": "Gönnen Sie Ihren Augen jede Stunde eine kurze Bildschirmpause.",
+          "exampleEN": "Grant your eyes a short screen break every hour."
+        },
+        {
+          "word": "der Flüssigkeitsbedarf",
+          "gender": "der",
+          "translation": "hydration need / fluid requirement",
+          "example": "Decken Sie Ihren täglichen Flüssigkeitsbedarf mit Wasser und Tee.",
+          "exampleEN": "Cover your daily fluid needs with water and tea."
+        },
+        {
+          "word": "die Verspannung",
+          "gender": "die",
+          "translation": "muscle tension",
+          "example": "Gezielte Dehnübungen lösen Verspannungen im Nacken.",
+          "exampleEN": "Targeted stretches relieve muscle tension in the neck."
+        },
+        {
+          "word": "der Treppenaufstieg",
+          "gender": "der",
+          "translation": "taking the stairs",
+          "example": "Der Treppenaufstieg bringt den Kreislauf in Schwung.",
+          "exampleEN": "Taking the stairs gets the circulation going."
+        }
+      ],
+      "tips": [
+        {
+          "de": "Empfohlene Trinkmenge",
+          "en": "Identify specific numeric recommendations like 'mindestens 1,5 bis 2 Liter'."
+        },
+        {
+          "de": "Regelmäßige Pausen",
+          "en": "Notice frequencies such as 'alle 50 Minuten' or 'zweimal täglich'."
+        },
+        {
+          "de": "Ergonomie am Arbeitsplatz",
+          "en": "Look for actionable posture instructions like monitor distance and chair height."
+        }
+      ]
+    },
+    "text": "**Magazin 'Gesund Leben' — Ratgeber Arbeitsplatz**\n\nMillionen Menschen verbringen ihren Arbeitstag überwiegend im Sitzen vor dem Computer. Das führt oft zu Nackenschmerzen, müden Augen und Konzentrationsproblemen. Mit diesen drei einfachen Gewohnheiten bleiben Sie fit:\n\n**1. Ausreichend Wasser trinken:**\nTrinken Sie über den Tag verteilt mindestens **1,5 bis 2 Liter** Leitungs- oder Mineralwasser bzw. ungesüßten Kräutertee. Vermeiden Sie zu viele zuckerhaltige Softdrinks und begrenzen Sie Kaffee auf maximal drei Tassen.\n\n**2. Dynamisch arbeiten und aufstehen:**\nÄndern Sie regelmäßig Ihre Sitzposition. Stehen Sie beim Telefonieren auf oder nutzen Sie einen höhenverstellbaren Schreibtisch. Die Faustregel lautet: **60 % Sitzen, 30 % Stehen, 10 % Bewegung**.\n\n**3. Treppe statt Fahrstuhl:**\nLassen Sie den Aufzug links liegen und nehmen Sie immer die Treppe. Schon 5 Minuten Treppensteigen am Tag stärken das Herz-Kreislauf-System spürbar.\n\nKleine Schritte machen einen großen Unterschied!",
+    "textEN": "**Magazine 'Healthy Living' — Workplace Guide**\n\nMillions of people spend their workday predominantly sitting in front of a computer. This often leads to neck pain, tired eyes, and concentration problems. With these three simple habits you stay fit:\n\n**1. Drink Sufficient Water:**\nDrink at least **1.5 to 2 litres** of tap or mineral water or unsweetened herbal tea spread throughout the day. Avoid too many sugary soft drinks and limit coffee to a maximum of three cups.\n\n**2. Work Dynamically and Stand Up:**\nChange your sitting posture regularly. Stand up while taking phone calls or make use of an adjustable standing desk. The rule of thumb is: **60% sitting, 30% standing, 10% moving**.\n\n**3. Stairs Instead of Elevator:**\nLeave the elevator behind and always take the stairs. Just 5 minutes of climbing stairs a day noticeably strengthens your cardiovascular system.\n\nSmall steps make a great difference!",
+    "questions": [
+      {
+        "question": "Wie viel Flüssigkeit sollte man laut Artikel mindestens täglich trinken?",
+        "questionEN": "How much fluid should one drink daily at minimum according to the article?",
+        "options": [
+          "1,5 bis 2 Liter Wasser oder Tee",
+          "Mindestens 4 Liter",
+          "Nur 1 Glas Wasser pro Mahlzeit",
+          "Unbegrenzt Kaffee"
+        ],
+        "correct": 0,
+        "explanation": "Text advises 'mindestens 1,5 bis 2 Liter Leitungs- oder Mineralwasser'."
+      },
+      {
+        "question": "Was empfiehlt der Text während des Telefonierens?",
+        "questionEN": "What does the text recommend doing during phone calls?",
+        "options": [
+          "Aufstehen",
+          "Die Augen schließen",
+          "Kaffee trinken",
+          "Den Schreibtisch verlassen und nach Hause gehen"
+        ],
+        "correct": 0,
+        "explanation": "'Stehen Sie beim Telefonieren auf'."
+      },
+      {
+        "question": "Welches Transportmittel im Gebäude soll man vermeiden?",
+        "questionEN": "Which means of transit inside the building should one avoid?",
+        "options": [
+          "Den Fahrstuhl / Aufzug",
+          "Die Treppe",
+          "Den Gehweg",
+          "Das Fahrrad"
+        ],
+        "correct": 0,
+        "explanation": "'Lassen Sie den Aufzug links liegen und nehmen Sie immer die Treppe'."
+      }
+    ]
+  },
+  {
+    "id": "a2_read_10",
+    "title": "Touristen-Flyer: Altstadtführung Potsdam",
+    "titleEN": "Tourist Flyer: Historic Tour Potsdam",
+    "emoji": "🗺️",
+    "warmup": {
+      "vocab": [
+        {
+          "word": "die Stadtführung",
+          "gender": "die",
+          "translation": "guided city tour",
+          "example": "Die Stadtführung dauert etwa zwei Stunden.",
+          "exampleEN": "The guided tour lasts about two hours."
+        },
+        {
+          "word": "der Treffpunkt",
+          "gender": "der",
+          "translation": "meeting point",
+          "example": "Treffpunkt ist der Brunnen am Marktplatz.",
+          "exampleEN": "The meeting point is the fountain at the market square."
+        },
+        {
+          "word": "die Ermäßigung",
+          "gender": "die",
+          "translation": "discount / concession",
+          "example": "Studenten und Rentner erhalten eine Ermäßigung von 3 Euro.",
+          "exampleEN": "Students and pensioners receive a 3 euro discount."
+        },
+        {
+          "word": "das Schloss Sanssouci",
+          "gender": "das",
+          "translation": "Sanssouci Palace",
+          "example": "Das Schloss Sanssouci ist weltberühmt.",
+          "exampleEN": "Sanssouci Palace is world famous."
+        },
+        {
+          "word": "die Sehenswürdigkeit",
+          "gender": "die",
+          "translation": "tourist attraction / sight",
+          "example": "Berlin hat unzählige historische Sehenswürdigkeiten.",
+          "exampleEN": "Berlin has countless historical sights."
+        },
+        {
+          "word": "barrierefrei",
+          "gender": "Adj.",
+          "translation": "wheelchair accessible / barrier-free",
+          "example": "Der gesamte Rundgang ist barrierefrei gestaltet.",
+          "exampleEN": "The entire circular tour is designed barrier-free."
+        }
+      ],
+      "tips": [
+        {
+          "de": "Sprachen und Zeiten",
+          "en": "Verify tour departure times and whether German or English guides are available."
+        },
+        {
+          "de": "Ticketpreise",
+          "en": "Spot regular adult prices versus student/child discounts."
+        },
+        {
+          "de": "Wetterbedingungen",
+          "en": "Check if the walking tour takes place in all weather conditions."
+        }
+      ]
+    },
+    "text": "**Potsdam Tourismus — Entdecken Sie die Residenzstadt**\n\nErleben Sie preußische Geschichte, prachtvolle Schlösser und idyllische Parks bei unserer beliebten **Historischen Stadtführung**.\n\n**Highlights der Tour:**\n- Das Brandenburger Tor von Potsdam\n- Holländisches Viertel mit seinen roten Backsteinhäusern\n- Führung durch die Gärten von Schloss Sanssouci\n\n**Wichtige Tourdaten:**\n- **Wann:** Täglich um **10:30 Uhr** und **14:00 Uhr** (Dauer: ca. 90 Minuten)\n- **Treffpunkt:** Tourist-Information am Hauptbahnhof (Ausgang Babelsberger Straße)\n- **Sprachen:** Deutsch (täglich), Englisch (samstags und sonntags um 14:00 Uhr)\n\n**Preise:**\n- Erwachsene: 14,00 €\n- Ermäßigt (Kinder ab 6 Jahren, Studenten, Senioren): 9,50 €\n- Kinder unter 6 Jahren: Kostenfrei\n\nDie Tour findet bei jedem Wetter statt. Bequeme Laufschuhe werden empfohlen!\nTickets vorab online buchen unter: www.potsdam-tourismus-guide.de",
+    "textEN": "**Potsdam Tourism — Discover the Royal Residence City**\n\nExperience Prussian history, magnificent palaces, and idyllic parks on our popular **Historic Walking Tour**.\n\n**Highlights of the Tour:**\n- The Brandenburg Gate of Potsdam\n- Dutch Quarter with its red brick houses\n- Guided walk through the gardens of Sanssouci Palace\n\n**Important Tour Information:**\n- **When:** Daily at **10:30 AM** and **02:00 PM** (duration: approx. 90 minutes)\n- **Meeting Point:** Tourist Information at the Central Station (Exit Babelsberger Straße)\n- **Languages:** German (daily), English (Saturdays and Sundays at 02:00 PM)\n\n**Prices:**\n- Adults: €14.00\n- Concession (children from 6 years, students, seniors): €9.50\n- Children under 6 years: Free of charge\n\nThe tour takes place in all weather conditions. Comfortable walking shoes are recommended!\nBook tickets in advance online at: www.potsdam-tourismus-guide.de",
+    "questions": [
+      {
+        "question": "Wo ist der Treffpunkt für den Rundgang?",
+        "questionEN": "Where is the meeting point for the walking tour?",
+        "options": [
+          "An der Tourist-Information am Hauptbahnhof",
+          "Vor dem Schloss Sanssouci",
+          "Im Holländischen Viertel",
+          "Am Alten Markt"
+        ],
+        "correct": 0,
+        "explanation": "The flyer notes 'Treffpunkt: Tourist-Information am Hauptbahnhof'."
+      },
+      {
+        "question": "Wann wird die englischsprachige Führung angeboten?",
+        "questionEN": "When is the English-language tour offered?",
+        "options": [
+          "Samstags und sonntags um 14:00 Uhr",
+          "Täglich um 10:30 Uhr",
+          "Nur im Sommer jeden Montag",
+          "Nur auf vorherige private Anfrage"
+        ],
+        "correct": 0,
+        "explanation": "'Englisch (samstags und sonntags um 14:00 Uhr)'."
+      },
+      {
+        "question": "Was zahlen Kinder unter 6 Jahren für die Tour?",
+        "questionEN": "What do children under 6 pay for the tour?",
+        "options": [
+          "Sie sind kostenfrei / kostenlos.",
+          "9,50 €",
+          "14,00 €",
+          "5,00 €"
+        ],
+        "correct": 0,
+        "explanation": "'Kinder unter 6 Jahren: Kostenfrei'."
+      }
+    ]
+  },
+  {
+    "id": "a2_read_11",
+    "title": "Kunden-E-Mail: Reklamation Kaffeemaschine",
+    "titleEN": "Customer Support: Coffee Maker Claim",
+    "emoji": "🛍️",
+    "warmup": {
+      "vocab": [
+        {
+          "word": "die Reklamation",
+          "gender": "die",
+          "translation": "complaint / warranty claim",
+          "example": "Ich reiche eine Reklamation wegen eines Gerätedefekts ein.",
+          "exampleEN": "I am submitting a complaint due to an appliance defect."
+        },
+        {
+          "word": "die Bestellnummer",
+          "gender": "die",
+          "translation": "order number",
+          "example": "Geben Sie bitte stets Ihre Bestellnummer an.",
+          "exampleEN": "Please always state your order number."
+        },
+        {
+          "word": "der Retourenschein",
+          "gender": "der",
+          "translation": "return voucher / label",
+          "example": "Drucken Sie den kostenfreien Retourenschein aus.",
+          "exampleEN": "Print out the free return voucher."
+        },
+        {
+          "word": "die Gutschrift",
+          "gender": "die",
+          "translation": "credit note / refund credit",
+          "example": "Wir stellen Ihnen eine Gutschrift auf Ihr Kundenkonto aus.",
+          "exampleEN": "We will issue a credit to your customer account."
+        },
+        {
+          "word": "das Ersatzgerät",
+          "gender": "das",
+          "translation": "replacement appliance / device",
+          "example": "Möchten Sie ein Ersatzgerät oder Ihr Geld zurück?",
+          "exampleEN": "Would you like a replacement unit or your money back?"
+        },
+        {
+          "word": "die Garantiefrist",
+          "gender": "die",
+          "translation": "warranty period",
+          "example": "Das Gerät befindet sich noch innerhalb der zweijährigen Garantiefrist.",
+          "exampleEN": "The appliance is still within the two-year warranty period."
+        }
+      ],
+      "tips": [
+        {
+          "de": "Lösungsvorschlag des Kundenservice",
+          "en": "Identify whether the shop offers repair, exchange, or refund."
+        },
+        {
+          "de": "Versandkosten bei Reklamation",
+          "en": "Check who covers return shipping costs."
+        },
+        {
+          "de": "Nächste Schritte für den Kunden",
+          "en": "Look for instructions on what the customer must attach or pack."
+        }
+      ]
+    },
+    "text": "**Elektro-Center Online — Kundenservice**\n\nSehr geehrte Frau Rossi,\n\nvielen Dank für Ihre Nachricht bezüglich Ihrer Bestellung (Bestellnummer: EC-90182). Es tut uns sehr leid zu hören, dass Ihre Kaffeemaschine 'Barista Pro' nach nur drei Monaten kein Wasser mehr erhitzt.\n\nDa sich das Gerät innerhalb der gesetzlichen Gewährleistung befindet, bieten wir Ihnen folgende zwei Lösungen an:\n\n1. **Kostenloser Austausch:** Wir schicken Ihnen sofort nach Erhalt der defekten Maschine ein brandneues Ersatzgerät zu.\n2. **Vollständige Rückerstattung:** Wenn Sie das Modell nicht behalten möchten, überweisen wir Ihnen den vollen Kaufbetrag von 129,00 € auf Ihr Bankkonto zurück.\n\n**So geht es weiter:**\nIm Anhang dieser E-Mail finden Sie ein vorfrankiertes **DHL-Rücksendeetikett**. Sie müssen das Paket lediglich verpacken und kostenfrei bei einer Postfiliale abgeben.\n\nBitte teilen Sie uns kurz mit, welche Lösung Sie bevorzugen.\n\nMit freundlichen Grüßen,\nIhr Elektro-Center Kundenservice",
+    "textEN": "**Electro-Center Online — Customer Support**\n\nDear Ms. Rossi,\n\nThank you for your message regarding your order (Order Number: EC-90182). We are very sorry to hear that your coffee machine 'Barista Pro' has stopped heating water after only three months.\n\nSince the appliance is within the statutory warranty period, we offer you the following two options:\n\n1. **Free Replacement:** We will send you a brand-new replacement device immediately upon receiving the defective machine.\n2. **Full Refund:** If you do not wish to keep the model, we will refund the full purchase price of €129.00 to your bank account.\n\n**Next Steps:**\nAttached to this email you will find a prepaid **DHL return label**. You simply need to pack the parcel and drop it off free of charge at a post office branch.\n\nPlease briefly inform us which option you prefer.\n\nKind regards,\nYour Electro-Center Customer Service",
+    "questions": [
+      {
+        "question": "Warum schreibt Frau Rossi an den Kundenservice?",
+        "questionEN": "Why did Ms. Rossi write to customer service?",
+        "options": [
+          "Ihre neue Kaffeemaschine erhitzt kein Wasser mehr.",
+          "Die Maschine wurde an eine falsche Adresse geliefert.",
+          "Sie möchte zusätzlichen Kaffee bestellen.",
+          "Die Rechnung war fehlerhaft."
+        ],
+        "correct": 0,
+        "explanation": "Customer service references: 'Ihre Kaffeemaschine ... erhitzt kein Wasser mehr'."
+      },
+      {
+        "question": "Wer bezahlt die Rücksendekosten für das defekte Gerät?",
+        "questionEN": "Who pays the return shipping costs for the defective unit?",
+        "options": [
+          "Der Händler (Elektro-Center stellt ein vorfrankiertes Etikett bereit)",
+          "Frau Rossi muss das Porto selbst bezahlen",
+          "Die Post übernimmt die Hälfte",
+          "Die Kosten werden vom Kaufpreis abgezogen"
+        ],
+        "correct": 0,
+        "explanation": "'Im Anhang finden Sie ein vorfrankiertes DHL-Rücksendeetikett ... kostenfrei abgeben'."
+      },
+      {
+        "question": "Welche zwei Optionen hat Frau Rossi jetzt?",
+        "questionEN": "Which two options does Ms. Rossi have now?",
+        "options": [
+          "Ein neues Ersatzgerät oder volle Geld-Rückerstattung",
+          "Nur eine Reparatur auf eigene Kosten",
+          "Einen Gutschein über 20 Euro",
+          "Eine zweite Kaffeemaschine zum halben Preis"
+        ],
+        "correct": 0,
+        "explanation": "Customer support offers: '1. Kostenloser Austausch ... 2. Vollständige Rückerstattung'."
+      }
+    ]
+  },
+  {
+    "id": "a2_read_12",
+    "title": "Hausordnung: Treppenhaus & Ruhezeiten",
+    "titleEN": "House Rules: Stairwell & Quiet Hours",
+    "emoji": "🏘️",
+    "warmup": {
+      "vocab": [
+        {
+          "word": "die Hausordnung",
+          "gender": "die",
+          "translation": "house rules / building regulations",
+          "example": "Alle Mieter müssen die Hausordnung einhalten.",
+          "exampleEN": "All tenants must observe the house rules."
+        },
+        {
+          "word": "die Ruhezeit",
+          "gender": "die",
+          "translation": "quiet hours",
+          "example": "Die gesetzliche Nachtruhe beginnt um 22:00 Uhr.",
+          "exampleEN": "Statutory night-time quiet hours begin at 10:00 PM."
+        },
+        {
+          "word": "der Fluchtweg",
+          "gender": "der",
+          "translation": "escape / emergency exit route",
+          "example": "Das Treppenhaus dient als lebensrettender Fluchtweg.",
+          "exampleEN": "The staircase serves as a life-saving escape route."
+        },
+        {
+          "word": "die Ruhestörung",
+          "gender": "die",
+          "translation": "noise disturbance",
+          "example": "Laute Musik nach 22 Uhr gilt als Ruhestörung.",
+          "exampleEN": "Loud music after 10 PM counts as noise disturbance."
+        },
+        {
+          "word": "der Hausverwalter",
+          "gender": "der",
+          "translation": "property manager",
+          "example": "Bei Problemen wenden Sie sich an die Hausverwaltung.",
+          "exampleEN": "In case of problems contact the property management."
+        },
+        {
+          "word": "die Zuwiderhandlung",
+          "gender": "die",
+          "translation": "infringement / violation",
+          "example": "Bei wiederholter Zuwiderhandlung droht eine Abmahnung.",
+          "exampleEN": "Repeated violations risk a formal warning."
+        }
+      ],
+      "tips": [
+        {
+          "de": "Genaue Ruhezeiten einprägen",
+          "en": "Nachtruhe is typically 22:00–07:00, Mittagsruhe is 13:00–15:00."
+        },
+        {
+          "de": "Gegenstände im Treppenhaus",
+          "en": "Fire safety strictly forbids parking bikes, shoe racks, or bulky boxes in hallways."
+        },
+        {
+          "de": "Bohren und Renovieren",
+          "en": "Noisy DIY work is prohibited on Sundays and public holidays."
+        }
+      ]
+    },
+    "text": "**Wohnanlage Lindenhof — Aushang der Hausverwaltung**\n\nLiebe Hausgemeinschaft,\n\naus aktuellem Anlass und im Interesse eines friedlichen Zusammenlebens erinnern wir alle Bewohner an wichtige Punkte unserer Hausordnung:\n\n**1. Ruhezeiten beachten:**\n- **Nachtruhe:** Täglich von **22:00 bis 07:00 Uhr** morgens.\n- **Sonntagsruhe:** An Sonn- und Feiertagen ist ganztägig Ruhetag. Lärmintensive Arbeiten (Bohren, Hämmern, Rasenmähen) sind streng untersagt.\n\n**2. Brandschutz im Treppenhaus:**\nDas Treppenhaus ist der primäre Fluchtweg im Brandfall. Es ist verboten, Fahrräder, Schuhschränke, Müllbeutel oder Kinderwagen dauerhaft vor den Wohnungstüren abzustellen. Fahrräder gehören in den Fahrradkeller im Untergeschoss.\n\n**3. Mülltonnen:**\nBitte zerkleinern Sie Kartons vor dem Einwurf in die Papiertonne, damit der Platz für alle Nachbarn ausreicht.\n\nWir danken Ihnen für Ihre Rücksichtnahme und ein gutes Miteinander!\nIhre Hausverwaltung Lindenhof",
+    "textEN": "**Lindenhof Residential Complex — Notice from Property Management**\n\nDear Residents,\n\nDue to recent occurrences and in the interest of peaceful communal living, we remind all occupants of important points of our house rules:\n\n**1. Observe Quiet Hours:**\n- **Night-time Quiet:** Daily from **10:00 PM to 07:00 AM** in the morning.\n- **Sunday Quiet:** Sundays and public holidays are quiet days all day long. Noise-intensive activities (drilling, hammering, mowing the lawn) are strictly prohibited.\n\n**2. Fire Safety in the Stairwell:**\nThe stairwell is the primary emergency exit in case of fire. It is prohibited to park bicycles, shoe cabinets, rubbish sacks, or prams permanently outside flat doors. Bicycles belong in the bicycle cellar in the basement.\n\n**3. Waste Bins:**\nPlease flatten cardboard boxes before disposing of them in the paper bin so that space suffices for all neighbours.\n\nWe thank you for your consideration and good neighbourly cooperation!\nYour Property Management Lindenhof",
+    "questions": [
+      {
+        "question": "Wann gilt im Haus die tägliche Nachtruhe?",
+        "questionEN": "When do daily night-time quiet hours apply in the building?",
+        "options": [
+          "Von 22:00 bis 07:00 Uhr morgens",
+          "Von 20:00 bis 06:00 Uhr",
+          "Nur zwischen 13:00 und 15:00 Uhr",
+          "Nur am Wochenende"
+        ],
+        "correct": 0,
+        "explanation": "The rules state: 'Nachtruhe: Täglich von 22:00 bis 07:00 Uhr morgens'."
+      },
+      {
+        "question": "Warum dürfen keine Fahrräder im Treppenhaus abgestellt werden?",
+        "questionEN": "Why may bicycles not be parked in the stairwell?",
+        "options": [
+          "Aus Brandschutzgründen (Treppenhaus ist Fluchtweg)",
+          "Weil das Treppenhaus frisch gestrichen wurde",
+          "Weil der Hausmeister Fahrräder sammelt",
+          "Fahrräder sind im ganzen Gebäude verboten"
+        ],
+        "correct": 0,
+        "explanation": "'Das Treppenhaus ist der primäre Fluchtweg im Brandfall'."
+      },
+      {
+        "question": "Darf man am Sonntagnachmittag in der Wohnung eine Wand anbohren?",
+        "questionEN": "Is one allowed to drill a wall inside the apartment on a Sunday afternoon?",
+        "options": [
+          "Nein, an Sonn- und Feiertagen ist Lärm streng untersagt.",
+          "Ja, zwischen 14 und 16 Uhr.",
+          "Ja, wenn man die Nachbarn vorher fragt.",
+          "Ja, bis 18:00 Uhr."
+        ],
+        "correct": 0,
+        "explanation": "'An Sonn- und Feiertagen ... Lärmintensive Arbeiten (Bohren...) sind streng untersagt'."
+      }
+    ]
+  },
+  {
+    "id": "a2_read_13",
+    "title": "Kita-Elterninfo: Neuer Speiseplan & Schließtag",
+    "titleEN": "Daycare Info: New Menu & Closure Day",
+    "emoji": "👶",
+    "warmup": {
+      "vocab": [
+        {
+          "word": "die Kindertagesstätte (Kita)",
+          "gender": "die",
+          "translation": "daycare centre / kindergarten",
+          "example": "Unsere Tochter geht seit einem Jahr in die Kita.",
+          "exampleEN": "Our daughter has been going to daycare for a year."
+        },
+        {
+          "word": "der Speiseplan",
+          "gender": "der",
+          "translation": "weekly food menu",
+          "example": "Der Speiseplan für nächste Woche hängt an der Pinnwand.",
+          "exampleEN": "The menu for next week is hanging on the notice board."
+        },
+        {
+          "word": "die Lebensmittelunverträglichkeit",
+          "gender": "die",
+          "translation": "food intolerance / allergy",
+          "example": "Bitte melden Sie uns bekannte Lebensmittelunverträglichkeiten.",
+          "exampleEN": "Please report known food intolerances to us."
+        },
+        {
+          "word": "der pädagogische Fachtag",
+          "gender": "der",
+          "translation": "pedagogical in-service training day",
+          "example": "Wegen eines Fachtags bleibt die Kita am Montag geschlossen.",
+          "exampleEN": "Due to a training day the nursery remains closed on Monday."
+        },
+        {
+          "word": "die Notbetreuung",
+          "gender": "die",
+          "translation": "emergency childcare provision",
+          "example": "Für berufstätige Eltern bieten wir eine Notbetreuung an.",
+          "exampleEN": "For working parents we offer emergency childcare."
+        },
+        {
+          "word": "die Kernzeit",
+          "gender": "die",
+          "translation": "core hours",
+          "example": "In der Kernzeit von 9 bis 12 Uhr finden Projekte statt.",
+          "exampleEN": "During core hours from 9 to 12 projects take place."
+        }
+      ],
+      "tips": [
+        {
+          "de": "Schließtage im Kalender notieren",
+          "en": "Spot dates when regular childcare is closed or reduced."
+        },
+        {
+          "de": "Anmeldung zur Notgruppe",
+          "en": "Look for preconditions and deadlines to register for emergency supervision."
+        },
+        {
+          "de": "Besondere Ernährungsgewohnheiten",
+          "en": "Check procedures for vegetarian meals or allergy dietary adjustments."
+        }
+      ]
+    },
+    "text": "**Städtische Kita 'Sonnenschein' — Monatsbrief April**\n\nLiebe Eltern,\n\nwir möchten Sie über wichtige Termine und Neuerungen für den Monat April informieren:\n\n**1. Frische Bio-Küche & Neuer Speiseplan:**\nAb Mai kocht unser Küchenteam mit 80 % regionalen Bio-Zutaten. Jeden Dienstag und Donnerstag gibt es ein rein vegetarisches Menü. Haben sich bei Ihrem Kind neue Allergien oder Unverträglichkeiten entwickelt? Bitte füllen Sie das Formular im Eingangsbereich bis zum **15. April** aus.\n\n**2. Schließtag wegen pädagogischem Fachtag:**\nAm **Freitag, den 28. April**, bleibt unsere Einrichtung ganztägig für die interne Weiterbildung unseres Erzieherteams geschlossen.\n\n**Notbetreuung:**\nFür Eltern, die an diesem Tag nachweislich arbeiten müssen und keine andere Betreuungsmöglichkeit haben, stellen wir eine Notgruppe (08:00 bis 14:00 Uhr, max. 15 Kinder) bereit. Bitte melden Sie Ihr Kind bis spätestens **Freitag, 21. April**, im Büro an.\n\nHerzliche Frühlingsgrüße,\nIhr Kita-Team Sonnenschein",
+    "textEN": "**Municipal Daycare 'Sonnenschein' — Monthly Newsletter April**\n\nDear Parents,\n\nWe would like to inform you about important dates and updates for the month of April:\n\n**1. Fresh Organic Kitchen & New Menu:**\nFrom May our kitchen team cooks with 80% regional organic ingredients. Every Tuesday and Thursday there is a purely vegetarian menu. Have any new allergies or intolerances developed in your child? Please fill out the form in the entrance area by **April 15th**.\n\n**2. Closure Day for In-Service Training:**\nOn **Friday, April 28th**, our facility will be closed all day for the internal professional development of our educator team.\n\n**Emergency Childcare:**\nFor parents who can prove they must work on this day and have no alternative care options, we provide an emergency group (08:00 AM to 02:00 PM, max. 15 children). Please register your child by **Friday, April 21st at the latest** in the office.\n\nWarm spring greetings,\nYour Daycare Team Sonnenschein",
+    "questions": [
+      {
+        "question": "An welchen Tagen gibt es künftig ein rein vegetarisches Menü?",
+        "questionEN": "On which days will there be a purely vegetarian menu in future?",
+        "options": [
+          "Dienstags und donnerstags",
+          "Jeden Montag",
+          "Nur freitags",
+          "An allen fünf Wochentagen"
+        ],
+        "correct": 0,
+        "explanation": "The letter notes: 'Jeden Dienstag und Donnerstag gibt es ein rein vegetarisches Menü'."
+      },
+      {
+        "question": "Warum hat die Kita am Freitag, den 28. April, geschlossen?",
+        "questionEN": "Why is the daycare closed on Friday, April 28th?",
+        "options": [
+          "Wegen einer Weiterbildung des Erzieherteams (Fachtag)",
+          "Wegen Umbauarbeiten in der Küche",
+          "Es ist ein gesetzlicher Feiertag",
+          "Wegen Krankheitsausfällen"
+        ],
+        "correct": 0,
+        "explanation": "'Schließtag wegen pädagogischem Fachtag ... interne Weiterbildung'."
+      },
+      {
+        "question": "Bis wann muss man sich für die Notbetreuung anmelden?",
+        "questionEN": "By when must one register for emergency care?",
+        "options": [
+          "Bis spätestens Freitag, 21. April",
+          "Erst am 28. April morgens",
+          "Bis zum 15. April",
+          "Eine Anmeldung ist nicht nötig"
+        ],
+        "correct": 0,
+        "explanation": "'Bitte melden Sie Ihr Kind bis spätestens Freitag, 21. April, im Büro an'."
+      }
+    ]
+  },
+  {
+    "id": "a2_read_14",
+    "title": "Sportverein: Schnuppertraining & Kursplan",
+    "titleEN": "Sports Club: Trial Sessions & Schedule",
+    "emoji": "⚽",
+    "warmup": {
+      "vocab": [
+        {
+          "word": "der Sportverein",
+          "gender": "der",
+          "translation": "sports club",
+          "example": "Er ist seit drei Jahren Mitglied im lokalen Sportverein.",
+          "exampleEN": "He has been a member in the local sports club for three years."
+        },
+        {
+          "word": "das Schnuppertraining",
+          "gender": "das",
+          "translation": "taster / trial training session",
+          "example": "Das erste Schnuppertraining ist völlig kostenlos.",
+          "exampleEN": "The first trial training is completely free of charge."
+        },
+        {
+          "word": "der Mitgliedsbeitrag",
+          "gender": "der",
+          "translation": "membership fee",
+          "example": "Der monatliche Mitgliedsbeitrag beträgt 15 Euro.",
+          "exampleEN": "The monthly membership fee is 15 euros."
+        },
+        {
+          "word": "die Hallenschuhe",
+          "gender": "die (Pl.)",
+          "translation": "indoor sports shoes",
+          "example": "Bitte bringen Sie saubere Hallenschuhe mit heller Sohle mit.",
+          "exampleEN": "Please bring clean indoor shoes with light-coloured soles."
+        },
+        {
+          "word": "der Anfängerkurs",
+          "gender": "der",
+          "translation": "beginners' course",
+          "example": "Der neue Anfängerkurs für Yoga startet am Dienstag.",
+          "exampleEN": "The new beginners' course for yoga starts on Tuesday."
+        },
+        {
+          "word": "die Umkleidekabine",
+          "gender": "die",
+          "translation": "changing / locker room",
+          "example": "Die Umkleidekabinen befinden sich links neben dem Eingang.",
+          "exampleEN": "The changing rooms are located to the left of the entrance."
+        }
+      ],
+      "tips": [
+        {
+          "de": "Ausrüstung und Kleidung",
+          "en": "Check footwear requirements (e.g. indoor non-marking shoes)."
+        },
+        {
+          "de": "Kostenlose Probestunden",
+          "en": "Look for 'kostenfrei' or 'ohne Verpflichtung' regarding introductory sessions."
+        },
+        {
+          "de": "Ermäßigte Beiträge",
+          "en": "Notice discounts for students, families, or trainees."
+        }
+      ]
+    },
+    "text": "**Turn- und Sportverein TSV Grün-Weiß 1920 e.V.**\n\nMach mit, bleib fit! Unser neuer Frühjahrs-Kursplan ist da. Egal ob Anfänger oder Fortgeschrittener — bei uns findet jeder die passende Sportart.\n\n**Unsere neuen Angebote ab nächster Woche:**\n- **Rückenfit & Wirbelsäulengymnastik:** Montags 18:30–19:30 Uhr (Halle 1)\n- **Badminton für Freizeitspieler:** Mittwochs 19:00–21:00 Uhr (Halle 2)\n- **Zumba Fitness:** Donnerstags 18:00–19:00 Uhr (Gymnastikraum)\n- **Kinder-Turnen (4–6 Jahre):** Freitags 15:30–16:30 Uhr (Halle 1)\n\n**Kostenloses Probetraining:**\nSie möchten einen Kurs unverbindlich ausprobieren? Die ersten **zwei Trainingsstunden sind kostenlos**! Sie müssen sich nicht vorher anmelden — kommen Sie einfach 10 Minuten vor Kursbeginn vorbei.\n\n**Wichtig für die Sporthallen:**\nDas Betreten der Hallen ist nur mit **sauberen Hallenturnschuhen** (helle Sohle) gestattet. Straßenschuhe sind verboten.\n\n**Mitgliedsbeiträge:**\nErwachsene: 18,00 € / Monat, Familienbeitrag: 32,00 € / Monat (inkl. aller Sportarten).\n\nWir freuen uns auf Sie!\nVorstand TSV Grün-Weiß",
+    "textEN": "**Gymnastics and Sports Club TSV Grün-Weiß 1920 e.V.**\n\nJoin in, stay fit! Our new spring course schedule is here. Whether beginner or advanced — everyone finds the right sport with us.\n\n**Our New Offerings Starting Next Week:**\n- **Back Fitness & Spine Gymnastics:** Mondays 06:30–07:30 PM (Hall 1)\n- **Badminton for Leisure Players:** Wednesdays 07:00–09:00 PM (Hall 2)\n- **Zumba Fitness:** Thursdays 06:00–07:00 PM (Gymnastics Room)\n- **Children's Gymnastics (4–6 years):** Fridays 03:30–04:30 PM (Hall 1)\n\n**Free Trial Training:**\nWould you like to try a class without obligation? The first **two training hours are free**! You do not need to register beforehand — simply turn up 10 minutes before class starts.\n\n**Important for the Sports Halls:**\nEntering the halls is only permitted with **clean indoor athletic shoes** (non-marking soles). Outdoor street shoes are forbidden.\n\n**Membership Dues:**\nAdults: €18.00 / month, Family Membership: €32.00 / month (includes all sports).\n\nWe look forward to welcoming you!\nBoard TSV Grün-Weiß",
+    "questions": [
+      {
+        "question": "Wie viele Probestunden darf man kostenlos besuchen?",
+        "questionEN": "How many trial hours can one attend free of charge?",
+        "options": [
+          "Zwei Trainingsstunden",
+          "Nur eine halbe Stunde",
+          "Den ganzen ersten Monat",
+          "Probetrainings kosten 10 Euro"
+        ],
+        "correct": 0,
+        "explanation": "The announcement states: 'Die ersten zwei Trainingsstunden sind kostenlos'."
+      },
+      {
+        "question": "Welche Schuhe muss man für die Sporthalle mitbringen?",
+        "questionEN": "Which shoes must one bring for the sports hall?",
+        "options": [
+          "Saubere Hallenturnschuhe mit heller Sohle",
+          "Normale Straßenschuhe",
+          "Wanderschuhe",
+          "Schuhe sind nicht notwendig"
+        ],
+        "correct": 0,
+        "explanation": "'nur mit sauberen Hallenturnschuhen (helle Sohle) gestattet'."
+      },
+      {
+        "question": "Wann findet der Kurs 'Rückenfit & Wirbelsäulengymnastik' statt?",
+        "questionEN": "When does the 'Back Fitness' class take place?",
+        "options": [
+          "Montags von 18:30 bis 19:30 Uhr",
+          "Donnerstags um 18:00 Uhr",
+          "Mittwochs um 19:00 Uhr",
+          "Freitagnachmittag"
+        ],
+        "correct": 0,
+        "explanation": "The schedule lists: 'Montags 18:30–19:30 Uhr (Halle 1)'."
+      }
+    ]
+  },
+  {
+    "id": "a2_read_15",
+    "title": "Praxis-Information: Urlaub & Vertretung",
+    "titleEN": "Doctor's Practice: Vacation & Locum",
+    "emoji": "🏥",
+    "warmup": {
+      "vocab": [
+        {
+          "word": "die Hausarztpraxis",
+          "gender": "die",
+          "translation": "general medical practice / GP clinic",
+          "example": "Die Hausarztpraxis ist wegen Urlaubs geschlossen.",
+          "exampleEN": "The GP practice is closed due to holidays."
+        },
+        {
+          "word": "die Praxisvertretung",
+          "gender": "die",
+          "translation": "locum / covering doctor's practice",
+          "example": "In dringenden Notfällen übernimmt Dr. Fischer die Vertretung.",
+          "exampleEN": "In urgent emergencies Dr. Fischer provides cover."
+        },
+        {
+          "word": "das E-Rezept",
+          "gender": "das",
+          "translation": "electronic medical prescription",
+          "example": "Sie können Ihr E-Rezept direkt mit der Gesundheitskarte einlösen.",
+          "exampleEN": "You can redeem your e-prescription directly with your health card."
+        },
+        {
+          "word": "die Versichertenkarte",
+          "gender": "die",
+          "translation": "health insurance card",
+          "example": "Bringen Sie bei jedem Praxisbesuch Ihre Versichertenkarte mit.",
+          "exampleEN": "Bring your health insurance card to every clinic visit."
+        },
+        {
+          "word": "der ärztliche Bereitschaftsdienst",
+          "gender": "der",
+          "translation": "on-call medical service (116 117)",
+          "example": "Abends und am Wochenende erreichen Sie den Bereitschaftsdienst unter 116 117.",
+          "exampleEN": "Evenings and weekends you reach the on-call service at 116 117."
+        },
+        {
+          "word": "die Dauermedikation",
+          "gender": "die",
+          "translation": "long-term maintenance medication",
+          "example": "Wiederholungsrezepte für Dauermedikation bestellen Sie bitte online.",
+          "exampleEN": "Please order repeat prescriptions for regular medication online."
+        }
+      ],
+      "tips": [
+        {
+          "de": "Praxisschließung (Urlaubszeiten)",
+          "en": "Locate exact from/until dates when the clinic is closed."
+        },
+        {
+          "de": "Name und Adresse der Vertretung",
+          "en": "Note the substitute clinic name, street, and telephone number."
+        },
+        {
+          "de": "Notfälle außerhalb der Sprechstunden",
+          "en": "116 117 for non-life-threatening urgent medical advice; 112 for life-threatening emergencies."
+        }
+      ]
+    },
+    "text": "**Gemeinschaftspraxis Dr. med. Thomas Bergmann & Kollegin**\nFachärzte für Allgemeinmedizin\n\nLiebe Patientinnen und Patienten,\n\nunsere Praxis bleibt wegen unseres Sommerurlaubs von **Montag, 14. Juli, bis einschließlich Freitag, 25. Juli**, geschlossen.\n\nAb **Montag, 28. Juli**, sind wir ab 08:00 Uhr wieder wie gewohnt für Sie da.\n\n**Ärztliche Vertretung in dringenden Fällen:**\nDie Vertretung übernimmt freundlicherweise:\n- **Praxis Dr. med. Stefan Fischer**\n- Bahnhofstraße 14, 80335 München\n- Telefon: (089) 55 42 11\n- *Wichtig:* Bitte vereinbaren Sie auch in der Vertretungspraxis vorab telefonisch einen Termin und bringen Sie Ihre elektronische Gesundheitskarte mit.\n\n**Wiederholungsrezepte & Dauermedikation:**\nBitte prüfen Sie rechtzeitig vor unserem Urlaub Ihren Medikamentenbestand. E-Rezepte können bis zum 10. Juli über unsere Website oder Rezept-Hotline vorbestellt werden.\n\n**Nachts, mittwochs ab 13 Uhr und am Wochenende:**\nRufen Sie bei dringenden gesundheitlichen Beschwerden den bundesweiten ärztlichen Bereitschaftsdienst unter der kostenlosen Rufnummer **116 117** an. Bei lebensbedrohlichen Notfällen wählen Sie die **112**.\n\nWir wünschen Ihnen einen gesunden Sommer!\nIhr Praxisteam Dr. Bergmann",
+    "textEN": "**Group Practice Dr. Thomas Bergmann & Colleague**\nSpecialists in General Medicine\n\nDear Patients,\n\nOur practice will be closed for our summer holiday from **Monday, July 14th, up to and including Friday, July 25th**.\n\nStarting **Monday, July 28th**, we will be here for you again as usual from 08:00 AM.\n\n**Medical Cover in Urgent Cases:**\nCoverage is kindly provided by:\n- **Practice Dr. Stefan Fischer**\n- Bahnhofstraße 14, 80335 Munich\n- Telephone: (089) 55 42 11\n- *Important:* Please also schedule an appointment by phone in advance at the locum practice and bring your electronic health card.\n\n**Repeat Prescriptions & Maintenance Medication:**\nPlease check your medicine supplies in good time before our vacation. E-prescriptions can be pre-ordered via our website or prescription hotline until July 10th.\n\n**Nights, Wednesday afternoons from 1 PM, and Weekends:**\nIn case of urgent medical complaints call the nationwide on-call medical service at the toll-free number **116 117**. In life-threatening emergencies dial **112**.\n\nWe wish you a healthy summer!\nYour Practice Team Dr. Bergmann",
+    "questions": [
+      {
+        "question": "Ab wann ist die Praxis Dr. Bergmann nach dem Urlaub wieder geöffnet?",
+        "questionEN": "From when is Dr. Bergmann's practice open again after the holiday?",
+        "options": [
+          "Ab Montag, 28. Juli",
+          "Ab Freitag, 25. Juli",
+          "Bereits am 14. Juli",
+          "Erst im September"
+        ],
+        "correct": 0,
+        "explanation": "The announcement states: 'Ab Montag, 28. Juli, sind wir ab 08:00 Uhr wieder wie gewohnt für Sie da'."
+      },
+      {
+        "question": "Welcher Arzt übernimmt die Vertretung bei dringenden Beschwerden?",
+        "questionEN": "Which doctor covers urgent medical issues during the closure?",
+        "options": [
+          "Dr. med. Stefan Fischer (Bahnhofstraße 14)",
+          "Dr. Weber im Krankenhaus",
+          "Es gibt keine Vertretung",
+          "Nur die Notaufnahme der Uniklinik"
+        ],
+        "correct": 0,
+        "explanation": "Notice explicitly states: 'Die Vertretung übernimmt freundlicherweise: Praxis Dr. med. Stefan Fischer'."
+      },
+      {
+        "question": "Welche Telefonnummer wählt man nachts oder am Wochenende bei dringenden Beschwerden?",
+        "questionEN": "Which phone number should one call at night or on weekends for urgent medical issues?",
+        "options": [
+          "116 117 (ärztlicher Bereitschaftsdienst)",
+          "Die Praxisnummer des Urlaubsarztes",
+          "0800 111 0 111",
+          "0900 123 456"
+        ],
+        "correct": 0,
+        "explanation": "'den bundesweiten ärztlichen Bereitschaftsdienst unter der kostenlosen Rufnummer 116 117'."
+      }
+    ]
+  }
+]

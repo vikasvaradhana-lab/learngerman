@@ -6,8 +6,8 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Goethe A1 Learning Portal & Exam Platform</title>
-    <meta name="description" content="Offline German Goethe A1 Learning Portal and Exam Platform with Practice Exercises, Mistakes tracker, Speech synthesis, and Analytics.">
+    <title>Goethe Deutsch — A1 bis C2 Lernportal & Exam Platform</title>
+    <meta name="description" content="Goethe Deutsch Lernportal & Prüfungsvorbereitung von A1 bis C2 mit Übungsmodulen, Modelltests, interactivem Hören und Vokabeltraining.">
     <link rel="stylesheet" href="styles.css?v=2.4.0">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,11 +22,11 @@
     <div class="app-container">
         <!-- Global Header -->
         <header class="app-header">
-            <div class="header-logo" id="header-logo-home" style="cursor: pointer;">
+            <div class="header-logo" id="header-logo-home" style="cursor: pointer;" title="Goethe Deutsch — A1 bis C2">
                 <div class="logo-icon">DE</div>
                 <div class="logo-text">
-                    <h1>Goethe A1</h1>
-                    <span>LEARNING PORTAL</span>
+                    <h1>Goethe Deutsch</h1>
+                    <span>A1 — C2 LERNPORTAL</span>
                 </div>
             </div>
 
@@ -39,7 +39,7 @@
                     <span class="badge-label">Tage</span>
                 </div>
 
-                <div class="stat-item level-badge">
+                <div class="stat-item level-badge" id="header-level-badge-item" title="Klicken zum Umschalten A1 / A2 / Click to switch level" style="cursor:pointer;" onclick="toggleHeaderLevel()">
                     <span class="badge-label">Stufe:</span>
                     <span id="header-level-badge" class="badge-value">A1</span>
                 </div>
@@ -114,9 +114,13 @@
                 <section id="view-landing-dashboard" class="view-panel active">
                     <div class="dashboard-hero-title">
                         <h2>GOETHE LEARNING PORTAL</h2>
-                        <div class="level-selector-row" style="display:flex;align-items:center;justify-content:center;gap:10px;margin:12px 0 6px;">
-                            <button id="btn-level-a1" class="btn level-btn level-btn-active" onclick="setActiveLevel('a1')" aria-pressed="true" title="Switch to A1">🎓 A1 — Starter</button>
-                            <button id="btn-level-a2" class="btn level-btn" onclick="setActiveLevel('a2')" aria-pressed="false" title="Switch to A2">📘 A2 — Elementary</button>
+                        <div class="level-selector-row" style="display:flex;align-items:center;justify-content:center;gap:10px;margin:14px 0 8px;flex-wrap:wrap;">
+                            <button id="btn-level-a1" class="btn level-btn level-btn-active" onclick="setActiveLevel('a1')" aria-pressed="true" title="A1 Starter — Verfügbar">🎓 A1 — Starter</button>
+                            <button id="btn-level-a2" class="btn level-btn" onclick="setActiveLevel('a2')" aria-pressed="false" title="A2 Elementary — Verfügbar">📘 A2 — Elementary</button>
+                            <button id="btn-level-b1" class="btn level-btn level-btn-locked" onclick="showLevelPlannedModal('B1', 'Mittelstufe / Intermediate')" title="B1 — In Vorbereitung">📗 B1 <span class="badge-planned">Geplant</span></button>
+                            <button id="btn-level-b2" class="btn level-btn level-btn-locked" onclick="showLevelPlannedModal('B2', 'Gute Mittelstufe / Upper Intermediate')" title="B2 — In Vorbereitung">📙 B2 <span class="badge-planned">Geplant</span></button>
+                            <button id="btn-level-c1" class="btn level-btn level-btn-locked" onclick="showLevelPlannedModal('C1', 'Fachkundig / Advanced')" title="C1 — In Vorbereitung">📕 C1 <span class="badge-planned">Geplant</span></button>
+                            <button id="btn-level-c2" class="btn level-btn level-btn-locked" onclick="showLevelPlannedModal('C2', 'Exzellente Kenntnisse / Mastery')" title="C2 — In Vorbereitung">🏆 C2 <span class="badge-planned">Geplant</span></button>
                         </div>
                         <div class="branding-divider">
                             <span class="divider-line"></span>
@@ -701,7 +705,7 @@
                 <!-- ==================== 3D. PHRASE BANK ==================== -->
                 <section id="view-phrase-bank" class="view-panel">
                     <div class="panel-header-nav">
-                        <button class="btn btn-secondary btn-back-home">&larr; Dashboard</button>
+                        <button class="btn btn-secondary btn-back-step" onclick="handleAppBackNavigation()">&larr; Zurück / Back</button>
                         <h2>Redewendungen / Phrase Bank</h2>
                     </div>
 
@@ -745,7 +749,7 @@
                 <!-- ==================== 3E. REAL-LIFE GERMAN SCENARIOS ==================== -->
                 <section id="view-real-life-modules" class="view-panel">
                     <div class="panel-header-nav">
-                        <button class="btn btn-secondary btn-back-home">&larr; Dashboard</button>
+                        <button class="btn btn-secondary btn-back-step" onclick="handleAppBackNavigation()">&larr; Zurück / Back</button>
                         <h2>Real-Life Deutsch / Practical Scenarios</h2>
                     </div>
 
@@ -852,7 +856,7 @@
                 <!-- ==================== 3E-2. INTERACTIVE HÖREN PRACTICE ==================== -->
                 <section id="view-interactive-hoeren" class="view-panel">
                     <div class="panel-header-nav">
-                        <button class="btn btn-secondary btn-back-home" onclick="handleHoerenBackNavigation()">&larr; Zurück / Back</button>
+                        <button class="btn btn-secondary btn-back-step" onclick="handleAppBackNavigation()">&larr; Zurück / Back</button>
                         <h2>🎧 Hören / Listening Practice</h2>
                     </div>
 
@@ -962,7 +966,7 @@
                 <!-- ==================== 3F. LISTENING STORY LIBRARY ==================== -->
                 <section id="view-listening-stories" class="view-panel">
                     <div class="panel-header-nav">
-                        <button class="btn btn-secondary btn-back-home">&larr; Dashboard</button>
+                        <button class="btn btn-secondary btn-back-step" onclick="handleAppBackNavigation()">&larr; Zurück / Back</button>
                         <h2>Hörgeschichten / German Listening Stories</h2>
                     </div>
 
@@ -1956,36 +1960,112 @@
             </div>
         </footer>
 
-                <!-- ==================== A2 PRACTICE MENU ==================== -->
+                                <!-- ==================== A2 PRACTICE MENU ==================== -->
                 <section id="view-a2-practice-menu" class="view-panel">
                     <div class="panel-header-nav">
                         <button class="btn btn-secondary btn-back-home">&larr; Dashboard</button>
                         <h2>A2 Übungsportal / A2 Practice Center</h2>
                     </div>
-                    <div class="a2-level-badge" style="text-align:center;margin-bottom:18px;">
-                        <span style="background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;padding:4px 16px;border-radius:20px;font-size:0.75rem;font-weight:800;letter-spacing:0.08em;">📘 GOETHE A2 — ELEMENTARY</span>
+
+                    <div class="a2-menu-header">
+                        <div class="a2-menu-hero-badge">📘 GOETHE A2 — ELEMENTARY</div>
+                        <h3 class="a2-menu-title">Wählen Sie einen Übungsbereich</h3>
+                        <p class="a2-menu-subtitle">Gezielte Vorbereitung auf die Goethe-Zertifikat A2 Prüfung mit interaktiven Übungen, Grammatikregeln und Hördialogen.</p>
+                        <div class="a2-feature-pills">
+                            <span class="a2-feature-pill">📖 8 Vokabelthemen</span>
+                            <span class="a2-feature-pill">🧠 6 Grammatikkapitel</span>
+                            <span class="a2-feature-pill">👁️ 3 Modell-Lesetexte</span>
+                            <span class="a2-feature-pill">🎧 15 Hörthemen (30 Dialoge)</span>
+                        </div>
                     </div>
-                    <div class="practice-topics-grid">
-                        <div class="practice-topic-card glass-panel" data-a2-topic="vocab" tabindex="0" role="button" aria-label="A2 Vocabulary practice" id="a2-card-vocab">
-                            <div class="topic-icon">📖</div>
-                            <h3>Wortschatz A2 / Vocabulary</h3>
-                            <p>Master expanded A2 vocabulary across 8 themes: Work, Travel, Technology, Environment, Family, Media, Health, Shopping.</p>
+
+                    <div class="a2-modules-grid">
+                        <!-- Card 1: Wortschatz -->
+                        <div class="a2-module-card a2-card-vocab glass-panel" data-a2-topic="vocab" tabindex="0" role="button" aria-label="Wortschatz A2">
+                            <div class="a2-card-top">
+                                <div class="a2-card-icon-box">📖</div>
+                                <span class="a2-card-badge badge-emerald">Wortschatz</span>
+                            </div>
+                            <div class="a2-card-body">
+                                <div class="a2-card-title">Wortschatz A2</div>
+                                <div class="a2-card-subtitle">Vocabulary & Expressions</div>
+                                <div class="a2-card-desc">Erweiterter A2-Wortschatz zu 8 Alltagsthemen (Beruf, Reisen, Technologie, Umwelt) mit Beispielen und Audio-Aussprache.</div>
+                                <div class="a2-tags-row">
+                                    <span class="a2-tag tag-emerald">8 Themen</span>
+                                    <span class="a2-tag">64 Wörter</span>
+                                    <span class="a2-tag">🔊 Audio</span>
+                                </div>
+                            </div>
+                            <div class="a2-card-footer">
+                                <span class="a2-card-action-text">Wortschatz lernen</span>
+                                <span class="a2-card-action-arrow">&rarr;</span>
+                            </div>
                         </div>
-                        <div class="practice-topic-card glass-panel" data-a2-topic="grammar" tabindex="0" role="button" aria-label="A2 Grammar practice" id="a2-card-grammar">
-                            <div class="topic-icon">🧠</div>
-                            <h3>Grammatik A2 / Grammar</h3>
-                            <p>Master A2 grammar: Perfekt, Komparativ, Konjunktionen (weil/dass/wenn), Reflexivverben, Trennbare Verben, Präpositionen.</p>
+
+                        <!-- Card 2: Grammatik -->
+                        <div class="a2-module-card a2-card-grammar glass-panel" data-a2-topic="grammar" tabindex="0" role="button" aria-label="Grammatik A2">
+                            <div class="a2-card-top">
+                                <div class="a2-card-icon-box">🧠</div>
+                                <span class="a2-card-badge badge-purple">Grammatik</span>
+                            </div>
+                            <div class="a2-card-body">
+                                <div class="a2-card-title">Grammatik A2</div>
+                                <div class="a2-card-subtitle">Grammar & Sentence Structure</div>
+                                <div class="a2-card-desc">Das Perfekt, Komparativ & Superlativ, Nebensätze mit weil/dass/wenn, reflexive Verben und trennbare Verben mit Übungen.</div>
+                                <div class="a2-tags-row">
+                                    <span class="a2-tag tag-purple">6 Kernregeln</span>
+                                    <span class="a2-tag">25 Übungen</span>
+                                    <span class="a2-tag">Erklärungen</span>
+                                </div>
+                            </div>
+                            <div class="a2-card-footer">
+                                <span class="a2-card-action-text">Grammatik üben</span>
+                                <span class="a2-card-action-arrow">&rarr;</span>
+                            </div>
                         </div>
-                        <div class="practice-topic-card glass-panel" data-a2-topic="reading" tabindex="0" role="button" aria-label="A2 Reading practice" id="a2-card-reading">
-                            <div class="topic-icon">👁️</div>
-                            <h3>Lesen A2 / Reading</h3>
-                            <p>Read longer emails, advertisements, instruction manuals, and social media posts. Answer comprehension questions.</p>
+
+                        <!-- Card 3: Lesen -->
+                        <div class="a2-module-card a2-card-reading glass-panel" data-a2-topic="reading" tabindex="0" role="button" aria-label="Lesen A2">
+                            <div class="a2-card-top">
+                                <div class="a2-card-icon-box">👁️</div>
+                                <span class="a2-card-badge badge-cyan">Lesen</span>
+                            </div>
+                            <div class="a2-card-body">
+                                <div class="a2-card-title">Lesen A2</div>
+                                <div class="a2-card-subtitle">Reading Comprehension</div>
+                                <div class="a2-card-desc">15 authentische A2-Texte: E-Mails, Briefe, Anzeigen, Anleitungen, Flyer und Aushänge mit Schlüsselwörtern, Lesetipps und Verständnisfragen.</div>
+                                <div class="a2-tags-row">
+                                    <span class="a2-tag tag-cyan">15 Lesetexte</span>
+                                    <span class="a2-tag">Fragen</span>
+                                    <span class="a2-tag">🌐 Übersetzung</span>
+                                </div>
+                            </div>
+                            <div class="a2-card-footer">
+                                <span class="a2-card-action-text">Texte lesen</span>
+                                <span class="a2-card-action-arrow">&rarr;</span>
+                            </div>
                         </div>
-                        <div class="practice-topic-card glass-panel" data-a2-topic="hoeren" tabindex="0" role="button" aria-label="A2 Interactive Listening Hub" id="a2-card-hoeren">
-                            <div class="topic-icon">🎧</div>
-                            <h3>Interaktives Hören A2</h3>
-                            <p>15 real-life A2 dialogue topics with audio controller, slow speed, 4 practice modes per dialogue. Complex A2-level conversations.</p>
-                            <div style="position:absolute;top:12px;right:12px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;font-size:0.65rem;font-weight:800;letter-spacing:0.08em;padding:3px 8px;border-radius:20px;">A2</div>
+
+                        <!-- Card 4: Interaktives Hören -->
+                        <div class="a2-module-card a2-card-hoeren glass-panel" data-a2-topic="hoeren" tabindex="0" role="button" aria-label="Interaktives Hören A2">
+                            <div class="a2-card-top">
+                                <div class="a2-card-icon-box">🎧</div>
+                                <span class="a2-card-badge badge-indigo">Interaktiv</span>
+                            </div>
+                            <div class="a2-card-body">
+                                <div class="a2-card-title">Interaktives Hören A2</div>
+                                <div class="a2-card-subtitle">Listening Comprehension Hub</div>
+                                <div class="a2-card-desc">15 lebensnahe A2-Themen mit je 2 Dialogen, Vorbereitung, Vokabelhilfe, Diktat, Lückentext und Rollenwechsel mit Audio.</div>
+                                <div class="a2-tags-row">
+                                    <span class="a2-tag tag-blue">15 Themen</span>
+                                    <span class="a2-tag">30 Dialoge</span>
+                                    <span class="a2-tag">4 Modi</span>
+                                </div>
+                            </div>
+                            <div class="a2-card-footer">
+                                <span class="a2-card-action-text">Hörtraining starten</span>
+                                <span class="a2-card-action-arrow">&rarr;</span>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -1993,7 +2073,7 @@
                 <!-- ==================== A2 INTERACTIVE HÖREN HUB ==================== -->
                 <section id="view-a2-interactive-hoeren" class="view-panel">
                     <div class="panel-header-nav">
-                        <button class="btn btn-secondary btn-back-home" id="a2-hoeren-back-btn" onclick="handleA2HoerenBackNavigation()">&larr; Zurück / Back</button>
+                        <button class="btn btn-secondary btn-back-step" id="a2-hoeren-back-btn" onclick="handleAppBackNavigation()">&larr; Zurück / Back</button>
                         <h2 id="a2-hoeren-hub-title">A2 Interaktives Hören</h2>
                     </div>
                     <div class="a2-level-badge" style="text-align:center;margin-bottom:12px;">
@@ -2020,10 +2100,42 @@
                     </div>
                 </section>
 
+                <!-- ==================== A2 INTERACTIVE LESEN HUB ==================== -->
+                <section id="view-a2-interactive-lesen" class="view-panel">
+                    <div class="panel-header-nav">
+                        <button class="btn btn-secondary btn-back-step" id="a2-lesen-back-btn" onclick="handleAppBackNavigation()">&larr; Zurück / Back</button>
+                        <h2 id="a2-lesen-hub-title">A2 Leseverstehen</h2>
+                    </div>
+                    <div class="a2-level-badge" style="text-align:center;margin-bottom:12px;">
+                        <span style="background:linear-gradient(135deg,#06b6d4,#3b82f6);color:#fff;padding:4px 16px;border-radius:20px;font-size:0.75rem;font-weight:800;letter-spacing:0.08em;">📘 GOETHE A2 — ELEMENTARY</span>
+                    </div>
+
+                    <!-- Stage 0: Topic Selection -->
+                    <div id="a2-lesen-topic-selection-hub" style="display:block;">
+                        <p style="text-align:center;color:var(--text-muted);margin-bottom:18px;">Wählen Sie ein A2-Thema / Choose an A2 reading topic:</p>
+                        <div id="a2-lesen-topics-grid" class="hoeren-topics-grid"></div>
+                    </div>
+
+                    <!-- Stage 1: Warm-Up (Schlüsselwörter & Lesetipps) -->
+                    <div id="a2-lesen-topic-warmup-hub" style="display:none;">
+                        <div id="a2-lesen-warmup-content"></div>
+                        <div style="text-align:center;margin:28px 0 20px 0;">
+                            <button id="a2-btn-start-reading-practice" class="btn btn-primary btn-large" onclick="openA2ReadingPractice()" style="background:linear-gradient(135deg,#06b6d4,#3b82f6);color:#fff;border:none;padding:16px 36px;font-size:1.1rem;font-weight:700;border-radius:12px;box-shadow:0 6px 20px rgba(6,182,212,0.35);cursor:pointer;">
+                                📝 Zum Lesetext & Fragen / Start Reading Practice &rarr;
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Stage 2: Practice Workspace (Lesetext & Fragen) -->
+                    <div id="a2-lesen-practice-workspace" style="display:none;">
+                        <div id="a2-lesen-practice-content"></div>
+                    </div>
+                </section>
+
                 <!-- ==================== A2 PRACTICE WORKSPACE ==================== -->
                 <section id="view-a2-practice-workspace" class="view-panel">
                     <div class="panel-header-nav">
-                        <button class="btn btn-secondary" id="a2-practice-back-btn">&larr; Zurück / Back</button>
+                        <button class="btn btn-secondary btn-back-step" id="a2-practice-back-btn" onclick="handleAppBackNavigation()">&larr; Zurück / Back</button>
                         <h2 id="a2-practice-workspace-title">A2 Übung</h2>
                     </div>
                     <div id="a2-practice-workspace-content"></div>
@@ -2044,8 +2156,18 @@
     </div>
 
     <!-- Script loading -->
-    <script src="app.js?v=2.8.0"></script>
-    <script src="v22_additions.js?v=2.8.0"></script>
-    <script src="a2_module.js?v=1.0.0"></script>
+    <script src="app.js?v=2.8.2"></script>
+    <script src="v22_additions.js?v=2.8.2"></script>
+    <script src="a2_module.js?v=1.0.9"></script>
+    <!-- Planned Level Modal -->
+    <div class="modal-overlay" id="planned-level-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); z-index: 9999; align-items: center; justify-content: center;" role="dialog" aria-modal="true">
+        <div class="planned-level-modal-card glass-panel">
+            <div style="font-size: 2.8rem; margin-bottom: 12px;" id="planned-modal-icon">🚀</div>
+            <h3 id="planned-modal-title" style="margin-bottom: 8px; color: #fff; font-size: 1.3rem;">Stufe in Vorbereitung</h3>
+            <p id="planned-modal-desc" style="color: var(--color-text-secondary); margin-bottom: 20px; line-height: 1.6; font-size: 0.95rem;">Diese CEFR-Stufe ist Teil unserer Erweiterung bis C2. Aktuell stehen Ihnen A1 und A2 vollumfänglich zur Verfügung!</p>
+            <button class="btn btn-primary" onclick="closeLevelPlannedModal()" style="padding: 10px 24px;">Verstanden / Got it</button>
+        </div>
+    </div>
+
 </body>
 </html>
