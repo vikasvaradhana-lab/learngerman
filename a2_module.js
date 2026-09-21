@@ -173,10 +173,10 @@ const A2_GRAMMAR_DATABASE = {
             { rule: "Partizip II: irregular verbs", example: "fahren → gefahren, essen → gegessen, schreiben → geschrieben" }
         ],
         questions: [
-            { type: "fillBlank", sentence: "Ich _____ gestern ins Kino gegangen.", target: "bin", options: ["bin", "habe", "war"], explanation: "gehen takes sein: bin gegangen." },
-            { type: "fillBlank", sentence: "Er _____ das Buch gelesen.", target: "hat", options: ["hat", "ist", "wird"], explanation: "lesen takes haben: hat gelesen." },
-            { type: "fillBlank", sentence: "Sie _____ nach Hamburg geflogen.", target: "ist", options: ["ist", "hat", "sein"], explanation: "fliegen takes sein: ist geflogen." },
-            { type: "fillBlank", sentence: "Wir _____ Pizza gegessen.", target: "haben", options: ["haben", "sind", "waren"], explanation: "essen takes haben: haben gegessen." },
+            { type: "fillBlank", sentence: "Ich _____ gestern ins Kino gegangen.", sentenceEN: "I went to the cinema yesterday.", target: "bin", options: ["bin", "habe", "war"], explanation: "gehen takes sein: bin gegangen." },
+            { type: "fillBlank", sentence: "Er _____ das Buch gelesen.", sentenceEN: "He read the book.", target: "hat", options: ["hat", "ist", "wird"], explanation: "lesen takes haben: hat gelesen." },
+            { type: "fillBlank", sentence: "Sie _____ nach Hamburg geflogen.", sentenceEN: "She flew to Hamburg.", target: "ist", options: ["ist", "hat", "sein"], explanation: "fliegen takes sein: ist geflogen." },
+            { type: "fillBlank", sentence: "Wir _____ Pizza gegessen.", sentenceEN: "We ate pizza.", target: "haben", options: ["haben", "sind", "waren"], explanation: "essen takes haben: haben gegessen." },
             { type: "multiChoice", question: "What is the Partizip II of 'schreiben'?", options: ["geschrieben", "schrieben", "geschreibt", "geschrieb"], correct: 0, explanation: "schreiben (irregular) → geschrieben." },
             { type: "multiChoice", question: "Which verb takes 'sein' in Perfekt?", options: ["kommen", "kaufen", "lesen", "schreiben"], correct: 0, explanation: "kommen is a movement verb → ist gekommen." }
         ]
@@ -208,9 +208,9 @@ const A2_GRAMMAR_DATABASE = {
             { rule: "obwohl (although) → verb goes to end", example: "Er geht spazieren, obwohl es regnet." }
         ],
         questions: [
-            { type: "fillBlank", sentence: "Ich lerne Deutsch, _____ ich in München arbeiten will.", target: "weil", options: ["weil", "aber", "und"], explanation: "weil = because; triggers verb-last word order." },
-            { type: "fillBlank", sentence: "Sie sagt, _____ sie krank ist.", target: "dass", options: ["dass", "weil", "wenn"], explanation: "dass introduces a subordinate clause." },
-            { type: "fillBlank", sentence: "_____ du Hunger hast, essen wir sofort.", target: "Wenn", options: ["Wenn", "Weil", "Dass"], explanation: "Wenn = when/if, for conditional/temporal clauses." },
+            { type: "fillBlank", sentence: "Ich lerne Deutsch, _____ ich in München arbeiten will.", sentenceEN: "I learn German because I want to work in Munich.", target: "weil", options: ["weil", "aber", "und"], explanation: "weil = because; triggers verb-last word order." },
+            { type: "fillBlank", sentence: "Sie sagt, _____ sie krank ist.", sentenceEN: "She says that she is ill.", target: "dass", options: ["dass", "weil", "wenn"], explanation: "dass introduces a subordinate clause." },
+            { type: "fillBlank", sentence: "_____ du Hunger hast, essen wir sofort.", sentenceEN: "If you are hungry, we will eat right away.", target: "Wenn", options: ["Wenn", "Weil", "Dass"], explanation: "Wenn = when/if, for conditional/temporal clauses." },
             { type: "multiChoice", question: "Which word order is correct with 'weil'?", options: ["Ich komme nicht, weil ich krank bin.", "Ich komme nicht, weil bin ich krank.", "Ich komme nicht, weil ich bin krank."], correct: 0, explanation: "With weil, the conjugated verb goes to the very end." }
         ]
     },
@@ -224,9 +224,9 @@ const A2_GRAMMAR_DATABASE = {
             { rule: "sich vorstellen (to introduce oneself)", example: "Ich möchte mich kurz vorstellen." }
         ],
         questions: [
-            { type: "fillBlank", sentence: "Ich freue _____ auf das Wochenende.", target: "mich", options: ["mich", "sich", "dich"], explanation: "Ich → reflexive pronoun is 'mich'." },
-            { type: "fillBlank", sentence: "Er wäscht _____ jeden Morgen.", target: "sich", options: ["sich", "mich", "mir"], explanation: "er/sie/es → reflexive pronoun is 'sich'." },
-            { type: "fillBlank", sentence: "Kannst du _____ an seinen Namen erinnern?", target: "dich", options: ["dich", "sich", "mich"], explanation: "du → reflexive pronoun is 'dich'." },
+            { type: "fillBlank", sentence: "Ich freue _____ auf das Wochenende.", sentenceEN: "I am looking forward to the weekend.", target: "mich", options: ["mich", "sich", "dich"], explanation: "Ich → reflexive pronoun is 'mich'." },
+            { type: "fillBlank", sentence: "Er wäscht _____ jeden Morgen.", sentenceEN: "He washes himself every morning.", target: "sich", options: ["sich", "mich", "mir"], explanation: "er/sie/es → reflexive pronoun is 'sich'." },
+            { type: "fillBlank", sentence: "Kannst du _____ an seinen Namen erinnern?", sentenceEN: "Can you remember his name?", target: "dich", options: ["dich", "sich", "mich"], explanation: "du → reflexive pronoun is 'dich'." },
             { type: "multiChoice", question: "What is the reflexive pronoun for 'wir'?", options: ["uns", "sich", "euch", "mich"], correct: 0, explanation: "wir → reflexive pronoun is 'uns'." }
         ]
     },
@@ -240,8 +240,8 @@ const A2_GRAMMAR_DATABASE = {
             { rule: "In Perfekt: ge- goes between prefix and stem", example: "anrufen → angerufen | aufmachen → aufgemacht" }
         ],
         questions: [
-            { type: "fillBlank", sentence: "Er macht die Tür _____. (aufmachen — prefix)", target: "auf", options: ["auf", "zu", "an"], explanation: "aufmachen splits: macht ... auf" },
-            { type: "fillBlank", sentence: "Ich habe gestern meine Mutter _____. (anrufen Perfekt)", target: "angerufen", options: ["angerufen", "gerufen an", "angeruft"], explanation: "Perfekt of anrufen = angerufen." },
+            { type: "fillBlank", sentence: "Er macht die Tür _____. (aufmachen — prefix)", sentenceEN: "He opens the door.", target: "auf", options: ["auf", "zu", "an"], explanation: "aufmachen splits: macht ... auf" },
+            { type: "fillBlank", sentence: "Ich habe gestern meine Mutter _____. (anrufen Perfekt)", sentenceEN: "I called my mother yesterday.", target: "angerufen", options: ["angerufen", "gerufen an", "angeruft"], explanation: "Perfekt of anrufen = angerufen." },
             { type: "multiChoice", question: "Which sentence is correct for 'aufstehen'?", options: ["Ich stehe um 7 Uhr auf.", "Ich aufstehe um 7 Uhr.", "Ich stehe auf um 7 Uhr auf."], correct: 0, explanation: "The prefix 'auf' goes to the end of the main clause." }
         ]
     },
@@ -254,9 +254,9 @@ const A2_GRAMMAR_DATABASE = {
             { rule: "Wechselpräpositionen — location = Dativ, direction = Akkusativ", example: "Ich bin in der Schule. (Dat) / Ich gehe in die Schule. (Akk)" }
         ],
         questions: [
-            { type: "fillBlank", sentence: "Das Buch liegt auf _____ Tisch. (der — location)", target: "dem", options: ["dem", "den", "die"], explanation: "auf + location → Dativ: auf dem Tisch." },
-            { type: "fillBlank", sentence: "Ich lege das Buch auf _____ Tisch. (der — direction)", target: "den", options: ["den", "dem", "die"], explanation: "auf + direction → Akkusativ: auf den Tisch." },
-            { type: "fillBlank", sentence: "Das Geschenk ist für _____ Kind. (das)", target: "das", options: ["das", "dem", "den"], explanation: "für always takes Akkusativ: für das Kind." },
+            { type: "fillBlank", sentence: "Das Buch liegt auf _____ Tisch. (der — location)", sentenceEN: "The book is lying on the table. (location -> Dative)", target: "dem", options: ["dem", "den", "die"], explanation: "auf + location → Dativ: auf dem Tisch." },
+            { type: "fillBlank", sentence: "Ich lege das Buch auf _____ Tisch. (der — direction)", sentenceEN: "I place the book onto the table. (direction -> Accusative)", target: "den", options: ["den", "dem", "die"], explanation: "auf + direction → Akkusativ: auf den Tisch." },
+            { type: "fillBlank", sentence: "Das Geschenk ist für _____ Kind. (das)", sentenceEN: "The gift is for the child. (für -> Accusative)", target: "das", options: ["das", "dem", "den"], explanation: "für always takes Akkusativ: für das Kind." },
             { type: "multiChoice", question: "Which preposition always takes Dativ?", options: ["mit", "durch", "für", "um"], correct: 0, explanation: "mit always takes Dativ." }
         ]
     }
@@ -270,28 +270,31 @@ const A2_READING_DATABASE = [
     {
         id: "a2_read_1", title: "Stellenausschreibung: Büroassistenz", titleEN: "Job Ad: Office Assistant",
         text: "**Stellenausschreibung**\n\nWir suchen ab sofort eine/n **Büroassistent/in** (m/w/d) in Vollzeit für unser Team in München.\n\n**Ihre Aufgaben:**\n- Bearbeitung der täglichen Korrespondenz per E-Mail und Post\n- Terminkoordination für das Management-Team\n- Empfang von Besuchern und Kundenbetreuung\n\n**Wir bieten:**\n- Unbefristeter Vertrag\n- 28 Urlaubstage pro Jahr\n- Möglichkeit zum Homeoffice (1 Tag/Woche)\n\nBitte senden Sie Ihre Bewerbungsunterlagen an: bewerbung@beispiel-gmbh.de",
+        textEN: "**Job Advertisement**\n\nWe are looking immediately for a full-time **Office Assistant** (m/f/d) for our team in Munich.\n\n**Your Tasks:**\n- Processing daily correspondence via email and post\n- Appointment coordination for the management team\n- Reception of visitors and customer support\n\n**We Offer:**\n- Permanent contract\n- 28 vacation days per year\n- Option for home office (1 day/week)\n\nPlease send your application documents to: bewerbung@beispiel-gmbh.de",
         questions: [
-            { question: "Wann kann man mit der Stelle anfangen?", options: ["Sofort / Immediately", "Erst nächstes Jahr", "Im Januar", "Nach einer Probezeit"], correct: 0, explanation: "The ad says 'ab sofort'." },
-            { question: "Wie viele Urlaubstage gibt es pro Jahr?", options: ["28 Tage", "20 Tage", "30 Tage", "25 Tage"], correct: 0, explanation: "The ad states '28 Urlaubstage pro Jahr'." },
-            { question: "Was ist NICHT in den Aufgaben enthalten?", options: ["Buchhaltung / Accounting", "Korrespondenz", "Terminkoordination", "Kundenbetreuung"], correct: 0, explanation: "Buchhaltung is not mentioned in the Aufgaben list." }
+            { question: "Wann kann man mit der Stelle anfangen?", questionEN: "When can one start the job?", options: ["Sofort / Immediately", "Erst nächstes Jahr", "Im Januar", "Nach einer Probezeit"], correct: 0, explanation: "The ad says 'ab sofort' (immediately)." },
+            { question: "Wie viele Urlaubstage gibt es pro Jahr?", questionEN: "How many vacation days are there per year?", options: ["28 Tage", "20 Tage", "30 Tage", "25 Tage"], correct: 0, explanation: "The ad states '28 Urlaubstage pro Jahr'." },
+            { question: "Was ist NICHT in den Aufgaben enthalten?", questionEN: "What is NOT included in the tasks?", options: ["Buchhaltung / Accounting", "Korrespondenz", "Terminkoordination", "Kundenbetreuung"], correct: 0, explanation: "Buchhaltung (accounting) is not mentioned in the tasks list." }
         ]
     },
     {
         id: "a2_read_2", title: "E-Mail an den Vermieter", titleEN: "Email to the Landlord",
         text: "**Betreff:** Reparatur der Heizung\n\nSehr geehrter Herr Schreiber,\n\nich schreibe Ihnen wegen eines dringenden Problems. Seit Montag funktioniert die Heizung im Wohnzimmer nicht mehr. Die Temperaturen sind unter null Grad und es ist sehr kalt.\n\nIch habe bereits versucht, das Problem selbst zu lösen, aber es ist mir leider nicht gelungen. Das Thermostat reagiert nicht.\n\nKönnten Sie bitte so schnell wie möglich einen Handwerker schicken? Ich bin täglich von 8 bis 18 Uhr zu Hause.\n\nMit freundlichen Grüßen,\nMarina Fonseca",
+        textEN: "**Subject:** Repair of the heating\n\nDear Mr. Schreiber,\n\nI am writing to you because of an urgent problem. Since Monday the heating in the living room has not been working. The temperatures are below zero degrees and it is very cold.\n\nI have already tried to solve the problem myself, but unfortunately I did not succeed. The thermostat does not respond.\n\nCould you please send a repair technician as soon as possible? I am at home daily from 8 AM to 6 PM.\n\nKind regards,\nMarina Fonseca",
         questions: [
-            { question: "Was ist das Problem in der Wohnung?", options: ["Die Heizung funktioniert nicht.", "Das Fenster ist kaputt.", "Es gibt kein warmes Wasser.", "Die Tür schließt nicht."], correct: 0, explanation: "Marina writes: 'die Heizung im Wohnzimmer funktioniert nicht mehr'." },
-            { question: "Seit wann gibt es das Problem?", options: ["Seit Montag", "Seit einer Woche", "Seit gestern", "Seit dem Winter"], correct: 0, explanation: "She writes 'Seit Montag funktioniert die Heizung nicht mehr'." },
-            { question: "Wann ist Marina zu Hause?", options: ["Von 8 bis 18 Uhr", "Von 9 bis 17 Uhr", "Nur am Wochenende", "Den ganzen Tag"], correct: 0, explanation: "She writes 'Ich bin täglich von 8 bis 18 Uhr zu Hause'." }
+            { question: "Was ist das Problem in der Wohnung?", questionEN: "What is the problem in the apartment?", options: ["Die Heizung funktioniert nicht.", "Das Fenster ist kaputt.", "Es gibt kein warmes Wasser.", "Die Tür schließt nicht."], correct: 0, explanation: "Marina writes: 'die Heizung im Wohnzimmer funktioniert nicht mehr' (heating does not work)." },
+            { question: "Seit wann gibt es das Problem?", questionEN: "Since when has the problem existed?", options: ["Seit Montag", "Seit einer Woche", "Seit gestern", "Seit dem Winter"], correct: 0, explanation: "She writes 'Seit Montag funktioniert die Heizung nicht mehr' (since Monday)." },
+            { question: "Wann ist Marina zu Hause?", questionEN: "When is Marina at home?", options: ["Von 8 bis 18 Uhr", "Von 9 bis 17 Uhr", "Nur am Wochenende", "Den ganzen Tag"], correct: 0, explanation: "She writes 'Ich bin täglich von 8 bis 18 Uhr zu Hause' (daily from 8 to 18)." }
         ]
     },
     {
         id: "a2_read_3", title: "Anleitung: Paket zurückschicken", titleEN: "Instructions: Returning a Parcel",
         text: "**So senden Sie Ihr Paket zurück — in 4 einfachen Schritten:**\n\n**Schritt 1:** Füllen Sie das Rücksendeformular aus.\n\n**Schritt 2:** Verpacken Sie den Artikel sicher in der Originalverpackung.\n\n**Schritt 3:** Kleben Sie das Rücksendeetikett auf das Paket. Das Etikett finden Sie auf unserem Kundenportal unter 'Meine Bestellungen'.\n\n**Schritt 4:** Geben Sie das Paket bei einer Postfiliale ab.\n\n**Wichtig:** Die Rücksendung muss innerhalb von 30 Tagen nach Erhalt erfolgen. Die Rückerstattung erfolgt innerhalb von 7 Werktagen.",
+        textEN: "**How to return your parcel — in 4 simple steps:**\n\n**Step 1:** Fill out the return form.\n\n**Step 2:** Pack the item securely in the original packaging.\n\n**Step 3:** Stick the return label onto the parcel. You can find the label on our customer portal under 'My Orders'.\n\n**Step 4:** Drop off the parcel at a post office branch.\n\n**Important:** The return must be made within 30 days of receipt. The refund will be issued within 7 working days.",
         questions: [
-            { question: "Wo findet man das Rücksendeetikett?", options: ["Auf dem Kundenportal unter 'Meine Bestellungen'", "In der Verpackung", "Per E-Mail automatisch", "Beim Paketshop"], correct: 0, explanation: "Step 3 says: 'Das Etikett finden Sie auf unserem Kundenportal'." },
-            { question: "Innerhalb welcher Frist muss man zurückschicken?", options: ["30 Tage", "14 Tage", "60 Tage", "7 Tage"], correct: 0, explanation: "'innerhalb von 30 Tagen nach Erhalt'." },
-            { question: "Wie lange dauert die Rückerstattung?", options: ["7 Werktage", "14 Werktage", "30 Tage", "24 Stunden"], correct: 0, explanation: "'innerhalb von 7 Werktagen nach Eingang des Pakets'." }
+            { question: "Wo findet man das Rücksendeetikett?", questionEN: "Where can one find the return label?", options: ["Auf dem Kundenportal unter 'Meine Bestellungen'", "In der Verpackung", "Per E-Mail automatisch", "Beim Paketshop"], correct: 0, explanation: "Step 3 states: 'Das Etikett finden Sie auf unserem Kundenportal' (on customer portal)." },
+            { question: "Innerhalb welcher Frist muss man zurückschicken?", questionEN: "Within what period must one return it?", options: ["30 Tage", "14 Tage", "60 Tage", "7 Tage"], correct: 0, explanation: "'innerhalb von 30 Tagen nach Erhalt' (within 30 days)." },
+            { question: "Wie lange dauert die Rückerstattung?", questionEN: "How long does the refund take?", options: ["7 Werktage", "14 Werktage", "30 Tage", "24 Stunden"], correct: 0, explanation: "'innerhalb von 7 Werktagen' (within 7 working days)." }
         ]
     }
 ];
@@ -328,9 +331,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "sich spezialisieren auf", translation: "to specialise in" },
                     { word: "digitales Marketing", translation: "digital marketing" }
                 ],
-                fillBlank: { sentence: "Frau Keller hat sich auf _____ spezialisiert.", target: "digitales Marketing", options: ["digitales Marketing", "Buchhaltung", "Personalwesen"] },
-                role: { speaker1: "Erzählen Sie etwas über Ihre Berufserfahrung.", options: ["Ich habe drei Jahre als Projektassistentin gearbeitet.", "Ich esse gerne Pizza.", "Das Wetter ist schön heute."], correct: 0 },
-                trueFalse: { statement: "Frau Keller hat drei Jahre als Buchhalterin gearbeitet.", correct: false, explanation: "Falsch: Sie hat als Projektassistentin gearbeitet, nicht als Buchhalterin." }
+                fillBlank: { sentence: "Frau Keller hat sich auf _____ spezialisiert.", sentenceEN: "Ms. Keller specialised in _____.", target: "digitales Marketing", options: ["digitales Marketing", "Buchhaltung", "Personalwesen"] },
+                role: { speaker1: "Erzählen Sie etwas über Ihre Berufserfahrung.", speaker1EN: "Tell us something about your professional experience.", options: ["Ich habe drei Jahre als Projektassistentin gearbeitet.", "Ich esse gerne Pizza.", "Das Wetter ist schön heute."], correct: 0 },
+                trueFalse: { statement: "Frau Keller hat drei Jahre als Buchhalterin gearbeitet.", statementEN: "Ms. Keller worked for three years as an accountant.", correct: false, explanation: "Falsch: Sie hat als Projektassistentin gearbeitet, nicht als Buchhalterin." }
             },
             {
                 id: "a2_hoer_job_2", title: "Gehalt und Bedingungen", titleEN: "Salary and Conditions",
@@ -341,9 +344,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "das Homeoffice", translation: "working from home" },
                     { word: "antreten", translation: "to take up / start a position" }
                 ],
-                fillBlank: { sentence: "Das Unternehmen bietet _____ Urlaubstage an.", target: "30", options: ["30", "25", "28"] },
-                role: { speaker1: "Was ist Ihre Gehaltsvorstellung?", options: ["Ich stelle mir rund 3.200 Euro brutto vor.", "Ich trinke gerne Kaffee.", "Das Büro ist sehr groß."], correct: 0 },
-                trueFalse: { statement: "Frau Keller soll zum ersten November anfangen.", correct: false, explanation: "Falsch: Der Interviewer sagt 'Idealerweise zum ersten Oktober'." }
+                fillBlank: { sentence: "Das Unternehmen bietet _____ Urlaubstage an.", sentenceEN: "The company offers _____ vacation days.", target: "30", options: ["30", "25", "28"] },
+                role: { speaker1: "Was ist Ihre Gehaltsvorstellung?", speaker1EN: "What is your salary expectation?", options: ["Ich stelle mir rund 3.200 Euro brutto vor.", "Ich trinke gerne Kaffee.", "Das Büro ist sehr groß."], correct: 0 },
+                trueFalse: { statement: "Frau Keller soll zum ersten November anfangen.", statementEN: "Ms. Keller is supposed to start on the 1st of November.", correct: false, explanation: "Falsch: Der Interviewer sagt 'Idealerweise zum ersten Oktober'." }
             }
         ]
     },
@@ -374,9 +377,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "das Anmeldeformular", translation: "registration form" },
                     { word: "die Bearbeitung", translation: "processing" }
                 ],
-                fillBlank: { sentence: "Die Bearbeitung dauert etwa _____ Minuten.", target: "10", options: ["10", "30", "60"] },
-                role: { speaker1: "Welche Dokumente brauche ich für die Anmeldung?", options: ["Personalausweis, Wohnungsgeberbestätigung und das Anmeldeformular.", "Nur den Reisepass.", "Eine Geburtsurkunde reicht."], correct: 0 },
-                trueFalse: { statement: "Die Person ist vor einem Monat nach Frankfurt gezogen.", correct: false, explanation: "Falsch: Sie sagt 'Ich bin letzte Woche nach Frankfurt gezogen'." }
+                fillBlank: { sentence: "Die Bearbeitung dauert etwa _____ Minuten.", sentenceEN: "Processing takes about _____ minutes.", target: "10", options: ["10", "30", "60"] },
+                role: { speaker1: "Welche Dokumente brauche ich für die Anmeldung?", speaker1EN: "Which documents do I need for registration (Anmeldung)?", options: ["Personalausweis, Wohnungsgeberbestätigung und das Anmeldeformular.", "Nur den Reisepass.", "Eine Geburtsurkunde reicht."], correct: 0 },
+                trueFalse: { statement: "Die Person ist vor einem Monat nach Frankfurt gezogen.", statementEN: "The person moved to Frankfurt one month ago.", correct: false, explanation: "Falsch: Sie sagt 'Ich bin letzte Woche nach Frankfurt gezogen'." }
             },
             {
                 id: "a2_hoer_beh_2", title: "Aufenthaltserlaubnis beantragen", titleEN: "Applying for a Residence Permit",
@@ -387,9 +390,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "die Lohnabrechnung", translation: "payslip" },
                     { word: "das Passfoto", translation: "passport photo" }
                 ],
-                fillBlank: { sentence: "Die Person braucht _____ Passfotos.", target: "zwei", options: ["zwei", "vier", "ein"] },
-                role: { speaker1: "Was brauche ich für die Aufenthaltserlaubnis?", options: ["Pass, Arbeitsvertrag, Lohnabrechnung und Passfotos.", "Nur den Personalausweis.", "Eine Einladung vom Arbeitgeber."], correct: 0 },
-                trueFalse: { statement: "Die Person hat einen befristeten Arbeitsvertrag.", correct: false, explanation: "Falsch: Sie sagt 'Ja, einen unbefristeten Arbeitsvertrag'." }
+                fillBlank: { sentence: "Die Person braucht _____ Passfotos.", sentenceEN: "The person needs _____ passport photos.", target: "zwei", options: ["zwei", "vier", "ein"] },
+                role: { speaker1: "Was brauche ich für die Aufenthaltserlaubnis?", speaker1EN: "What do I need for the residence permit?", options: ["Pass, Arbeitsvertrag, Lohnabrechnung und Passfotos.", "Nur den Personalausweis.", "Eine Einladung vom Arbeitgeber."], correct: 0 },
+                trueFalse: { statement: "Die Person hat einen befristeten Arbeitsvertrag.", statementEN: "The person has a temporary employment contract.", correct: false, explanation: "Falsch: Sie sagt 'Ja, einen unbefristeten Arbeitsvertrag'." }
             }
         ]
     },
@@ -420,9 +423,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "sich beteiligen", translation: "to participate / take part" },
                     { word: "die Nachhilfe", translation: "private tutoring" }
                 ],
-                fillBlank: { sentence: "Luis soll mindestens _____ Stunden Nachhilfe pro Woche bekommen.", target: "zwei", options: ["zwei", "drei", "fünf"] },
-                role: { speaker1: "Hat mein Kind Probleme in der Schule?", options: ["Er hat Schwierigkeiten in Mathematik, aber beteiligt sich aktiv.", "Nein, keine Probleme.", "Er fehlt oft."], correct: 0 },
-                trueFalse: { statement: "Luis beteiligt sich nicht am Unterricht.", correct: false, explanation: "Falsch: Die Lehrerin sagt 'Er beteiligt sich aktiv am Unterricht'." }
+                fillBlank: { sentence: "Luis soll mindestens _____ Stunden Nachhilfe pro Woche bekommen.", sentenceEN: "Luis should receive at least _____ hours of tutoring per week.", target: "zwei", options: ["zwei", "drei", "fünf"] },
+                role: { speaker1: "Hat mein Kind Probleme in der Schule?", speaker1EN: "Is my child having problems at school?", options: ["Er hat Schwierigkeiten in Mathematik, aber beteiligt sich aktiv.", "Nein, keine Probleme.", "Er fehlt oft."], correct: 0 },
+                trueFalse: { statement: "Luis beteiligt sich nicht am Unterricht.", statementEN: "Luis does not participate in class.", correct: false, explanation: "Falsch: Die Lehrerin sagt 'Er beteiligt sich aktiv am Unterricht'." }
             },
             {
                 id: "a2_hoer_sch_2", title: "Krankmeldung fürs Kind", titleEN: "Sick Note for a Child",
@@ -433,9 +436,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "das Fieber", translation: "fever / temperature" },
                     { word: "das Attest", translation: "medical certificate" }
                 ],
-                fillBlank: { sentence: "Ab dem _____ Kranktag braucht man ein Attest.", target: "dritten", options: ["dritten", "ersten", "zweiten"] },
-                role: { speaker1: "Braucht mein Kind ein Attest?", options: ["Ab dem dritten Kranktag, ja.", "Nein, nie.", "Sofort am ersten Tag."], correct: 0 },
-                trueFalse: { statement: "Lena hat Bauchschmerzen.", correct: false, explanation: "Falsch: Die Mutter sagt 'Sie hat Fieber', nicht Bauchschmerzen." }
+                fillBlank: { sentence: "Ab dem _____ Kranktag braucht man ein Attest.", sentenceEN: "From the _____ sick day onwards a medical certificate is required.", target: "dritten", options: ["dritten", "ersten", "zweiten"] },
+                role: { speaker1: "Braucht mein Kind ein Attest?", speaker1EN: "Does my child need a medical certificate?", options: ["Ab dem dritten Kranktag, ja.", "Nein, nie.", "Sofort am ersten Tag."], correct: 0 },
+                trueFalse: { statement: "Lena hat Bauchschmerzen.", statementEN: "Lena has a stomach ache.", correct: false, explanation: "Falsch: Die Mutter sagt 'Sie hat Fieber', nicht Bauchschmerzen." }
             }
         ]
     },
@@ -466,9 +469,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "All-inclusive", translation: "all-inclusive" },
                     { word: "die Halbpension", translation: "half board" }
                 ],
-                fillBlank: { sentence: "Im Mai und September sind die Preise am _____.", target: "niedrigsten", options: ["niedrigsten", "höchsten", "gleichen"] },
-                role: { speaker1: "Wann sind die Preise für Mallorca am günstigsten?", options: ["In der Nebensaison, im Mai oder September.", "Im Sommer, im Juli.", "Im Dezember."], correct: 0 },
-                trueFalse: { statement: "Das Angebot kostet 1.840 Euro für eine Person.", correct: false, explanation: "Falsch: Die Beraterin sagt 'für beide zusammen 1.840 Euro'." }
+                fillBlank: { sentence: "Im Mai und September sind die Preise am _____.", sentenceEN: "In May and September prices are the _____.", target: "niedrigsten", options: ["niedrigsten", "höchsten", "gleichen"] },
+                role: { speaker1: "Wann sind die Preise für Mallorca am günstigsten?", speaker1EN: "When are the prices for Mallorca cheapest?", options: ["In der Nebensaison, im Mai oder September.", "Im Sommer, im Juli.", "Im Dezember."], correct: 0 },
+                trueFalse: { statement: "Das Angebot kostet 1.840 Euro für eine Person.", statementEN: "The package costs 1,840 euros for one person.", correct: false, explanation: "Falsch: Die Beraterin sagt 'für beide zusammen 1.840 Euro'." }
             },
             {
                 id: "a2_hoer_rei_2", title: "Am Flughafen — Check-in", titleEN: "At the Airport — Check-in",
@@ -479,9 +482,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "das Aufgabegepäck", translation: "checked luggage" },
                     { word: "die Bordkarte", translation: "boarding pass" }
                 ],
-                fillBlank: { sentence: "Der Koffer wiegt _____ Kilo.", target: "23", options: ["23", "30", "15"] },
-                role: { speaker1: "Kann ich einen Fensterplatz bekommen?", options: ["Leider sind nur noch Mittelplätze frei.", "Ja, natürlich!", "Der Platz ist schon besetzt."], correct: 0 },
-                trueFalse: { statement: "Das Freigepäck beträgt 30 Kilo.", correct: false, explanation: "Falsch: Die Mitarbeiterin sagt 'Ihr Freigepäck beträgt 23 Kilo'." }
+                fillBlank: { sentence: "Der Koffer wiegt _____ Kilo.", sentenceEN: "The suitcase weighs _____ kilos.", target: "23", options: ["23", "30", "15"] },
+                role: { speaker1: "Kann ich einen Fensterplatz bekommen?", speaker1EN: "Can I get a window seat?", options: ["Leider sind nur noch Mittelplätze frei.", "Ja, natürlich!", "Der Platz ist schon besetzt."], correct: 0 },
+                trueFalse: { statement: "Das Freigepäck beträgt 30 Kilo.", statementEN: "The free baggage allowance is 30 kilos.", correct: false, explanation: "Falsch: Die Mitarbeiterin sagt 'Ihr Freigepäck beträgt 23 Kilo'." }
             }
         ]
     },
@@ -512,9 +515,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "der Seitenspiegel", translation: "wing mirror" },
                     { word: "das Schadensformular", translation: "claim form" }
                 ],
-                fillBlank: { sentence: "Der Schaden ist in der _____ passiert.", target: "Tiefgarage", options: ["Tiefgarage", "Werkstatt", "Straße"] },
-                role: { speaker1: "Was soll ich als nächstes tun?", options: ["Das Schadensformular ausfüllen und Fotos hochladen.", "Zur Polizei gehen.", "Den Schaden ignorieren."], correct: 0 },
-                trueFalse: { statement: "Herr Richter hat keine Fotos gemacht.", correct: false, explanation: "Falsch: Er sagt 'Ja, ich habe mehrere Fotos'." }
+                fillBlank: { sentence: "Der Schaden ist in der _____ passiert.", sentenceEN: "The damage happened in the _____.", target: "Tiefgarage", options: ["Tiefgarage", "Werkstatt", "Straße"] },
+                role: { speaker1: "Was soll ich als nächstes tun?", speaker1EN: "What should I do next?", options: ["Das Schadensformular ausfüllen und Fotos hochladen.", "Zur Polizei gehen.", "Den Schaden ignorieren."], correct: 0 },
+                trueFalse: { statement: "Herr Richter hat keine Fotos gemacht.", statementEN: "Mr. Richter took no photos.", correct: false, explanation: "Falsch: Er sagt 'Ja, ich habe mehrere Fotos'." }
             },
             {
                 id: "a2_hoer_ver_2", title: "Vertrag kündigen", titleEN: "Cancelling a Contract",
@@ -525,9 +528,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "eingehen", translation: "to be received (formal)" },
                     { word: "einreichen", translation: "to submit / hand in" }
                 ],
-                fillBlank: { sentence: "Die Kündigung muss spätestens am _____ eingehen.", target: "1. März", options: ["1. März", "31. März", "1. Februar"] },
-                role: { speaker1: "Wie kann ich meinen Vertrag kündigen?", options: ["Per E-Mail mit Unterschrift oder über das Kundenportal.", "Nur persönlich im Shop.", "Per Telefon reicht aus."], correct: 0 },
-                trueFalse: { statement: "Der Vertrag läuft bis zum 30. April.", correct: false, explanation: "Falsch: Der Mitarbeiter sagt 'Ihr Vertrag läuft noch bis zum 31. März'." }
+                fillBlank: { sentence: "Die Kündigung muss spätestens am _____ eingehen.", sentenceEN: "The cancellation must arrive by _____ at the latest.", target: "1. März", options: ["1. März", "31. März", "1. Februar"] },
+                role: { speaker1: "Wie kann ich meinen Vertrag kündigen?", speaker1EN: "How can I cancel my contract?", options: ["Per E-Mail mit Unterschrift oder über das Kundenportal.", "Nur persönlich im Shop.", "Per Telefon reicht aus."], correct: 0 },
+                trueFalse: { statement: "Der Vertrag läuft bis zum 30. April.", statementEN: "The contract runs until April 30th.", correct: false, explanation: "Falsch: Der Mitarbeiter sagt 'Ihr Vertrag läuft noch bis zum 31. März'." }
             }
         ]
     },
@@ -558,9 +561,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "die Ausfahrt", translation: "motorway exit" },
                     { word: "unverletzt", translation: "uninjured" }
                 ],
-                fillBlank: { sentence: "Der Pannendienst kommt in etwa _____ Minuten.", target: "40", options: ["40", "20", "60"] },
-                role: { speaker1: "Haben Sie das Warndreieck aufgestellt?", options: ["Ja, habe ich.", "Nein, ich habe keins.", "Was ist ein Warndreieck?"], correct: 0 },
-                trueFalse: { statement: "Die Person ist verletzt.", correct: false, explanation: "Falsch: Die Person sagt 'Ja, mir geht es gut'." }
+                fillBlank: { sentence: "Der Pannendienst kommt in etwa _____ Minuten.", sentenceEN: "Breakdown service arrives in about _____ minutes.", target: "40", options: ["40", "20", "60"] },
+                role: { speaker1: "Haben Sie das Warndreieck aufgestellt?", speaker1EN: "Have you set up the warning triangle?", options: ["Ja, habe ich.", "Nein, ich habe keins.", "Was ist ein Warndreieck?"], correct: 0 },
+                trueFalse: { statement: "Die Person ist verletzt.", statementEN: "The person is injured.", correct: false, explanation: "Falsch: Die Person sagt 'Ja, mir geht es gut'." }
             },
             {
                 id: "a2_hoer_aut_2", title: "In der Werkstatt", titleEN: "At the Car Workshop",
@@ -571,9 +574,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "abschleppen", translation: "to tow (a vehicle)" },
                     { word: "die Batterie", translation: "battery (car)" }
                 ],
-                fillBlank: { sentence: "Das Ergebnis der Diagnose kommt in _____ Stunden.", target: "zwei", options: ["zwei", "vier", "sechs"] },
-                role: { speaker1: "Was könnte das Problem mit meinem Auto sein?", options: ["Das klingt nach einem Batterieproblem.", "Das Öl ist leer.", "Die Bremsen sind kaputt."], correct: 0 },
-                trueFalse: { statement: "Der Mechaniker braucht 24 Stunden für die Diagnose.", correct: false, explanation: "Falsch: Er sagt 'Das Ergebnis haben Sie in zwei Stunden'." }
+                fillBlank: { sentence: "Das Ergebnis der Diagnose kommt in _____ Stunden.", sentenceEN: "The diagnostic result will come in _____ hours.", target: "zwei", options: ["zwei", "vier", "sechs"] },
+                role: { speaker1: "Was könnte das Problem mit meinem Auto sein?", speaker1EN: "What could be the problem with my car?", options: ["Das klingt nach einem Batterieproblem.", "Das Öl ist leer.", "Die Bremsen sind kaputt."], correct: 0 },
+                trueFalse: { statement: "Der Mechaniker braucht 24 Stunden für die Diagnose.", statementEN: "The mechanic needs 24 hours for the diagnosis.", correct: false, explanation: "Falsch: Er sagt 'Das Ergebnis haben Sie in zwei Stunden'." }
             }
         ]
     },
@@ -604,9 +607,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "Verpackungen", translation: "packaging" },
                     { word: "Pfandflaschen", translation: "deposit bottles" }
                 ],
-                fillBlank: { sentence: "Papier kommt in die _____ Tonne.", target: "blaue", options: ["blaue", "gelbe", "schwarze"] },
-                role: { speaker1: "Wohin kommt das Plastik?", options: ["In die gelbe Tonne.", "In die blaue Tonne.", "In die schwarze Tonne."], correct: 0 },
-                trueFalse: { statement: "Glasflaschen kommen in die blaue Tonne.", correct: false, explanation: "Falsch: Glas bringt man zum Glascontainer, nicht in die blaue Tonne." }
+                fillBlank: { sentence: "Papier kommt in die _____ Tonne.", sentenceEN: "Paper goes into the _____ bin.", target: "blaue", options: ["blaue", "gelbe", "schwarze"] },
+                role: { speaker1: "Wohin kommt das Plastik?", speaker1EN: "Where does plastic go?", options: ["In die gelbe Tonne.", "In die blaue Tonne.", "In die schwarze Tonne."], correct: 0 },
+                trueFalse: { statement: "Glasflaschen kommen in die blaue Tonne.", statementEN: "Glass bottles go into the blue bin.", correct: false, explanation: "Falsch: Glas bringt man zum Glascontainer, nicht in die blaue Tonne." }
             },
             {
                 id: "a2_hoer_umw_2", title: "Sperrmüll anmelden", titleEN: "Registering Bulky Waste",
@@ -617,9 +620,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "der Gehweg", translation: "pavement / footpath" },
                     { word: "der Kühlschrank", translation: "fridge / refrigerator" }
                 ],
-                fillBlank: { sentence: "Der Sperrmüll soll bis _____ Uhr rausgestellt werden.", target: "20", options: ["20", "18", "22"] },
-                role: { speaker1: "Kostet der Sperrmüll etwas?", options: ["Nein, für Haushalte ist es kostenlos.", "Ja, 30 Euro.", "Ja, je nach Gewicht."], correct: 0 },
-                trueFalse: { statement: "Der Sperrmülltermin ist am 15. Dezember.", correct: false, explanation: "Falsch: Der Termin ist am 15. November." }
+                fillBlank: { sentence: "Der Sperrmüll soll bis _____ Uhr rausgestellt werden.", sentenceEN: "Bulky waste should be placed outside by _____ o'clock.", target: "20", options: ["20", "18", "22"] },
+                role: { speaker1: "Kostet der Sperrmüll etwas?", speaker1EN: "Does bulky waste collection cost anything?", options: ["Nein, für Haushalte ist es kostenlos.", "Ja, 30 Euro.", "Ja, je nach Gewicht."], correct: 0 },
+                trueFalse: { statement: "Der Sperrmülltermin ist am 15. Dezember.", statementEN: "The bulky waste date is on December 15th.", correct: false, explanation: "Falsch: Der Termin ist am 15. November." }
             }
         ]
     },
@@ -650,9 +653,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "sich ernähren", translation: "to eat / nourish oneself" },
                     { word: "integrieren", translation: "to integrate / incorporate" }
                 ],
-                fillBlank: { sentence: "Man soll mindestens _____ Liter Wasser pro Tag trinken.", target: "zwei", options: ["zwei", "einen", "drei"] },
-                role: { speaker1: "Was ist Ihr Ernährungsziel?", options: ["Ich möchte abnehmen und mich gesünder ernähren.", "Ich will mehr Fast Food essen.", "Ich möchte Sport machen."], correct: 0 },
-                trueFalse: { statement: "Frau Sánchez trinkt täglich zwei Liter Wasser.", correct: false, explanation: "Falsch: Sie sagt 'Höchstens einen halben Liter'." }
+                fillBlank: { sentence: "Man soll mindestens _____ Liter Wasser pro Tag trinken.", sentenceEN: "One should drink at least _____ litres of water per day.", target: "zwei", options: ["zwei", "einen", "drei"] },
+                role: { speaker1: "Was ist Ihr Ernährungsziel?", speaker1EN: "What is your dietary goal?", options: ["Ich möchte abnehmen und mich gesünder ernähren.", "Ich will mehr Fast Food essen.", "Ich möchte Sport machen."], correct: 0 },
+                trueFalse: { statement: "Frau Sánchez trinkt täglich zwei Liter Wasser.", statementEN: "Ms. Sánchez drinks two litres of water daily.", correct: false, explanation: "Falsch: Sie sagt 'Höchstens einen halben Liter'." }
             },
             {
                 id: "a2_hoer_ges_2", title: "Beim Hausarzt: Erschöpfung", titleEN: "At the GP: Exhaustion",
@@ -663,9 +666,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "der Schlaf-Wach-Rhythmus", translation: "sleep-wake cycle" },
                     { word: "die Bildschirmzeit", translation: "screen time" }
                 ],
-                fillBlank: { sentence: "Der Arzt ordnet eine _____ an.", target: "Blutuntersuchung", options: ["Blutuntersuchung", "Röntgenaufnahme", "Physiotherapie"] },
-                role: { speaker1: "Was kann mir bei den Schlafproblemen helfen?", options: ["Mehr Bewegung und weniger Bildschirmzeit vor dem Schlafen.", "Mehr Kaffee trinken.", "Früher aufstehen."], correct: 0 },
-                trueFalse: { statement: "Herr Fischer schläft abends sehr gut.", correct: false, explanation: "Falsch: Er sagt 'Ich kann abends nicht einschlafen'." }
+                fillBlank: { sentence: "Der Arzt ordnet eine _____ an.", sentenceEN: "The doctor orders a _____.", target: "Blutuntersuchung", options: ["Blutuntersuchung", "Röntgenaufnahme", "Physiotherapie"] },
+                role: { speaker1: "Was kann mir bei den Schlafproblemen helfen?", speaker1EN: "What can help me with sleep problems?", options: ["Mehr Bewegung und weniger Bildschirmzeit vor dem Schlafen.", "Mehr Kaffee trinken.", "Früher aufstehen."], correct: 0 },
+                trueFalse: { statement: "Herr Fischer schläft abends sehr gut.", statementEN: "Mr. Fischer sleeps very well in the evening.", correct: false, explanation: "Falsch: Er sagt 'Ich kann abends nicht einschlafen'." }
             }
         ]
     },
@@ -696,9 +699,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "besteigen", translation: "to climb / ascend" },
                     { word: "der Treffpunkt", translation: "meeting point" }
                 ],
-                fillBlank: { sentence: "Der Turm des Doms kostet _____ Euro pro Person.", target: "6", options: ["6", "10", "15"] },
-                role: { speaker1: "Was empfehlen Sie uns in Köln?", options: ["Zuerst den Kölner Dom — er ist weltberühmt.", "Das Rathaus.", "Den Zoo."], correct: 0 },
-                trueFalse: { statement: "Die englische Stadtführung beginnt um 11 Uhr.", correct: false, explanation: "Falsch: Die englische Führung ist um 14 Uhr, die deutsche um 11 Uhr." }
+                fillBlank: { sentence: "Der Turm des Doms kostet _____ Euro pro Person.", sentenceEN: "The cathedral tower costs _____ euros per person.", target: "6", options: ["6", "10", "15"] },
+                role: { speaker1: "Was empfehlen Sie uns in Köln?", speaker1EN: "What do you recommend to us in Cologne?", options: ["Zuerst den Kölner Dom — er ist weltberühmt.", "Das Rathaus.", "Den Zoo."], correct: 0 },
+                trueFalse: { statement: "Die englische Stadtführung beginnt um 11 Uhr.", statementEN: "The English city tour starts at 11 AM.", correct: false, explanation: "Falsch: Die englische Führung ist um 14 Uhr, die deutsche um 11 Uhr." }
             },
             {
                 id: "a2_hoer_sta_2", title: "Im Museum", titleEN: "At the Museum",
@@ -709,9 +712,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "die Garderobe", translation: "cloakroom / coat check" },
                     { word: "ausleihen", translation: "to borrow / hire" }
                 ],
-                fillBlank: { sentence: "Ein Audioguide kostet _____ Euro.", target: "3", options: ["3", "5", "10"] },
-                role: { speaker1: "Wo kann ich meinen Rucksack abgeben?", options: ["An der Garderobe links neben dem Eingang.", "Beim Kassierer.", "Es gibt keine Garderobe."], correct: 0 },
-                trueFalse: { statement: "Alle Taschen müssen abgegeben werden.", correct: false, explanation: "Falsch: Nur Taschen über A4-Größe müssen abgegeben werden." }
+                fillBlank: { sentence: "Ein Audioguide kostet _____ Euro.", sentenceEN: "An audio guide costs _____ euros.", target: "3", options: ["3", "5", "10"] },
+                role: { speaker1: "Wo kann ich meinen Rucksack abgeben?", speaker1EN: "Where can I check in my backpack?", options: ["An der Garderobe links neben dem Eingang.", "Beim Kassierer.", "Es gibt keine Garderobe."], correct: 0 },
+                trueFalse: { statement: "Alle Taschen müssen abgegeben werden.", statementEN: "All bags must be checked in.", correct: false, explanation: "Falsch: Nur Taschen über A4-Größe müssen abgegeben werden." }
             }
         ]
     },
@@ -742,9 +745,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "zurücksetzen", translation: "to reset" },
                     { word: "das Ersatzgerät", translation: "replacement device" }
                 ],
-                fillBlank: { sentence: "Das Ersatzgerät oder die Rückerstattung kommt innerhalb von _____ Werktagen.", target: "5", options: ["5", "14", "30"] },
-                role: { speaker1: "Was soll ich mit dem defekten Gerät machen?", options: ["Zurückschicken mit dem kostenlosen Rücksendeetikett.", "Es selbst reparieren.", "Im Laden abgeben."], correct: 0 },
-                trueFalse: { statement: "Der Lautsprecher funktioniert nach dem Zurücksetzen.", correct: false, explanation: "Falsch: Der Kunde hat es mehrfach zurückgesetzt — es funktioniert noch immer nicht." }
+                fillBlank: { sentence: "Das Ersatzgerät oder die Rückerstattung kommt innerhalb von _____ Werktagen.", sentenceEN: "The replacement device or refund arrives within _____ working days.", target: "5", options: ["5", "14", "30"] },
+                role: { speaker1: "Was soll ich mit dem defekten Gerät machen?", speaker1EN: "What should I do with the defective device?", options: ["Zurückschicken mit dem kostenlosen Rücksendeetikett.", "Es selbst reparieren.", "Im Laden abgeben."], correct: 0 },
+                trueFalse: { statement: "Der Lautsprecher funktioniert nach dem Zurücksetzen.", statementEN: "The speaker works after resetting.", correct: false, explanation: "Falsch: Der Kunde hat es mehrfach zurückgesetzt — es funktioniert noch immer nicht." }
             },
             {
                 id: "a2_hoer_ons_2", title: "Lieferung nicht angekommen", titleEN: "Delivery Not Arrived",
@@ -755,9 +758,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "weiterleiten", translation: "to forward / redirect" },
                     { word: "die Expresslieferung", translation: "express delivery" }
                 ],
-                fillBlank: { sentence: "Das Paket liegt im _____.", target: "Verteilerzentrum", options: ["Verteilerzentrum", "Supermarkt", "Postamt"] },
-                role: { speaker1: "Was ist mit meinem Paket passiert?", options: ["Es liegt im Verteilerzentrum und wurde nicht weitergeleitet.", "Es wurde gestohlen.", "Es wurde falsch adressiert."], correct: 0 },
-                trueFalse: { statement: "Der Fehler liegt beim Kunden.", correct: false, explanation: "Falsch: Der Mitarbeiter sagt 'Das war ein Fehler unsererseits'." }
+                fillBlank: { sentence: "Das Paket liegt im _____.", sentenceEN: "The parcel is in the _____.", target: "Verteilerzentrum", options: ["Verteilerzentrum", "Supermarkt", "Postamt"] },
+                role: { speaker1: "Was ist mit meinem Paket passiert?", speaker1EN: "What happened to my package?", options: ["Es liegt im Verteilerzentrum und wurde nicht weitergeleitet.", "Es wurde gestohlen.", "Es wurde falsch adressiert."], correct: 0 },
+                trueFalse: { statement: "Der Fehler liegt beim Kunden.", statementEN: "The mistake was on the customer's part.", correct: false, explanation: "Falsch: Der Mitarbeiter sagt 'Das war ein Fehler unsererseits'." }
             }
         ]
     },
@@ -788,9 +791,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "einziehen", translation: "to move in" },
                     { word: "ordentlich", translation: "tidy / neat" }
                 ],
-                fillBlank: { sentence: "Die Miete beträgt _____ Euro warm.", target: "450", options: ["450", "500", "400"] },
-                role: { speaker1: "Was sucht ihr in einem Mitbewohner?", options: ["Jemanden, der ordentlich ist.", "Jemanden, der viel kocht.", "Jemanden mit einem Auto."], correct: 0 },
-                trueFalse: { statement: "In der WG wohnen momentan drei Personen.", correct: false, explanation: "Falsch: Tim sagt 'Wir sind momentan zu zweit'." }
+                fillBlank: { sentence: "Die Miete beträgt _____ Euro warm.", sentenceEN: "The rent is _____ euros warm (including utilities).", target: "450", options: ["450", "500", "400"] },
+                role: { speaker1: "Was sucht ihr in einem Mitbewohner?", speaker1EN: "What are you looking for in a flatmate?", options: ["Jemanden, der ordentlich ist.", "Jemanden, der viel kocht.", "Jemanden mit einem Auto."], correct: 0 },
+                trueFalse: { statement: "In der WG wohnen momentan drei Personen.", statementEN: "Currently three people live in the flatshare.", correct: false, explanation: "Falsch: Tim sagt 'Wir sind momentan zu zweit'." }
             },
             {
                 id: "a2_hoer_wg_2", title: "Lärmbeschwerden beim Nachbarn", titleEN: "Noise Complaint to the Neighbour",
@@ -801,9 +804,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "die Hausordnung", translation: "house rules" },
                     { word: "sich entschuldigen", translation: "to apologise" }
                 ],
-                fillBlank: { sentence: "Musik ist laut Hausordnung nur bis _____ Uhr erlaubt.", target: "22", options: ["22", "23", "24"] },
-                role: { speaker1: "Warum haben Sie mich nachts geweckt?", options: ["Die Musik war sehr laut und ich konnte nicht schlafen.", "Der Hund hat gebellt.", "Die Heizung war zu laut."], correct: 0 },
-                trueFalse: { statement: "Der Nachbar entschuldigt sich nicht.", correct: false, explanation: "Falsch: Er sagt 'Das tut mir sehr leid' und 'Ich entschuldige mich nochmals'." }
+                fillBlank: { sentence: "Musik ist laut Hausordnung nur bis _____ Uhr erlaubt.", sentenceEN: "According to house rules, music is only allowed until _____ o'clock.", target: "22", options: ["22", "23", "24"] },
+                role: { speaker1: "Warum haben Sie mich nachts geweckt?", speaker1EN: "Why did you wake me up at night?", options: ["Die Musik war sehr laut und ich konnte nicht schlafen.", "Der Hund hat gebellt.", "Die Heizung war zu laut."], correct: 0 },
+                trueFalse: { statement: "Der Nachbar entschuldigt sich nicht.", statementEN: "The neighbour does not apologise.", correct: false, explanation: "Falsch: Er sagt 'Das tut mir sehr leid' und 'Ich entschuldige mich nochmals'." }
             }
         ]
     },
@@ -834,9 +837,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "aufnehmen", translation: "to accept / enrol (a child)" },
                     { word: "die Besichtigung", translation: "visit / viewing" }
                 ],
-                fillBlank: { sentence: "Die Kita nimmt Kinder ab _____ Monaten auf.", target: "12", options: ["12", "6", "24"] },
-                role: { speaker1: "Wie alt muss das Kind für die Kita sein?", options: ["Mindestens 12 Monate alt.", "Mindestens 2 Jahre.", "Ab 3 Jahren."], correct: 0 },
-                trueFalse: { statement: "Frau Nguyen braucht den Platz sofort.", correct: false, explanation: "Falsch: Sie sagt 'Ab September nächsten Jahres'." }
+                fillBlank: { sentence: "Die Kita nimmt Kinder ab _____ Monaten auf.", sentenceEN: "The daycare accepts children from _____ months old.", target: "12", options: ["12", "6", "24"] },
+                role: { speaker1: "Wie alt muss das Kind für die Kita sein?", speaker1EN: "How old must the child be for daycare?", options: ["Mindestens 12 Monate alt.", "Mindestens 2 Jahre.", "Ab 3 Jahren."], correct: 0 },
+                trueFalse: { statement: "Frau Nguyen braucht den Platz sofort.", statementEN: "Ms. Nguyen needs the spot immediately.", correct: false, explanation: "Falsch: Sie sagt 'Ab September nächsten Jahres'." }
             },
             {
                 id: "a2_hoer_kit_2", title: "Gespräch mit der Erzieherin", titleEN: "Conversation with the Nursery Teacher",
@@ -847,9 +850,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "Fortschritte machen", translation: "to make progress" },
                     { word: "das Tempo", translation: "pace / speed" }
                 ],
-                fillBlank: { sentence: "Max hat letzte Woche mit _____ Kindern ein Puzzle gemacht.", target: "zwei", options: ["zwei", "drei", "keinen"] },
-                role: { speaker1: "Ich mache mir Sorgen, weil mein Sohn nicht mit anderen spielt.", options: ["Er braucht mehr Zeit, aber macht Fortschritte.", "Das ist ein großes Problem.", "Sie sollten einen Arzt aufsuchen."], correct: 0 },
-                trueFalse: { statement: "Die Erzieherin hat nichts bemerkt.", correct: false, explanation: "Falsch: Sie sagt 'Ich habe das auch bemerkt'." }
+                fillBlank: { sentence: "Max hat letzte Woche mit _____ Kindern ein Puzzle gemacht.", sentenceEN: "Last week Max did a puzzle with _____ children.", target: "zwei", options: ["zwei", "drei", "keinen"] },
+                role: { speaker1: "Ich mache mir Sorgen, weil mein Sohn nicht mit anderen spielt.", speaker1EN: "I am worried because my son does not play with others.", options: ["Er braucht mehr Zeit, aber macht Fortschritte.", "Das ist ein großes Problem.", "Sie sollten einen Arzt aufsuchen."], correct: 0 },
+                trueFalse: { statement: "Die Erzieherin hat nichts bemerkt.", statementEN: "The educator did not notice anything.", correct: false, explanation: "Falsch: Sie sagt 'Ich habe das auch bemerkt'." }
             }
         ]
     },
@@ -880,9 +883,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "die Hobbymannschaft", translation: "recreational / social team" },
                     { word: "zum Spaß", translation: "for fun" }
                 ],
-                fillBlank: { sentence: "Der monatliche Beitrag beträgt _____ Euro.", target: "20", options: ["20", "50", "100"] },
-                role: { speaker1: "Welche Mannschaft möchten Sie beitreten?", options: ["Die Hobbymannschaft, weil ich zum Spaß spielen möchte.", "Die Profimannschaft.", "Ich bin mir noch nicht sicher."], correct: 0 },
-                trueFalse: { statement: "Das Training findet jeden Dienstag statt.", correct: false, explanation: "Falsch: Das Training ist jeden Mittwoch um 19 Uhr." }
+                fillBlank: { sentence: "Der monatliche Beitrag beträgt _____ Euro.", sentenceEN: "The monthly membership fee is _____ euros.", target: "20", options: ["20", "50", "100"] },
+                role: { speaker1: "Welche Mannschaft möchten Sie beitreten?", speaker1EN: "Which team would you like to join?", options: ["Die Hobbymannschaft, weil ich zum Spaß spielen möchte.", "Die Profimannschaft.", "Ich bin mir noch nicht sicher."], correct: 0 },
+                trueFalse: { statement: "Das Training findet jeden Dienstag statt.", statementEN: "The training takes place every Tuesday.", correct: false, explanation: "Falsch: Das Training ist jeden Mittwoch um 19 Uhr." }
             },
             {
                 id: "a2_hoer_spo_2", title: "Mitgliedschaft kündigen", titleEN: "Cancelling a Membership",
@@ -893,9 +896,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "der Empfang", translation: "reception" },
                     { word: "abgeben", translation: "to hand in / submit" }
                 ],
-                fillBlank: { sentence: "Die Kündigungsfrist beträgt _____ Wochen.", target: "vier", options: ["vier", "zwei", "acht"] },
-                role: { speaker1: "Wie kann ich meine Mitgliedschaft kündigen?", options: ["Das Formular ausfüllen und am Empfang abgeben.", "Per E-Mail.", "Nur persönlich beim Vorstand."], correct: 0 },
-                trueFalse: { statement: "Die Person kann sofort zum Ende dieses Monats kündigen.", correct: false, explanation: "Falsch: Die Kündigungsfrist beträgt vier Wochen, also Ende nächsten Monats." }
+                fillBlank: { sentence: "Die Kündigungsfrist beträgt _____ Wochen.", sentenceEN: "The cancellation notice period is _____ weeks.", target: "vier", options: ["vier", "zwei", "acht"] },
+                role: { speaker1: "Wie kann ich meine Mitgliedschaft kündigen?", speaker1EN: "How can I cancel my membership?", options: ["Das Formular ausfüllen und am Empfang abgeben.", "Per E-Mail.", "Nur persönlich beim Vorstand."], correct: 0 },
+                trueFalse: { statement: "Die Person kann sofort zum Ende dieses Monats kündigen.", statementEN: "The person can cancel immediately by the end of this month.", correct: false, explanation: "Falsch: Die Kündigungsfrist beträgt vier Wochen, also Ende nächsten Monats." }
             }
         ]
     },
@@ -926,9 +929,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "die EC-Karte", translation: "debit card" },
                     { word: "anlegen", translation: "to create / set up (an account)" }
                 ],
-                fillBlank: { sentence: "Die Person möchte nur die _____ haben.", target: "EC-Karte", options: ["EC-Karte", "Kreditkarte", "Bankkarte"] },
-                role: { speaker1: "Welche Dokumente brauche ich für ein Konto?", options: ["Reisepass und Meldebescheinigung.", "Nur den Reisepass.", "Arbeitsvertrag und Reisepass."], correct: 0 },
-                trueFalse: { statement: "Die Person möchte auch eine Kreditkarte.", correct: false, explanation: "Falsch: Sie sagt 'Nur die EC-Karte, bitte'." }
+                fillBlank: { sentence: "Die Person möchte nur die _____ haben.", sentenceEN: "The person only wants to have the _____.", target: "EC-Karte", options: ["EC-Karte", "Kreditkarte", "Bankkarte"] },
+                role: { speaker1: "Welche Dokumente brauche ich für ein Konto?", speaker1EN: "Which documents do I need for a bank account?", options: ["Reisepass und Meldebescheinigung.", "Nur den Reisepass.", "Arbeitsvertrag und Reisepass."], correct: 0 },
+                trueFalse: { statement: "Die Person möchte auch eine Kreditkarte.", statementEN: "The person also wants a credit card.", correct: false, explanation: "Falsch: Sie sagt 'Nur die EC-Karte, bitte'." }
             },
             {
                 id: "a2_hoer_ban_2", title: "Kredit beantragen", titleEN: "Applying for a Loan",
@@ -939,9 +942,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "die Gehaltsabrechnung", translation: "payslip" },
                     { word: "der Wohnsitznachweis", translation: "proof of residence" }
                 ],
-                fillBlank: { sentence: "Die monatliche Rate beträgt circa _____ Euro.", target: "240", options: ["240", "300", "180"] },
-                role: { speaker1: "Was brauche ich für den Kreditantrag?", options: ["Drei Gehaltsabrechnungen, Wohnsitznachweis und Ausweis.", "Nur den Reisepass.", "Einen Bürgen."], correct: 0 },
-                trueFalse: { statement: "Der Zinssatz beträgt 9,9% pro Jahr.", correct: false, explanation: "Falsch: Der Berater sagt 'bei einem Zinssatz von 4,9% pro Jahr'." }
+                fillBlank: { sentence: "Die monatliche Rate beträgt circa _____ Euro.", sentenceEN: "The monthly installment is approximately _____ euros.", target: "240", options: ["240", "300", "180"] },
+                role: { speaker1: "Was brauche ich für den Kreditantrag?", speaker1EN: "What do I need for the loan application?", options: ["Drei Gehaltsabrechnungen, Wohnsitznachweis und Ausweis.", "Nur den Reisepass.", "Einen Bürgen."], correct: 0 },
+                trueFalse: { statement: "Der Zinssatz beträgt 9,9% pro Jahr.", statementEN: "The interest rate is 9.9% per year.", correct: false, explanation: "Falsch: Der Berater sagt 'bei einem Zinssatz von 4,9% pro Jahr'." }
             }
         ]
     },
@@ -972,9 +975,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "Vorerkrankungen", translation: "pre-existing conditions" },
                     { word: "Bluthochdruck", translation: "high blood pressure" }
                 ],
-                fillBlank: { sentence: "Der Mann hat seit etwa _____ Brustschmerzen.", target: "einer Stunde", options: ["einer Stunde", "zwei Stunden", "einem Tag"] },
-                role: { speaker1: "Welche Vorerkrankungen hat Ihr Mann?", options: ["Er hat Bluthochdruck und nimmt täglich Tabletten.", "Er ist kerngesund.", "Er hat Diabetes."], correct: 0 },
-                trueFalse: { statement: "Der Mann wird nach Hause geschickt.", correct: false, explanation: "Falsch: Er wird sofort zum EKG gebracht." }
+                fillBlank: { sentence: "Der Mann hat seit etwa _____ Brustschmerzen.", sentenceEN: "The man has had chest pain for about _____.", target: "einer Stunde", options: ["einer Stunde", "zwei Stunden", "einem Tag"] },
+                role: { speaker1: "Welche Vorerkrankungen hat Ihr Mann?", speaker1EN: "What pre-existing conditions does your husband have?", options: ["Er hat Bluthochdruck und nimmt täglich Tabletten.", "Er ist kerngesund.", "Er hat Diabetes."], correct: 0 },
+                trueFalse: { statement: "Der Mann wird nach Hause geschickt.", statementEN: "The man is being sent home.", correct: false, explanation: "Falsch: Er wird sofort zum EKG gebracht." }
             },
             {
                 id: "a2_hoer_not_2", title: "In der Apotheke", titleEN: "At the Pharmacy",
@@ -985,9 +988,9 @@ const A2_INTERACTIVE_HOEREN_DATABASE = {
                     { word: "die Zuzahlung", translation: "co-payment" },
                     { word: "auf nüchternen Magen", translation: "on an empty stomach" }
                 ],
-                fillBlank: { sentence: "Die Tabletten sollen _____ täglich eingenommen werden.", target: "dreimal", options: ["dreimal", "einmal", "zweimal"] },
-                role: { speaker1: "Wie nehme ich die Tabletten ein?", options: ["Dreimal täglich nach dem Essen mit viel Wasser.", "Einmal morgens auf nüchternen Magen.", "Zweimal täglich vor dem Schlafen."], correct: 0 },
-                trueFalse: { statement: "Der Patient zahlt den vollen Preis von 8,50 Euro.", correct: false, explanation: "Falsch: Mit Krankenkassenkarte zahlt er nur die Zuzahlung von 5 Euro." }
+                fillBlank: { sentence: "Die Tabletten sollen _____ täglich eingenommen werden.", sentenceEN: "The tablets should be taken _____ daily.", target: "dreimal", options: ["dreimal", "einmal", "zweimal"] },
+                role: { speaker1: "Wie nehme ich die Tabletten ein?", speaker1EN: "How do I take the tablets?", options: ["Dreimal täglich nach dem Essen mit viel Wasser.", "Einmal morgens auf nüchternen Magen.", "Zweimal täglich vor dem Schlafen."], correct: 0 },
+                trueFalse: { statement: "Der Patient zahlt den vollen Preis von 8,50 Euro.", statementEN: "The patient pays the full price of 8.50 euros.", correct: false, explanation: "Falsch: Mit Krankenkassenkarte zahlt er nur die Zuzahlung von 5 Euro." }
             }
         ]
     }
@@ -1132,18 +1135,53 @@ function renderA2HoerenPracticeWorkspace(topicKey, dialogueIndex, mode) {
 
     let practiceHtml = "";
     if (mode === "dictation") {
-        practiceHtml = `<div class="hoeren-practice-section glass-panel"><h4>🎯 Diktat — Hören und tippen</h4><p style="color:var(--color-text-muted);">Hören Sie den Dialog und schreiben Sie, was Sie hören.</p><textarea id="a2-dictation-input" class="dictation-textarea" placeholder="Tippen Sie hier..." rows="5" style="width:100%;margin-top:12px;padding:12px;border-radius:8px;border:1px solid var(--color-border);background:var(--color-panel-solid);color:var(--color-text-primary);"></textarea><div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap;"><button class="btn btn-primary" onclick="checkA2Dictation('${topicKey}', ${dialogueIndex})">Antwort prüfen</button><button class="btn btn-secondary" onclick="showA2DictationAnswer('${topicKey}', ${dialogueIndex})">Lösung zeigen</button></div><div id="a2-dictation-feedback" style="margin-top:14px;"></div></div>`;
+        practiceHtml = `<div class="hoeren-practice-section glass-panel">
+            <h4>🎯 Diktat — Hören und tippen <span style="font-size:0.85rem;font-weight:normal;color:var(--color-text-muted);">(Dictation — Listen & Type)</span></h4>
+            <p style="color:var(--color-text-muted);">Hören Sie den Dialog und schreiben Sie, was Sie hören. <span style="font-style:italic;">(Listen to the audio and write what you hear.)</span></p>
+            <textarea id="a2-dictation-input" class="dictation-textarea" placeholder="Tippen Sie hier auf Deutsch..." rows="5" style="width:100%;margin-top:12px;padding:12px;border-radius:8px;border:1px solid var(--color-border);background:var(--color-panel-solid);color:var(--color-text-primary);"></textarea>
+            <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap;">
+                <button class="btn btn-primary" onclick="checkA2Dictation('${topicKey}', ${dialogueIndex})">Antwort prüfen / Check Answer</button>
+                <button class="btn btn-secondary" onclick="showA2DictationAnswer('${topicKey}', ${dialogueIndex})">Lösung zeigen / Show Solution</button>
+            </div>
+            <div id="a2-dictation-feedback" style="margin-top:14px;"></div>
+        </div>`;
     } else if (mode === "fillblank") {
         const fb = dialogue.fillBlank;
         const optsHtml = fb.options.map((opt, i) => `<button class="hoeren-option-btn" id="a2_fb_opt_${i}" onclick="selectA2FillBlankOption('${topicKey}', ${dialogueIndex}, ${i}, '${opt.replace(/'/g,"\\'")}', '${fb.target.replace(/'/g,"\\'")}' )">${opt}</button>`).join("");
-        practiceHtml = `<div class="hoeren-practice-section glass-panel"><h4>🔁 Lückentext</h4><p class="fill-blank-sentence" style="font-size:1.1rem;font-weight:600;margin:16px 0;">${fb.sentence}</p><div class="hoeren-options-grid">${optsHtml}</div><div id="a2-fb-feedback" style="margin-top:14px;"></div></div>`;
+        practiceHtml = `<div class="hoeren-practice-section glass-panel">
+            <h4>🔁 Lückentext <span style="font-size:0.85rem;font-weight:normal;color:var(--color-text-muted);">(Fill in the blank)</span></h4>
+            <p class="fill-blank-sentence" style="font-size:1.1rem;font-weight:600;margin:16px 0 6px 0;">${fb.sentence}</p>
+            ${fb.sentenceEN ? `<div class="fill-blank-hint" style="font-size:0.92rem;color:var(--color-text-muted);font-style:italic;margin-bottom:16px;">🇬🇧 English: ${fb.sentenceEN}</div>` : ""}
+            <div class="hoeren-options-grid">${optsHtml}</div>
+            <div id="a2-fb-feedback" style="margin-top:14px;"></div>
+        </div>`;
     } else if (mode === "role") {
         const r = dialogue.role;
         const optsHtml = r.options.map((opt, i) => `<button class="hoeren-option-btn" id="a2_role_opt_${i}" onclick="selectA2RoleOption(${i}, ${r.correct})">${opt}</button>`).join("");
-        practiceHtml = `<div class="hoeren-practice-section glass-panel"><h4>🗣️ Rollenwechsel</h4><div class="role-play-prompt glass-panel" style="margin:16px 0;padding:14px;border-radius:10px;background:var(--color-accent-light);"><strong>Sprecher 1:</strong> ${r.speaker1}</div><p style="color:var(--color-text-muted);">Was antworten Sie?</p><div class="hoeren-options-grid">${optsHtml}</div><div id="a2-role-feedback" style="margin-top:14px;"></div></div>`;
+        practiceHtml = `<div class="hoeren-practice-section glass-panel">
+            <h4>🗣️ Rollenwechsel <span style="font-size:0.85rem;font-weight:normal;color:var(--color-text-muted);">(Role Play)</span></h4>
+            <div class="role-play-prompt glass-panel" style="margin:16px 0;padding:14px;border-radius:10px;background:var(--color-accent-light);">
+                <strong>Sprecher 1:</strong> ${r.speaker1}
+                ${r.speaker1EN ? `<div style="font-size:0.88rem;color:var(--color-text-muted);margin-top:4px;font-style:italic;">🇬🇧 English: ${r.speaker1EN}</div>` : ""}
+            </div>
+            <p style="color:var(--color-text-muted);">Was antworten Sie? <span style="font-style:italic;">(What do you reply?)</span></p>
+            <div class="hoeren-options-grid">${optsHtml}</div>
+            <div id="a2-role-feedback" style="margin-top:14px;"></div>
+        </div>`;
     } else if (mode === "truefalse") {
         const tf = dialogue.trueFalse;
-        practiceHtml = `<div class="hoeren-practice-section glass-panel"><h4>📋 Richtig oder Falsch?</h4><div class="tf-statement glass-panel" style="padding:14px;border-radius:10px;font-size:1.05rem;font-weight:600;margin:16px 0;">„${tf.statement}"</div><div style="display:flex;gap:16px;margin-bottom:16px;"><button class="btn btn-secondary hoeren-tf-btn" id="a2_tf_richtig" onclick="selectA2TrueFalse(true, ${tf.correct}, '${tf.explanation.replace(/'/g,"\\'")}')">✅ Richtig</button><button class="btn btn-secondary hoeren-tf-btn" id="a2_tf_falsch" onclick="selectA2TrueFalse(false, ${tf.correct}, '${tf.explanation.replace(/'/g,"\\'")}')">❌ Falsch</button></div><div id="a2-tf-feedback" style="margin-top:14px;"></div></div>`;
+        practiceHtml = `<div class="hoeren-practice-section glass-panel">
+            <h4>📋 Richtig oder Falsch? <span style="font-size:0.85rem;font-weight:normal;color:var(--color-text-muted);">(True or False?)</span></h4>
+            <div class="tf-statement glass-panel" style="padding:14px;border-radius:10px;font-size:1.05rem;font-weight:600;margin:16px 0 6px 0;">
+                „${tf.statement}"
+                ${tf.statementEN ? `<div style="font-size:0.9rem;color:var(--color-text-muted);margin-top:6px;font-style:italic;font-weight:normal;">🇬🇧 English: „${tf.statementEN}"</div>` : ""}
+            </div>
+            <div style="display:flex;gap:16px;margin-bottom:16px;margin-top:12px;">
+                <button class="btn btn-secondary hoeren-tf-btn" id="a2_tf_richtig" onclick="selectA2TrueFalse(true, ${tf.correct}, '${tf.explanation.replace(/'/g,"\\'")}')">✅ Richtig / True</button>
+                <button class="btn btn-secondary hoeren-tf-btn" id="a2_tf_falsch" onclick="selectA2TrueFalse(false, ${tf.correct}, '${tf.explanation.replace(/'/g,"\\'")}')">❌ Falsch / False</button>
+            </div>
+            <div id="a2-tf-feedback" style="margin-top:14px;"></div>
+        </div>`;
     }
 
     container.innerHTML = tabsHtml + modeTabsHtml + audioHtml + practiceHtml;
