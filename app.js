@@ -7807,6 +7807,7 @@ function handleAppBackNavigation() {
     }
     if (typeof stopDialogueSpeech === "function") stopDialogueSpeech();
     if (typeof stopStorySpeech === "function") stopStorySpeech();
+    if (window.stopA2SpeakingRecordingSilently) window.stopA2SpeakingRecordingSilently();
 
     // Immediately step one structural page back hierarchically (bypass in-page subtabs/steps)
     const didStep = navigateAppOneStepBack();
@@ -10470,6 +10471,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         if (typeof stopDialogueSpeech === "function") stopDialogueSpeech();
         if (typeof stopStorySpeech === "function") stopStorySpeech();
+        if (window.stopA2SpeakingRecordingSilently) window.stopA2SpeakingRecordingSilently();
 
         if (event.state && !event.state.isBase) {
             restoreNavigationState(event.state);

@@ -3119,10 +3119,11 @@ function renderA2HoerenPracticeWorkspace(topicKey, dialogueIndex, mode) {
    A2 HÖREN — AUDIO
    ============================================================ */
 
-window.speakA2Text = function(text) {
+window.speakA2Text = function(text, rate) {
     window.speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
-    u.lang = "de-DE"; u.rate = 0.9;
+    u.lang = "de-DE";
+    u.rate = (typeof rate === "number") ? rate : 0.9;
     window.speechSynthesis.speak(u);
 };
 

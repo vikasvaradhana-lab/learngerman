@@ -640,6 +640,106 @@ const A2_SPEAKING_DATABASE = {
                 { sentence: "Der Sonntag ist ganz der ___ gewidmet.", answer: "Entspannung", hint: "Nomen (relaxation)" },
                 { sentence: "Ich bereite mich auf die neue Woche ___.", answer: "vor", hint: "Trennbare Vorsilbe" }
             ]
+        },
+        {
+            id: "mono_5",
+            title: "Meine Wohnung & mein Wohnort",
+            titleEN: "My Apartment & Neighborhood",
+            emoji: "🏡",
+            cues: [
+                { de: "Art der Wohnung & Zimmer", en: "Type of apartment & rooms" },
+                { de: "Lage & Verkehrsanbindung", en: "Location & transport connections" },
+                { de: "Mein Lieblingsort zu Hause", en: "My favorite spot at home" },
+                { de: "Was gefällt mir / was fehlt", en: "What I like / what is missing" }
+            ],
+            sentences: [
+                {
+                    de: "Ich wohne in einer gemütlichen Dreizimmerwohnung im zweiten Stock.",
+                    en: "I live in a cozy three-room apartment on the second floor.",
+                    mal: "ഇഹ് വോഹ്നെ ഇൻ ഐനർ ഗെമ്യൂട്ട്ലിഹെൻ ഡ്രൈസിമർവോഹ്നുങ് ഇം സ്വൈറ്റൻ സ്റ്റോക്ക്."
+                },
+                {
+                    de: "Die Wohnung hat ein großes Wohnzimmer, ein Schlafzimmer, eine Küche und einen Balkon.",
+                    en: "The apartment has a large living room, a bedroom, a kitchen, and a balcony.",
+                    mal: "ഡീ വോഹ്നുങ് ഹാറ്റ് ഐൻ ഗ്രോസെസ് വോൺസിമർ, ഐൻ ഷ്ളാഫ്സിമർ, ഐനെ ക്യൂഹെ ഉണ്ട് ഐനൻ ബാൽക്കോൺ."
+                },
+                {
+                    de: "Meine Wohnung liegt sehr zentral, deshalb kann ich die U-Bahn in fünf Minuten zu Fuß erreichen.",
+                    en: "My apartment is located very centrally, therefore I can reach the subway in five minutes on foot.",
+                    mal: "മൈനെ വോഹ്നുങ് ലീഗ്ത് സേർ സെൻട്രാൾ, ദേസ്ഹാൽബ് കാൻ ഇഹ് ഡീ ഊ-ബാൻ ഇൻ ഫ്യൂൺഫ് മിനൂട്ടൻ ത്സു ഫൂസ് എറൈഹെൻ."
+                },
+                {
+                    de: "Mein absoluter Lieblingsplatz ist der Balkon, weil ich dort im Sommer Kaffee trinke.",
+                    en: "My absolute favorite spot is the balcony because I drink coffee there in the summer.",
+                    mal: "മൈൻ അബ്സൊലൂട്ടർ ലീബ്ലിങ്സ്പ്ലാറ്റ്സ് ഇസ്റ്റ് ഡെർ ബാൽക്കോൺ, വൈൽ ഇഹ് ഡോർട്ട് ഇം സോമർ കാഫെ ട്രിങ്കെ."
+                },
+                {
+                    de: "In der Nähe gibt es einen Supermarkt, eine Apotheke und einen schönen Stadtpark.",
+                    en: "Nearby there is a supermarket, a pharmacy, and a nice city park.",
+                    mal: "ഇൻ ഡെർ നേഹെ ഗിബ്ത് എസ് ഐനൻ സൂപ്പർമാർക്റ്റ്, ഐനെ അപ്പോത്തേക്കെ ഉണ്ട് ഐനൻ ഷ്യോനൻ സ്റ്റാറ്റ്പാർക്ക്."
+                },
+                {
+                    de: "Nur die Miete ist ziemlich hoch, aber insgesamt fühle ich mich hier sehr wohl.",
+                    en: "Only the rent is rather high, but overall I feel very comfortable here.",
+                    mal: "നൂർ ഡീ മീറ്റെ ഇസ്റ്റ് സിംലിഹ് ഹോഹ്, ആബർ ഇൻസ്ഗെസാംത് ഫ്യൂഹ്ളെ ഇഹ് മിഹ് ഹീയർ സേർ വോൾ."
+                }
+            ],
+            gaps: [
+                { sentence: "Ich wohne in einer gemütlichen ___ im zweiten Stock.", answer: "Dreizimmerwohnung", hint: "Nomen (three-room apartment)" },
+                { sentence: "Die Wohnung liegt zentral, ___ kann ich die U-Bahn schnell erreichen.", answer: "deshalb", hint: "Konnektor (therefore)" },
+                { sentence: "Mein Lieblingsplatz ist der Balkon, ___ ich dort gerne Kaffee trinke.", answer: "weil", hint: "Kausal (because - Verb am Ende)" },
+                { sentence: "Insgesamt fühle ich mich hier sehr ___.", answer: "wohl", hint: "Adverb (feel at home / comfortable)" }
+            ]
+        },
+        {
+            id: "mono_6",
+            title: "Freizeit, Sport & Hobbys",
+            titleEN: "Free Time, Sports & Hobbies",
+            emoji: "⚽",
+            cues: [
+                { de: "Meine liebsten Hobbys", en: "My favorite hobbies" },
+                { de: "Wann und wie oft", en: "When and how often" },
+                { de: "Mit wem mache ich das", en: "With whom I do it" },
+                { de: "Warum mir das guttut", en: "Why it does me good" }
+            ],
+            sentences: [
+                {
+                    de: "In meiner Freizeit beschäftige ich mich am liebsten mit Sport und Musik.",
+                    en: "In my free time I most enjoy occupying myself with sports and music.",
+                    mal: "ഇൻ മൈനർ ഫ്രൈത്സൈറ്റ് ബെഷെഫ്റ്റിഗെ ഇഹ് മിഹ് ആം ലീബ്സ്റ്റൻ മിറ്റ് സ്പോർട്ട് ഉണ്ട് മൂസിക്."
+                },
+                {
+                    de: "Zweimal pro Woche gehe ich abends joggen oder schwimme im Hallenbad.",
+                    en: "Twice a week I go jogging in the evenings or swim in the indoor pool.",
+                    mal: "സ്വൈമാൽ പ്രൊ വോഹെ ഗേഹെ ഇഹ് ആബെൻഡ്സ് ജോഗൻ ഒഡർ ഷ്വിമ്മെ ഇം ഹാലൻബാദ്."
+                },
+                {
+                    de: "Am Wochenende spiele ich oft mit meinen Freunden Fußball auf dem Sportplatz.",
+                    en: "On the weekend I often play football with my friends on the sports field.",
+                    mal: "ആം വോഹെനെൻഡെ ഷ്പീലെ ഇഹ് ഓഫ്ട് മിറ്റ് മൈനൻ ഫ്രോയ്ൻഡെൻ ഫുസ്ബാൽ ഔഫ് ഡെം സ്പോർട്ട്പ്ലാറ്റ്സ്."
+                },
+                {
+                    de: "Wenn das Wetter schlecht ist, bleibe ich zu Hause und lerne Gitarre spielen.",
+                    en: "When the weather is bad, I stay at home and learn to play the guitar.",
+                    mal: "വെൻ ദാസ് വെറ്റർ ഷ്ളെഹ്റ്റ് ഇസ്റ്റ്, ബ്ലൈബെ ഇഹ് ത്സു ഹൗസെ ഉണ്ട് ലേർനെ ഗിറ്റാറെ ഷ്പീലൻ."
+                },
+                {
+                    de: "Sport ist wichtig für mich, weil er mir hilft, nach der Arbeit zu entspannen.",
+                    en: "Sports is important to me because it helps me relax after work.",
+                    mal: "സ്പോർട്ട് ഇസ്റ്റ് വിഹ്റ്റിഗ് ഫ്യൂർ മിഹ്, വൈൽ എർ മിർ ഹിൽഫ്റ്റ്, നാഹ് ഡെർ അർബൈറ്റ് ത്സു എന്റ്ഷ്പാനൻ."
+                },
+                {
+                    de: "Durch meine Hobbys bleibe ich fit und lerne immer neue interessante Leute kennen.",
+                    en: "Through my hobbies I stay fit and always get to know new interesting people.",
+                    mal: "ദുർഹ് മൈനെ ഹോബീസ് ബ്ലൈബെ ഇഹ് ഫിറ്റ് ഉണ്ട് ലേർനെ ഇമർ നോയെ ഇന്ററസാൻറ്റെ ലോയ്റ്റെ കെന്നൻ."
+                }
+            ],
+            gaps: [
+                { sentence: "In meiner Freizeit beschäftige ich mich am ___ mit Sport.", answer: "liebsten", hint: "Superlativ von gern (most of all)" },
+                { sentence: "___ pro Woche gehe ich abends joggen.", answer: "Zweimal", hint: "Häufigkeit (twice)" },
+                { sentence: "Sport ist wichtig, ___ er mir beim Entspannen hilft.", answer: "weil", hint: "Konnektor mit Verb am Ende" },
+                { sentence: "Ich bleibe fit und lerne neue Leute ___.", answer: "kennen", hint: "Trennbare Verbpartikel (kennenlernen)" }
+            ]
         }
     ],
 
@@ -1271,6 +1371,7 @@ window.openA2SpeakingLab = function(pushHistory = true) {
     if (selHub) selHub.style.display = "block";
     if (workspace) workspace.style.display = "none";
     if (titleEl) titleEl.textContent = "A2 Sprechlabor / Speaking & Fluency";
+    if (window.stopA2SpeakingRecordingSilently) window.stopA2SpeakingRecordingSilently();
 
     switchA2SpeakingTab(activeA2SpeakingState.activeTab || "teil1");
 
@@ -1463,6 +1564,7 @@ window.openA2SpeakingTeil1Practice = function(cardIndex, pushHistory = true) {
 /* --- TEIL 2 WORKSPACE: 5-STAGE MONOLOGUE FLUENCY --- */
 window.openA2SpeakingTeil2Practice = function(monoIndex, stage = 1, pushHistory = true) {
     if (typeof scrollAppToTop === "function") scrollAppToTop();
+    if (window.stopA2SpeakingRecordingSilently) window.stopA2SpeakingRecordingSilently();
     activeA2SpeakingState.teil2MonoIndex = monoIndex;
     activeA2SpeakingState.teil2Stage = stage;
     const mono = A2_SPEAKING_DATABASE.teil2_monologues[monoIndex];
@@ -1570,16 +1672,16 @@ window.openA2SpeakingTeil2Practice = function(monoIndex, stage = 1, pushHistory 
             </div>
         `;
     } else if (stage === 4) {
-        // STAGE 4: FREIES SPRECHEN & KI-EVALUATION
+        // STAGE 4: FREIES SPRECHEN, AUDIO-AUFNAHME & KI-EVALUATION
         stageContentHtml = `
-            <div class="glass-panel" style="padding:28px;border-radius:20px;text-align:center;margin-bottom:20px;">
+            <div class="glass-panel" style="padding:28px 24px;border-radius:20px;text-align:center;margin-bottom:24px;">
                 <h3 style="margin:0 0 8px 0;font-size:1.35rem;color:#a78bfa;">🎤 Freies Sprechen ohne Vorlage</h3>
-                <p style="color:var(--color-text-secondary);max-width:540px;margin:0 auto 24px;">
+                <p style="color:var(--color-text-secondary);max-width:560px;margin:0 auto 22px;line-height:1.6;">
                     Sprechen Sie nun frei für ca. 1–2 Minuten über das Thema. Decken Sie dabei alle 4 Leitpunkte ab:
                 </p>
 
                 <!-- Leitpunkte Checklist -->
-                <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:28px;">
+                <div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:28px;">
                     ${mono.cues.map(c => `
                         <div style="background:rgba(139,92,246,0.15);border:1px solid rgba(139,92,246,0.3);padding:8px 16px;border-radius:20px;font-size:0.9rem;font-weight:600;color:#c4b5fd;">
                             📍 ${c.de}
@@ -1587,17 +1689,53 @@ window.openA2SpeakingTeil2Practice = function(monoIndex, stage = 1, pushHistory 
                     `).join("")}
                 </div>
 
-                <!-- Microphone Simulation & Recording Prompt -->
-                <div style="padding:24px;border-radius:16px;background:rgba(15,23,42,0.6);border:1px dashed rgba(139,92,246,0.4);display:inline-block;margin-bottom:24px;">
-                    <div style="font-size:3rem;margin-bottom:8px;">🎙️</div>
-                    <div style="font-size:1.1rem;font-weight:700;color:#fff;">Sprechen Sie Ihren Monolog laut aus!</div>
-                    <div style="font-size:0.88rem;color:var(--color-text-muted);margin-top:4px;">Stoppuhr-Empfehlung: 60 bis 90 Sekunden</div>
+                <!-- Interactive Voice Recorder Button -->
+                <div id="a2_speaking_rec_btn" onclick="toggleA2SpeakingRecording('${mono.title.replace(/'/g, "\\'")}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleA2SpeakingRecording('${mono.title.replace(/'/g, "\\'")}');}" role="button" tabindex="0" style="padding:24px 32px;border-radius:20px;background:rgba(15,23,42,0.7);border:2px dashed rgba(139,92,246,0.5);display:inline-block;margin-bottom:18px;cursor:pointer;transition:all 0.25s ease;max-width:440px;width:100%;box-shadow:0 8px 24px rgba(0,0,0,0.3);">
+                    <span style="font-size:3.2rem;display:block;margin-bottom:8px;">🎙️</span>
+                    <div style="font-size:1.18rem;font-weight:800;color:#fff;">Tippen zum Aufnehmen / Tap to Record</div>
+                    <div style="font-size:0.85rem;color:var(--color-text-muted);margin-top:4px;">Stoppuhr-Empfehlung: 60 bis 90 Sekunden</div>
                 </div>
 
-                <div>
-                    <button class="btn btn-primary" onclick="copyA2SpeakingAIPrompt('${mono.title}')" style="background:linear-gradient(135deg,#8b5cf6,#6366f1);color:#fff;border:none;padding:12px 28px;border-radius:12px;font-size:1.05rem;font-weight:700;box-shadow:0 6px 20px rgba(139,92,246,0.35);cursor:pointer;">
+                <!-- Live Timer & Status Display -->
+                <div style="margin-bottom:14px;">
+                    <div id="a2_speaking_timer_display" style="font-size:1.65rem;font-weight:800;font-family:monospace;color:#c4b5fd;letter-spacing:0.06em;">00:00 / 01:30</div>
+                    <div id="a2_speaking_rec_status" style="font-size:0.9rem;color:var(--color-text-muted);margin-top:4px;">Klicken Sie auf das Mikrofon, um Ihre Rede aufzunehmen.</div>
+                </div>
+
+                <!-- Playback & Download Container (Rendered upon stop) -->
+                <div id="a2_speaking_playback_area" style="display:none;margin-bottom:24px;"></div>
+
+                <!-- AI Feedback Prompt Box -->
+                <div style="margin-top:20px;padding:20px 24px;background:rgba(255,255,255,0.03);border-radius:16px;border:1px solid rgba(255,255,255,0.08);max-width:560px;margin-left:auto;margin-right:auto;text-align:center;">
+                    <button class="btn btn-primary" onclick="copyA2SpeakingAIPrompt('${mono.title.replace(/'/g, "\\'")}')" style="background:linear-gradient(135deg,#8b5cf6,#6366f1);color:#fff;border:none;padding:12px 28px;border-radius:12px;font-size:1.02rem;font-weight:700;box-shadow:0 6px 20px rgba(139,92,246,0.35);cursor:pointer;width:100%;">
                         🤖 Feedback-Prompt für KI kopieren
                     </button>
+                    <div style="font-size:0.84rem;color:var(--color-text-muted);margin-top:10px;line-height:1.5;">
+                        Kopiert den offiziellen Goethe A2 Kriterien-Prompt in die Zwischenablage. Laden Sie die gespeicherte Audiodatei zusammen mit diesem Prompt in ChatGPT, Claude oder Gemini hoch!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stage 4 Bottom Navigation Bar (No dead end) -->
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:28px;flex-wrap:wrap;">
+                <button class="btn btn-secondary" onclick="openA2SpeakingTeil2Practice(${monoIndex}, 3)" style="padding:12px 20px;border-radius:10px;">
+                    &larr; Zurück zu Stufe 3: Lückentext
+                </button>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                    ${monoIndex > 0 ? `
+                        <button class="btn btn-secondary" onclick="openA2SpeakingTeil2Practice(${monoIndex - 1}, 1)" style="padding:12px 18px;border-radius:10px;">
+                            &larr; Vorheriges Thema
+                        </button>
+                    ` : ""}
+                    ${monoIndex < A2_SPEAKING_DATABASE.teil2_monologues.length - 1 ? `
+                        <button class="btn btn-primary" onclick="openA2SpeakingTeil2Practice(${monoIndex + 1}, 1)" style="padding:12px 24px;border-radius:10px;font-weight:700;background:linear-gradient(135deg,#8b5cf6,#6366f1);color:#fff;border:none;box-shadow:0 6px 20px rgba(139,92,246,0.35);cursor:pointer;">
+                            Nächstes Thema: ${A2_SPEAKING_DATABASE.teil2_monologues[monoIndex + 1].title} &rarr;
+                        </button>
+                    ` : `
+                        <button class="btn btn-primary" onclick="openA2SpeakingLab()" style="padding:12px 24px;border-radius:10px;font-weight:700;background:linear-gradient(135deg,#10b981,#059669);color:#fff;border:none;cursor:pointer;">
+                            🎉 Alle 6 Monologe abgeschlossen! Zur Übersicht &rarr;
+                        </button>
+                    `}
                 </div>
             </div>
         `;
@@ -1605,18 +1743,221 @@ window.openA2SpeakingTeil2Practice = function(monoIndex, stage = 1, pushHistory 
 
     container.innerHTML = `
         <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:18px;">
-            <button class="btn btn-secondary" onclick="openA2SpeakingLab()" style="font-size:0.85rem;padding:6px 14px;border-radius:8px;">
-                &larr; Alle Monologe / All Monologues
-            </button>
-            <span style="font-size:0.85rem;font-weight:700;color:#a78bfa;background:rgba(139,92,246,0.15);padding:4px 12px;border-radius:20px;">
+            <div style="display:flex;align-items:center;gap:8px;font-size:0.88rem;color:var(--color-text-muted);">
+                <span style="cursor:pointer;color:#a78bfa;font-weight:600;" onclick="openA2SpeakingLab()">Sprechen</span>
+                <span>&rsaquo;</span>
+                <span style="cursor:pointer;color:#a78bfa;font-weight:600;" onclick="switchA2SpeakingTab('teil2')">Teil 2: Monologe</span>
+                <span>&rsaquo;</span>
+                <span style="color:#fff;font-weight:700;">${mono.emoji} ${mono.title}</span>
+            </div>
+            <span style="font-size:0.85rem;font-weight:700;color:#a78bfa;background:rgba(139,92,246,0.15);padding:4px 12px;border-radius:20px;border:1px solid rgba(139,92,246,0.3);">
                 Thema ${monoIndex + 1} von ${A2_SPEAKING_DATABASE.teil2_monologues.length}
             </span>
         </div>
         ${stageTabsHtml}
         ${stageContentHtml}
     `;
+};
 
+// --- TEIL 2 AUDIO RECORDER & EXPORT SUBSYSTEM ---
+window._a2MonoRecorder = {
+    mediaRecorder: null,
+    chunks: [],
+    timerInterval: null,
+    seconds: 0,
+    isRecording: false,
+    audioBlob: null,
+    audioUrl: null,
+    stream: null,
+    currentTopicTitle: ""
+};
 
+window.stopA2SpeakingRecordingSilently = function() {
+    const rec = window._a2MonoRecorder;
+    if (!rec) return;
+    if (rec.timerInterval) {
+        clearInterval(rec.timerInterval);
+        rec.timerInterval = null;
+    }
+    if (rec.mediaRecorder && rec.isRecording) {
+        try { rec.mediaRecorder.stop(); } catch(e){}
+    }
+    if (rec.stream) {
+        try { rec.stream.getTracks().forEach(t => t.stop()); } catch(e){}
+        rec.stream = null;
+    }
+    rec.isRecording = false;
+};
+
+window.toggleA2SpeakingRecording = function(topicTitle) {
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+
+    const rec = window._a2MonoRecorder;
+    const btn = document.getElementById("a2_speaking_rec_btn");
+    const statusBox = document.getElementById("a2_speaking_rec_status");
+    const timerDisplay = document.getElementById("a2_speaking_timer_display");
+    const playbackArea = document.getElementById("a2_speaking_playback_area");
+
+    if (rec.isRecording) {
+        // --- STOP RECORDING ---
+        rec.isRecording = false;
+        if (rec.timerInterval) {
+            clearInterval(rec.timerInterval);
+            rec.timerInterval = null;
+        }
+        if (rec.mediaRecorder && rec.mediaRecorder.state !== "inactive") {
+            try { rec.mediaRecorder.stop(); } catch(e){}
+        }
+        if (rec.stream) {
+            rec.stream.getTracks().forEach(track => track.stop());
+            rec.stream = null;
+        }
+
+        if (btn) {
+            btn.innerHTML = `
+                <span style="font-size:2.8rem;display:block;margin-bottom:6px;">🎙️</span>
+                <div style="font-weight:700;font-size:1.15rem;color:#fff;">Neu aufnehmen / Record Again</div>
+                <div style="font-size:0.85rem;color:var(--color-text-muted);margin-top:4px;">Tippen, um die Aufnahme zu wiederholen</div>
+            `;
+            btn.style.borderColor = "rgba(139,92,246,0.5)";
+            btn.style.background = "rgba(15,23,42,0.7)";
+            btn.classList.remove("a2-recording-pulsing");
+        }
+        if (statusBox) {
+            statusBox.innerHTML = `<span style="color:#34d399;font-weight:700;">✅ Aufnahme fertig! (${rec.seconds} Sekunden gespeichert)</span>`;
+        }
+        return;
+    }
+
+    // --- START RECORDING ---
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        alert("Mikrofon-Aufnahme wird von Ihrem aktuellen Browser nicht unterstützt oder erfordert eine HTTPS-Verbindung.");
+        return;
+    }
+
+    rec.currentTopicTitle = topicTitle;
+    rec.chunks = [];
+    rec.seconds = 0;
+
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream) {
+        rec.stream = stream;
+        rec.isRecording = true;
+
+        let mimeType = "";
+        if (window.MediaRecorder && MediaRecorder.isTypeSupported) {
+            if (MediaRecorder.isTypeSupported("audio/webm;codecs=opus")) mimeType = "audio/webm;codecs=opus";
+            else if (MediaRecorder.isTypeSupported("audio/webm")) mimeType = "audio/webm";
+            else if (MediaRecorder.isTypeSupported("audio/mp4")) mimeType = "audio/mp4";
+            else if (MediaRecorder.isTypeSupported("audio/ogg")) mimeType = "audio/ogg";
+        }
+
+        const options = mimeType ? { mimeType } : {};
+        try {
+            rec.mediaRecorder = new MediaRecorder(stream, options);
+        } catch (e) {
+            rec.mediaRecorder = new MediaRecorder(stream);
+        }
+
+        rec.mediaRecorder.ondataavailable = function(e) {
+            if (e.data && e.data.size > 0) {
+                rec.chunks.push(e.data);
+            }
+        };
+
+        rec.mediaRecorder.onstop = function() {
+            const actualMime = (rec.mediaRecorder && rec.mediaRecorder.mimeType) || mimeType || "audio/webm";
+            rec.audioBlob = new Blob(rec.chunks, { type: actualMime });
+            if (rec.audioUrl) URL.revokeObjectURL(rec.audioUrl);
+            rec.audioUrl = URL.createObjectURL(rec.audioBlob);
+
+            if (playbackArea) {
+                const ext = actualMime.includes("mp4") ? "m4a" : (actualMime.includes("ogg") ? "ogg" : "webm");
+                const safeName = "Goethe_A2_Monolog_" + (rec.currentTopicTitle || "Aufnahme").replace(/[^a-zA-Z0-9äöüÄÖÜß]/g, "_") + "." + ext;
+
+                playbackArea.style.display = "block";
+                playbackArea.innerHTML = `
+                    <div class="glass-panel" style="padding:20px 22px;border-radius:16px;background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.3);margin-top:20px;text-align:center;">
+                        <div style="font-weight:700;font-size:1.05rem;color:#34d399;margin-bottom:12px;">
+                            🎧 Ihre Aufnahme anhören / Listen to your recording:
+                        </div>
+                        <audio controls src="${rec.audioUrl}" style="width:100%;max-width:440px;margin-bottom:14px;outline:none;border-radius:30px;"></audio>
+                        <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
+                            <button class="btn btn-primary" onclick="downloadA2SpeakingAudio('${safeName}')" style="background:linear-gradient(135deg,#10b981,#059669);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:700;display:inline-flex;align-items:center;gap:8px;cursor:pointer;box-shadow:0 4px 16px rgba(16,185,129,0.35);">
+                                📥 Audio-Datei speichern (.${ext})
+                            </button>
+                        </div>
+                        <div style="margin-top:12px;font-size:0.86rem;color:var(--color-text-muted);line-height:1.5;">
+                            💡 <strong>Für KI-Bewertung:</strong> Speichern Sie diese Datei, kopieren Sie unten den Prompt und laden Sie beides zusammen in ChatGPT, Claude oder Gemini hoch!
+                        </div>
+                    </div>
+                `;
+            }
+        };
+
+        rec.mediaRecorder.start(250);
+
+        // Update UI to active recording state
+        if (btn) {
+            btn.innerHTML = `
+                <span style="font-size:3.2rem;display:block;margin-bottom:8px;animation:a2-rec-pulse 1s infinite alternate;">🔴</span>
+                <div style="font-weight:800;font-size:1.2rem;color:#f87171;">Aufnahme läuft... (Tippen zum Stoppen)</div>
+                <div style="font-size:0.85rem;color:#fca5a5;margin-top:4px;">Tippen Sie hier, wenn Sie fertig gesprochen haben</div>
+            `;
+            btn.style.borderColor = "#ef4444";
+            btn.style.background = "rgba(239,68,68,0.15)";
+            btn.classList.add("a2-recording-pulsing");
+        }
+
+        if (statusBox) {
+            statusBox.innerHTML = `<span style="color:#ef4444;font-weight:700;">🔴 Mikrofon aktiv • Sprechen Sie jetzt!</span>`;
+        }
+
+        if (timerDisplay) {
+            timerDisplay.textContent = "00:00 / 01:30";
+            timerDisplay.style.color = "#c4b5fd";
+        }
+
+        rec.timerInterval = setInterval(function() {
+            rec.seconds++;
+            const mins = Math.floor(rec.seconds / 60);
+            const secs = rec.seconds % 60;
+            const str = (mins < 10 ? "0" : "") + mins + ":" + (secs < 10 ? "0" : "") + secs;
+            if (timerDisplay) {
+                timerDisplay.textContent = str + " / 01:30";
+                if (rec.seconds >= 60 && rec.seconds <= 90) {
+                    timerDisplay.style.color = "#34d399"; // Optimal Goethe range
+                } else if (rec.seconds > 90) {
+                    timerDisplay.style.color = "#f59e0b"; // Over time limit
+                }
+            }
+            if (rec.seconds >= 120) { // Safety ceiling at 2 mins
+                toggleA2SpeakingRecording(topicTitle);
+            }
+        }, 1000);
+
+    }).catch(function(err) {
+        console.error("Microphone access error:", err);
+        alert("Mikrofon-Zugriff fehlgeschlagen: Bitte erlauben Sie den Zugriff auf Ihr Mikrofon im Browser.");
+        rec.isRecording = false;
+    });
+};
+
+window.downloadA2SpeakingAudio = function(filename) {
+    const rec = window._a2MonoRecorder;
+    if (!rec || !rec.audioBlob) {
+        alert("Keine Aufnahme vorhanden.");
+        return;
+    }
+    const url = rec.audioUrl || URL.createObjectURL(rec.audioBlob);
+    const a = document.createElement("a");
+    a.style.display = "none";
+    a.href = url;
+    a.download = filename || "Goethe_A2_Monolog.webm";
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function() {
+        if (a.parentNode) a.parentNode.removeChild(a);
+    }, 150);
 };
 
 window.checkA2SpeakingGap = function(index, correct) {
@@ -1642,16 +1983,17 @@ window.copyA2SpeakingAIPrompt = function(topicTitle) {
     const prompt = `Please evaluate my German spoken monologue for the Goethe-Zertifikat A2 Speaking Exam (Teil 2: Von sich erzählen).
 
 Topic: ${topicTitle}
-Target Level: Goethe-Zertifikat A2 (Elementary German)
+Target Level: CEFR A2 (Elementary German)
 
-I will transcribe what I said or record my monologue. Please assess:
-1. Vocabulary appropriateness for CEFR A2 (connectors like 'weil', 'deshalb', 'nachdem').
-2. Sentence structure and word order (Verb in position 2 in main clauses, verb at the end with 'weil').
-3. Three concrete tips to make my speech sound more fluent and natural.`;
+I have attached my recorded audio file of this monologue. Please listen to it and evaluate according to official Goethe-Zertifikat A2 criteria:
+1. Pronunciation & Intonation (Aussprache und Betonung) - Were the words clearly understandable? Note any specific sound mispronunciations (ch, r, umlauts ä/ö/ü).
+2. Sentence Structure & Word Order (Satzbau) - Correct Verb-Second position in main clauses, Verb-final position in subordinate clauses (weil/obwohl/wenn), and separable verbs.
+3. Vocabulary & Fluency (Wortschatz & Flüssigkeit) - Was the vocabulary suitable for A2? Did I cover the key points without excessive hesitation?
+4. Concrete Corrections & Tips - Provide 3 practical suggestions to improve my speaking fluency and score higher in the Goethe exam.`;
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(prompt).then(function() {
-            alert("✅ KI-Sprech-Prompt wurde in die Zwischenablage kopiert! Sie können ihn bei ChatGPT oder Claude einfügen.");
+            alert("✅ KI-Sprech-Prompt wurde in die Zwischenablage kopiert!\\n\\nLaden Sie jetzt Ihre gespeicherte Audiodatei zusammen mit diesem Prompt in ChatGPT, Claude oder Gemini hoch.");
         }).catch(function() {
             promptUserWithText(prompt);
         });

@@ -4658,3 +4658,20 @@ body.dark-mode .branding-academic .branding-text {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* Audio Recording Pulse Effects */
+@keyframes a2-rec-pulse {
+    0% { transform: scale(1); opacity: 1; filter: drop-shadow(0 0 4px #ef4444); }
+    100% { transform: scale(1.18); opacity: 0.85; filter: drop-shadow(0 0 16px #ef4444); }
+}
+
+.a2-recording-pulsing {
+    box-shadow: 0 0 28px rgba(239, 68, 68, 0.5) !important;
+    border-color: #ef4444 !important;
+    animation: a2-rec-box-pulse 1.4s infinite alternate !important;
+}
+
+@keyframes a2-rec-box-pulse {
+    0% { border-color: rgba(239, 68, 68, 0.5); box-shadow: 0 0 15px rgba(239, 68, 68, 0.3); }
+    100% { border-color: rgba(239, 68, 68, 1); box-shadow: 0 0 30px rgba(239, 68, 68, 0.6); }
+}
+
