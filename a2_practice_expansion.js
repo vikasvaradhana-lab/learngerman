@@ -15,697 +15,1597 @@
        PART 1: 15 NEW READING PASSAGES (a2_read_16 to a2_read_30)
        ============================================================ */
     const NEW_A2_READING_PASSAGES = [
-        {
-            id: "a2_read_16",
-            title: "Wohnungsbesichtigung & Mietvertrag",
-            titleEN: "Apartment Viewing & Tenancy Agreement",
-            emoji: "🏡",
-            warmup: {
-                vocab: [
-                    { word: "die Warmmiete", gender: "die", translation: "rent including heating & utility costs", example: "Die Warmmiete beträgt 850 Euro im Monat.", exampleEN: "The warm rent is 850 euros per month." },
-                    { word: "die Kaution", gender: "die", translation: "rental security deposit", example: "Vor dem Einzug müssen Sie drei Monatsmieten Kaution zahlen.", exampleEN: "Before moving in, you must pay three months' rent deposit." },
-                    { word: "die Gehaltsabrechnung", gender: "die", translation: "payslip / salary statement", example: "Bitte bringen Sie Ihre letzten drei Gehaltsabrechnungen mit.", exampleEN: "Please bring your last three payslips." },
-                    { word: "der Mietvertrag", gender: "der", translation: "lease / tenancy agreement", example: "Wir unterschreiben den Mietvertrag nächste Woche.", exampleEN: "We are signing the rental contract next week." },
-                    { word: "die Nebenkosten", gender: "die (Pl.)", translation: "utility / ancillary costs", example: "Wasser und Müllabfuhr sind in den Nebenkosten enthalten.", exampleEN: "Water and waste disposal are included in the utilities." },
-                    { word: "die Schufa-Auskunft", gender: "die", translation: "credit check record", example: "Der Vermieter verlangt eine aktuelle Schufa-Auskunft.", exampleEN: "The landlord requires an up-to-date credit check." }
-                ],
-                tips: [
-                    { de: "Warmmiete vs. Kaltmiete", en: "Kaltmiete = base rent only; Warmmiete = total with heating and maintenance." },
-                    { de: "Erforderliche Dokumente", en: "Note down the 3 required papers: ID card, 3 payslips, and credit check." },
-                    { de: "Besichtigungstermin", en: "Check whether individual appointments or group open-houses are scheduled." }
-                ]
-            },
-            text: "**Einladung zur Wohnungsbesichtigung**\n\nSehr geehrte Mietinteressenten,\n\nwir laden Sie herzlich zur Besichtigung der **2-Zimmer-Wohnung** in der Schillerstraße 14 ein.\n\n**Termin:** Samstag, 14. Oktober, von 10:00 bis 12:00 Uhr.\n\n**Wohnungsdaten:**\n- 58 m², 2. Obergeschoss mit Südbalkon und Einbauküche\n- Kaltmiete: 650 Euro | Nebenkosten: 180 Euro | **Warmmiete: 830 Euro**\n- Kaution: 1.950 Euro (3 Kaltmieten)\n\nBitte bringen Sie zur Besichtigung folgende Unterlagen in Kopie mit: Kopie des Personalausweises, die letzten drei Gehaltsabrechnungen und eine aktuelle Schufa-Auskunft.\n\nMit freundlichen Grüßen,\n**Hausverwaltung Weber & Partner**",
-            textEN: "**Apartment Viewing Invitation**\n\nDear Prospective Tenants,\n\nWe warmly invite you to view the **2-room apartment** at Schillerstraße 14.\n\n**Viewing Date:** Saturday, 14 October, from 10:00 to 12:00.\n\n**Apartment Details:**\n- 58 m², 2nd floor with south-facing balcony and fitted kitchen\n- Base rent: €650 | Utilities: €180 | **Total rent: €830**\n- Deposit: €1,950 (3 months base rent)\n\nPlease bring copies of the following documents to the viewing: copy of ID card, last three payslips, and a current credit check.\n\nKind regards,\n**Property Management Weber & Partner**",
-            questions: [
+    {
+        "id": "a2_read_16",
+        "title": "Wohnungsbesichtigung & Mietvertrag",
+        "titleEN": "Apartment Viewing & Tenancy Agreement",
+        "emoji": "🏡",
+        "warmup": {
+            "vocab": [
                 {
-                    question: "Wie hoch ist die monatliche Gesamtmiete (Warmmiete)?",
-                    questionEN: "How much is the total monthly rent (warm rent)?",
-                    options: ["830 Euro", "650 Euro", "180 Euro", "1.950 Euro"],
-                    correct: 0,
-                    explanation: "The text states: 'Warmmiete: 830 Euro'."
+                    "word": "die Warmmiete",
+                    "gender": "die",
+                    "translation": "rent including heating & utility costs",
+                    "example": "Die Warmmiete beträgt 850 Euro im Monat.",
+                    "exampleEN": "The warm rent is 850 euros per month."
                 },
                 {
-                    question: "Wann findet die Besichtigung statt?",
-                    questionEN: "When does the viewing take place?",
-                    options: ["Am Samstagvormittag", "Am Sonntagnachmittag", "Am Freitag ab 18:00 Uhr", "Jeden Werktag"],
-                    correct: 0,
-                    explanation: "'Samstag, 14. Oktober, von 10:00 bis 12:00 Uhr' is on Saturday morning."
+                    "word": "die Kaution",
+                    "gender": "die",
+                    "translation": "rental security deposit",
+                    "example": "Vor dem Einzug müssen Sie drei Monatsmieten Kaution zahlen.",
+                    "exampleEN": "Before moving in, you must pay three months' rent deposit."
                 },
                 {
-                    question: "Welches Dokument wird bei der Besichtigung verlangt?",
-                    questionEN: "Which document is requested at the viewing?",
-                    options: ["Gehaltsabrechnungen der letzten 3 Monate", "Ein Führungszeugnis der Polizei", "Ein ärztliches Attest", "Der alte Mietvertrag"],
-                    correct: 0,
-                    explanation: "'die letzten drei Gehaltsabrechnungen' are explicitly listed."
+                    "word": "die Gehaltsabrechnung",
+                    "gender": "die",
+                    "translation": "payslip / salary statement",
+                    "example": "Bitte bringen Sie Ihre letzten drei Gehaltsabrechnungen mit.",
+                    "exampleEN": "Please bring your last three payslips."
+                },
+                {
+                    "word": "der Mietvertrag",
+                    "gender": "der",
+                    "translation": "lease / tenancy agreement",
+                    "example": "Wir unterschreiben den Mietvertrag nächste Woche.",
+                    "exampleEN": "We are signing the rental contract next week."
+                },
+                {
+                    "word": "die Nebenkosten",
+                    "gender": "die (Pl.)",
+                    "translation": "utility / ancillary costs",
+                    "example": "Wasser und Müllabfuhr sind in den Nebenkosten enthalten.",
+                    "exampleEN": "Water and waste disposal are included in the utilities."
+                },
+                {
+                    "word": "die Schufa-Auskunft",
+                    "gender": "die",
+                    "translation": "credit check record",
+                    "example": "Der Vermieter verlangt eine aktuelle Schufa-Auskunft.",
+                    "exampleEN": "The landlord requires an up-to-date credit check."
+                }
+            ],
+            "tips": [
+                {
+                    "de": "Warmmiete vs. Kaltmiete",
+                    "en": "Kaltmiete = base rent only; Warmmiete = total with heating and maintenance."
+                },
+                {
+                    "de": "Erforderliche Dokumente",
+                    "en": "Note down the 3 required papers: ID card, 3 payslips, and credit check."
+                },
+                {
+                    "de": "Besichtigungstermin",
+                    "en": "Check whether individual appointments or group open-houses are scheduled."
                 }
             ]
         },
-        {
-            id: "a2_read_17",
-            title: "Kundenservice & Reklamation",
-            titleEN: "Customer Service & Warranty Return",
-            emoji: "📦",
-            warmup: {
-                vocab: [
-                    { word: "die Reklamation", gender: "die", translation: "complaint / warranty claim", example: "Die Reklamation wurde vom Kundenservice schnell bearbeitet.", exampleEN: "The complaint was processed quickly by customer service." },
-                    { word: "der Defekt", gender: "der", translation: "defect / fault", example: "Das Gerät hat einen technischen Defekt.", exampleEN: "The appliance has a technical fault." },
-                    { word: "der Kassenbeleg", gender: "der", translation: "purchase receipt / sales slip", example: "Bitte legen Sie den Kassenbeleg der Rücksendung bei.", exampleEN: "Please enclose the sales receipt with the return." },
-                    { word: "der Ersatz", gender: "der", translation: "replacement", example: "Wir senden Ihnen kostenlosen Ersatz.", exampleEN: "We will send you a free replacement." },
-                    { word: "das Rücksendeetikett", gender: "das", translation: "return postage label", example: "Drucken Sie das kostenfreie Rücksendeetikett aus.", exampleEN: "Print out the prepaid return label." },
-                    { word: "die Gutschrift", gender: "die", translation: "store credit / refund voucher", example: "Sie erhalten den Betrag als Gutschrift auf Ihr Bankkonto.", exampleEN: "You will receive the amount as a credit to your bank account." }
+        "text": "**Einladung zur Wohnungsbesichtigung**\n\nSehr geehrte Mietinteressenten,\n\nwir laden Sie herzlich zur Besichtigung der **2-Zimmer-Wohnung** in der Schillerstraße 14 ein.\n\n**Termin:** Samstag, 14. Oktober, von 10:00 bis 12:00 Uhr.\n\n**Wohnungsdaten:**\n- 58 m², 2. Obergeschoss mit Südbalkon und Einbauküche\n- Kaltmiete: 650 Euro | Nebenkosten: 180 Euro | **Warmmiete: 830 Euro**\n- Kaution: 1.950 Euro (3 Kaltmieten)\n\nBitte bringen Sie zur Besichtigung folgende Unterlagen in Kopie mit: Kopie des Personalausweises, die letzten drei Gehaltsabrechnungen und eine aktuelle Schufa-Auskunft.\n\nMit freundlichen Grüßen,\n**Hausverwaltung Weber & Partner**",
+        "textEN": "**Apartment Viewing Invitation**\n\nDear Prospective Tenants,\n\nWe warmly invite you to view the **2-room apartment** at Schillerstraße 14.\n\n**Viewing Date:** Saturday, 14 October, from 10:00 to 12:00.\n\n**Apartment Details:**\n- 58 m², 2nd floor with south-facing balcony and fitted kitchen\n- Base rent: €650 | Utilities: €180 | **Total rent: €830**\n- Deposit: €1,950 (3 months base rent)\n\nPlease bring copies of the following documents to the viewing: copy of ID card, last three payslips, and a current credit check.\n\nKind regards,\n**Property Management Weber & Partner**",
+        "questions": [
+            {
+                "question": "Wie hoch ist die monatliche Gesamtmiete (Warmmiete)?",
+                "questionEN": "How much is the total monthly rent (warm rent)?",
+                "options": [
+                    "180 Euro",
+                    "650 Euro",
+                    "1.950 Euro",
+                    "830 Euro"
                 ],
-                tips: [
-                    { de: "Garantiefrist beachten", en: "Check how long the warranty is valid (usually 2 years in Germany)." },
-                    { de: "Rücksendekosten", en: "Notice if returns are free ('kostenfrei') or paid by customer." },
-                    { de: "Fehlerbeschreibung", en: "A clear description of the defect speeds up repair or replacement." }
-                ]
+                "correct": 3,
+                "explanation": "The text states: 'Warmmiete: 830 Euro'."
             },
-            text: "**Service-Information zur Warenrücksendung**\n\nLiebe Kundin, lieber Kunde,\n\nIhr bei uns gekaufter Artikel funktioniert nicht einwandfrei? Sie haben innerhalb von **24 Monaten ab Kaufdatum** Anspruch auf gesetzliche Gewährleistung.\n\n**So funktioniert der Umtausch:**\n1. Loggen Sie sich in Ihr Kundenkonto ein und wählen Sie „Bestellungen“.\n2. Klicken Sie auf „Artikel reklamieren“ und beschreiben Sie kurz den Fehler.\n3. Drucken Sie das **kostenlose DHL-Rücksendeetikett** aus.\n4. Verpacken Sie die Ware zusammen mit einer Kopie der Rechnung und bringen Sie das Paket zur nächsten Postfiliale.\n\nNach Prüfung im Servicelabor senden wir Ihnen innerhalb von **5 Werktagen** ein Neugerät oder erstatten den Kaufpreis.\n\nIhr Team von **ElectroMarkt Online**",
-            textEN: "**Service Information for Goods Returns**\n\nDear Customer,\n\nYour purchased item is not working properly? You are entitled to statutory warranty within **24 months from purchase date**.\n\n**How the return process works:**\n1. Log into your customer account and select 'Orders'.\n2. Click on 'Claim Item' and briefly describe the fault.\n3. Print the **free DHL return label**.\n4. Pack the item together with a copy of the invoice and drop it off at the nearest post branch.\n\nAfter inspection in the service lab, we will send you a new device or refund the purchase price within **5 working days**.\n\nYour team at **ElectroMarkt Online**",
-            questions: [
+            {
+                "question": "Wann findet die Besichtigung statt?",
+                "questionEN": "When does the viewing take place?",
+                "options": [
+                    "Am Sonntagnachmittag",
+                    "Jeden Werktag",
+                    "Am Freitag ab 18:00 Uhr",
+                    "Am Samstagvormittag"
+                ],
+                "correct": 3,
+                "explanation": "'Samstag, 14. Oktober, von 10:00 bis 12:00 Uhr' is on Saturday morning."
+            },
+            {
+                "question": "Welches Dokument wird bei der Besichtigung verlangt?",
+                "questionEN": "Which document is requested at the viewing?",
+                "options": [
+                    "Ein Führungszeugnis der Polizei",
+                    "Der alte Mietvertrag",
+                    "Ein ärztliches Attest",
+                    "Gehaltsabrechnungen der letzten 3 Monate"
+                ],
+                "correct": 3,
+                "explanation": "'die letzten drei Gehaltsabrechnungen' are explicitly listed."
+            }
+        ]
+    },
+    {
+        "id": "a2_read_17",
+        "title": "Kundenservice & Reklamation",
+        "titleEN": "Customer Service & Warranty Return",
+        "emoji": "📦",
+        "warmup": {
+            "vocab": [
                 {
-                    question: "Wie lange gilt die gesetzliche Gewährleistung ab Kaufdatum?",
-                    questionEN: "How long is the statutory warranty valid from the purchase date?",
-                    options: ["24 Monate", "12 Monate", "30 Tage", "14 Tage"],
-                    correct: 0,
-                    explanation: "The text states: 'innerhalb von 24 Monaten ab Kaufdatum'."
+                    "word": "die Reklamation",
+                    "gender": "die",
+                    "translation": "complaint / warranty claim",
+                    "example": "Die Reklamation wurde vom Kundenservice schnell bearbeitet.",
+                    "exampleEN": "The complaint was processed quickly by customer service."
                 },
                 {
-                    question: "Wer bezahlt die Rücksendung des defekten Artikels?",
-                    questionEN: "Who pays for returning the defective item?",
-                    options: ["Der Verkäufer (kostenloses Etikett)", "Der Kunde selbst", "Die Postfiliale", "Die Versicherung"],
-                    correct: 0,
-                    explanation: "The text specifies 'kostenloses DHL-Rücksendeetikett'."
+                    "word": "der Defekt",
+                    "gender": "der",
+                    "translation": "defect / fault",
+                    "example": "Das Gerät hat einen technischen Defekt.",
+                    "exampleEN": "The appliance has a technical fault."
                 },
                 {
-                    question: "Wie schnell erhält der Kunde nach der Überprüfung Ersatz?",
-                    questionEN: "How quickly does the customer receive a replacement after inspection?",
-                    options: ["Innerhalb von 5 Werktagen", "Innerhalb von 24 Stunden", "Nach 4 Wochen", "Erst nach telefonischer Rückfrage"],
-                    correct: 0,
-                    explanation: "The notice says: 'innerhalb von 5 Werktagen ein Neugerät'."
+                    "word": "der Kassenbeleg",
+                    "gender": "der",
+                    "translation": "purchase receipt / sales slip",
+                    "example": "Bitte legen Sie den Kassenbeleg der Rücksendung bei.",
+                    "exampleEN": "Please enclose the sales receipt with the return."
+                },
+                {
+                    "word": "der Ersatz",
+                    "gender": "der",
+                    "translation": "replacement",
+                    "example": "Wir senden Ihnen kostenlosen Ersatz.",
+                    "exampleEN": "We will send you a free replacement."
+                },
+                {
+                    "word": "das Rücksendeetikett",
+                    "gender": "das",
+                    "translation": "return postage label",
+                    "example": "Drucken Sie das kostenfreie Rücksendeetikett aus.",
+                    "exampleEN": "Print out the prepaid return label."
+                },
+                {
+                    "word": "die Gutschrift",
+                    "gender": "die",
+                    "translation": "store credit / refund voucher",
+                    "example": "Sie erhalten den Betrag als Gutschrift auf Ihr Bankkonto.",
+                    "exampleEN": "You will receive the amount as a credit to your bank account."
+                }
+            ],
+            "tips": [
+                {
+                    "de": "Garantiefrist beachten",
+                    "en": "Check how long the warranty is valid (usually 2 years in Germany)."
+                },
+                {
+                    "de": "Rücksendekosten",
+                    "en": "Notice if returns are free ('kostenfrei') or paid by customer."
+                },
+                {
+                    "de": "Fehlerbeschreibung",
+                    "en": "A clear description of the defect speeds up repair or replacement."
                 }
             ]
         },
-        {
-            id: "a2_read_18",
-            title: "Fahrplanänderung & Schienenersatzverkehr",
-            titleEN: "Train Schedule Change & Replacement Bus",
-            emoji: "🚆",
-            warmup: {
-                vocab: [
-                    { word: "der Schienenersatzverkehr (SEV)", gender: "der", translation: "rail replacement bus service", example: "Zwischen Ulm und Augsburg verkehrt ein Schienenersatzverkehr.", exampleEN: "A rail replacement bus operates between Ulm and Augsburg." },
-                    { word: "die Baumaßnahme", gender: "die", translation: "construction / engineering works", example: "Wegen dringender Baumaßnahmen ist die Bahnstrecke gesperrt.", exampleEN: "The railway line is closed due to urgent construction works." },
-                    { word: "die Haltestelle", gender: "die", translation: "bus / tram stop", example: "Die SEV-Haltestelle befindet sich direkt vor dem Bahnhofsgebäude.", exampleEN: "The replacement bus stop is right in front of the station building." },
-                    { word: "die Verzögerung", gender: "die", translation: "delay", example: "Rechnen Sie mit etwa 25 Minuten Verzögerung.", exampleEN: "Expect a delay of about 25 minutes." },
-                    { word: "die Fahrradmitnahme", gender: "die", translation: "taking bicycles on board", example: "Die Fahrradmitnahme im Ersatzbus ist leider nicht möglich.", exampleEN: "Taking bicycles on the replacement bus is unfortunately not possible." },
-                    { word: "der Anschlusszug", gender: "der", translation: "connecting train", example: "Der Anschlusszug in Stuttgart wartet bis zu 10 Minuten.", exampleEN: "The connecting train in Stuttgart waits up to 10 minutes." }
+        "text": "**Service-Information zur Warenrücksendung**\n\nLiebe Kundin, lieber Kunde,\n\nIhr bei uns gekaufter Artikel funktioniert nicht einwandfrei? Sie haben innerhalb von **24 Monaten ab Kaufdatum** Anspruch auf gesetzliche Gewährleistung.\n\n**So funktioniert der Umtausch:**\n1. Loggen Sie sich in Ihr Kundenkonto ein und wählen Sie „Bestellungen“.\n2. Klicken Sie auf „Artikel reklamieren“ und beschreiben Sie kurz den Fehler.\n3. Drucken Sie das **kostenlose DHL-Rücksendeetikett** aus.\n4. Verpacken Sie die Ware zusammen mit einer Kopie der Rechnung und bringen Sie das Paket zur nächsten Postfiliale.\n\nNach Prüfung im Servicelabor senden wir Ihnen innerhalb von **5 Werktagen** ein Neugerät oder erstatten den Kaufpreis.\n\nIhr Team von **ElectroMarkt Online**",
+        "textEN": "**Service Information for Goods Returns**\n\nDear Customer,\n\nYour purchased item is not working properly? You are entitled to statutory warranty within **24 months from purchase date**.\n\n**How the return process works:**\n1. Log into your customer account and select 'Orders'.\n2. Click on 'Claim Item' and briefly describe the fault.\n3. Print the **free DHL return label**.\n4. Pack the item together with a copy of the invoice and drop it off at the nearest post branch.\n\nAfter inspection in the service lab, we will send you a new device or refund the purchase price within **5 working days**.\n\nYour team at **ElectroMarkt Online**",
+        "questions": [
+            {
+                "question": "Wie lange gilt die gesetzliche Gewährleistung ab Kaufdatum?",
+                "questionEN": "How long is the statutory warranty valid from the purchase date?",
+                "options": [
+                    "14 Tage",
+                    "24 Monate",
+                    "12 Monate",
+                    "30 Tage"
                 ],
-                tips: [
-                    { de: "SEV = Bus statt Bahn", en: "SEV stands for bus replacement when rail tracks are closed." },
-                    { de: "Gültigkeit der Fahrkarte", en: "Regular train tickets remain fully valid on replacement buses." },
-                    { de: "Zusätzliche Reisezeit", en: "Always budget extra travel time during track maintenance." }
-                ]
+                "correct": 1,
+                "explanation": "The text states: 'innerhalb von 24 Monaten ab Kaufdatum'."
             },
-            text: "**Fahrgastinformation: Streckensperrung Regionalbahn RB 42**\n\nWegen Gleisbauarbeiten ist der Streckenabschnitt zwischen **Heidelberg Hauptbahnhof und Wiesloch-Walldorf** von Freitag, 20. Oktober (21:00 Uhr), bis Montag, 23. Oktober (04:30 Uhr), für den Zugverkehr voll gesperrt.\n\n**Ersatzverkehr mit Bussen (SEV):**\n- Alle Züge der Linie RB 42 entfallen auf diesem Abschnitt.\n- Als Ersatz fahren Busse im 20-Minuten-Takt ab Bussteig D vor dem Bahnhof.\n- **Fahrzeitverlängerung:** Bitte planen Sie ca. 20 bis 30 Minuten mehr Reisezeit ein.\n- **Fahrradmitnahme:** In den Ersatzbussen können aus Platzgründen keine Fahrräder befördert werden.\n- Fahrkarten der Deutschen Bahn und des Verkehrsverbunds sind in den Bussen gültig.\n\nWir bitten um Ihr Verständnis.\n**DB Regio Mitte**",
-            textEN: "**Passenger Information: Track Closure Regional Train RB 42**\n\nDue to track maintenance, the rail section between **Heidelberg Central Station and Wiesloch-Walldorf** is completely closed to train traffic from Friday, 20 October (21:00) until Monday, 23 October (04:30).\n\n**Rail Replacement Bus Service (SEV):**\n- All RB 42 trains are cancelled on this section.\n- Replacement buses run every 20 minutes from Bus Platform D outside the station.\n- **Extended Travel Time:** Please budget approximately 20 to 30 minutes more travel time.\n- **Bicycles:** Due to limited space, bicycles cannot be transported on replacement buses.\n- DB and local transit network tickets are valid on the buses.\n\nWe appreciate your understanding.\n**DB Regio Central**",
-            questions: [
+            {
+                "question": "Wer bezahlt die Rücksendung des defekten Artikels?",
+                "questionEN": "Who pays for returning the defective item?",
+                "options": [
+                    "Die Versicherung",
+                    "Die Postfiliale",
+                    "Der Verkäufer (kostenloses Etikett)",
+                    "Der Kunde selbst"
+                ],
+                "correct": 2,
+                "explanation": "The text specifies 'kostenloses DHL-Rücksendeetikett'."
+            },
+            {
+                "question": "Wie schnell erhält der Kunde nach der Überprüfung Ersatz?",
+                "questionEN": "How quickly does the customer receive a replacement after inspection?",
+                "options": [
+                    "Erst nach telefonischer Rückfrage",
+                    "Innerhalb von 24 Stunden",
+                    "Innerhalb von 5 Werktagen",
+                    "Nach 4 Wochen"
+                ],
+                "correct": 2,
+                "explanation": "The notice says: 'innerhalb von 5 Werktagen ein Neugerät'."
+            }
+        ]
+    },
+    {
+        "id": "a2_read_18",
+        "title": "Fahrplanänderung & Schienenersatzverkehr",
+        "titleEN": "Train Schedule Change & Replacement Bus",
+        "emoji": "🚆",
+        "warmup": {
+            "vocab": [
                 {
-                    question: "Wie oft fahren die Ersatzbusse zwischen den beiden Bahnhöfen?",
-                    questionEN: "How often do the replacement buses run between the two stations?",
-                    options: ["Alle 20 Minuten", "Jede volle Stunde", "Nur morgens und abends", "Alle 5 Minuten"],
-                    correct: 0,
-                    explanation: "The notice says: 'fahren Busse im 20-Minuten-Takt'."
+                    "word": "der Schienenersatzverkehr (SEV)",
+                    "gender": "der",
+                    "translation": "rail replacement bus service",
+                    "example": "Zwischen Ulm und Augsburg verkehrt ein Schienenersatzverkehr.",
+                    "exampleEN": "A rail replacement bus operates between Ulm and Augsburg."
                 },
                 {
-                    question: "Darf man ein Fahrrad im Ersatzbus mitnehmen?",
-                    questionEN: "Are passengers allowed to take a bicycle on the replacement bus?",
-                    options: ["Nein, keine Fahrräder", "Ja, gegen Aufpreis", "Ja, bis 12 Uhr", "Nur Klappräder"],
-                    correct: 0,
-                    explanation: "'können aus Platzgründen keine Fahrräder befördert werden'."
+                    "word": "die Baumaßnahme",
+                    "gender": "die",
+                    "translation": "construction / engineering works",
+                    "example": "Wegen dringender Baumaßnahmen ist die Bahnstrecke gesperrt.",
+                    "exampleEN": "The railway line is closed due to urgent construction works."
                 },
                 {
-                    question: "Braucht man ein neues Ticket für den Bus?",
-                    questionEN: "Does one need a new ticket for the bus?",
-                    options: ["Nein, Bahntickets sind im Bus gültig", "Ja, man muss beim Fahrer bar zahlen", "Nur mit Monatsticket", "Ja, 5 Euro extra"],
-                    correct: 0,
-                    explanation: "'Fahrkarten der Deutschen Bahn und des Verkehrsverbunds sind in den Bussen gültig'."
+                    "word": "die Haltestelle",
+                    "gender": "die",
+                    "translation": "bus / tram stop",
+                    "example": "Die SEV-Haltestelle befindet sich direkt vor dem Bahnhofsgebäude.",
+                    "exampleEN": "The replacement bus stop is right in front of the station building."
+                },
+                {
+                    "word": "die Verzögerung",
+                    "gender": "die",
+                    "translation": "delay",
+                    "example": "Rechnen Sie mit etwa 25 Minuten Verzögerung.",
+                    "exampleEN": "Expect a delay of about 25 minutes."
+                },
+                {
+                    "word": "die Fahrradmitnahme",
+                    "gender": "die",
+                    "translation": "taking bicycles on board",
+                    "example": "Die Fahrradmitnahme im Ersatzbus ist leider nicht möglich.",
+                    "exampleEN": "Taking bicycles on the replacement bus is unfortunately not possible."
+                },
+                {
+                    "word": "der Anschlusszug",
+                    "gender": "der",
+                    "translation": "connecting train",
+                    "example": "Der Anschlusszug in Stuttgart wartet bis zu 10 Minuten.",
+                    "exampleEN": "The connecting train in Stuttgart waits up to 10 minutes."
+                }
+            ],
+            "tips": [
+                {
+                    "de": "SEV = Bus statt Bahn",
+                    "en": "SEV stands for bus replacement when rail tracks are closed."
+                },
+                {
+                    "de": "Gültigkeit der Fahrkarte",
+                    "en": "Regular train tickets remain fully valid on replacement buses."
+                },
+                {
+                    "de": "Zusätzliche Reisezeit",
+                    "en": "Always budget extra travel time during track maintenance."
                 }
             ]
         },
-        {
-            id: "a2_read_19",
-            title: "Volkshochschule: Sprachkurs & Einstufung",
-            titleEN: "Adult Education Centre: German Course & Placement",
-            emoji: "📚",
-            warmup: {
-                vocab: [
-                    { word: "die Volkshochschule (VHS)", gender: "die", translation: "community college / adult education centre", example: "Die VHS bietet günstige Abendkurse für Deutsch an.", exampleEN: "The VHS offers affordable evening courses for German." },
-                    { word: "der Einstufungstest", gender: "der", translation: "placement test / assessment test", example: "Machen Sie zuerst den Einstufungstest, um Ihr Niveau zu finden.", exampleEN: "Do the placement test first to find your level." },
-                    { word: "die Kursgebühr", gender: "die", translation: "course fee / tuition", example: "Die Kursgebühr beinhaltet das Lehrbuch.", exampleEN: "The course fee includes the coursebook." },
-                    { word: "die Teilnahmebescheinigung", gender: "die", translation: "certificate of attendance", example: "Bei 80% Anwesenheit erhalten Sie eine Teilnahmebescheinigung.", exampleEN: "With 80% attendance you receive a certificate of attendance." },
-                    { word: "die Ermäßigung", gender: "die", translation: "discount / concession fee", example: "Studierende und Arbeitssuchende erhalten 30% Ermäßigung.", exampleEN: "Students and job seekers receive a 30% discount." },
-                    { word: "die Unterrichtseinheit (UE)", gender: "die", translation: "lesson unit (45 min)", example: "Der Kurs umfasst 60 Unterrichtseinheiten.", exampleEN: "The course comprises 60 lesson units." }
+        "text": "**Fahrgastinformation: Streckensperrung Regionalbahn RB 42**\n\nWegen Gleisbauarbeiten ist der Streckenabschnitt zwischen **Heidelberg Hauptbahnhof und Wiesloch-Walldorf** von Freitag, 20. Oktober (21:00 Uhr), bis Montag, 23. Oktober (04:30 Uhr), für den Zugverkehr voll gesperrt.\n\n**Ersatzverkehr mit Bussen (SEV):**\n- Alle Züge der Linie RB 42 entfallen auf diesem Abschnitt.\n- Als Ersatz fahren Busse im 20-Minuten-Takt ab Bussteig D vor dem Bahnhof.\n- **Fahrzeitverlängerung:** Bitte planen Sie ca. 20 bis 30 Minuten mehr Reisezeit ein.\n- **Fahrradmitnahme:** In den Ersatzbussen können aus Platzgründen keine Fahrräder befördert werden.\n- Fahrkarten der Deutschen Bahn und des Verkehrsverbunds sind in den Bussen gültig.\n\nWir bitten um Ihr Verständnis.\n**DB Regio Mitte**",
+        "textEN": "**Passenger Information: Track Closure Regional Train RB 42**\n\nDue to track maintenance, the rail section between **Heidelberg Central Station and Wiesloch-Walldorf** is completely closed to train traffic from Friday, 20 October (21:00) until Monday, 23 October (04:30).\n\n**Rail Replacement Bus Service (SEV):**\n- All RB 42 trains are cancelled on this section.\n- Replacement buses run every 20 minutes from Bus Platform D outside the station.\n- **Extended Travel Time:** Please budget approximately 20 to 30 minutes more travel time.\n- **Bicycles:** Due to limited space, bicycles cannot be transported on replacement buses.\n- DB and local transit network tickets are valid on the buses.\n\nWe appreciate your understanding.\n**DB Regio Central**",
+        "questions": [
+            {
+                "question": "Wie oft fahren die Ersatzbusse zwischen den beiden Bahnhöfen?",
+                "questionEN": "How often do the replacement buses run between the two stations?",
+                "options": [
+                    "Alle 5 Minuten",
+                    "Alle 20 Minuten",
+                    "Jede volle Stunde",
+                    "Nur morgens und abends"
                 ],
-                tips: [
-                    { de: "Einstufungsberatung", en: "Adult colleges usually require a short placement consultation before booking A2/B1." },
-                    { de: "Anwesenheitspflicht", en: "Check minimum attendance percentage for official certification." },
-                    { de: "UE = 45 Minuten", en: "1 Unterrichtseinheit equals 45 minutes in German educational contexts." }
-                ]
+                "correct": 1,
+                "explanation": "The notice says: 'fahren Busse im 20-Minuten-Takt'."
             },
-            text: "**Volkshochschule Stadtmitte — Deutsch A2.2 Abendkurs**\n\nSie haben bereits Grundkenntnisse in Deutsch (Niveau A2.1) und möchten Ihre Sprech- und Schreibfertigkeiten für Beruf und Alltag vertiefen?\n\n**Kursdetails:**\n- **Zeitraum:** 6. November bis 15. Februar\n- **Unterrichtszeiten:** Montag und Mittwoch, jeweils 18:30–20:45 Uhr (insgesamt 60 UE)\n- **Kursort:** VHS-Zentrum, Zimmer 204 oder online per Zoom\n- **Kursgebühr:** 220 Euro (ermäßigt 150 Euro für Studierende und Bürgergeld-Empfänger)\n- **Lehrwerk:** *Schritte Plus Neu A2.2* (bitte vor Kursbeginn selbst kaufen)\n\n**Wichtig:** Vor der ersten Anmeldung ist ein kostenloser Online-Einstufungstest oder eine persönliche Beratung am Dienstag zwischen 14:00 und 17:00 Uhr erforderlich.\n\nAnmeldung unter: **www.vhs-stadtmitte.de/deutsch-a2**",
-            textEN: "**City Centre Adult Education Centre — German A2.2 Evening Course**\n\nYou already have basic German knowledge (Level A2.1) and want to deepen your speaking and writing skills for work and daily life?\n\n**Course Details:**\n- **Period:** 6 November to 15 February\n- **Class Times:** Monday and Wednesday, 18:30–20:45 each (total 60 teaching units)\n- **Location:** VHS Centre, Room 204 or online via Zoom\n- **Tuition Fee:** €220 (concession €150 for students and welfare recipients)\n- **Coursebook:** *Schritte Plus Neu A2.2* (please purchase yourself before course starts)\n\n**Important:** Before first registration, a free online placement test or in-person consultation on Tuesday between 14:00 and 17:00 is mandatory.\n\nRegistration at: **www.vhs-stadtmitte.de/deutsch-a2**",
-            questions: [
+            {
+                "question": "Darf man ein Fahrrad im Ersatzbus mitnehmen?",
+                "questionEN": "Are passengers allowed to take a bicycle on the replacement bus?",
+                "options": [
+                    "Nur Klappräder",
+                    "Ja, gegen Aufpreis",
+                    "Nein, keine Fahrräder",
+                    "Ja, bis 12 Uhr"
+                ],
+                "correct": 2,
+                "explanation": "'können aus Platzgründen keine Fahrräder befördert werden'."
+            },
+            {
+                "question": "Braucht man ein neues Ticket für den Bus?",
+                "questionEN": "Does one need a new ticket for the bus?",
+                "options": [
+                    "Nur mit Monatsticket",
+                    "Ja, 5 Euro extra",
+                    "Nein, Bahntickets sind im Bus gültig",
+                    "Ja, man muss beim Fahrer bar zahlen"
+                ],
+                "correct": 2,
+                "explanation": "'Fahrkarten der Deutschen Bahn und des Verkehrsverbunds sind in den Bussen gültig'."
+            }
+        ]
+    },
+    {
+        "id": "a2_read_19",
+        "title": "Volkshochschule: Sprachkurs & Einstufung",
+        "titleEN": "Adult Education Centre: German Course & Placement",
+        "emoji": "📚",
+        "warmup": {
+            "vocab": [
                 {
-                    question: "An welchen Tagen findet der Abendkurs statt?",
-                    questionEN: "On which days does the evening class take place?",
-                    options: ["Montags und mittwochs", "Dienstags und donnerstags", "Jeden Samstag", "Nur freitags"],
-                    correct: 0,
-                    explanation: "The details state: 'Montag und Mittwoch, jeweils 18:30–20:45 Uhr'."
+                    "word": "die Volkshochschule (VHS)",
+                    "gender": "die",
+                    "translation": "community college / adult education centre",
+                    "example": "Die VHS bietet günstige Abendkurse für Deutsch an.",
+                    "exampleEN": "The VHS offers affordable evening courses for German."
                 },
                 {
-                    question: "Ist das Lehrbuch in der Kursgebühr von 220 Euro enthalten?",
-                    questionEN: "Is the coursebook included in the €220 tuition fee?",
-                    options: ["Nein, man muss es selbst kaufen", "Ja, es wird kostenlos verteilt", "Nur das Arbeitsbuch", "Als kostenloses PDF"],
-                    correct: 0,
-                    explanation: "'bitte vor Kursbeginn selbst kaufen'."
+                    "word": "der Einstufungstest",
+                    "gender": "der",
+                    "translation": "placement test / assessment test",
+                    "example": "Machen Sie zuerst den Einstufungstest, um Ihr Niveau zu finden.",
+                    "exampleEN": "Do the placement test first to find your level."
                 },
                 {
-                    question: "Was muss man vor der ersten Kursanmeldung machen?",
-                    questionEN: "What must one do before the first course registration?",
-                    options: ["Einen kostenlosen Einstufungstest machen", "Eine Prüfung beim Goethe-Institut ablegen", "Die volle Gebühr im Voraus überweisen", "Ein Passfoto einsenden"],
-                    correct: 0,
-                    explanation: "'Vor der ersten Anmeldung ist ein kostenloser Online-Einstufungstest... erforderlich'."
+                    "word": "die Kursgebühr",
+                    "gender": "die",
+                    "translation": "course fee / tuition",
+                    "example": "Die Kursgebühr beinhaltet das Lehrbuch.",
+                    "exampleEN": "The course fee includes the coursebook."
+                },
+                {
+                    "word": "die Teilnahmebescheinigung",
+                    "gender": "die",
+                    "translation": "certificate of attendance",
+                    "example": "Bei 80% Anwesenheit erhalten Sie eine Teilnahmebescheinigung.",
+                    "exampleEN": "With 80% attendance you receive a certificate of attendance."
+                },
+                {
+                    "word": "die Ermäßigung",
+                    "gender": "die",
+                    "translation": "discount / concession fee",
+                    "example": "Studierende und Arbeitssuchende erhalten 30% Ermäßigung.",
+                    "exampleEN": "Students and job seekers receive a 30% discount."
+                },
+                {
+                    "word": "die Unterrichtseinheit (UE)",
+                    "gender": "die",
+                    "translation": "lesson unit (45 min)",
+                    "example": "Der Kurs umfasst 60 Unterrichtseinheiten.",
+                    "exampleEN": "The course comprises 60 lesson units."
+                }
+            ],
+            "tips": [
+                {
+                    "de": "Einstufungsberatung",
+                    "en": "Adult colleges usually require a short placement consultation before booking A2/B1."
+                },
+                {
+                    "de": "Anwesenheitspflicht",
+                    "en": "Check minimum attendance percentage for official certification."
+                },
+                {
+                    "de": "UE = 45 Minuten",
+                    "en": "1 Unterrichtseinheit equals 45 minutes in German educational contexts."
                 }
             ]
         },
-        {
-            id: "a2_read_20",
-            title: "Einladung zum Sommerfest im Kindergarten",
-            titleEN: "Kindergarten Summer Party Invitation",
-            emoji: "🎈",
-            warmup: {
-                vocab: [
-                    { word: "das Sommerfest", gender: "das", translation: "summer festival / garden party", example: "Das Sommerfest ist der Höhepunkt des Kindergartenjahres.", exampleEN: "The summer party is the highlight of the kindergarten year." },
-                    { word: "das Buffet", gender: "das", translation: "buffet / food spread", example: "Eltern bringen leckere Salate und Kuchen fürs Buffet mit.", exampleEN: "Parents bring delicious salads and cakes for the buffet." },
-                    { word: "die Spende", gender: "die", translation: "donation / contribution", example: "Der Erlös geht als Spende an den Förderverein.", exampleEN: "The proceeds go as a donation to the booster club." },
-                    { word: "die Kinderschminken", gender: "das", translation: "children face painting", example: "Die Erzieherinnen bieten Kinderschminken und Spiele an.", exampleEN: "The nursery teachers offer face painting and games." },
-                    { word: "die Schlechtwetter-Alternative", gender: "die", translation: "rainy weather contingency", example: "Bei Regen feiern wir in der Turnhalle.", exampleEN: "In case of rain, we celebrate in the sports hall." },
-                    { word: "der Mitmachbeitrag", gender: "der", translation: "participatory contribution (food/help)", example: "Tragen Sie Ihren Beitrag bitte in die Liste an der Pinnwand ein.", exampleEN: "Please enter your contribution in the pinboard list." }
+        "text": "**Volkshochschule Stadtmitte — Deutsch A2.2 Abendkurs**\n\nSie haben bereits Grundkenntnisse in Deutsch (Niveau A2.1) und möchten Ihre Sprech- und Schreibfertigkeiten für Beruf und Alltag vertiefen?\n\n**Kursdetails:**\n- **Zeitraum:** 6. November bis 15. Februar\n- **Unterrichtszeiten:** Montag und Mittwoch, jeweils 18:30–20:45 Uhr (insgesamt 60 UE)\n- **Kursort:** VHS-Zentrum, Zimmer 204 oder online per Zoom\n- **Kursgebühr:** 220 Euro (ermäßigt 150 Euro für Studierende und Bürgergeld-Empfänger)\n- **Lehrwerk:** *Schritte Plus Neu A2.2* (bitte vor Kursbeginn selbst kaufen)\n\n**Wichtig:** Vor der ersten Anmeldung ist ein kostenloser Online-Einstufungstest oder eine persönliche Beratung am Dienstag zwischen 14:00 und 17:00 Uhr erforderlich.\n\nAnmeldung unter: **www.vhs-stadtmitte.de/deutsch-a2**",
+        "textEN": "**City Centre Adult Education Centre — German A2.2 Evening Course**\n\nYou already have basic German knowledge (Level A2.1) and want to deepen your speaking and writing skills for work and daily life?\n\n**Course Details:**\n- **Period:** 6 November to 15 February\n- **Class Times:** Monday and Wednesday, 18:30–20:45 each (total 60 teaching units)\n- **Location:** VHS Centre, Room 204 or online via Zoom\n- **Tuition Fee:** €220 (concession €150 for students and welfare recipients)\n- **Coursebook:** *Schritte Plus Neu A2.2* (please purchase yourself before course starts)\n\n**Important:** Before first registration, a free online placement test or in-person consultation on Tuesday between 14:00 and 17:00 is mandatory.\n\nRegistration at: **www.vhs-stadtmitte.de/deutsch-a2**",
+        "questions": [
+            {
+                "question": "An welchen Tagen findet der Abendkurs statt?",
+                "questionEN": "On which days does the evening class take place?",
+                "options": [
+                    "Jeden Samstag",
+                    "Montags und mittwochs",
+                    "Dienstags und donnerstags",
+                    "Nur freitags"
                 ],
-                tips: [
-                    { de: "Mitbringsel / Essensbeitrag", en: "In Germany, parents frequently coordinate a shared potluck buffet for school parties." },
-                    { de: "Ausweichort bei Regen", en: "Check where the party takes place if it rains ('Turnhalle' or indoor rooms)." },
-                    { de: "Eintragungsliste", en: "Notice the deadline to sign up helpers or food items." }
-                ]
+                "correct": 1,
+                "explanation": "The details state: 'Montag und Mittwoch, jeweils 18:30–20:45 Uhr'."
             },
-            text: "**Liebe Eltern und Familien der Kita Sonnenschein,**\n\nwir laden euch und eure Kinder ganz herzlich zu unserem diesjährigen **großen Sommerfest** ein!\n\n**Wann:** Freitag, 7. Juli, von 15:30 bis 19:00 Uhr\n**Wo:** Im Garten der Kita (bei Regen in der Turnhalle)\n\n**Unser Programm:**\n- 16:00 Uhr: Kleine Aufführung der Vorschulkinder\n- Spielstationen, Dosenwerfen und Kinderschminken\n- Großes internationales Kuchen- und Salatbuffet\n\n**Buffet-Beitrag:** Damit alle satt werden, freuen wir uns über Essensspenden (Fingerfood, Kuchen oder Salate — bitte ohne Erdnüsse wegen Allergien). Bitte tragt euch bis zum **3. Juli** in die Liste im Eingangsbereich ein.\n\nWir freuen uns auf einen wunderschönen sonnigen Nachmittag mit euch!\n**Euer Kita-Team & Elternbeirat**",
-            textEN: "**Dear Parents and Families of Sonnenschein Daycare,**\n\nWe warmly invite you and your children to our annual **big summer festival**!\n\n**When:** Friday, 7 July, from 15:30 to 19:00\n**Where:** In the daycare garden (in case of rain in the gym)\n\n**Our Programme:**\n- 16:00: Short performance by preschool children\n- Game stations, tin can toss, and face painting\n- Large international cake and salad buffet\n\n**Buffet Contribution:** To feed everyone, we welcome food donations (finger food, cakes, or salads — please no peanuts due to allergies). Please sign up on the list in the entrance area by **3 July**.\n\nWe look forward to a wonderful sunny afternoon with you!\n**Your Daycare Team & Parents' Council**",
-            questions: [
+            {
+                "question": "Ist das Lehrbuch in der Kursgebühr von 220 Euro enthalten?",
+                "questionEN": "Is the coursebook included in the €220 tuition fee?",
+                "options": [
+                    "Ja, es wird kostenlos verteilt",
+                    "Nur das Arbeitsbuch",
+                    "Nein, man muss es selbst kaufen",
+                    "Als kostenloses PDF"
+                ],
+                "correct": 2,
+                "explanation": "'bitte vor Kursbeginn selbst kaufen'."
+            },
+            {
+                "question": "Was muss man vor der ersten Kursanmeldung machen?",
+                "questionEN": "What must one do before the first course registration?",
+                "options": [
+                    "Die volle Gebühr im Voraus überweisen",
+                    "Ein Passfoto einsenden",
+                    "Eine Prüfung beim Goethe-Institut ablegen",
+                    "Einen kostenlosen Einstufungstest machen"
+                ],
+                "correct": 3,
+                "explanation": "'Vor der ersten Anmeldung ist ein kostenloser Online-Einstufungstest... erforderlich'."
+            }
+        ]
+    },
+    {
+        "id": "a2_read_20",
+        "title": "Einladung zum Sommerfest im Kindergarten",
+        "titleEN": "Kindergarten Summer Party Invitation",
+        "emoji": "🎈",
+        "warmup": {
+            "vocab": [
                 {
-                    question: "Wo findet das Sommerfest statt, wenn es regnet?",
-                    questionEN: "Where does the summer party take place if it rains?",
-                    options: ["In der Turnhalle", "Im Rathaus", "Es fällt aus", "Im Supermarkt"],
-                    correct: 0,
-                    explanation: "The text states: 'bei Regen in der Turnhalle'."
+                    "word": "das Sommerfest",
+                    "gender": "das",
+                    "translation": "summer festival / garden party",
+                    "example": "Das Sommerfest ist der Höhepunkt des Kindergartenjahres.",
+                    "exampleEN": "The summer party is the highlight of the kindergarten year."
                 },
                 {
-                    question: "Welche Zutat darf wegen Allergien NICHT im Essen sein?",
-                    questionEN: "Which ingredient must NOT be in the food due to allergies?",
-                    options: ["Erdnüsse", "Zucker", "Gluten", "Milch"],
-                    correct: 0,
-                    explanation: "'bitte ohne Erdnüsse wegen Allergien'."
+                    "word": "das Buffet",
+                    "gender": "das",
+                    "translation": "buffet / food spread",
+                    "example": "Eltern bringen leckere Salate und Kuchen fürs Buffet mit.",
+                    "exampleEN": "Parents bring delicious salads and cakes for the buffet."
                 },
                 {
-                    question: "Bis wann sollen sich die Eltern für das Buffet eintragen?",
-                    questionEN: "By when should parents sign up for the buffet contribution?",
-                    options: ["Bis zum 3. Juli", "Erst am 7. Juli", "Bis Ende August", "Gar nicht nötig"],
-                    correct: 0,
-                    explanation: "'Bitte tragt euch bis zum 3. Juli in die Liste... ein'."
+                    "word": "die Spende",
+                    "gender": "die",
+                    "translation": "donation / contribution",
+                    "example": "Der Erlös geht als Spende an den Förderverein.",
+                    "exampleEN": "The proceeds go as a donation to the booster club."
+                },
+                {
+                    "word": "die Kinderschminken",
+                    "gender": "das",
+                    "translation": "children face painting",
+                    "example": "Die Erzieherinnen bieten Kinderschminken und Spiele an.",
+                    "exampleEN": "The nursery teachers offer face painting and games."
+                },
+                {
+                    "word": "die Schlechtwetter-Alternative",
+                    "gender": "die",
+                    "translation": "rainy weather contingency",
+                    "example": "Bei Regen feiern wir in der Turnhalle.",
+                    "exampleEN": "In case of rain, we celebrate in the sports hall."
+                },
+                {
+                    "word": "der Mitmachbeitrag",
+                    "gender": "der",
+                    "translation": "participatory contribution (food/help)",
+                    "example": "Tragen Sie Ihren Beitrag bitte in die Liste an der Pinnwand ein.",
+                    "exampleEN": "Please enter your contribution in the pinboard list."
+                }
+            ],
+            "tips": [
+                {
+                    "de": "Mitbringsel / Essensbeitrag",
+                    "en": "In Germany, parents frequently coordinate a shared potluck buffet for school parties."
+                },
+                {
+                    "de": "Ausweichort bei Regen",
+                    "en": "Check where the party takes place if it rains ('Turnhalle' or indoor rooms)."
+                },
+                {
+                    "de": "Eintragungsliste",
+                    "en": "Notice the deadline to sign up helpers or food items."
                 }
             ]
         },
-        {
-            id: "a2_read_21",
-            title: "Bibliotheksordnung & Ausleihe",
-            titleEN: "Public Library Rules & Lending Service",
-            emoji: "📖",
-            warmup: {
-                vocab: [
-                    { word: "der Bibliotheksausweis", gender: "der", translation: "library card", example: "Mit dem Bibliotheksausweis können Sie bis zu 20 Bücher ausleihen.", exampleEN: "With the library card you can borrow up to 20 books." },
-                    { word: "die Leihfrist", gender: "die", translation: "loan period / borrowing duration", example: "Die Leihfrist für Bücher beträgt vier Wochen.", exampleEN: "The loan period for books is four weeks." },
-                    { word: "verlängern", gender: "Verb", translation: "to renew / extend", example: "Sie können die Medien online um weitere vier Wochen verlängern.", exampleEN: "You can renew the media online for another four weeks." },
-                    { word: "die Säumnisgebühr", gender: "die", translation: "late return fee / fine", example: "Bei verspäteter Rückgabe fällt eine Säumnisgebühr von 1 Euro pro Tag an.", exampleEN: "For late returns, a fine of €1 per day applies." },
-                    { word: "das E-Book", gender: "das", translation: "electronic book", example: "Unsere Onleihe bietet Tausende kostenlose E-Books und Hörbücher.", exampleEN: "Our digital library offers thousands of free e-books and audiobooks." },
-                    { word: "die Rückgabebox", gender: "die", translation: "returns drop box", example: "Außerhalb der Öffnungszeiten nutzen Sie bitte die Rückgabebox.", exampleEN: "Outside opening hours please use the returns drop box." }
+        "text": "**Liebe Eltern und Familien der Kita Sonnenschein,**\n\nwir laden euch und eure Kinder ganz herzlich zu unserem diesjährigen **großen Sommerfest** ein!\n\n**Wann:** Freitag, 7. Juli, von 15:30 bis 19:00 Uhr\n**Wo:** Im Garten der Kita (bei Regen in der Turnhalle)\n\n**Unser Programm:**\n- 16:00 Uhr: Kleine Aufführung der Vorschulkinder\n- Spielstationen, Dosenwerfen und Kinderschminken\n- Großes internationales Kuchen- und Salatbuffet\n\n**Buffet-Beitrag:** Damit alle satt werden, freuen wir uns über Essensspenden (Fingerfood, Kuchen oder Salate — bitte ohne Erdnüsse wegen Allergien). Bitte tragt euch bis zum **3. Juli** in die Liste im Eingangsbereich ein.\n\nWir freuen uns auf einen wunderschönen sonnigen Nachmittag mit euch!\n**Euer Kita-Team & Elternbeirat**",
+        "textEN": "**Dear Parents and Families of Sonnenschein Daycare,**\n\nWe warmly invite you and your children to our annual **big summer festival**!\n\n**When:** Friday, 7 July, from 15:30 to 19:00\n**Where:** In the daycare garden (in case of rain in the gym)\n\n**Our Programme:**\n- 16:00: Short performance by preschool children\n- Game stations, tin can toss, and face painting\n- Large international cake and salad buffet\n\n**Buffet Contribution:** To feed everyone, we welcome food donations (finger food, cakes, or salads — please no peanuts due to allergies). Please sign up on the list in the entrance area by **3 July**.\n\nWe look forward to a wonderful sunny afternoon with you!\n**Your Daycare Team & Parents' Council**",
+        "questions": [
+            {
+                "question": "Wo findet das Sommerfest statt, wenn es regnet?",
+                "questionEN": "Where does the summer party take place if it rains?",
+                "options": [
+                    "Es fällt aus",
+                    "Im Rathaus",
+                    "In der Turnhalle",
+                    "Im Supermarkt"
                 ],
-                tips: [
-                    { de: "Leihfrist (Bücher vs. DVDs)", en: "Books often have longer loan periods (4 weeks) than DVDs or games (2 weeks)." },
-                    { de: "Online-Konto Verlängerung", en: "Media can be renewed online unless reserved by another borrower." },
-                    { de: "Rückgabe außerhalb der Öffnungszeiten", en: "Return drop boxes allow returning media 24/7." }
-                ]
+                "correct": 2,
+                "explanation": "The text states: 'bei Regen in der Turnhalle'."
             },
-            text: "**Stadtbibliothek Lindau — Wichtige Benutzerhinweise**\n\nHerzlich willkommen in Ihrer Stadtbibliothek! Bitte beachten Sie folgende Regelungen für die Ausleihe:\n\n- **Leihfristen:** Bücher, Sprachkurse und Noten: **4 Wochen**. DVDs, Konsolenspiele und Zeitschriften: **2 Wochen**.\n- **Verlängerung:** Sie können die Leihfrist bis zu zweimal online in Ihrem Benutzerkonto oder telefonisch verlängern, sofern keine Vormerkung anderer Leser vorliegt.\n- **Rückgabe rund um die Uhr:** Außerhalb der Öffnungszeiten steht Ihnen unsere automatische Rückgabebox am Haupteingang zur Verfügung.\n- **Mahngebühren:** Bitte geben Sie entliehene Medien pünktlich zurück. Ab dem ersten Tag nach Fristablauf berechnen wir **0,50 Euro pro Medium und Öffnungstag**.\n- **Kostenloses WLAN & Arbeitsplätze:** Im 1. Stock finden Sie ruhige Lernplätze mit Stromanschlüssen und kostenfreiem Internet.\n\nÖffnungszeiten: Di–Fr 10:00–18:30 Uhr | Sa 10:00–14:00 Uhr (Mo geschlossen).",
-            textEN: "**Lindau City Library — Important User Guidelines**\n\nWelcome to your municipal library! Please observe the following loan rules:\n\n- **Loan Periods:** Books, language courses, and sheet music: **4 weeks**. DVDs, console games, and magazines: **2 weeks**.\n- **Renewals:** You can renew items up to twice online in your user account or by phone, provided no other reader has reserved them.\n- **24/7 Returns:** Outside opening hours, our automated drop box at the main entrance is available.\n- **Overdue Fines:** Please return borrowed items on time. Starting from the first day overdue, we charge **€0.50 per item per opening day**.\n- **Free Wi-Fi & Workspaces:** On the 1st floor you will find quiet study desks with power sockets and free internet.\n\nOpening hours: Tue–Fri 10:00–18:30 | Sat 10:00–14:00 (Mon closed).",
-            questions: [
+            {
+                "question": "Welche Zutat darf wegen Allergien NICHT im Essen sein?",
+                "questionEN": "Which ingredient must NOT be in the food due to allergies?",
+                "options": [
+                    "Zucker",
+                    "Gluten",
+                    "Erdnüsse",
+                    "Milch"
+                ],
+                "correct": 2,
+                "explanation": "'bitte ohne Erdnüsse wegen Allergien'."
+            },
+            {
+                "question": "Bis wann sollen sich die Eltern für das Buffet eintragen?",
+                "questionEN": "By when should parents sign up for the buffet contribution?",
+                "options": [
+                    "Bis Ende August",
+                    "Gar nicht nötig",
+                    "Erst am 7. Juli",
+                    "Bis zum 3. Juli"
+                ],
+                "correct": 3,
+                "explanation": "'Bitte tragt euch bis zum 3. Juli in die Liste... ein'."
+            }
+        ]
+    },
+    {
+        "id": "a2_read_21",
+        "title": "Bibliotheksordnung & Ausleihe",
+        "titleEN": "Public Library Rules & Lending Service",
+        "emoji": "📖",
+        "warmup": {
+            "vocab": [
                 {
-                    question: "Wie lange darf man DVDs und Zeitschriften ausleihen?",
-                    questionEN: "How long can one borrow DVDs and magazines?",
-                    options: ["2 Wochen", "4 Wochen", "6 Monate", "Nur über das Wochenende"],
-                    correct: 0,
-                    explanation: "'DVDs, Konsolenspiele und Zeitschriften: 2 Wochen'."
+                    "word": "der Bibliotheksausweis",
+                    "gender": "der",
+                    "translation": "library card",
+                    "example": "Mit dem Bibliotheksausweis können Sie bis zu 20 Bücher ausleihen.",
+                    "exampleEN": "With the library card you can borrow up to 20 books."
                 },
                 {
-                    question: "Wie oft kann man entliehene Medien verlängern?",
-                    questionEN: "How many times can one renew borrowed media?",
-                    options: ["Bis zu zweimal", "Unbegrenzt oft", "Gar nicht", "Zehnmal"],
-                    correct: 0,
-                    explanation: "'Sie können die Leihfrist bis zu zweimal online... verlängern'."
+                    "word": "die Leihfrist",
+                    "gender": "die",
+                    "translation": "loan period / borrowing duration",
+                    "example": "Die Leihfrist für Bücher beträgt vier Wochen.",
+                    "exampleEN": "The loan period for books is four weeks."
                 },
                 {
-                    question: "An welchem Wochentag ist die Bibliothek geschlossen?",
-                    questionEN: "On which day of the week is the library closed?",
-                    options: ["Montags", "Samstags", "Mittwochs", "Sonntags und montags"],
-                    correct: 0,
-                    explanation: "Opening hours note: '(Mo geschlossen)'."
+                    "word": "verlängern",
+                    "gender": "Verb",
+                    "translation": "to renew / extend",
+                    "example": "Sie können die Medien online um weitere vier Wochen verlängern.",
+                    "exampleEN": "You can renew the media online for another four weeks."
+                },
+                {
+                    "word": "die Säumnisgebühr",
+                    "gender": "die",
+                    "translation": "late return fee / fine",
+                    "example": "Bei verspäteter Rückgabe fällt eine Säumnisgebühr von 1 Euro pro Tag an.",
+                    "exampleEN": "For late returns, a fine of €1 per day applies."
+                },
+                {
+                    "word": "das E-Book",
+                    "gender": "das",
+                    "translation": "electronic book",
+                    "example": "Unsere Onleihe bietet Tausende kostenlose E-Books und Hörbücher.",
+                    "exampleEN": "Our digital library offers thousands of free e-books and audiobooks."
+                },
+                {
+                    "word": "die Rückgabebox",
+                    "gender": "die",
+                    "translation": "returns drop box",
+                    "example": "Außerhalb der Öffnungszeiten nutzen Sie bitte die Rückgabebox.",
+                    "exampleEN": "Outside opening hours please use the returns drop box."
+                }
+            ],
+            "tips": [
+                {
+                    "de": "Leihfrist (Bücher vs. DVDs)",
+                    "en": "Books often have longer loan periods (4 weeks) than DVDs or games (2 weeks)."
+                },
+                {
+                    "de": "Online-Konto Verlängerung",
+                    "en": "Media can be renewed online unless reserved by another borrower."
+                },
+                {
+                    "de": "Rückgabe außerhalb der Öffnungszeiten",
+                    "en": "Return drop boxes allow returning media 24/7."
                 }
             ]
         },
-        {
-            id: "a2_read_22",
-            title: "Mitteilung der Hausverwaltung: Aufzugsreparatur",
-            titleEN: "Property Notice: Elevator Maintenance",
-            emoji: "🏢",
-            warmup: {
-                vocab: [
-                    { word: "der Aufzug", gender: "der", translation: "elevator / lift", example: "Der Aufzug ist wegen Wartungsarbeiten außer Betrieb.", exampleEN: "The elevator is out of service due to maintenance." },
-                    { word: "außer Betrieb", gender: "Phrase", translation: "out of order / not working", example: "Das Gerät ist vorübergehend außer Betrieb.", exampleEN: "The appliance is temporarily out of service." },
-                    { word: "das Treppenhaus", gender: "das", translation: "staircase / stairwell", example: "Bitte benutzen Sie während der Reparatur das Treppenhaus.", exampleEN: "Please use the stairwell during the repair." },
-                    { word: "die Hausordnung", gender: "die", translation: "house rules / apartment regulations", example: "Die Ruhezeiten sind in der Hausordnung geregelt.", exampleEN: "Quiet hours are regulated in the house rules." },
-                    { word: "der Fluchtweg", gender: "der", translation: "escape route / fire exit", example: "Im Treppenhaus dürfen keine Fahrräder stehen, weil es ein Fluchtweg ist.", exampleEN: "No bikes may stand in the stairwell as it is an escape route." },
-                    { word: "die Behinderung", gender: "die", translation: "inconvenience / obstacle / handicap", example: "Wir bitten um Entschuldigung für die vorübergehende Behinderung.", exampleEN: "We apologize for the temporary inconvenience." }
+        "text": "**Stadtbibliothek Lindau — Wichtige Benutzerhinweise**\n\nHerzlich willkommen in Ihrer Stadtbibliothek! Bitte beachten Sie folgende Regelungen für die Ausleihe:\n\n- **Leihfristen:** Bücher, Sprachkurse und Noten: **4 Wochen**. DVDs, Konsolenspiele und Zeitschriften: **2 Wochen**.\n- **Verlängerung:** Sie können die Leihfrist bis zu zweimal online in Ihrem Benutzerkonto oder telefonisch verlängern, sofern keine Vormerkung anderer Leser vorliegt.\n- **Rückgabe rund um die Uhr:** Außerhalb der Öffnungszeiten steht Ihnen unsere automatische Rückgabebox am Haupteingang zur Verfügung.\n- **Mahngebühren:** Bitte geben Sie entliehene Medien pünktlich zurück. Ab dem ersten Tag nach Fristablauf berechnen wir **0,50 Euro pro Medium und Öffnungstag**.\n- **Kostenloses WLAN & Arbeitsplätze:** Im 1. Stock finden Sie ruhige Lernplätze mit Stromanschlüssen und kostenfreiem Internet.\n\nÖffnungszeiten: Di–Fr 10:00–18:30 Uhr | Sa 10:00–14:00 Uhr (Mo geschlossen).",
+        "textEN": "**Lindau City Library — Important User Guidelines**\n\nWelcome to your municipal library! Please observe the following loan rules:\n\n- **Loan Periods:** Books, language courses, and sheet music: **4 weeks**. DVDs, console games, and magazines: **2 weeks**.\n- **Renewals:** You can renew items up to twice online in your user account or by phone, provided no other reader has reserved them.\n- **24/7 Returns:** Outside opening hours, our automated drop box at the main entrance is available.\n- **Overdue Fines:** Please return borrowed items on time. Starting from the first day overdue, we charge **€0.50 per item per opening day**.\n- **Free Wi-Fi & Workspaces:** On the 1st floor you will find quiet study desks with power sockets and free internet.\n\nOpening hours: Tue–Fri 10:00–18:30 | Sat 10:00–14:00 (Mon closed).",
+        "questions": [
+            {
+                "question": "Wie lange darf man DVDs und Zeitschriften ausleihen?",
+                "questionEN": "How long can one borrow DVDs and magazines?",
+                "options": [
+                    "4 Wochen",
+                    "2 Wochen",
+                    "6 Monate",
+                    "Nur über das Wochenende"
                 ],
-                tips: [
-                    { de: "Dauer der Störung", en: "Look for from-date to to-date indicating when the lift is stopped." },
-                    { de: "Brandschutz im Treppenhaus", en: "Common German apartment rule: keep staircases clear of shoes, boxes, and bikes." },
-                    { de: "Hilfe für ältere Nachbarn", en: "Notices often request neighbors to help elderly tenants with grocery carrying." }
-                ]
+                "correct": 1,
+                "explanation": "'DVDs, Konsolenspiele und Zeitschriften: 2 Wochen'."
             },
-            text: "**Aushang an alle Hausbewohner: Aufzugerneuerung**\n\nSehr geehrte Damen und Herren,\n\nwegen des Einbaus einer neuen modernen Steuerung muss der Personenaufzug im Haus B (**Kastanienallee 8**) erneuert werden.\n\n**Zeitraum der Abschaltung:**\nVon **Montag, 13. November (07:30 Uhr)**, bis einschließlich **Donnerstag, 16. November (ca. 17:00 Uhr)** ist der Aufzug vollkommen **außer Betrieb**.\n\n**Wichtige Hinweise:**\n1. Bitte nutzen Sie während dieser vier Tage das Treppenhaus.\n2. **Brandschutz:** Im Treppenhaus dürfen keine Kinderwagen, Fahrräder oder Schuhregale abgestellt werden, da alle Fluchtwege frei bleiben müssen.\n3. Wenn Sie ältere Nachbarn haben, unterstützen Sie diese bitte beim Tragen schwerer Einkaufstaschen.\n\nFür dringende Rückfragen erreichen Sie den technischen Notdienst unter: **0800 456 789 0**.\n\nWir danken Ihnen für Ihr Verständnis!\n**Hausverwaltung Lindenhof GmbH**",
-            textEN: "**Notice to all Residents: Elevator Modernisation**\n\nDear Residents,\n\nDue to the installation of a new modern control system, the passenger lift in Building B (**Kastanienallee 8**) must be upgraded.\n\n**Shutdown Period:**\nFrom **Monday, 13 November (07:30)** until **Thursday, 16 November (approx. 17:00)** inclusive, the lift will be completely **out of service**.\n\n**Important Instructions:**\n1. Please use the stairwell during these four days.\n2. **Fire Safety:** No strollers, bicycles, or shoe racks may be stored in the stairwell, as all emergency escape routes must remain clear.\n3. If you have elderly neighbors, please assist them with carrying heavy shopping bags.\n\nFor urgent questions, reach technical support at: **0800 456 789 0**.\n\nThank you for your understanding!\n**Lindenhof Property Management GmbH**",
-            questions: [
+            {
+                "question": "Wie oft kann man entliehene Medien verlängern?",
+                "questionEN": "How many times can one renew borrowed media?",
+                "options": [
+                    "Gar nicht",
+                    "Unbegrenzt oft",
+                    "Bis zu zweimal",
+                    "Zehnmal"
+                ],
+                "correct": 2,
+                "explanation": "'Sie können die Leihfrist bis zu zweimal online... verlängern'."
+            },
+            {
+                "question": "An welchem Wochentag ist die Bibliothek geschlossen?",
+                "questionEN": "On which day of the week is the library closed?",
+                "options": [
+                    "Mittwochs",
+                    "Montags",
+                    "Samstags",
+                    "Sonntags und montags"
+                ],
+                "correct": 1,
+                "explanation": "Opening hours note: '(Mo geschlossen)'."
+            }
+        ]
+    },
+    {
+        "id": "a2_read_22",
+        "title": "Mitteilung der Hausverwaltung: Aufzugsreparatur",
+        "titleEN": "Property Notice: Elevator Maintenance",
+        "emoji": "🏢",
+        "warmup": {
+            "vocab": [
                 {
-                    question: "Bis zu welchem Wochentag ist der Aufzug außer Betrieb?",
-                    questionEN: "Until which day of the week is the elevator out of service?",
-                    options: ["Donnerstag, 16. November", "Samstag, 18. November", "Nur am Montag", "Für zwei Monate"],
-                    correct: 0,
-                    explanation: "The notice says: 'bis einschließlich Donnerstag, 16. November'."
+                    "word": "der Aufzug",
+                    "gender": "der",
+                    "translation": "elevator / lift",
+                    "example": "Der Aufzug ist wegen Wartungsarbeiten außer Betrieb.",
+                    "exampleEN": "The elevator is out of service due to maintenance."
                 },
                 {
-                    question: "Warum darf man keine Gegenstände im Treppenhaus abstellen?",
-                    questionEN: "Why is one not allowed to leave objects in the stairwell?",
-                    options: ["Wegen Brandschutz und Fluchtwegen", "Weil der Hausmeister dort streicht", "Weil es zu schmutzig ist", "Nur Kinderwagen sind verboten"],
-                    correct: 0,
-                    explanation: "'da alle Fluchtwege frei bleiben müssen (Brandschutz)'."
+                    "word": "außer Betrieb",
+                    "gender": "Phrase",
+                    "translation": "out of order / not working",
+                    "example": "Das Gerät ist vorübergehend außer Betrieb.",
+                    "exampleEN": "The appliance is temporarily out of service."
                 },
                 {
-                    question: "Wozu werden die Bewohner bezüglich älterer Nachbarn aufgerufen?",
-                    questionEN: "What are residents asked to do regarding elderly neighbors?",
-                    options: ["Beim Tragen von schweren Einkäufen helfen", "Ihnen Essen kochen", "Sie zur Hausverwaltung fahren", "Sie nicht ansprechen"],
-                    correct: 0,
-                    explanation: "'unterstützen Sie diese bitte beim Tragen schwerer Einkaufstaschen'."
+                    "word": "das Treppenhaus",
+                    "gender": "das",
+                    "translation": "staircase / stairwell",
+                    "example": "Bitte benutzen Sie während der Reparatur das Treppenhaus.",
+                    "exampleEN": "Please use the stairwell during the repair."
+                },
+                {
+                    "word": "die Hausordnung",
+                    "gender": "die",
+                    "translation": "house rules / apartment regulations",
+                    "example": "Die Ruhezeiten sind in der Hausordnung geregelt.",
+                    "exampleEN": "Quiet hours are regulated in the house rules."
+                },
+                {
+                    "word": "der Fluchtweg",
+                    "gender": "der",
+                    "translation": "escape route / fire exit",
+                    "example": "Im Treppenhaus dürfen keine Fahrräder stehen, weil es ein Fluchtweg ist.",
+                    "exampleEN": "No bikes may stand in the stairwell as it is an escape route."
+                },
+                {
+                    "word": "die Behinderung",
+                    "gender": "die",
+                    "translation": "inconvenience / obstacle / handicap",
+                    "example": "Wir bitten um Entschuldigung für die vorübergehende Behinderung.",
+                    "exampleEN": "We apologize for the temporary inconvenience."
+                }
+            ],
+            "tips": [
+                {
+                    "de": "Dauer der Störung",
+                    "en": "Look for from-date to to-date indicating when the lift is stopped."
+                },
+                {
+                    "de": "Brandschutz im Treppenhaus",
+                    "en": "Common German apartment rule: keep staircases clear of shoes, boxes, and bikes."
+                },
+                {
+                    "de": "Hilfe für ältere Nachbarn",
+                    "en": "Notices often request neighbors to help elderly tenants with grocery carrying."
                 }
             ]
         },
-        {
-            id: "a2_read_23",
-            title: "Tierschutzverein: Hundevermittlung & Tierheimregeln",
-            titleEN: "Animal Shelter: Dog Adoption & Volunteer Walking",
-            emoji: "🐕",
-            warmup: {
-                vocab: [
-                    { word: "das Tierheim", gender: "das", translation: "animal shelter", example: "Im Tierheim warten viele Hunde auf ein neues Zuhause.", exampleEN: "Many dogs are waiting for a new home at the animal shelter." },
-                    { word: "Gassi gehen", gender: "Phrase", translation: "to walk the dog", example: "Freiwillige Helfer gehen jeden Nachmittag mit den Hunden Gassi.", exampleEN: "Volunteer helpers walk the dogs every afternoon." },
-                    { word: "die Schutzgebühr", gender: "die", translation: "adoption / sheltering fee", example: "Die Schutzgebühr deckt die Impf- und Tierarztkosten.", exampleEN: "The adoption fee covers vaccination and vet costs." },
-                    { word: "die Verträglichkeit", gender: "die", translation: "compatibility (with other pets/kids)", example: "Bello zeigt eine gute Verträglichkeit mit Katzen.", exampleEN: "Bello shows good compatibility with cats." },
-                    { word: "geimpft und gechippt", gender: "Adj.", translation: "vaccinated and microchipped", example: "Alle unsere Tiere sind geimpft, gechippt und entwurmt.", exampleEN: "All our animals are vaccinated, chipped, and dewormed." },
-                    { word: "der Sachkundenachweis", gender: "der", translation: "proof of dog ownership competency", example: "In einigen Bundesländern braucht man einen Sachkundenachweis.", exampleEN: "In some federal states you need proof of handling competency." }
+        "text": "**Aushang an alle Hausbewohner: Aufzugerneuerung**\n\nSehr geehrte Damen und Herren,\n\nwegen des Einbaus einer neuen modernen Steuerung muss der Personenaufzug im Haus B (**Kastanienallee 8**) erneuert werden.\n\n**Zeitraum der Abschaltung:**\nVon **Montag, 13. November (07:30 Uhr)**, bis einschließlich **Donnerstag, 16. November (ca. 17:00 Uhr)** ist der Aufzug vollkommen **außer Betrieb**.\n\n**Wichtige Hinweise:**\n1. Bitte nutzen Sie während dieser vier Tage das Treppenhaus.\n2. **Brandschutz:** Im Treppenhaus dürfen keine Kinderwagen, Fahrräder oder Schuhregale abgestellt werden, da alle Fluchtwege frei bleiben müssen.\n3. Wenn Sie ältere Nachbarn haben, unterstützen Sie diese bitte beim Tragen schwerer Einkaufstaschen.\n\nFür dringende Rückfragen erreichen Sie den technischen Notdienst unter: **0800 456 789 0**.\n\nWir danken Ihnen für Ihr Verständnis!\n**Hausverwaltung Lindenhof GmbH**",
+        "textEN": "**Notice to all Residents: Elevator Modernisation**\n\nDear Residents,\n\nDue to the installation of a new modern control system, the passenger lift in Building B (**Kastanienallee 8**) must be upgraded.\n\n**Shutdown Period:**\nFrom **Monday, 13 November (07:30)** until **Thursday, 16 November (approx. 17:00)** inclusive, the lift will be completely **out of service**.\n\n**Important Instructions:**\n1. Please use the stairwell during these four days.\n2. **Fire Safety:** No strollers, bicycles, or shoe racks may be stored in the stairwell, as all emergency escape routes must remain clear.\n3. If you have elderly neighbors, please assist them with carrying heavy shopping bags.\n\nFor urgent questions, reach technical support at: **0800 456 789 0**.\n\nThank you for your understanding!\n**Lindenhof Property Management GmbH**",
+        "questions": [
+            {
+                "question": "Bis zu welchem Wochentag ist der Aufzug außer Betrieb?",
+                "questionEN": "Until which day of the week is the elevator out of service?",
+                "options": [
+                    "Samstag, 18. November",
+                    "Donnerstag, 16. November",
+                    "Für zwei Monate",
+                    "Nur am Montag"
                 ],
-                tips: [
-                    { de: "Gassigeh-Zeiten", en: "Shelters have specific time slots for public volunteer dog walkers." },
-                    { de: "Tiervermittlung mit Vorkontrolle", en: "Adopting a pet in Germany includes a pre-adoption home check." },
-                    { de: "Schutzgebühr", en: "Not a purchase price, but covers medical care and neutering." }
-                ]
+                "correct": 1,
+                "explanation": "The notice says: 'bis einschließlich Donnerstag, 16. November'."
             },
-            text: "**Tierheim Waldfrieden — Hundevermittlung & Ehrenamt**\n\nSie möchten einem Vierbeiner ein liebevolles Zuhause schenken oder in Ihrer Freizeit ehrenamtlich mit Hunden spazieren gehen?\n\n**Unsere Schützlinge:**\nAktuell suchen 12 Hunde und 18 Katzen ein neues Daheim. Alle Tiere sind tierärztlich untersucht, vollständig **geimpft, gechippt und kastriert**. Bei einer Vermittlung fällt eine Schutzgebühr von 280 Euro (Hunde) bzw. 120 Euro (Katzen) an.\n\n**Gassigehen für ehrenamtliche Helfer:**\n- **Zeiten:** Dienstag bis Sonntag, jeweils 14:00 bis 16:30 Uhr (Montags Ruhetag für die Tiere)\n- **Voraussetzung:** Mindestalter 18 Jahre und Teilnahme an unserer 30-minütigen Einführungsschulung jeden ersten Samstag im Monat um 11:00 Uhr.\n\n**Besuchs- und Beratungszeiten:**\nDonnerstag und Freitag 15:00–18:00 Uhr, Samstag 13:00–16:00 Uhr.\n\nKontakt: **tierheim-waldfrieden@tierschutz.org**",
-            textEN: "**Waldfrieden Animal Shelter — Dog Adoption & Volunteering**\n\nWould you like to give a four-legged friend a loving home or volunteer to walk dogs in your spare time?\n\n**Our Animals:**\nCurrently 12 dogs and 18 cats are looking for a new home. All animals have been vet-checked, fully **vaccinated, microchipped, and neutered**. Adoption requires a contribution fee of €280 (dogs) or €120 (cats).\n\n**Dog Walking for Volunteers:**\n- **Times:** Tuesday to Sunday, 14:00 to 16:30 each (Mondays is quiet day for the animals)\n- **Prerequisites:** Minimum age 18 and attendance at our 30-minute introductory training every first Saturday of the month at 11:00.\n\n**Visiting & Consultation Hours:**\nThursday and Friday 15:00–18:00, Saturday 13:00–16:00.\n\nContact: **tierheim-waldfrieden@tierschutz.org**",
-            questions: [
+            {
+                "question": "Warum darf man keine Gegenstände im Treppenhaus abstellen?",
+                "questionEN": "Why is one not allowed to leave objects in the stairwell?",
+                "options": [
+                    "Weil der Hausmeister dort streicht",
+                    "Weil es zu schmutzig ist",
+                    "Nur Kinderwagen sind verboten",
+                    "Wegen Brandschutz und Fluchtwegen"
+                ],
+                "correct": 3,
+                "explanation": "'da alle Fluchtwege frei bleiben müssen (Brandschutz)'."
+            },
+            {
+                "question": "Wozu werden die Bewohner bezüglich älterer Nachbarn aufgerufen?",
+                "questionEN": "What are residents asked to do regarding elderly neighbors?",
+                "options": [
+                    "Sie nicht ansprechen",
+                    "Ihnen Essen kochen",
+                    "Beim Tragen von schweren Einkäufen helfen",
+                    "Sie zur Hausverwaltung fahren"
+                ],
+                "correct": 2,
+                "explanation": "'unterstützen Sie diese bitte beim Tragen schwerer Einkaufstaschen'."
+            }
+        ]
+    },
+    {
+        "id": "a2_read_23",
+        "title": "Tierschutzverein: Hundevermittlung & Tierheimregeln",
+        "titleEN": "Animal Shelter: Dog Adoption & Volunteer Walking",
+        "emoji": "🐕",
+        "warmup": {
+            "vocab": [
                 {
-                    question: "An welchem Tag darf man NICHT mit den Hunden Gassi gehen?",
-                    questionEN: "On which day are volunteers NOT allowed to walk the dogs?",
-                    options: ["Montags (Ruhetag)", "Sonntags", "Samstags", "Dienstags"],
-                    correct: 0,
-                    explanation: "'Montags Ruhetag für die Tiere'."
+                    "word": "das Tierheim",
+                    "gender": "das",
+                    "translation": "animal shelter",
+                    "example": "Im Tierheim warten viele Hunde auf ein neues Zuhause.",
+                    "exampleEN": "Many dogs are waiting for a new home at the animal shelter."
                 },
                 {
-                    question: "Welches Mindestalter gilt für ehrenamtliche Hundeausführer?",
-                    questionEN: "What is the minimum age for volunteer dog walkers?",
-                    options: ["18 Jahre", "16 Jahre", "21 Jahre", "14 Jahre"],
-                    correct: 0,
-                    explanation: "Prerequisites specify: 'Mindestalter 18 Jahre'."
+                    "word": "Gassi gehen",
+                    "gender": "Phrase",
+                    "translation": "to walk the dog",
+                    "example": "Freiwillige Helfer gehen jeden Nachmittag mit den Hunden Gassi.",
+                    "exampleEN": "Volunteer helpers walk the dogs every afternoon."
                 },
                 {
-                    question: "Was ist im medizinischen Zustand aller Tiere garantiert?",
-                    questionEN: "What is guaranteed regarding the medical condition of all animals?",
-                    options: ["Sie sind geimpft, gechippt und kastriert", "Sie brauchen tägliche Medikamente", "Sie sind alle noch Welpen", "Sie dürfen nicht ins Haus"],
-                    correct: 0,
-                    explanation: "'vollständig geimpft, gechippt und kastriert'."
+                    "word": "die Schutzgebühr",
+                    "gender": "die",
+                    "translation": "adoption / sheltering fee",
+                    "example": "Die Schutzgebühr deckt die Impf- und Tierarztkosten.",
+                    "exampleEN": "The adoption fee covers vaccination and vet costs."
+                },
+                {
+                    "word": "die Verträglichkeit",
+                    "gender": "die",
+                    "translation": "compatibility (with other pets/kids)",
+                    "example": "Bello zeigt eine gute Verträglichkeit mit Katzen.",
+                    "exampleEN": "Bello shows good compatibility with cats."
+                },
+                {
+                    "word": "geimpft und gechippt",
+                    "gender": "Adj.",
+                    "translation": "vaccinated and microchipped",
+                    "example": "Alle unsere Tiere sind geimpft, gechippt und entwurmt.",
+                    "exampleEN": "All our animals are vaccinated, chipped, and dewormed."
+                },
+                {
+                    "word": "der Sachkundenachweis",
+                    "gender": "der",
+                    "translation": "proof of dog ownership competency",
+                    "example": "In einigen Bundesländern braucht man einen Sachkundenachweis.",
+                    "exampleEN": "In some federal states you need proof of handling competency."
+                }
+            ],
+            "tips": [
+                {
+                    "de": "Gassigeh-Zeiten",
+                    "en": "Shelters have specific time slots for public volunteer dog walkers."
+                },
+                {
+                    "de": "Tiervermittlung mit Vorkontrolle",
+                    "en": "Adopting a pet in Germany includes a pre-adoption home check."
+                },
+                {
+                    "de": "Schutzgebühr",
+                    "en": "Not a purchase price, but covers medical care and neutering."
                 }
             ]
         },
-        {
-            id: "a2_read_24",
-            title: "Fitnessstudio: Kursplan & Trainingsregeln",
-            titleEN: "Gym Studio: Class Schedule & Training Rules",
-            emoji: "🏋️‍♂️",
-            warmup: {
-                vocab: [
-                    { word: "das Fitnessstudio", gender: "das", translation: "gym / fitness centre", example: "Ich trainiere dreimal die Woche im Fitnessstudio.", exampleEN: "I train three times a week at the gym." },
-                    { word: "saubere Sportschuhe", gender: "die (Pl.)", translation: "clean indoor sports shoes", example: "Im Trainingsbereich sind nur saubere Hallenschuhe erlaubt.", exampleEN: "Only clean indoor sports shoes are permitted in the training area." },
-                    { word: "das Handtuch", gender: "das", translation: "towel", example: "Legen Sie bitte immer ein Handtuch auf die Trainingsgeräte.", exampleEN: "Please always place a towel on the exercise machines." },
-                    { word: "der Spind", gender: "der", translation: "locker", example: "Schließen Sie Ihre Wertsachen im Spind ein.", exampleEN: "Lock your valuables in the locker." },
-                    { word: "die Mitgliedskarte", gender: "die", translation: "membership card", example: "Beim Betreten des Studios scannen Sie Ihre Mitgliedskarte.", exampleEN: "Scan your membership card upon entering the studio." },
-                    { word: "desinfizieren", gender: "Verb", translation: "to disinfect / sanitize", example: "Desinfizieren Sie das Gerät nach der Benutzung.", exampleEN: "Disinfect the machine after use." }
+        "text": "**Tierheim Waldfrieden — Hundevermittlung & Ehrenamt**\n\nSie möchten einem Vierbeiner ein liebevolles Zuhause schenken oder in Ihrer Freizeit ehrenamtlich mit Hunden spazieren gehen?\n\n**Unsere Schützlinge:**\nAktuell suchen 12 Hunde und 18 Katzen ein neues Daheim. Alle Tiere sind tierärztlich untersucht, vollständig **geimpft, gechippt und kastriert**. Bei einer Vermittlung fällt eine Schutzgebühr von 280 Euro (Hunde) bzw. 120 Euro (Katzen) an.\n\n**Gassigehen für ehrenamtliche Helfer:**\n- **Zeiten:** Dienstag bis Sonntag, jeweils 14:00 bis 16:30 Uhr (Montags Ruhetag für die Tiere)\n- **Voraussetzung:** Mindestalter 18 Jahre und Teilnahme an unserer 30-minütigen Einführungsschulung jeden ersten Samstag im Monat um 11:00 Uhr.\n\n**Besuchs- und Beratungszeiten:**\nDonnerstag und Freitag 15:00–18:00 Uhr, Samstag 13:00–16:00 Uhr.\n\nKontakt: **tierheim-waldfrieden@tierschutz.org**",
+        "textEN": "**Waldfrieden Animal Shelter — Dog Adoption & Volunteering**\n\nWould you like to give a four-legged friend a loving home or volunteer to walk dogs in your spare time?\n\n**Our Animals:**\nCurrently 12 dogs and 18 cats are looking for a new home. All animals have been vet-checked, fully **vaccinated, microchipped, and neutered**. Adoption requires a contribution fee of €280 (dogs) or €120 (cats).\n\n**Dog Walking for Volunteers:**\n- **Times:** Tuesday to Sunday, 14:00 to 16:30 each (Mondays is quiet day for the animals)\n- **Prerequisites:** Minimum age 18 and attendance at our 30-minute introductory training every first Saturday of the month at 11:00.\n\n**Visiting & Consultation Hours:**\nThursday and Friday 15:00–18:00, Saturday 13:00–16:00.\n\nContact: **tierheim-waldfrieden@tierschutz.org**",
+        "questions": [
+            {
+                "question": "An welchem Tag darf man NICHT mit den Hunden Gassi gehen?",
+                "questionEN": "On which day are volunteers NOT allowed to walk the dogs?",
+                "options": [
+                    "Samstags",
+                    "Montags (Ruhetag)",
+                    "Sonntags",
+                    "Dienstags"
                 ],
-                tips: [
-                    { de: "Handtuchpflicht", en: "Almost all German gyms strictly enforce placing a clean towel over seats." },
-                    { de: "Eigene Hallenschuhe", en: "Street shoes are never allowed in the workout zones." },
-                    { de: "Spind mit Vorhängeschloss", en: "Bring your own small padlock ('Vorhängeschloss') for the lockers." }
-                ]
+                "correct": 1,
+                "explanation": "'Montags Ruhetag für die Tiere'."
             },
-            text: "**FitLife Studio — Wichtige Verhaltensregeln für den Trainingsbereich**\n\nLiebe Mitglieder,\n\ndamit das Training für alle angenehm, hygienisch und sicher bleibt, bitten wir Sie um Einhaltung folgender Regeln:\n\n1. **Schuhwerk:** Das Betreten der Trainingsfläche und der Kursräume ist ausschließlich mit **sauberen Hallensportschuhen** gestattet. Straßenschuhe sind verboten!\n2. **Handtuchpflicht:** Legen Sie beim Benutzen von Geräten und Bänken stets ein ausreichend großes Handtuch unter.\n3. **Hygiene:** Bitte reinigen und desinfizieren Sie die Polster nach jedem Durchgang mit den bereitstehenden Desinfektionstüchern.\n4. **Gewichte zurücklegen:** Hanteln und Hantelscheiben müssen nach dem Satz sofort an ihren ursprünglichen Platz zurückgeräumt werden.\n5. **Garderobe:** Jacken und Straßenschuhe gehören in die Umkleide. Schließen Sie Ihren Spind mit einem eigenen Vorhängeschloss ab.\n\nÖffnungszeiten: Mo–Fr 06:00–23:00 Uhr | Sa–So 08:00–21:00 Uhr.\n\nSportliche Grüße,\n**Euer FitLife Team**",
-            textEN: "**FitLife Studio — Important Rules of Conduct for the Training Area**\n\nDear Members,\n\nTo ensure workouts remain pleasant, hygienic, and safe for everyone, please observe the following rules:\n\n1. **Footwear:** Entering the gym floor and class rooms is permitted exclusively with **clean indoor gym shoes**. Outdoor shoes are prohibited!\n2. **Towel Requirement:** Always place a sufficiently large towel underneath you when using machines and benches.\n3. **Hygiene:** Please wipe and disinfect cushions after each set with the disinfectant wipes provided.\n4. **Re-rack Weights:** Dumbbells and weight plates must be returned to their rack immediately after finishing your set.\n5. **Cloakroom:** Jackets and outdoor shoes belong in the locker room. Lock your locker with your own padlock.\n\nOpening hours: Mon–Fri 06:00–23:00 | Sat–Sun 08:00–21:00.\n\nSporty regards,\n**Your FitLife Team**",
-            questions: [
+            {
+                "question": "Welches Mindestalter gilt für ehrenamtliche Hundeausführer?",
+                "questionEN": "What is the minimum age for volunteer dog walkers?",
+                "options": [
+                    "14 Jahre",
+                    "18 Jahre",
+                    "16 Jahre",
+                    "21 Jahre"
+                ],
+                "correct": 1,
+                "explanation": "Prerequisites specify: 'Mindestalter 18 Jahre'."
+            },
+            {
+                "question": "Was ist im medizinischen Zustand aller Tiere garantiert?",
+                "questionEN": "What is guaranteed regarding the medical condition of all animals?",
+                "options": [
+                    "Sie brauchen tägliche Medikamente",
+                    "Sie dürfen nicht ins Haus",
+                    "Sie sind geimpft, gechippt und kastriert",
+                    "Sie sind alle noch Welpen"
+                ],
+                "correct": 2,
+                "explanation": "'vollständig geimpft, gechippt und kastriert'."
+            }
+        ]
+    },
+    {
+        "id": "a2_read_24",
+        "title": "Fitnessstudio: Kursplan & Trainingsregeln",
+        "titleEN": "Gym Studio: Class Schedule & Training Rules",
+        "emoji": "🏋️‍♂️",
+        "warmup": {
+            "vocab": [
                 {
-                    question: "Welche Schuhe darf man im Fitnessstudio tragen?",
-                    questionEN: "Which shoes is one allowed to wear in the gym?",
-                    options: ["Nur saubere Hallensportschuhe", "Normale Straßenschuhe", "Socken ohne Schuhe", "Wanderschuhe"],
-                    correct: 0,
-                    explanation: "'ausschließlich mit sauberen Hallensportschuhen gestattet. Straßenschuhe sind verboten!'."
+                    "word": "das Fitnessstudio",
+                    "gender": "das",
+                    "translation": "gym / fitness centre",
+                    "example": "Ich trainiere dreimal die Woche im Fitnessstudio.",
+                    "exampleEN": "I train three times a week at the gym."
                 },
                 {
-                    question: "Was muss man nach der Benutzung eines Geräts tun?",
-                    questionEN: "What must one do after using an exercise machine?",
-                    options: ["Das Gerät mit Desinfektionstüchern reinigen", "Das Gerät ausschalten", "Den Trainer rufen", "Ein Foto machen"],
-                    correct: 0,
-                    explanation: "'reinigen und desinfizieren Sie die Polster... mit den bereitstehenden Desinfektionstüchern'."
+                    "word": "saubere Sportschuhe",
+                    "gender": "die (Pl.)",
+                    "translation": "clean indoor sports shoes",
+                    "example": "Im Trainingsbereich sind nur saubere Hallenschuhe erlaubt.",
+                    "exampleEN": "Only clean indoor sports shoes are permitted in the training area."
                 },
                 {
-                    question: "Ab wie viel Uhr öffnet das Studio am Wochenende (Samstag und Sonntag)?",
-                    questionEN: "From what time does the studio open on weekends (Saturday and Sunday)?",
-                    options: ["Ab 08:00 Uhr", "Ab 06:00 Uhr", "Erst ab 12:00 Uhr", "Rund um die Uhr"],
-                    correct: 0,
-                    explanation: "'Sa–So 08:00–21:00 Uhr'."
+                    "word": "das Handtuch",
+                    "gender": "das",
+                    "translation": "towel",
+                    "example": "Legen Sie bitte immer ein Handtuch auf die Trainingsgeräte.",
+                    "exampleEN": "Please always place a towel on the exercise machines."
+                },
+                {
+                    "word": "der Spind",
+                    "gender": "der",
+                    "translation": "locker",
+                    "example": "Schließen Sie Ihre Wertsachen im Spind ein.",
+                    "exampleEN": "Lock your valuables in the locker."
+                },
+                {
+                    "word": "die Mitgliedskarte",
+                    "gender": "die",
+                    "translation": "membership card",
+                    "example": "Beim Betreten des Studios scannen Sie Ihre Mitgliedskarte.",
+                    "exampleEN": "Scan your membership card upon entering the studio."
+                },
+                {
+                    "word": "desinfizieren",
+                    "gender": "Verb",
+                    "translation": "to disinfect / sanitize",
+                    "example": "Desinfizieren Sie das Gerät nach der Benutzung.",
+                    "exampleEN": "Disinfect the machine after use."
+                }
+            ],
+            "tips": [
+                {
+                    "de": "Handtuchpflicht",
+                    "en": "Almost all German gyms strictly enforce placing a clean towel over seats."
+                },
+                {
+                    "de": "Eigene Hallenschuhe",
+                    "en": "Street shoes are never allowed in the workout zones."
+                },
+                {
+                    "de": "Spind mit Vorhängeschloss",
+                    "en": "Bring your own small padlock ('Vorhängeschloss') for the lockers."
                 }
             ]
         },
-        {
-            id: "a2_read_25",
-            title: "Fundbüro Mitteilung: Verlorene Gegenstände",
-            titleEN: "Lost & Found Office Notice",
-            emoji: "🎒",
-            warmup: {
-                vocab: [
-                    { word: "das Fundbüro", gender: "das", translation: "lost and found office", example: "Ich habe meine Tasche im Bus vergessen und gehe ins Fundbüro.", exampleEN: "I forgot my bag on the bus and am going to the lost and found." },
-                    { word: "der Finderlohn", gender: "der", translation: "finder's reward", example: "Nach dem Gesetz steht dem Finder ein kleiner Finderlohn zu.", exampleEN: "By law the finder is entitled to a small finder's reward." },
-                    { word: "der Eigentumsnachweis", gender: "der", translation: "proof of ownership", example: "Bringen Sie die Rechnung als Eigentumsnachweis mit.", exampleEN: "Bring the invoice along as proof of ownership." },
-                    { word: "verlieren", gender: "Verb", translation: "to lose", example: "Er hat seinen Schlüsselbund auf dem Marktplatz verloren.", exampleEN: "He lost his key bunch in the market square." },
-                    { word: "abholen", gender: "Verb", translation: "to collect / pick up", example: "Sie können den Gegenstand innerhalb von sechs Monaten abholen.", exampleEN: "You can pick up the object within six months." },
-                    { word: "die Versteigerung", gender: "die", translation: "public auction", example: "Nicht abgeholte Fundsachen kommen nach sechs Monaten in die Versteigerung.", exampleEN: "Uncollected items go to public auction after six months." }
+        "text": "**FitLife Studio — Wichtige Verhaltensregeln für den Trainingsbereich**\n\nLiebe Mitglieder,\n\ndamit das Training für alle angenehm, hygienisch und sicher bleibt, bitten wir Sie um Einhaltung folgender Regeln:\n\n1. **Schuhwerk:** Das Betreten der Trainingsfläche und der Kursräume ist ausschließlich mit **sauberen Hallensportschuhen** gestattet. Straßenschuhe sind verboten!\n2. **Handtuchpflicht:** Legen Sie beim Benutzen von Geräten und Bänken stets ein ausreichend großes Handtuch unter.\n3. **Hygiene:** Bitte reinigen und desinfizieren Sie die Polster nach jedem Durchgang mit den bereitstehenden Desinfektionstüchern.\n4. **Gewichte zurücklegen:** Hanteln und Hantelscheiben müssen nach dem Satz sofort an ihren ursprünglichen Platz zurückgeräumt werden.\n5. **Garderobe:** Jacken und Straßenschuhe gehören in die Umkleide. Schließen Sie Ihren Spind mit einem eigenen Vorhängeschloss ab.\n\nÖffnungszeiten: Mo–Fr 06:00–23:00 Uhr | Sa–So 08:00–21:00 Uhr.\n\nSportliche Grüße,\n**Euer FitLife Team**",
+        "textEN": "**FitLife Studio — Important Rules of Conduct for the Training Area**\n\nDear Members,\n\nTo ensure workouts remain pleasant, hygienic, and safe for everyone, please observe the following rules:\n\n1. **Footwear:** Entering the gym floor and class rooms is permitted exclusively with **clean indoor gym shoes**. Outdoor shoes are prohibited!\n2. **Towel Requirement:** Always place a sufficiently large towel underneath you when using machines and benches.\n3. **Hygiene:** Please wipe and disinfect cushions after each set with the disinfectant wipes provided.\n4. **Re-rack Weights:** Dumbbells and weight plates must be returned to their rack immediately after finishing your set.\n5. **Cloakroom:** Jackets and outdoor shoes belong in the locker room. Lock your locker with your own padlock.\n\nOpening hours: Mon–Fri 06:00–23:00 | Sat–Sun 08:00–21:00.\n\nSporty regards,\n**Your FitLife Team**",
+        "questions": [
+            {
+                "question": "Welche Schuhe darf man im Fitnessstudio tragen?",
+                "questionEN": "Which shoes is one allowed to wear in the gym?",
+                "options": [
+                    "Wanderschuhe",
+                    "Normale Straßenschuhe",
+                    "Nur saubere Hallensportschuhe",
+                    "Socken ohne Schuhe"
                 ],
-                tips: [
-                    { de: "Eigentumsnachweis (PIN, Kaufbeleg)", en: "For phones/laptops, unlock code or IMEI number proves ownership." },
-                    { de: "Aufbewahrungsfrist (6 Monate)", en: "German law holds found goods for 6 months before auctioning them." },
-                    { de: "Gebühren beim Abholen", en: "A small administrative storage fee is usually charged when collecting." }
-                ]
+                "correct": 2,
+                "explanation": "'ausschließlich mit sauberen Hallensportschuhen gestattet. Straßenschuhe sind verboten!'."
             },
-            text: "**Zentrales Fundbüro der Stadt — Bürgerinformation**\n\nHaben Sie in öffentlichen Verkehrsmitteln, Parks oder städtischen Gebäuden einen Gegenstand verloren oder gefunden?\n\n**Gegenstand abholen:**\nWenn Ihr verlorener Gegenstand bei uns abgegeben wurde, können Sie ihn während der Schalterzeiten persönlich abholen.\n\n**Was Sie mitbringen müssen:**\n- Einen gültigen Lichtbildausweis (Reisepass oder Personalausweis)\n- Einen **Eigentumsnachweis**: z. B. Kaufbeleg, Zweitschlüssel, Geräte-Seriennummer oder bei Handys das Entsperren vor Ort per PIN/Muster.\n- Bearbeitungsgebühr: Je nach Wert des Gegenstands zwischen 5 und 15 Euro bar oder mit EC-Karte.\n\n**Wichtige Frist:** Alle Fundsachen werden genau **6 Monate** aufbewahrt. Wird der Gegenstand in dieser Frist nicht abgeholt, geht er in die öffentliche Versteigerung oder wird an den Finder übergeben.\n\nÖffnungszeiten: Montag 08:00–12:00 Uhr | Donnerstag 13:00–18:00 Uhr.",
-            textEN: "**Central Municipal Lost & Found Office — Citizen Notice**\n\nDid you lose or find an item on public transport, in parks, or in municipal buildings?\n\n**Collecting your item:**\nIf your lost item was handed in, you can collect it in person during counter hours.\n\n**What you must bring:**\n- A valid photo ID (passport or national ID card)\n- **Proof of ownership**: e.g. receipt, spare key, device serial number, or for smartphones unlocking on-site via PIN/pattern.\n- Processing fee: Between €5 and €15 depending on value (cash or debit card).\n\n**Important Deadline:** All found items are kept for exactly **6 months**. If not claimed within this period, they are auctioned publicly or given to the finder.\n\nOpening hours: Monday 08:00–12:00 | Thursday 13:00–18:00.",
-            questions: [
+            {
+                "question": "Was muss man nach der Benutzung eines Geräts tun?",
+                "questionEN": "What must one do after using an exercise machine?",
+                "options": [
+                    "Ein Foto machen",
+                    "Den Trainer rufen",
+                    "Das Gerät mit Desinfektionstüchern reinigen",
+                    "Das Gerät ausschalten"
+                ],
+                "correct": 2,
+                "explanation": "'reinigen und desinfizieren Sie die Polster... mit den bereitstehenden Desinfektionstüchern'."
+            },
+            {
+                "question": "Ab wie viel Uhr öffnet das Studio am Wochenende (Samstag und Sonntag)?",
+                "questionEN": "From what time does the studio open on weekends (Saturday and Sunday)?",
+                "options": [
+                    "Ab 06:00 Uhr",
+                    "Rund um die Uhr",
+                    "Erst ab 12:00 Uhr",
+                    "Ab 08:00 Uhr"
+                ],
+                "correct": 3,
+                "explanation": "'Sa–So 08:00–21:00 Uhr'."
+            }
+        ]
+    },
+    {
+        "id": "a2_read_25",
+        "title": "Fundbüro Mitteilung: Verlorene Gegenstände",
+        "titleEN": "Lost & Found Office Notice",
+        "emoji": "🎒",
+        "warmup": {
+            "vocab": [
                 {
-                    question: "Wie kann man bei einem Smartphone das Eigentum nachweisen?",
-                    questionEN: "How can one prove ownership of a smartphone?",
-                    options: ["Durch Entsperren vor Ort mit PIN", "Nur mit dem Originalkarton", "Durch eine Zeugenaussage", "Gar nicht möglich"],
-                    correct: 0,
-                    explanation: "'oder bei Handys das Entsperren vor Ort per PIN/Muster'."
+                    "word": "das Fundbüro",
+                    "gender": "das",
+                    "translation": "lost and found office",
+                    "example": "Ich habe meine Tasche im Bus vergessen und gehe ins Fundbüro.",
+                    "exampleEN": "I forgot my bag on the bus and am going to the lost and found."
                 },
                 {
-                    question: "Wie lange werden Fundsachen im Fundbüro aufbewahrt?",
-                    questionEN: "How long are lost items kept at the lost property office?",
-                    options: ["Genau 6 Monate", "Nur 30 Tage", "Zwei Jahre", "Zwei Wochen"],
-                    correct: 0,
-                    explanation: "'Alle Fundsachen werden genau 6 Monate aufbewahrt'."
+                    "word": "der Finderlohn",
+                    "gender": "der",
+                    "translation": "finder's reward",
+                    "example": "Nach dem Gesetz steht dem Finder ein kleiner Finderlohn zu.",
+                    "exampleEN": "By law the finder is entitled to a small finder's reward."
                 },
                 {
-                    question: "Wann hat das Fundbüro am Donnerstagnachmittag geöffnet?",
-                    questionEN: "When is the lost and found office open on Thursday afternoon?",
-                    options: ["13:00 bis 18:00 Uhr", "08:00 bis 12:00 Uhr", "Rund um die Uhr", "Nur bis 14:00 Uhr"],
-                    correct: 0,
-                    explanation: "'Donnerstag 13:00–18:00 Uhr'."
+                    "word": "der Eigentumsnachweis",
+                    "gender": "der",
+                    "translation": "proof of ownership",
+                    "example": "Bringen Sie die Rechnung als Eigentumsnachweis mit.",
+                    "exampleEN": "Bring the invoice along as proof of ownership."
+                },
+                {
+                    "word": "verlieren",
+                    "gender": "Verb",
+                    "translation": "to lose",
+                    "example": "Er hat seinen Schlüsselbund auf dem Marktplatz verloren.",
+                    "exampleEN": "He lost his key bunch in the market square."
+                },
+                {
+                    "word": "abholen",
+                    "gender": "Verb",
+                    "translation": "to collect / pick up",
+                    "example": "Sie können den Gegenstand innerhalb von sechs Monaten abholen.",
+                    "exampleEN": "You can pick up the object within six months."
+                },
+                {
+                    "word": "die Versteigerung",
+                    "gender": "die",
+                    "translation": "public auction",
+                    "example": "Nicht abgeholte Fundsachen kommen nach sechs Monaten in die Versteigerung.",
+                    "exampleEN": "Uncollected items go to public auction after six months."
+                }
+            ],
+            "tips": [
+                {
+                    "de": "Eigentumsnachweis (PIN, Kaufbeleg)",
+                    "en": "For phones/laptops, unlock code or IMEI number proves ownership."
+                },
+                {
+                    "de": "Aufbewahrungsfrist (6 Monate)",
+                    "en": "German law holds found goods for 6 months before auctioning them."
+                },
+                {
+                    "de": "Gebühren beim Abholen",
+                    "en": "A small administrative storage fee is usually charged when collecting."
                 }
             ]
         },
-        {
-            id: "a2_read_26",
-            title: "Mülltrennung & Sperrmüll-Termine",
-            titleEN: "Waste Separation & Bulky Waste Schedule",
-            emoji: "♻️",
-            warmup: {
-                vocab: [
-                    { word: "die Mülltrennung", gender: "die", translation: "waste separation / recycling sorting", example: "In Deutschland ist Mülltrennung gesetzlich vorgeschrieben.", exampleEN: "In Germany waste sorting is required by law." },
-                    { word: "der Sperrmüll", gender: "der", translation: "bulky waste (furniture, mattresses)", example: "Alte Möbel und Matratzen gehören zum Sperrmüll.", exampleEN: "Old furniture and mattresses belong to bulky waste." },
-                    { word: "der Wertstoffhof", gender: "der", translation: "recycling depot / civic amenity site", example: "Elektrogeräte bringt man direkt zum Wertstoffhof.", exampleEN: "Electrical appliances are brought directly to the recycling centre." },
-                    { word: "die Biotonne", gender: "die", translation: "organic waste bin (brown bin)", example: "Obst- und Kaffeereste gehören in die braune Biotonne.", exampleEN: "Fruit peels and coffee grounds belong in the brown bio bin." },
-                    { word: "der Gelbe Sack", gender: "der", translation: "yellow recycling bag (packaging)", example: "Verpackungen aus Plastik und Metall kommen in den Gelben Sack.", exampleEN: "Plastic and metal packaging goes into the yellow bag." },
-                    { word: "die Abfuhr", gender: "die", translation: "waste collection / pickup", example: "Die Abfuhr der Papiertonne erfolgt alle zwei Wochen.", exampleEN: "Paper bin collection takes place every two weeks." }
+        "text": "**Zentrales Fundbüro der Stadt — Bürgerinformation**\n\nHaben Sie in öffentlichen Verkehrsmitteln, Parks oder städtischen Gebäuden einen Gegenstand verloren oder gefunden?\n\n**Gegenstand abholen:**\nWenn Ihr verlorener Gegenstand bei uns abgegeben wurde, können Sie ihn während der Schalterzeiten persönlich abholen.\n\n**Was Sie mitbringen müssen:**\n- Einen gültigen Lichtbildausweis (Reisepass oder Personalausweis)\n- Einen **Eigentumsnachweis**: z. B. Kaufbeleg, Zweitschlüssel, Geräte-Seriennummer oder bei Handys das Entsperren vor Ort per PIN/Muster.\n- Bearbeitungsgebühr: Je nach Wert des Gegenstands zwischen 5 und 15 Euro bar oder mit EC-Karte.\n\n**Wichtige Frist:** Alle Fundsachen werden genau **6 Monate** aufbewahrt. Wird der Gegenstand in dieser Frist nicht abgeholt, geht er in die öffentliche Versteigerung oder wird an den Finder übergeben.\n\nÖffnungszeiten: Montag 08:00–12:00 Uhr | Donnerstag 13:00–18:00 Uhr.",
+        "textEN": "**Central Municipal Lost & Found Office — Citizen Notice**\n\nDid you lose or find an item on public transport, in parks, or in municipal buildings?\n\n**Collecting your item:**\nIf your lost item was handed in, you can collect it in person during counter hours.\n\n**What you must bring:**\n- A valid photo ID (passport or national ID card)\n- **Proof of ownership**: e.g. receipt, spare key, device serial number, or for smartphones unlocking on-site via PIN/pattern.\n- Processing fee: Between €5 and €15 depending on value (cash or debit card).\n\n**Important Deadline:** All found items are kept for exactly **6 months**. If not claimed within this period, they are auctioned publicly or given to the finder.\n\nOpening hours: Monday 08:00–12:00 | Thursday 13:00–18:00.",
+        "questions": [
+            {
+                "question": "Wie kann man bei einem Smartphone das Eigentum nachweisen?",
+                "questionEN": "How can one prove ownership of a smartphone?",
+                "options": [
+                    "Gar nicht möglich",
+                    "Durch eine Zeugenaussage",
+                    "Durch Entsperren vor Ort mit PIN",
+                    "Nur mit dem Originalkarton"
                 ],
-                tips: [
-                    { de: "Farben der Mülltonnen", en: "Blau = Papier; Gelb = Verpackung; Braun = Bio; Schwarz/Grau = Restmüll." },
-                    { de: "Sperrmüll-Anmeldung", en: "Bulky waste must be registered beforehand; putting items on the curb without booking is fined." },
-                    { de: "Kein Elektroschrott im Hausmüll", en: "Batteries and electronics must go to recycling depots or retail collection boxes." }
-                ]
+                "correct": 2,
+                "explanation": "'oder bei Handys das Entsperren vor Ort per PIN/Muster'."
             },
-            text: "**Abfallwirtschaftsbetrieb — Richtige Mülltrennung & Sperrmüll**\n\nLiebe Bürgerinnen und Bürger,\n\nbitte beachten Sie die Regelungen zur Mülltrennung im Stadtgebiet:\n\n- **Blaue Tonne:** Nur sauberes Papier, Pappe, Kartons und Zeitungen.\n- **Gelber Sack / Gelbe Tonne:** Leichtverpackungen aus Kunststoff, Aluminium und Verbundstoffen (z. B. Milchtüten, Joghurtbecher, Dosen).\n- **Braune Biotonne:** Küchenabfälle, Kaffeesatz, Obst- und Gemüsereste, Gartenabfälle. Keine Plastiktüten!\n- **Schwarze Restmülltonne:** Hygieneartikel, Staubsaugerbeutel, zerbrochenes Porzellan.\n\n**Sperrmüll-Abholung:**\nJeder Haushalt darf **zweimal pro Jahr kostenlos bis zu 4 m³ Sperrmüll** (Möbel, Tische, Matratzen) abholen lassen. Bitte vereinbaren Sie mindestens zwei Wochen im Voraus online einen Termin. Stellen Sie den Sperrmüll erst am Vorabend ab 18:00 Uhr an den Straßenrand.\n\nElektro-Altgeräte (Fernseher, Waschmaschinen) müssen separat beim **Wertstoffhof Nord** abgegeben werden.",
-            textEN: "**Municipal Waste Management — Proper Recycling & Bulky Waste**\n\nDear Residents,\n\nPlease observe waste sorting regulations in the municipal area:\n\n- **Blue Bin:** Only clean paper, cardboard, boxes, and newspapers.\n- **Yellow Bag / Yellow Bin:** Lightweight packaging made of plastic, aluminium, and composite materials (e.g. milk cartons, yoghurt pots, cans).\n- **Brown Bio Bin:** Kitchen waste, coffee grounds, fruit and vegetable scraps, garden waste. No plastic bags!\n- **Black General Waste Bin:** Sanitary items, vacuum bags, broken crockery.\n\n**Bulky Waste Collection:**\nEvery household is entitled to **two free bulky waste pickups per year (up to 4 m³)** (furniture, tables, mattresses). Please book an appointment online at least two weeks in advance. Place bulky waste on the curb no earlier than 18:00 on the evening before.\n\nOld electrical appliances (TVs, washing machines) must be dropped off separately at **Recycling Centre North**.",
-            questions: [
+            {
+                "question": "Wie lange werden Fundsachen im Fundbüro aufbewahrt?",
+                "questionEN": "How long are lost items kept at the lost property office?",
+                "options": [
+                    "Nur 30 Tage",
+                    "Genau 6 Monate",
+                    "Zwei Wochen",
+                    "Zwei Jahre"
+                ],
+                "correct": 1,
+                "explanation": "'Alle Fundsachen werden genau 6 Monate aufbewahrt'."
+            },
+            {
+                "question": "Wann hat das Fundbüro am Donnerstagnachmittag geöffnet?",
+                "questionEN": "When is the lost and found office open on Thursday afternoon?",
+                "options": [
+                    "08:00 bis 12:00 Uhr",
+                    "13:00 bis 18:00 Uhr",
+                    "Nur bis 14:00 Uhr",
+                    "Rund um die Uhr"
+                ],
+                "correct": 1,
+                "explanation": "'Donnerstag 13:00–18:00 Uhr'."
+            }
+        ]
+    },
+    {
+        "id": "a2_read_26",
+        "title": "Mülltrennung & Sperrmüll-Termine",
+        "titleEN": "Waste Separation & Bulky Waste Schedule",
+        "emoji": "♻️",
+        "warmup": {
+            "vocab": [
                 {
-                    question: "Wie oft darf jeder Haushalt pro Jahr kostenlos Sperrmüll anmelden?",
-                    questionEN: "How often may each household book free bulky waste collection per year?",
-                    options: ["Zweimal pro Jahr", "Einmal im Monat", "Nur einmal alle zwei Jahre", "Unbegrenzt oft"],
-                    correct: 0,
-                    explanation: "'zweimal pro Jahr kostenlos bis zu 4 m³ Sperrmüll'."
+                    "word": "die Mülltrennung",
+                    "gender": "die",
+                    "translation": "waste separation / recycling sorting",
+                    "example": "In Deutschland ist Mülltrennung gesetzlich vorgeschrieben.",
+                    "exampleEN": "In Germany waste sorting is required by law."
                 },
                 {
-                    question: "In welche Tonne gehören Plastikverpackungen und Konservendosen?",
-                    questionEN: "Which bin do plastic packagings and food cans belong to?",
-                    options: ["In den Gelben Sack / Gelbe Tonne", "In die Blaue Tonne", "In die Braune Biotonne", "In den Glascontainer"],
-                    correct: 0,
-                    explanation: "'Gelber Sack / Gelbe Tonne: Leichtverpackungen aus Kunststoff, Aluminium und Verbundstoffen'."
+                    "word": "der Sperrmüll",
+                    "gender": "der",
+                    "translation": "bulky waste (furniture, mattresses)",
+                    "example": "Alte Möbel und Matratzen gehören zum Sperrmüll.",
+                    "exampleEN": "Old furniture and mattresses belong to bulky waste."
                 },
                 {
-                    question: "Wo müssen alte Elektrogeräte (z. B. Waschmaschinen) abgegeben werden?",
-                    questionEN: "Where must old electrical appliances (e.g. washing machines) be dropped off?",
-                    options: ["Beim Wertstoffhof Nord", "In der schwarzen Restmülltonne", "An der Bushaltestelle", "Im Fundbüro"],
-                    correct: 0,
-                    explanation: "'Elektro-Altgeräte... müssen separat beim Wertstoffhof Nord abgegeben werden'."
+                    "word": "der Wertstoffhof",
+                    "gender": "der",
+                    "translation": "recycling depot / civic amenity site",
+                    "example": "Elektrogeräte bringt man direkt zum Wertstoffhof.",
+                    "exampleEN": "Electrical appliances are brought directly to the recycling centre."
+                },
+                {
+                    "word": "die Biotonne",
+                    "gender": "die",
+                    "translation": "organic waste bin (brown bin)",
+                    "example": "Obst- und Kaffeereste gehören in die braune Biotonne.",
+                    "exampleEN": "Fruit peels and coffee grounds belong in the brown bio bin."
+                },
+                {
+                    "word": "der Gelbe Sack",
+                    "gender": "der",
+                    "translation": "yellow recycling bag (packaging)",
+                    "example": "Verpackungen aus Plastik und Metall kommen in den Gelben Sack.",
+                    "exampleEN": "Plastic and metal packaging goes into the yellow bag."
+                },
+                {
+                    "word": "die Abfuhr",
+                    "gender": "die",
+                    "translation": "waste collection / pickup",
+                    "example": "Die Abfuhr der Papiertonne erfolgt alle zwei Wochen.",
+                    "exampleEN": "Paper bin collection takes place every two weeks."
+                }
+            ],
+            "tips": [
+                {
+                    "de": "Farben der Mülltonnen",
+                    "en": "Blau = Papier; Gelb = Verpackung; Braun = Bio; Schwarz/Grau = Restmüll."
+                },
+                {
+                    "de": "Sperrmüll-Anmeldung",
+                    "en": "Bulky waste must be registered beforehand; putting items on the curb without booking is fined."
+                },
+                {
+                    "de": "Kein Elektroschrott im Hausmüll",
+                    "en": "Batteries and electronics must go to recycling depots or retail collection boxes."
                 }
             ]
         },
-        {
-            id: "a2_read_27",
-            title: "Lange Nacht der Museen: Programm & Tickets",
-            titleEN: "Long Night of Museums: Programme & Tickets",
-            emoji: "🎨",
-            warmup: {
-                vocab: [
-                    { word: "die Museumsnacht", gender: "die", translation: "night of the museums", example: "Bei der Museumsnacht haben über 40 Museen bis 2 Uhr morgens geöffnet.", exampleEN: "During museum night over 40 museums are open until 2 AM." },
-                    { word: "das Kombiticket", gender: "das", translation: "combination / all-inclusive ticket", example: "Das Kombiticket gilt für alle Museen und den Shuttlebus.", exampleEN: "The combi ticket is valid for all museums and the shuttle bus." },
-                    { word: "die Führung", gender: "die", translation: "guided tour", example: "Um 20:00 Uhr gibt es eine Führung auf Deutsch und Englisch.", exampleEN: "At 20:00 there is a guided tour in German and English." },
-                    { word: "die Sonderausstellung", gender: "die", translation: "special temporary exhibition", example: "Die Sonderausstellung zeigt moderne Fotokunst.", exampleEN: "The special exhibition showcases modern photography." },
-                    { word: "der Shuttlebus", gender: "der", translation: "shuttle bus", example: "Shuttlebusse verbinden alle teilnehmenden Museen im 10-Minuten-Takt.", exampleEN: "Shuttle buses connect all participating museums every 10 minutes." },
-                    { word: "der Vorverkauf", gender: "der", translation: "advance ticket sale", example: "Im Vorverkauf sind die Eintrittskarten 3 Euro günstiger.", exampleEN: "In advance sale, tickets are €3 cheaper." }
+        "text": "**Abfallwirtschaftsbetrieb — Richtige Mülltrennung & Sperrmüll**\n\nLiebe Bürgerinnen und Bürger,\n\nbitte beachten Sie die Regelungen zur Mülltrennung im Stadtgebiet:\n\n- **Blaue Tonne:** Nur sauberes Papier, Pappe, Kartons und Zeitungen.\n- **Gelber Sack / Gelbe Tonne:** Leichtverpackungen aus Kunststoff, Aluminium und Verbundstoffen (z. B. Milchtüten, Joghurtbecher, Dosen).\n- **Braune Biotonne:** Küchenabfälle, Kaffeesatz, Obst- und Gemüsereste, Gartenabfälle. Keine Plastiktüten!\n- **Schwarze Restmülltonne:** Hygieneartikel, Staubsaugerbeutel, zerbrochenes Porzellan.\n\n**Sperrmüll-Abholung:**\nJeder Haushalt darf **zweimal pro Jahr kostenlos bis zu 4 m³ Sperrmüll** (Möbel, Tische, Matratzen) abholen lassen. Bitte vereinbaren Sie mindestens zwei Wochen im Voraus online einen Termin. Stellen Sie den Sperrmüll erst am Vorabend ab 18:00 Uhr an den Straßenrand.\n\nElektro-Altgeräte (Fernseher, Waschmaschinen) müssen separat beim **Wertstoffhof Nord** abgegeben werden.",
+        "textEN": "**Municipal Waste Management — Proper Recycling & Bulky Waste**\n\nDear Residents,\n\nPlease observe waste sorting regulations in the municipal area:\n\n- **Blue Bin:** Only clean paper, cardboard, boxes, and newspapers.\n- **Yellow Bag / Yellow Bin:** Lightweight packaging made of plastic, aluminium, and composite materials (e.g. milk cartons, yoghurt pots, cans).\n- **Brown Bio Bin:** Kitchen waste, coffee grounds, fruit and vegetable scraps, garden waste. No plastic bags!\n- **Black General Waste Bin:** Sanitary items, vacuum bags, broken crockery.\n\n**Bulky Waste Collection:**\nEvery household is entitled to **two free bulky waste pickups per year (up to 4 m³)** (furniture, tables, mattresses). Please book an appointment online at least two weeks in advance. Place bulky waste on the curb no earlier than 18:00 on the evening before.\n\nOld electrical appliances (TVs, washing machines) must be dropped off separately at **Recycling Centre North**.",
+        "questions": [
+            {
+                "question": "Wie oft darf jeder Haushalt pro Jahr kostenlos Sperrmüll anmelden?",
+                "questionEN": "How often may each household book free bulky waste collection per year?",
+                "options": [
+                    "Nur einmal alle zwei Jahre",
+                    "Unbegrenzt oft",
+                    "Zweimal pro Jahr",
+                    "Einmal im Monat"
                 ],
-                tips: [
-                    { de: "Kombiticket als Fahrkarte", en: "In Germany, museum night tickets almost always include free public transit and shuttle buses." },
-                    { de: "Vorverkauf vs. Abendkasse", en: "Advance tickets ('Vorverkauf') save money and let you skip the box office lines." },
-                    { de: "Führungen reservieren", en: "Popular themed guided tours often have limited spaces." }
-                ]
+                "correct": 2,
+                "explanation": "'zweimal pro Jahr kostenlos bis zu 4 m³ Sperrmüll'."
             },
-            text: "**Kulturnacht 2024: Die Lange Nacht der Museen**\n\nAm **Samstag, 18. November**, öffnen 35 Museen, Galerien und historische Bauten von **18:00 bis 02:00 Uhr morgens** ihre Türen für ein unvergessliches Kulturerlebnis!\n\n**Ticketpreise:**\n- **Kombiticket:** 18 Euro (Vorverkauf 15 Euro)\n- **Ermäßigt:** 10 Euro für Schüler, Studierende und Auszubildende\n- **Kinder bis 12 Jahre:** Freier Eintritt\n\n**Das Ticket beinhaltet:**\n- Eintritt in alle 35 teilnehmenden Häuser und Sonderausstellungen\n- Kostenlose Nutzung aller offiziellen Museums-Shuttlebusse (Linien 1 bis 4)\n- Freie Fahrt im gesamten Nahverkehrsnetz (Bus, Straßenbahn, S-Bahn) von 16:00 bis 06:00 Uhr des Folgetags.\n\n**Highlights:** Live-Musik im Stadtmuseum, Taschenlampenführung für Familien im Naturkundemuseum um 19:30 Uhr und historische Druckwerkstatt im Gutenberg-Haus.\n\nTickets online unter: **www.museumsnacht-tickets.de**",
-            textEN: "**Culture Night 2024: Long Night of Museums**\n\nOn **Saturday, 18 November**, 35 museums, galleries, and historic buildings open their doors from **18:00 to 02:00 in the morning** for an unforgettable cultural experience!\n\n**Ticket Prices:**\n- **Combination Ticket:** €18 (Advance sale: €15)\n- **Reduced:** €10 for pupils, university students, and apprentices\n- **Children up to 12 years:** Free admission\n\n**The Ticket includes:**\n- Admission to all 35 participating venues and special exhibitions\n- Free use of all official museum shuttle bus lines (Lines 1 to 4)\n- Free transit travel across the entire local network (bus, tram, suburban rail) from 16:00 to 06:00 the following day.\n\n**Highlights:** Live music at City Museum, flashlight tour for families at Natural History Museum at 19:30, and historic print workshop at Gutenberg House.\n\nTickets online at: **www.museumsnacht-tickets.de**",
-            questions: [
+            {
+                "question": "In welche Tonne gehören Plastikverpackungen und Konservendosen?",
+                "questionEN": "Which bin do plastic packagings and food cans belong to?",
+                "options": [
+                    "In den Glascontainer",
+                    "In die Blaue Tonne",
+                    "In den Gelben Sack / Gelbe Tonne",
+                    "In die Braune Biotonne"
+                ],
+                "correct": 2,
+                "explanation": "'Gelber Sack / Gelbe Tonne: Leichtverpackungen aus Kunststoff, Aluminium und Verbundstoffen'."
+            },
+            {
+                "question": "Wo müssen alte Elektrogeräte (z. B. Waschmaschinen) abgegeben werden?",
+                "questionEN": "Where must old electrical appliances (e.g. washing machines) be dropped off?",
+                "options": [
+                    "Im Fundbüro",
+                    "In der schwarzen Restmülltonne",
+                    "Beim Wertstoffhof Nord",
+                    "An der Bushaltestelle"
+                ],
+                "correct": 2,
+                "explanation": "'Elektro-Altgeräte... müssen separat beim Wertstoffhof Nord abgegeben werden'."
+            }
+        ]
+    },
+    {
+        "id": "a2_read_27",
+        "title": "Lange Nacht der Museen: Programm & Tickets",
+        "titleEN": "Long Night of Museums: Programme & Tickets",
+        "emoji": "🎨",
+        "warmup": {
+            "vocab": [
                 {
-                    question: "Wie viel kostet ein Kombiticket im Vorverkauf?",
-                    questionEN: "How much does a combo ticket cost in advance sale?",
-                    options: ["15 Euro", "18 Euro", "10 Euro", "Kostenlos"],
-                    correct: 0,
-                    explanation: "Ticket info says: 'Kombiticket: 18 Euro (Vorverkauf 15 Euro)'."
+                    "word": "die Museumsnacht",
+                    "gender": "die",
+                    "translation": "night of the museums",
+                    "example": "Bei der Museumsnacht haben über 40 Museen bis 2 Uhr morgens geöffnet.",
+                    "exampleEN": "During museum night over 40 museums are open until 2 AM."
                 },
                 {
-                    question: "Gilt das Ticket auch für öffentliche Verkehrsmittel (Bus und Bahn)?",
-                    questionEN: "Is the ticket also valid for public transport (bus and train)?",
-                    options: ["Ja, freie Fahrt von 16:00 bis 06:00 Uhr", "Nein, nur für Museen", "Nur für den Shuttlebus", "Nur gegen 10 Euro Aufpreis"],
-                    correct: 0,
-                    explanation: "'Freie Fahrt im gesamten Nahverkehrsnetz... von 16:00 bis 06:00 Uhr'."
+                    "word": "das Kombiticket",
+                    "gender": "das",
+                    "translation": "combination / all-inclusive ticket",
+                    "example": "Das Kombiticket gilt für alle Museen und den Shuttlebus.",
+                    "exampleEN": "The combi ticket is valid for all museums and the shuttle bus."
                 },
                 {
-                    question: "Bis wie viel Uhr haben die Museen in dieser Nacht geöffnet?",
-                    questionEN: "Until what time are the museums open on this night?",
-                    options: ["Bis 02:00 Uhr morgens", "Bis 22:00 Uhr", "Bis Mitternacht", "Bis 06:00 Uhr"],
-                    correct: 0,
-                    explanation: "Opening hours are 'von 18:00 bis 02:00 Uhr morgens'."
+                    "word": "die Führung",
+                    "gender": "die",
+                    "translation": "guided tour",
+                    "example": "Um 20:00 Uhr gibt es eine Führung auf Deutsch und Englisch.",
+                    "exampleEN": "At 20:00 there is a guided tour in German and English."
+                },
+                {
+                    "word": "die Sonderausstellung",
+                    "gender": "die",
+                    "translation": "special temporary exhibition",
+                    "example": "Die Sonderausstellung zeigt moderne Fotokunst.",
+                    "exampleEN": "The special exhibition showcases modern photography."
+                },
+                {
+                    "word": "der Shuttlebus",
+                    "gender": "der",
+                    "translation": "shuttle bus",
+                    "example": "Shuttlebusse verbinden alle teilnehmenden Museen im 10-Minuten-Takt.",
+                    "exampleEN": "Shuttle buses connect all participating museums every 10 minutes."
+                },
+                {
+                    "word": "der Vorverkauf",
+                    "gender": "der",
+                    "translation": "advance ticket sale",
+                    "example": "Im Vorverkauf sind die Eintrittskarten 3 Euro günstiger.",
+                    "exampleEN": "In advance sale, tickets are €3 cheaper."
+                }
+            ],
+            "tips": [
+                {
+                    "de": "Kombiticket als Fahrkarte",
+                    "en": "In Germany, museum night tickets almost always include free public transit and shuttle buses."
+                },
+                {
+                    "de": "Vorverkauf vs. Abendkasse",
+                    "en": "Advance tickets ('Vorverkauf') save money and let you skip the box office lines."
+                },
+                {
+                    "de": "Führungen reservieren",
+                    "en": "Popular themed guided tours often have limited spaces."
                 }
             ]
         },
-        {
-            id: "a2_read_28",
-            title: "Arztpraxis-Aushang: Grippeimpfung & Sprechzeiten",
-            titleEN: "Medical Clinic Notice: Flu Vaccination Hours",
-            emoji: "💉",
-            warmup: {
-                vocab: [
-                    { word: "die Grippeimpfung", gender: "die", translation: "flu shot / influenza vaccination", example: "Die jährliche Grippeimpfung wird im Herbst empfohlen.", exampleEN: "The annual flu vaccination is recommended in autumn." },
-                    { word: "die Sprechstunde", gender: "die", translation: "consultation hours / office hours", example: "Die offene Sprechstunde findet mittwochmorgens statt.", exampleEN: "The open consultation takes place on Wednesday mornings." },
-                    { word: "der Impfpass", gender: "der", translation: "vaccination record booklet", example: "Bringen Sie bitte Ihren gelben Impfpass mit.", exampleEN: "Please bring your yellow vaccination booklet." },
-                    { word: "die Versichertenkarte", gender: "die", translation: "health insurance chip card", example: "Ohne Versichertenkarte können wir Sie nicht behandeln.", exampleEN: "Without your health insurance card we cannot treat you." },
-                    { word: "die Nebenwirkung", gender: "die", translation: "side effect", example: "Mögliche Nebenwirkungen sind leichte Rötungen am Arm.", exampleEN: "Possible side effects are mild redness on the arm." },
-                    { word: "die Vorerkrankung", gender: "die", translation: "pre-existing medical condition", example: "Patienten mit chronischen Vorerkrankungen sollten sich impfen lassen.", exampleEN: "Patients with chronic pre-existing conditions should get vaccinated." }
+        "text": "**Kulturnacht 2024: Die Lange Nacht der Museen**\n\nAm **Samstag, 18. November**, öffnen 35 Museen, Galerien und historische Bauten von **18:00 bis 02:00 Uhr morgens** ihre Türen für ein unvergessliches Kulturerlebnis!\n\n**Ticketpreise:**\n- **Kombiticket:** 18 Euro (Vorverkauf 15 Euro)\n- **Ermäßigt:** 10 Euro für Schüler, Studierende und Auszubildende\n- **Kinder bis 12 Jahre:** Freier Eintritt\n\n**Das Ticket beinhaltet:**\n- Eintritt in alle 35 teilnehmenden Häuser und Sonderausstellungen\n- Kostenlose Nutzung aller offiziellen Museums-Shuttlebusse (Linien 1 bis 4)\n- Freie Fahrt im gesamten Nahverkehrsnetz (Bus, Straßenbahn, S-Bahn) von 16:00 bis 06:00 Uhr des Folgetags.\n\n**Highlights:** Live-Musik im Stadtmuseum, Taschenlampenführung für Familien im Naturkundemuseum um 19:30 Uhr und historische Druckwerkstatt im Gutenberg-Haus.\n\nTickets online unter: **www.museumsnacht-tickets.de**",
+        "textEN": "**Culture Night 2024: Long Night of Museums**\n\nOn **Saturday, 18 November**, 35 museums, galleries, and historic buildings open their doors from **18:00 to 02:00 in the morning** for an unforgettable cultural experience!\n\n**Ticket Prices:**\n- **Combination Ticket:** €18 (Advance sale: €15)\n- **Reduced:** €10 for pupils, university students, and apprentices\n- **Children up to 12 years:** Free admission\n\n**The Ticket includes:**\n- Admission to all 35 participating venues and special exhibitions\n- Free use of all official museum shuttle bus lines (Lines 1 to 4)\n- Free transit travel across the entire local network (bus, tram, suburban rail) from 16:00 to 06:00 the following day.\n\n**Highlights:** Live music at City Museum, flashlight tour for families at Natural History Museum at 19:30, and historic print workshop at Gutenberg House.\n\nTickets online at: **www.museumsnacht-tickets.de**",
+        "questions": [
+            {
+                "question": "Wie viel kostet ein Kombiticket im Vorverkauf?",
+                "questionEN": "How much does a combo ticket cost in advance sale?",
+                "options": [
+                    "Kostenlos",
+                    "10 Euro",
+                    "15 Euro",
+                    "18 Euro"
                 ],
-                tips: [
-                    { de: "Gelber Impfpass", en: "Always carry your international yellow vaccination booklet in Germany." },
-                    { de: "Impfung ohne Termin", en: "Clinics often designate specific walk-in hours for seasonal vaccines." },
-                    { de: "Kostenübernahme Krankenkasse", en: "Statutory health insurers in Germany cover annual flu shots for risk groups and seniors." }
-                ]
+                "correct": 2,
+                "explanation": "Ticket info says: 'Kombiticket: 18 Euro (Vorverkauf 15 Euro)'."
             },
-            text: "**Gemeinschaftspraxis Dres. Sommer & Bergmann**\n\n**Grippeschutzimpfung Herbst/Winter — Wichtige Information**\n\nAb **Montag, 16. Oktober**, bieten wir wieder die jährliche Schutzimpfung gegen die saisonale Influenza an. Die Impfung wird von der Ständigen Impfkommission (STIKO) besonders für Personen über 60 Jahre, chronisch Kranke, Schwangere und medizinisches Personal empfohlen.\n\n**Offene Impfsprechstunde (ohne Voranmeldung):**\n- Dienstag: 08:30 bis 11:30 Uhr\n- Donnerstag: 15:00 bis 17:30 Uhr\n\n**Was müssen Sie mitbringen?**\n1. Ihre elektronische Gesundheitskarte (**Versichertenkarte**)\n2. Ihren gelben **Impfpass** zur Dokumentation\n\nDie Kosten werden von allen gesetzlichen und privaten Krankenkassen vollständig übernommen. Bitte kommen Sie nur, wenn Sie frei von Fieber und akuten Infekten sind.\n\nIhr Praxisteam",
-            textEN: "**Joint Practice Dres. Sommer & Bergmann**\n\n**Flu Vaccination Autumn/Winter — Important Information**\n\nStarting **Monday, 16 October**, we offer the annual vaccination against seasonal influenza once again. The vaccination is recommended by the Standing Committee on Vaccination (STIKO) particularly for people over 60, chronically ill persons, pregnant women, and healthcare staff.\n\n**Open Walk-in Vaccine Hours (no appointment needed):**\n- Tuesday: 08:30 to 11:30\n- Thursday: 15:00 to 17:30\n\n**What must you bring?**\n1. Your electronic health insurance card (**Versichertenkarte**)\n2. Your yellow **vaccination record booklet** for documentation\n\nCosts are covered entirely by all statutory and private health insurances. Please only come if you are free of fever and acute infections.\n\nYour clinic team",
-            questions: [
+            {
+                "question": "Gilt das Ticket auch für öffentliche Verkehrsmittel (Bus und Bahn)?",
+                "questionEN": "Is the ticket also valid for public transport (bus and train)?",
+                "options": [
+                    "Nur für den Shuttlebus",
+                    "Ja, freie Fahrt von 16:00 bis 06:00 Uhr",
+                    "Nur gegen 10 Euro Aufpreis",
+                    "Nein, nur für Museen"
+                ],
+                "correct": 1,
+                "explanation": "'Freie Fahrt im gesamten Nahverkehrsnetz... von 16:00 bis 06:00 Uhr'."
+            },
+            {
+                "question": "Bis wie viel Uhr haben die Museen in dieser Nacht geöffnet?",
+                "questionEN": "Until what time are the museums open on this night?",
+                "options": [
+                    "Bis Mitternacht",
+                    "Bis 06:00 Uhr",
+                    "Bis 22:00 Uhr",
+                    "Bis 02:00 Uhr morgens"
+                ],
+                "correct": 3,
+                "explanation": "Opening hours are 'von 18:00 bis 02:00 Uhr morgens'."
+            }
+        ]
+    },
+    {
+        "id": "a2_read_28",
+        "title": "Arztpraxis-Aushang: Grippeimpfung & Sprechzeiten",
+        "titleEN": "Medical Clinic Notice: Flu Vaccination Hours",
+        "emoji": "💉",
+        "warmup": {
+            "vocab": [
                 {
-                    question: "Braucht man für die offene Impfsprechstunde einen festen Termin?",
-                    questionEN: "Does one need a fixed appointment for the walk-in vaccine hours?",
-                    options: ["Nein, keine Voranmeldung nötig", "Ja, nur online per App", "Nur telefonisch am Vortag", "Nur für Privatpatienten"],
-                    correct: 0,
-                    explanation: "The notice explicitly specifies 'ohne Voranmeldung'."
+                    "word": "die Grippeimpfung",
+                    "gender": "die",
+                    "translation": "flu shot / influenza vaccination",
+                    "example": "Die jährliche Grippeimpfung wird im Herbst empfohlen.",
+                    "exampleEN": "The annual flu vaccination is recommended in autumn."
                 },
                 {
-                    question: "Welche zwei Dinge muss man zur Impfung mitbringen?",
-                    questionEN: "Which two items must one bring to the vaccination?",
-                    options: ["Versichertenkarte und gelben Impfpass", "Passfoto und Bargeld", "Nur den Personalausweis", "Einen Überweisungsschein"],
-                    correct: 0,
-                    explanation: "'1. Ihre elektronische Gesundheitskarte... 2. Ihren gelben Impfpass'."
+                    "word": "die Sprechstunde",
+                    "gender": "die",
+                    "translation": "consultation hours / office hours",
+                    "example": "Die offene Sprechstunde findet mittwochmorgens statt.",
+                    "exampleEN": "The open consultation takes place on Wednesday mornings."
                 },
                 {
-                    question: "Wann darf man die Impfung laut Aushang NICHT durchführen lassen?",
-                    questionEN: "When should one NOT have the vaccine administered according to the notice?",
-                    options: ["Wenn man Fieber oder einen akuten Infekt hat", "Wenn man über 60 Jahre alt ist", "Wenn man gesetzlich versichert ist", "Am Donnerstag"],
-                    correct: 0,
-                    explanation: "'Bitte kommen Sie nur, wenn Sie frei von Fieber und akuten Infekten sind'."
+                    "word": "der Impfpass",
+                    "gender": "der",
+                    "translation": "vaccination record booklet",
+                    "example": "Bringen Sie bitte Ihren gelben Impfpass mit.",
+                    "exampleEN": "Please bring your yellow vaccination booklet."
+                },
+                {
+                    "word": "die Versichertenkarte",
+                    "gender": "die",
+                    "translation": "health insurance chip card",
+                    "example": "Ohne Versichertenkarte können wir Sie nicht behandeln.",
+                    "exampleEN": "Without your health insurance card we cannot treat you."
+                },
+                {
+                    "word": "die Nebenwirkung",
+                    "gender": "die",
+                    "translation": "side effect",
+                    "example": "Mögliche Nebenwirkungen sind leichte Rötungen am Arm.",
+                    "exampleEN": "Possible side effects are mild redness on the arm."
+                },
+                {
+                    "word": "die Vorerkrankung",
+                    "gender": "die",
+                    "translation": "pre-existing medical condition",
+                    "example": "Patienten mit chronischen Vorerkrankungen sollten sich impfen lassen.",
+                    "exampleEN": "Patients with chronic pre-existing conditions should get vaccinated."
+                }
+            ],
+            "tips": [
+                {
+                    "de": "Gelber Impfpass",
+                    "en": "Always carry your international yellow vaccination booklet in Germany."
+                },
+                {
+                    "de": "Impfung ohne Termin",
+                    "en": "Clinics often designate specific walk-in hours for seasonal vaccines."
+                },
+                {
+                    "de": "Kostenübernahme Krankenkasse",
+                    "en": "Statutory health insurers in Germany cover annual flu shots for risk groups and seniors."
                 }
             ]
         },
-        {
-            id: "a2_read_29",
-            title: "Supermarkt-Wochenblatt: Bio-Angebote & Rabatt",
-            titleEN: "Supermarket Weekly Flyer: Organic Discounts",
-            emoji: "🛒",
-            warmup: {
-                vocab: [
-                    { word: "das Sonderangebot", gender: "das", translation: "special discount offer", example: "Bio-Äpfel sind diese Woche im Sonderangebot.", exampleEN: "Organic apples are on special offer this week." },
-                    { word: "das Mindesthaltbarkeitsdatum (MHD)", gender: "das", translation: "best-before date", example: "Das Mindesthaltbarkeitsdatum steht auf dem Deckel.", exampleEN: "The best-before date is printed on the lid." },
-                    { word: "das Pfand", gender: "das", translation: "bottle deposit refund", example: "Auf Mehrweg-Glasflaschen gibt es 15 Cent Pfand.", exampleEN: "There is a 15 cent deposit on reusable glass bottles." },
-                    { word: "aus kontrolliertem Anbau", gender: "Phrase", translation: "certified organic farming", example: "Unser Gemüse stammt aus kontrolliert biologischem Anbau.", exampleEN: "Our vegetables come from certified organic farming." },
-                    { word: "die Kundenkarte", gender: "die", translation: "loyalty card", example: "Mit der Kundenkarte sparen Sie zusätzliche 5 Prozent.", exampleEN: "With the loyalty card you save an additional 5 percent." },
-                    { word: "solange der Vorrat reicht", gender: "Phrase", translation: "while stocks last", example: "Die Angebote gelten nur, solange der Vorrat reicht.", exampleEN: "The offers are valid only while stocks last." }
+        "text": "**Gemeinschaftspraxis Dres. Sommer & Bergmann**\n\n**Grippeschutzimpfung Herbst/Winter — Wichtige Information**\n\nAb **Montag, 16. Oktober**, bieten wir wieder die jährliche Schutzimpfung gegen die saisonale Influenza an. Die Impfung wird von der Ständigen Impfkommission (STIKO) besonders für Personen über 60 Jahre, chronisch Kranke, Schwangere und medizinisches Personal empfohlen.\n\n**Offene Impfsprechstunde (ohne Voranmeldung):**\n- Dienstag: 08:30 bis 11:30 Uhr\n- Donnerstag: 15:00 bis 17:30 Uhr\n\n**Was müssen Sie mitbringen?**\n1. Ihre elektronische Gesundheitskarte (**Versichertenkarte**)\n2. Ihren gelben **Impfpass** zur Dokumentation\n\nDie Kosten werden von allen gesetzlichen und privaten Krankenkassen vollständig übernommen. Bitte kommen Sie nur, wenn Sie frei von Fieber und akuten Infekten sind.\n\nIhr Praxisteam",
+        "textEN": "**Joint Practice Dres. Sommer & Bergmann**\n\n**Flu Vaccination Autumn/Winter — Important Information**\n\nStarting **Monday, 16 October**, we offer the annual vaccination against seasonal influenza once again. The vaccination is recommended by the Standing Committee on Vaccination (STIKO) particularly for people over 60, chronically ill persons, pregnant women, and healthcare staff.\n\n**Open Walk-in Vaccine Hours (no appointment needed):**\n- Tuesday: 08:30 to 11:30\n- Thursday: 15:00 to 17:30\n\n**What must you bring?**\n1. Your electronic health insurance card (**Versichertenkarte**)\n2. Your yellow **vaccination record booklet** for documentation\n\nCosts are covered entirely by all statutory and private health insurances. Please only come if you are free of fever and acute infections.\n\nYour clinic team",
+        "questions": [
+            {
+                "question": "Braucht man für die offene Impfsprechstunde einen festen Termin?",
+                "questionEN": "Does one need a fixed appointment for the walk-in vaccine hours?",
+                "options": [
+                    "Ja, nur online per App",
+                    "Nein, keine Voranmeldung nötig",
+                    "Nur für Privatpatienten",
+                    "Nur telefonisch am Vortag"
                 ],
-                tips: [
-                    { de: "MHD = Mindesthaltbarkeit", en: "In Germany, food is usually still good to eat past the MHD date." },
-                    { de: "Flaschenpfand", en: "0.25€ on plastic single-use bottles (Einweg); 0.08€–0.15€ on glass (Mehrweg)." },
-                    { de: "Gültigkeitszeitraum", en: "Weekly supermarket sales usually run from Monday to Saturday." }
-                ]
+                "correct": 1,
+                "explanation": "The notice explicitly specifies 'ohne Voranmeldung'."
             },
-            text: "**SuperMarkt FrischeWelt — Angebote der Woche**\n\nGültig von **Montag, 23. Oktober**, bis einschließlich **Samstag, 28. Oktober** in allen teilnehmenden Filialen:\n\n**Obst & Gemüse:**\n- Bio-Bananen aus fairem Handel: **1,49 €** / kg *(statt 2,19 €)*\n- Deutsche Speisekartoffeln (Sack 2,5 kg): **2,29 €**\n- Regionale Bio-Äpfel (Sorte Elstar): **1,99 €** / 1,5 kg Beutel\n\n**Kühlregal & Molkerei:**\n- Frische Bio-Vollmilch 3,8% Fett (1 Liter): **1,09 €**\n- Gouda-Käse jung in Scheiben (400 g Packung): **2,49 €**\n\n**Getränkemarkt-Spezial:**\nMineralwasser Classic oder Naturell (Kasten mit 12 x 0,7 l Glasflaschen): **4,49 €** *(zzgl. 3,30 € Pfand)*\n\n**Kundenkarten-Vorteil:** Zeigen Sie Ihre Treuekarte an der Kasse und erhalten Sie ab einem Einkaufswert von 40 Euro **10% Rabatt auf alle Bio-Produkte**!\n\n*Alle Angebote gültig, solange der Vorrat reicht.*",
-            textEN: "**FrischeWelt Supermarket — Offers of the Week**\n\nValid from **Monday, 23 October** up to and including **Saturday, 28 October** in all participating branches:\n\n**Fruit & Vegetables:**\n- Fairtrade Organic Bananas: **€1.49** / kg *(was €2.19)*\n- German Table Potatoes (2.5 kg sack): **€2.29**\n- Regional Organic Apples (Elstar, 1.5 kg bag): **€1.99**\n\n**Chilled & Dairy Section:**\n- Fresh Organic Whole Milk 3.8% (1 litre): **€1.09**\n- Young Gouda Cheese in slices (400 g pack): **€2.49**\n\n**Beverage Special:**\nMineral Water Sparkling or Still (crate of 12 x 0.7 l glass bottles): **€4.49** *(plus €3.30 deposit)*\n\n**Loyalty Card Benefit:** Show your loyalty card at the checkout and receive **10% off all organic items** on purchases of €40 or more!\n\n*All offers valid while stocks last.*",
-            questions: [
+            {
+                "question": "Welche zwei Dinge muss man zur Impfung mitbringen?",
+                "questionEN": "Which two items must one bring to the vaccination?",
+                "options": [
+                    "Nur den Personalausweis",
+                    "Einen Überweisungsschein",
+                    "Passfoto und Bargeld",
+                    "Versichertenkarte und gelben Impfpass"
+                ],
+                "correct": 3,
+                "explanation": "'1. Ihre elektronische Gesundheitskarte... 2. Ihren gelben Impfpass'."
+            },
+            {
+                "question": "Wann darf man die Impfung laut Aushang NICHT durchführen lassen?",
+                "questionEN": "When should one NOT have the vaccine administered according to the notice?",
+                "options": [
+                    "Wenn man gesetzlich versichert ist",
+                    "Wenn man Fieber oder einen akuten Infekt hat",
+                    "Wenn man über 60 Jahre alt ist",
+                    "Am Donnerstag"
+                ],
+                "correct": 1,
+                "explanation": "'Bitte kommen Sie nur, wenn Sie frei von Fieber und akuten Infekten sind'."
+            }
+        ]
+    },
+    {
+        "id": "a2_read_29",
+        "title": "Supermarkt-Wochenblatt: Bio-Angebote & Rabatt",
+        "titleEN": "Supermarket Weekly Flyer: Organic Discounts",
+        "emoji": "🛒",
+        "warmup": {
+            "vocab": [
                 {
-                    question: "Wie viel Pfand kommt beim Kauf des Wasserkastens zusätzlich hinzu?",
-                    questionEN: "How much deposit is added when purchasing the water crate?",
-                    options: ["3,30 Euro Pfand", "Kein Pfand", "0,25 Euro", "10,00 Euro"],
-                    correct: 0,
-                    explanation: "The flyer notes: '4,49 € (zzgl. 3,30 € Pfand)'."
+                    "word": "das Sonderangebot",
+                    "gender": "das",
+                    "translation": "special discount offer",
+                    "example": "Bio-Äpfel sind diese Woche im Sonderangebot.",
+                    "exampleEN": "Organic apples are on special offer this week."
                 },
                 {
-                    question: "Welche Bedingung gilt für die 10% Rabatt mit der Kundenkarte?",
-                    questionEN: "Which condition applies for the 10% loyalty card discount?",
-                    options: ["Mindesteinkaufswert von 40 Euro", "Gilt nur für Fleisch", "Nur samstags ab 20 Uhr", "Gilt nur für Neukunden"],
-                    correct: 0,
-                    explanation: "'ab einem Einkaufswert von 40 Euro 10% Rabatt auf alle Bio-Produkte'."
+                    "word": "das Mindesthaltbarkeitsdatum (MHD)",
+                    "gender": "das",
+                    "translation": "best-before date",
+                    "example": "Das Mindesthaltbarkeitsdatum steht auf dem Deckel.",
+                    "exampleEN": "The best-before date is printed on the lid."
                 },
                 {
-                    question: "Bis zu welchem Tag sind die Wochenangebote gültig?",
-                    questionEN: "Until which day are the weekly offers valid?",
-                    options: ["Samstag, 28. Oktober", "Nur bis Mittwoch", "Zwei Wochen lang", "Bis Sonntag"],
-                    correct: 0,
-                    explanation: "'bis einschließlich Samstag, 28. Oktober'."
+                    "word": "das Pfand",
+                    "gender": "das",
+                    "translation": "bottle deposit refund",
+                    "example": "Auf Mehrweg-Glasflaschen gibt es 15 Cent Pfand.",
+                    "exampleEN": "There is a 15 cent deposit on reusable glass bottles."
+                },
+                {
+                    "word": "aus kontrolliertem Anbau",
+                    "gender": "Phrase",
+                    "translation": "certified organic farming",
+                    "example": "Unser Gemüse stammt aus kontrolliert biologischem Anbau.",
+                    "exampleEN": "Our vegetables come from certified organic farming."
+                },
+                {
+                    "word": "die Kundenkarte",
+                    "gender": "die",
+                    "translation": "loyalty card",
+                    "example": "Mit der Kundenkarte sparen Sie zusätzliche 5 Prozent.",
+                    "exampleEN": "With the loyalty card you save an additional 5 percent."
+                },
+                {
+                    "word": "solange der Vorrat reicht",
+                    "gender": "Phrase",
+                    "translation": "while stocks last",
+                    "example": "Die Angebote gelten nur, solange der Vorrat reicht.",
+                    "exampleEN": "The offers are valid only while stocks last."
+                }
+            ],
+            "tips": [
+                {
+                    "de": "MHD = Mindesthaltbarkeit",
+                    "en": "In Germany, food is usually still good to eat past the MHD date."
+                },
+                {
+                    "de": "Flaschenpfand",
+                    "en": "0.25€ on plastic single-use bottles (Einweg); 0.08€–0.15€ on glass (Mehrweg)."
+                },
+                {
+                    "de": "Gültigkeitszeitraum",
+                    "en": "Weekly supermarket sales usually run from Monday to Saturday."
                 }
             ]
         },
-        {
-            id: "a2_read_30",
-            title: "Elternbrief: Schulausflug in den Zoo",
-            titleEN: "School Letter to Parents: Field Trip to Zoo",
-            emoji: "🎒",
-            warmup: {
-                vocab: [
-                    { word: "der Schulausflug", gender: "der", translation: "school field trip / class excursion", example: "Der Schulausflug führt die Klassen 3a und 3b in den Zoo.", exampleEN: "The school excursion takes classes 3a and 3b to the zoo." },
-                    { word: "die Einverständniserklärung", gender: "die", translation: "parental consent / permission slip", example: "Bitte unterschreiben Sie die Einverständniserklärung bis Freitag.", exampleEN: "Please sign the consent form by Friday." },
-                    { word: "das Taschengeld", gender: "das", translation: "pocket money / spending money", example: "Kinder dürfen maximal 5 Euro Taschengeld mitnehmen.", exampleEN: "Children may take a maximum of €5 pocket money." },
-                    { word: "wetterfeste Kleidung", gender: "die", translation: "weatherproof clothing", example: "Bitte denken Sie an wetterfeste Kleidung und feste Schuhe.", exampleEN: "Please remember weatherproof clothing and sturdy shoes." },
-                    { word: "die Begleitperson", gender: "die", translation: "chaperone / accompanying adult", example: "Drei Elternteile begleiten die Gruppe als Aufsichtspersonen.", exampleEN: "Three parents accompany the group as chaperones." },
-                    { word: "das Lunchpaket", gender: "das", translation: "packed lunch", example: "Geben Sie Ihrem Kind ein gesundes Lunchpaket und Wasser mit.", exampleEN: "Pack a healthy packed lunch and water for your child." }
+        "text": "**SuperMarkt FrischeWelt — Angebote der Woche**\n\nGültig von **Montag, 23. Oktober**, bis einschließlich **Samstag, 28. Oktober** in allen teilnehmenden Filialen:\n\n**Obst & Gemüse:**\n- Bio-Bananen aus fairem Handel: **1,49 €** / kg *(statt 2,19 €)*\n- Deutsche Speisekartoffeln (Sack 2,5 kg): **2,29 €**\n- Regionale Bio-Äpfel (Sorte Elstar): **1,99 €** / 1,5 kg Beutel\n\n**Kühlregal & Molkerei:**\n- Frische Bio-Vollmilch 3,8% Fett (1 Liter): **1,09 €**\n- Gouda-Käse jung in Scheiben (400 g Packung): **2,49 €**\n\n**Getränkemarkt-Spezial:**\nMineralwasser Classic oder Naturell (Kasten mit 12 x 0,7 l Glasflaschen): **4,49 €** *(zzgl. 3,30 € Pfand)*\n\n**Kundenkarten-Vorteil:** Zeigen Sie Ihre Treuekarte an der Kasse und erhalten Sie ab einem Einkaufswert von 40 Euro **10% Rabatt auf alle Bio-Produkte**!\n\n*Alle Angebote gültig, solange der Vorrat reicht.*",
+        "textEN": "**FrischeWelt Supermarket — Offers of the Week**\n\nValid from **Monday, 23 October** up to and including **Saturday, 28 October** in all participating branches:\n\n**Fruit & Vegetables:**\n- Fairtrade Organic Bananas: **€1.49** / kg *(was €2.19)*\n- German Table Potatoes (2.5 kg sack): **€2.29**\n- Regional Organic Apples (Elstar, 1.5 kg bag): **€1.99**\n\n**Chilled & Dairy Section:**\n- Fresh Organic Whole Milk 3.8% (1 litre): **€1.09**\n- Young Gouda Cheese in slices (400 g pack): **€2.49**\n\n**Beverage Special:**\nMineral Water Sparkling or Still (crate of 12 x 0.7 l glass bottles): **€4.49** *(plus €3.30 deposit)*\n\n**Loyalty Card Benefit:** Show your loyalty card at the checkout and receive **10% off all organic items** on purchases of €40 or more!\n\n*All offers valid while stocks last.*",
+        "questions": [
+            {
+                "question": "Wie viel Pfand kommt beim Kauf des Wasserkastens zusätzlich hinzu?",
+                "questionEN": "How much deposit is added when purchasing the water crate?",
+                "options": [
+                    "Kein Pfand",
+                    "3,30 Euro Pfand",
+                    "10,00 Euro",
+                    "0,25 Euro"
                 ],
-                tips: [
-                    { de: "Rückgabetermin für Erlaubnis", en: "School permission slips always have a strict return deadline." },
-                    { de: "Treffpunkt und Abfahrt", en: "Pay attention to whether departure is at the school or the train station." },
-                    { de: "Taschengeld-Obergrenze", en: "German schools frequently set a strict pocket money cap for equity." }
-                ]
+                "correct": 1,
+                "explanation": "The flyer notes: '4,49 € (zzgl. 3,30 € Pfand)'."
             },
-            text: "**Theodor-Heuss-Grundschule — Elternbrief zum Schulausflug**\n\nLiebe Eltern der Klassen 3a und 3b,\n\nam **Donnerstag, 15. Juni**, unternehmen unsere beiden dritten Klassen einen gemeinsamen Ganztagesausflug in den **Tierpark Hellabrunn** nach München.\n\n**Wichtige Eckdaten:**\n- **Treffpunkt:** 08:15 Uhr auf dem Schulhof (Abfahrt des Busses pünktlich um 08:30 Uhr)\n- **Rückkehr:** ca. 16:00 Uhr wieder an der Schule\n- **Kosten:** 14 Euro pro Kind (inklusive Busfahrt und Zooeintritt). Bitte geben Sie das Geld bis zum **9. Juni** im Umschlag bei der Klassenlehrerin ab.\n\n**Was braucht Ihr Kind im Rucksack?**\n- Ausreichend Verpflegung (brotzeit und Trinkflasche — bitte keine Glasflaschen!)\n- Wetterfeste Kleidung (Regenjacke und feste Turnschuhe)\n- Maximal **5 Euro Taschengeld** für ein Eis oder ein kleines Andenken\n\nBitte füllen Sie den beigefügten **Abschnitt (Einverständniserklärung)** aus und geben Sie ihn unterschrieben bis spätestens **9. Juni** zurück.\n\nMit herzlichen Grüßen,\n**Frau Krüger & Herr Bäcker (Klassenlehrer)**",
-            textEN: "**Theodor-Heuss Elementary School — Parents' Letter for Field Trip**\n\nDear Parents of Classes 3a and 3b,\n\nOn **Thursday, 15 June**, our two third-grade classes are going on a joint full-day excursion to **Hellabrunn Zoo** in Munich.\n\n**Key Details:**\n- **Meeting Point:** 08:15 in the school playground (bus departs promptly at 08:30)\n- **Return:** approx. 16:00 back at the school\n- **Costs:** €14 per child (includes bus ride and zoo admission). Please hand the money in an envelope to the class teacher by **9 June**.\n\n**What does your child need in their backpack?**\n- Sufficient food (packed lunch and water bottle — please no glass bottles!)\n- Weatherproof clothing (rain jacket and sturdy sneakers)\n- Maximum **€5 pocket money** for ice cream or a small souvenir\n\nPlease fill out the attached **consent slip** and return it signed no later than **9 June**.\n\nWith warm regards,\n**Ms. Krüger & Mr. Bäcker (Class Teachers)**",
-            questions: [
+            {
+                "question": "Welche Bedingung gilt für die 10% Rabatt mit der Kundenkarte?",
+                "questionEN": "Which condition applies for the 10% loyalty card discount?",
+                "options": [
+                    "Mindesteinkaufswert von 40 Euro",
+                    "Gilt nur für Fleisch",
+                    "Nur samstags ab 20 Uhr",
+                    "Gilt nur für Neukunden"
+                ],
+                "correct": 0,
+                "explanation": "'ab einem Einkaufswert von 40 Euro 10% Rabatt auf alle Bio-Produkte'."
+            },
+            {
+                "question": "Bis zu welchem Tag sind die Wochenangebote gültig?",
+                "questionEN": "Until which day are the weekly offers valid?",
+                "options": [
+                    "Nur bis Mittwoch",
+                    "Samstag, 28. Oktober",
+                    "Bis Sonntag",
+                    "Zwei Wochen lang"
+                ],
+                "correct": 1,
+                "explanation": "'bis einschließlich Samstag, 28. Oktober'."
+            }
+        ]
+    },
+    {
+        "id": "a2_read_30",
+        "title": "Elternbrief: Schulausflug in den Zoo",
+        "titleEN": "School Letter to Parents: Field Trip to Zoo",
+        "emoji": "🎒",
+        "warmup": {
+            "vocab": [
                 {
-                    question: "Wie viel Geld kostet der Ausflug pro Kind?",
-                    questionEN: "How much does the excursion cost per child?",
-                    options: ["14 Euro", "5 Euro", "25 Euro", "Kostenlos"],
-                    correct: 0,
-                    explanation: "The letter states: 'Kosten: 14 Euro pro Kind'."
+                    "word": "der Schulausflug",
+                    "gender": "der",
+                    "translation": "school field trip / class excursion",
+                    "example": "Der Schulausflug führt die Klassen 3a und 3b in den Zoo.",
+                    "exampleEN": "The school excursion takes classes 3a and 3b to the zoo."
                 },
                 {
-                    question: "Bis wann muss die Einverständniserklärung abgegeben werden?",
-                    questionEN: "By when must the signed consent form be handed in?",
-                    options: ["Bis zum 9. Juni", "Erst am Ausflugstag (15. Juni)", "Nach den Sommerferien", "Gar nicht nötig"],
-                    correct: 0,
-                    explanation: "'unterschrieben bis spätestens 9. Juni zurück'."
+                    "word": "die Einverständniserklärung",
+                    "gender": "die",
+                    "translation": "parental consent / permission slip",
+                    "example": "Bitte unterschreiben Sie die Einverständniserklärung bis Freitag.",
+                    "exampleEN": "Please sign the consent form by Friday."
                 },
                 {
-                    question: "Welche Flaschen dürfen die Kinder aus Sicherheitsgründen NICHT mitnehmen?",
-                    questionEN: "Which bottles are children NOT allowed to bring for safety reasons?",
-                    options: ["Glasflaschen", "Plastikflaschen", "Aluminiumflaschen", "Trinkpäckchen"],
-                    correct: 0,
-                    explanation: "'Trinkflasche — bitte keine Glasflaschen!'."
+                    "word": "das Taschengeld",
+                    "gender": "das",
+                    "translation": "pocket money / spending money",
+                    "example": "Kinder dürfen maximal 5 Euro Taschengeld mitnehmen.",
+                    "exampleEN": "Children may take a maximum of €5 pocket money."
+                },
+                {
+                    "word": "wetterfeste Kleidung",
+                    "gender": "die",
+                    "translation": "weatherproof clothing",
+                    "example": "Bitte denken Sie an wetterfeste Kleidung und feste Schuhe.",
+                    "exampleEN": "Please remember weatherproof clothing and sturdy shoes."
+                },
+                {
+                    "word": "die Begleitperson",
+                    "gender": "die",
+                    "translation": "chaperone / accompanying adult",
+                    "example": "Drei Elternteile begleiten die Gruppe als Aufsichtspersonen.",
+                    "exampleEN": "Three parents accompany the group as chaperones."
+                },
+                {
+                    "word": "das Lunchpaket",
+                    "gender": "das",
+                    "translation": "packed lunch",
+                    "example": "Geben Sie Ihrem Kind ein gesundes Lunchpaket und Wasser mit.",
+                    "exampleEN": "Pack a healthy packed lunch and water for your child."
+                }
+            ],
+            "tips": [
+                {
+                    "de": "Rückgabetermin für Erlaubnis",
+                    "en": "School permission slips always have a strict return deadline."
+                },
+                {
+                    "de": "Treffpunkt und Abfahrt",
+                    "en": "Pay attention to whether departure is at the school or the train station."
+                },
+                {
+                    "de": "Taschengeld-Obergrenze",
+                    "en": "German schools frequently set a strict pocket money cap for equity."
                 }
             ]
-        }
-    ];
+        },
+        "text": "**Theodor-Heuss-Grundschule — Elternbrief zum Schulausflug**\n\nLiebe Eltern der Klassen 3a und 3b,\n\nam **Donnerstag, 15. Juni**, unternehmen unsere beiden dritten Klassen einen gemeinsamen Ganztagesausflug in den **Tierpark Hellabrunn** nach München.\n\n**Wichtige Eckdaten:**\n- **Treffpunkt:** 08:15 Uhr auf dem Schulhof (Abfahrt des Busses pünktlich um 08:30 Uhr)\n- **Rückkehr:** ca. 16:00 Uhr wieder an der Schule\n- **Kosten:** 14 Euro pro Kind (inklusive Busfahrt und Zooeintritt). Bitte geben Sie das Geld bis zum **9. Juni** im Umschlag bei der Klassenlehrerin ab.\n\n**Was braucht Ihr Kind im Rucksack?**\n- Ausreichend Verpflegung (brotzeit und Trinkflasche — bitte keine Glasflaschen!)\n- Wetterfeste Kleidung (Regenjacke und feste Turnschuhe)\n- Maximal **5 Euro Taschengeld** für ein Eis oder ein kleines Andenken\n\nBitte füllen Sie den beigefügten **Abschnitt (Einverständniserklärung)** aus und geben Sie ihn unterschrieben bis spätestens **9. Juni** zurück.\n\nMit herzlichen Grüßen,\n**Frau Krüger & Herr Bäcker (Klassenlehrer)**",
+        "textEN": "**Theodor-Heuss Elementary School — Parents' Letter for Field Trip**\n\nDear Parents of Classes 3a and 3b,\n\nOn **Thursday, 15 June**, our two third-grade classes are going on a joint full-day excursion to **Hellabrunn Zoo** in Munich.\n\n**Key Details:**\n- **Meeting Point:** 08:15 in the school playground (bus departs promptly at 08:30)\n- **Return:** approx. 16:00 back at the school\n- **Costs:** €14 per child (includes bus ride and zoo admission). Please hand the money in an envelope to the class teacher by **9 June**.\n\n**What does your child need in their backpack?**\n- Sufficient food (packed lunch and water bottle — please no glass bottles!)\n- Weatherproof clothing (rain jacket and sturdy sneakers)\n- Maximum **€5 pocket money** for ice cream or a small souvenir\n\nPlease fill out the attached **consent slip** and return it signed no later than **9 June**.\n\nWith warm regards,\n**Ms. Krüger & Mr. Bäcker (Class Teachers)**",
+        "questions": [
+            {
+                "question": "Wie viel Geld kostet der Ausflug pro Kind?",
+                "questionEN": "How much does the excursion cost per child?",
+                "options": [
+                    "5 Euro",
+                    "25 Euro",
+                    "14 Euro",
+                    "Kostenlos"
+                ],
+                "correct": 2,
+                "explanation": "The letter states: 'Kosten: 14 Euro pro Kind'."
+            },
+            {
+                "question": "Bis wann muss die Einverständniserklärung abgegeben werden?",
+                "questionEN": "By when must the signed consent form be handed in?",
+                "options": [
+                    "Erst am Ausflugstag (15. Juni)",
+                    "Nach den Sommerferien",
+                    "Gar nicht nötig",
+                    "Bis zum 9. Juni"
+                ],
+                "correct": 3,
+                "explanation": "'unterschrieben bis spätestens 9. Juni zurück'."
+            },
+            {
+                "question": "Welche Flaschen dürfen die Kinder aus Sicherheitsgründen NICHT mitnehmen?",
+                "questionEN": "Which bottles are children NOT allowed to bring for safety reasons?",
+                "options": [
+                    "Plastikflaschen",
+                    "Trinkpäckchen",
+                    "Aluminiumflaschen",
+                    "Glasflaschen"
+                ],
+                "correct": 3,
+                "explanation": "'Trinkflasche — bitte keine Glasflaschen!'."
+            }
+        ]
+    }
+];
 
     /* ============================================================
        PART 2: 15 NEW INTERACTIVE LISTENING TOPICS (Total: 30)
@@ -798,20 +1698,20 @@
                     "sentenceEN": "The annual fee for adults is _____ euros.",
                     "target": "20",
                     "options": [
-                        "20",
+                        "30",
                         "10",
-                        "30"
+                        "20"
                     ]
                 },
                 "role": {
                     "speaker1": "Haben Sie Ihren Personalausweis dabei?",
                     "speaker1EN": "Do you have your identity card with you?",
                     "options": [
+                        "Ich trinke gerne Mineralwasser.",
                         "Ja, hier ist mein Ausweis und meine Meldebescheinigung.",
-                        "Nein, ich lese keine Zeitungen.",
-                        "Ich trinke gerne Mineralwasser."
+                        "Nein, ich lese keine Zeitungen."
                     ],
-                    "correct": 0
+                    "correct": 1
                 },
                 "trueFalse": {
                     "statement": "Studenten zahlen 20 Euro für den Ausweis.",
@@ -845,20 +1745,20 @@
                     "sentenceEN": "The novel cannot be renewed because it is already _____.",
                     "target": "vorbestellt",
                     "options": [
-                        "vorbestellt",
+                        "beschädigt",
                         "verloren",
-                        "beschädigt"
+                        "vorbestellt"
                     ]
                 },
                 "role": {
                     "speaker1": "Kann ich diesen Roman noch um zwei Wochen verlängern?",
                     "speaker1EN": "Can I extend this novel for another two weeks?",
                     "options": [
+                        "Das Buch kostet 15 Euro.",
                         "Leider nicht, das Buch ist bereits von jemand anderem vorbestellt.",
-                        "Ja, der Eintritt ist frei.",
-                        "Das Buch kostet 15 Euro."
+                        "Ja, der Eintritt ist frei."
                     ],
-                    "correct": 0
+                    "correct": 1
                 },
                 "trueFalse": {
                     "statement": "Der Kunde kann alle Bücher für zwei Wochen verlängern.",
@@ -956,8 +1856,8 @@
                     "sentenceEN": "The ICE to Munich departs at _____ o'clock.",
                     "target": "6:14",
                     "options": [
-                        "6:14",
                         "9:30",
+                        "6:14",
                         "7:45"
                     ]
                 },
@@ -965,11 +1865,11 @@
                     "speaker1": "Wann fährt der nächste Zug nach München?",
                     "speaker1EN": "When does the next train to Munich depart?",
                     "options": [
-                        "Der ICE fährt um 6:14 Uhr von Gleis 4 ab.",
+                        "Ich fahre gerne mit dem Fahrrad.",
                         "Das Hotelzimmer kostet 80 Euro.",
-                        "Ich fahre gerne mit dem Fahrrad."
+                        "Der ICE fährt um 6:14 Uhr von Gleis 4 ab."
                     ],
-                    "correct": 0
+                    "correct": 2
                 },
                 "trueFalse": {
                     "statement": "Das Ticket kostet regulär 120 Euro ohne Reservierung.",
@@ -1003,20 +1903,20 @@
                     "sentenceEN": "The reason for the train delay is a _____.",
                     "target": "Signalstörung",
                     "options": [
-                        "Signalstörung",
+                        "Streik",
                         "Zugreinigung",
-                        "Streik"
+                        "Signalstörung"
                     ]
                 },
                 "role": {
                     "speaker1": "Erreichen wir den Anschlusszug nach Aachen noch?",
                     "speaker1EN": "Will we still reach the connecting train to Aachen?",
                     "options": [
-                        "Nein, wir müssen die spätere Bahn um 14:45 Uhr ab Gleis 5 nehmen.",
                         "Ja, der Bus wartet vor dem Bahnhof.",
+                        "Nein, wir müssen die spätere Bahn um 14:45 Uhr ab Gleis 5 nehmen.",
                         "Gestern hat es den ganzen Tag geregnet."
                     ],
-                    "correct": 0
+                    "correct": 1
                 },
                 "trueFalse": {
                     "statement": "Die Passagiere nach Aachen erreichen ihren geplanten Anschluss um 14:10 Uhr pünktlich.",
@@ -1114,20 +2014,20 @@
                     "sentenceEN": "The citizen needs his passport and the _____ for registration.",
                     "target": "Wohnungsgeberbestätigung",
                     "options": [
+                        "Fahrkarte",
                         "Wohnungsgeberbestätigung",
-                        "Gehaltsabrechnung",
-                        "Fahrkarte"
+                        "Gehaltsabrechnung"
                     ]
                 },
                 "role": {
                     "speaker1": "Sind Sie verheiratet oder ledig?",
                     "speaker1EN": "Are you married or single?",
                     "options": [
-                        "Ich bin ledig.",
                         "Ich wohne im dritten Stock.",
+                        "Ich bin ledig.",
                         "Mein Termin war um 10 Uhr."
                     ],
-                    "correct": 0
+                    "correct": 1
                 },
                 "trueFalse": {
                     "statement": "Der Bürger erhält am Ende des Gesprächs seine Meldebestätigung.",
@@ -1161,20 +2061,20 @@
                     "sentenceEN": "The processing of the new passport takes approx. _____ weeks.",
                     "target": "vier bis sechs",
                     "options": [
+                        "zehn",
                         "vier bis sechs",
-                        "zwei",
-                        "zehn"
+                        "zwei"
                     ]
                 },
                 "role": {
                     "speaker1": "Was muss ich für den neuen Pass mitbringen?",
                     "speaker1EN": "What must I bring along for the new passport?",
                     "options": [
-                        "Ein biometrisches Passfoto und Ihren alten Reisepass.",
                         "Eine Kopie Ihres Mietvertrags.",
-                        "Einen Nachweis über Sportkurse."
+                        "Einen Nachweis über Sportkurse.",
+                        "Ein biometrisches Passfoto und Ihren alten Reisepass."
                     ],
-                    "correct": 0
+                    "correct": 2
                 },
                 "trueFalse": {
                     "statement": "Man kann den alten Reisepass einfach mit einem Stempel verlängern.",
@@ -1281,11 +2181,11 @@
                     "speaker1": "Darf es noch etwas sein?",
                     "speaker1EN": "May it be anything else?",
                     "options": [
+                        "Mein Auto steht vor der Tür.",
                         "Nein danke, das ist alles. Wie viel macht das?",
-                        "Ich gehe morgen zum Zahnarzt.",
-                        "Mein Auto steht vor der Tür."
+                        "Ich gehe morgen zum Zahnarzt."
                     ],
-                    "correct": 0
+                    "correct": 1
                 },
                 "trueFalse": {
                     "statement": "Der Gesamtbetrag für den Einkauf beträgt 5 Euro 80.",
@@ -1319,8 +2219,8 @@
                     "sentenceEN": "The guest orders his cappuccino with _____.",
                     "target": "Hafermilch",
                     "options": [
-                        "Hafermilch",
                         "Kuhmilch",
+                        "Hafermilch",
                         "Sojamilch"
                     ]
                 },
@@ -1328,11 +2228,11 @@
                     "speaker1": "Zum Hieressen oder zum Mitnehmen?",
                     "speaker1EN": "For here or to take away?",
                     "options": [
-                        "Ich möchte gerne hier im Café trinken.",
                         "Ich habe gestern Kuchen gegessen.",
+                        "Ich möchte gerne hier im Café trinken.",
                         "Die Bahn hatte Verspätung."
                     ],
-                    "correct": 0
+                    "correct": 1
                 },
                 "trueFalse": {
                     "statement": "Der Kunde nimmt seinen Kaffee sofort mit auf die Straße.",
@@ -1430,20 +2330,20 @@
                     "sentenceEN": "The master technician estimates costs including labor at approx. _____ euros.",
                     "target": "280",
                     "options": [
-                        "280",
                         "150",
-                        "450"
+                        "450",
+                        "280"
                     ]
                 },
                 "role": {
                     "speaker1": "Wann rufen Sie mich wegen der Fertigstellung an?",
                     "speaker1EN": "When will you call me regarding completion?",
                     "options": [
-                        "Wir rufen Sie heute um 16 Uhr an.",
+                        "Der Termin war gestern Nachmittag.",
                         "Das Auto hat fünf Gänge.",
-                        "Der Termin war gestern Nachmittag."
+                        "Wir rufen Sie heute um 16 Uhr an."
                     ],
-                    "correct": 0
+                    "correct": 2
                 },
                 "trueFalse": {
                     "statement": "Die Reparatur kostet laut Kostenvoranschlag mehr als 500 Euro.",
@@ -1486,11 +2386,11 @@
                     "speaker1": "Möchten Sie bar oder mit Karte zahlen?",
                     "speaker1EN": "Would you like to pay cash or by card?",
                     "options": [
+                        "Das Benzin ist sehr teuer.",
                         "Mit EC-Karte bitte.",
-                        "Ich fahre lieber mit dem Zug.",
-                        "Das Benzin ist sehr teuer."
+                        "Ich fahre lieber mit dem Zug."
                     ],
-                    "correct": 0
+                    "correct": 1
                 },
                 "trueFalse": {
                     "statement": "Die Werkstatt hat auch den Reifendruck und das Scheibenwischerwasser geprüft.",
@@ -1588,8 +2488,8 @@
                     "sentenceEN": "The coffee machine shuts down automatically after _____ seconds.",
                     "target": "30",
                     "options": [
-                        "30",
                         "60",
+                        "30",
                         "15"
                     ]
                 },
@@ -1597,11 +2497,11 @@
                     "speaker1": "Nennen Sie mir bitte Ihre Bestellnummer.",
                     "speaker1EN": "Please tell me your order number.",
                     "options": [
+                        "Ich wohne in Hamburg.",
                         "Die Nummer lautet DE-88392.",
-                        "Ich trinke gerne schwarzen Kaffee.",
-                        "Ich wohne in Hamburg."
+                        "Ich trinke gerne schwarzen Kaffee."
                     ],
-                    "correct": 0
+                    "correct": 1
                 },
                 "trueFalse": {
                     "statement": "Der Kunde muss für die Rücksendung 10 Euro Porto bezahlen.",
@@ -1635,8 +2535,8 @@
                     "sentenceEN": "The credit is issued within _____ business days.",
                     "target": "drei",
                     "options": [
-                        "drei",
                         "vierzehn",
+                        "drei",
                         "sieben"
                     ]
                 },
@@ -1644,11 +2544,11 @@
                     "speaker1": "Wann erhalte ich mein Geld zurück?",
                     "speaker1EN": "When will I get my money back?",
                     "options": [
-                        "Die Gutschrift erfolgt innerhalb von drei Werktagen.",
+                        "Ich bestelle keine Kleidung.",
                         "Die Jacke ist blau.",
-                        "Ich bestelle keine Kleidung."
+                        "Die Gutschrift erfolgt innerhalb von drei Werktagen."
                     ],
-                    "correct": 0
+                    "correct": 2
                 },
                 "trueFalse": {
                     "statement": "Die Rückerstattung wird per Scheck mit der Post geschickt.",
@@ -1746,8 +2646,8 @@
                     "sentenceEN": "The vet gives the tomcat an _____ medication.",
                     "target": "krampflösendes",
                     "options": [
-                        "krampflösendes",
                         "schlafendes",
+                        "krampflösendes",
                         "antibiotisches"
                     ]
                 },
@@ -1755,11 +2655,11 @@
                     "speaker1": "Seit wann frisst die Katze nicht mehr?",
                     "speaker1EN": "Since when has the cat not eaten?",
                     "options": [
-                        "Seit gestern Abend frisst Leo gar nichts mehr.",
                         "Katzen mögen Mäuse.",
+                        "Seit gestern Abend frisst Leo gar nichts mehr.",
                         "Er hat vor zwei Wochen gespielt."
                     ],
-                    "correct": 0
+                    "correct": 1
                 },
                 "trueFalse": {
                     "statement": "Der Kater Leo hat sehr hohes lebensgefährliches Fieber.",
@@ -1793,20 +2693,20 @@
                     "sentenceEN": "Dog Max weighs exactly _____ kilograms.",
                     "target": "18",
                     "options": [
-                        "18",
                         "25",
-                        "12"
+                        "12",
+                        "18"
                     ]
                 },
                 "role": {
                     "speaker1": "Darf der Hund heute Nachmittag viel rennen?",
                     "speaker1EN": "May the dog run a lot this afternoon?",
                     "options": [
-                        "Nein, bitte heute schonen und keine anstrengenden Spaziergänge.",
                         "Hunde essen gerne Fleisch.",
-                        "Der Tierarzt schließt um 18 Uhr."
+                        "Der Tierarzt schließt um 18 Uhr.",
+                        "Nein, bitte heute schonen und keine anstrengenden Spaziergänge."
                     ],
-                    "correct": 0
+                    "correct": 2
                 },
                 "trueFalse": {
                     "statement": "Der Hund soll nach der Impfung heute intensiv Sport treiben.",
@@ -1904,20 +2804,20 @@
                     "sentenceEN": "In the right eye the vision prescription changed by a _____ diopter.",
                     "target": "halbe",
                     "options": [
-                        "halbe",
+                        "zwei",
                         "ganze",
-                        "zwei"
+                        "halbe"
                     ]
                 },
                 "role": {
                     "speaker1": "Können Sie die untere Zeile deutlich erkennen?",
                     "speaker1EN": "Can you clearly recognise the bottom line?",
                     "options": [
-                        "Ja, die Buchstaben heißen E, P, T, O, Z.",
                         "Ich habe meine Uhr vergessen.",
+                        "Ja, die Buchstaben heißen E, P, T, O, Z.",
                         "Die Sonne scheint heute hell."
                     ],
-                    "correct": 0
+                    "correct": 1
                 },
                 "trueFalse": {
                     "statement": "Der Sehtest beim Optiker kostet 50 Euro Gebühr.",
@@ -1951,20 +2851,20 @@
                     "sentenceEN": "The titanium frame weighs merely _____ grams.",
                     "target": "14",
                     "options": [
-                        "14",
+                        "50",
                         "30",
-                        "50"
+                        "14"
                     ]
                 },
                 "role": {
                     "speaker1": "Wie sitzt die Brille auf der Nase?",
                     "speaker1EN": "How does the frame sit on your nose?",
                     "options": [
+                        "Um 18 Uhr schließt der Laden.",
                         "Sie sitzt sehr leicht und angenehm bequem.",
-                        "Ich habe Hunger.",
-                        "Um 18 Uhr schließt der Laden."
+                        "Ich habe Hunger."
                     ],
-                    "correct": 0
+                    "correct": 1
                 },
                 "trueFalse": {
                     "statement": "Der Gesamtpreis für Gestell und Bildschirm-Gläser ist 220 Euro.",
@@ -2062,20 +2962,20 @@
                     "sentenceEN": "Buyer and seller agree on a price of _____ euros.",
                     "target": "28",
                     "options": [
+                        "20",
                         "28",
-                        "35",
-                        "20"
+                        "35"
                     ]
                 },
                 "role": {
                     "speaker1": "Würden Sie mir die Jacke für 25 Euro geben?",
                     "speaker1EN": "Would you give me the jacket for 25 euros?",
                     "options": [
-                        "Machen wir 28 Euro, das ist ein fairer Preis für echtes Leder.",
                         "Ich verkaufe Schuhe.",
-                        "Der Flohmarkt endet um 16 Uhr."
+                        "Der Flohmarkt endet um 16 Uhr.",
+                        "Machen wir 28 Euro, das ist ein fairer Preis für echtes Leder."
                     ],
-                    "correct": 0
+                    "correct": 2
                 },
                 "trueFalse": {
                     "statement": "Der Käufer bezahlt am Ende den ursprünglichen Preis von 35 Euro.",
@@ -2109,20 +3009,20 @@
                     "sentenceEN": "For all five records and two illustrated books, the customer pays _____ euros.",
                     "target": "20",
                     "options": [
+                        "15",
                         "20",
-                        "28",
-                        "15"
+                        "28"
                     ]
                 },
                 "role": {
                     "speaker1": "Machen Sie einen Sonderpreis für alles zusammen?",
                     "speaker1EN": "Will you make a special price for everything together?",
                     "options": [
+                        "Wir haben kein Wechselgeld.",
                         "Ja, für alles zusammen nehme ich glatte 20 Euro.",
-                        "Platten sind aus Vinyl.",
-                        "Wir haben kein Wechselgeld."
+                        "Platten sind aus Vinyl."
                     ],
-                    "correct": 0
+                    "correct": 1
                 },
                 "trueFalse": {
                     "statement": "Die Schallplatten sind beschädigt und nicht abspielbar.",
@@ -2221,8 +3121,8 @@
                     "target": "5",
                     "options": [
                         "5",
-                        "10",
-                        "15"
+                        "15",
+                        "10"
                     ]
                 },
                 "role": {
@@ -2230,8 +3130,8 @@
                     "speaker1EN": "How should I take the antibiotic?",
                     "options": [
                         "Zweimal täglich mit reichlich Wasser nach den Mahlzeiten.",
-                        "Vor dem Schlafen ohne Wasser.",
-                        "Nur wenn die Schmerzen sehr stark sind."
+                        "Nur wenn die Schmerzen sehr stark sind.",
+                        "Vor dem Schlafen ohne Wasser."
                     ],
                     "correct": 0
                 },
@@ -2267,8 +3167,8 @@
                     "sentenceEN": "The pharmacist recommends sage lozenges every _____ to four hours.",
                     "target": "drei",
                     "options": [
-                        "drei",
                         "sechs",
+                        "drei",
                         "zwei"
                     ]
                 },
@@ -2276,11 +3176,11 @@
                     "speaker1": "Haben Sie ein rezeptfreies Mittel gegen Halsschmerzen?",
                     "speaker1EN": "Do you have an over-the-counter remedy for sore throat?",
                     "options": [
-                        "Ja, diese Salbei-Lutschtabletten lindern den Schmerz schnell.",
+                        "Ich bin Apotheker seit 10 Jahren.",
                         "Die Arztpraxis hat mittwochs geschlossen.",
-                        "Ich bin Apotheker seit 10 Jahren."
+                        "Ja, diese Salbei-Lutschtabletten lindern den Schmerz schnell."
                     ],
-                    "correct": 0
+                    "correct": 2
                 },
                 "trueFalse": {
                     "statement": "Die Salbei-Lutschtabletten müssen mit kochendem Wasser geschluckt werden.",
@@ -2378,8 +3278,8 @@
                     "sentenceEN": "The two cinema seats are located in row _____.",
                     "target": "9",
                     "options": [
-                        "9",
                         "4",
+                        "9",
                         "15"
                     ]
                 },
@@ -2387,11 +3287,11 @@
                     "speaker1": "Möchten Sie vorne oder weiter hinten sitzen?",
                     "speaker1EN": "Would you like to sit in front or further back?",
                     "options": [
-                        "Wir sitzen am liebsten hinten in Reihe 9.",
+                        "Ich trinke gerne Cola.",
                         "Der Film dauert zwei Stunden.",
-                        "Ich trinke gerne Cola."
+                        "Wir sitzen am liebsten hinten in Reihe 9."
                     ],
-                    "correct": 0
+                    "correct": 2
                 },
                 "trueFalse": {
                     "statement": "Beide Kinokarten kosten zusammen 22 Euro.",
@@ -2425,20 +3325,20 @@
                     "sentenceEN": "The popcorn combo with drink costs _____ euros.",
                     "target": "8,50",
                     "options": [
-                        "8,50",
                         "12,00",
-                        "5,00"
+                        "5,00",
+                        "8,50"
                     ]
                 },
                 "role": {
                     "speaker1": "Darf es noch etwas Warmes wie Nachos sein?",
                     "speaker1EN": "May it be something hot like nachos as well?",
                     "options": [
+                        "Ich nehme die U-Bahn nach Hause.",
                         "Nein danke, das Popcorn und die Schorle reichen mir.",
-                        "Der Film war sehr spannend.",
-                        "Ich nehme die U-Bahn nach Hause."
+                        "Der Film war sehr spannend."
                     ],
-                    "correct": 0
+                    "correct": 1
                 },
                 "trueFalse": {
                     "statement": "Der Kinosaal 4 ist noch für die nächsten zwei Stunden geschlossen.",
@@ -2536,20 +3436,20 @@
                     "sentenceEN": "The breakfast buffet is available daily from 7 to _____ o'clock.",
                     "target": "10:30",
                     "options": [
+                        "12:00",
                         "10:30",
-                        "9:00",
-                        "12:00"
+                        "9:00"
                     ]
                 },
                 "role": {
                     "speaker1": "Ist das Frühstück im Zimmerpreis enthalten?",
                     "speaker1EN": "Is breakfast included in the room price?",
                     "options": [
-                        "Ja, das Frühstücksbuffet ist im Preis inbegriffen.",
                         "Der Zug fährt um 8 Uhr.",
-                        "Wir haben zwei Koffer."
+                        "Wir haben zwei Koffer.",
+                        "Ja, das Frühstücksbuffet ist im Preis inbegriffen."
                     ],
-                    "correct": 0
+                    "correct": 2
                 },
                 "trueFalse": {
                     "statement": "Das gebuchte Zimmer hat Blick auf eine laute Hauptstraße.",
@@ -2583,9 +3483,9 @@
                     "sentenceEN": "The regular check-out time at the hotel is at _____ o'clock.",
                     "target": "11",
                     "options": [
-                        "11",
                         "9",
-                        "14"
+                        "14",
+                        "11"
                     ]
                 },
                 "role": {
@@ -2593,8 +3493,8 @@
                     "speaker1EN": "Can we leave our suitcases in the hotel until 4 PM?",
                     "options": [
                         "Ja natürlich, wir schließen sie kostenlos im Gepäckraum ein.",
-                        "Das Wetter ist sonnig.",
-                        "Das Taxi kostet 25 Euro."
+                        "Das Taxi kostet 25 Euro.",
+                        "Das Wetter ist sonnig."
                     ],
                     "correct": 0
                 },
@@ -2694,20 +3594,20 @@
                     "sentenceEN": "The package weighs _____ kilograms.",
                     "target": "3,8",
                     "options": [
-                        "3,8",
                         "5,0",
-                        "1,5"
+                        "1,5",
+                        "3,8"
                     ]
                 },
                 "role": {
                     "speaker1": "Ist die Sendungsverfolgung im Preis mit drin?",
                     "speaker1EN": "Is tracking included in the price?",
                     "options": [
-                        "Ja, Versicherung bis 500 Euro und Tracking sind inklusive.",
+                        "Ich schreibe gerne Postkarten.",
                         "Die Post öffnet um 8 Uhr.",
-                        "Ich schreibe gerne Postkarten."
+                        "Ja, Versicherung bis 500 Euro und Tracking sind inklusive."
                     ],
-                    "correct": 0
+                    "correct": 2
                 },
                 "trueFalse": {
                     "statement": "Das Paket ist unversichert und hat keine Sendungsverfolgung.",
@@ -2741,8 +3641,8 @@
                     "sentenceEN": "The recorded delivery with advice of receipt costs a total of _____ euros.",
                     "target": "5,60",
                     "options": [
-                        "5,60",
                         "2,50",
+                        "5,60",
                         "9,00"
                     ]
                 },
@@ -2751,8 +3651,8 @@
                     "speaker1EN": "Which shipping method best proves successful delivery?",
                     "options": [
                         "Ein Übergabeeinschreiben mit persönlicher Unterschrift und Rückschein.",
-                        "Ein normaler Briefkasten-Einwurf.",
-                        "Ein Anruf beim Vermieter."
+                        "Ein Anruf beim Vermieter.",
+                        "Ein normaler Briefkasten-Einwurf."
                     ],
                     "correct": 0
                 },
@@ -2852,20 +3752,20 @@
                     "sentenceEN": "On the sides the customer wishes for approx. _____ millimetres length.",
                     "target": "9",
                     "options": [
+                        "3",
                         "9",
-                        "25",
-                        "3"
+                        "25"
                     ]
                 },
                 "role": {
                     "speaker1": "Wie kurz möchten Sie die Seiten geschnitten haben?",
                     "speaker1EN": "How short would you like the sides cut?",
                     "options": [
+                        "Morgen regnet es.",
                         "Etwa 9 Millimeter mit einem weichen Übergang.",
-                        "Ich trage Schuhe Größe 42.",
-                        "Morgen regnet es."
+                        "Ich trage Schuhe Größe 42."
                     ],
-                    "correct": 0
+                    "correct": 1
                 },
                 "trueFalse": {
                     "statement": "Der Kunde möchte an den Seiten schulterlange Haare behalten.",
@@ -2899,20 +3799,20 @@
                     "sentenceEN": "The regular price for the salon visit is _____ euros.",
                     "target": "26",
                     "options": [
-                        "26",
+                        "18",
                         "30",
-                        "18"
+                        "26"
                     ]
                 },
                 "role": {
                     "speaker1": "Wie gefällt Ihnen der Schnitt im Spiegel?",
                     "speaker1EN": "How do you like the cut in the mirror?",
                     "options": [
-                        "Das sieht super aus, genau wie ich es mir vorgestellt habe.",
                         "Ich muss meinen Ausweis verlängern.",
-                        "Die Suppe schmeckt lecker."
+                        "Die Suppe schmeckt lecker.",
+                        "Das sieht super aus, genau wie ich es mir vorgestellt habe."
                     ],
-                    "correct": 0
+                    "correct": 2
                 },
                 "trueFalse": {
                     "statement": "Der Kunde gibt dem Friseur 4 Euro Trinkgeld.",
@@ -3010,20 +3910,20 @@
                     "sentenceEN": "The backpack was handed into the lost property office by an _____.",
                     "target": "Kontrolleur",
                     "options": [
-                        "Kontrolleur",
                         "Polizisten",
-                        "Fahrgast"
+                        "Fahrgast",
+                        "Kontrolleur"
                     ]
                 },
                 "role": {
                     "speaker1": "Welche Gegenstände befanden sich in der Tasche?",
                     "speaker1EN": "Which items were located inside the bag?",
                     "options": [
-                        "Ein Laptop, ein Mathebuch und ein rotes Federmäppchen.",
+                        "Meine Schwester wohnt in Bonn.",
                         "Ich habe im Restaurant gegessen.",
-                        "Meine Schwester wohnt in Bonn."
+                        "Ein Laptop, ein Mathebuch und ein rotes Federmäppchen."
                     ],
-                    "correct": 0
+                    "correct": 2
                 },
                 "trueFalse": {
                     "statement": "Der Rucksack wurde leider bisher überhaupt nicht gefunden.",
@@ -3057,20 +3957,20 @@
                     "sentenceEN": "The storage fee for electronic devices is _____ euros.",
                     "target": "10",
                     "options": [
+                        "0",
                         "10",
-                        "25",
-                        "0"
+                        "25"
                     ]
                 },
                 "role": {
                     "speaker1": "Wie können Sie nachweisen, dass der Laptop Ihnen gehört?",
                     "speaker1EN": "How can you prove that the laptop belongs to you?",
                     "options": [
-                        "Ich kann das Kennwort vor Ort eingeben und entsperren.",
                         "Ich fahre gerne mit der U-Bahn.",
-                        "Mein Geburtstag ist im März."
+                        "Mein Geburtstag ist im März.",
+                        "Ich kann das Kennwort vor Ort eingeben und entsperren."
                     ],
-                    "correct": 0
+                    "correct": 2
                 },
                 "trueFalse": {
                     "statement": "Die Abholung des Laptops ist ohne jegliche Prüfung für jeden sofort möglich.",
@@ -3082,10 +3982,6 @@
         ]
     }
 };
-
-    /* ============================================================
-       PART 3: 15 NEW WRITING TASKS (a2_write_11 to a2_write_25)
-       ============================================================ */
     const NEW_A2_WRITING_TASKS = [
     {
         "id": "a2_write_11",
